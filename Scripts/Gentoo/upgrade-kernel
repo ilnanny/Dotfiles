@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+## Upgrade gentoo kernel
+
+# Il primo e l'unico argomento deve essere il nome della cartella del nuovo kernel
+
+# Interrompi lo script quando si verifica un errore
+set -o errexit
+set -o pipefail
+set -o nounset
+# Per il debug
+set -o xtrace
+
+readonly kernel_path='/usr/src/'
+
+_usage () {
+    local script_name="$0"
+    echo "Utilizzo: $0 <newkernelfolder>"
+}
+
+_main () {
+    echo "Eseguo il backup del vecchio kernel..."
+    cd "${kernel_path}/linux/"
+    cp .config ~/kernel-config-"$(uname -r)"
+    echo "Copio la vecchia configurazione ."
+    cp /usr/src/linux/.config /tmp/.config
+    echo "Imposto il nuovo kernel come predefinito..."
+ #ln -sf /usr/src/"$1" /usr/src/linux
+    cp /tmp/.config /usr/src/linux/
+    eselect kernel set 2
+    cd /usr/src/linux/
+    echo "Costruzione ..."
+    make -j3 olddefconfig
+    make -j3 modules_prepare
+    emerge --ask @module-rebuild
+    make -j3
+    make install
+    echo "
+====================================    
+    Sei hai EFI ,aggiornalo manualmente ; scrivi:
+    cp /boot/vmlinuz-*-gentoo /boot/efi/boot/bootx64.efi
+====================================    
+"
+}
+
+
+if [[ $# -eq 1 ]]
+then
+    _main $1
+else
+    _usage
+fi

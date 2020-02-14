@@ -1,0 +1,63 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+echo "Da usare con i privilegi di superutente"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo " Mini Script per la configurazione dei moduli del Kernel"
+echo ""
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Entro nella Cartella di configurazione"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+cd  /usr/src/linux/
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+#echo "Utilizzo il server Grafico per la configurazione dei moduli"
+echo "Adesso puoi configurare i moduli del kernel"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+#su -c "make xconfig"
+su -c "make menuconfig"
+echo ""
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Ricordati di chiudere il terminale"
+echo ""
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

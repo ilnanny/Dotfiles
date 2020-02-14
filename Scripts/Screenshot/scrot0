@@ -1,0 +1,12 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+# sostituisci gpicview con nomacs o altro
+#================================================
+
+scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Immagini ; gpicview ~/Immagini/$f'

@@ -1,0 +1,32 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+# ___      Alias Devuan
+
+
+alias ipk='sudo dpkg -i'
+alias rpk='sudo dpkg -r'
+alias install='sudo apt install'
+alias instally='sudo apt install -y'
+alias upgrade='sudo apt dist-upgrade'
+alias update='sudo apt update && sudo apt upgrade'
+alias autoremove='sudo apt autoremove'
+alias remove='sudo apt remove  && sudo apt purge && sudo apt autoremove'
+alias apt='sudo apt'
+alias sourcelist='sudo geany /etc/apt/sources.list'
+alias sourcelistd='gksudo thunar /etc/apt/sources.list.d/'
+alias search='sudo apt search'
+alias gosource='sudo thunar /etc/apt/sources.list.d/'
+alias search='sudo apt search'
+alias show='sudo apt show'
+alias sourcelist='sudo geany /etc/apt/source.list'
+
+# ___            Fine
+

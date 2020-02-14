@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=The Porthole Portage Frontend
+Name[it]=Thunderbird
+Comment=Use a GTK-based frontend to the Gentoo package management system
+Comment[it]=Per leggere e scrivere email
+Icon=thunderbird
+Exec=/usr/lib/thunderbird/thunderbird %u
+StartupNotify=true
+Type=Application
+Categories=System;PackageManager;
+GenericName=Porthole
+GenericName[it]=Porthole
+Path=
+Terminal=false
+X-XFCE-Source=file:///home/ilnanny/.local/share/applications/porthole.desktop

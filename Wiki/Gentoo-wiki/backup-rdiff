@@ -1,0 +1,8 @@
+Backup
+user $rdiff-backup / /media/Dati/
+
+Per eseguire nuovamente il backup, basta semplicemente eseguire lo stesso comando; ogni incremento sarà accessibile individualmente.
+Restore
+user $rdiff-backup-fs path/to/mount/point path/to/backup/destination
+user $cp -p path/to/mount/point/YYYY-MM-DDTHH\:MM\:SS/some/thing where/ever/
+user $fusermount -u path/to/mount/point

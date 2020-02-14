@@ -1,0 +1,217 @@
+Una volta create le partizioni avvia il cd -usb bootable :
+Attiva la swap  e monta le partizioni:
+  __________________________________________
+ swapon /dev/sdb1
+ mount /dev/sda3 /mnt
+  __________________________________________
+Attiva la rete e provala:
+ nmtui
+ ping artixlinux.org
+ Aggiorna l'albero dei repositories:
+ pacman -Syy
+  __________________________________________
+Usa basestrap per il sistemma base:
+
+ basestrap /mnt base base-devel openrc
+
+  __________________________________________
+Usa fstabgen per generare fstab:
+
+ fstabgen -U /mnt >>/mnt/etc/fstab
+  __________________________________________
+Entra in chroot :
+
+ artools-chroot /mnt
+  __________________________________________
+Configura il sistema :
+
+ pacman -S grub os-prober
+ grub-install --recheck /dev/sda
+ grub-mkconfig -o /boot/grub/grub.cfg
+  __________________________________________
+root password:
+
+ passwd
+  __________________________________________
+Installa networkmanager:
+
+ pacman -S networkmanager networkmanager-openrc network-manager-applet
+ rc-update add NetworkManager default
+  __________________________________________
+Localizzazione :
+decommenta il tuo locale in :
+
+ nano /etc/locale.gen
+ locale-gen
+  __________________________________________
+Edita anche
+nano /etc/locale.conf
+nano /etc/bash/bashrc.d/local.bashrc
+
+ export LANG="it_IT.UTF-8"
+ export LC_COLLATE="C"
+
+ nano -w /etc/vconsole.conf
+
+ KEYMAP=it-latin1
+  __________________________________________
+nano -w /etc/conf.d/hostname
+
+ speedbox
+
+nano -w /etc/hosts
+
+ 127.0.0.1               localhost.localdomain   localhost speedbox
+ ::1                     localhost.localdomain   localhost ip6-localhost
+  __________________________________________    __________________________________
+Esci dall'installazione base:
+
+ exit
+ umount -R /mnt
+ reboot
+  __________________________________________    _________________________________
+Adesso riavvia nel nuovo sistema e installa il server X e i tuoi software:
+
+pacman -Syu
+pacman -S xorg-server xorg-xinit xorg-xrandr xf86-video-ati
+pacman -S git freetype2 fuse2 dosfstools mtools
+pacman -S iw wpa_supplicant curl wget wgetpaste  lxdm
+
+pacman -S  gnome-keyring \
+           exfat-utils \
+           file-roller \
+           firefox \
+           firefox-i18n-it \
+	         unzip \
+           unrar \
+           ntp \
+           openssh \
+           gvfs \
+           htop
+
+ __________________________________________
+
+mkdir /media
+mkdir /media/Dati
+echo "UUID=76CDC3FF57CBA78E	    	    /media/Dati	     ntfs-3g	    defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0" >> /etc/fstab
+  __________________________________________    _______________________________
+useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,input,lp,uucp -s /bin/bash ilnanny
+
+ passwd ilnanny
+____________________________________________________
+
+ _______________________    OpenBox     _______________________________________
+pacman -Syu
+pacman -S \
+openbox \
+obmenu \
+obconf \
+conky \
+xfce4-panel \
+xfce4-terminal \
+xfce4-settings \
+xfburn \
+xterm \
+nitrogen \
+lxappearance \
+thunar \
+thunar-volman \
+thunar-archive-plugin \
+xfce4-settings-manager
+
+pacman -S \
+dunst \
+termite \
+vim \
+gtk-engine-murrine \
+geany
+__________________________________________________-
+#neofetch :
+pacman -S   libcaca imagemagick jp2a chafa catimg w3m xdotool xorg-xdpyinfo xorg-xprop xorg-xwininfo neofetch
+
+#obmenu-generetor + pacchetto da yay/aur
+pacman -S gtk2-perl perl-file-desktopentry perl-data-dump
+
+
+ Da utente normale  _______________________________
+git clone https://aur.archlinux.org/yay.git &&  cd yay
+
+    makepkg -si
+
+yay -S obmenu-generator
+
+obmenu-generator -s -c
+
+_________________Altro software  _______________
+
+
+pacman -S  android-file-transfer \
+           android-tools \
+           arc-gtk-theme \
+           bleachbit \
+           bzr \
+           chromium-bsu \
+           conky \
+           deluge \
+           dkms \
+           gimp \
+           gparted \
+           inkscape \
+           libreoffice-still\
+           libreoffice-still-it \
+           linux-headers \
+           lsb-release \
+           mtools \
+           mtpfs \
+           nomacs \
+           optipng \
+           zenity
+
+pacman -S \
+           snappy \
+           telegram-desktop \
+           ttf-opensans \
+           vlc \
+           virtualbox \
+           virtualbox-host-dkms \
+           virtualbox-ext-vnc \
+           virtualbox-guest-dkms \
+           virtualbox-guest-iso \
+           virtualbox-guest-utils
+
+
+#inxi:
+pacman -S  inxi \
+    bind-tools \
+    dmidecode \
+    hddtemp \
+    iproute2 \
+    kmod \
+    lm_sensors \
+    mesa-demos \
+    net-tools \
+    perl-io-socket-ssl \
+    perl-json-xs \
+    sudo \
+    tree \
+    usbutils \
+    wmctrl \
+    xorg-xdpyinfo \
+    xorg-xprop \
+    xorg-xrandr
+ __________________________________________
+
+in caso di errore aggiornamento server:(in chroot)
+
+sudo rm /etc/resolv.conf
+sudo sh -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf '
+
+ping -c3 8.8.8.8
+
+pacman -Syu
+
+ pacman -S elogind
+ _______________________
+ sudo pacman -Sy gnupg archlinux-keyring artix-keyring
+ sudo pacman-key --populate archlinux artix
+ sudo pacman -Syyu

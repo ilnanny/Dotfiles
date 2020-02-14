@@ -1,0 +1,25 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+head -n 1 /proc/asound/card0/codec*
+lspci | grep audio
+echo "###################################################"
+echo "#                                                 #"
+echo "#         ATTIVO LA PERIFERICA HDA INTEL          #"
+echo "#                                                 #"
+echo "###################################################"
+sudo lsmod | grep snd_hda_intel
+sudo modprobe snd_hda_intel
+echo "###################################################"
+echo "#                                                 #"
+echo "#             FATTO CHIUDI IL TERMINALE           #"
+echo "#                                                 #"
+echo "###################################################"
+exit 4

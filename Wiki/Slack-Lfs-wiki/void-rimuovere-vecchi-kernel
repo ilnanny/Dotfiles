@@ -1,0 +1,15 @@
+To list all kernels installed on your system except the currently-running kernel:
+
+$ vkpurge list
+Example output:
+
+$ vkpurge list
+    4.1.10_1
+    4.1.11_1
+Removing kernels
+To remove an installed kernel:
+
+# vkpurge rm kernel
+vkpurge will remove the kernel from /boot and regenerate your GRUB configuration. For example:
+
+# vkpurge rm 4.1.10_1

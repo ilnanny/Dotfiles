@@ -1,0 +1,14 @@
+Controlla che sia installato lultima versione di portage
+
+naschera la nuoa versione d openssl [ package.mask ]
+
+es:
+ echo "dev-libs/openssl" >> /etc/portage/package.mask 
+
+aggiorna world:
+ emerge -avuDN @world --backtrack=30 net-fs/cifs-utils
+
+
+
+
+

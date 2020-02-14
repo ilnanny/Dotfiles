@@ -1,0 +1,155 @@
+creare una directory in cui salvare lo script di creazione che andremo ad usare (ad esempio:  /usr/src/etcher).
+
+Una volta creata la directory posizionatevi al suo interno e create il file etcher.sh , apritelo e al suo interno andate a inserire quanto segue:
+
+
+#!/bin/sh
+
+VERSION=1.1.2
+ARCH=$(arch)
+PKG=/tmp/etcher
+
+if [ "$ARCH" != "x86_64" ]; then
+    ARCH=i386
+fi
+
+wget -nc https://github.com/resin-io/etcher/releases/download/v${VERSION}/etcher-${VERSION}-linux-${ARCH}.zip
+
+[ -e etcher.ico ] && rm -f etcher.ico
+[ -e etcher-0.png ] && rm -f etcher-*.png
+[ -e etcher.png ] && rm etcher.png
+
+wget -nc https://etcher.io/static/favicon.ico -O etcher.ico
+convert etcher.ico etcher.png
+cp etcher-0.png etcher.png
+
+mkdir -p ${PKG}/usr/share/applications
+mkdir -p ${PKG}/usr/share/icons/hicolor/256x256
+mkdir -p ${PKG}/usr/bin/
+mkdir -p ${PKG}/install/
+
+unzip etcher-${VERSION}-linux-${ARCH}.zip
+
+mv etcher-${VERSION}-${ARCH}.AppImage ${PKG}/usr/bin/etcher
+chmod +x ${PKG}/usr/bin/etcher
+
+cp etcher.png ${PKG}/usr/share/icons/hicolor/256x256/etcher.png
+
+echo "# HOW TO EDIT THIS FILE:" > ${PKG}/install/slack-desc
+echo "# The "handy ruler" below makes it easier to edit a package description.  Line" >> ${PKG}/install/slack-desc
+echo "# up the first '|' above the ':' following the base package name, and the '|' on">> ${PKG}/install/slack-desc
+echo "# the right side marks the last column you can put a character in.  You must make">> ${PKG}/install/slack-desc
+echo "# exactly 11 lines for the formatting to be correct.  It's also customary to">> ${PKG}/install/slack-desc
+echo "# leave one space after the ':'.">> ${PKG}/install/slack-desc
+echo "" >> ${PKG}/install/slack-desc
+echo "      |-----handy-ruler------------------------------------------------------|">> ${PKG}/install/slack-desc
+echo "etcher: etcher ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: Burn images to SD cards & USB drives, safely and easily.">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: https://etcher.io/">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+
+echo "[Desktop Entry]" > ${PKG}/usr/share/applications/etcher.desktop
+echo "Name=Etcher" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Comment=Burn images to SD cards and USB drives" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Exec=/usr/bin/etcher" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Path=/usr/bin" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Terminal=false" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Icon=/usr/share/icons/hicolor/256x256/etcher.png" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Type=Application" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Categories=Misc;System;" >> ${PKG}/usr/share/applications/etcher.desktop
+
+
+cd ${PKG}
+makepkg -l y -c y /tmp/etcher-${VERSION}-${ARCH}-1airaghi.txz
+
+cd -
+
+echo "package created: /tmp/etcher-${VERSION}-${ARCH}-1airaghi.txz"
+echo ""
+
+#!/bin/sh
+ 
+VERSION=1.1.2
+ARCH=$(arch)
+PKG=/tmp/etcher
+ 
+if [ "$ARCH" != "x86_64" ]; then
+    ARCH=i386
+fi
+ 
+wget -nc https://github.com/resin-io/etcher/releases/download/v${VERSION}/etcher-${VERSION}-linux-${ARCH}.zip
+ 
+[ -e etcher.ico ] && rm -f etcher.ico
+[ -e etcher-0.png ] && rm -f etcher-*.png
+[ -e etcher.png ] && rm etcher.png
+ 
+wget -nc https://etcher.io/static/favicon.ico -O etcher.ico
+convert etcher.ico etcher.png
+cp etcher-0.png etcher.png
+ 
+mkdir -p ${PKG}/usr/share/applications
+mkdir -p ${PKG}/usr/share/icons/hicolor/256x256
+mkdir -p ${PKG}/usr/bin/
+mkdir -p ${PKG}/install/
+ 
+unzip etcher-${VERSION}-linux-${ARCH}.zip
+ 
+mv etcher-${VERSION}-${ARCH}.AppImage ${PKG}/usr/bin/etcher
+chmod +x ${PKG}/usr/bin/etcher
+ 
+cp etcher.png ${PKG}/usr/share/icons/hicolor/256x256/etcher.png
+ 
+echo "# HOW TO EDIT THIS FILE:" > ${PKG}/install/slack-desc
+echo "# The "handy ruler" below makes it easier to edit a package description.  Line" >> ${PKG}/install/slack-desc
+echo "# up the first '|' above the ':' following the base package name, and the '|' on">> ${PKG}/install/slack-desc
+echo "# the right side marks the last column you can put a character in.  You must make">> ${PKG}/install/slack-desc
+echo "# exactly 11 lines for the formatting to be correct.  It's also customary to">> ${PKG}/install/slack-desc
+echo "# leave one space after the ':'.">> ${PKG}/install/slack-desc
+echo "" >> ${PKG}/install/slack-desc
+echo "      |-----handy-ruler------------------------------------------------------|">> ${PKG}/install/slack-desc
+echo "etcher: etcher ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: Burn images to SD cards & USB drives, safely and easily.">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: https://etcher.io/">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+echo "etcher: ">> ${PKG}/install/slack-desc
+ 
+echo "[Desktop Entry]" > ${PKG}/usr/share/applications/etcher.desktop
+echo "Name=Etcher" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Comment=Burn images to SD cards and USB drives" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Exec=/usr/bin/etcher" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Path=/usr/bin" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Terminal=false" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Icon=/usr/share/icons/hicolor/256x256/etcher.png" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Type=Application" >> ${PKG}/usr/share/applications/etcher.desktop
+echo "Categories=Misc;System;" >> ${PKG}/usr/share/applications/etcher.desktop
+ 
+ 
+ ---------------------------------
+cd ${PKG}
+makepkg -l y -c y /tmp/etcher-${VERSION}-${ARCH}-1airaghi.txz
+ 
+cd -
+ 
+echo "package created: /tmp/etcher-${VERSION}-${ARCH}-1airaghi.txz"
+echo ""
+Una volta salvato il file rendendo eseguibile (chmod +x etcher.sh).
+
+Da adesso in poi eseguendo questo nuovo script andrete a scaricare e a generare il pacchetto per Slackware/Slackware64 pronto per essere installato sul vostro sistema (il file verrà creato come /tmp/etcher-*-1airaghi.txz)
+
+NOTE:
+
+variabile VERSION : indicate la versione di Etcher che volete usare (guadate sul sito per ottenere questa informazione)
+variabile ARCH : al momento determina in automatico se scaricare il software a 32bit o 64bit, se volete forzare la scelta potete usare il valore “i386” o “x86_64”

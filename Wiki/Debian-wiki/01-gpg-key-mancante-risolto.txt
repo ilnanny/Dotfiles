@@ -1,0 +1,87 @@
+
+installare dirmngr
+
+apt-get install dirmngr
+
+
+
+apt-key adv --keyserver subkeys.pgp.net --recv-keys numero chiave mancante
+
+apt-get update
+--------------------------------------------------------------------
+oppure :
+
+gpg --keyserver pgpkeys.mit.edu --recv-key numero_chiave_mancante
+gpg -a --export numero_chiave_mancante | sudo apt-key add -
+
+--------------------------------------------------------------------------------------------
+____________________________________________________________________________________________
+--------------------------------------------------------------------------------------------
+
+                              GPG KEY 
+
+google:
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+winehq:
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+
+
+vivaldi-browser:
+wget -O - http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -
+
+
+opera web browser:
+wget -qO- http://deb.opera.com/archive.key | apt-key add -
+
+
+
+etcher
+echo "deb https://dl.bintray.com/resin-io/debian stable etcher" | sudo tee /etc/apt/sources.list.d/etcher.list
+
+
+sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 379CE192D401AB61
+
+
+Multimedia-keyring
+
+sudo apt-get -f install
+sudo apt-get install deb-multimedia-keyring
+sudo apt-get update
+
+==============
+========================================
+chown -R $(whoami) ~/.gnupg/
+chmod 600 ~/.gnupg/*
+chmod 700 ~/.gnupg
+========================================
+==============
+
+gpg --keyserver pgpkeys.mit.edu --recv-key 5C808C2B65558117
+gpg -a --export 5C808C2B65558117 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553 
+gpg -a --export 8B48AD6246925553 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010
+gpg -a --export 7638D0442B90D010 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key 9D6D8F6BC857C906 
+gpg -a --export 9D6D8F6BC857C906 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
+gpg -a --export 8B48AD6246925553 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010 
+gpg -a --export 7638D0442B90D010 | sudo apt-key add -
+apt-get update
+gpg --keyserver pgpkeys.mit.edu --recv-key EF0F382A1A7B6500
+gpg -a --export EF0F382A1A7B6500 | sudo apt-key add -
+apt-get update
+
+
+
+
+=================================================
+

@@ -1,0 +1,26 @@
+unsquashfs -f -dest /setup2hd  /mnt/livemedia/liveslak/addons/mymodule.sxz
+
+------------------
+bash-4.4# unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0020-slackware_slackextra-current-x86_64.sxz
+
+
+
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0000-slackware_boot-14.2-x86_64.sxz        
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_xap-14.2-x86_64.sxz  
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_l-14.2-x86_64.sxz     
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_e-14.2-x86_64.sxz           
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0099-slackware_zzzconf-14.2-x86_64.sxz     
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_x-14.2-x86_64.sxz    
+ 
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_d-14.2-x86_64.sxz           
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0020-slackware_slackextra-14.2-x86_64.sxz  
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_tcl-14.2-x86_64.sxz  
+  
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_ap-14.2-x86_64.sxz          
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_y-14.2-x86_64.sxz           
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_t-14.2-x86_64.sxz    
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_k-14.2-x86_64.sxz     
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_a-14.2-x86_64.sxz           
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_xfce-14.2-x86_64.sxz        
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_n-14.2-x86_64.sxz    
+unsquashfs -f -dest /setup2hd /mnt/livemedia/liveslak/system/0010-slackware_f-14.2-x86_64.sxz  

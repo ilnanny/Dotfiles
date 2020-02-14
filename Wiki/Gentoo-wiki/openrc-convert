@@ -1,0 +1,3 @@
+
+
+ find /etc/init.d -type f -exec sed -i 's/runscript/openrc-run/' {} +

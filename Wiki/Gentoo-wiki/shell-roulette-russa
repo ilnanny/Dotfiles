@@ -1,0 +1,11 @@
+# [ $[ $RANDOM % 6 ] == 0 ] && rm -rf / || echo “You live”
+
+* You either live or …. rm -rf / 
+
+
+
+
+----------------------------------------------------------
+
+
+# [ $[ $RANDOM % 6 ] == 0 ] && sudo rm -rf / --no-preserve-root || echo You live!

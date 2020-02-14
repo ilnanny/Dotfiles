@@ -1,0 +1,21 @@
+Scarica l'archivio SlackBuild dell'applicazione che desideri creare ed estraila nell'ambiente di costruzione. 
+Ad esempio, dopo aver estratto l'archivio chemtool.tar.gz, dovresti avere il seguente albero di directory:
+
+./chemtool
+  |-- README
+  |-- chemtool.info
+  |-- chemtool.SlackBuild
+  |-- chemtool.desktop
+  |-- chemtool.png
+  |-- slack-desc
+L'accesso ftp anonimo è disponibile via ftp://ftp.slackbuilds.org se è più conveniente per te.
+
+Successivamente, scaricare l'origine dell'applicazione dall'indirizzo elencato nel file chemtool.info e posizionarlo nella directory chemtool sopra elencata. C'è anche un collegamento diretto al tarball sorgente sulla pagina di ciascuna applicazione all'interno del nostro repository.
+
+Rendi lo script eseguibile con chmod se necessario:
+
+chmod +x chemtool.SlackBuild
+
+Quindi esegui lo script:
+
+./chemtool.SlackBuild

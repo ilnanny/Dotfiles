@@ -1,0 +1,14 @@
+Lista del sofware installato :
+qlist -I
+per la lista:
+qlist -I >/home/ilnanny/pacchetti-installati.txt
+================================================
+Con la versione :
+qlist -Iv 
+
+================================
+con eix - piu dettagliato
+eix -Ic
+
+
+

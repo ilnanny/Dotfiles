@@ -1,0 +1,32 @@
+#!/bin/bash
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#
+blue='\033[01;34m'
+clear
+#================================================
+printf "${blue}                            Geometric                       \n"
+printf "                                                                   \n"
+printf " ■    □    ▢    ▣    ▤    ▥    ▦    ▧    ▨    ▩    ▪    ▫    ▬    ▭\n"
+printf "\n"
+printf " ▮    ▯    ▰    ▱    ▲    △    ▴    ▵    ▶    ▷    ▸    ▹    ►    ▻\n"
+printf "\n"
+printf " ▼    ▽    ▾    ▿    ◀    ◁    ◂    ◃    ◄    ◅    ◆    ◇    ◈    ◉\n"
+printf "\n"
+printf " ◊    ○    ◌    ◍    ◎    ●    ◐    ◑    ◒    ◓    ◔    ◕    ◖    ◗\n"
+printf "\n"
+printf "\n"
+printf " ◦    ◧    ◨    ◩    ◪    ◫    ◬    ◭    ◮    ◯    ◰    ◱    ◲    ◳\n"
+printf "\n"
+printf " ◴    ◵    ◶    ◷    ◸    ◹    ◺    ◻    ◼    ◽    ◾    ◿          \n"
+printf "\n"
+printf "                                                                   \n"
+printf "\n"
+printf "\n"
+printf "          Close   your   terminal   emulator   to    Exit          \n"
+printf "\n"
+exit

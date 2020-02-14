@@ -1,0 +1,36 @@
+Sincronizzare data e ora su gentoo con openntpd:
+__________________________________________________
+
+   emerge --ask net-misc/openntpd
+
+Lanciare il demone :
+
+   /etc/init.d/ntpd start
+
+Aggiungere il demone all'avvio :
+
+   rc-update add ntpd default
+
+Configurare il server :
+
+ nano -w /etc/ntpd.conf
+
+#Choose servers announced from Gentoo NTP Pool
+ servers 0.gentoo.pool.ntp.org
+ servers 1.gentoo.pool.ntp.org
+ servers 2.gentoo.pool.ntp.org
+ servers 3.gentoo.pool.ntp.org
+
+Riavviare il server ntp:
+
+   rc-service ntpd restart
+
+
+Controllo dell'operazione del demone:
+
+   ntpctl -s all
+
+__________________________________________________
+*
+ man ntpctl
+__________________________________________________

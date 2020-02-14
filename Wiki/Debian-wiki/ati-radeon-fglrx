@@ -1,0 +1,86 @@
+sudo apt-get install build-essential cdbs fakeroot dh-make debhelper debconf libstdc++6 dkms libqtgui4 wget execstack libelfg0 dh-modaliases
+
+sudo apt-get install ia32-libs
+
+cd
+
+mkdir catalyst && cd catalyst
+
+wget http://www2.ati.com/drivers/linux/ati-driver-installer-15.201.1151-x86.x86_64.run
+
+sh ./ati-driver-installer-11-9-x86.x86_64.run –buildpkg Ubuntu/oneiric
+
+sudo dpkg -i fglrx*.deb
+
+sudo aticonfig –initial -f
+
+https://www2.ati.com/drivers/linux/amd-catalyst-15.9-linux-installer-15.201.1151-x86.x86_64.zip
+
+-----------------------------------------------------------------------------------------------------------------
+# aptitude update
+# aptitude -r install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') fglrx-driver
+
+Configurazione
+Dato che il driver fglrx non viene rilevato automaticamente da XOrg, è necessario fornire un file di configurazione, ad esempio:
+
+/etc/X11/xorg.conf.d/20-fglrx.conf
+
+Section "Device"
+ Identifier "My GPU"
+ Driver "fglrx"
+EndSection
+Il file di configurazione suddetto può essere creato usando i seguenti comandi:
+
+# mkdir /etc/X11/xorg.conf.d
+# echo -e 'Section "Device"\n\tIdentifier "My GPU"\n\tDriver "fglrx"\nEndSection' > /etc/X11/xorg.conf.d/20-fglrx.conf
+Nota: Durante l'installazione del driver può essere visualizzato un messaggio che informa che può essere usato 'aticonfig --initial' per creare il file di configurazione richiesto. Se lo si fa e successivamente si hanno problemi con la propria configurazione video,
+
+A questo punto riavviare il sistema per abilitare l'inserimento del driver radeon nella lista nera.
+
+Io ho provato a disattivarlo seguendo questa guida:
+
+Aprire con un editor di testo e con i privilegi di amministrazione, il file /etc/modprobe.d/radeon-kms.conf ed inserire la seguente riga:
+options radeon modeset=0
+
+sudo update-initramfs -u -k all
+
+-----------------------------------
+
+rimozione.
+
+sudo sh /usr/share/ati/fglrx-uninstall.sh
+sudo apt-get remove --purge xserver-xorg-video ati xserver-xorg-video-radeon
+sudo apt-get install xserver-xorg-video-ati
+sudo apt-get install --reinstall libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-core
+sudo rm -rf /etc/ati
+
+ riavvia il sistema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

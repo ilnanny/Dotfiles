@@ -1,0 +1,3 @@
+[ilnanny][~]$ equery l gtk+:3
+ * Searching for gtk+:3 ...
+[IP-] [  ] x11-libs/gtk+-3.22.16:3

@@ -1,0 +1,47 @@
+
+
+USE="alsa headless lvm opengl opus pam pax_kernel python qt5 sdk udev -debug -doc -dtrace -java -libressl -pulseaudio -vboxwebsrv -vnc" PYTHON_SINGLE_TARGET="python3_6 -python2_7 -python3_7 -python3_8" PYTHON_TARGETS="python2_7 python3_6 -python3_7 -python3_8" emerge --ask app-emulation/virtualbox
+
+emerge --ask app-emulation/virtualbox-additions
+
+emerge --ask app-emulation/virtualbox-guest-additions
+
+rc-update add virtualbox-guest-additions default
+
+rc-update add dbus default
+
+gpasswd -a ilnanny vboxguest
+
+gpasswd -a ilnanny vboxsf
+
+gpasswd -a ilnanny vboxusers
+
+
+===================
+carica modulo
+
+modprobe vboxdrv
+===================
+moduli opzionali
+
+modprobe vboxnetadp
+modprobe vboxnetflt
+modprobe vboxpci 
+
+=============================================
+all'avvio
+
+nano -w /etc/modules-load.d/virtualbox.conf
+
+vboxdrv
+vboxnetadp
+vboxnetflt
+vboxpci
+=============================================
+da utente normale
+VBoxManage modifyvm nome_macchina --natpf1 "guestssh,tcp,,2222,,22"
+
+
+cambia il nome della virtualmachine. 2222 è il nome dell'host ,22 è il nome della guest
+puoi sostituire le porte anche da gui , -> Network -> Advanced (drop down) -> Port Forwarding
+=================================================================================================

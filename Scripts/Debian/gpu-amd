@@ -1,0 +1,54 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# Codici colore ANSI
+#
+# Black        0;30     Dark Gray     1;30
+# Red          0;31     Light Red     1;31
+# Green        0;32     Light Green   1;32
+# Brown/Orange 0;33     Yellow        1;33
+# Blue         0;34     Light Blue    1;34
+# Purple       0;35     Light Purple  1;35
+# Cyan         0;36     Light Cyan    1;36
+# Light Gray   0;37     White         1;37
+#
+# Costanti
+#
+Cyan='\033[0;36m'	# Cyan
+Red='\033[0;31m'	# Red
+LRed='\033[1;31m'	# Light Red
+Yellow='\033[1;33m'	# Yellow
+Nc='\033[0m' 		# No Color
+#
+# Drivers AMD / ATI
+
+clear
+printf "\n"
+printf "${Cyan}#############################################################\n"
+printf "${Cyan}#                                                           #\n"
+printf "${Cyan}#${Yellow} Drivers Grafici AMD/ATI                   ${Cyan}#\n"
+printf "${Cyan}#                                                           #\n"
+printf "${Cyan}#############################################################${Nc}\n"
+printf "\n"
+
+while true; do
+  read -p "Installo i drivers per schede grafiche AMD/ATI? (S)i, (N)o : " INPUT
+  case $INPUT in
+    [Ss]* ) sudo apt-get -y install firmware-linux llvm-3.9 clang-3.9;
+            printf "\n"
+            printf "Riavvia il sistema affinchè le modifiche abbiano effetto...\n"
+            printf "\n"
+            read -n 1 -s -p "Premi un tasto per continuare "
+            break;;
+    [Nn]* ) clear; break;;
+    * ) printf "\n"; printf "${LRed}Seleziona (S)i o (N)o${Nc}\n\n";;
+  esac
+done
+
+clear

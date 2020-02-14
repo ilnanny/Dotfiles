@@ -1,0 +1,18 @@
+apt-get install build-essential cmake libgtkmm-3.0-dev libssl-dev gettext libarchive-dev
+
+ cmake . && make -j8
+
+
+make install
+
+
+
+
+
+
+
+
+
+
+
+

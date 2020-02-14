@@ -1,0 +1,7 @@
+sudo mkdir /tmp/iso
+sudo mount -o loop /media/Dati/OS/Linux/32BIT/slackellive-openbox-7.1.iso /tmp/iso
+cd /tmp/iso/boot
+  sudo sh install_on_usb.sh --usb /media/Dati/OS/Linux/32BIT/slackellive-openbox-7.1.iso /dev/sde
+  cd ~/
+  sudo umount /tmp/iso
+build-live-system.sh --usb /tmp/live /dev/sdx

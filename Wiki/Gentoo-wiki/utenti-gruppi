@@ -1,0 +1,143 @@
+==================================
+utente ilnanny:
+
+useradd ilnanny -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,input,lp,uucp -s /bin/bash
+
+==================================
+gpasswd -a ilnanny lpadmin
+gpasswd -a ilnanny bluetooth
+gpasswd -a ilnanny scanner
+gpasswd -a ilnanny audio
+gpasswd -a ilnanny video
+gpasswd -a ilnanny usb
+gpasswd -a ilnanny plugdev
+gpasswd -a ilnanny avahi
+gpasswd -a ilnanny ilnanny
+gpasswd -a ilnanny games
+gpasswd -a ilnanny vboxusers
+gpasswd -a ilnanny lightdm
+gpasswd -a ilnanny gdm
+gpasswd -a root   lightdm
+gpasswd -a root  gdm
+gpasswd -a ilnanny lxdm
+gpasswd -a root   lxdm
+gpasswd -a ilnanny netdev
+gpasswd -a ilnanny ntp
+gpasswd -a ilnanny ssh
+gpasswd -a ilnanny tape
+gpasswd -a ilnanny sudo
+gpasswd -a ilnanny disk
+gpasswd -a ilnanny tty
+gpasswd -a ilnanny adm
+gpasswd -a ilnanny sys
+gpasswd -a ilnanny cdrom
+gpasswd -a ilnanny floppy
+gpasswd -a ilnanny shadow
+gpasswd -a ilnanny wheel
+gpasswd -a ilnanny cdrw
+gpasswd -a ilnanny networkmanager
+gpasswd -a ilnanny locate.mpd
+gpasswd -a ilnanny cdemu
+gpasswd -a ilnanny adbusers
+gpasswd -a ilnanny sudoers
+gpasswd -a ilnanny polkitd
+==================================       =================       =================       =================
+==========================================================================================================
+ Gestione dei gruppi
+
+Nel file /etc/group sono definiti i gruppi presenti sul sistema (man group per maggiori informazioni).
+
+Per visualizzare l'appartenenza ai gruppi con il comando groups:
+
+$ groups [user]
+
+Se il parametro user viene omesso, verranno mostrate i gruppi a cui appartiene l'utente corrente.
+
+Il comando id fornisce informazioni aggiuntive, come l'UID dell'utente ed i GID associati:
+
+$ id [user]
+
+Per elencare tutti i gruppi del sistema:
+
+$ cat /etc/group
+
+Per creare un nuovo gruppo usare il comando groupadd:
+
+# groupadd [group]
+
+Aggiungere un utente ad un gruppo con il comando gpasswd:
+
+# gpasswd -a ilnanny [group]
+
+Per eliminare un gruppo esistente:
+
+# groupdel [group]
+
+Per rimuovere un utente da un gruppo:
+
+# gpasswd -d [user] [group]
+
+----
+Cambiare uid 
+
+
+    #  usermod -u 1000 ilnanny 
+
+    # groupmod -g 1000 ilnanny
+
+Adesso mancano tutti gli altri sparsi qua e la.
+
+    # find / -group ilnanny -exec chgrp -h foo {} ;
+    # find / -user ilnanny -exec chown -h foo {} ;
+    
+    -----------
+    vedere i gruppi utente
+    
+    cat /etc/group | grep ilnanny
+    
+==================================
+==================================
+==================================
+Utente cristian
+===============
+useradd cristian -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,lpadmin,plugdev -s /bin/bash
+passwd cristian
+==================================
+gpasswd -a cristian lpadmin
+gpasswd -a cristian bluetooth
+gpasswd -a cristian scanner
+gpasswd -a cristian audio
+gpasswd -a cristian video
+gpasswd -a cristian usb
+gpasswd -a cristian plugdev
+gpasswd -a cristian avahi
+gpasswd -a cristian cristian
+gpasswd -a cristian games
+gpasswd -a cristian vboxusers
+gpasswd -a cristian lightdm
+gpasswd -a cristian gdm
+gpasswd -a root   lightdm
+gpasswd -a root  gdm
+gpasswd -a cristian lxdm
+gpasswd -a root   lxdm
+gpasswd -a cristian netdev
+gpasswd -a cristian ntp
+gpasswd -a cristian ssh
+gpasswd -a cristian tape
+gpasswd -a cristian sudo
+gpasswd -a cristian disk
+gpasswd -a cristian tty
+gpasswd -a cristian adm
+gpasswd -a cristian sys
+gpasswd -a cristian cdrom
+gpasswd -a cristian floppy
+gpasswd -a cristian shadow
+gpasswd -a cristian wheel
+gpasswd -a cristian cdrw
+gpasswd -a cristian networkmanager
+gpasswd -a cristian locate.mpd
+gpasswd -a cristian cdemu
+gpasswd -a cristian adbusers
+gpasswd -a cristian sudoers
+gpasswd -a cristian polkitd
+=======================================

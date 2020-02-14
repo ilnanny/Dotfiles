@@ -1,0 +1,228 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+if [ $USER != "root" ]
+then
+clear
+echo "Script eseguibile solo da root"
+exit
+fi
+if [ "$editor" = "" ];then
+editor1=`which gedit`
+editor2=`which kedit`
+editor3=`which mcedit`
+editor4=`which vi`
+editor=""
+if [ "$editor1" ];then
+editor="gedit"
+elif [ "$editor2" ];then
+editor="gedit"
+elif [ "$editor3" ];then
+editor="luit -encoding ISO-8859-1 mcedit"
+elif [ "$editor4" ];then
+editor="vi"
+else
+editor="less"
+fi
+fi
+#----------------------------------------------------------------------
+
+errore () {
+#chiamare con descrizione errore e dare subito dopo continue se in un ciclo
+zenity --error --text="$1"
+}
+
+avviso () {
+#chiamare con testo messaggio
+zenity --info --text="$1"
+}
+domanda () {
+#chiamare con testo domanda
+zenity --question --text "$1"
+return $?
+}
+
+backup_file () {
+#chiamare con pathname completo
+if cp -p $1 $1.backup;then
+avviso "E' stata creata una copia di \"$1\" in \"$1.backup\""
+else
+errore "Non e' stata creata la copia di \"$1\""
+fi
+}
+
+rename_file () {
+# chiamare con pathname completo
+local dir_file="$(dirname "$1")"
+local old_name="$(basename "$1")"
+local new_name=""
+if new_name=`zenity --entry --width=300 --title="Rename file" --text="Inserisci il nome del nuovo file" --entry-text="$old_name"`;then
+#sostituisce spazi nel nome file con carattere _
+new_name=`echo "$new_name" | sed "s/[^a-zA-Z0-9_-]/_/g"`
+if [ -e "$dir_file/$new_name" ];then
+avviso "Il nome richiesto, \"$new_name\" e\` gia\` assegnato a un documento esistente"
+else
+if mv -f "$1" "$dir_file/$new_name";then
+avviso "$old_name cambiato in $new_name"
+else
+errore "$old_name NON CAMBIATO!"
+fi
+fi
+else
+errore "Errore nella funzione"
+fi
+}
+
+delete_file () {
+#chiamato con pathname completo
+local file_name="$(basename "$1")"
+domanda "Vuoi cancellare il file \"$file_name\?"
+if [ "$?" -eq 0 ];then
+if rm -f "$1";then
+avviso "$file_name cancellato"
+else
+avviso "$file_name NON CANCELLATO!"
+fi
+fi
+}
+
+function permessi_file (){
+# chiamata con pathname completo
+old_permessi=`ls -l $1 | cut -c2-10`
+proprietario=`ls -l $1 | cut -f3 -d" "`
+gruppo=`ls -l $1 | cut -f4 -d" "`
+c=0
+lista=""
+tipo=""
+while [ $c -lt 9 ]; do
+i=`echo "${old_permessi:c:1}"`
+case $c in
+0)tipo="letturaProprietario";;
+1)tipo="scritturaProprietario";;
+2)tipo="esecuzioneProprietario";;
+3)tipo="letturaGruppo";;
+4)tipo="scritturaGruppo";;
+5)tipo="esecuzioneGruppo";;
+6)tipo="letturaAltri";;
+7)tipo="scritturaAltri";;
+8)tipo="esecuzioneAltri";;
+esac
+if [ $i != "-" ];then
+i="TRUE \"$tipo\" "
+else
+i="FALSE \"$tipo\" "
+fi
+lista+=$i
+let c=c+1
+done
+if ans=$(zenity --list --text "Permessi del file:$old_permessi\nProprietario: $proprietario\nGruppo: $gruppo\nPremi SPAZIO per mettere/togliere un permesso.\nClicca su OK per terminare" --checklist --column "Pick" --column "permessi" $lista --separator " ");then
+permessi_user=("u=" "-" "-" "-")
+permessi_gruppo=("g=" "-" "-" "-")
+permessi_altri=("o=" "-" "-" "-")
+for letto in $ans;do
+if [ $letto = "\"letturaProprietario\"" ];then
+permessi_user[1]="r"
+elif [ "$letto" = "\"scritturaProprietario\"" ];then
+permessi_user[2]="w"
+elif [ "$letto" = "\"esecuzioneProprietario\"" ];then
+permessi_user[3]="x"
+elif [ "$letto" = "\"letturaGruppo\"" ];then
+permessi_gruppo[1]="r"
+elif [ "$letto" = "\"scritturaGruppo\"" ];then
+permessi_gruppo[2]="w"
+elif [ "$letto" = "\"esecuzioneGruppo\"" ];then
+permessi_gruppo[3]="x"
+elif [ "$letto" = "\"letturaAltri\"" ];then
+permessi_altri[1]="r"
+elif [ "$letto" = "\"scritturaAltri\"" ];then
+permessi_altri[2]="w"
+elif [ "$letto" = "\"esecuzioneAltri\"" ];then
+permessi_altri[3]="x"
+fi
+done
+permessi_user=`echo "${permessi_user[@]}"`
+permessi_gruppo=`echo "${permessi_gruppo[@]}"`
+permessi_altri=`echo "${permessi_altri[@]}"`
+
+permessi_user=`echo ${permessi_user//-/}`
+permessi_user=`echo ${permessi_user// /}`
+permessi_gruppo=`echo ${permessi_gruppo//-/}`
+permessi_gruppo=`echo ${permessi_gruppo// /}`
+permessi_altri=`echo ${permessi_altri//-/}`
+permessi_altri=`echo ${permessi_altri// /}`
+domanda "Vuoi sostituire\nVecchi permessi: $old_permessi \ncon\n Nuovi permessi: $permessi_user $permessi_gruppo $permessi_altri \n?"
+case $? in
+0)chmod $permessi_user $1;chmod $permessi_gruppo $1;chmod $permessi_altri $1;break;;
+esac
+fi
+return
+}
+
+function select_opz_file (){
+# chiamata con nome file, pathname completo ed ultimo carattere del file
+if [ "$3" = "@" ];then
+d=$(ls -l "$2")
+#trova ultimo campo con separatore spazio
+link_file=${d##* }
+avviso "$dir_init$fileread e' un Link a\n$link_file"
+return
+fi
+opzioni="false Backup_file false Rinomina_file false Cancella_file false Permessi_file false Visualizza_in_pannello false Apri_file"
+
+if [ "$3" = "*" -o "$3" = "h" ];then
+opzioni="false Backup_file false Rinomina_file false Cancella_file false Permessi_file false Visualizza_in_pannello false Apri_file false Lancia_file"
+fi
+nome_file=$(basename "$2")
+menu=` zenity --title "Opzioni file $nome_file" --list --radiolist --column=" " --column="fai una scelta" $opzioni `
+while true; do
+case $menu in
+Backup_file)backup_file "$2";break;;
+Rinomina_file)rename_file "$2";break;;
+Cancella_file)delete_file "$2";break;;
+Permessi_file)permessi_file "$2";break;;
+Visualizza_in_pannello)
+zenity --text-info --width 630 --title="Visualizza $1" --filename="$2" ;break;;
+Apri_file)clear;`$editor $2` 2> /dev/null;break;;
+Lancia_file)
+if [ "$3" = "h" ];then
+x-www-browser "$2" 2> /dev/null
+break
+else
+clear
+bash "$2"
+break
+fi
+;;
+*)break
+esac
+done
+return
+}
+
+function select_file (){
+while true; do
+if path_fileread=$(zenity --file-selection --separator=$);then
+fileread=$(basename $path_fileread)
+i=$(ls -F $path_fileread)
+l_string=${#i}
+# tiene conto che la posizione dei caratteri nella stringa parte da 0
+l_string=`expr $l_string - 1`
+ultimo_car=${i:l_string:1}
+estensione=${fileread##*.}
+if [ "$estensione" = "html" -o "$estensione" = "htm" ];then
+ultimo_car="h"
+fi
+select_opz_file "$fileread" "$path_fileread" "$ultimo_car"
+else
+break
+fi
+done
+}
+
+select_file

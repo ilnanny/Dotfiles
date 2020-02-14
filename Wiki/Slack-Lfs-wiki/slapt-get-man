@@ -1,0 +1,44 @@
+root@LFS:~# slapt-get 
+slapt-get - Jason Woodward <woodwardj at jaos dot org>
+Un'implementazione del sistema APT di Debian per Slackware
+Utilizzo:
+slapt-get [opzione(i)] [obbiettivo]
+
+Obbiettivi:
+  -u, --update   recupera i dati dei pacchetti dal MIRROR
+  --upgrade      aggiorna i pacchetti installati
+  --dist-upgrade aggiorna ad una nuova release
+  -i, --install  [nome pacchetto/i] - installa il pacchetto/i specificato
+  --install-set  [disk set(s)] - installa la serie specificata (es: a ap ...)
+  --remove       [nome pacchetto/i] - rimuovi il pacchetto/i specificato
+  --show         [nome pacchetto/i] - visualizza la descrizione del pacchetto/i
+  --filelist     [nome pacchetto/i] - visualizza i file installati dal pacchetto/i
+  --search       [espressione] - cerca i pacchetti disponibili
+  --list         elenca i pacchetti
+  --available    elenca i pacchetti disponibili
+  --installed    elenca i pacchetti installati
+  --clean        elimina i pacchetti temporanei
+  --autoclean    elimina solo i vecchi pacchetti dalla cache
+  --add-keys     recupera le chiavi GPG per ongi sorgente
+  -h, --help     visualizza questo help ed esci
+  --version      stampa informazioni su versione e licenza
+
+Opzioni:
+  -d, --download-only     scarica i pacchetti invece di installare/aggiornare
+  -s, --simulate          mostra i pacchetti da installare/aggiornare
+  -y, --no-prompt         non chiedere conferma durante l'installazione/aggiornamento
+  -p, --prompt            chiedi sempre cosa fare durante l'installazione/aggiornamento
+  --reinstall             reinstalla il pacchetto
+  --ignore-excludes       escludere dall'installazione/aggiornamento
+  --no-md5                non eseguire il controllo sulla somma md5
+  --no-dep                salta il controllo delle dipendenze
+  --ignore-dep            ignorare gli errori nelle dipendenze
+  --print-uris            stampa solo le URI, senza effettuare il download
+  -S, --show-stats        visualizza le statistiche dei download
+  -c, --config []         specifica un file di configurazione alternativo
+  --remove-obsolete       rimuovi i pacchetti obsoleti
+  --retry []              specifica il numero di tentativi di download per singolo pacchetto
+  --no-upgrade            installa il pacchetto senza provare ad aggiornare
+  --allow-unauthenticated allow unauthenticated packages
+ 
+

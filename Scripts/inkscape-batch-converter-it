@@ -1,0 +1,58 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+#Script per convertire alcuni formati di file immagine in altri ,tramite Inkscape.
+count=0
+validInput1="svg"
+validInput2="pdf"
+validInput3="eps"
+validOutput1="eps"
+validOutput2="pdf"
+validOutput3="png"
+
+echo "Questo script consente di convertire tutti i file in questa cartella da un tipo di file a un altro."
+
+valid=0
+echo "Tipi di file consentiti per l'origine: $validInput1, $validInput2, $validInput3"
+while [ "$valid" != "1" ]
+do
+    read -p "Quale tipo di file vuoi usare come fonte? " sourceType
+    if [ "$sourceType" = "$validInput1" ] || [ "$sourceType" = "$validInput2" ] || [ "$sourceType" = "$validInput3" ]; then
+        valid=1
+    else
+        echo "Inserimento non valido! Si prega di utilizzare uno dei seguenti: $validInput1, $validInput2, $validInput3"
+    fi
+done
+
+valid=0
+echo "Tipi di file consentiti per l'output: $validOutput1, $validOutput2, $validOutput3"
+while [ "$valid" != "1" ]
+do
+    read -p "A quale tipo di file vuoi convertire? " outputType
+    if [ "$outputType" = "$validOutput1" ] || [ "$outputType" = "$validOutput2" ] || [ "$outputType" = "$validOutput3" ]; then
+        valid=1
+    else
+        echo "Inserimento non valido! Si prega di utilizzare uno dei seguenti: $validOutput1, $validOutput2, $validOutput3"
+    fi
+done
+
+read -p "Con quale dpi dovrebbe essere esportato (es. 300)? " dpi
+
+for fileSource in *.$sourceType
+do
+    if [ -f "$fileSource" ]; then    
+        count=$((count+1))
+        file=$(echo $fileSource | cut -d'.' -f1)
+        echo $count". "$fileSource" -> "$file.$outputType
+        inkscape $fileSource --export-$outputType=$file.$outputType --export-dpi=$dpi
+    else
+        echo "nessun file  $fileSource trovato!"
+    fi
+done
+echo "$count file(s) converted!"

@@ -1,0 +1,20 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+#nascondi un file .zip dietro un immagine
+
+cat picture.png archive.rar > hidden_archive_in_pic.png
+cat picture.png archive.zip > nome_visualizzato.png
+
+#Per windows
+
+#copy picture.png + archive.rar hidden_archive_in_pic.png
+
+
+#per recuperare il file ,basta rinominarlo in rar,

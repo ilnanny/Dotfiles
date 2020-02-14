@@ -1,0 +1,13 @@
+Screenshoot con 'import'.
+dipendenze :imagemagik
+___________________________________________________________________
+Schermo intero con 5 secondi di ritardo:
+
+   sleep 5;  import -window root ~/Immagini/screenshot.png
+
+___________________________________________________________________
+Porzione di schermo
+    
+    import screenshot.png
+___________________________________________________________________
+adesso con il puntatore del mouse-selezionare l'area da catturare.    

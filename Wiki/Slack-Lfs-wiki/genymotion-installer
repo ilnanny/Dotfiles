@@ -1,0 +1,30 @@
+Installation
+Genymotion operation relies on the use of Oracle VM VirtualBox in the background. This enables virtualizing Android operating systems. If you do not already have Oracle VM VirtualBox installed, you will be asked to do so prior to installing Genymotion.
+
+If you already have Oracle VM VirtualBox, make sure you have the version recommended for your operating system, as detailed in section Software.
+
+To install Genymotion, follow the steps corresponding to your operating system.
+
+ClosedWindows
+ClosedmacOS
+OpenLinux
+Almost every GNU/Linux system comes with an installer package for Oracle VM VirtualBox.
+
+Browse for the Oracle VM VirtualBox installer in your directories. 
+If you do not have the installer or if you need to install a specific version, download and install VirtualBox for Linux hosts from the Download VirtualBox page.
+When installing VirtualBox, in the Custom setup window, make sure VirtualBox Networking is enabled.
+
+Go to the Genymotion download page and download the Linux package corresponding to your system.
+Run the following commands:
+chmod +x <Genymotion installer path>/genymotion-<version>_<arch>.bin
+
+cd <Genymotion installer path>
+./genymotion-<version>_<arch>.bin -d <Genymotion installer path>
+
+Run Genymotion using the following command:
+cd <Genymotion installer path>
+./genymotion
+
+Make sure that the dkms package is installed and that it compiles VirtualBox kernel modules each time a new kernel update is available.
+To do so, run sudo /etc/init.d/vboxdrv status. You should get the message "VirtualBox kernel modules (vboxdrv, vboxnetflt, vboxnetadp, vboxpci) are loaded". If not, force VirtualBox kernel modules compilation by running sudo /etc/init.d/vboxdrv setup.
+Make also sure that you are part of the vboxusers group. If not, run sudo usermod -a -G vboxusers <login>.

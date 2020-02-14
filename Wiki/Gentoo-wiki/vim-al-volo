@@ -1,0 +1,110 @@
+Iniziare a scrivere
+
+Per aprire vim basta aprire un terminale, scrivere vim seguito dal nome del file .
+
+ vim /home/max/testo.txt
+
+
+Per salvare il documento, dopo aver premuto ESC, scriviamo:
+
+:w
+
+Premiamo invio e il documento sarà salvato.
+
+Se intendiamo fare altre modifiche, premiamo nuovamente i.
+
+Quando siamo soddisfatti del lavoro svolto, possiamo salvare e chiudere il documento
+
+:wq
+-----------------------------------------------
+Elenco sintetico dei comandi più utili :
+
+##  Iniziare a scrivere
+    i - per inserire dei caratteri dalla posizione corrente. 
+    a - per appendere i caratteri dopo la posizione corrente.
+    I - per inserire testo all'inizio della riga corrente. 
+    A - per inserire testo alla fine della posizione corrente
+
+##  Comandi per salvare e chiudere i documenti
+    :q – per uscire 
+    :w – per salvare 
+    :wq - per salvare e uscire 
+    :q! – per uscire senza salvare 
+
+##  Copia / Incolla
+    yy - copia la riga attuale (es. 20yy copia 20 righe); 
+    p - paste della riga in memoria;
+
+##  Cancellazione righe e caratteri
+    x – cancella il carattere sotto il cursore; 
+    X – cancella il carattere alla sinistra del cursore; 
+    D – cancella dalla posizione del cursore alla fine della riga; 
+    dd – cancella tutta la riga (sulla quale è posizionato il cursore). 
+    ndd – cancella le n righe successive al cursore (es. 20dd cancella 20 righe dalla attuale in giu’).
+
+##  Spostarsi nel file
+    h j k l - corrispondono a sinistra giu su destra; nelle versioni più recenti si possono utilizzare i tasti cursore e non serve passare alla modalità comando
+    ^ - inizio riga; 
+    $ - fine riga; 
+    G – fine del file; 
+    1G – inizio del file (in alternativa è possibile usare il comando gg).
+
+##  Cercare e sostituire
+    /testo – cerca testo dalla posizione attuale in giu’; 
+    ?testo – cerca testo dalla posizione attuale in su; 
+    cw – sostituisce la parola sotto il cursore; 
+    C – sostituisce fino alla fine della riga; 
+    :1,$s/testo1/testo2/g – sostituisce testo1 con testo2 in tutto il documento. (funziona anche :%s/testo1/testo2/g)
+    n – ripete l’ultima ricerca 
+    N – ripete l’ultima ricerca inversa
+
+##  Altri comandi
+    ctrl-f, ctrl-b muove il cursore avanti / indietro
+    H, M, L - muove il cursore alla prima riga, all'ultima o a quella nel mezzo dello schermo
+    w - muove il cursore all'inizio della parola sucessiva
+    e - muove il cursore alla fine della parola sucessiva
+    b - muove il cursore all'inizio della parola precedente
+    o - muove il cursore all'inizio della riga corrente
+    ^ - muove il cursore nella posizione del primo carattere della linea che non sia un whitespace
+    $ muove il cursore alla fine della linea corrente
+    /string - cerca nel file la stringa string
+     ?string - cerca "all'indietro " nel file la stringa string
+    n - cerca l'occorrenza della stringa sucessiva ( in avanti o all'indietro)
+    nrc - rimpiazza n caratteri con c a partire dalla posizione del cursore
+    nx - cancella n caratteri dalla popsizione del cursore
+    ndw - cancella n parole dalla popsizione del cursore
+    ndb - cancella n parole prima del cursore
+    ndd - cancella n linee a partire da quella del cursore
+    d$ - cancella tutti i caratteri dalla popsizione del cursore fino alla fine della linea
+    d0 - cancella tutti i caratteri dalla popsizione del cursore fino all'inizio della linea
+    J - unisce la linea corrente alla sucessiva
+    p - incolla il testo copiato / cancellato a destra del cursore
+    p - incolla il testo copiato / cancellato a sinistra del cursore
+    u - annulla l'ultimo comando
+    . - ripete l'ultimo comando
+    ZZ - termina l'esecuzione di vi salvando le modifiche
+    :r file - legge il contenuto nel file file inserendolo dopo la posizione del cursore
+    :e file - edita il file file, sostituendo il contenuto corrente
+    :f file - cambia il nome del contenuto corrente in file
+    :f - stampa il nome e lo stato del testo corrente
+    :n - sposta il cursore alla linea n
+    :/str/ - sposta il cursore alla prossima linea contenente str
+    :s/str1/str2/ - sostituisce la prima occorrenza di str1 sulla linea con str2
+    set option - definisce un'opzione ,e.g. :set number aggiunge i numeri di linea 
+
+##  Alcune delle opzioni più importanti
+    (no)autoindent - Indentazione automatica 
+    directory - Indentazione automatica 
+    (no)ignorecase - Distinzione maiuscole/ minuscole 
+    (no)number - Mostra i numeri delle righe 
+    tabstop - Numero di caratteri del tabulatore 
+    term - Tipo di terminale
+
+## 
+##  Commentare diverse righe
+
+##  Ecco un comando utile per commentare 100 righe:
+
+:1,110s/^/\#/g
+
+commenta le righe da 10 a 110 aggiungendo a inizio riga il cancelletto 

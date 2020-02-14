@@ -1,0 +1,42 @@
+Aggiorna:
+check
+Installa ambiente grafico e dm:
+get xfce4 xfce4-extra
+get slim
+
+Crea il collegamento a xinitrc
+cp /etc/X11/app-defaults/xinitrc ~/.xinitrc
+exec xfce4
+Scheda video
+get xorg-xf86-video-ati
+
+Usefull applications
+
+get zip unzip
+get xdg-user-dirs sound-theme-freedesktop
+get gvfs
+get alsa-utils pavucontrol
+get ntfs-3g
+get firefox
+get thunderbird
+get libreoffice
+get xorg-xf86-input-synaptics
+get network-manager-applet
+
+sudo reboot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

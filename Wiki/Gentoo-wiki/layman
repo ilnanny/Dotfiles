@@ -1,0 +1,39 @@
+
+
+==  Installare layman
+
+emerge layman
+
+==  Informare Portage sui repository acquisiti da layman
+
+echo "source /var/lib/layman/make.conf" >> /etc/portage/make.conf
+
+==  Elencare gli Overlay disponibili
+
+layman -L
+
+==  Installare un Overlay
+
+Codice 2.4: Aggiungere un overlay
+
+layman -a <nome-overlay>
+
+Per esempio, per installare l'overlay PHP, eseguire:
+
+Codice 2.5: Aggiungere l'overlay PHP
+
+layman -a php
+
+==  Installare un pacchetto da un overlay
+
+emerge -av <categoria>/<pacchetto>
+
+
+==  Aggiornare tutti gli Overlay Installati
+
+layman -S
+
+==  Eliminare un overlay
+
+layman -d nomeOverlay
+================================================

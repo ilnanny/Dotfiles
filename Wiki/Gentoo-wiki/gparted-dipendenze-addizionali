@@ -1,0 +1,36 @@
+
+ilnanny@Debian:~$ apt-cache depends gparted
+gparted
+  Dipende: libatkmm-1.6-1v5
+  Dipende: libc6
+  Dipende: libgcc1
+  Dipende: libglib2.0-0
+  Dipende: libglibmm-2.4-1v5
+  Dipende: libgtk2.0-0
+  Dipende: libgtkmm-2.4-1v5
+  Dipende: libpangomm-1.4-1v5
+  Dipende: libparted-fs-resize0
+  Dipende: libparted2
+  Dipende: libsigc++-2.0-0v5
+  Dipende: libstdc++6
+  Dipende: libuuid1
+  Rompe: udisks2
+  Consiglia: xfsprogs
+  Consiglia: reiserfsprogs
+  Consiglia: reiser4progs
+  Consiglia: jfsutils
+  Consiglia: ntfs-3g
+  Consiglia: dosfstools
+  Consiglia: mtools
+  Consiglia: yelp
+  Consiglia: kpartx
+  Consiglia: dmraid
+  Consiglia: dmsetup
+    dmsetup:i386
+  Consiglia: gpart
+
+
+
+
+
+apt install -y xfsprogs reiserfsprogs reiser4progs jfsutils dmsetup dmraid gpart dmraid kpartx mtools dosfstools ntfs-3g gparted

@@ -1,0 +1,286 @@
+
+
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# Codici colore ANSI
+#
+# Black        0;30     Dark Gray     1;30
+# Red          0;31     Light Red     1;31
+# Green        0;32     Light Green   1;32
+# Brown/Orange 0;33     Yellow        1;33
+# Blue         0;34     Light Blue    1;34
+# Purple       0;35     Light Purple  1;35
+# Cyan         0;36     Light Cyan    1;36
+# Light Gray   0;37     White         1;37
+#
+# Costanti
+#
+NONE='\033[00m'
+RED='\033[01;31m'
+GREEN='\033[01;32m'
+YELLOW='\033[01;33m'
+PURPLE='\033[01;35m'
+CYAN='\033[01;36m'
+WHITE='\033[01;37m'
+BOLD='\033[1m'
+UNDERLINE='\033[4m'
+#
+# RIPRISTINO BACKUP DOTFILES Gentoo LINUX
+clear
+printf "\n"
+printf "${RED}=========================================================================\n"
+printf ""
+printf "${YELLOW}   COPIA QUESTO SCRIPT NELLA ROOT ED ESEGUILO DA UNA CONSOLLE TTY\n"
+printf "${YELLOW}   ASSICURATI CHE IL DISCO DATI SIA MONTATO IN /media/Dati IN FSTAB\n"
+printf "${YELLOW}                 E CHE SIA ATTIVA LA CONNESSIONE DI RETE\n"
+printf ""
+printf "${RED}=========================================================================\n"
+printf "\n"
+
+while true; do
+  read -p "Digita 1 per continuare oppure  2 per uscire : " INPUT
+  case $INPUT in
+    [1]* )
+    printf "${GREEN}Copio le configurazioni da Dotfiles a ~/home e /root\n"
+cp -a -r /media/Dati/Git/Dotfiles/.fonts/  /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Modelli/ /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.Xdefaults /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.bash_profile /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.bashrc /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.config /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.conky /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.conkyrc /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.dmrc /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.face /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.xinitrc /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.xsession /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Dotfiles /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Git /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Scripts /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/bashrc /home/ilnanny/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/conkyrc /home/ilnanny/
+
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.Xdefaults /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.bash_profile /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.bashrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.config /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.conkyrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.dmrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.face /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.xinitrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/.xsession /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Dotfiles /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Git /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/Scripts /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/bashrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/conkyrc /root/
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/home/post-install /root/
+
+printf "${GREEN}Assegno i permessi di scrittura a ~/home e /root \n"
+
+chown -R ilnanny /home/ilnanny && chmod -R 755 /home/ilnanny
+chmod -R 755 /root/
+
+printf "${GREEN}Copio Portage in /etc \n"
+cp -a -r /media/Dati/Git/Dotfiles/Gentoo/portage/ /etc/
+chmod -R +x /etc/portage/
+
+printf "${GREEN}Cambio i nomi delle interfacce di rete  \n"
+cp -a -r /media/Dati/Git/Dotfiles/01-Files/etc-udev/rete/rules.d/ /etc/udev/
+chmod -R +x /etc/udev/rules.d/
+
+printf "${GREEN}Aggiungi l'utente a Sudoers\n"
+printf "${YELLOW}Togli la spunta a '%wheel ALL=(ALL) NOPASSWD: ALL'\n"
+nano -w /etc/sudoers
+
+printf "${GREEN}Aggiungo l'utente ilnanny ai gruppi più usati\n"
+gpasswd -a ilnanny adbusers
+gpasswd -a ilnanny adm
+gpasswd -a ilnanny audio
+gpasswd -a ilnanny avahi
+gpasswd -a ilnanny bluetooth
+gpasswd -a ilnanny cdemu
+gpasswd -a ilnanny cdrom
+gpasswd -a ilnanny cdrw
+gpasswd -a ilnanny colord
+gpasswd -a ilnanny deluge
+gpasswd -a ilnanny disk
+gpasswd -a ilnanny floppy
+gpasswd -a ilnanny games
+gpasswd -a ilnanny gdm
+gpasswd -a ilnanny ilnanny
+gpasswd -a ilnanny input
+gpasswd -a ilnanny lightdm
+gpasswd -a ilnanny locate.mpd
+gpasswd -a ilnanny lpadmin
+gpasswd -a ilnanny lxdm
+gpasswd -a ilnanny man
+gpasswd -a ilnanny netdev
+gpasswd -a ilnanny networkmanager
+gpasswd -a ilnanny news
+gpasswd -a ilnanny ntp
+gpasswd -a ilnanny plugdev
+gpasswd -a ilnanny polkitd
+gpasswd -a ilnanny sambashare
+gpasswd -a ilnanny scanner
+gpasswd -a ilnanny shadow
+gpasswd -a ilnanny ssh
+gpasswd -a ilnanny sshd
+gpasswd -a ilnanny sudo
+gpasswd -a ilnanny sudoers
+gpasswd -a ilnanny sys
+gpasswd -a ilnanny tape
+gpasswd -a ilnanny tty
+gpasswd -a ilnanny usb
+gpasswd -a ilnanny vboxusers
+gpasswd -a ilnanny video
+gpasswd -a ilnanny wheel
+gpasswd -a root gdm
+gpasswd -a root lightdm
+gpasswd -a root lxdm
+
+
+printf "${GREEN}Copio gli Sfondi\n"
+cp  /media/Dati/Git/Dotfiles/01-Files/1080p/*.png  /usr/share/backgrounds/
+
+printf "${GREEN}Copio i Templates di Inkscape\n"
+rm -r /usr/share/inkscape/templates
+cp -a -r /media/Dati/Git/Dotfiles/01-Files/Inkscape-Template/templates/ /usr/share/inkscape/
+
+printf "${GREEN}Copio gli Script in /usr/local/bin\n"
+sh /media/Dati/Git/Dotfiles/Scripts/links
+
+printf "${GREEN}Ripristino dei Dotfiles Completo\n"
+
+printf "${YELLOW}Chiudi la sessione TTY e riavvia\n"; break;;
+    [2]* ) printf "${YELLOW}Chiudi la sessione TTY corrente\n"; break;;
+    * ) printf "\n"; printf "${RED}Digita: (1,2)${Nc}\n\n";;
+  esac
+done
+
+printf "\n"
+read -n 1 -s -p "Premi Invio per Continuare"
+clear
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

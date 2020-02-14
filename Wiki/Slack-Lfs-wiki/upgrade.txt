@@ -1,0 +1,7 @@
+slapt-get --dist-upgrade --ignore-excludes --download-only
+telinit 1
+slapt-get --install kernel --no-upgrade
+slapt-get --dist-upgrade --ignore-excludes
+telinit 3
+slapt-get --remove-obsolete
+slapt-get --upgrade --install-set a ap d f k xfce l n t tcl x xap y

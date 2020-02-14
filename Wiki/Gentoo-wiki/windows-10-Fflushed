@@ -1,0 +1,21 @@
+Potrebbe verificarsi il problema di non poter più visualizzare e montare le partizioni NTFS. In tal caso si dice che la partizione è diventata «flushed», ovvero il filesystem NTFS necessita di un aggiornamento della tabella dei cluster. Questo si può verificare quando una partizione viene smontata improvvisamente.
+
+
+
+Tale errore si potrebbe verificare anche durante l'esecuzione delle istruzioni contenute nella presente guida.
+
+Per risolvere questo problema, seguire uno a scelta dei seguenti metodi:
+
+Da Windows: riavviare il computer e selezionare il sistema operativo Windows, in modo tale che provveda automaticamente a sistemare la tabella dei cluster del disco fisso; oppure eseguire da console:
+
+chkdsk /f /r
+Da linux :
+
+Installare il pacchetto ntfsprogs se assente.
+
+Assicurarsi che la partizione in oggetto non sia montata.
+Eseguire il controllo digitando in un terminale:
+
+sudo ntfsfix /dev/sda1
+sudo ntfsfix /dev/sdd1
+avendo cura di sostituire la dicitura /dev/NOME_PARTIZIONE con il percorso del dispositivo.

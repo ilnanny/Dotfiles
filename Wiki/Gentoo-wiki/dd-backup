@@ -1,0 +1,14 @@
+
+
+##Backup Root ==dd==
+dcfldd if=/dev/sda2 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/Backup-Gentoo/backup_root.img.gz		
+
+##Restore Root
+gunzip -c /media/500GB/A-Backup/Backup-Gentoo/backup_root.img.gz | dcfldd of=/dev/sda2
+
+
+##Backup Home ==dd==
+dcfldd if=/dev/sda5 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/Backup-Gentoo/backup_home.img.gz		
+
+##Restore Home
+gunzip -c /media/500GB/A-Backup/Backup-Gentoo/backup_home.img.gz | dcfldd of=/dev/sda5

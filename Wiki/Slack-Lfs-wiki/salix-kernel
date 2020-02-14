@@ -1,0 +1,34 @@
+Usually when I have this problem it is because of a mismatch between the kernel being booted and the installed kernel modules. Did you upgrade the kernel modules? Check which kernel packages are installed by doing the following in a terminal"
+CODE: SELECT ALL
+
+ls -l /var/log/packages/ | grep "kernel-"
+If everything is upgraded to the lastest kernel (4.4.118) then it should look like this:
+CODE: SELECT ALL
+
+rich[~]$ ls -l /var/log/packages/ | grep "kernel-"
+-rw-r--r-- 1 root root   61120 Mar  1 19:28 kernel-firmware-20180222_7344ec9-noarch-1
+-rw-r--r-- 1 root root   25143 Mar  1 19:28 kernel-headers-4.4.118-x86-1
+-rw-r--r-- 1 root root    1023 Mar  1 19:28 kernel-huge-4.4.118-x86_64-1
+-rw-r--r-- 1 root root  253586 Mar  1 19:28 kernel-modules-4.4.118-x86_64-1
+-rw-r--r-- 1 root root 3478993 Mar  1 19:28 kernel-source-4.4.118-noarch-1
+If any of these packages are not the 4.4.118 version then you need to install the latest packages by either using spi or slapt-get. The following command, using slapt-get will upgrades all five of these packages if they are not already up to the lastest version.
+CODE: SELECT ALL
+
+$ sudo slapt-get -i kernel-huge kernel-headers kernel-modules kernel-firmware kernel-source
+Note that even though you copied over the 4.4.29 kernel to vmlinuz, the package management system will still think that you have the 4.4.118 package installed and will not install it. So you will need to copy the 4.4.118 kernel back to vmlinuz.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+wget https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.1.4.tar.xz
+sudo tar xf linux-4.1.4.tar.xz -C /usr/src/
+sudo ln -sf /usr/src/linux-4.1.4 /usr/src/linux
+
+
+Now some files need to be created so the the Nvidia installer can successfully compile the kernel module. To do that, we also need the kernel config, which can be found under /proc
+CODE: SELECT ALL
+
+sudo zcat /proc/config.gz > /usr/src/linux/.config
+cd /usr/src/linux
+
+#Fixes error "include/generated/autoconf.h or include/config/auto.conf are missing"
+sudo make oldconfig && make prepare
+
+#Fixes a further erro

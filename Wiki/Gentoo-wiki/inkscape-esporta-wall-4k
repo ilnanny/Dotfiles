@@ -1,0 +1,11 @@
+# == Esporta wallpapers da .svg a .png con risoluzione  '4k' ==> 3840x2560 px
+# == Dipendenze: inkscape ; libpng
+#____________________________________
+#
+# Se il file è 1920x1080 :
+
+for i in *; do inkscape $i -d=192 -C --export-png=`echo $i | sed -e s/svg$/png/`; done
+
+# Se il file è 960x540 :
+
+for i in *; do inkscape $i -d=384 -C --export-png=`echo $i | sed -e s/svg$/png/`; done

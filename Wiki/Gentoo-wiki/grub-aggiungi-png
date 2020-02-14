@@ -1,0 +1,24 @@
+Spostare l'immagine desiderata (es.cow.png) in:
+
+/boot/grub/
+
+modificare il file :
+
+geany /etc/default/grub
+
+aggiungendo le linee
+
+GRUB_BACKGROUND=/boot/grub/larrygrub.png
+
+
+
+GRUB_GFXMODE=1024x768
+
+
+infine :
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+

@@ -1,0 +1,81 @@
+
+
+===============================   Note sul Software   ================================
+
+# mkstage4
+_____________________________________________________________________________________
+Installazione:
+Lo script può essere eseguito direttamente dalla cartella di origine clonata da github:
+
+  git clone https://github.com/TheChymera/mkstage4.git /your/mkstage4/directory
+  cd /your/mkstage4/directory
+  chmod +x mkstage4.sh
+_____________________________________________________________________________________
+
+Per Gentoo Linux e Derivative , mkstage4 è anche disponibile in Portage tramite l'overlay chymeric : https://github.com/TheChymera/overlay
+Dopo aver abilitato l'overlay, basta eseguire il seguente comando:
+
+  emerge app-backup/mkstage4
+
+_____________________________________________________________________________________
+  Utilizzo :
+  
+Archivia il tuo sistema attuale (montato su /):
+
+ cd /media/Dati/ && mkstage4 -s backup1.tar.bz2
+
+Sistema di archiviazione situato in un punto di montaggio personalizzato:
+
+  mkstage4 -t /custom/mount/point nome_archivio
+
+es:
+
+  mkstage4 -t /media/Dati/Backup/Gentoo backup_20190416.tar.bz2
+_____________________________________________________________________________________
+Argomenti della riga di comando:
+
+  mkstage4.sh [-q -c -b -l -k -p] [-s || -t <target-mountpoint>] [-e <additional excludes dir*>] <archive-filename> [custom-tar-options]
+   -q: attiva la modalità silenziosa (nessuna conferma).
+   -c: esclude gli elenchi di rete di Connman.
+   -b: esclude la directory di boot.
+   -l: esclude la directory lost+found.
+   -p: comprime parallelamente usando pbzip2.
+   -e: esclude un'ulteriore directory (una dir uno -e).
+   -s: crea un tarball del sistema attuale.
+   -k: salva separatamente i moduli del kernel correnti e src (decompressione più veloce).
+   -t: crea un tarball del sistema situato in <target-mountpoint>.
+   -h: visualizza il messaggio di aiuto.
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+Estrarre i Tarball
+
+I tarball creati con mkstage4 possono essere estratti con:
+
+tar xvjpf backup_genbox.tar.bz2 -C /run/media/ilnanny/Gentoo/
+
+
+Se si usa l'opzione -k,  src e moduli verranno estratte separatamente.:
+
+tar xvjpf archive_name.tar.bz2.kmod
+tar xvjpf archive_name.tar.bz2.ksrc
+
+Se hai installato pbzip2, puoi estrarre parallelamente con:
+
+tar -I pbzip2 -xvf archive_name.tar.bz2
+
+
+_____________________________________________________________________________________
+_____________________________________________________________________________________
+dipendenze basilari :
+
+bash   - in Portage come app-shells/bash
+tar    - in Portage come app-arch/tar
+pbzip2 - in Portage come app-arch/pbzip2
+_____________________________________________________________________________________
+
+Rilasciato con licenza GPLv3. Progetto guidato da Horea Christian (h.chr@mail.ru).
+Progetto originale su github : https://github.com/TheChymera/mkstage4
+_____________________________________________________________________________________
+esempio :
+alias backup="tar -cjpP --ignore-failed-read --exclude=/home/*/.bash_history --exclude=/dev/* --exclude=/media/* --exclude=/mnt/*/* --exclude=/proc/* --exclude=/run/* --exclude=/sys/* --exclude=/tmp/* --exclude=/usr/portage/* --exclude=/var/lock/* --exclude=/var/log/* --exclude=/var/run/* --exclude=media/Dati/backup.tar.bz2  -f /media/Dati/backup1.tar.bz2 /*"
+_____________________________________________________________________________________

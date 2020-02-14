@@ -1,0 +1,24 @@
+
+[12:10][Root]/: xrandr | grep connected
+HDMI-0 disconnected (normal left inverted right x axis y axis)
+DVI-0 connected 1024x768+1280+0 (normal left inverted right x axis y axis) 0mm x 0mm
+VGA-0 connected primary 1280x1024+0+0 (normal left inverted right x axis y axis) 338mm x 270mm
+
+
+
+
+[12:13][Root]/:gtf 1280 1024 60 | grep Modeline
+  Modeline "1280x1024_60.00"  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync
+
+
+
+
+sudo geany /usr/bin/ris_pred
+
+==================================================================================================
+
+da root lancia :
+
+xrandr --newmode "1280x1024_60.00"  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync
+xrandr --addmode DVI-0 1280x1024_60.00
+xrandr --output DVI-0 --mode 1280x1024_60.00

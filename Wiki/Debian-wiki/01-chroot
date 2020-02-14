@@ -1,0 +1,42 @@
+
+
+## Montare la partizione sulla quale risiede il sistema
+
+mount /dev/sdb1 /mnt
+mount -o remount,rw /dev/sdb1 /mnt
+
+mount --rbind /dev /mnt/dev
+mount --rbind /sys /mnt/sys
+mount --rbind /proc /mnt/proc
+
+
+chroot /mnt /bin/bash --login
+export PS1="(chroot) $PS1"
+
+grub-install /dev/sda
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+## Uscire dal chroot:
+
+exit
+cd ~
+umount -f /mnt/dev
+umount -f /mnt/proc
+umount -f /mnt/sys
+
+umount -f /mnt/
+
+reboot 
+
+
+---------------------in estremis-----------------\\\ 
+ fuser -k /mnt/                                                            
+------------------------------------------------//// 
+## Se si ricevono errori è possibile riprovare :
+
+grub-install --recheck /dev/sda
+
+-------------
+

@@ -1,0 +1,72 @@
+   sudo apt-get install build-essential cpanminus git
+
+
+
+    git clone git://github.com/trizen/obmenu-generator
+    sudo cp obmenu-generator/obmenu-generator /usr/bin
+    sudo cp -r obmenu-generator/schema.pl ~/.config/obmenu-generator
+    sudo cpanm Linux::DesktopFiles
+    sudo cpanm Data::Dump
+    sudo chmod 777 /usr/bin/obmenu-generator
+
+------------------------------------------------------------------------------------------------
+
+sudo geany /etc/apt/sources.list.d/sparky.list
+------
+## sparky
+deb http://sparkylinux.org/repo testing main
+
+----
+sudo apt-get update
+sudo apt-get install sparky-keyring
+sudo apt-get update
+sudo apt-get install obmenu-generator 
+
+---------------------------------------------------------------------------------------------
+ sudo apt-get install lxmed
+______________________________________________________________________________________________
+
+
+
+Schema Root Menu with 16 Pipe Menus
+
+PipeMenu Entries in schema.pl 	                                                      Download from lxlinux
+
+{pipe => ['pcmanfm-bookmarks.pl', 'Bookmarks', '']},   	                              curl -O http://lxlinux.com/pcmanfm-bookmarks.pl
+{pipe => ['bl-kb-pipemenu', 'Keybinds', '']},	                                      curl -O http://lxlinux.com/keybinds-pipemenu.tar.xz
+{pipe => ['dir-menu.py', 'Computer', '']},	                                          curl -O http://lxlinux.com/dir-menu.py
+{pipe => ['cbpp-places-pipemenu', 'Home', '']},	                                      curl -O http://lxlinux.com/cbpp-places-pipemenu
+{pipe => ['ffmpeg-pipemenu', 'Ffmpeg', '']},	                                      curl -O http://lxlinux.com/ffmpeg-pipemenu.tar.gz
+{pipe => ['help-pipemenu', 'Help', '']},	                                          curl -O http://lxlinux.com/help.tar.gz
+{pipe => ['imagemagick-pipemenu', 'Image Magick', '']},	                              curl -O http://lxlinux.com/imagemagick-pipemenu
+{pipe => ['impipemenu', 'Image Magick Scripts', '']},	                              curl -O http://lxlinux.com/imagemagicpipemenu.tar.gz
+{pipe => ['obdevicemenu', 'Media', '']},	                                          curl -O http://lxlinux.com/obdevicemenu.tar.xz
+{pipe => ['ob-randr.py', 'Monitor Settings', '']},	                                  curl -O http://lxlinux.com/ob-randr.py
+{pipe => ['ob-sysinfo.pl', 'Sys-Info', '']},	                                      curl -O http://lxlinux.com/ob-sysinfo.pl
+{pipe => ['inxi-pipemenu', 'Sys-Inxi-Info', '']},	                                  curl -O http://lxlinux.com/inxi-pipemenu
+{pipe => ['storageinfo', 'Storage', '']},	                                          curl -O http://lxlinux.com/storageinfo
+{pipe => ['bash-pipemenu', 'Bash Command Template', '']},	                          curl -O http://lxlinux.com/bash-pipemenu
+{pipe => ['obrecent.sh', 'Recent', '']},	(everything needed given below)
+{pipe => ['scrot-pipemenu', 'scrot', '']},	(everything needed given below)
+
+
+Needed by Most Pipemenus
+
+config.pl     (sposta in /usr/lib/pipes-common)	                                       curl -O http://lxlinux.com/config.pl
+pipe-include.config     (sposta in /usr/lib/pipes-common)	                               curl -O http://lxlinux.com/pipe-include.config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

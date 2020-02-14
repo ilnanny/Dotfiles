@@ -1,0 +1,12 @@
+   Symbol: RTL8188EE [=n]                                                                                                                   
+   Type  : tristate                                                                                                                       
+   Prompt: Realtek RTL8188EE Wireless Network Adapter                                                                     
+     Location:                                                                                                                                     
+       -> Device Drivers                                                                                                                           
+         -> Network device support (NETDEVICES [=y])                                                                                               
+           -> Wireless LAN (WLAN [=y])                                                                                                             
+             -> Realtek devices (WLAN_VENDOR_REALTEK [=y])                                                                                         
+   (1)         -> Realtek rtlwifi family of devices (RTL_CARDS [=y])                                                       
+     Defined at drivers/net/wireless/realtek/rtlwifi/Kconfig:73                                         
+     Depends on: NETDEVICES [=y] && WLAN [=y] && WLAN_VENDOR_REALTEK [=y] && RTL_CARDS [=y] && PCI [=y]           
+     Selects: RTLWIFI [=n] && RTLWIFI_PCI [=n]

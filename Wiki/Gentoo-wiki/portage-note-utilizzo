@@ -1,0 +1,170 @@
+Come usare correttamente portage 
+
+
+Questa è la versione tradotta in italiano da: 
+https://forums.gentoo.org/viewtopic.php?t=171464 
+di gaMMa 
+
+
+1. INTRODUZIONE: 
+Il sistema di portage di Gentoo è una risorsa eccellente se usata correttamente. L'uso errato può portare ad un sistema pieno di inconsistenze, con pacchetti non rintracciabili, e un file world corrotto. Seguendo questa guida si otterrà un sistema piu' pulito. 
+
+
+2. FARE EMERGE DEI PACCHETTI 
+Quando si vuole fare un emerge di un pacchetto instabile è raccomandato usare il comando 
+Codice:
+# emerge  foo
+
+Non usate ACCEPT_KEYWORDS="~x86" perche' questo emergerà dipendenze con ~x86 indesiderate. 
+
+Si raccomanda di tentare di emergere l'ebuid prima, e se dovesse risultare instabile, procedere in modo opportuno. Una volta risolto, tentare di riemergere il pacchetto il quale potrebbe richiedere una dipendenza. Soddisfatta la dipendenza, provare ad emergere di nuovo il pacchetto. Continua a ripetere questa procedura fino ad emergere il pacchetto. Può sembrare una paranoia, ma almeno sai che cosa è installato nel tuo sistema e anche i pacchetti instabili. Al massimo si puo' scaricare lo script forcekeymask che fa questo lavoro automaticamente. 
+
+AVVERTIMENTO: Emergere direttamente un ebuild (emerge foo.ebuild) ha causato i problemi per alcuni utenti, per cui non si dovrebbe fare. In alcune situazioni emerge non aggiunge i pacchetti al profilo world. Inoltre così facendo all'utente non sararanno comunicate le nuove release instabili di questo pacchetto, sebbene contengano seri problemi di sicurezza. 
+
+
+3. MANTENIMENTO DEI PACCHETTI 
+A volte quando si lancia "emerge -u world" (l'opzione -U e' deprecata non utilizzatela) portage tenta un downgrade dei pacchetti. Per rendere "unmasked" i pacchetti in modo che portage non faccia il downgrade creare la directory /etc/portage se non lo si è già fatto. 
+Codice:
+# mkdir/etc/portage
+
+All'interno del file /etc/portage/package.keywords aggiungere il nome completo del pacchetto seguito da ~x86. Per esempio per fare accettare al portage ebuilds instabili di Gaim inseriamo la riga 
+Codice:
+# echo net-im/gaim ~x86 >> /etc/portage/package.keywords
+
+Ripetere questa procedura per tutti i pacchetti instabili per i quali non si vuole il downgrade. 
+
+Possiamo anche accettare le versioni instabili specifiche per un determinato pacchetto, in modo che quando esce la versione instabile successiva, il sistema non eseguirà laggiornamento automatico di quel pacchetto. Questo si realizza con il seguente comando: 
+Codice:
+# echo =app-misc/foo-version ~x86 >> /etc/portage/package.keywords
+
+La linea sopra indica che verrà emersa soltanto una versione specifica del pacchetto. 
+Tuttavia, le nuove versioni saranno ancora ~arch masked. Per permettere ad ulteriori versioni di essere marcate come stabili oltre alla versione specifica, usare la seguente riga:
+Codice:
+# echo app-misc/foo ~x86 >> /etc/portage/package.keywords
+
+
+NOTA: E più facile tenere aggiornata la lista dei pacchetti se sono messi in ordine alfabetico. 
+
+AVVERTIMENTO: Usando "emerge -U world" si possono avere problemi nel sistema per cui non si dovrebbe usare. Earthwings ne parla qui: 
+https://forums.gentoo.org/viewtopic.php?t=167323 
+
+Tuttavia, a volte il portage tenta ancora di fare il downgrade di un pacchetto. Generalmente, se questo accade c è un motivo valido, per cui è meglio farlo. Ci sono comunque delle eccezioni; per esempio gli headers del kernel hanno tentato di tornare a 2.4.x quando ho compilato un kernel 2.6.x. 
+Gli headers del kernel sono l'unico caso in cui si dovrebbe usare questo metodo, gli altri dovrebbero usare il metodo precedente o fare il downgrade. 
+In /etc/portage/package.keywords aggiungiamo una linea oppure 
+Codice:
+# echo sys-kernel/linux-headers - * >> /etc/portage/package.keywords
+
+Dei pacchetti a volte cercano di reinstallarsi nel sistema sebbene non siano necessari. Gli utenti di xorg-x11 possono notare infatti che xfree prova a reinstallarsi (non piu' vero ora perche' xfree non esiste piu' nel portage-tree ma come esempio va bene). Per ovviare a questo, in /etc/portage/package.mask si aggiunga la riga: 
+Codice:
+# echo x11-base/xfree >> /etc/portage/package.mask
+
+Inoltre i pacchetti di tanto in tanto sono hard masked . Un esempio è realone. Il fatto che sia hard masked è dovuto al fatto che c è una falla di sicurezza, che potrebbe compromettere la stabilità del sistema. 
+Se per qualche motivo si desidera usare realone comunque, si usa il file package.unmask creando il file /etc/portage/package.unmask e dando questo comando: 
+Codice:
+# echo media-video/realone >> /etc/portage/package.unmask
+
+Inoltre se non si vuole che un pacchetto includa una particolare USE flag si usano i package.use. Creare /etc/portage/package.use e inserire una funzione come questa da terminale: 
+Codice:
+#echo net-p2p/bittorrent -X >> /etc/portage/package.use
+
+Questo dice al portage di non includere il supporto di X quando emerge bittorrent. 
+
+Ogni tanto si ha la necessita' di fare crede a portage che un pacchetto e' installato anche se realmente non lo e'. Questo una volta veniva fatto con l'opzione -i che e' deprecata ora. Se si vuole fare questo create il file /etc/portage/profile/package.provided (anche la cartella profile se non esiste ancora) e dante questo comando 
+Codice:
+# echo app-misc/foo-version >> /etc/portage/profile/package.provided
+
+Questo puo' risultare utile durante un aggiornamente e magari non si vuole scaricare il kernel nuovo. 
+
+NOTA: package.provided non funziona esattamente come -i. Se si mette un pacchetto li e poi si tenta di installarlo portage dira' che non e' installato, ha solo effetto sulle dipendenze. 
+
+
+4. MAINTAINIG DEL PROFILO WORLD 
+A volte i pacchetti non vengono aggiunti al profilo world per un motivo. Per [ tentare ] di riparare il profilo world ed aggiungere pacchetti digitare: 
+Codice:
+# regenworld
+
+C è un altro thread che dà informazioni su come riparare il profilo world se regenworld non dovesse funzionare: 
+https://forums.gentoo.org/viewtopic.php?t=136627 
+
+
+5. CONCLUSIONE: 
+Usando questo metodo 'emerge -u world' si adatterà alla vostre necessità e si avrà un sistema integrato di pulizia. 
+Codice:
+#emerge -uDav world
+
+È il modo migliore per aggiornare lintero sistema. la 'u' sta per upgade, la 'D' sta deep , 'a' sta per ask e la 'v' sta per verbose, e dice alle USE flag che saranno usate in ogni pacchetto. 
+
+Si consiglia di provare lo script di ecatmur's cruft per mantenere il sistema accurato e pulito! 
+https://forums.gentoo.org/viewtopic.php?t=152618 
+oppure anche lo script di xchris 
+https://forums.gentoo.org/viewtopic.php?t=249828 
+
+
+APPENDICE: Come usare un ebuild esterno 
+Pre prima cosa editate il vostro make.conf e aggiungete la linea (se avete gia' questo potete saltare al prossimo punto) 
+Codice:
+PORTDIR_OVERLAY="/usr/local/portage"
+
+A questo punto creiamo le cartelle dove va messo il nostro ebuild esterno 
+Codice:
+# mkdir -p /usr/local/portage/<category>/<package name>
+
+NOTA: il nome della categoria DEVE esistere nel portage-tree ufficiale. <package name> deve avere lo stesso nome dell'ebuild ma senza versione 
+
+A questo punto copiate il vosto ebuild nella cartella appena creata con il nome del programma e versione (es: mypackage-1.0.ebuild). A questo punto date il comando 
+Codice:
+# ebuild /usr/local/portage/<category>/<package name>/mypackage-1.0.ebuild digest
+
+Ora siete pronti per mergiare il paccetto con 
+Codice:
+# emerge mypackage
+
+NOTA: Se il programma e' mascherato usate i vari package.* per smasherarlo come indicato nei punti precedenti 
+IMPORTANTE: Solitamente questa procedura funziona ma e' possibile che ebuild scrittti male causino problemi al vostro sistema, quindi fate questo a vostro rischio e pericolo 
+
+
+per ogni revisione o aggiunta contattatemi. Potrebbe sembrare stupido, ma sareste sorpresi se sapreste quante persone usano male il portage. 
+
+Ringrazio quanti hanno contribuito a questa guida e hanno trovato gli errori in questo procedimento le vostre email e i vostri messaggi hanno contribuito a rendere la guida quello che è. 
+
+
+ChangeLog 
+28/01/2005 Revisione e correzione del testo -- fedeliallalinea 
+26/02/2005 Agginta appendice "come usare un ebuild esterno" -- fedeliallalinea
+_________________
+forum italiano su freeBSD 
+http://www.freebsd-it.org
+========================================================================================
+Q: Portage tenta di fare l'upgrade di questo pacchetto, poi ne vuole fare il downgrade, poi di nuovo l'upgrade etc... Cosa causa questo comportamento e come lo fermo? 
+
+A: Questo dipende da come portage gestisce le dipendenze. Per esempio quanto viene lanciato 
+Codice:
+emerge -Dup world
+
+ed è presente un conflitto tra la versione più aggiornata di un pacchetto (calcolata in funzione della variabile ACCEPT_KEYWORDS in make.conf e del contenuto dei vari files in /etc/portage/package.{keywords,mask,unmask}) e un altro pacchetto che dipende da una versione meno aggiornata del precedente, portage non risolve simultaneamente la richesta di upgrade (data da -Du) e la dipendenza dovuta al secondo pacchetto (vedi Bug 13632). 
+In questo modo se è presente una versione meno recente portage cerca di aggiornarla, mentre se è presente la versione più cercente portage cerca di farne il downgrade. 
+
+Ci sono buone possibilità che questo problema sia temporaneo e che venga risolto al prossimo emerge sync, altrimenti lanciando 
+Codice:
+emerge -Duptv world
+
+quando si ha la versione più recente installata, è possibile ricevere informazioni su quale pacchetto dipende dalla versione meno recente. 
+A questo punto si posono fare diverse cose: 
+
+Mascherare (hard mask) la versione più recente del pacchetto problematico mettendo 
+Codice:
+>=category/package-higher_version
+
+in /etc/portage/package.mask. 
+
+Upgradare l'altro pacchetto ad una versione più recente (se tale versione esiste) che non ha la dipendenza dalla versione problematica del pacchetto precedente. Di solito questo consiste nell'installare una versione masked mettendo 
+Codice:
+=category/other_package-higher_version ~arch
+
+in /etc/portage/package.keywords. 
+
+Disabilitare una eventuale USE-flag per l'altro pacchetto che causa la dipendenza problematica (se esiste ovviamente) mettendo 
+Codice:
+category/other_package -flag
+
+in /etc/portage/package.use.

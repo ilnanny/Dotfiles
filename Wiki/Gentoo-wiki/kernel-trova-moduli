@@ -1,0 +1,17 @@
+   find /lib/modules/$(uname -r)/ -iname "*$1*.ko*" | cut -d/ -f5-
+
+oppure
+
+   find /lib/modules/$(uname -r)/ -iname "**.ko*" | cut -d/ -f5-
+
+   ----------------------------------------------------------------------------------------------------------
+   esempio per il modulo della chiavetta tplink twn100
+
+ find /lib/modules/$(uname -r)/ -iname "*ath9k_common.ko*" | cut -d/ -f5-
+
+kernel/drivers/net/wireless/ath/ath9k/ath9k_common.ko
+
+
+   e poi
+
+   modprobe ath9k_common kernel/drivers/net/wireless/ath/ath9k/ath9k_common.ko

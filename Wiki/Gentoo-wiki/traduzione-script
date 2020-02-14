@@ -1,0 +1,34 @@
+Tradurre testo su Linux senza aprire il browser
+
+Prerequisiti :connessione internet.
+libnotify wget xsel zenity
+in debian : libnotify-bin
+
+===============================================
+creare il file che ospiterà le traduzione:
+sudo touch /usr/local/bin/traduzione
+sudo geany /usr/local/bin/traduzione
+e scriviamo all'interno :
+
+
+#!/usr/bin/env bash
+text="$(xsel -o)"
+translate="$(wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=$(echo $text | sed "s/[\"'<>]//g")" | sed "s/,,,0]],,.*//g" | awk -F'"' '{print $2, $6}')"
+echo -e "TESTO :  " "$text"'\n' > /tmp/notitrans
+echo "TRADOTTO :  " "$translate" >> /tmp/notitrans
+zenity --text-info --title="TRADUZIONE" --filename=/tmp/notitrans
+
+
+
+===============================================
+persmessi di scrittura e esecuzione:
+sudo chmod a+x /usr/local/bin/traduzione
+===============================================
+Associare lo script ad una scorciatoia di tastiera super
+Selezionare il testo e premere la scorciatoia .
+
+
+
+
+
+

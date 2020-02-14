@@ -1,0 +1,19 @@
+Ridimensionare un immagine al 75% della dimensione originale:
+
+$ mogrify -resize 75% image.jpg
+Ridimensionare tutti i file JPG in una cartella al 75% della loro dimensione originale:
+
+$ mogrify -resize 75% *.jpg
+
+del 50% in png
+$ mogrify -resize 50% *.png
+
+Ridimensionare tutte le immagini in una cartella alla dimensione di 640×480 pixels:
+
+$ mogrify -resize 640x480' *
+Ridimensionare tutte le immagini in una cartella alla larghezza di 640 pixel mantenendo le proporzioni:
+
+$ mogrify -resize width='640' *
+Ridimensionare tutte le immagini in una cartella all’altezza di 480 pixel mantenendo le proporzioni:
+
+$ mogrify -resize width='x480' *

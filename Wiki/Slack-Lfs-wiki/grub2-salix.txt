@@ -1,0 +1,6 @@
+slapt-get -u
+slapt-get -i grub2
+grub-install /dev/sda 
+slapt-get -i sg2conf
+sg2conf 
+reboot 

@@ -1,0 +1,63 @@
+To upgrade the kernel additional work is needed.
+While on live environment booting from usb with persistent.
+CODE: SELECT ALL
+
+sudo slapt-get -u
+Copy the code bellow and save it to a file named e.g. make_new_init+kernel_pack.sh
+CODE: SELECT ALL
+
+sudo slapt-get -i --reinstall kernel-huge kernel-modules
+sudo rm -rf /tmp/work
+mkdir -p /tmp/work/new_kernel
+cd /tmp/work
+sudo spkg -i --root=/tmp/work/new_kernel /var/slapt-get/patches/packages/linux-4.4.38/kernel-huge-4.4.38-x86_64-1.txz
+sudo spkg -i --root=/tmp/work/new_kernel /var/slapt-get/patches/packages/linux-4.4.38/kernel-modules-4.4.38-x86_64-1.txz
+sudo mksquashfs new_kernel 05-kernel.slm -comp xz -b 1M
+
+sudo mkinitrd -c -o /tmp/initrd.gz -s /tmp/initrd-tree -k 4.4.38 -m "squashfs:overlay:loop:xhci-pci:ohci-pci:ehci-pci:xhci-hcd:uhci-hcd:ehci-hcd:usb-storage:hid:usbhid:i2c-hid:hid-generic:hid-cherry:hid-logitech:hid-logitech-dj:hid-logitech-hidpp:hid-lenovo:hid-microsoft:hid_multitouch:ext3:ext4:isofs:nls_cp437:nls_iso8859-1"
+
+sudo rm -f /tmp/initrd-tree/{initrd-name,keymap,luksdev,resumedev,rootfs,rootdev,wait-for-root}
+sudo cp /usr/share/slackware-live/{init,keymaps} /tmp/initrd-tree/
+sudo chmod +x /tmp/initrd-tree/init
+sudo cp /usr/sbin/build-slackware-live.sh /tmp/initrd-tree/
+(
+cd /tmp/initrd-tree
+sudo su
+find . | cpio -o -H newc 2>/dev/null | gzip -9c > /tmp/work/initrd.gz
+)
+cd /tmp/work
+Run the script
+CODE: SELECT ALL
+
+sh make_new_init+kernel_pack.sh
+To return to user one type
+CODE: SELECT ALL
+
+exit
+Now copy the following files somewhere on hard disk or in another usb. You will need them to copy to LIVE usb later.
+Create a folder
+CODE: SELECT ALL
+
+cd ~/
+rm -rf ~/work_files
+mkdir work_files
+cp /tmp/work/initrd.gz work_files
+cp /tmp/work/05-kernel.slm work_files
+cp /tmp/work/new_kernel/boot/vmlinuz work_files
+cp -R ~/work_files  somewhere-to-hard-disk
+Reboot to your hard disk system
+cd work_files
+Copy initrd.gz to usb boot folder to replace the previous one
+Copy vmlinuz to usb boot folder to replace the previous one
+Copy 05-kernel.slm to usb boot/modules folder to replace the previous one
+
+Copy initrd.gz to usb EFI/BOOT folder to replace the previous one
+Copy vmlinuz to usb EFI/BOOT folder to replace the previous one
+
+Reboot and boot with live USB
+
+I wrote this post from salix64 live 14.2 with persistent running 4.4.38 kernel to test the above.
+CODE: SELECT ALL
+
+one[~]$ uname -a
+Linux salixlive 4.4.38 #2 SMP Sun Dec 11 16:18:36 CST 2016 x86_64 Intel(R) Core(TM) i3-4030U CPU @ 1.90GHz GenuineIntel GNU/Linux

@@ -1,0 +1,12 @@
+
+
+rc-service ntp-client start
+
+
+rc-service ntp-client status
+
+ 
+rc-update add ntp-client default
+ 
+ 
+ntpdate pool.ntp.org

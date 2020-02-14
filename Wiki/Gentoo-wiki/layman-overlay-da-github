@@ -1,0 +1,15 @@
+emerge layman 
+
+Edita /etc/layman/layman.cfg aggiungendo: (seconda linea)
+
+leafpad  /etc/layman/layman.cfg
+
+
+overlays  : http://www.gentoo.org/proj/en/overlays/layman-global.txt
+            https://raw.github.com/ndt/ogo-ndt/master/overlay.xml
+            
+
+  layman -L
+  layman -a electro-nic
+
+Adesso si può emergere qualcosa dall'overlay di electro-nic

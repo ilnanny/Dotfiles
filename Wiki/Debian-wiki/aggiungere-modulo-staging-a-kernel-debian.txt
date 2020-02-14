@@ -1,0 +1,53 @@
+Impartisci i seguenti comandi come utente ordinario:
+su -c "aptitude update; aptitude install linux-source ncurses-dev build-essential devscripts"
+cd ~
+tar xf /usr/src/linux-source-3.2.tar.bz2
+cd linux-source-3.2
+ln -s /usr/src/linux-headers-$(uname -r)/Module.symvers Module.symvers
+make oldconfig
+# modifica manualmente la configurazione del kernel per attivare il modulo
+make menuconfig
+make prepare 
+make scripts
+cd drivers/staging/asus_oled
+make -C $HOME/linux-source-3.2/ M=$PWD  
+su -c "make -C /lib/modules/$(uname -r)/build M=$PWD  modules_install"
+su -c "modprobe asus_oled"
+lsmod | grep asus_oled
+
+I comandi sopra indicati sono stati testati su una Debian Wheezy con kernel 3.2.0-2-486 .
+===========================================================================================
+La presenza del link simbolico è necessaria con i comandi impartiti e precedentemente riportati, altrimenti non è possibile compilare il modulo (mancano, appunto, i simboli del kernel già compilato di cui ha bisogno il linker).
+
+E' possibile anche procedere copiando manualmente il file di configurazione del kernel già compilato: compila ugualmente. Ad esempio, volendo, si possono anche impartire i seguenti comandi ottenendo lo stesso risultato:
+su -c "aptitude update; aptitude install linux-source ncurses-dev build-essential devscripts"
+cd ~
+tar xf /usr/src/linux-source-3.2.tar.bz2
+cd linux-source-3.2
+ln -s /usr/src/linux-headers-$(uname -r)/Module.symvers Module.symvers
+# make oldconfig
+cp /boot/config-$(uname -r) .
+# modifica manualmente la configurazione del kernel per attivare il modulo
+make menuconfig
+make prepare 
+make scripts
+cd drivers/staging/asus_oled
+make -C $HOME/linux-source-3.2/ M=$PWD  
+su -c "make -C /lib/modules/$(uname -r)/build M=$PWD  modules_install"
+su -c "depmod -a; modprobe asus_oled"
+lsmod | grep asus_oled
+
+Il modulo è installato in extra anche nel mio caso e viene riconosciuto (senza alcuna difficoltà o esigenza di collocarlo altrove) dopo aver impartito come utente root il comando di seguito riportato (o, presumibilmente, dopo aver riavviato il sistema):
+depmod -a
+ 
+modinfo asus_oled
+filename:       /lib/modules/3.2.0-2-486/extra/asus_oled.ko
+license:        GPL
+description:    Asus OLED Driver v0.04-dev
+author:         Jakub Schmidtke, sjakub@gmail.com
+alias:          usb:v0B05p175Bd*dc*dsc*dp*ic*isc*ip*
+alias:          usb:v0B05p1726d*dc*dsc*dp*ic*isc*ip*
+depends:        usbcore
+vermagic:       3.2.18 mod_unload modversions 486 
+parm:           start_off:Set to 1 to switch off OLED display after it is attached (uint)
+=======================================================================================================

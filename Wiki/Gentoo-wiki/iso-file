@@ -1,0 +1,12 @@
+monta
+sudo mount immagine.iso /cartella/in_cui_montare -o loop -t iso9660
+
+smonta
+sudo unmount /cartella/in_cui_il_file_viene_montato
+
+crea iso
+dd if=/cartella/da/comprimere of=/percorso/NuovaImmagine.iso
+
+oppure
+mkisofs -V "File da salvare" -o SaveMe.iso ~/Scrivania/SaveMe/
+=============================================

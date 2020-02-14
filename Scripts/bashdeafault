@@ -1,0 +1,22 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+# Progect: Set Bash to default shell            =
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+
+if [[ ! $(echo $SHELL) == $(which bash) ]]; then
+ chsh -s $(which bash)
+fi
+printf "\e[48;5;%sm"
+echo "
+Bash impostata come Shell di default
+Chiudi il terminale"
+printf "\n"
+exit 0

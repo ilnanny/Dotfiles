@@ -1,0 +1,68 @@
+__________________________________________________________________________________________
+ == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==
+           == ==  Montare la partizione sulla quale risiede il sistema  == ==
+__________________________________________________________________________________________
+
+ mount /dev/sdb2 /mnt
+ mount -o remount,rw /dev/sdb2 /mnt
+ mount --bind /dev /mnt/dev
+ mount --make-rslave /mnt/dev
+ mount --bind /proc /mnt/proc
+ mount --bind /sys /mnt/sys
+ mount --make-rslave /mnt/sys
+ mount --rbind /tmp /mnt/tmp
+
+ chroot /mnt /bin/bash
+ export PS1="\033[1;33m([chroot])\033[0m $PS1"
+
+ grub-install /dev/sda
+ grub-mkconfig -o /boot/grub/grub.cfg
+_________________________________________
+
+ grub-mkconfig –o /boot/grub/grub.cfg
+
+== Resolv conf
+nano -w /etc/resolv.conf
+
+domain lan
+nameserver 192.168.1.254
+nameserver 2001:b07:2e2:98e0::1
+____________________________________________________________
+ == == == == == == == == == == == == == == == == == == == ==
+             == ==  Uscire dal chroot == ==
+
+ exit
+ cd ~
+ umount -f /mnt/dev
+ umount -f /mnt/proc
+ umount -f /mnt/sys
+ umount -f /mnt/tmp
+ umount -f /mnt/
+ fuser -k /mnt/
+ reboot & exit
+____________________________________________________________
+ == == == == == == == == == == == == == == == == == == == ==
+ == ==  Se si ricevono errori è possibile riprovare :  == ==
+
+ grub-install --recheck /dev/sda
+
+____________________________________________________________
+ == == == == == == == == == == == == == == == == == == == ==
+               == ==  Immagini ISO :  == ==
+
+__ creare il punto di mount in /media
+
+ mkdir /media/iso
+
+__ montare  immagine ISO
+
+ mount -t iso9660 -o loop /media/Dati/OS/Linux/64bit/linux-os.iso /media/iso
+
+__ al posto di file.iso immettere percorso esatto del file iso
+
+__ smontare l’immagine iso
+
+ umount /media/iso
+_______________________________________________________________________________
+== == == == == == == == == == == == == ==== == == == == == == == == == == == ==
+upgradepkg --install-new NetworkManager-1.2.2-x86_64-2.txz

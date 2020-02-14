@@ -1,0 +1,64 @@
+So the issue looks like next:
+[root@archiso boot]# grub-mkconfig -o /boot/grub/grub.cfg
+^C
+
+
+
+Check the /usr/bin/grub-mkconfig script for every /dev/null redirects:
+[root@archiso boot]# cat  /usr/bin/grub-mkconfig | grep null
+case "`uname 2>/dev/null`" in
+for g in `id -G 2>/dev/null` ; do
+GRUB_DEVICE_UUID="`${grub_probe} --device ${GRUB_DEVICE} --target=fs_uuid 2> /dev/null`" || true
+GRUB_DEVICE_BOOT_UUID="`${grub_probe} --device ${GRUB_DEVICE_BOOT} --target=fs_uuid 2> /dev/null`" || true
+GRUB_FS="`${grub_probe} --device ${GRUB_DEVICE} --target=fs 2> /dev/null || echo unknown`"
+
+
+
+Edit it and remove 2> /dev/null from the next lines to display errors on a console (why need to hide errors at all?):
+
+    GRUB_DEVICE_UUID="`${grub_probe} --device ${GRUB_DEVICE} --target=fs_uuid 2> /dev/null`" || true
+    GRUB_DEVICE_BOOT_UUID="`${grub_probe} --device ${GRUB_DEVICE_BOOT} --target=fs_uuid 2> /dev/null`" || true
+    GRUB_FS="`${grub_probe} --device ${GRUB_DEVICE} --target=fs 2> /dev/null || echo unknown`"
+
+Re-run grub-mkconfig again:
+[root@archiso boot]# grub-mkconfig -o /boot/grub/grub.cfg
+WARNING: Failed to connect to lvmetad. Falling back to device scanning.
+WARNING: Device /dev/loop0 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sda not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/vg_arch/root not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/vg_arch/home not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdb not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdb1 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdb2 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdb3 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdb4 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdc not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdc1 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/sdc2 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/loop0 not initialized in udev database even after waiting 10000000 microseconds.
+WARNING: Device /dev/vg_arch/root not initialized in udev database even after waiting 10000000 microseconds.
+^C
+
+
+
+Skip it with Ctrl+C.
+
+Exit from the chroot back to ISO, create the /mnt/hostlvm directory and mount /run/lvm on the host to the /mnt as hostlvm:
+[root@archiso ~]# mkdir /mnt/hostlvm
+[root@archiso ~]# mount --bind /run/lvm /mnt/hostlvm
+
+
+
+Chroot back again, and make a symlink – thus the host’s /run/lvm will be used inside chrooted environment:
+[root@archiso ~]# arch-chroot /mnt
+[root@archiso /]# ln -s /hostlvm /run/lvm
+
+
+
+And run grub-mkconfig again:
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-linux
+Found initrd image: /boot/initramfs-linux.img
+Found fallback initrd image(s) in /boot: initramfs-linux-fallback.img
+done

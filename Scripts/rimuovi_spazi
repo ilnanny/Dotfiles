@@ -1,0 +1,145 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#Project:elimina gli spazi nei nomi dei file
+#================================================
+#Imposta l'utente Root
+#set -o errexit
+#[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+
+for arg in *
+do
+    nuovo_nome=`echo $arg | sed "s/ //g"`
+    mv "$arg" "$nuovo_nome"
+done
+## per inserire un trattino al posto dello spazio
+## scrivi "s/ /-/g"
+
+#colore testo
+printf "\e[48;5;%sm"
+echo "
+______   ______   Fatto!    ______   _______
+
+__________   Chiudi il terminale   _________
+"
+#printf "\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

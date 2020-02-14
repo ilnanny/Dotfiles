@@ -1,0 +1,20 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#   Dipende  : ntfsprogs                        =
+#================================================
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#Smontare le partizioni ntfs
+
+umount /dev/sda4
+ntfsfix /dev/sda4
+mount -a
+#ntfsfix /dev/sda2
+exit 0

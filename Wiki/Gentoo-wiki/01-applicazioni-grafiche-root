@@ -1,0 +1,11 @@
+Prova prima ad installare :
+
+  gksu
+oppure
+  lxsu
+altrimenti prova a dare le direttive con xhost:
+
+xhost si:localuser:root;su -c 'applicazione';xhost -si:localuser:root
+
+esempio porthole :
+xhost si:localuser:root;su -c 'octoxbps';xhost -si:localuser:root

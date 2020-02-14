@@ -1,0 +1,28 @@
+/usr/share/polkit-1/actions, the rules files are in /usr/share/polkit-1/rules.d and /etc/polkit-1/rules.d.
+----------------
+
+nano /etc/polkit-1/rules.d/10-admin.rules
+
+polkit.addAdminRule(function(action, subject) {
+    return ["unix-group:wheel"];
+});
+
+
+==========
+
+nano /etc/polkit-1/rules.d/10-udisks.rules
+
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.udisks2.filesystem-mount" &&
+        subject.user == "ilnanny") {
+        return "yes";
+    }
+});
+
+
+=========================
+
+
+
+
+

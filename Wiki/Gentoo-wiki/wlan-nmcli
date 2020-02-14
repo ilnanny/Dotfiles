@@ -1,0 +1,13 @@
+# nmcli device wifi rescan
+# nmcli device wifi list
+# nmcli device wifi connect SSID-Name password wireless-password
+=========
+# nmcli device wifi rescan
+# nmcli device wifi list
+# nmcli device wifi connect FASTWEB-E06CD5 password wireless-password
+
+#bin/bash/
+sudo nmcli device wifi rescan
+
+=====o utilizza l'intterfaccia ncurses :
+# nmtui

@@ -1,0 +1,90 @@
+Manual Install
+
+Manual install is for those who like doing things this way, and for those who want to dual-boot with an existing OS. For dual-boot users, you will need to handle the partitioning scheme on your own and adjust these instructions accordingly. Note that if you are dual-booting, you do not want to mklabel, you may or may not be able to apply partition names, and your boot label may or may not already be set. User takes all responsibility for the results of performing these steps.
+
+    Once you’ve booted with your boot medium, you need to prepare the hard drive using the following steps:
+        parted -a optimal /dev/sda
+        mklabel gpt
+        unit mib
+        mkpart primary 1 3
+        name 1 grub
+        set 1 bios_grub on
+        mkpart primary 3 131
+        name 2 boot
+        mkpart primary 131 643
+        name 3 swap
+        mkpart primary 643 -1
+        name 4 rootfs
+        set 2 boot on
+        print
+            You should see this:
+
+            Number Start  End    Size   File system    Name  Flags
+
+             1     1049kB 3146kB 2097kB                grub  bios_grub
+
+             2     3146kB 137MB  134MB  ext2           boot  boot, esp
+
+             3     137MB  2235MB 2097MB linux-swap(v1) swap
+
+             4     2235MB 2000GB 1998GB ext4           rootfs
+
+        quit
+        If you have a BIOS system: > mkfs.ext4 /dev/sda2
+        If you have a UEFI system: > mkfs.fat -F 32 /dev/sda2
+    mkfs.ext4 /dev/sda4
+    mkswap /dev/sda3
+    swapon /dev/sda3
+
+Now mount the hard drive and install the base system:
+
+    mount /dev/sda4 /mnt/gentoo (The mount point does not matter. Just substitute whatever you use here.)
+    mkdir /mnt/gentoo/boot
+    mount /dev/sda2 /mnt/gentoo/boot
+    cd /mnt/gentoo
+    wget https://gentoostudio.org/src/builds/complete/stage4-amd64-latest.tar.bz2
+    tar xvjpf stage4-amd64-latest.tar.bz2 --xattrs --numeric-owner
+    rm stage4-amd64-latest.tar.bz2
+    mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+
+Chroot into the base system and configure:
+
+    cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+    cp -L /etc/resolv.conf /mnt/gentoo/etc/, y to overwrite
+    mount -t proc /proc /mnt/gentoo/proc
+    mount --rbind /sys /mnt/gentoo/sys
+    mount --rbind /dev /mnt/gentoo/dev
+    chroot /mnt/gentoo /bin/bash
+    env-update && source /etc/profile
+    emerge-webrsync
+    eix-sync
+    ls /usr/share/zoneinfo
+    echo "(selected timezone)" > /etc/timezone
+    emerge --config timezone-data
+    nano -w /etc/locale.gen
+    locale-gen
+    eselect locale list
+    eselect locale set x, where x is the number of your desired locale
+    source /etc/profile
+        If you have a BIOS system: > grub-install /dev/sda
+        If you have a UEFI system: > grub-install --target=x86_64-efi --efi-directory=/boot --removable
+    nano /etc/fstab
+        If you have a BIOS system, make sure the line for /dev/sda2 has filesystem type ext4
+        if you have an EFI system, make sure the line for /dev/sda2 has filesystem type vfat
+    If you are dual-booting with Windows, emerge os-prober
+    grub-mkconfig -o /boot/grub/grub.cfg
+    passwd (Sets root password.)
+    useradd -m -G users,wheel,audio,plugdev -s /bin/bash (username)
+    passwd (username)
+    cpuinfo2cpuflags-x86 >> /etc/portage/make.conf
+    nano /etc/portage/make.conf, add MAKEOPTS=”-jn” where “n” is the number of CPU cores in your system. To find this, cat /proc/cpuinfo and add 1 to the number of the highest core. (cpuinfo counts core #1 as core 0.)
+    emerge -vuDN --keep-going --with-bdeps=y --backtrack=100 @system @world (This recompiles any packages that use CPU-specific flags. Also note that while it’s tempting to skip this step and boot into your system, this world update helps make sure your system is updated and working correctly on first boot.)
+    reboot
+    On your first login, you will need to change the session to Xfce using the login manager menu in the upper right corner.
+
+You should now have a working Gentoo Studio workstation.
+
+Notes:
+
+    Do NOT update /etc/security/limits.conf. Those settings are there for a reason.
+    If you dual-boot with Windows and need to re-install Windows, you will need to chroot into Gentoo Studio, re-install grub and run grub-mkconfig again. Windows installs its own bootloader and you will need to blow it away with Grub.

@@ -1,0 +1,21 @@
+Convertire file.dmg in file.iso
+Testato su Debian 6 Squeeze Amd64 bit
+Se la tua esigenza è quella di convertire un file con estensione .dmg (Immagine disco di Apple) in formato .iso adatto per la masterizzazione e/o il montaggio per software come Virtalbox o VMware, scarica il software adatto da qui e decomprimilo. A questo punto apri il terminale e portati nella cartella /bin appena decompressa (per ipotesi):
+ 
+cd ~/Scaricati/dmgextractor-0_70-bin/bin 
+
+come nell'esempio sotto.
+
+Come vedi il comando ls dimostra che siamo nella cartella giusta.
+Ora possiamo avviare il programma digitando:
+ 
+./dmgx.sh -gui
+ 
+avvieremo così l'interfaccia grafica (-gui)
+
+ 
+Ora non resta che navigare all'interno della nostra home per selezionare il file.dmg e decidere dove salvare quello che andremo a creare.
+ 
+
+ 
+Alla fine della conversione troveremo l'immagine convertita, pronta per essere masterizzata.

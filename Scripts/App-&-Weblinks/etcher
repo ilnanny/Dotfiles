@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Etcher
+Comment=Edit text files
+Exec=/opt/etcher/balenaEtcher-1.5.39-x64.AppImage %F
+Type=Application
+Icon=etcher
+Categories=Utility;System;
+StartupNotify=false

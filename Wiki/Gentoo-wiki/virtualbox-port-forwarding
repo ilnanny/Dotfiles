@@ -1,0 +1,6 @@
+da utente normale
+
+VBoxManage modifyvm "VM name" --natpf1 "guestssh,tcp,,2222,,22"
+
+cambia il nome della virtualmachine. 2222 è il nome dell'host ,22 è il nome della guest
+puoi sostituire le porte anche da gui , -> Network -> Advanced (drop down) -> Port Forwarding

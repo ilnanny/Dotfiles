@@ -1,0 +1,46 @@
+Menu dell'applicazione per Openbox
+
+L'Openbox di serie non aveva un menu di applicazione contenente il pacchetto installato. La soluzione principale è installare qualche programma o script che lo crei al volo per te.
+
+Qui troverai una soluzione tra molte altre, forse non la migliore ma funziona abbastanza bene. Lo script è molto versatile e può essere configurato come un menu pipe, un menu statico e persino sostituire l'intero menu.xml .
+Installazione
+
+Prima di tutto, installa il pacchetto obmenu-generator : 
+
+# xbps-install -S obmenu-generator
+
+Quindi, copia questo file:
+
+# cp /usr/share/doc/obmenu-generator/schema.pl.apps ~/.config/obmenu-generator/schema.pl
+
+Ora personalizza ~/.config/obmenu-generator/schema.pl in base alle tue esigenze, la modifica più comune è tradurre i nomi delle categorie nella tua lingua. Cerca queste righe:
+
+ <begin code extract>
+   {sep => 'Applications'},
+
+
+   #          NAME            LABEL                ICON
+   {cat => ['utility',     'Accessories', 'applications-utilities']},
+   {cat => ['development', 'Development', 'applications-development']},
+ <end code extract>
+
+La colonna LABEL è il luogo in cui si localizzano i nomi.
+
+Puoi anche modificare il titolo del sottomenu nella riga: 
+
+{sep => "< Il tuo nome preferito >"},
+
+Dopo aver terminato le modifiche, inserisci questa riga nel file menu.xml Openbox, nel punto in cui desideri visualizzare il menu:
+
+<menu id="obmenu-generator" label="<Your menu name>" execute="/usr/bin/obmenu-generator -i"/>
+
+Riconfigura Openbox (di solito c'è una voce di menu per questo) e goditi il ​​tuo nuovo menu dell'applicazione.
+
+C'è un altro file che potrebbe essere necessario modificare per adattarlo alla tua lingua: ~/.config/obmenu-generator/config.pl. Questo è creato da obmenu-generator, ma puoi personalizzarlo. Per fare ciò, cerca la linea che inizia con " name_keys " vicino alla fine e sostituisci la stringa con parentesi con il tuo codice lingua preferito.
+
+"name_keys" => ['Name[it]', 'GenericName[it]', 'Name'],
+
+Secondo il commento criptico nello script, le modifiche apportate a config.pl possono essere sovrascritte dal programma stesso, quindi preparatevi a ripristinare le modifiche qui di volta in volta. Creare un backup di questo file è probabilmente una buona idea.
+
+Lo script è molto potente e ha molti altri usi, incluso il menu.xml autogenerating.xml. Assicurarsi di leggere la documentazione intercalata in tutti questi file(/usr/bin/obmenu-generator, schema.pl and config.pl);  visitare il sito di supporto è probabilmente anche una buona idea..
+https://translate.googleusercontent.com/translate_c?depth=1&rurl=translate.google.com&sl=auto&sp=nmt4&tl=it&u=https://trizenx.blogspot.com/2012/02/obmenu-generator.html&xid=17259,15700002,15700021,15700186,15700191,15700253,15700256,15700259&usg=ALkJrhglFaVG2O4HbtSi8g3RyXJSAWlX2A

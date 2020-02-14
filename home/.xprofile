@@ -1,0 +1,4 @@
+#Avvio di redshift, impostazione dei dpi con xrandr e impostazione della luminosità al 50% con xbacklight
+#xrandr --dpi 192 &
+#redshift-gtk &
+#xbacklight -set 50 &

@@ -1,0 +1,11 @@
+dmesg | grep -iC 3 "graphics"
+
+dmesg | grep -iC 3 "video"
+
+dmesg | grep -i usb
+
+dmesg | grep -i tty
+
+dmesg | grep -i memory
+
+dmesg | grep -i dma

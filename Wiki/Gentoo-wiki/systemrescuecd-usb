@@ -1,0 +1,18 @@
+
+Download the latest SystemRescueCd ISO image from:   http://www.system-rescue-cd.org/Download/
+
+
+Mount the CD-ROM ISO image
+
+
+mkdir -p /tmp/cdrom
+mount -o loop,exec /media/Dati/OS/Linux/systemrescuecd-x86-5.2.2.iso /tmp/cdrom
+
+
+cd /tmp/cdrom
+bash ./usb_inst.sh
+
+Unmount the ISO image
+
+cd ~
+umount /tmp/cdrom

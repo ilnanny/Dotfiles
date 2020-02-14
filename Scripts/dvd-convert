@@ -1,0 +1,18 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#Crea un file DVD scrivibile .
+#opzioni
+#scale: 720:480
+#ofps: 30000/1001
+#aspect: 16/9
+#================================================
+mencoder -oac lavc -ovc lavc -of mpeg -mpegopts format=dvd -vf scale=720:480,harddup -srate 48000
+-af lavcresample=48000 -lavcopts
+codec=mpeg2video:vrc_buf_size=1835:vrc_maxrate=9800:vbitrate=5000:keyint=18:aspect=16/9:acodec=ac3:abitrate=192
+-ofps 30000/1001 -o output.mpg input.extension

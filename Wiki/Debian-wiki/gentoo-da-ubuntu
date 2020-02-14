@@ -1,0 +1,100 @@
+Passaggi
+1
+Assicurati di avere i privilegi da superuser sul tuo Ubuntu e una connessione Internet, preferibilmente veloce. Anche una conoscenza intermedia di Ubuntu e Linux in generale è preferibile.
+2
+Devi installare chroot su Ubuntu. Puoi ottenere questo obiettivo attraverso Synaptic installando i pacchetti “dchroot” e “debootstrap” o con la riga di comando, digitando sudo apt-get install dchroot debootstrap. Questo programma permette a Linux di fingere temporaneamente che la directory root sia diversa dalla solita.
+3
+Suddividi delle partizioni esistenti o ricava una nuova partizione dallo spazio libero presente sul disco rigido. Fai attenzione a non perdere tutti i dati!
+La maggior parte dei siti web consiglia di creare più partizioni possibili. Come minimo, sarà necessaria una partizione di root (/), ma la maggior parte delle persone ha una partizione swap separata: la partizione home (/home). Alcuni inoltre consigliano una partizione separata per /boot e /var.
+4
+Formatta le partizioni nuove utilizzando un File System di tua scelta (per /home, /, /boot e /var è preferibile utilizzare ext2, ext3 o reiser2). Le swap devono essere formattate proprio come partizioni specifiche di swap.
+5
+Crea una nuova cartella / mnt/gentoo e una per ciascuna delle partizioni separate che hai creato.
+6
+Monta qui le tue nuove partizioni:
+sudo mount /dev/sda5 /mnt/gentoo
+sudo mount /dev/sda6 /mnt/gentoo/home
+dove sda5 e 6 sono le partizioni contenenti le tue eventuali directory root e home, rispettivamente.
+7
+Controlla che la data sia corretta (scrivi Date). È possibile modificarla con la sintassi date MMDDhhmmYYYY.
+8
+Apri un browser di tua scelta per la navigazione web e vai qui. Trova il server mirror locale e scarica il tarball (un file compresso di tipo *.tar) stage3 da releases/x86/2008.0/stages/ (sostituisci x86 con l'architettura di tua scelta - questa guida è testata solo per AMD64 e x86). Scarica il file md5 corrispondente.
+9
+Spostalo nella cartella Gentoo mv stage3*.bz2* /mnt/gentoo.
+10
+Spostati qui anche tu (cd /mnt/gentoo) e controlla il tarball tramite md5: md5sum -c stage3*.md5. Questo fa in modo che il tarball sia scaricato correttamente senza essere danneggiato. Se non viene segnalato con OK, allora dovrai scaricarlo nuovamente.
+11
+Estrai l'archivio *.tar!
+sudo tar xvjpf stage3*.bz2.
+Attendi il completamento.
+12
+Ora hai alcuni programmi di base installati sulla partizione di Gentoo; successivamente, sarà necessario installare Portage, il sistema di gestione pacchetti di Gentoo, che consente di avere il controllo completo su tutto ciò che si trova sul sistema.
+Torna al server mirror da dove avevi precedentemente scaricato il tarball stage3. Vai sulla directory snapshots/ e scarica l'ultimo file di Portage. Passa a /mnt/gentoo e utilizza il comando:
+tar xvjf /mnt/gentoo/portage-<date>.tar.bz2 -C /mnt/gentoo/usr
+Ecco una breve introduzione a Portage: si tratta di un sistema di gestione che consente l'installazione di numerosi pacchetti software in maniera relativamente facile. Funziona scaricandone un elenco con le loro interrelazioni da un server “rsync”. Questo dirigerà il portage verso dei file rilevanti che potranno essere scaricati da un numero enorme di altri server. Una volta scaricati questi file, il software verrà compilato dal computer partendo dall'origine, ottimizzandolo per il tuo PC.
+13
+In questa fase, è possibile impostare alcuni “compiler flag”. Fallo modificando “/mnt/gentoo/etc/make.conf” con il tuo editor di testo preferito. Una guida completa su diverse variabili di make si può trovare leggendo “/mnt/gentoo/etc/make.conf.example”. Salva le tue modifiche nel file di configurazione ed esci dall'editor di testo.
+14
+Desideri ottimizzare il tuo download? Modifica nuovamente “make.conf” e assicurati che la variabile SYNC sia impostata sul server rsync più vicino. Aggiungi tutti i mirror che vuoi alla variabile GENTOO_MIRRORS, ma inserisci per primo il tuo preferito. Puoi trovare qui l'elenco dei mirror disponibili.
+15
+Prima di immergerti nel nuovo sistema, devi assicurarti di avere quelle minime impostazioni essenziali copiate da Ubuntu così com’è.
+Prima di tutto, le impostazioni dns:
+sudo cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+E il tuo “proc system”, che contiene una gerarchia di file speciali che rappresentano lo stato corrente del kernel:
+sudo mount -t proc none /mnt/gentoo/proc.
+E applica il comando “mount-bind” al filesystem /dev:
+sudo mount -o bind /dev /mnt/gentoo/dev.
+16
+Ora puoi fare “chroot”, cioè cambiare la directory di riferimento dei processi che sono in esecuzione corrente! Questo è davvero abbastanza semplice ed è possibile uscire in qualsiasi momento digitando “exit”. Questo è processo consiste di tre fasi:
+In primo luogo, modifica la directory radice in /mnt/gentoo:
+sudo chroot /mnt/gentoo /bin/bash.
+Poi, aggiorna l'ambiente al fine di garantire che questo terminale sappia dove posizionarsi:
+/usr/sbin/env-update
+Infine, assegna questo alla memoria (temporanea):
+source /etc/profile
+Se desideri ricordare a te stesso che sei in chroot, puoi utilizzare questo delicato comando:
+export PS1="(chroot) $PS1"
+17
+Complimenti! Sei all'interno di Gentoo e circa a ... un quarto dal traguardo. Devi esserne fiero!
+18
+Successivamente,devi compilare il componente più vitale di qualsiasi sistema operativo: il suo kernel. Si tratta della sezione del sistema operativo che decide quali parti del software possono accedere ai diversi elementi hardware in qualsiasi momento. Senza kernel, non può esistere sistema operativo, in quanto non può funzionare.
+19
+Ricordi di avere installato Portage in precedenza? Ora stai per scaricare un elenco di pacchetti che potrai installare dal server rsync specificato. Digita:
+emerge —sync
+20
+Ad onor del vero, a questo punto avrai capito che devi installare l'ultimo kernel, il 2.6, piuttosto che il precedente, il 2.4.
+21
+Ora dobbiamo impostare i nostri flag di utilizzo. Questi flag indicano al compilatore quali opzioni aggiungere, così come quali ottimizzazioni utilizzare. È importante impostare i corretti flag di utilizzo per il tuo sistema, altrimenti potresti finire con alcuni risultati imprevisti. Inoltre è bene aggiungere i flag che indichino che cosa non va supportato.
+22
+Ogni flag che desideri aggiungere è semplicemente una parola. Ogni opzione che desideri rimuovere va indicata con un trattino (-) davanti ad essa. Ad esempio, se vogliamo compilare tutto con il supporto ogg, aggiungeremo ogg. Ma se non vogliamo alcun supporto ogg, aggiungiamo -ogg.
+23
+Scegli i tuoi flag di utilizzo e consulta la documentazione di Gentoo per gli USE flag per vedere quali dovresti includere.
+24
+Dopo aver scelto quali flag utilizzare, spostati su /etc/make.conf e metti i flag desiderati.
+25
+Cerchiamo ora di impostare il fuso orario. Gentoo ha tutti i fusi orari su /usr/share/zoneinfo. Spostati nella directory e lancia il comando ls per visualizzare i fusi orari disponibili. Poi copia il fuso orario in /etc/localtime con un comando quale # cp /usr/share/zoneinfo/GMT /etc/localtime.
+26
+Ora che abbiamo impostato il nostro fuso orario, è arrivato il momento di scaricare i nostri file sorgenti del kernel per configurarlo.
+27
+Esegui # emerge gentoo-sources per scaricare i file sorgenti del kernel.
+28
+Questo passaggio successivo può essere difficile per i neofiti. Adesso dobbiamo configurare il kernel, in modo che possa supportare tutto ciò di cui abbiamo bisogno. Devi essere sicuro di configurare correttamente il kernel, altrimenti potresti ritrovarti senza quelle funzioni di cui hai bisogno.
+29
+Esegui
+cd /usr/src/linux
+make menuconfig
+30
+Questo farà apparire il menu di configurazione del kernel. Assicurati di selezionare tutti i driver utili ad avviare il sistema, come ad esempio i driver SCSI (se fosse necessario) ed accertati che siano impostati in modo da essere integrati nel kernel. Se non lo sono, il computer non sarà in grado di avviarsi. Inoltre, assicurati di abilitare il supporto per il file system.
+31
+Seleziona qualsiasi driver di rete che possa essere necessario, ad esempio i driver ethernet, quelli wireless o entrambi.
+32
+Scegli il tipo del tuo processore e la famiglia.
+33
+Una volta che hai finito, scrivi make && make modules_install per avviare la compilazione del kernel e i suoi moduli. Questo può richiedere del tempo, quindi vai a leggerti qualche passo del tuo libro preferito, a guardare la TV, a portare a spasso il cane o svolgi qualsiasi altra attività che ti piace.
+34
+make -j2 && make modules_install
+35
+Ora abbiamo bisogno di copiare l'immagine del kernel su /boot. Cambia kernel-2.6.24 con qualunque appellativo tu voglia rinominarlo:
+cp arch/i386/boot/bzImage /boot/kernel-2.6.24
+36
+Ora configuriamo i moduli del kernel. Esegui find /lib/modules/(kernel version)/ -type f -iname '*.o' -or -iname '*.ko' per trovare tutti i moduli del kernel disponibili. Tra questi, aggiungi quelli che desideri siano automaticamente caricati su /etc/modules.autoload.d/kernel-2.6. Non includere il .ko o .o o il percorso. Basta semplicemente dire, ad esempio, snd-hda-intel.

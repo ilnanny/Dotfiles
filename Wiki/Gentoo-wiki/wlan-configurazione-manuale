@@ -1,0 +1,90 @@
+======================== rete manuale =========
+Configurazione Wi-Fi
+
+Per quanto concerne invece il WiFi, dobbiamo usufruire dell’utility wpa_supplicant.
+
+nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+    Ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel
+
+    Update_config=1
+
+Adesso digitiamo “ifconfig” e verifichiamo quale nome porta la nostra scheda Wi-Fi secondo il sistema. Appuntato il nome, andiamo a modificare il file /etc/conf.d/wpa_supplicant, e dentro le virgolette dei wpa_supplicant arguments inseriamo:
+
+    -B -i interfacciawifi -c /etc/wpa_supplicant/wpa_supplicant.conf”.
+
+
+Adesso scriviamo
+/etc/init.d/wpa_supplicant start
+per far partire il servizio, quindi proseguiamo con
+wpa_cli
+
+Questa utility a riga di comando ci permette di configurare il punto d’accesso e salvare il file di configurazione. Il primo comando che dobbiamo digitare è
+scan
+in modo tale che la scheda di rete analizzi i punti d’accesso disponibili.
+
+Per consultare l’elenco dei punti d’accesso trovati scriviamo
+scan_results
+ in questo modo ci verrà proposto l’elenco dei punti d’accesso compatibili.
+
+Scriviamo
+add_network
+ il quale output numerico corrisponde all’ID che verrà assegnato. Nel caso della prima rete sarà 0.
+
+Scriviamo quindi
+set_network 0 ssid nomessid
+ e poi
+ set_network 0 psk passworddirete
+  Infine scriviamo
+  enable_network 0
+   e attendiamo che il sistema si connetta. L’output visualizzato dovrebbe segnalare l’avvenuta connessione; se sarà così, scriviamo quindi
+   save_config
+ per salvare i dati sul file di configurazione e successivamente
+ quit
+per uscire dall’utility.
+
+Da ifconfig potremo inoltre constatare che ci verrà assegnato un indirizzo IP interno. Poi, possiamo verificare che i DNS funzionino provando a pingare il server di Google.
+
+=============================================
+Configurazione definitiva della rete
+
+Terminata la compilazione del kernel possiamo passare alla configurazione della rete. Modifichiamo l’hostname della macchina andando ad editare il file /etc/conf.d/hostname
+
+Successivamente, scriviamo “emerge –ask –noreplace net-misc/netifrc”, e confermiamo.
+
+Per il Wi-Fi bisogna installare anche i pacchetti “net-wireless/iw” e “net-wireless/wpa_supplicant”.
+
+Installiamo inoltre il pacchetto “dhcpcd”.
+
+Adesso da ifconfig andiamo ad appuntare il nome assegnato all’interfaccia di rete da noi utilizzata (vale sia per il Wi-Fi, che per l’ethernet) e modifichiamo il file /etc/conf.d/net, aggiungendo la stringa : config_nomeinterfacciarete=”dhcp”
+
+Salvato il file, abilitiamo il servizio dhcp per l’avvio automatico con “rc-update add dhcpcd default”.
+Configurazione ethernet
+
+Adesso, per chi ha l’ethernet bisogna scrivere:
+
+cd /etc/init.d
+
+ln -s net.lo net.nomeinterfacciadirete
+
+E poi aggiungiamo il servizio all’avvio con: rc-update add net.nomeinterfacciarete default
+Configurazione Wi-Fi
+
+Digitiamo: wpa_passphrase SSID password >> /etc/wpa_supplicant/wpa_supplicant.conf
+
+Andiamo ora ad editare quest’ultimo file e innanzitutto assicuriamoci che sia SSID, che password siano scritti correttamente, dopodichè aggiungiamo le stringhe:
+
+    Ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel
+
+    Update_config=1
+
+Esattamente come avevamo fatto all’inizio.
+
+Dopodichè andiamo ad editare il file /etc/conf.d/wpa_supplicant e inseriamo gli stessi arguments che avevamo visto prima.
+
+Infine, abilitiamo il servizio per l’avvio automatico con: rc-update add wpa_supplicant default
+Installare un system logger
+
+La connessione è configurata, adesso installiamo un system logger come “sysklogd”, sempre con emerge; e aggiungiamo il servizio “sysklogd” per l’avvio automatico da rc-update.
+
+=============================================

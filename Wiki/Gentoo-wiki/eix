@@ -1,0 +1,93 @@
+
+Ricerche veloci in Gentoo con eix
+ 6 Luglio 2007   Gentoo
+
+eix è un’utility per la ricerca di ebuild nel portage che indicizza il portage tree e rende le ricerche molto veloci.
+
+Installare eix
+Per installare eix utilizzare emerge:
+
+    emerge eix
+
+Aggiornare eix
+Alla prima installazione bisogna creare la cache in cui saranno indicizzati tutte le ebuild presente nel portage tree. Per effettuare l’aggiornamento della cache di eix esguire il comando:
+
+    update-eix
+
+Una volta creata la cache sarà necessario rieffettuare la precedente operazione ogni volta che verrà aggiornato il portage tree tramite emerge –sync oppure in alternativa è possibile utilizzare il comando:
+
+    eix-sync
+
+che effettua insieme l’emerge –sync e l’update-eix in un colpo solo
+
+Effettuare ricerche con eix
+eix offre diverse possibilità di ricerca, cerchiamo di vedere nel dettaglio le più importanti:
+
+    cercare una stringa contenuta nel nome di un pacchetto:
+
+    eix stringa_cercata
+
+ad esempio per cercare i pacchetti contenenti la parola kde si usa:
+
+    eix kde
+
+    cercare un pacchetto con il nome esatto:
+
+    eix -e nome_pacchetto
+
+ad esempio per cercare kdebase si usa:
+
+    eix -e kdebase
+
+    cercare una stringa nella descrizione di un pacchetto:
+
+    eix -S stringa_cercata
+
+ad esempio per cercare tutti i pacchetti che contengono nella descrizione il termine kde:
+
+    eix -S kde
+
+    visualizzare tutti i pacchetti installati
+
+    eix -I
+
+    visualizzare tutti i pacchetti che utilizzano una determinata USE flag:
+
+    eix -U use_flag
+
+ad esempio per visualizzare tutte le ebuild che utilizzano la USE flag kde:
+
+    eix -U kde
+
+    cercare tutti i pacchetti di una determinata categoria:
+
+    eix -C nome_categoria
+
+ad esempio per visualizzare tutti i pacchetti che fanno parte della categoria kde-base:
+
+    eix -C kde-base
+
+Inoltre le varie opzioni possono essere utilizzate in combinazione per ottenere dei migliori risultati, se ad esempio si vogliono ricercare tutti i pacchetti installati della categoria kde-base con la USE flag hal abilitata e il cui nome contiene la stringa “lib” si può usare:
+
+    eix lib -IU -C kde-base
+
+L’output di eix
+Nei risultati delle ricerche eix mostra la categoria del pacchetto, il nome del pacchetto, le versioni disponibili (le versioni con ~ sono non stabili, ! indica che le versioni sono hard masked), le versioni installate con data di installazione e USE flag utilizzate, l’home page e la descrizione del pacchetto.
+
+Ad esempio se ricerchiamo elinks con il comando eix -e elinks potremmo ottenere un output del tipo:
+
+    [I] www-client/elinks
+    Available versions: 0.11.2 0.11.2-r1 0.11.3
+    Installed versions: 0.11.3(15:53:58 07/04/07)(-X -bittorrent -bzip2 -debug -finger ftp -gopher gpm -guile -idn -ipv6 -javascript lua nls -nntp perl -ruby ssl unicode zlib)
+    Homepage: http://elinks.or.cz/
+    Description: Advanced and well-established text-mode web browser
+
+questo significa che elinks:
+– fa parte della categoria www-client, sono disponibili le versioni 0.11.2, 0.11.2-r1, 0.11.3;
+– è stata installata la versione 0.11.3 in data 07/04/07 alle ore 15:53:58 con le use flag gpm, lua, nls, perl, unicode e zlib (tutte quelle precedute dal – sono disabilitate);
+– l’home page di elinks è http://elinks.or.cz/ ;
+– la descrizione del pacchetto è Advanced and well-established text-mode web browser
+
+Adesso lascio a voi la possibilità di sbizzarrirvi nell’uso come meglio credete.
+
+Buon divertimento!

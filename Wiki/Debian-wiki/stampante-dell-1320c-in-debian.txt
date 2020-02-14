@@ -1,0 +1,45 @@
+Installing a Dell 1320c colour laser printer in ubuntu (kubuntu 9.10 x86_64)
+On: Apr 05Author: matCategories: Electronics, Linux 2 Comments
+
+This is a nice colour laser printer that I managed to pick up quite cheaply with 2 sets of toner.
+
+Problem
+
+On my system (kubuntu 9.10 x86_64) it did not appear in lsusb and dmesg showed the following:
+
+    [15208.550014] usb 1-6: new high speed USB device using ehci_hcd and address 10
+    [15208.701200] usb 1-6: configuration #1 chosen from 1 choice
+    [15208.741575] usblp0: USB Bidirectional printer dev 10 if 0 alt 0 proto 2 vid 0x413C pid 0x5516
+    [15208.741596] usbcore: registered new interface driver usblp
+    [15209.747326] usb 1-6: usbfs: interface 0 claimed by usblp while ‘usb’ sets config #1
+
+Funnily enough it did appear in the list of devices in virtualbox, however I had no luck trying (and didn’t really want to) to install it virtually. So I decided I’d make use of the built in network abilities of the printer and plug it directly into the router (I didn’t do this initially as I wanted the printer in a different room to the router).
+
+Solution
+
+After setting the printer up on the network, I ensure logged into the web interface and changed the password from the default. I then followed this thread on the ubuntuforums which refers to this text for installing the “Fuji Xerox DocuPrint C525A” driver which is compatible with the dell 1320c.
+
+The driver is an 32bit rpm by default (which is fine for redhat based os’s), you can use alien to convert the rpm to an deb, or you can just download a prebuilt deb from zoffix.com (Direct link. This is a 32 bit package still so we need to install it using “–force-architecture”
+
+    sudo dpkg -i fuji-xerox-docuprint-c525-a-ap_1.0-2_i386.deb –force-architecture
+
+Once this driver is installed you can login to cups and configure your printer as you would normally (instructions below). However when you are required to select the printer you need to provide the ppd file manually if you have installed the driver
+
+1 – Open a webbrowser and goto http://localhost:631/admin
+2 – Click add printer
+3 – Enter a name for the printer eg: dell1320c (spaces are not allowed)
+4 – Enter the printer address. This is the ip address of your printer prefixed with “lpd://”. eg: lpd://192.168.1.121
+5 – Either locate Fuji Xerox DocuPrint C525A or select the ppd directly which is located at /usr/share/cups/model/FujiXerox/en/FX_DocuPrint_C525_A_AP.ppd
+6 – Memory Capacity should be 64MB, and Optional Tray Module should be 250 Sheet Feeder
+7 – finish.
+
+Bypass tray problem
+
+You should now print a test page, however if you get the problem like me that the printer always attempts to load paper from the manual paper feed, you will need to change the paper source from bypass tray to tray 1 in each program you need to print with (hopefully there will be a fix for this, but in this cups there seems no option to set it)
+Select tray 1 to avoid using bypass paper with dell 1320c in ubuntu
+
+Select tray 1 to avoid using bypass paper with dell 1320c in ubuntu
+
+Additional
+
+I also noticed that this printer was covering each printed page with tiny yellow dots, which can be used to identify a printer (most likely for criminal matters). 

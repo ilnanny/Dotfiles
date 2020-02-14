@@ -1,0 +1,12 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done
+
+exit 0

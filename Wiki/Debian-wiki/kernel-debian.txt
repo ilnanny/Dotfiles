@@ -1,0 +1,119 @@
+############################### ################ #############################################
+
+
+## kernell installati 
+
+dpkg --get-selections | grep linux-image
+
+# opppure
+
+dpkg --list | grep linux-image
+
+## kernel in esecuzione
+
+uname -r
+
+##headers
+
+ls /usr/src | grep 'linux-headers'
+
+##rimuovere headers
+
+apt-get purge -y  linux-headers-4.9.0-2-common
+apt-get purge -y  linux-headers-4.9.0-2-amd64
+apt-get purge -y  linux-headers-4.9.0-3-common
+apt-get purge -y  linux-headers-4.9.0-3-amd64
+apt-get purge -y  linux-headers-4.9.0-4-common
+apt-get purge -y  linux-headers-4.9.0-4-amd64
+
+##rimuovere kernel
+
+apt-get purge -y  linux-image-4.9.0-2-amd64	
+apt-get purge -y  linux-image-4.9.0-3-amd64	
+apt-get purge -y  linux-image-4.9.0-4-amd64 
+apt-get autoremove
+
+update-grub
+
+
+----------------------------------############-----------------------------------------------
+
+## installare un'immagine del kernel ##
+
+apt-cache search linux-image
+
+apt-get install linux-image-<tipologia>
+
+
+-----------------------------------------
+
+##  per Debian Unstable e Debian Experimental, usare ##
+
+ # cat >> /etc/apt/preferences << EOF
+ Package: *
+ Pin: release o=Debian,a=experimental
+ Pin-Priority: 102
+ EOF
+ # apt-cache policy # mostra/verifica le preferenze attuali
+
+ # echo "deb http://ftp.de.debian.org/debian experimental main" >> /etc/apt/sources.list
+
+ # apt-get update
+
+ # apt-get -t experimental install linux-image-4.10-rc6
+
+
+
+
+############################### ################ #############################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

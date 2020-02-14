@@ -1,0 +1,16 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#   Dipende  : ntfsprogs                        =
+#================================================
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#Spegni il PC tra trenta minuti
+sudo shutdown -h +30
+exit 0

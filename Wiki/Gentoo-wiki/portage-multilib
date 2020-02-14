@@ -1,0 +1,1 @@
+ ac_cv_func_fallocate=no emerge util-linux

@@ -1,0 +1,17 @@
+HOW TO INSTALL exGENT
+
+*** SMONTARE TUTTI I DISCHI ESTERNI ALTRIMENTI LI CANCELLA  ***
+
+cd /root/install
+
+
+./install.sh /dev/sdd1 /dev/sda5
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+Rimozione dei sorgenti del kernel
+Dopo aver installato un nuovo kernel funzionante, il kernel vecchio può essere rimosso :
+
+  emerge --ask --depclean gentoo-sources
+
+
+Per proteggere alcuni sorgenti kernel :
+
+  emerge --ask --noreplace gentoo-sources:4.19.23
+
+Rimuovere i kernel residui con eclean-kernel :
+  emerge --ask app-admin/eclean-kernel          [ se non è già installato ]
+
+Esempio per far rimanere solo 1 kernel :
+  eclean-kernel -n 1
+
+=========================================================
+
+Quando il kernel viene compilato direttamente nella cartella dei sorgenti,
+i file generati durante il processo di compilazione rimangono intatti e non vengono rimossi da Portage:
+
+  rm -r /usr/src/linux-3.X.Y
+  
+Durante la configurazione del kernel, i moduli del kernel sono copiati nella sotto-directory /lib/modules/:
+
+  rm -r /lib/modules/3.X.Y
+  
+I vecchi file in /boot possono anche essere rimossi:
+
+  rm /boot/vmlinuz-3.X.Y
+  rm /boot/System.map-3.X.Y
+  rm /boot/config-3.X.Y
+  
+In fine, rimuovere tutte le voci relative rimaste nel file di configurazione del bootloader

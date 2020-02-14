@@ -1,0 +1,42 @@
+Aggiornamento :
+__________________
+Repository
+  pacman -Sy
+
+Distribuzione
+  pacman -Su
+
+REpo e distro 
+  pacman -Syu
+
+Aggiorna + installa pacchetto
+pacman -Sy nomepacchetto
+__________________________________
+  
+installa pacchetto
+  pacman -S nomepacchetto
+  
+installa un pacchetto locale
+  pacman -U nomepacchetto.pkg.tar.xz
+
+installa un pacchetto da un link es.
+  pacman -U http://www.example.com/repo/example.pkg.tar.xz
+
+rimuovere un pocchetto
+  pacman -R nomepacchetto
+
+rimuovere tutte le dipendenze del pacchetto che non sono usate da nessun’altro pacchetto installato
+  pacman -Rs nomepacchetto
+
+cercare un pacchetto nei repository
+  pacman -Ss nomepacchetto
+
+cercare un pacchetto installato
+  pacman -Qs nomepacchetto
+
+scaricare un pacchetto senza installarlo
+  pacman -Sw nomepacchetto
+
+rimuovere i pacchetti inutilizzati 
+  pacman -Rs $(  pacman -Qtdq)
+

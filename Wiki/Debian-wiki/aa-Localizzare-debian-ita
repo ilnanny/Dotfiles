@@ -1,0 +1,7 @@
+sudo apt install --reinstall locales && sudo dpkg-reconfigure locales
+
+locale-gen it_IT.UTF-8
+
+dpkg-reconfigure locales
+
+locale-gen --no-purge --lang it_IT.UTF-8

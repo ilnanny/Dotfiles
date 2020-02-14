@@ -1,0 +1,2 @@
+chattr +i    blocca un file
+chattr -i    sblocca un file

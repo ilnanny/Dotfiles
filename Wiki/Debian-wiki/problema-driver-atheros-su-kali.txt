@@ -1,0 +1,31 @@
+ 
+ dmesg 
+
+
+ dmesg | grep htc 
+
+leafpad /etc/modprobe.d/blacklist-ath9k.conf 
+
+aggiungi:
+blacklist ath9k_htc
+salva
+
+ dmesg | grep htc 
+
+
+
+Rimuovi i vecchi pacchetti :
+
+apt-get remove --purge firmware-atheros
+
+Aggiungi jessie-backports in apt repository:
+
+echo deb http://ftp.br.debian.org/debian jessie-backports main contrib non-free >> /etc/apt/sources.list
+
+apt-get update
+
+e installa il nuovo  firmware-atheros :
+
+apt-get install -t jessie-backports firmware-atheros
+------------------------------------------------------------------------------
+

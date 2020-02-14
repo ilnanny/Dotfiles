@@ -1,0 +1,7 @@
+x error slackware
+-----
+#startx
+
+xfce4-session:/usr/lib64/..lib64/libz.so.1:version'ZLIB_1.2.9' not found (required by /usr/lib64/libpng16.so.16)
+xinit:connection to x server lost
+waiting to xserver to shoutdown (II) server terminated successfully (0). closing log file.

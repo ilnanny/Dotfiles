@@ -1,0 +1,32 @@
+
+
+Metodo-1 ghostscript
+installare  ghostscript
+
+Ridimensionare il file PDF con :
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+
+Sostituire i nomi output.pdf (file di origine)e input.pdf (file compresso)con i nomi dei vs file.
+Queste sono le opzioni che è possibile utilizzare per selezionare la qualità dell’output:
+
+-dPDFSETTINGS=/screen   (qualità da schermo, 72 dpi)
+-dPDFSETTINGS=/ebook    (bassa qualità, 150 dpi )
+-dPDFSETTINGS=/printer  (alta qualità, 300 dpi )
+-dPDFSETTINGS=/prepress (alta qualità, preserva i colori, 300 dpi)
+-dPDFSETTINGS=/default  (quasi identico a /screen)
+
+=========================================================================================
+
+Metodo-2 pdftk
+
+installare  pdftk 
+
+:
+convertiamo il documento PDF in PS esempio per il documento pluto.pdf:
+
+pdftops pluto.pdf tmp.ps
+
+ora comprimere il nostro PDF :
+
+ps2pdf tmp.ps pluto-compresso.pdf

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Update-System
+Comment=
+Exec=/usr/bin/update.sh
+Icon=update-manager
+Path=
+Terminal=true
+StartupNotify=false
+GenericName=Aggiorna il sistema

@@ -1,0 +1,54 @@
+
+The default kernel config is found in /proc/config.gz
+cd cartella/kernel
+
+#  make mrproper
+
+#  zcat /proc/config.gz > .config
+
+#  make oldconfig
+ 
+oppure
+
+#  make gconfig  
+
+o ancora 
+
+#  make xconfig
+
+per aggiungere driver 
+
+#  make menuconfig
+
+Compiling & Installing
+
+#  make
+
+#  sudo make modules_install
+
+#  sudo cp -v arch/x86/boot/bzImage /boot/vmlinuz-version
+
+#  sudo cp -v System.map /boot/System.map-version
+
+#  /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinux-version
+
+#  
+
+#  aggiornare grub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

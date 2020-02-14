@@ -1,0 +1,23 @@
+For a list of Gentoo update servers, run this and choose a few servers:
+
+mirrorselect -i -o >> /etc/portage/make.conf
+
+For the Gentoo rsync server, run this and choose one server:
+
+mirrorselect -i -r -o
+
+Copy that server to the
+
+/etc/portage/repos.conf/gentoo.conf
+
+file, setting the variable sync-uri to it. For example:
+
+sync-uri = rsync://rsync.uk.gentoo.org/gentoo-portage
+*
+
+
+
+emerge --sync
+
+per ottenere l'intero albero di portage
+emerge-webrsync

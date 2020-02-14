@@ -1,0 +1,32 @@
+incolla in un terminale questo:
+==============================
+
+sudo cat <<EOF >> "/etc/polkit-1/rules.d/49-nopasswd_global.rules"
+/* Allow members of the wheel group to execute any actions
+ * without password authentication, similar to "sudo NOPASSWD:"
+ */
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});
+
+/* Allow members of the polkitd group to execute any actions
+ * without password authentication, similar to "sudo NOPASSWD:"
+ */
+polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("polkitd")) {
+        return polkit.Result.YES;
+    }
+});
+
+
+EOF
+
+
+
+===============================================
+aggiungi il tuo utente al gruppo polkitd
+gpasswd -a ilnanny polkitd
+monta tutte le partizioni dal file manager
+riavvia.

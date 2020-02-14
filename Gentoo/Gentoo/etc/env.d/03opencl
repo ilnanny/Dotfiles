@@ -1,0 +1,4 @@
+# Configuration file for eselect
+# This file has been automatically generated.
+LDPATH="/usr/lib/OpenCL/vendors/nvidia:/usr/lib64/OpenCL/vendors/nvidia"
+OPENCL_PROFILE="nvidia"

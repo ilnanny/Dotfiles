@@ -1,0 +1,37 @@
+==
+Montare la partizione sulla quale risiede il sistema
+==
+
+mount /dev/sdd1 /mnt
+mount --bind /dev /mnt/dev
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+
+chroot /mnt
+export PS1="(chroot) $PS1"
+
+grub-install /dev/sda
+
+grub-mkconfig –o /boot/grub/grub.cfg
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+exit
+cd ~
+umount /mnt/dev
+umount /mnt/proc
+umount /mnt/sys
+umount /mnt/
+
+reboot 
+
+
+---------------------in estremis-----------------\\\ 
+ fuser -k /mnt/                                                            
+------------------------------------------------//// 
+## Se si ricevono errori è possibile riprovare :
+
+grub-install --recheck /dev/sda
+
+-------------

@@ -1,0 +1,20 @@
+buildpkg
+
+Settando FEATURES=“buildpkg” in /etc/make.conf
+
+si può abilitare la generazione dei pacchetti binari.
+Ciò che viene compilato viene compresso in un archivio tbz2 nella cartella
+
+/usr/portage/packages/categoria/nomepacchetto.tbz2
+
+che poi può essere installato in un altra installazione di gentoo che usa le stesse USE flag e CFLAGS e ovviamente la stessa architettura.
+
+Si può anche settare PORTAGE_BINHOST puntando alla cartella precedentemente citata
+(tramite nfs share per esempio) in make.conf
+
+in un'altra installazione di gentoo con le suddette caratteristiche per fare in modo che portage cerchi i pacchetti già compilati li, senza doverli compilare ancora.
+
+Il comando 'quickpkg' ha lo stesso effetto della caratteristica 'buildpkg'
+ ma su pacchetti già installati.
+ 
+Si veda il rispettivo man per maggiori informazioni.

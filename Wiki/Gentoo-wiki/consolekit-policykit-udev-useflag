@@ -1,0 +1,170 @@
+Ecco una piccola lista di controllo per ottenere una configurazione ConsoleKit e PolicyKit funzionante per la tua console e X11. 
+
+/etc/make.conf: 
+
+Terminale :
+
+USE="consolekit dbus pam policykit udev udisks upower" 
+
+
+In /etc/portage/package.use specialmente per gli utenti stabili perché il loro gnome-base/gvfs has USE="udisks" temporaneamente mascherato: 
+
+Terminale :
+
+gnome-base/gvfs gdu 
+
+
+Rimozione di cruft e installazione dei pacchetti richiesti e di world emergere  con --newuse: 
+Terminale :
+
+# emerge -C hal hal-info policykit devicekit devicekit-disks devicekit-power 
+# emerge -av gvfs udisks upower 
+# emerge -avDNut world 
+
+
+È necessario installare l'agente di autenticazione per sostituire "Non autorizzato". dialogo con finestra di dialogo delle password utili: 
+
+per i desktop basati su GTK+:  
+
+Terminale :
+
+# emerge -av polkit-gnome 
+
+
+Alternativamente: 
+
+Terminale :
+
+# emerge -av lxpolkit 
+
+
+Per KDE: 
+
+Terminale :
+
+# emerge -av polkit-kde-agent 
+
+
+Se non si desidera installare alcun agente, è necessario leggere la seguente documentazione dopo aver installato polkit: 
+
+Terminale :
+
+$ man 8 polkit 
+
+
+Opzioni del kernel richieste per sys-fs/udisks: 
+
+Terminale :
+
+CONFIG_USB_SUSPEND=y 
+CONFIG_IDE=n 
+
+
+Opzioni del kernel richieste per sys-auth/consolekit: 
+
+Terminale :
+
+CONFIG_AUDITSYSCALL=y 
+
+
+Arresto di cruft e avvio dei daemon: 
+Terminale :
+
+# /etc/init.d/hald stop 
+# rc-update del hald 
+# rc-update add dbus default 
+# rc-update add consolekit default 
+# /etc/init.d/consolekit start 
+
+
+Metodo per avviare Xfce da startx (Questo è senza dbus-launch perché il comando startxfce4 stesso esegue una sessione dbus e l'esecuzione di due è un errore): 
+
+Terminale :
+
+$ echo 'exec ck-launch-session startxfce4' >.xinitrc 
+$ startx 
+
+
+Metodo per avviare openbox e altri che non eseguono autonomamente dbus-session da startx: 
+Terminale :
+
+$ echo 'exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session' >.xinitrc 
+$ startx 
+
+
+È possibile riutilizzare la sintassi openbox o xfce per altri desktop. Prima prova senza dbus-launch, quindi con dbus-launch. 
+
+Gentoo ha i seguenti display manager in Portage con il supporto nativo di ConsoleKit: 
+
+xdm 
+slim 
+lightdm 
+old gdm-2 (note that gdm-3.8+ removed CK support and only works with systemd) 
+kdm 
+lxdm 
+
+Assicuratevi di usare le ultime versioni poiché alcuni di essi ha ottenuto supporto solo di recente. 
+
+Alla fine, dovresti vedere la sessione attiva all'interno o all'esterno di X11: 
+
+Terminale :
+
+$ ck-list-sessions 
+Session1: 
+   unix-user = '1000' 
+   realname = '(null)' 
+   seat = 'Seat1' 
+   session-type = '' 
+   active = FALSE 
+   x11-display = '' 
+   x11-display-device = '' 
+   display-device = '/dev/tty1' 
+   remote-host-name = '' 
+   is-local = TRUE 
+   on-since = '2010-12-25T09:44:12.519713Z' 
+   login-session-id = '1' 
+   idle-since-hint = '2011-01-02T16:04:09.020983Z' 
+Session3: 
+   unix-user = '1000' 
+   realname = '(null)' 
+   seat = 'Seat1' 
+   session-type = '' 
+   active = TRUE                                      <- La parte più importante. Questo è ciò a cui miriamo. 
+   x11-display = ':0' 
+   x11-display-device = '/dev/tty7' 
+   display-device = '/dev/tty1' 
+   remote-host-name = '' 
+   is-local = TRUE 
+   on-since = '2011-01-02T16:03:40.847555Z' 
+   login-session-id = '1'                            <- Se questo è vuoto, hai perso l'opzione CONFIG_AUDITSYSCALL=y nel kernel. 
+
+
+Problemi noti che impediscono il corretto funzionamento: 
+- Hai rimosso il parametro nox11 da /etc/pam.d/system-login in precedenza, ma hai dimenticato di ripristinarlo ora che il supporto nativo di ConsoleKit è disponibile nel tuo display manager? 
+
+- Quando si utilizza il supporto nativo di ConsoleKit (abilitato da USE = "consolekit" o sempre abilitato nei diversi display manager) 
+si dovrebbe * non * scrivere comandi come 
+dbus-launch o ck-launch-session 
+* ovunque * perché il display manager lo fa per te. 
+
+- Voci in / etc / fstab * conflitto * con sys-fs/udisks. 
+Ad esempio, se vuoi che il tuo cdrom sia gestito da udisks (e dal file manager che lo supporta, come nautilus, pcmanfm o Thunar) devi * rimuovere le voci * relative ad esso da /etc/fstab. 
+
+- È necessario ricompilare dev-libs/dbus-glib dopo l'aggiornamento deb-libs/glib  a mano: 
+
+Terminale :
+
+# emerge -av1 dbus-glib 
+
+
+- Configurazione mutilata / etc per consolekit, pambase o shadow: 
+
+Terminale :
+
+# emerge -av1 --noconfmem consolekit pambase shadow 
+# etc-update 
+
+
+============
+
+Per quelli che usano e17, assicurati di aver USE = "udev ukit" quando costruisci e_dbus / enlightenment e sarà abilitato automaticamente. 

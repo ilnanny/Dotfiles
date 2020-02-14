@@ -1,0 +1,93 @@
+
+
+wget -k -r -p -D sitoweb.it --restrict-file-names=unix http://www.sitoweb.it/sito/
+
+MAN.
+
+-k (o --convert-links): questo argomento fa si che, alla fine del processo di download, tutti i links alle pagine siano convertiti a links relativi, in modo da permettere la navigazione offline;
+
+-r (o --recursive): questo argomento permette il download – in gergo – di tipo ricorsivo, così da scaricare sicuramente l’intero sito web;
+
+-p (o --page-requisites): questo argomento permette di scaricare anche ciò di cui si ha bisogno per visualizzare correttamente la pagina (fogli di stile,immagini, javascripts eccetera eccetera);
+
+-D (o --domains): questo è un argomento importantissimo, per non ritrovarvi la macchina piena di pagine web inutili: scarica soltanto i links interni al dominio (o ai domini, separati l’un l’altro da una virgola) da voi specificati, in genere si usa quello del sito stesso;
+
+--restrict-file-names: altro argomento importante, permette di modificare i nomi dei files così da non andare in contrasto con il sistema operativo che state usando. I possibili parametri sono unix (se dovrete visualizzare il sito su un sistema Unix) o windows (se dovrete visualizzarlo su Windows).
+
+L’ultimo parametro, è l’url del sito web 
+
+===========================================
+wget http://ciaolinux.wordpress.com/
+scarica l’index del sito.
+
+wget -r http://ciaolinux.wordpress.com/
+scarica l’index completo anche di eventuali immagini.
+
+Le altre opzioni importanti del comando sono:
+
+-p (seguito da una directory) scarica nella directory specificata dopo -p.
+
+wget -p ~/sito http://ciaolinux.wordpress.com/
+salva i dati nella directory “sito” specificata dall’opzione -p.
+
+-S mostra varie informazioni sui file che si stanno scaricando.
+(volendo si può scrivere -Sr per unire i comandi -S e -r)
+
+-b esegue wget in background.
+
+-l (seguito da un numero) specifica il livello di ricorsione (se non indicato vale 5). inf e 0 equivalgono a ricorsione illimitata.
+
+wget -r -l 3 http://ciaolinux.wordpress.com/
+scarica l’index ed i relativi link con un livello di profondità pari a 3.
+
+-A (seguito dalle estensioni dei file separate da virgole) scarica solo i file di estensione specificata dopo -A.
+
+wget -r -A gif,jpg http://ciaolinux.wordpress.com/
+scarica dal sito specificato solo i file di estensione gif e jpg.
+
+-R (seguito dalle estensioni dei file separate da virgole) non scarica i file di estensione specificata dopo -R. Volendo dopo -R si può specificare il nome di una directory racchiusa tra due *.
+
+wget -r -R gif,jpg http://ciaolinux.wordpress.com/
+scarica l’index ed i relativi link escludendo i file di estensione gif e jpg.
+
+wget -r -R “*foto*” http://ciaolinux.wordpress.com/
+scarica l’index ed i relativi link escludendo la directory “foto”.
+
+-D (seguito da indirizzi separati da virgole) indica il “domain acceptance“, ovvero i domini dai quali è accettato il download, limitando il dowload dei file collegati al sito che si sta scaricando, ai soli domini specificati dopo -D separati da virgole.
+
+wget -D blogger.com http://ciaolinux.wordpress.com/
+
+-o (seguito dal nome di un file) registra i messaggi di wget nel file specificato
+
+wget -r -l 3 -o wget.log http://ciaolinux.wordpress.com/
+scarica l’index ed i relativi link con un livello di profondità pari a 3; il log dell’operazione sarà scritto nel file wget.log.
+
+-t (seguita da un numero) indica il numero di tentativi che wget esegue per scaricare. 0 consentire al programma di tentare un numero infinito di volte l’operazione di download.
+
+-i (seguito dal nome di un file) legge una lista di url dal file specificato.
+
+-c fa il resume del download, riprende a scaricare un download parziale.
+
+-k converte i link da assoluti a relativi per visualizzare la pagina offline.
+
+-N non scarica file più vecchi di quelli locali.
+
+-nq evita di scaricare link che fanno riferimento ad altri siti.
+
+-nc evita di scaricare i file già esistenti.
+
+-nd non crea directory.
+
+-E salva con estensione “.html” i documenti HTML scaricati.
+
+-m scorciatoia per -N -r -l inf
+
+wget -m http://ciaolinux.wordpress.com/
+fa la copia speculare del sito: aggiorna il download in base alle date.
+
+Oltre che per livelli e per domini, c’è un terzo limite da considerare, che consente di specificare un quota, ovvero una dimensione massima oltre il quale non verrà scaricato più nulla. Questo limite però non viene applicato ai file: se durante il download di un file il limite viene superato, wget cesserà di funzionare solo dopo aver portato a termine l’ultima operazione e non prima. Il limite può essere espresso in byte (default), in kilobyte (k) o in megabyte (m);
+
+wget -r -l 1 -Q10m -D http://ciaolinux.wordpress.com/
+Scarica solo 10 Mb di file dall’indirizzo specificato.
+
+Queste sono le principali funzioni di wget che permette anche di scaricare in ftp usando tutte le opzioni usate per il web.

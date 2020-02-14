@@ -1,0 +1,10 @@
+rm -rf /dev/shm
+mkdir /dev/shm
+mount -t tmpfs -o mode=1777,nodev /dev/shm
+chmod 1777 /dev/shm
+
+
+	
+
+$ mount |grep shm
+shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime) 

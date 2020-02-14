@@ -1,0 +1,14 @@
+Installare / avviare Box2Tux in Debian, Ubuntu e derivate è molto semplice, la prima cosa da fare è installare davfs2 digitando da terminale:
+
+sudo apt-get install davfs2
+
+al temine dell’installazione possiamo scaricare e avviare Box2Tux digitando:
+
+cd
+wget https://github.com/alfredobonino/Box2Tux/archive/master.zip
+unzip master.zip
+cd Box2Tux-master/
+chmod +x box2tux
+./box2tux
+
+a questo punto dovremo inserire l’username e password del nostro account Box.com al termine della configurazione dovremo riavviare la distribuzione o terminare la sessione.

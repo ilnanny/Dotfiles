@@ -1,0 +1,4 @@
+ls -lha
+ls -lhs | more
+ls -lhs | less
+ls -lhs | w -l

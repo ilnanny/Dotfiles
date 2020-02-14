@@ -1,0 +1,77 @@
+DA terminale :
+
+dmg2img /path/to/example.dmg /path/to/example.img
+
+se chiede di montare l'immagine non farlo!!
+
+sudo mkdir /media/example
+
+sudo modprobe hfsplus
+
+sudo mount -t hfsplus -o loop example.img /media/example
+
+( sostituisci example con il nome del dmg).
+
+
+Apri Brasero. Seleziona Disco dati dalla finestra.
+ Nel menu Visualizza, seleziona Abilita pannello laterale.
+Passo Individuazione del nome del file nel riquadro laterale di Brasero e Masterizza. Seleziona File immagine come tipo di output. Premi di nuovo Scrivi
+per creare il file ISO.
+
+======================================================================================
+
+Step 1. Execute the following command in Terminal:
+sudo apt-get update
+sudo apt-get install dmg2img
+
+Step 2. You can now proceed with the conversion command: dmg2img example.dmg example.iso
+
+Step 3. You can also define a specific file path for the output (converted) file, but this basic command is what you need to use for the conversion.
+
+=========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+
+	W-1           				GoToDesktop
+	W-2           				GoToDesktop
+	W-3           				GoToDesktop
+	W-4           				GoToDesktop
+	C-W-1         				SendToDesktop
+	C-W-2         				SendToDesktop
+	C-W-3         				SendToDesktop
+	C-W-4         				SendToDesktop
+	A-Tab         				NextWindow
+	W-Tab         				NextWindow
+	C-A-Right     				DesktopNext
+	C-A-Left      				DesktopPrevious
+	W-Left        				UnmaximizeFull
+	W-Right       				UnmaximizeFull
+	C-W-f         				MaximizeFull
+	W-S-F         				UnmaximizeFull
+	W-S-k         				Unmaximize
+	W-S-j         				Unmaximize
+	W-k           				Unmaximize
+	W-h           				Unmaximize
+	W-j           				Unmaximize
+	W-l           				Unmaximize
+	W-z           				Unmaximize
+	W-x           				Unmaximize
+	W-c           				Unmaximize
+	W-Right       				MoveRelative
+	W-Left        				MoveRelative
+	W-Up          				MoveRelative
+	W-Down        				MoveRelative
+	W-S-Right     				ResizeRelative
+	W-S-Left      				ResizeRelative
+	W-S-Down      				ResizeRelative
+	W-S-Up        				ResizeRelative
+	S-W-Left      				SendToDesktopLeft
+	S-W-Right     				SendToDesktopRight
+	S-W-Up        				SendToDesktopUp
+	S-W-Down      				SendToDesktopDown
+	A-Escape      				Lower
+	Print         				xfce4-screenshooter
+	A-Print       				scrot -d 5 'screenshot_%Y%m%d-%H%M%S_$wx$h.png'
+	W-f           				exo-open --launch FileManager
+	W-t           				exo-open --launch TerminalEmulator
+	W-w           				exo-open --launch WebBrowser
+	W-e           				subl3
+	C-A-m         				xfce4-settings-manager
+	W-m           				vlc
+	W-v           				xterm -e alsamixer
+	W-s           				skippy-xd
+	W-Return      				exo-open --launch TerminalEmulator
+	C-A-l         				lockscreen -- scrot
+	C-A-Delete     				menu -l
+	W-S-Escape     				openbox exit
+	C-S-BackSpace  				Restart
+	C-S-Return     				Reconfigure
+	W-Escape      				xkill
+	A-F1          				jgmenu_run
+	A-F2          				menu -r
+	A-F4          				Close
+	A-F5          				Iconify
+	A-F6          				ToggleMaximize
+	A-F8          				ToggleDecorations
+	W-d           				ToggleShowDesktop
+	W-b           				ToggleDecorations
+	A-r           				Resize
+	A-m           				Move
+	S-W-q         				Close
+	W-space       				root-menu
+	A-space       				client-menu
+	W-KP_1        				UnmaximizeFull
+	W-KP_2        				UnmaximizeFull
+	W-KP_3        				UnmaximizeFull
+	W-KP_4        				UnmaximizeFull
+	W-Right       				UnmaximizeFull
+	W-Left        				UnmaximizeFull
+	W-Up          				MaximizeFull
+	W-Down        				UnmaximizeFull
+	W-A-Left      				UnmaximizeFull
+	W-A-Right     				UnmaximizeFull

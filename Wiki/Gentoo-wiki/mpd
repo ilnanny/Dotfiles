@@ -1,0 +1,76 @@
+5.) Gentoo
+
+emerge mpd mpc
+
+Nota, mpc è un client per MPD. MPC si connette a un MPD e lo controlla in base ai comandi e gli argomenti passati ad esso. Se non viene fornito alcun comando, lo stato corrente viene stampata (come ‘mpc status’).
+Configurazione
+
+Al termine dell’installazione di MPD diventare root, o usare sudo, per aprire con il proprio editor di testo preferito il file /etc/mpd.conf per modificarlo.
+Si dovrebbe vedere qualcosa di simile a questo:
+
+music_directory       "/home/user/Music"         # Your music dir.
+playlist_directory    "/home/user/.mpd/playlists"
+db_file               "/home/user/.mpd/mpd.db"
+log_file              "/home/user/.mpd/mpd.log"
+pid_file              "/home/user/.mpd/mpd.pid"
+state_file            "/home/user/.mpd/mpdstate"
+#user                  "user"
+audio_output { 
+         type                    "alsa"
+         name                    "HDA-intel"
+         device                  "hw:0,0"     # optional
+         format                  "44100:16:2" # optional
+}
+
+audio_output {
+         type                    "fifo"
+         name                    "my_fifo"
+	 path                    "/tmp/mpd.fifo"
+	 format                  "44100:16:2"
+}
+
+# Binding to address and port causing problems in mpd-0.14.2 best to leave
+# commented.
+# bind_to_address       "127.0.0.1"
+#port
+
+Questo è il file mpd.conf di default. Modificare i percorsi per utilizzare la vostra collezione di musica ed il percorso alla cartella .mpd. Salvare, uscite e fate un test di MPD.
+Fatelo partire con il comando
+
+ /etc/init.d/mpd start
+
+. Prima di aggiungerlo come un demone predefinito sul sistema, bisogna fare ancora qualche modifica nel file mpd.conf quindi aprirlo di nuovo. Nella sezione bind at address cambiare la variabile da localhost ad any ed aggiungere la sezione per fare http in streaming:
+
+audio_output {    
+        type            "httpd"    
+        name            "My HTTP Stream"
+        encoder         "vorbis"                # optional, vorbis or lame
+        port            "8000"
+#       quality         "5.0"                   # do not define if bitrate is defined
+        bitrate         "128"                   # do not define if quality is defined
+        format          "44100:16:1"
+}
+
+Salvare le modifiche, riavviare il demone ed aggiungerlo ai demoni che partono di default nel sistema.
+Scegliere un client
+
+Selezione un client dipende dalle vostre esigenze specifiche. Se volete controllare la musica dal computer portatile o dalla vostra workstation è possibile utilizzare Sonata o ncmpcpp . Sonata è un client GTK molto bello e popolare per MPD mentre ncmpcpp è uno dei più popolari client basati su ncurses per MPD.
+
+sonata client
+
+Se avete deciso di costruire un server di musica semplice, piccolo e discreto è possibile utilizzare uno dei tanti client MPD per Android.
+Due delle migliori applicazioni sono a mio parere Droid MPD e MPDroid . Entrambi sono molto semplici da configurare.
+
+MPDroid settings Droid MPD settings
+mpd02
+
+MPDroid settings
+
+Quando si configurano queste applicazioni di solito si ha solo bisogno di aggiungere il proprio indirizzo IP.
+L’IP locale per il controllo remoto a casa vostra e il vostro IP pubblico, se si vuole ascoltare la musica in streaming in tutto il mondo con il proprio dispositivo Android.
+Riprodurre la musica
+
+Siamo ormai alla fine, l’unico passaggio rimasto è quello di riprodurre, ascoltare e goderci la nostra musica con la musica nuova generazione di server/streamer.
+Aprite il client, scegliete la vostra canzone preferita e rilassatevi..
+
+Raspberry PI + MPD e MPDroid come client:

@@ -1,0 +1,9 @@
+aggiungi in /etc/sources.list:
+
+deb http://ftp.debian.org/debian buster-backports main contrib non-free
+
+installa il firmware:
+
+apt install firmware-atheros
+
+  sudo modprobe -r ath9k_htc && sudo modprobe ath9k_htc

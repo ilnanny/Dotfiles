@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=eBay | Tecnologia, moda, fai da te: p...
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=heiccmppjgefbpfcpmeabooghohhhhbl
+Icon=chrome-heiccmppjgefbpfcpmeabooghohhhhbl-Default
+StartupWMClass=crx_heiccmppjgefbpfcpmeabooghohhhhbl

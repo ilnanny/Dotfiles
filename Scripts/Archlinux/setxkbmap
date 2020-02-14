@@ -1,0 +1,12 @@
+#!/bin/sh
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# Enable switch between keyboard layouts using setxkbmap
+
+setxkbmap -model pc105 -layout it -option grp:alt_shift_toggle

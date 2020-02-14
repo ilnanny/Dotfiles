@@ -1,0 +1,2 @@
+CONFIG_PROTECT_MASK="/etc/gconf"
+GSETTINGS_BACKEND="gconf"

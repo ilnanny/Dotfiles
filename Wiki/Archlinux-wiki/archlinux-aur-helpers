@@ -1,0 +1,55 @@
+1. aurman
+
+aurman è un’ottima alternativa a Yaourt, forse la migliore su piazza. La sintassi è simile a quella di pacman e supporta le stesse operazioni del package manager. Ovviamente supporta la ricerca di pacchetti AUR, può essere usato anche come dependency solver standalone.
+
+Per installarlo date i seguenti comandi:
+
+    git clone https://aur.archlinux.org/aurman.git
+    cd aurman
+    makepkg -si
+
+Per cercare un applicazione usando aurman dovete dare il seguente comando:
+
+    aurman -Ss <package-name>
+
+Per installare un’applicazione usando aurman:
+
+    aurman -S &lt;package-name>
+
+2. yay
+
+yay è un AUR helper scritto in Go. Offre un interfaccia molto minimale, ricerca simile a yaourt e circa zero dependencies.
+
+Per installarlo su Arch dovete dare da terminale quanto segue:
+
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+
+Per cercare un applicazione usando yay dovete dare il seguente comando:
+
+    yay -Ss <package-name>
+
+Per installare un’applicazione usando yay:
+
+    yay -S <package-name>
+
+3. pakku
+
+Pakku è un altro pacman wrapper. E’ abbastanza nuovo e meno conosciuto ma non per questo dev’essere scartato. Non fa mancare alcuna funzionalità importante rispetto ai “rivali”.
+
+Per installarlo su Arch dovete dare da terminale quanto segue:
+
+    git clone https://aur.archlinux.org/pakku.git
+    cd pakku
+    makepkg -si
+
+Per cercare un applicazione usando pakku dovete dare il seguente comando:
+
+    pakku -Ss spotify
+
+Per installare un’applicazione usando pakku:
+
+    pakku -S spotify
+
+Altre due alternative molto valide sono aurutils e aura.

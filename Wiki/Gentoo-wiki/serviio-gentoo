@@ -1,0 +1,169 @@
+
+ Serviio Gentoo Installation Guide
+This article will instruct how to install Serviio on a fresh Gentoo install.
+
+Notes
+Instructions in this article assumes a 64-bit install. If you are using a 32-bit install you will have to substitute 'amd64' references with 'x86'.
+
+Prerequisites
+Serviio need ffmpeg and a Java Runtime Environment (JRE) preinstalled.
+
+FFmpeg
+To install the most recent FFmpeg, use the testing branch. New versions also support multithreaded decoding:
+
+# echo "media-video/ffmpeg ~amd64" >> /etc/portage/package.keywords
+# echo "media-video/ffmpeg threads" >> /etc/portage/package.use
+# emerge -av ffmpeg
+Java Runtime Environment (JRE)
+There are two different versions of JREs to choose from. You only need to choose one of the two choices presented below! The easiest is to use icedtea, but Sun's Java version is also available but it requires more effort to install. Once a JRE is installed, you need to make sure it is selected as the current JRE.
+
+FIXME java 8 required now
+
+Icedtea
+To install icedtea, use the following commands:
+
+# echo "dev-java/icedtea ~amd64" >> /etc/portage/package.keywords
+# echo "dev-java/icedtea-web ~amd64" >> /etc/portage/package.keywords 
+# emerge -av icedtea
+It'll take a while for the JRE to compile. When it's done, make sure it's set as the system VM:
+
+# java-config -L
+The following VMs are available for generation-2:
+1)      IcedTea JDK 7.2.2.1 [icedtea-7]
+*)      IcedTea JDK 6.1.11.3 [icedtea-bin-6]
+In this example it isn't, so you'll need to set it manually:
+
+# java-config -S 1
+Now using icedtea-7 as your generation-2 system JVM
+
+# java-config -L
+The following VMs are available for generation-2:
+*)      IcedTea JDK 7.2.2.1 [icedtea-7]
+2)      IcedTea JDK 6.1.11.3 [icedtea-bin-6]
+Now you can proceed to the Download Serviio section.
+
+Sun JRE
+The Sun JRE is fetch-restricted and also requires enabling the use of a specific software license. By fetch-restricted, that means the package manager will not download the package for you, you have to do it manually and copy it over to /usr/portage/distfiles, as per the instructions in this example output:
+
+# emerge -av sun-jre-bin
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies... done!
+[ebuild  N F   ] dev-java/sun-jre-bin-1.6.0.33-r1  USE="X alsa -jce -nsplugin" 20,802 kB
+
+Total: 1 package (1 new), Size of downloads: 20,802 kB
+Fetch Restriction: 1 package (1 unsatisfied)
+
+Fetch instructions for dev-java/sun-jre-bin-1.6.0.33-r1:
+ * Due to Oracle no longer providing the distro-friendly DLJ bundles, the package
+ * has become fetch restricted again. Alternatives are switching to
+ * dev-java/icedtea-bin:6 or the source-based dev-java/icedtea:6
+ * 
+ * Please download jre-6u33-linux-x64.bin from:
+ * http://www.oracle.com/technetwork/java/javase/downloads/jre6-downloads-1637595.html
+ * and move it to /usr/portage/distfiles
+
+The following license changes are necessary to proceed:
+#required by sun-jre-bin (argument)
+=dev-java/sun-jre-bin-1.6.0.33-r1 Oracle-BCLA-JavaSE
+Follow the link provided to download the JRE, then copy it to /usr/portage/distfiles (you may require root to do this, adjust accordingly):
+
+# cp jre-6u33-linux-x64.bin /usr/portage/distfiles
+After that's done, enable the license and install it:
+
+# echo "dev-java/sun-jre-bin Oracle-BCLA-JavaSE" >> /etc/portage/package.license
+emerge -av sun-jre-bin
+Once it is installed, check to make sure it is being used:
+
+# java-config -L
+The following VMs are available for generation-2:
+*)      IcedTea JDK 7.2.2.1 [icedtea-7]
+2)      IcedTea JDK 6.1.11.3 [icedtea-bin-6]
+3)      Sun JRE 1.6.0.33 [sun-jre-bin-1.6]
+It is not in the above example, so set it manually:
+
+# java-config -S 3
+Now using sun-jre-bin-1.6 as your generation-2 system JVM
+# java-config -L
+The following VMs are available for generation-2:
+1)      IcedTea JDK 7.2.2.1 [icedtea-7]
+2)      IcedTea JDK 6.1.11.3 [icedtea-bin-6]
+*)      Sun JRE 1.6.0.33 [sun-jre-bin-1.6]
+Now you can proceed to the Download Serviio section.
+
+Download Serviio
+Go to the Serviio download page and download the latest version.
+
+Extract Serviio
+Once the tarball has been downloaded, extract it and rename it:
+
+# tar zxf serviio-1.1-linux.tar.gz -C /opt
+# mv /opt/serviio-1.1 /opt/serviio
+This will extract the tarball into the /opt directory.
+
+Set up Serviio
+Now Serviio needs to be set up. Follow the instructions here.
+
+Serviio runs as a client/server setup. You need to run the server first (use /opt/serviio-<version>/bin/serviio.sh, then start the client (use /opt/serviio-<version>/bin/serviio-console.sh) to connect to it. The console allows you to configure Serviio.
+
+Start Serviio as a Service
+These instructions will provide a way to sun Serviio as a service under a non-root user. A user needs to be created for this purpose, then scripts added to be able to start and stop the service.
+
+Creating a New User
+To create a new user, use:
+
+# useradd -d /opt/serviio -r serviio
+Then, change the permissions on /opt/serviio to match the username:
+
+# chown -R serviio:serviio /opt/serviio
+Setting Up Initscripts
+Here are some initscripts that can be used to start and stop Serviio. Two are needed, one is /etc/conf.d/serviio, and the other is /etc/init.d/serviio (save them and move them to the appropriate place.)
+
+serviio_conf
+# /etc/conf.d/serviio
+ 
+# Location of serviio.sh
+SERVIIO_CMD=/opt/serviio/bin/serviio.sh
+ 
+# The user Serviio should run under
+SERVIIO_USER=serviio
+serviio_init
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+ 
+depend() {
+        need net
+}
+ 
+start() {
+        ebegin "Starting Serviio Media Server"
+        start-stop-daemon --start --exec ${SERVIIO_CMD} --make-pidfile \
+                --user ${SERVIIO_USER} --background \
+                --pidfile /var/run/serviio.pid
+        eend $?
+}
+ 
+stop() {
+        ebegin "Stopping Serviio Media Server"
+        ${SERVIIO_CMD} -stop
+        start-stop-daemon --stop \
+                --user ${SERVIIO_USER} --pidfile /var/run/serviio.pid
+        eend $?
+}
+Once downloaded, move them to their appropriate locations:
+
+# mv serviio_conf /etc/conf.d/serviio
+# mv serviio_init /etc/init.d/serviio
+# chmod +x /etc/init.d/serviio
+You can then start and stop Serviio with:
+
+# /etc/init.d/serviio start
+ * Starting Serviio Media Server ...  [ ok ]
+# /etc/init.d/serviio stop
+ * Stopping Serviio Media Server ...  [ ok ]
+To get Serviio to start automatically on startup:
+
+# rc-update add serviio default

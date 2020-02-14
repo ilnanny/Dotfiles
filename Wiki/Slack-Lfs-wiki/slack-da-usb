@@ -1,0 +1,24 @@
+Formatta la chiavetta usb:
+
+
+Copia l'immagine di boot nella chiavetta:
+dd if=usbboot.img of=/dev/sdf bs=1M
+
+Riavvia il pc e fai partire la chiavetta al boot.
+Avvia start per partizionare
+Digita :setup per installare il S:O
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+Introduzione
+Fedora è una distribuzione estremamente fluida e molto ben costruita. Ma basta poco per accorgersi che il tutto è davvero ridotto all'osso. Niente codec per la riproduzione dei media (a lavorare senza musica non se ne parla), niente driver proprietari per le schede di rete wifi, nemmeno i tasti massimizza e minimizza per le finestre sono disponibili di default. Vedremo ora come completarla per un utilizzo quotidiano.
+
+
+Installazione di RPM Fusion e aggiornamento iniziale del sistema
+Prima di procedere all'aggiornamento del sistema aggiungiamo il repo aggiuntivo RPM Fusion, ci sarà utile nei passi successivi per installare pacchetti che Fedora non include nei suoi repo
+
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+E quindi procediamo con
+
+sudo dnf update
+
+
+Installazione moduli per wifi
+Non sempre è necessario, ma nel mio caso ho dovuto faticare parecchio per far riconoscere al sistema la schedina wifi; alla fine, grazie a rpm fusion, questo pacchetto e le sue dipendenze mi hanno risolto i problemi
+
+sudo dnf install kmod-wl
+
+
+Installazione codec, plugin, java, utility di compressione
+Non ci giro intorno, senza questi pacchetti non si sente nemmeno la radio su internet, ho sintetizzato tutto in un solo comando per comodità
+
+sudo dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-bad-free-extras ffmpeg icedtea-web java-openjdk
+
+
+Installiamo anche qualche pacchetto utile per gestire gli archivi compressi
+
+sudo dnf install p7zip p7zip-plugins unrar
+
+
+Produttività
+Libreoffice è già installato alla versione 6.1.2, installiamo ora i vari font di casa Microsoft
+
+sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
+
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+Sinceramente, arrivando da Ubuntu, sono abituato con thunderbird per gestire la posta, per cui preferisco prima rimuovere evolution e poi installare il client di casa Mozilla, oppure visto che molti usano client web, si può rimuovere evolution e basta
+
+sudo dnf remove evolution
+
+sudo dnf install thunderbird
+
+NOTA: Thunderbird è presente anche come flatpak, ma al momento della scrittura di questa guida la versione dei repo è più aggiornata.
+
+Installiamo, se serve anche gparted
+
+sudo dnf install gparted
+
+Skype e Slack possono essere installati come flatpack usando l'applicazione Software
+
+Stessa cosa con GIMP, disponibile anch'esso da Software
+
+A differenza di ubuntu, su Fedora non è installato nessun client per gestire i file torrent, io preferisco qBittorrent a Transmission, per cui
+
+sudo dnf install qbittorrent
+
+Riduciamo il consumo del nostro computer installando e abilitando TLP, un servizio che migliora la gestione dei consumi
+
+sudo dnf install tlp tlp-rdw
+
+sudo systemctl enable tlp

@@ -1,0 +1,34 @@
+Crea un file .desktop in 
+
+~/.local/share/applications/ 
+
+per la tua applicazione con un editor di testo. 
+Se fatto bene, ciò causerà una voce nel menu principale e fornirà le informazioni necessarie al sistema per eseguirlo.
+
+Il nome del file ha il seguente aspetto:
+
+<name>.desktop [ex: leafpad.desktop]
+
+
+Esempio: (sostituire <...> con il contenuto appropriato)
+====================================================
+
+[Desktop Entry]
+Type=Application
+Icon=<percorso all'icona>
+Name= <nome da visualizzare nel menu>
+Comment=<tooltip>	
+Categories=<categorie di menu>
+Exec=<percorso per eseguibile>
+Path=<imposta la directory di lavoro, se necessario>
+StartupNotify=true
+Terminal=false
+
+=====================================================
+Ci sono numerose variabili. Tutte le specifiche le trovi qui:
+
+https://specifications.freedesktop.org/desktop-entry-spec/latest/index.html
+
+Altri .desktop files li trovi in /usr/share/applications, ma quelli sono per tutti gli utenti.
+
+===========================================================================================

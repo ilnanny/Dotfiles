@@ -1,0 +1,8 @@
+install media-fonts/arphicfonts
+install media-fonts/droid
+install media-fonts/ipamonafont
+install media-fonts/noto
+install media-fonts/ja-ipafonts
+install media-fonts/takao-fonts
+install media-fonts/wqy-microhei
+install media-fonts/wqy-zenhei

@@ -1,0 +1,38 @@
+                      Multipli del byte
+
+
+   Prefissi SI	 	                     Prefissi binari
+
+Nome	    Simbolo  Multiplo	         Nome	    Simbolo  Multiplo
+
+kilobyte	   kB	10 alla3	         kibibyte	   KiB	2 alla10
+megabyte	   MB	10 alla6	         mebibyte	   MiB	2 alla20
+gigabyte	   GB	10 alla9	         gibibyte	   GiB	2 alla30
+terabyte	   TB	10 alla12	         tebibyte	   TiB	2 alla40
+petabyte	   PB	10 alla15	         pebibyte	   PiB	2 alla50
+exabyte	       EB	10 alla18	         exbibyte	   EiB	2 alla60
+zettabyte	   ZB	10 alla21	         zebibyte	   ZiB	2 alla70
+yottabyte	   YB	10 alla24	         yobibyte	   YiB	2 alla80
+
+
+
+
+--------------------------------------------------------------------
+
+Conversioni
+In byte:
+
+1 024 EiB     = 1 zebibyte (ZiB)
+1 048 576 EiB = 1 yobibyte (YiB)
+
+In bit:
+
+1 EiB = 263 bit = 9 223 372 036 854 775 808 bit
+1 EiB = 9 007 199 254 740 992 kibibit
+1 EiB = 8 796 093 022 208 mebibit
+1 EiB = 8 589 934 592 gibibit
+1 EiB = 8 388 608 tebibit
+1 EiB = 8 192 pebibit
+1 EiB = 8 exbibit
+
+--------------------------------------------------------------------

@@ -1,0 +1,52 @@
+===========================================
+ ##         Gentoo genkernel
+===================================================================
+eselect kernel list
+eselect kernel set #
+
+# Usa la configurazione del kernel corrente e salva la copia (root)
+gunzip /proc/config.gz -c > /root/config; cp /root/config /root/config-$(uname -r)
+
+#  Opzionalmente cambia le impostazioni del modulo nel file di configurazione, o usa --menuconfig con genkernel.
+======        ======              ======        ======            ======        ======            ======        ======            
+se hai messo il file config in /root linux puoi dare.:
+genkernel --makeopts=-j5 --splash --kernel-config=/root/config all
+======        ======              ======        ======            ======        ======            ======        ======            
+oppure se hai messo il file config in usr src linux puoi dare.:
+
+genkernel --makeopts=-j5 --splash --kernel-config=/usr/src/linux/config all
+======        ======              ======        ======            ======        ======            ======        ======            
+o ancora ..con menuconfig affini la compilazione
+
+# genkernel --kernel-config=/usr/src/linux-4.17.3-gentoo/.config --menuconfig --bootloader=grub --disklabel all
+
+===========================================
+
+# Aggiorna i pacchetti con i moduli del kernel
+emerge -1 @module-rebuild
+
+# Ripulisci i vecchi file
+for name in $(ls /lib/modules/ | sort -V | head -n -3); do
+  rm -rf /boot/{initramfs,kernel,System.map}-genkernel-x86_64-${name:?}
+  rm -rf /lib/modules/${name:?}
+done
+
+# Aggiorna il file di configurazione di avvio
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+ ##         Linux/Vanilla sources
+===============================================
+" = oppure make -j5 menuconfig   o ancora  make -j5 xconfig = "
+
+    make -j5 olddefconfig 
+    make -j5 modules_prepare
+    emerge --ask @module-rebuild
+    make -j5
+    make install
+    make --install initramfs  
+
+  grub-mkconfig -o /boot/grub/grub.cfg
+  
+=====================================  

@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+
+CPATH="$HOME/.config/polybar"
+
+case "$@" in
+    -h|--help) echo -e "$HELP" ; exit 0
+esac
+
+CONFIG="$CPATH/config"
+if ! . "/usr/lib/common/include.cfg" 2>/dev/null; then
+    echo $"Errore: Manca il file  /usr/lib/common/include.cfg" ; exit 1
+fi
+
+Editmenu() {
+    if [[ $(pidof polybar) ]]; then
+        menuSeparator
+        menuSubmenu "RunningBar" "Avvia Barra"
+        while read -r pid cmd; do
+            if [[ ${cmd%% *} = polybar ]]; then
+                CONF=${cmd##* }
+                CONFIG=$HOME/.config/polybar/config
+                [[ $CONF = polybar ]] && CONF=$CONFIG
+                if hash exo-open &>/dev/null; then
+                    menuItem "$CONF" "exo-open $CONFIG"
+                elif hash xdg-open &>/dev/null; then
+                    menuItem "$CONF" "xdg-open $CONFIG"
+                elif hash termite &>/dev/null; then
+                    menuItem "$CONF" "termite -e '$EDITOR $CONFIG'"
+                elif hash st &>/dev/null; then
+                    menuItem "$CONF" "st -e $EDITOR $CONFIG"
+                elif hash urxvt &>/dev/null; then
+                    menuItem "$CONF" "urxvt -e '$EDITOR $CONFIG'"
+                fi
+            fi
+        done <<< "$(pgrep -a polybar)"
+        menuSubmenuEnd
+    fi
+}
+
+Configs() {
+    menuSubmenu "EditConfigs" "Edita Config"
+    if hash polybar-edit &>/dev/null; then
+        menuItem "Edita Config" "polybar-edit"
+    fi
+    Editmenu
+    menuSubmenuEnd
+}
+
+Launchmenu() {
+    if hash polybar-session &>/dev/null && [[ -f "$CPATH/sessions/openbox-sessionfile" ]]; then
+        if [[ $(pidof polybar) ]]; then
+            menuItem "Riavvia Polybar" "polybar-session"
+        else
+            menuItem "Avvia Polybar" "polybar-session"
+        fi
+    fi
+    if type polyzen &>/dev/null; then
+        menuItem "Polybar GUI" "polyzen"
+    fi
+}
+
+Killmenu() {
+    if [[ "$(pidof polybar)" ]]; then
+        menuItem "Stop Bars" "pkill polybar"
+    fi
+}
+
+menuStart "Polybarmenu" "Polybar"
+Launchmenu
+Killmenu
+Configs
+menuEnd

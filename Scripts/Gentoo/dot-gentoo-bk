@@ -1,0 +1,48 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+echo "#############################################"
+echo "#    BACKUP CARTELLE PERSONALI GENTOO       #"
+echo "#############################################"
+cleaner
+cp ~/.bashrc /media/Dati/Git/Dotfiles/Gentoo/
+cp ~/.bash_aliases /media/Dati/Git/Dotfiles/Gentoo/
+cp ~/.xinitrc /media/Dati/Git/Dotfiles/Gentoo/
+cp -r -a  ~/.config/neofetch /media/Dati/Git/Dotfiles/Gentoo/
+cp -r -a /etc/portage/ /media/Dati/Git/Dotfiles/Gentoo/
+cp -r -a /etc/sudoers /media/Dati/Git/Dotfiles/Gentoo/
+cp -r -a /var/lib/portage/world /media/Dati/Git/Dotfiles/Gentoo/
+cp -r -a /etc/env.d/02locale /media/Dati/Git/Dotfiles/Gentoo/
+#cp -r -a /etc/fstab /media/Dati/Git/Dotfiles/Gentoo/
+##
+cp -r -a  ~/.conky /media/Dati/Git/Dotfiles/home/
+cp ~/.Xresources /media/Dati/Git/Dotfiles/home/
+cp ~/.Xdefault /media/Dati/Git/Dotfiles/home/
+cp -r -a  ~/.config/bleachbit /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/catfish /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/deluge /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/geany /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/gtk-2.0 /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/gtk-3.0 /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/leafpad /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/obmenu-generator /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/openbox /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/pnmixer /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/Thunar /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/user-dirs.locale /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/xfce4 /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/xfce4-session /media/Dati/Git/Dotfiles/home/.config/
+cp -r -a  ~/.config/youtube-dlg /media/Dati/Git/Dotfiles/home/.config/
+clear
+echo "#############################################"
+echo "#        FATTO , CHIUDI IL TERMINALE        #"
+echo "#############################################"
+exit 4

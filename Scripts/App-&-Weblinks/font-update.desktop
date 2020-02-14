@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=font-update
+Comment=aggiorna fonts di sistema
+Exec=fc-cache -fv
+Icon=birdfont
+Path=
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,9 @@
+# Broadcom NetXtreme
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:10:18:e3:50:e5", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth0"
+# Broadcom NetXtreme
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="d4:ae:52:bd:4c:b5", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth1"
+# Unknown vendor
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="20:4e:7f:e7:57:ee", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan0"
+
+# USB device 0x0bda:0x8812 (usb)
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:0f:00:4d:33:9a", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan1"

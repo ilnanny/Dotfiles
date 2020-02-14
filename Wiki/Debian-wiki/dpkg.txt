@@ -1,0 +1,615 @@
+
+Dpkg
+APT
+Arrow left.png
+	
+
+Gestori di pacchetti
+
+    apt
+    apt-get
+    aptitude 
+
+	
+
+Comandi utili
+
+    apt-cache
+    apt-file
+    apt-mark 
+
+	
+
+Configurazione del sistema
+
+    Repository
+    apt-cdrom 
+
+	
+
+Altro
+
+    dpkg
+    gdebi 
+
+	
+	
+Arrow right.png
+
+
+
+Debian-swirl.png Versioni Compatibili
+Tutte le versioni supportate di Debian
+Indice [nascondi]
+
+    1 Introduzione
+    2 Pacchetti installati
+        2.1 Ricerche
+            2.1.1 Ricerche avanzate
+        2.2 Verifiche
+        2.3 Riconfigurazione
+        2.4 Rimozione
+            2.4.1 Rimozione forzata
+    3 Stato dei pacchetti
+        3.1 Lista dei pacchetti del sistema
+        3.2 Esporta e importa la lista dei pacchetti
+            3.2.1 Esporta
+            3.2.2 Importa
+        3.3 Cambia lo stato dei pacchetti
+    4 Pacchetto deb
+        4.1 Visualizza informazioni
+        4.2 Installazione
+            4.2.1 Installazione forzata
+    5 Modifiche ai file installati o ai loro permessi
+        5.1 Diversioni
+            5.1.1 Crea nuova diversione
+            5.1.2 Visualizza diversioni
+            5.1.3 Rimuovi diversione
+        5.2 Sovrascrivi permessi
+            5.2.1 Imposta nuovo utente, gruppo e permessi
+            5.2.2 Visualizza le personalizzazioni
+            5.2.3 Rimuovi personalizzazione
+    6 Architetture
+        6.1 Visualizza informazioni
+        6.2 Aggiungi nuova architettura
+        6.3 Rimuovi architettura
+    7 Manuale
+
+Introduzione
+
+Dpkg è il package manager di Debian, che si occupa dell'installazione, della configurazione e della rimozione di tutto il software disponibile nella forma di pacchetti deb. Ogni pacchetto ha delle dipendenze, in forma di altri pacchetti che devono essere presenti nel sistema, che sono controllati e installati automaticamente da APT, una suite di programmi che si avvale di dpkg come package manager e aggiunge funzionalità per rendere trasparente la gestione delle dipendenze e lo scaricamento dei pacchetti dai repository.
+
+Normalmente infatti l'utente utilizza soltanto uno dei tanti programmi che fanno parte di APT, come per esempio apt-get, senza ricorrere direttamente a dpkg, riservato agli utenti più esperti e per esigenze specifiche.
+
+Questa guida vuole offire soltanto una panoramica generale agli usi più comuni di questo potente strumento, ma non ha alcuna pretesa di esaustività e si rimanda alle pagine di manuale per tutti gli altri dettagli.
+
+Si sconsiglia caldamente però l'uso di questo strumento per l'installazione e la rimozione di pacchetti, salvo sia impossibile effettuare la stessa operazione con APT, in quanto non gestisce le dipendenze e ciò potrebbe compromettere il funzionamento del sistema. Invece può essere impiegato senza rischi per ricerche sul contenuto dei pacchetti installati o per visualizzare informazioni a essi relative, in genere agendo come frontend per le opzioni più comuni di dpkg-query e dpkg-deb, anch'essi contenuti nel pacchetto dpkg, essenziale per il funzionamento di Debian e che mette a disposizione molti altri comandi utili, i più importanti dei quali saranno affrontati brevemente.
+Pacchetti installati
+
+In questa sezione sono raccolte tutte le azioni che possono essere svolte sui pacchetti precedentemente installati.
+
+Per ricerche su pacchetti non installati in precedenza è necessario ricorrere ad APT, si veda per esempio apt-cache, mentre per ricerche sul contenuto di pacchetti non installati si rimanda alla Guida su apt-file.
+Ricerche
+
+    Cerca il pacchetto che ha installato il file, utile per esempio per risalire al pacchetto di un eseguibile di cui non si ricorda la provenienza: 
+
+$ dpkg --search /percorso/file
+
+Stesso comando, in forma abbreviata:
+
+$ dpkg -S /percorso/file
+
+    Restituisce la lista dei file installati nel sistema da un dato pacchetto: 
+
+$ dpkg --listfiles nomepacchetto
+
+(forma abbreviata: -L)
+
+    Cerca tutti i nomi di pacchetti corrispondenti al pattern scelto (con caratteri jolli: *, ?, [...]) tra quelli precedentemente installati, mostrandone lo stato, la versione e l'architettura: 
+
+$ dpkg --list "pattern"
+
+(forma abbreviata: -l)
+
+Per esempio per cercare tutti i pacchetti precedentemente installati contenenti la stringa "apt":
+
+$ dpkg -l "*apt*"
+
+Ricerche avanzate
+
+Per ricerche più avanzate, con la possibilità di selezionare i campi desiderati, si deve ricorrere esplicitamente al comando dpkg-query.
+
+    Per esempio per ottenere soltanto una stringa con la versione di un pacchetto (nomepacchetto), utile in uno script: 
+
+$ dpkg-query --showformat='${Version}\n' --show nomepacchetto
+
+(forme abbreviate: -f per --showformat e -W per --show)
+
+Si noti che ${Version} è una variabile interpretata da dpkg-query e non dalla shell, per questo è racchiusa tra apici (apostrofi).
+
+    Per cercare le architetture di tutti i pacchetti precedentemente installati, basta il seguente formato e non specificare alcun pacchetto: 
+
+$ dpkg-query --showformat='${Package;-40}${Architecture}' --show
+
+(dove in ${Package;-40} si intendono riservare i primi 40 caratteri a questo campo, e il segno meno indica l'uso dell'orientamento a sinistra, anziché a destra)
+
+Mentre per restringerla a quelli correntemente installati, si può usare lo stato abbreviato (${db:Status-Abbrev}) e filtrare con grep:
+
+$ dpkg-query --showformat='${db:Status-Abbrev}${Package;-40}${Architecture}' --show | grep '^i' 
+
+    Un altro esempio, questa volta con le opzioni abbreviate, per restituire la lista di tutti i pacchetti installati, mostrando se sono essenziali: 
+
+$ dpkg-query -f '${db:Status-Abbrev}${Package;-40}Essential: ${Essential}\n' -W
+
+E per trovare solo quelli essenziali, basta filtrare righe e colonne con i comandi grep e cut (dopo aver separato i campi con una tabulazione \t):
+
+$ dpkg-query -f '${Package}\t${Essential}\n' -W | grep 'yes$' | cut -f 1
+
+Info.png 	Pacchetti essenziali
+Questo appena presentato è anche l'unico modo per controllare quali pacchetti sono ritenuti essenziali da dpkg e dal sistema APT, mentre per esempio la ricerca avanzata di aptitude considera essenziali, e quindi non rimovibili, anche altri pacchetti importanti, come lo stesso apt:
+
+$ aptitude search "?essential"
+
+
+Per tutte le altre possibili informazioni da estrarre dai pacchetti precedentemente installati nel sistema si rimanda al manuale (man dpkg-query).
+Verifiche
+
+    Restituisce la lista dei pacchetti installati solo parzialmente o presenti in uno stato inconsistente, suggerendo le azioni da compiere per la risoluzione del problema: 
+
+$ dpkg --audit
+
+(forma abbreviata: -C)
+
+    Verifica l'integrità di ciò che è stato installato da uno o più pacchetti (da eseguire dopo aver controllato la consistenza dei metadati con il comando precedente): 
+
+$ dpkg --verify nomepacchetto
+
+(forma abbreviata: -V)
+Riconfigurazione
+
+Se si vogliono cambiare le impostazioni di un pacchetto installato e già configurato in fase di installazione, o per cui è possibile cambiare il default tramite dpkg, si può utilizzare dpkg-reconfigure:
+
+# dpkg-reconfigure nomepacchetto
+
+Rispetto agli altri eseguibili, tutti contenuti nel pacchetto dpkg, questo è contenuto in debconf, ma è anch'esso richiesto per il corretto funzionamento di Debian.
+Rimozione
+Warning.png 	ATTENZIONE
+Per rimuovere software installato tramite APT o dpkg si consiglia di ricorrere sempre ad APT, per esempio tramite apt-get, perché gestisce anche le dipendenze. Utilizzare direttamente dpkg può invece lasciare il sistema in uno stato incoerente, anche se in genere non è permessa la rimozione di pacchetti da cui altri ancora dipendono, senza forzarla esplicitamente con un'opzione.
+
+
+    Rimuove un pacchetto, se non esistono altri pacchetti installati che dipendono da esso, ma senza rimuovere le sue dipendenze: 
+
+# dpkg --remove nomepacchetto
+
+(forma abbreviata: -r)
+
+Dopo il comando precedente, per rimuovere le dipendenze automatiche del pacchetto, se non più richieste da altri, è necessario ricorrere ad APT:
+
+# apt-get autoremove
+
+    Rimuove il pacchetto e anche i relativi file di configurazione del sistema: 
+
+# dpkg --purge nomepacchetto
+
+(forma abbreviata: -P)
+
+E di nuovo, per rimuovere le dipendenze automatiche non più necessarie:
+
+# apt-get --purge autoremove
+
+utilizzando --purge per eliminare anche i relativi file di configurazione del sistema.
+Rimozione forzata
+Warning.png 	ATTENZIONE
+Questa operazione è ancora più rischiosa della precedente, in quanto disattiva i controlli di sicurezza pensati per proteggere il sistema da uno stato incoerente e potenzialmente inusabile, in base all'importanza dei pacchetti coinvolti nella rimozione. Va effettuata soltanto se è strettamente necessario, e prestando estrema attenzione. Si sconsiglia fortemente l'uso di --force-all, in quanto rende meno chiare le operazioni che saranno effettuate sul sistema, e forzando la rimozione in ogni circostanza possibile può compromettere il funzionamento del sistema.
+
+
+    Per forzare la rimozione di pacchetti non completamente installati, che non si riesce a rimuovere per reinstallarli, si può utilizzare l'opzione --force-remove-reinstreq. Si raccomanda di accertarsi prima che né la riconfigurazione né una nuova installazione funzionano. Per forzare la riconfigurazione di un pacchetto: 
+
+# dpkg-reconfigure nomepacchetto
+
+E se non funziona, per tentarne la reinstallazione completa con APT:
+
+# apt-get --reinstall install nomepacchetto
+
+Soltanto in seguito, se anche questo tentativo fallisce, forzarne la rimozione:
+
+# dpkg --remove --force-remove-reinstreq nomepacchetto
+
+    Per forzare la rimozione di un pacchetto, anche in presenza di dipendenze che ne impediscono l'eliminazione, è necessario specificare l'opzione --force-depends. L'uso è caldamente sconsigliato, salvo si sia certi di quello che si sta facendo, si sia utenti esperti dell'uso di APT e non si riesce a rimuovere il pacchetto in altri modi. 
+
+Per esempio per forzare la rimozione, ignorando tutte le dipendenze:
+
+# dpkg --remove --force-depends nomepacchetto
+
+In alternativa esiste un'altra opzione che consente di ignorare solo la dipendenza da un pacchetto (nomedipendenza):
+
+# dpkg --remove --ignore-depends=nomedipendenza nomepacchetto
+
+Oppure soltanto le dipendenze da una lista di pacchetti (dipendenza1, dipendenza2, ...):
+
+# dpkg --remove --ignore-depends=dipendenza1,dipendenza2,... nomepacchetto
+
+    I due metodi precedenti possono essere abbinati, se necessario. E in luogo di --remove si può utilizzare --purge se si vogliono eliminare anche i relativi file di configurazione del sistema. Per altre opzioni si rimanda al manuale di dpkg. 
+
+Come già visto per la rimozione normale, si può ricorrere ad APT per le dipendenze automatiche non più necessarie (e di nuovo si può aggiungere --purge):
+
+# apt-get autoremove
+
+Stato dei pacchetti
+
+Dpkg può essere utilizzato per controllare i pacchetti installati e il loro stato (install, deinstall, hold, purge), e anche per cambiarlo.
+
+Si noti che lo stato auto o manual (se il pacchetto era installato automaticamente o manualmente) non è registrato, in quanto dpkg non si occupa delle dipendenze e non può conoscere se un pacchetto è stato installato solo per soddisfarle. Per quello sarebbe necessario ricorrere agli strumenti di APT, come apt-mark.
+Lista dei pacchetti del sistema
+
+Restituisce la lista tutti i pacchetti precedentementi installati, accompagnati dal loro stato:
+
+$ dpkg --get-selections
+
+Esporta e importa la lista dei pacchetti
+Warning.png 	ATTENZIONE
+Quest'operazione è pericolosa e in caso di errori può causare il blocco e il malfunzionamento del sistema, rendendo necessaria anche una nuova installazione da zero. Non va eseguita se non si è utenti abbastanza esperti, e si consiglia l'uso di un ambiente minimale come il login su un terminale virtuale (tty1, tty2, ...).
+
+
+Si noti che questo meccanismo non funziona tra diverse versioni di Debian e nemmeno tra diverse architetture, o in presenza di diversi driver. È da utilizzare soltanto per ripristinare una configurazione precedente sullo stesso PC o al limite tra due PC quasi identici. Ed è raccomandabile che si tratti di una Debian stable senza altri repository, per via dei cambiamenti che potrebbero avvenire ai pacchetti delle altre release.
+Esporta
+
+Per esportare la lista dei pacchetti installati è sufficiente una ridirezione su un file (in questo caso lista_pacchetti.txt):
+
+$ dpkg --get-selections > lista_pacchetti.txt
+
+E per salvare anche lo stato è necessario ricorrere ad APT e creare un nuovo file con tale informazione, per esempio tramite apt-mark e una ridirezione:
+
+$ apt-mark showauto > lista_auto.txt
+$ apt-mark showmanual > lista_manual.txt
+
+Salviamo anche i metadati, per poter importare pacchetti che non fossero noti sulla macchina di destinazione, con apt-cache e sempre con una ridirezione:
+
+$ apt-cache dumpavail > available.txt
+
+Si devono salvare i quattro file .txt e conservarli, per quando si intende importare la lista di pacchetti e il loro stato.
+Importa
+
+Se si vuole importare tale stato in seguito, per replicare la configurazione precedentemente esportata sono sufficienti due comandi, nella stessa cartella dove si sono salvati i quattro file .txt nella fase di esportazione:
+
+# dpkg --merge-avail available.txt
+# dpkg --clear-selections
+# dpkg --set-selections < lista_pacchetti.txt
+
+Dove il primo comando importa tutti i metadati dei pacchetti precedentemente esportati, in caso non fossero noti; il secondo comando imposta lo stato deinstall a tutti i pacchetti non essenziali installati nel sistema, per far sì che i pacchetti installati ma non presenti nella lista vengano rimossi; e il terzo comando importa la lista dei pacchetti da installare.
+
+Per rendere effettive le modifiche, iniziando l'installazione e la rimozione dei pacchetti, è necessario ricorrere ad APT:
+
+# apt-get dselect-upgrade
+
+E infine per riassegnare gli stati auto e manual ai pacchetti installati, e rimuovere quelli non necessari, si utilizzano apt-mark e apt-get:
+
+# apt-mark auto $(cat lista_auto.txt)
+# apt-mark manual $(cat lista_manual.txt)
+# apt-get autoremove
+
+A questo punto, se tutto è andato a buon fine, sul PC sono installati tutti e soli i pacchetti presenti al momento dell'esportazione, con gli stessi stati.
+Cambia lo stato dei pacchetti
+
+È sufficiente creare manualmente la lista dei pacchetti di cui modificare lo stato, con quello nuovo da assegnare, per esempio bloccando futuri aggiornamenti con hold, e poi importarla.
+Bulb.png 	Suggerimento
+Si consiglia di utilizzare apt-mark per svolgere quest'operazione, perché molto più pratico e affidabile, riducendo la possibilità di errori.
+
+Per esempio:
+
+# apt-mark hold nomepacchetto1 ...
+
+
+    Blocca il futuro aggiornamento di un pacchetto: 
+
+# echo nomepacchetto hold | dpkg --set-selections
+
+    Rimuove il blocco del pacchetto: 
+
+# echo nomepacchetto install | dpkg --set-selections
+
+    Blocca il futuro aggiornamento di più pacchetti: 
+
+# printf "%s hold\n" nomepacchetto1 ... nomepacchettoN | dpkg --set-selections
+
+    Rimuove il blocco di più pacchetti: 
+
+# printf "%s install\n" nomepacchetto1 ... nomepacchettoN | dpkg --set-selections
+
+È possibile anche utilizzare install per programmare l'installazione di pacchetti, oppure deinstall per programmarne la disinstallazione, ma in tal caso per rendere effettive le modifiche è necessario impartire apt-get dselect-upgrade.
+Pacchetto deb
+
+In questa sezione sono raccolte le opzioni operanti su un pacchetto deb, per esempio uno scaricato manualmente senza passare da APT oppure uno recuperato dalla cache dei pacchetti installati in precedenza.
+Visualizza informazioni
+
+Per i comandi relativi a un pacchetto deb dpkg agisce come un frontend alle opzioni più comuni di dpkg-deb.
+
+    Visualizza informazioni sul pacchetto deb: 
+
+$ dpkg --info pacchetto.deb
+
+(forma abbreviata: -I)
+
+    Mostra il contenuto del pacchetto deb: 
+
+$ dpkg --contents pacchetto.deb
+
+(forma abbreviata: -c)
+
+    Estrae il contenuto del pacchetto deb nella cartella scelta: 
+
+$ dpkg --vextract pacchetto.deb directory
+
+(forma abbreviata: -X)
+
+Per usi più avanzati si consulti il manuale di dpkg-deb.
+Installazione
+Warning.png 	ATTENZIONE
+L'installazione di software esterno ad APT costituisce un potenziale rischio per la sicurezza e la stabilità del sistema. Inoltre dpkg non si occupa di soddisfare le dipendenze, rendendo necessario ricorrere ad APT.
+
+Si consiglia l'uso di gdebi per l'installazione di pacchetti esterni, che si occupa di soddisfare le dipendenze del pacchetto prima dell'installazione, fermo restando che i rischi per la sicurezza rimangono invariati.
+
+
+Installa un pacchetto deb, senza installarne le dipendenze:
+
+# dpkg --install pacchetto.deb
+
+(forma abbreviata: -i)
+
+Il sistema potrebbe trovarsi in uno stato incoerente, ed è necessario risolvere le dipendenze non soddisfatte con APT, per esempio con apt-get:
+
+# apt-get --fix-broken install
+
+Gdebi effettua l'operazione contraria, installando prima in automatico le dipendenze del pacchetto tramite APT e soltanto in seguito, se l'operazione è stata conclusa con successo, proceedendo con quella del pacchetto deb, riducendo le possibilità che il sistema rimanga in uno stato incoerente anche in presenza di errori.
+Installazione forzata
+Warning.png 	ATTENZIONE
+Le istruzioni presentate in questa sezione possono compromettere il funzionamento del sistema, e l'uso è sconsigliato, salvo si sia utenti esperti nell'uso di APT, si presti molta attenzione a quello che si sta facendo, e non ci sia altro modo di risolvere il proprio problema.
+
+
+Se si vuole forzare una versione di un pacchetto che comporta il downgrade, oppure ignorare delle dipendenze, è necessario ricorrere a dpkg, specificando le opzioni --force-* relative, che si possono leggere sul manuale di dpkg. Si consideri che gli altri casi di conflitti, rispetto a quelli trattati in seguito, sono ancora più pericolosi da forzare, ed è probabile che portino alla sovrascrittura di file gestiti da altri pacchetti, potenzialmente compromettendo l'integrità del sistema.
+
+    Per esempio per forzare il downgrade di un pacchetto, dopo aver recuperato una versione precedente: 
+
+# dpkg --install --force-downgrade pacchetto.deb
+
+E al solito in seguito all'installazione con dpkg è necessario avvalersi di APT per sistemare le dipendenze:
+
+# apt-get --fix-broken install
+
+Si consiglia però di tentare prima il downgrade con APT attraverso il pinning, in quanto con dpkg --force-downgrade non avviene nessun controllo di sicurezza sulle dipendenze e il sistema potrebbe risultare inusabile, a seconda dell'importanza del pacchetto.
+
+    Può succedere anche che l'installazione di un pacchetto sia impedita, perché un altro sarebbe reso non funzionante da esso. In tal caso si può forzarne l'installazione con: 
+
+# dpkg --install --force-breaks pacchetto.deb
+# apt-get --fix-broken install
+
+Si noti che è molto pericoloso, se mette fuori uso pacchetti essenziali, ed è sempre raccomandabile effettuare prima una scelta tra i pacchetti con APT, ripiegando su dpkg solo come ultima risorsa.
+Modifiche ai file installati o ai loro permessi
+
+Un pacchetto contiene i file che verranno installati sul proprio sistema, ed eventuali cambiamenti apportati a questi file potrebbero essere sovrascritti da APT alla successiva installazione o al successivo aggiornamento. In questa sezione vedremo come apportare cambiamenti permanenti con privilegi di amministrazione, segnalandoli al package manager dpkg in modo che siano ripristinati a ogni aggiornamento e nuova installazione.
+Warning.png 	ATTENZIONE
+Entrambe le operazioni possono rendere inutilizzabile il sistema, se si sposta o si modifica un file necessario, e compromettere quello delle altre applicazioni. L'uso di questi comandi sono pertanto consigliati ai soli utenti esperti, e sempre prestando molta attenzione.
+
+
+Diversioni
+
+Per modificare un file di sistema, o uno che si trova in una directory di sistema, e impedirne la sovrascrittura al successivo aggiornamento è possibile creare una diversione con il comando dpkg-divert, contenuto nel pacchetto dpkg.
+
+Non possono essere effettuate sulle directory, ma soltanto su file regolari, eseguibili e non. Inoltre bisogna utilizzare percorsi assoluti (ossia che partono dalla radice /) per indicare il percorso del file da deviare e la sua nuova destinazione. Se si modifica soltanto il nome, lasciando il resto del suo percorso invariato, è equivalente a rinominare il file.
+
+Per tutte le opzioni si rimanda al manuale (man dpkg-divert).
+Info.png 	Nota
+Si ricorda che per i file di configurazione quest'operazione non è necessaria, in quanto non sono sovrascritti di default da APT, senza chiedere conferma all'amministratore durante un aggiornamento, e quelli rigenerati dispongono quasi sempre di metodi specifici per la loro personalizzazione.
+
+Inoltre piuttosto che sovrascrivere degli eseguibili di sistema è consigliabile aggiungere nuovi file, con lo stesso nome, in /usr/local/bin (oppure /usr/local/sbin) per nascondere quelli presenti in /bin e /usr/bin (oppure /sbin e /usr/sbin) nella quasi totalità dei casi.
+
+
+Crea nuova diversione
+
+    Rinomina o sposta un file di sistema, non ancora installato o senza applicare le modifiche: 
+
+# dpkg-divert --divert /percorsodiversione/nuovonomefile /percorso/nomefile
+
+Le modifiche saranno effettive al momento dell'installazione del pacchetto o al suo aggiornamento, e ogni file che sarebbe installato in /percorso/nomefile sarà invece scritto in /percorsodiversione/nuovonomefile.
+
+    Rinomina o sposta un file di sistema già installato, applicando subito le modifiche: 
+
+# dpkg-divert --divert /percorsodiversione/nuovonomefile --rename /percorso/nomefile
+
+È stato sufficiente aggiungere l'opzione --rename.
+
+    Rinomina o sposta un file di sistema, a meno che sia installato da un dato pacchetto: 
+
+# dpkg-divert --package nomepacchetto --divert /percorsodiversione/nuovonomefile /percorso/nomefile
+
+È utile per permettere l'installazione di un proprio pacchetto (nomepacchetto), senza tener conto della diversione creata, che però influenzerà tutti gli altri e impedirà la sovrascrittura del proprio file.
+Visualizza diversioni
+
+    Visualizza tutte le diversioni: 
+
+$ dpkg-divert --list
+
+Si noti che anche i pacchetti del sistema fanno uso di questo metodo, quindi è normale non trovare soltanto le proprie modifiche e infatti si consiglia di tenerne traccia anche altrove.
+
+    Visualizza le diversioni di un dato file: 
+
+$ dpkg-divert --list /percorso/nomefile
+
+    Visualizza tutte le diversioni di un dato pattern (con caratteri jolli *, ?, [...]): 
+
+$ dpkg-divert --list "stringa"
+
+Rimuovi diversione
+
+    Rimuovi una diversione, senza applicare le modifiche (va indicato il percorso originale, non quello della diversione): 
+
+# dpkg-divert --remove /percorso/nomefile
+
+Alla successiva installazione o aggiornamento la propria diversione sarà ignorata, ma nessun cambiamento sarà apportato al sistema fino ad allora. Questo comando è utile solo per annullare una diversione che non è mai stata applicata.
+
+    Rimuovi una diversione, applicando subito le modifiche (va indicato il percorso originale, non quello della diversione): 
+
+# dpkg-divert --rename --remove /percorso/nomefile
+
+Sovrascrivi permessi
+
+Per modificare l'utente proprietario, il suo gruppo o i permessi del file (si legga questa guida per maggiori informazioni) si può impostare un'azione da eseguire ogni volta che è invocato dpkg per modificare il sistema, e quindi anche dopo ogni esecuzione di uno dei programmi di APT. Per farlo si ricorre a dpkg-statoverride, sempre distribuito nel pacchetto dpkg.
+
+Le modifiche si possono apportare a qualsiasi file, directory comprese, che devono essere specificati con un percorso assoluto.
+Bulb.png 	Suggerimento
+Conservare in un file le modifiche effettuate, e i valori precedenti, visto che non saranno ripristinabili in automatico, a meno di ripetere l'installazione di un pacchetto.
+
+
+Per tutte le opzioni si rimanda al manuale (man dpkg-statoverride).
+Imposta nuovo utente, gruppo e permessi
+
+    Imposta utente e gruppo proprietari del file, e i suoi nuovi permessi, per file non ancora installati oppure senza apportare le modifiche: 
+
+# dpkg-statoverride --add nomeutente nomegruppo permessi /percorso/nomefile
+
+Le modifiche saranno apportate alla successiva installazione o aggiornamento del pacchetto che installerebbe il file specificato sul sistema. I valori nomeutente e nomegruppo sono i nomi che saranno usati come proprietari del file (per la forma numerica utilizzare "#UID" e "#GID"), mentre permessi va espresso in forma ottale (per esempio: "744" per rimuovere scrittura ed esecuzione a tutti gli utenti, meno al proprietario; per maggiori informazioni si legga man chmod, la forma ottale è la stessa).
+
+    Imposta utente e gruppo proprietari di un file già installato nel sistema, e i suoi nuovi permessi, rendendo effettive fin da subito le modifiche: 
+
+# dpkg-statoverride --update --add nomeutente nomegruppo permessi /percorso/nomefile
+
+È stato sufficiente aggiungere l'opzione --update.
+Visualizza le personalizzazioni
+
+    Visualizza tutti i cambiamenti a utente, gruppo e permessi (a prescindere che siano effettivi per le proprie modifiche): 
+
+$ dpkg-statoverride --list
+
+Sono restituite anche le personalizzazioni effettuate dal sistema, alcune regolabili con dpkg-reconfigure. Anche per questo si consiglia di segnalare a parte le proprie modifiche.
+
+    Visualizza i cambiamenti apportati a un dato file: 
+
+$ dpkg-statoverride --list /percorso/nomefile
+
+    Visualizza tutti i cambiamenti apportati ai file di un dato pattern (caratteri jolly: *, ?, [...]): 
+
+$ dpkg-statoverride --list "stringa"
+
+Rimuovi personalizzazione
+
+    Rimuovi una propria personalizzazione da un dato file: 
+
+# dpkg-statoverride --remove /percorso/nomefile
+
+Si noti che tale modifica non ripristina utente, gruppo e permessi ai suoi valori originari, ma si limita a rimuovere l'azione memorizzata da dpkg, così che non sia più applicata in successive installazioni e aggiornamenti dei pacchetti contenenti il file scelto. Per renderle effettive è necessario intervenire manualmente, oppure forzare la reinstallazione del pacchetto che conteneva il file.
+
+Per ripristinare utente, gruppo e permessi del file, cerco il pacchetto da reinstallare:
+
+$ dpkg --search /percorso/nomefile
+
+E ne forzo la reinstallazione con apt-get:
+
+# apt-get --reinstall install nomepacchetto
+
+Architetture
+
+A partire da Debian 7 (Wheezy) è stato aggiunto il supporto ad architetture multiple, e dpkg si occupa di gestire quali architetture possono essere scelte per i pacchetti installati con APT, se compatibili con il proprio hardware.
+Visualizza informazioni
+
+    Visualizza l'architettura di default dei pacchetti Debian che saranno installati, in base all'immagine scelta in fase di installazione: 
+
+$ dpkg --print-architecture
+
+    Visualizza tutte le altre architetture che possono essere selezionate per l'installazione, ossia tutte quelle aggiunte in seguito manualmente: 
+
+$ dpkg --print-foreign-architectures
+
+Aggiungi nuova architettura
+
+Aggiunge una nuova architettura:
+
+# dpkg --add-architecture architettura
+
+Per rendere le modifiche effettive per APT è necessario rieffettuare l'aggiornamento della lista di pacchetti disponibili.
+
+Un caso comune per esempio è quello di aggiungere il supporto per gli eseguibili a 32 bit (architettura: i386) su PC a 64 bit (architettura: amd64):
+
+# dpkg --add-architecture i386
+# apt-get update
+
+Per installare software di questa architettura dai repository è sufficiente aggiungere :architettura dopo il nome del pacchetto, per tutte le architetture non di default. Per esempio per installare un pacchetto a 32 bit tramite APT:
+
+# apt-get install nomepacchetto:i386
+
+Rimuovi architettura
+
+Rimuove un'architettura precedentemente aggiunta:
+
+# dpkg --remove-architecture architettura
+
+seguito dall'aggiornamento della lista dei pacchetti, per rendere effettive le modifiche.
+
+L'operazione è portata a termine con successo soltanto se nessun pacchetto installato sul sistema è compilato per tale architettura. In caso contrario è necessario prima disinstallarne tutti i pacchetti.
+
+Per esempio per cercare tutti i pacchetti installati a 32 bit basta la ricerca avanzata con dpkg-query:
+
+$ dpkg-query -f '${db:Status-Abbrev}\t${Package}\t${Architecture}' -W | grep '^i.*i386$' | cut -f 2
+
+(dove il pattern '^i.*i386$' di grep serve per filtrare le righe inizianti con il carattere "i", ossia i pacchetti installati, e terminanti con l'architettura "i386", per via dell'ordine specificato nel formato di dpkg-query; e cut seleziona il secondo campo, corrispondente al solo nome dei pacchetti)
+
+E, una volta rimossi, si può togliere il supporto agli eseguibili a 32 bit:
+
+# dpkg --remove-architecture i386
+# apt-get update
+
+Manuale
+
+man dpkg
+man dpkg-reconfigure
+man dpkg-query
+man dpkg-deb
+man dpkg-divert
+man dpkg-statoverride
+
+
+
+Guida scritta da: HAL 9000 12:22, 21 apr 2015 (CEST) 	
+
+Swirl-auth20.png Debianized 20%
+Estesa da:
+Verificata da:
+
+Verificare ed estendere la guida | Cos'è una guida Debianized
+Categoria: Apt
+
+    Entra / Registrati
+
+    Pagina
+    Discussione
+
+    Leggi
+    Visualizza sorgente
+    Visualizza cronologia
+
+Ricerca
+
+    Pagina principale
+    Software Libero
+    Indice Guide
+    Domande frequenti
+    Tabella Software
+    Tabella Hardware
+    Ultime modifiche
+    Una pagina a caso
+    AboutUs
+    Aiuto
+
+Risorse
+Strumenti
+
+    Ultima modifica per la pagina: 10:08, 16 nov 2015.
+    Questa pagina è stata letta 13.951 volte.
+    Contenuti soggetti a licenza d'uso Attribuzione - Non commerciale - Share Alike.
+
+    Informazioni sulla privacy
+    Informazioni su Guide@Debianizzati.Org
+    Avvertenze
+
+    Powered by MediaWiki
+    Attribuzione - Non commerciale - Share Alike
+

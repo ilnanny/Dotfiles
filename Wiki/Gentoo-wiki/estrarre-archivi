@@ -1,0 +1,69 @@
+=======================================   ===================   ======
+Decomprimere un file direttamente in una directory :
+Per decomprimere il file 'prova' in Immagini  :
+
+  tar zxvf prova.tar.gz -C ~/Immagini/
+  
+se si trova su un altro dsico naturalmente:
+
+  tar zxvf /media/Dati/Git/Dotfiles/prova.tar.gz -C ~/Immagini
+
+=======================================   ===================   ======
+Promemoria :
+=====================
+
+.tar.gz 
+compirimere
+tar zcvf prova.tar.gz prova.txt
+estrarre
+tar zxvf prova.tar.gz
+
+.tar.bz2
+comprimere
+tar jcvf prova.tar.bz2 prova.txt
+estrarre
+tar jxvf prova.tar.bz2
+
+.gz
+compirimere
+gzip prova.txt
+estrarre
+gunzip prova.txt.gz
+
+.zip 
+compirimere
+zip prova.zip prova.txt
+estrarre
+unzip prova.zip
+
+.rar 
+compirimere
+rar a prova.rar prova.txt
+estrarre
+unrar x prova.rar
+
+.bzip2 
+compirimere
+bzip2 prova.txt
+estrarre
+bunzip2 -d prova.bz2
+
+.lzh 
+compirimere
+lha a prova.lzh prova.txt
+estrarre
+lha x prova.lzh
+
+.zoo 
+compirimere
+zoo -add prova.zoo prova.txt
+estrarre
+zoo -extract
+
+.Z
+compirimere
+compress prova.txt
+estrarre
+uncompress prova.txt.Z
+
+=======================================   ===================   ===================

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Modified Calculate Utilities 3.6.7.15
+ Processed template files:
+ /var/db/repos/calculate/profiles/templates/3.6/6_ac_desktop_profile/2-user/xfce-base/XFCE-4.10/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
+-->
+
+<channel name="xfce4-power-manager" version="1.0">
+  <property name="xfce4-power-manager" type="empty">
+    <property name="power-button-action" type="uint" value="3"/>
+    <property name="lid-action-on-battery" type="uint" value="1"/>
+  </property>
+</channel>

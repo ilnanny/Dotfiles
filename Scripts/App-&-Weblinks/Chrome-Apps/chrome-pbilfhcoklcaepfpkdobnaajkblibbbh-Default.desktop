@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Homepage - Dropbox
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pbilfhcoklcaepfpkdobnaajkblibbbh
+Icon=dropbox
+StartupWMClass=crx_pbilfhcoklcaepfpkdobnaajkblibbbh
+Name[it_IT.UTF-8]=Dropbox

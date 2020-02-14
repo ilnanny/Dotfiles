@@ -1,0 +1,67 @@
+#! /bin/bash
+clear
+echo "============================================"
+echo "=   Prima di eseguire questo script ricorda di aver sincronizzato tipo:  ="
+echo "=   sudo emerge -qv --sync && sudo layman -S && sudo eix-update   ="
+echo "============================================"
+sleep 1
+
+#aggiorna
+#sudo emerge -DuvaN world
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo emerge -DuvaN --complete-graph --keep-going --with-bdeps=y --backtrack=25 world"
+sudo emerge -DuvaN --complete-graph --keep-going --with-bdeps=y --backtrack=25 world
+
+#depclean
+#sudo emerge -cav world
+
+#ripara dipendenze
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo revdep-rebuild -v -- --ask --keep-going"
+sudo revdep-rebuild -v -- --ask --keep-going
+
+=pulizia
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo eclean -d distfiles
+sudo eclean -d packages"
+sudo eclean -d distfiles
+sudo eclean -d packages
+
+# aggiorna config
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo etc-update -p"
+sudo etc-update -p
+#oppure utilizza dispatch-conf
+#decommentalo se vuoi controllare tutto.
+#sudo dispatch-conf
+
+#Per approfondire visita:
+#http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=3&chap=4 
+#quickpkg
+
+#controlla world
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo emaint all"
+sudo emaint all
+
+#ricostruisci i pacchetti Haskell 
+echo "===========================================================================" && echo "eseguo..."
+echo "sudo haskell-updater"
+sudo haskell-updater
+
+
+#controlla le news 
+echo "===========================================================================" && echo "eseguo..."
+echo "eselect news read new"
+eselect news read new
+
+
+echo "ok, hai letto le news."
+sleep 1
+echo "adesso esegui..."
+sleep 1
+echo "
+
+etc-update 
+
+"

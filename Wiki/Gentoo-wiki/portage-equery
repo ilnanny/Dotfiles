@@ -1,0 +1,35 @@
+Per vedere un pacchetto cosa installa puoi usare equery: 
+Codice:
+$ equery f app-admin/conky 
+ * Searching for conky in app-admin ... 
+ * Contents of app-admin/conky-1.10.4: 
+/usr 
+/usr/bin 
+/usr/bin/conky 
+/usr/lib64 
+/usr/lib64/conky 
+/usr/lib64/conky/libcairo.so 
+/usr/lib64/conky/libcairo_imlib2_helper.so 
+/usr/lib64/conky/libimlib2.so 
+/usr/share 
+/usr/share/doc 
+/usr/share/doc/conky-1.10.4 
+/usr/share/doc/conky-1.10.4/AUTHORS.bz2                                                                                                                                    
+/usr/share/doc/conky-1.10.4/ChangeLog.bz2                                                                                                                                  
+/usr/share/doc/conky-1.10.4/NEWS.bz2 
+/usr/share/doc/conky-1.10.4/README.gentoo.bz2 
+/usr/share/doc/conky-1.10.4/README.md.bz2 
+/usr/share/doc/conky-1.10.4/TODO.bz2 
+/usr/share/doc/conky-1.10.4/conky.conf.bz2 
+/usr/share/doc/conky-1.10.4/conky_no_x11.conf.bz2 
+/usr/share/doc/conky-1.10.4/convert.lua.bz2 
+/usr/share/vim 
+/usr/share/vim/vimfiles 
+/usr/share/vim/vimfiles/ftdetect 
+/usr/share/vim/vimfiles/ftdetect/conkyrc.vim 
+/usr/share/vim/vimfiles/syntax 
+/usr/share/vim/vimfiles/syntax/conkyrc.vim
+
+Da qui puoi vedere che il file di configurazione esempio lo trovi in /usr/share/doc/conky-1.10.4/conky.conf.bz2, quindi puoi lanciare il comand 
+Codice:
+$ bunzip2 /usr/share/doc/conky-1.10.4/conky.conf.bz2 -c > ~/.conkyrc

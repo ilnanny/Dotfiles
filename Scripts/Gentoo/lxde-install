@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+echo " " >> /etc/portage/make.conf
+echo "# Global USE flag declaration" >> /etc/portage/make.conf
+echo "USE=\"X gtk -kde -minimal dbus jpeg lock session startup-notification udev -systemd -gnome alsa bindist infinality\"" >> /etc/portage/make.conf
+
+# Prepare for emerge
+echo "
+ x11-wm/openbox               +branding 
+ lxde-base/lxsession          +upower 
+ x11-libs/libfm               +udisks
+ lxde-base/lxpanel            +wifi
+ x11-misc/lightdm-gtk-greeter +branding
+"
+echo "* Installing LXDE Desktop Environment..."
+emerge --ask "lxde-base/lxde-meta app-editors/leafpad"
+
+echo
+echo "* Display manager installation.."
+emerge --ask "x11-misc/lightdm-gtk-greeter"
+sed -i 's/xdm/lightdm/g' /etc/conf.d/xdm
+
+echo "* Emerging firefox for something to start off from..."
+emerge --ask "firefox-bin geany"

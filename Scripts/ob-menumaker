@@ -1,0 +1,14 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#Installa menumaker
+#================================================
+mmaker -v OpenBox3
+
+cp .config/openbox/menu.xml /etc/xdg/openbox/menu.xml
+exit 0

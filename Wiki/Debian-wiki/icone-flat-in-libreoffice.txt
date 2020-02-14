@@ -1,0 +1,14 @@
+1. Install LibreOffice flat icon set
+
+If you're using LibreOffice from the official Ubuntu repositories or PPA:
+
+sudo apt-get install libreoffice-style-crystal
+cd /tmp && wget https://github.com/hotice/myfiles/raw/master/images_flat.zip
+sudo cp images_flat.zip /usr/share/libreoffice/share/config/images_crystal.zip
+
+The first command above install the LibreOffice Crystal icon set which we'll replace with the new flat icons, the second command downloads the flat icons and the last command replaces the Crystal icons with the new flat icon set.
+
+If you're using the LibreOffice 4.0.x (for older LibreOffice versions you may have to adjust the path for the second command below) build downloaded from its website, use the following commands:
+
+cd /media/Dati/GNU-LINUX/XFCE4/1-Configurazioni-varie/libreoffice/ && wget https://github.com/hotice/myfiles/raw/master/images_flat.zip
+sudo cp images_flat.zip /usr/share/libreoffice/share/config/images_crystal.zip

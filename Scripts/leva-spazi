@@ -1,0 +1,76 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# lanciare lo script nella cartella contenente i file da rinominare
+# rinomino i file togliendo gli spazi e inserendo un trattino
+#for file in *.svg;
+#do
+#nuovo_nome=`echo $file | sed "s/ //g"`
+#    mv "$file" "$nuovo_nome"
+#done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/actions/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/categories/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/devices/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/emblems/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/emotes/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/mimetypes/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/notifications/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/places/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/status/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done
+cd /media/Dati/Linux/Customize/Icone/Lila-HD-icon-theme/Lila_HD/apps/scalable/
+for file in *.svg;
+do
+nuovo_nome=`echo $file | sed "s/ //g"`
+    mv "$file" "$nuovo_nome"
+done

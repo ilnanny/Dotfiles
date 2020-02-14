@@ -1,0 +1,25 @@
+
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://lnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+## sudoers file.
+##
+## User privilege
+##
+root ALL=(ALL) ALL
+
+## wheel 
+#%wheel ALL=(ALL) ALL
+
+## without a password
+%wheel ALL=(ALL) NOPASSWD: ALL
+
+## sudo 
+%sudo  ALL=(ALL) ALL
+
+

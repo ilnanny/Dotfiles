@@ -1,0 +1,7 @@
+Install Open VM Tools
+
+Add the following line to the /etc/apt/sources.list file.
+deb http://ftp.debian.org/debian/ jessie main contrib
+Run the commands: 
+$ sudo apt-get update 
+$ sudo apt-get install open-vm-tools

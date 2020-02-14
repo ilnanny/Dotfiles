@@ -1,0 +1,23 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+echo "##################################################################"
+echo "# Assegno la proprietà ed i permessi di scrittura della cartella #"
+echo "# Root all'utente root con gruppo root ,ricorsivamente           #"
+echo "##################################################################"
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+su -c 'chown -R root /root && chmod -R 775 /root'
+#su -c 'chown -R root:root /root && chmod -R 644 /root'
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+echo "###########################################"
+echo "# Permessi attivati , chiudi il terminale #" 
+echo "###########################################"
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+exit 0

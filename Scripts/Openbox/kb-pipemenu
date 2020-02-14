@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+case "$@" in
+    -h|--help) echo -e "$HELP" ; exit 0
+esac
+
+if ! . "/usr/lib/common/include.cfg" 2> /dev/null; then
+    echo $"Errore: Manca il file  /usr/lib/common/include.cfg" >&2
+    exit 1
+fi
+
+if ! type "$KBSCRIPT" &>/dev/null; then
+    menuStart
+    menuSeparator "$KBSCRIPT non trovato.Installa gli script."
+    menuEnd
+    exit 1
+fi
+
+if [[ $1 = '--rcedit' ]]; then
+    NOW=$(date +"%Y%m%d-%H%M")
+    RCBKP="$RCPATH.$NOW"
+    cp "$RCPATH" "$RCBKP"
+    if hash exo-open &>/dev/null; then
+        exo-open "$RCPATH"
+    elif hash xdg-open &>/dev/null; then
+        xdg-open "$RCPATH"
+    else
+        xterm -e "$EDITOR $RCPATH"
+    fi
+    exit 0
+fi
+
+if [[ $1 = '--keybinds' ]]; then
+    "$KBSCRIPT" > /dev/null
+    menuStart
+    menuSeparator "Openbox commandi"
+    while read -r a b c; do
+        if [[ "$a" = "o" ]]; then
+            curItem=$(printf "%-20s %s" "$b" "$c")
+            menuItem "$curItem" "echo >/dev/null 2>&1"
+        fi
+    done < "$KBTEXT"
+
+    menuSeparator
+    menuSeparator "Esegui comandi"
+    while read -r a b c; do
+        if [[ "$a" = "x" ]]; then
+            curItem=$(printf "%-20s %s" "$b" "$c")
+            menuItem "$curItem" "$c"
+        fi
+    done < "$KBTEXT"
+    menuEnd
+    exit 0
+fi
+
+menuStart
+    menuItem "Edita (e crea backup)) rc.xml" "kb-pipemenu --rcedit"
+    menuSeparator
+    menuItem "Visualizza le Shortcuts" "kb --gui"
+    echo '        <menu execute="kb-pipemenu --keybinds" id="Visualizza Shortcuts" label="Visualizza le Shortcuts in menu"/>'
+menuEnd
+
+exit 0

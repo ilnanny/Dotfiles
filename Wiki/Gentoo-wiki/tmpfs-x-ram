@@ -1,0 +1,53 @@
+
+
+se usate Arch, di default è già impostato così!
+ Se usate altre distribuzioni, aggiungete
+
+ tmpfs /tmp tmpfs nodev,nosuid 0 0 
+al  file   /etc/fstab.      
+
+Un altro modo per sfruttare la memoria ram è quello di usarla al posto della swap.
+al terminale e create il file  /etc/sysctl.d/99-sysctl.conf dando il comando:
+
+ sudo nano /etc/sysctl.d/99-sysctl.conf  
+Al suo interno scrivete la riga:
+
+ vm.swappiness=10 
+Per tenere sotto controllo l’uso della memoria e della swap potete usare il comando:
+
+ free -m 
+Il piatto forte
+Ma, è o non è la navigazione internet l’ attività che più ci impegna al pc? Tutto ormai passa dal browser?
+
+Certo! E allora cosa può esserci di meglio che mettere in ram il profilo del browser? E di non perdere addirittura nulla allo spegnimento per via di una sincronizzazione?
+
+Questo è quello che fa l’apprezzatissimo script PSD : disponibile per Arch e derivate, Fedora, Ubuntu, Gentoo, Debian  e Slackware.
+
+
+PSD sincronizza il profilo del browser in ram, mentre per la cache avete due soluzioni:
+
+
+settare il browser in modo che lo faccia autonomamente.
+Per settare Chromium, affinché all’avvio carichi in ram la cache, il comando è il seguente:
+
+ chromium --disk-cache-dir=/tmp/cache 
+potete lanciarlo da terminale, ma io vi suggerisco di inserire il comando nel lanciatore del menù: in questo modo non ci penserete più.
+
+Per caricare in ram la cache di Firefox invece procedete così:
+
+nella barra degli indirizzi digitate
+
+ about:config 
+ora cliccate due volte sulla riga che riporta l’opzione
+
+ browser.cache.disk.enable 
+verificate che sia diventata “false”
+
+ora verificate che l’ opzione
+
+ browser.cache.memory.enable 
+sia impostata su “true”.
+
+Per altri browser che probabilmente usate, non li cito perché son tanti e ognuno ha il suo, potete consultare direttamente le loro pagine di consultazione.
+
+

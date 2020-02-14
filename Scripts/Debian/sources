@@ -1,0 +1,88 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# Codici colore ANSI
+#
+# Black        0;30     Dark Gray     1;30
+# Red          0;31     Light Red     1;31
+# Green        0;32     Light Green   1;32
+# Brown/Orange 0;33     Yellow        1;33
+# Blue         0;34     Light Blue    1;34
+# Purple       0;35     Light Purple  1;35
+# Cyan         0;36     Light Cyan    1;36
+# Light Gray   0;37     White         1;37
+#
+# Costanti
+#
+Cyan="\033[0;36m"	# Cyan
+Red='\033[0;31m'	# Red
+LRed='\033[1;31m'	# Light Red
+Yellow='\033[1;33m'	# Yellow
+Nc='\033[0m' 		# No Color
+#
+
+clear
+printf "\n"
+printf "${Cyan}#############################################################\n"
+printf "${Cyan}#                                                           #\n"
+printf "${Cyan}# ${Yellow}Modifica del file /etc/apt/sources.list                   ${Cyan}#\n"
+printf "${Cyan}# ${Yellow}e aggiornamento del sistema                               ${Cyan}#\n"
+printf "${Cyan}#                                                           #\n"
+printf "${Cyan}#############################################################${Nc}\n"
+printf "\n"
+
+read -n 1 -s -p "Premi un tasto per continuare "
+
+# Modificare sources.list
+#
+file="/etc/apt/sources.list"
+if [ -f "$file" ]
+then
+  backupdate=`date "+%d%m%y-%H%M"`
+  sudo mv /etc/apt/sources.list /etc/apt/sources.list.$backupdate
+  sudo touch /etc/apt/sources.list
+else
+  sudo touch /etc/apt/sources.list
+fi
+
+echo "deb http://ftp.it.debian.org/debian/ stretch main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb-src http://ftp.it.debian.org/debian/ stretch main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
+
+echo "deb http://security.debian.org/debian-security/ stretch/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb-src http://security.debian.org/debian-security/ stretch/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
+
+echo "# stretch-updates, previously known as 'volatile'" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb http://ftp.it.debian.org/debian/ stretch-updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb-src http://ftp.it.debian.org/debian/ stretch-updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
+
+echo "# Repository Deb Multimedia in Debian 9.x Stretch" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb http://www.deb-multimedia.org stretch main non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
+
+echo "# Backports for Debian 9.x Stretch" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb http://ftp.debian.org/debian stretch-backports main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
+
+# Aggiornare il sistema
+#
+# Installiamo le key d’autenticazione per il repo Deb Multimedia
+#
+sudo apt-get update
+wget https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb -O /tmp/deb-multimedia-keyring.deb
+sudo dpkg -i /tmp/deb-multimedia-keyring.deb
+sudo apt-get update && sudo apt-get -y dist-upgrade
+sudo rm /tmp/deb-multimedia-keyring.deb
+
+printf "\n"
+read -n 1 -s -p "Premi un tasto per continuare "
+clear
+

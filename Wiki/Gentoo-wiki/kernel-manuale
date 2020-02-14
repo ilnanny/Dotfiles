@@ -1,0 +1,24 @@
+Seleziona il kernel scaricato : es.gentoo-sources-5.0.7 -- vale anche per vanilla.
+
+   eselect kernel set linux-5.0.7-gentoo
+   ls -la /usr/src/
+   
+Verifica che il collegamento simbolico stia puntando alla cartella del kernel corretta
+Costruisci il nuovo kernel:
+
+
+   cd /usr/src/linux
+   zcat /proc/config.gz > .config
+   make oldconfig
+   make -j5 && make modules modules_install
+   make install
+   emerge @module-rebuild
+   
+
+Verifica che non ci siano problemi nel processo
+Installa il nuovo kernel:
+
+   cp arch/x86/boot/bzImage /boot/kernel-5.0.7-gentoo
+   cp System.map /boot/System.map-5.0.7-gentoo
+   cp .config /boot/config-5.0.7-gentoo
+   grub-mkconfig -o /boot/grub/grub.cfg

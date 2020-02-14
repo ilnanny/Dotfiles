@@ -1,0 +1,7 @@
+auto lo
+iface lo inet loopback
+
+allow-hotplug wlx000f004d339a
+iface wlx000f004d339a inet dhcp
+        wpa-ssid FASTWEB-783CD6
+        wpa-psk TCER7EE72T

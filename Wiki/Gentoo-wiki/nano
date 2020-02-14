@@ -1,0 +1,63 @@
+==      ==      ==      ==      ==      ==      ===      ==      == 
+== Editor di testo 'nano' . < https://www.nano-editor.org/ >
+==      ==      ==      ==      ==      ==      ===      ==      ==
+
+I principali comandi di nano sono elencati in basso nella finestra:
+
+^G Guida       ^O Salva       ^R Inserisci       ^Y Pag Prec.       ^K Taglia       ^C Posizione
+^X Esci        ^J Giustifica   ^W Cerca           ^V Pag Succ.       ^U Incolla      ^T Ortografia
+
+Il carattere ^ rappresenta il tasto «Ctrl» mentre la stringa «^G» indica la pressione contemporanea dei tasti «Ctrl» e «G».
+
+Per disattivare 'a capo automatico'
+nano -w
+
+Per visualizzare i numeri di riga
+nano -l
+
+* In contemporanea
+nano -lw
+
+==      ==      ==      ==      ==      ==      ==
+
+== Base
+
+Ctrl+ O
+Salva le modifiche applicate al file.
+
+Ctrl+ X
+Uscire dal programma.
+
+Ctrl+ R
+Apre un nuovo file.
+
+Ctrl+ T
+Se lanciato dopo il 'Ctrl+R' mostra la lista file nella cartella dove è stato lanciato nano.
+
+Ctrl+ K
+Taglia il testo di un intera riga.
+
+Ctrl+ W
+Cerca una determinata parola nel testo
+
+Ctrl+ 6
+Entra in (o esce dalla) modalità selezione testo, per selezionare il testo spostarsi con le frecce.
+
+==      ==      ==      ==      ==      ==      ==
+
+== Tips
+Al posto dei tasti 'Freccia':
+
+Ctrl+ F  e  Ctrl+ B
+Per spostare il cursore avanti o indietro
+ 
+Ctrl+ P  e  Ctrl+ N
+Per spostarsi su  e  giù di una riga alla volta
+
+Ctrl+ A  e  Ctrl+ E 
+Per i tasti Home  e  End
+ 
+==      ==      ==      ==      ==      ==      ==
+
+
+

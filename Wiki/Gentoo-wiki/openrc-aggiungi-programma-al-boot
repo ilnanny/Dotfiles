@@ -1,0 +1,12 @@
+Aggiungere automaticamente al boot:
+
+rc-update add "programma" default
+
+es NetworkManager
+
+rc-update add NetworkManager default
+
+============================================
+
+rc-update add wpa_supplicant default
+rc-update add ntp default

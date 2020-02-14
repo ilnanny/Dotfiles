@@ -1,0 +1,57 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+# Set to 1 if you'd like to install/upgrade package as they are built.
+# This is recommended.
+INST=1
+
+TMP=${TMP:-/tmp}
+
+for package in \
+  xfce4-dev-tools \
+  libxfce4util \
+  xfconf \
+  libxfce4ui \
+  exo \
+  garcon \
+  gtk-xfce-engine \
+  xfce4-panel \
+  Thunar \
+  thunar-volman \
+  tumbler \
+  xfce4-appfinder \
+  xfce4-power-manager \
+  xfce4-settings \
+  xfdesktop \
+  xfwm4 \
+  xfce4-session \
+  xfce4-terminal \
+  xfce4-notifyd \
+  orage \
+  xfce4-pulseaudio-plugin \
+  xfce4-clipman-plugin \
+  xfce4-screenshooter \
+  xfce4-systemload-plugin \
+  xfce4-taskmanager \
+  xfce4-weather-plugin \
+  ; do
+  cd $package || exit 1
+  ./${package}.SlackBuild || ( touch /tmp/${package}.failed ; exit 1 ) || exit 1
+  if [ "$INST" = "1" ]; then
+    PACKAGE="$(ls -t $TMP/$(ls ${package}*.xz | rev | cut -f2- -d - | rev)-*txz | head -n 1)"
+    if [ -f $PACKAGE ]; then
+      upgradepkg --install-new --reinstall $PACKAGE
+    else
+      echo "Error:  package to upgrade "$PACKAGE" not found in $TMP"
+      exit 1
+    fi
+  fi
+  cd ..
+done

@@ -1,0 +1,4 @@
+BUILDDIR=/usr/src/slapt-src
+PKGEXT=tgz
+SOURCE=http://salix.mirror.garr.it/mirrors/salix/slkbuild/14.2/
+SOURCE=http://salix.mirror.garr.it/mirrors/salix/sbo/14.2/

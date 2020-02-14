@@ -1,0 +1,11 @@
+Copia il file scaricato da:
+http://charliecnr.deviantart.com/art/Office-2013-theme-for-LibreOffice-512127527
+
+rinomina in office_2013.zip e lo copi in 
+/usr/lib/libreoffice/share/config/
+
+crei un simlink nella cartella config di office:
+
+ln -s /usr/lib/libreoffice/share/config/office_2013.zip /usr/share/libreoffice/share/config/office_2013.zip
+
+apri office > opzioni > vista >icone  e cambi 

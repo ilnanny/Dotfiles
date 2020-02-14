@@ -1,0 +1,13 @@
+Find:
+== Cerca solo cartelle ad esempio libreoffice:
+
+ find  / -type d -iname "libreoffice" -ls
+
+ ==Cerca tutti i file con nome specifico all''interno di una cartella
+
+ find  /path/in/cui/cercare -name "nome-file-corrispondente" -ls
+
+
+== Cercare tutti i file allinterno della cartella /root :
+
+  find . /root

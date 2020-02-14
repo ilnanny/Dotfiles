@@ -1,0 +1,59 @@
+guest = pc
+host=virtuale
+
+
+caricare il modulo con
+
+modprobe vboxdrv
+(da root) sulla macchina GUEST. 
+
+
+Sulla macchina GUEST le cartelle condivise vanno montate con questo comando 
+
+mount -t vboxsf [-o OPTIONS] sharename mountpoint
+
+
+mount -t vboxsf  sharename /media/Dati/Linux
+
+================================
+
+Per utilizzare la cartella condivisa all’interno della virtual machine, nel caso di linux, sarà necessario eseguire all’interno di un terminale:
+
+sudo mkdir /media/vbox_Dati
+sudo mount -t vboxsf Dati /media/vbox_Dati -o uid=`id -u`,gid=`id -g`
+In alternativa il secondo comando può anche essere scritto esplicitamente eseguendo prima id -u per ritrovare l’uid e id -g per ritrovare il gid come segue:
+
+id -u
+1000
+id -g
+1000
+sudo mount -t vboxsf Dati /media/vbox_Dati -o uid=1000,gid=1000
+La cartella condivisa Dati si troverà su /media/vbox_Dati e sarà possibile sia leggere che scrivere dati.
+
+Nel caso si utilizzasse Windows invece, è possibile montare la cartella condivisa semplicemente scegliendo Connetti unità di rete e indicando come percorso \\vboxsvr\Dati.
+
+=================================================
+
+ Virtualbox e le cartelle condivise
+Come condividere delle cartelle tra un host linux e un guest windows xp
+
+
+creare una cartella nella home e digitare il seguente comando:
+
+VBoxManage sharedfolder add XP  -name GuestHost -hostpath /home/ilnanny/GuestHost
+
+dove XP è il nome della virtualmachine e GuestHost la cartella da condividere
+
+poi andare in windows, aprire la shell e digitare il seguente comando:
+
+net use k: \\vboxsvr\GuestHost
+
+Per aggiungere il supporto alla periferiche usb per la versione con i binari precompilati è necessario inserire la seguente riga nel file /etc/fstab
+
+none /proc/bus/usb usbfs devgid=105,devmode=664 0 0
+
+dove al posto di 105 va inserito il gid del gruppo plugdev che si trova scrivendo il seguente comando:
+
+getent group plugdev
+
+===========================================

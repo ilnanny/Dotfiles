@@ -1,0 +1,12 @@
+Controlla entrambe
+$ date
+$ date -u
+
+Per settare manualmente, es. 06:09, Marzo 9, 2019:
+
+# date 030906092019
+ date 102307162019
+03   'mese'
+09   'giorno'
+0609 '06:09 ora'
+2019 'anno'

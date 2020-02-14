@@ -1,0 +1,28 @@
+du -h --max-depth=1 /media/ilnanny/Backup-Gentoo/
+
+=================================================
+ Alcuni esempi di utilizzo:
+
+Somma di directory in kilobyte:
+
+du-sk *
+152304 Cartella1
+1856548 Cartella2
+
+Somma di directory in formato leggibile (Byte, Kilobyte, Megabyte, Gigabyte, Terabyte e Petabyte):
+
+du -sh *
+149m Cartella1
+1.8G Cartella2
+
+mostra l’utilizzo del disco, di tutte le sottodirectory e dei file, inclusi quelli nascosti all’interno della directory corrente in ordine di dimensione del file:
+
+du -sk. ** [!]. | sort-n
+
+mostra l’utilizzo del disco, di tutte le sottodirectory e dei file, inclusi quelli nascosti all’interno della directory corrente ma in ordine di dimensione del file indietro:
+
+du -sk. ** [!]. | sort-nr
+
+mostra solo il peso della cartella principale senza andare a vedere il singolo peso di ogni sottocartella :
+
+du -h –max-depth=1

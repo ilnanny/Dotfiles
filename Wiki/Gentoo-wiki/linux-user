@@ -1,0 +1,45 @@
+Linux User #619902
+ApiKey: 978bd0b1ac32ad707467487b274f5a12
+https://www.linuxcounter.net/user/619902
+
+===========software==========
+
+#
+Installation
+
+Download the file "lico-update.sh" from github, move it into your PATH and make it executable:
+Copy
+
+wget https://github.com/christinloehner/linuxcounter-update-examples/raw/master/_official/lico-update.sh
+chmod +x lico-update.sh
+sudo cp lico-update.sh /usr/local/bin/lico-update.sh
+lico-update.sh -i
+ 978bd0b1ac32ad707467487b274f5a12
+
+
+Or clone the repository in order to be able to contribute to the code, enhance the script, fixing bugs and sending pull requests:
+Copy
+
+git clone https://github.com/christinloehner/linuxcounter-update-examples.git
+cd linuxcounter-update-examples/_official
+sudo cp lico-update.sh /usr/local/bin/lico-update.sh
+
+Usage
+
+First start the script by using the "-h" parameter to get some help:
+Copy
+
+lico-update.sh -h
+
+You may use the interactive mode of the script for being guided through the machine registration and sending the data:
+Copy
+
+lico-update.sh -i
+
+License
+
+GNU General Public License Version 3
+
+Free Software, Hell Yeah!
+
+=============================

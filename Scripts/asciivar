@@ -1,0 +1,65 @@
+#!/bin/bash
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+blue='\033[01;34m'
+clear
+#================================================
+printf "${blue}\n"
+printf "                      Latin  Unicode  Plus   1                     \n"
+printf "\n"
+printf " Ā    ā    Ă    ă    Ą    ą    Ć    ć    Ĉ    ĉ    Ċ    ċ    Č    č\n"
+printf " Ď    ď    Đ    đ    Ē    ē    Ĕ    ĕ    Ė    ė    Ę    ę    Ě    ě\n"
+printf " Ĝ    ĝ    Ğ    ğ    Ġ    ġ    Ģ    ģ    Ĥ    ĥ    Ħ    ħ    Ĩ    ĩ\n"
+printf " Ī    ī    Ĭ    ĭ    Į    į    İ    ı    Ĳ    ĳ    Ĵ    ĵ    Ķ    ķ\n"
+printf " ĸ    Ĺ    ĺ    Ļ    ļ    Ľ    ľ    Ŀ    ŀ    Ł    ł    Ń    ń    Ņ\n"
+printf " ŋ    Ō    ō    Ŏ    ŏ    Ő    ő    Œ    œ    Ŕ    ŕ    Ŗ    ŗ    Ř\n"
+printf " ř    ņ    Ň    ň    ŉ    Ŋ    Ś    ś    Ŝ    ŝ    Ş    ş    Š    š\n"
+printf " Ţ    ţ    Ť    ť    Ŧ    ŧ    Ũ    ũ    Ū    ū    Ŭ    ŭ    Ů    ů\n"
+printf " Ű    ű    Ų    ų    Ŵ    ŵ    Ŷ    ŷ    Ÿ    Ź    ź    Ż    ż    Ž\n"
+printf " ž    ſ                                                            \n"
+printf "\n"
+printf "                      Latin  Unicode  Plus   2                     \n"
+printf "\n"
+printf " ƀ    Ɓ    Ƃ    ƃ    Ƅ    ƅ    Ɔ    Ƈ    ƈ    Ɖ    Ɗ    Ƌ    ƌ    ƍ\n"
+printf " Ǝ    Ə    Ɛ    Ƒ    ƒ    Ɠ    Ɣ    ƕ    Ɩ    Ɨ    Ƙ    ƙ    ƚ    ƛ\n"
+printf " Ɯ    Ɲ    ƞ    Ɵ    Ơ    ơ    Ƣ    ƣ    Ƥ    ƥ    Ʀ    Ƨ    ƨ    Ʃ\n"
+printf " ƪ    ƫ    Ƭ    ƭ    Ʈ    Ư    ư    Ʊ    Ʋ    Ƴ    ƴ    Ƶ    ƶ    Ʒ\n"
+printf " Ƹ    ƹ    ƺ    ƻ    Ƽ    ƽ    ƾ    ƿ    ǀ    ǁ    ǂ    ǃ    Ǆ    ǅ\n"
+printf " ǆ    Ǉ    ǈ    ǉ    Ǌ    ǋ    ǌ    Ǎ    ǎ    Ǐ    ǐ    Ǒ    ǒ    Ǔ\n"
+printf " ǔ    Ǖ    ǖ    Ǘ    ǘ    Ǚ    ǚ    Ǜ    ǜ    ǝ    Ǟ    ǟ    Ǡ    ǡ\n"
+printf " Ǣ    ǣ    Ǥ    ǥ    Ǧ    ǧ    Ǩ    ǩ    Ǫ    ǫ    Ǭ    ǭ    Ǯ    ǯ\n"
+printf " ǰ    Ǳ    ǲ    ǳ    Ǵ    ǵ    Ƕ    Ƿ    Ǹ    ǹ    Ǻ    ǻ    Ǽ    ǽ\n"
+printf " Ǿ    ǿ    Ȁ    ȁ    Ȃ    ȃ    Ȅ    ȅ    Ȇ    ȇ    Ȉ    ȉ    Ȋ    ȋ\n"
+printf " Ȍ    ȍ    Ȏ    ȏ    Ȑ    ȑ    Ȓ    ȓ    Ȕ    ȕ    Ȗ    ȗ    Ș    ș\n"
+printf " Ț    ț    Ȝ    ȝ    Ȟ    ȟ    Ƞ    ȡ    Ȣ    ȣ    Ȥ    ȥ    Ȧ    ȧ\n"
+printf " Ȩ    ȩ    Ȫ    ȫ    Ȭ    ȭ    Ȯ    ȯ    Ȱ    ȱ    Ȳ    ȳ    ȴ    ȵ\n"
+printf " ȶ    ȷ    ȸ    ȹ    Ⱥ    Ȼ    ȼ    Ƚ    Ⱦ    ȿ    ɀ    Ɂ    ɂ    Ƀ\n"
+printf " Ʉ    Ʌ    Ɇ    ɇ    Ɉ    ɉ    Ɋ    ɋ    Ɍ ɍ    Ɏ    ɏ             \n"
+printf "\n"
+printf "\n"
+printf "\n"
+printf "          Close   your   terminal   emulator   to    Exit          \n"
+
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

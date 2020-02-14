@@ -1,0 +1,23 @@
+Using ccd2iso convert command
+
+$ ccd2iso LRS.img LRS.iso
+
+Sometimes you may get below error but ignore
+
+Unrecognized sector mode (0) at sector 0!
+
+Another Way to convert img to ISO file
+
+mount the img file to mount point and convert the same data to iso
+
+$ mount -o loop <img file name> <mountpoint>
+
+make an ISO of the directories itself
+
+$ mkisofs -o <iso output file name> <mountpoint>
+
+su
+
+mkdir /media/iso
+mount -o loop /media/Dati/OS/Linux/Live/LRS/LRS.img  /media/iso
+mkisofs -o /media/iso  media/img

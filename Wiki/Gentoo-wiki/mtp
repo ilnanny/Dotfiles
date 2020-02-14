@@ -1,0 +1,7 @@
+
+installare fuse e libmtp 
+
+mkdir build && build
+../configure
+make
+sudo make install

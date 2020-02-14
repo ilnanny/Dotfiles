@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#================================================
+# Seleziona il kernel.
+#emerge gentoo-sources
+#eselect kernel list
+#eselect kernel set #
+
+# Copia la configurazione del kernel corrente in /root
+# gunzip /proc/config.gz -c > /root/config; cp /root/config /root/config-$(uname -r)
+
+# Opzionalmente cambia le impostazioni del modulo nel file di configurazione, o usa --menuconfig con genkernel.
+genkernel --makeopts=-j5 --splash --kernel-config=/root/config all
+
+# Aggiorna i pacchetti con i moduli del kernel
+emerge -1 @module-rebuild
+
+# Ripulisci i vecchi file
+for name in $(ls /lib/modules/ | sort -V | head -n -3); do
+  rm -rf /boot/{initramfs,kernel,System.map}-genkernel-x86_64-${name:?}
+  rm -rf /lib/modules/${name:?}
+done
+
+# Aggiorna il file di configurazione di avvio
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+echo"
+#=============================================================================================
+#                                       Note                                                 # 
+#                      ---------------------------------------                               #
+#  echo 'sys-kernel/gentoo-sources ~amd64' >> /etc/portage/package.keywords ## Non 'stable'  #
+#  emerge gentoo-sources                                                                     #
+#  eselect kernel list                                                                       #
+#  eselect kernel set                                                                        #
+#  cd /usr/src/linux                                                                         #
+#  make oldconfig                                                                            #
+#       o                                                                                    #
+#  make menuconfig                                                                           #
+#  make && make modules_install && make install                                              #
+#                                                                                            #
+#=============================================================================================
+"

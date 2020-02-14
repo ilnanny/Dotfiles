@@ -1,0 +1,11 @@
+# package repositories
+#deb http://it.deb.devuan.org/merged/ ascii non-free main
+#deb http://it.deb.devuan.org/merged/ ascii-updates main non-free
+#deb http://it.deb.devuan.org/merged/ ascii-security main non-free
+#deb http://it.deb.devuan.org/merged/ ascii-backports main non-free
+
+## source repositories
+#deb-src http://it.deb.devuan.org/merged/ ascii main non-free
+#deb-src http://it.deb.devuan.org/merged/ ascii-updates main non-free
+#deb-src http://it.deb.devuan.org/merged/ ascii-security main non-free
+#deb-src http://it.deb.devuan.org/merged/ ascii-backports main non-free

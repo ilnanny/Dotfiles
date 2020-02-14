@@ -1,0 +1,3 @@
+cd /
+ln -s /boot/initrd.img-4.9.0-6-amd64 initrd.img
+ln -s boot/vmlinuz-4.9.0-6-amd64 vmlinuz

@@ -1,0 +1,64 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+function check_exit_value {
+    exit_value=$?
+    # se exit_value=1, utente ha premuto annulla, =5 se il timeout è scaduto, =0 ok
+    # https://help.gnome.org/users/zenity/stable/usage.html.en
+    if [ $exit_value != 0 ]; then
+        exit 1
+    fi   
+}
+
+
+homefolder=~
+title="Controllo del checksum"
+input_file=$(zenity --title="Scegli file da controllare" --file-selection --filename="$homefolder/")
+
+
+check_exit_value
+
+
+expected_checksum=$(zenity --entry --title="$title" --text="Checksum corretto" --entry-text="")
+
+
+check_exit_value 
+
+
+sumtype=$(zenity --title="$title" --text="Checksum type" --list --radiolist --column "Scegli" --column "Tipo" TRUE MD5 FALSE SHA1 FALSE SHA256)
+
+
+check_exit_value
+
+
+case "$sumtype" in
+    MD5)
+        command="md5sum"
+        ;;
+    SHA1)
+        command="sha1sum"
+        ;;
+    SHA256)
+        command="sha256sum"
+        ;;
+esac
+
+
+calculated_checksum="$($command $input_file | awk '{print $1}')"
+
+
+if [ $calculated_checksum == $expected_checksum ]; then
+    zenity --info --title "Successo!" --text="I checksum corrispondono."
+else
+    zenity --error --title "BSoD!" --text="I checksum non corrispondono!"
+fi
+
+
+ 

@@ -1,0 +1,137 @@
+linee guida :
+=======================================================
+I paragrafi <p> </p>  manda anche a capo.
+====================================================
+Andare a capo, <br></br>
+
+Questo è un testo che va a capo due volte<br><br>
+====================================================
+Titoli h1 h2 h3 ecc
+<h1>Grande</h1>
+ 
+<h2>Meno grande</h2>
+ 
+<h3>piu piccolo</h3>
+====================================================
+Grassetto <b></b>
+<strong> </strong> 
+====================================================
+Corsivo  <i></i>
+<em> </em>
+====================================================
+Citazioni, cite e blockquote
+<blockquote>
+    <p>[...] fatti non foste a viver come bruti</p>
+    <cite>Inferno-La Divina Commedia</cite>
+</blockquote>
+============================================================
+Testo preformattato -codice 
+All’interno del tag <pre> si può usare:
+<code>	Descrive brani di codice sorgente
+<kbd>	Indica il testo inserito dagli utenti
+<samp>	Rappresenta l’output di una riga di comando  es.
+----
+<pre>
+<code>
+for (i=0;i<5;i++)
+    console.log("i = "+i);
+</code>
+</pre>
+============================================================
+barra sul testo  <del>
+====================================================
+testo “evidenziato” <mark>
+====================================================
+importanza minore  <small>
+====================================================
+elenco puntato:
+<ul>
+  <li>primo elemento</li>
+  <li>secondo elemento</li>
+  <li>terzo elemento</li>
+</ul>
+====================================================
+elenco numerato:
+Testo che precede la lista
+ 
+<ol>
+    <li>primo elemento</li>
+    <li>secondo elemento</li>
+    <li>terzo elemento</li>
+</ol>
+ 
+Testo che segue la lista
+====================================================
+elenco annidato :
+<ul>
+    <li>primo della 1a lista</li>
+    <li>secondo della 1a lista
+        <ul>
+            <li>primo della 2a lista</li>
+            <li>secondo della 2a lista
+                <ul>
+                    <li>primo della 3a lista</li>
+                </ul>
+            </li>
+            <li>terzo della 2a lista</li>
+        </ul>
+    </li>
+</ul>
+====================================================
+visualizza un “pallino” pieno.
+<ul type=”disc”>
+  <li>primo</li>
+  <li>secondo</li>
+  <li>terzo</li>
+</ul>
+====================================================
+visualizza un cerchio vuoto al proprio interno
+<ul type=”circle”>
+  <li>primo</li>
+  <li>secondo</li>
+  <li>terzo</li>
+</ul>
+====================================================
+Visualizza un quadrato pieno
+<ul type=”square”>
+  <li>primo
+  <li>secondo
+  <li>terzo
+</ul>
+====================================================
+Tabella semplice
+<table>
+    <tr><td>Colonna 1</td><td>Colonna 2</td></tr>
+    <tr><td>Dato 1,1</td><td>Dato 1,2</td></tr>
+    <tr><td>Dato 2,1</td><td>Dato 2,2</td></tr>
+    <tr><td>Dato 3,1</td><td>Dato 3,2</td></tr>
+</table>
+===================================================================================================
+Font e colore
+
+<font face="Verdana, Arial, Helvetica, sans-serif" color="blue">testo blu in Verdana</font><br />
+<font face="Verdana, Arial, Helvetica, sans-serif" color="red">testo rosso</font><br />
+o meglio ancora:<br />
+<font face="Verdana, Arial, Helvetica, sans-serif" color="blue">testo blu in Verdana<br />
+    <font color="red">testo rosso</font><br />
+</font>
+===================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

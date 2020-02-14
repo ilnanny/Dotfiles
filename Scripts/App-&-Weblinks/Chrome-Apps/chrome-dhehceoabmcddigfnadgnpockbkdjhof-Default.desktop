@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Benvenuti in Prime Video
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=dhehceoabmcddigfnadgnpockbkdjhof
+Icon=chrome-dhehceoabmcddigfnadgnpockbkdjhof-Default
+StartupWMClass=crx_dhehceoabmcddigfnadgnpockbkdjhof

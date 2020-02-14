@@ -1,0 +1,49 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+echo ""
+echo ""
+git config --global user.name "nome_utente"
+git config --global user.email nomeutente@mail.com
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Entro nella cartella repo-folder"
+cd /media/Dati/cartella_repo/
+echo ""
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Aggiungo i nuovi file"
+git add .
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Stato Attuale del Repositorio GITHUB"
+git status
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Scrivo il Changelog del Update"
+git commit -m "recolor and add more icons"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-"
+echo ""
+echo "Faccio un Pull Git"
+git pull
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Carico l'Aggiornamento sul repositorio Online"
+git push
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Completato"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Buona Continuazione"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+echo ""
+echo "Chiudi il Terminale"
+echo "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_--_-_-_-_-"
+exit

@@ -1,0 +1,34 @@
+
+
+I pacchetti slackware usa
+
+installpkg nomepacchetto.tgz
+upgradepkg nomepacchetto.tgz
+removepkg nomepacchetto.tgz
+makepkg                      crea pacchetti in formato leggibile da slackware
+explodepkg                   estrae pacchetti slackware nella cartella corrente
+rpm2targz                    converte rpm in tgz 
+es: rpm2targz nomefile.rpm
+ 
+----------------------------------------------------------------------
+
+I file tar.gz li devi estrarre con il comando:
+
+tar xfvz nomeFile.tar.gz
+
+Se invece il file fosse un .bz2 lo devi estrarre o con:
+
+
+tar xjvf nomeFile.bz2
+o con
+
+
+bunzip2 nomeFile.bz2
+
+cd /directory e dai
+
+./configure
+make 
+sudo make install
+
+--------------------------------------------------------------------

@@ -1,0 +1,20 @@
+
+
+
+ install dmg2img
+
+
+The command line use again is simple:
+
+For DMG to ISO:
+
+
+dmg2img example.dmg example.iso
+
+
+For DMG to IMG:
+
+
+dmg2img example.dmg example.img
+
+dmg2img "Install macOS Sierra 12.5.03.dmg" macOS-Sierra.iso

@@ -1,0 +1,22 @@
+
+Series of packages are available:
+Code:
+
+      A   - Base Linux system
+      AP  - Various applications that do not need X
+      D   - Program Development (C, C++, Kernel source, Lisp, Perl, etc.)
+      DES - crypt() add-on
+      E   - GNU Emacs
+      F   - FAQ lists
+      GTK - GTK+ apps and libs (including GNOME)
+      K   - Linux kernel source
+      KDE - Qt and KDE (the K Desktop Environment)
+      N   - Networking (TCP/IP, UUCP, Mail)
+      T   - TeX
+      TCL - Tcl/Tk/TclX, Tcl language, and Tk toolkit for developing X apps
+      X   - XFree86 Base X Window System
+      XAP - X Window Applications
+      XD  - XFree86 X11 server development system
+      XV  - XView (OpenLook [virtual] Window Manager, apps)
+      Y   - Games (that do not require X)
+

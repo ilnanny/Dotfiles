@@ -1,0 +1,81 @@
+Usa il comando di snap
+Questa è una panoramica dei comandi di snap comunemente usati. Puoi trovare qui il riferimento completo del comando .
+
+Accedi allo Snap Store
+Gli snap vengono normalmente installati dallo Snap Store. Puoi interagire con lo Snap Store senza effettuare l'accesso, ma l'accesso offre una serie di vantaggi. Questi vantaggi includono la possibilità di accedere ai tuoi scatti privati ​​e di gestire i tuoi scatti senza richiedere il root sul dispositivo.
+
+Lo Snap Store contiene una collezione di snap per la consegna a cloud, dispositivi e infrastrutture private. Accedi come segue, usando il tuo account Ubuntu One :
+
+$ sudo snap login me@myself.com
+Password: *********
+2-factor: ******
+Welcome!
+Quando non si è connessi, la maggior parte dei snapcomandi richiede di eseguirli come root.
+
+Trova scatti
+Lo Snap Store contiene scatti sia pubblici che privati.
+
+Chiunque può pubblicare uno snap, ma facendo una ricerca su Snap Store troverà solo gli snap che sono pubblicati sul stablecanale di rilascio (e quindi sono stati esaminati e giudicati di buona qualità - quindi gli utenti possono installarli senza problemi).
+
+Le ricerche cercano corrispondenze nel nome o nella descrizione dello snap:
+
+$ snap find hello
+Name           Version  Developer  Notes  Summary
+hello          2.10     canonical  -      GNU Hello, the "hello world" snap
+hello-huge     1.0      noise      -      A really big snap
+hello-world    6.1      canonical  -      Hello world example
+Lo sviluppatore della community Brian Douglass gestisce una directory online dello Snap Store.
+
+Installa gli snap
+È possibile installare gli snap utilizzando il nome dello snap. Ecco un esempio di installazione di GNU Hello dalla Free Software Foundation:
+
+$ snap install hello
+Esegui scatti
+Ogni snap potrebbe includere più comandi correlati, con un comando predefinito che ha lo stesso nome dello snap stesso. I comandi aggiuntivi sono preceduti dal nome dello snap:
+
+$ hello
+Hello, world!
+$ hello.universe
+Hello, universe!
+Gli snap possono anche installare servizi che vengono eseguiti in background, come server web e demoni. Quelli si avvieranno automaticamente quando lo snap è installato. I comandi snap disable <snap name>e snap enable <snap name>ti consentono di mantenere il pieno controllo degli snap installati sul tuo sistema, indipendentemente dal modo in cui sono stati avviati.
+
+Visualizza i dettagli sugli snap installati
+Per visualizzare un elenco di tutti gli snap installati su un sistema, utilizzare snap list. L'elenco fornisce anche informazioni sulla versione del software, numero di revisione, sviluppatore e eventuali note aggiuntive fornite con lo snap (ad esempio se lo snap è in modalità sviluppatore o meno).
+
+$ snap list
+Name           Version               Rev  Developer  Notes
+hello          2.10                  26   canonical  -
+ubuntu-core    16.04+20160419.20-55  109  canonical  -
+webdm          0.17                  21   canonical  -
+Aggiornamenti e canali automatici
+Gli snap vengono aggiornati automaticamente in background alla versione più recente, ogni giorno. Questo può anche essere fatto manualmente usando snap refreshper tutti gli snap installati o specificando uno snap particolare da aggiornare.
+
+È inoltre possibile passare a un'altra versione di uno snap aggiornando in un altro canale di rilascio, se lo sviluppatore ha pubblicato lo snap in più canali.
+
+I canali di rilascio validi sono stable, candidate, beta, edgee il loro nome riflette lo stato di sviluppo di scatti che contengono.
+
+$ snap refresh <snap name> --beta
+modalità sviluppatore
+Quando sviluppi uno snap, probabilmente vorrai eseguirlo senza il rigoroso limite di sicurezza che ci si aspetta da scatti pubblicati e stabili. Questo viene fatto usando il --devmodeflag sull'installazione.
+
+È anche possibile pubblicare gli snap che richiedono --devmodedi funzionare, ma possono essere pubblicati solo sui canalibeta o edge rilasciati . Gli utenti devono installare queste versioni anche usando la --devmodebandiera.
+
+$ snap install flubber --beta
+error: cannot install "flubber": snap not found
+$ snap install flubber --beta --devmode
+Download snap "flubber" (12) from channel "beta"
+...
+A causa del rischio di installazione di un'app non definita, l'installazione di uno snap-in devmodenon è consigliata a meno che non ci si fidi dello sviluppatore. Come protezione, gli snap installati utilizzando il devmodeflag non vengono aggiornati automaticamente e richiedono all'utente di aggiornarli manualmente.
+
+Per conoscere il canale giusto e la modalità di confinamento da richiedere durante l'installazione di un pacchetto, è possibile utilizzare il snap infocomando prima dell'installazione:
+
+$ snap info flubber
+name:      flubber
+summary:   ...
+publisher: flubber-dev
+description: ...
+channels:
+  beta:   1.3 (16)
+  edge:   1.4 (17) devmode
+Crea i tuoi scatti
+Gli snap possono essere facilmente creati con uno strumento di supporto chiamato snapcraft. Passa alla sezione Build snaps per iniziare.

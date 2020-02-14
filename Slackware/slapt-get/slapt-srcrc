@@ -1,0 +1,4 @@
+BUILDDIR=/usr/src/slapt-src
+PKGEXT=txz
+SOURCE=http://salix.hostingxtreme.com/slkbuild/14.2/
+SOURCE=http://salix.hostingxtreme.com/sbo/14.2/

@@ -1,0 +1,51 @@
+Dipendenze oomox archlinux Pacchetti (47)
+
+
+               attica
+	       bc
+               cmake
+               extra-cmake-modules
+	       gobject-introspection-runtime
+               gtk-engines
+	       jsoncpp
+	       karchive
+               kauth
+	       kbookmarks
+	       kcodecs
+               kcompletion
+	       kconfig
+	       kconfigwidgets
+               kcoreaddons
+	       kcrash
+	       kdbusaddons
+	       kglobalaccel
+	       kguiaddons
+	       ki18n
+               kiconthemes
+	       kio
+	       kitemviews
+               kjobwidgets
+	       knotifications
+	       kservice
+               ktextwidgets
+	       kwallet
+	       kwidgetsaddons
+               kwindowsystem
+	       kxmlgui
+               libdbusmenu-qt5
+	       libsass
+               media-player-info
+	       optipng
+	       parallel
+               pygobject-devel
+	       python-gobject
+	       python-yaml
+               qt5-multimedia
+	       qt5-speech
+	       qt5-tools
+               rhash
+	       rust
+	       sassc
+	       solid
+               sonnet
+

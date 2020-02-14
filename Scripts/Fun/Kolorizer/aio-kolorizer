@@ -1,0 +1,34 @@
+#!/bin/bash
+### https://github.com/DarthWound/materia-kolorizer
+### https://github.com/DarthWound/papirus-kolorizer
+### https://github.com/DarthWound/wallpaper-kolorizer
+
+# install requirements :
+# xdg-utils sassc inkscape optipng gtk-engine-murrine
+
+# go to downloads directory
+cd $(xdg-user-dir DOWNLOAD)
+
+# remove old versions
+rm materia-kolorizer.sh papirus-kolorizer.sh wallpaper-kolorizer.sh
+
+# download new versions
+wget https://raw.githubusercontent.com/DarthWound/materia-kolorizer/master/materia-kolorizer.sh
+wget https://raw.githubusercontent.com/DarthWound/papirus-kolorizer/master/papirus-kolorizer.sh
+wget https://raw.githubusercontent.com/DarthWound/wallpaper-kolorizer/master/wallpaper-kolorizer.sh
+chmod +x materia-kolorizer.sh papirus-kolorizer.sh wallpaper-kolorizer.sh
+
+# run scripts
+clear
+read -p "Edit scripts before launching them? [Y/n]: " rep
+if [ "$rep" = "Y" ] || [ "$rep" = "y" ]
+  then
+  xdg-open materia-kolorizer.sh
+  xdg-open papirus-kolorizer.sh
+  xdg-open wallpaper-kolorizer.sh
+fi
+clear
+read -p "Press ENTER to launch scripts"
+./materia-kolorizer.sh && ./papirus-kolorizer.sh && ./wallpaper-kolorizer.sh
+clear
+read -p "100% COMPLETE - Press ENTER to quit..."

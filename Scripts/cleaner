@@ -1,0 +1,33 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+echo "#################################################"
+echo "#  ELIMINO FILE TEMPORANEI E CESTINO DI SISTEMA #"
+echo "#################################################"
+sudo rm -fr /tmp/* 
+sudo rm -rfv ~/.cache ~/.local/share/Trash ~/.thumbnails
+sudo rm -rf  ~/.local/share/Trash/files/*
+echo "#############################################"
+echo "#      SVUOTO IL CESTINO DI MEDIA/DATI      #"
+echo "#############################################"
+sudo rm -rf  /media/Dati/.Trash-1000/files/*
+sudo rm -rf  /media/Dati/.Trash-1000/info/*
+sudo rm -rf  /media/Dati/.Trash-1000/expunged/*
+sudo rm -rf  /media/Dati/.Trash-0/files/*
+sudo rm -rf  /media/Dati/.Trash-0/info/*
+sudo rm -rf  /media/Dati/.Trash-0/expunged/*
+echo "#############################################"
+echo "#        RIGENERO IL DESKTOP DATABASE       #"
+echo "#############################################"
+sudo update-desktop-database
+update-desktop-database
+echo "#############################################"
+echo "#        FATTO , CHIUDI IL TERMINALE !      #"
+echo "#############################################"
+exit 4

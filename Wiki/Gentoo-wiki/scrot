@@ -1,0 +1,59 @@
+
+A volte può essere utile avere un piccolo programma eseguibile dalla riga di comando in grado di fare uno screenshot del vostro desktop o solo una parte di esso, per questo compito il software perfetto è: scrot
+
+Scrot (SCReenshOT) è un programma di utilità per fare uno screenshot dello schermo, utilizza la libreria imlib2 per acquisire e salvare le immagini. scrot ha alcune opzioni molto interessanti, di seguito dettagliate. L’uso di base è quella di specificare un [file], come nome del file dove salvare l’immagine e scrot prenderà uno screenshot dell’intero desktop.
+L’ultima versione (0.8) ha quasi 10 anni, ma questo piccolo programma può ancora essere utile per la sua capacità di essere eseguito completamente dalla riga di comando e quindi si può usare per concatenarlo ad altri comandi o solo perché è davvero leggero e facile da usare.
+
+installazione
+È possibile installare scrot su qualsiasi distribuzione Linux. Se si sta utilizzando Ubuntu o una derivata come me, o un’altra distro con un gestore di pacchetti, l’installazione sarà probabilmente una questione di eseguire di un singolo comando nel vostro terminale. Su Mint, è possibile installare scrot sia con Synaptic Package Manager o semplicemente eseguendo il seguente comando:
+
+sudo apt-get install scrot
+Uso
+Scrot segue la principale filosofia Unix “Scrivere programmi che fanno una cosa e farla bene . Scrivere programmi per lavorare insieme. Scrivere programmi per gestire i flussi di testo, perché questa è un interfaccia universale “, quindi prendere solo degli screenshot ma lo fa perfettamente e si hanno anche alcune interessanti opzioni che dovrebbero soddisfare la maggior parte delle vostre esigenze.:
+
+Screenshot di tutto lo schermo
+Basta usare il comando scrot e aggiungere un nome di file come opzione:
+
+$ scrot /tmp/desktop.png
+Questo produrrà un file .png nella directory /tmp con l’immagine di tutto il desktop.
+
+Screenshot di un’area selezionata
+Se si desidera acquisire una specifica finestra o un’area rettangolare sullo schermo, è possibile utilizzare scrot con l’opzione -s (select), che permette di disegnare in modo interattivo con il mouse l’area da catturare.
+
+$ scrot -s /tmp/myarea.png
+Una volta eseguito il comando di utilizzare il mouse per selezionare uno degli angoli e premere (e tenere premuto) il tasto sinistro del mouse per selezionare l’area, rilasciare il pulsante per salvare l’area.
+
+Aggiungere un ritardo prima di prendere uno screenshot
+A volte è necessario aprire una nuova finestra, o minimizzare/massimizzare alcune finestre tra l’esecuzione di scrot e la scremata che si desidera prendere, per queste esigenze, è possibile usare l’opzione -d (delay) che prende un argomento numerico che rappresenta il numero di secondi di attesa prima di prendere lo screenshot.
+Per aggiungere alcuni “effetti” è possibile utilizzare anche l’opzione -c (conto alla rovescia) che visualizzerà sullo schermo un conto alla rovescia per lo screenshot:
+
+$ scrot -d 15 -c /tmp/desktop.png
+Taking shot in 15.. 14.. 13.. 12.. 11.. 10.. 9.. 8.. 7.. 6.. 5.. 4.. 3.. 2.. 1.. 0.
+$ scrot -t 50% /tmp/desktop.png
+L’output di questo comando sono 2 file:
+
+ls -alrt /tmp/desktop*
+-rw-r--r-- 1 linuxaria linuxaria 850568 Apr 14 23:37 /tmp/desktop.png
+-rw-r--r-- 1 linuxaria linuxaria 226898 Apr 14 23:37 /tmp/desktop-thumb.png
+ 
+file /tmp/desktop*
+/tmp/desktop.png:       PNG image data, 1920 x 1080, 8-bit/color RGB, non-interlaced
+/tmp/desktop-thumb.png: PNG image data, 960 x 540, 8-bit/color RGB, non-interlaced
+Quindi 2 file, uno a 1920 x 1080 la risoluzione del mio desktop, e l’altro a 50% ovvero 960 x 540
+
+Impostazione della qualità del vostro screenshot
+È anche possibile selezionare la qualità dell’immagine risultante con l’opzione -q seguita da un livello di qualità tra 1 e 100 (maggiore è il valore, maggiore è la qualità e più bassa la compressione). Il livello di qualità di default è 75, e l’output risultante sarà ovviamente diverso a seconda del formato di file scelto.
+
+Concatenare più comandi
+Si può anche usare un altro comando o l’esecuzione di un programma sull’immagine dello schermo salvata da scrot utilizzando l’opzione -e
+
+$ scrot -ucd4 -e 'eog $f'
+Questo prende uno screenshot della finestra a fuoco con un conto alla rovescia di 4 secondi e lo mostra sul EyeOfGnome.
+o un esempio più complesso:
+
+scrot -e 'mv $f \$HOME/public_html/shots/; echo "http://\$HOSTNAME/~\$USER/shots/$f" | xsel -i; feh `xsel -o`'
+A web server using $HOME/public_html as user directory is required, $HOME/public_html/shots must exist and have appropriate access rights and $HOSTNAME must be known to and accessible from the outside world.
+The command uses scrot to create a screen shot, moves it to the screen shot directory, uses xsel to copy the URL to the paste buffer (so that you can paste it with a middle click) and finally uses feh to display a preview of the screen shot.
+
+Un server Web che utilizzi $HOME/public_html come directory dell’utente è necessaria, $ HOME/public_html/shots deve esistere e avere diritti di accesso appropriati e $HOSTNAME deve essere noto e accessibile dal mondo esterno.
+Il comando utilizza scrot per creare uno screenshot, lo sposta nella directory degli screenshots, utilizza Xsel per copiare l’URL nel buffer di paste (in modo che si possa incollare con un click del tasto di centro) e, infine, utilizza feh per visualizzare un’anteprima del schermata.

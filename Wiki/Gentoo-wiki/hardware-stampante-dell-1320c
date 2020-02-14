@@ -1,0 +1,88 @@
+Dell 1320c color laser printer Linux install
+============================================
+Updated: 8/3/2008
+
+Note: this install was done on a Fedora 9 Linux installation.
+
+Follow printer initial hardware instructions to setup printer hardware and insert paper in printer tray.
+Connect printer to network with dhcp server (cable router, etc...).
+Power on printer.
+When printer is ready, press and hold printer "Continue" button to print settings pages to get printers DHCP assigned IP address.
+
+To configure the printer, connect to and login to it via:
+ http://x.x.x.x/ where x.x.x.x is your printer's IP address.
+  Default printer username: admin
+  Default printer password: (blank/none)
+ Change the printer to use a static IP address instead of DHCP address.
+
+The Dell 1320c seems to work with the Fuji Xerox DocuPrint C525A printer Linux driver:
+ Fuji Xerox DocuPrint C525A printer web site:			http://www.fujixerox.com.au/productDetail.do?code=dpc525a
+ Fuji Xerox DocuPrint C525A printer Linux driver downloads:	http://www.fujixerox.com.au/support/downloaddriver?productId=307&operatingSystemCode=Linux
+ Direct link to Linux driver file:				ftp://ftp.fxa.com.au/drivers/dpc525a/dpc525a_linux_.0.0.tar.zip
+ Direct link to Linux User Guide:				ftp://ftp.fxa.com.au/drivers/dpc525a/dpc525a_linux_ug.pdf
+
+Install the Linux driver:
+ rpm -Uvh Fuji_Xerox-DocuPrint_C525_A_AP-1.0-1.i386.rpm
+
+Configure the printer:
+Click on "System - Administration - Printing"
+Follow one (or both) of the following install options:
+ Option 1: socket method (works with Fedora 9)
+  Click "New Printer"
+  Click "Dell Color Laser 1320c x.x.x.x" (where x.x.x.x is the IP address of the printer), then click "Forward"
+  Select "FX", then click "Forward".
+  Select "DocuPrint C525 A-AP", then click "Forward".
+  Verify "Memory Capacity" is set to "64MB"
+  Set "Optional Tray Module:" to "250 Sheet Feeder", then click "Forward".
+  Enter "Dell1320c" for "Printer Name".
+  Enter "Dell 1320c color printer" for "Description", then click "Apply".
+  Verify "Device URI:" is "socket://x.x.x.x" (where x.x.x.x is the IP address of the printer).
+  Click "Options Installed" and verify:
+   Memory Capacity:		64MB
+   Optional Tray Module:	250 Sheet Feeder
+  Click "Printer Options" and change "Paper Source:" to "Tray 1 (250 Sheets)", then click "Apply".
+   Paper Source:	= Tray 1 (250 Sheets)
+ Option 2: lpd method (works with Fedora 9 and Fedora 8)
+  Click "New Printer"
+  Click "LPD/LPR Host or Printer"
+  For "Host:" enter "x.x.x.x" (where x.x.x.x is your printer's IP address), then click "Forward".
+  Select "FX", then click "Forward".
+  Select "DocuPrint C525 A-AP", then click "Forward".
+  Verify "Memory Capacity" is set to "64MB"
+  Set "Optional Tray Module:" to "250 Sheet Feeder", then click "Forward".
+  Enter "Dell1320c_lpd" for "Printer Name".
+  Enter "Dell 1320c color printer" for "Description", then click "Apply".
+  Verify "Device URI:" is "lpd://x.x.x.x" (where x.x.x.x is the IP address of the printer).
+  Click "Options Installed" and verify:
+   Memory Capacity:		64MB
+   Optional Tray Module:	250 Sheet Feeder
+  Click "Printer Options" and change "Paper Source:" to "Tray 1 (250 Sheets)", then click "Apply".
+   Paper Source:	= Tray 1 (250 Sheets)
+Note: You MUST set the "Optional Tray Module" and "Paper Source" options as stated above or pages will not print.
+Print a test page:
+ Select the printer device in "Local Printers", click on the "Settings" tab, then click on "Print Test Page"
+
+
+Other Notes:
+------------
+Default printer username: admin
+Default printer password: (blank/none)
+
+To manage the CUPS printing system on your PC:
+ http://localhost:631/
+
+Fuji Xerox DocuPrint C525A printer Linux driver installs these files:
+# rpm -qpl Fuji_Xerox-DocuPrint_C525_A_AP-1.0-1.i386.rpm 
+/usr/lib/cups/filter/FXM_ALC
+/usr/lib/cups/filter/FXM_CC
+/usr/lib/cups/filter/FXM_HBPL
+/usr/lib/cups/filter/FXM_MF
+/usr/lib/cups/filter/FXM_PF
+/usr/lib/cups/filter/FXM_PM2FXR
+/usr/lib/cups/filter/FXM_PR
+/usr/lib/cups/filter/FXM_PS2PM
+/usr/lib/cups/filter/FXM_SBP
+/usr/share/cups/FujiXerox/dlut/FX_DocuPrint_C525_A_AP.dlut
+/usr/share/cups/model/FujiXerox/en/FX_DocuPrint_C525_A_AP.ppd
+
+

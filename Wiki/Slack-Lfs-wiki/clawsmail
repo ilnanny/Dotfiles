@@ -1,0 +1,30 @@
+Incoming Mail (IMAP4 protocol) Server	imap.gmail.com
+Requires SSL:                                                      Yes
+Port:                                                                      993
+Outgoing Mail (SMTP) Server	                       smtp.gmail.com
+Requires SSL:                                                      Yes
+Requires TLS:                                                     Yes (if available)
+Requires Authentication:                                Yes
+Port for SSL:                                                      465
+Port for TLS/STARTTLS:                                  587
+Full Name or Display Name	                     Your name
+Account Name, User name        	             Your full email address
+Password	                                                     Your Gmail password
+
+=======================================================================
+https://support.google.com/mail/bin/static.py?hl=en&ts=1668960&page=ts.cs&from=184972&rd=1 
+
+Incoming Mail (IMAP) Server - Requires SSL 
+imap.gmail.com 
+Port: 993 
+Requires SSL:Yes 
+Outgoing Mail (SMTP) Server - Requires TLS 
+smtp.gmail.com 
+Port: 465 or 587 
+Requires SSL: Yes 
+Requires authentication: Yes 
+Use same settings as incoming mail server 
+Full Name or Display Name: [your name] 
+Account Name or User Name: your full Gmail address (user...@gmail.com). Google Apps users, please enter user...@your_domain.com 
+Email address: your full Gmail address (user...@gmail.com) Google Apps users, please enter user...@your_domain.com 
+Password: your Gmail password 

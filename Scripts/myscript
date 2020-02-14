@@ -1,0 +1,138 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#Project:
+#================================================
+#Imposta l'utente Root
+#set -o errexit
+#[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#Imposta un colore di sfondo testo
+#printf "\e[48;5;%sm"
+#echo "
+#Scrivi il messaggio
+#es: Fatto!
+#Chiudi il terminale .
+#"
+#printf "\n"
+exo-open --launch TerminalEmulator -e curl https://cht.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

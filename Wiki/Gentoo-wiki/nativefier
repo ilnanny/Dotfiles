@@ -1,0 +1,11 @@
+Crea applicazione web su desktop tramite electron
+richiesto npm
+
+npm install nativefier -g
+
+utilizzo :
+nativefier web.whatsapp.com
+
+
+help:
+https://www.npmjs.com/package/nativefier#installation

@@ -1,0 +1,5 @@
+sed -i "s/Vecchia stringa/Nuova stringa/g" *.svg
+sed -i "s/Vecchia stringa/Nuova stringa/g" *.html
+sed -i "s/Vecchia stringa/Nuova stringa/g" *.txt
+sed -i "s/Vecchia stringa/Nuova stringa/g" *.sh
+ecc

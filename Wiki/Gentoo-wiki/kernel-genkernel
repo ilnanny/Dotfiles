@@ -1,0 +1,8 @@
+Action	           Description
+______________________________________________________________________________
+all	               Builds all stages — the initrd, kernel image and modules.
+bzImage	           Only builds the kernel image.
+kernel	           Only builds the kernel image and modules.
+initramfs	       Only builds the initramfs/ramdisk image.
+ramdisk	           Only builds the initramfs/ramdisk image.
+______________________________________________________________________________

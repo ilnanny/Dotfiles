@@ -1,0 +1,60 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Programma di aggiornamento e pulizia di Portage"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Aggiorno i Portage Three"
+emerge --sync
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Aggiorno e Sincronizzo gli Overlay"
+layman -S
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Aggiorno e Sincronizzo Eix"
+eix-update
+eix-sync
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Aggiorno World e System"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+emerge -uDN world
+echo "In caso di necessità lancia  revdep-rebuild  "
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+emerge -uDN system
+echo "In caso di necessità lancia  revdep-rebuild  "
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo " Rimuovo le dipendenze non necessarie"
+echo "emerge --depclean"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+echo "Pulisco i file non necessari"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"
+echo ""
+rm -fr /tmp/* "Rimozione files da /tmp...[OK]"
+rm -rfv ~/.local/share/Trash/* "Rimozione files da cestino...[OK]"
+echo "___________________________"
+echo ""
+echo "Sistema Aggiornato e Pulito"
+echo "___________________________"
+echo ""
+echo "___________________________"
+echo ""
+echo "Buona Continuazione"
+echo "___________________________"
+echo ""
+echo "Chiudi il Terminale"
+echo "___________________________"
+exit 

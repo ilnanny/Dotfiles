@@ -1,0 +1,125 @@
+ilnanny@DellT3500 ~ $ cat /proc/asound/version
+Advanced Linux Sound Architecture Driver Version k4.19.44-gentoo.
+
+ilnanny@DellT3500 ~ $ cat /proc/asound/cards
+ 0 [Intel          ]: HDA-Intel - HDA Intel
+                      HDA Intel at 0xf7ffc000 irq 25
+ 1 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0xf7dfc000 irq 26
+
+ilnanny@DellT3500 ~ $ cat /proc/asound/devices
+  2: [ 1- 3]: digital audio playback
+  3: [ 1- 7]: digital audio playback
+  4: [ 1- 8]: digital audio playback
+  5: [ 1- 9]: digital audio playback
+  6: [ 1- 0]: hardware dependent
+  7: [ 1- 1]: hardware dependent
+  8: [ 1- 2]: hardware dependent
+  9: [ 1- 3]: hardware dependent
+ 10: [ 1]   : control
+ 11: [ 0- 0]: digital audio playback
+ 12: [ 0- 0]: digital audio capture
+ 13: [ 0- 2]: digital audio playback
+ 14: [ 0- 2]: digital audio capture
+ 15: [ 0- 0]: hardware dependent
+ 16: [ 0]   : control
+ 33:        : timer
+
+
+ilnanny@DellT3500 ~ $ cat /proc/asound/timers
+G0: system timer : 1000.000us (10000000 ticks)
+P0-0-0: PCM playback 0-0-0 : SLAVE
+P0-0-1: PCM capture 0-0-1 : SLAVE
+P0-2-0: PCM playback 0-2-0 : SLAVE
+P0-2-1: PCM capture 0-2-1 : SLAVE
+P1-3-0: PCM playback 1-3-0 : SLAVE
+P1-7-0: PCM playback 1-7-0 : SLAVE
+P1-8-0: PCM playback 1-8-0 : SLAVE
+P1-9-0: PCM playback 1-9-0 : SLAVE
+
+ilnanny@DellT3500 ~ $ cat /proc/asound/pcm
+00-00: AD1984A Analog : AD1984A Analog : playback 1 : capture 1
+00-02: AD1984A Alt Analog : AD1984A Alt Analog : playback 1 : capture 1
+01-03: HDMI 0 : HDMI 0 : playback 1
+01-07: HDMI 0 : HDMI 0 : playback 1
+01-08: HDMI 0 : HDMI 0 : playback 1
+01-09: HDMI 0 : HDMI 0 : playback 1
+
+ilnanny@DellT3500 ~ $ lspci | grep audio
+00:1b.0 Audio device: Intel Corporation 82801JI (ICH10 Family) HD Audio Controller
+02:00.1 Audio device: NVIDIA Corporation GF100 High Definition Audio Controller (rev a1)
+
+
+
+ilnanny@DellT3500 ~ $ lsmod | grep snd_hda_intel
+snd_hda_intel          45056  1
+snd_hda_codec         139264  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_analog
+snd_hda_core           94208  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_analog,snd_hda_codec
+snd_pcm               114688  4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+snd                    90112  10 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec_analog,snd_hda_codec,snd_timer,snd_pcm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

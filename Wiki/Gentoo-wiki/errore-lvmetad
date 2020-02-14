@@ -1,0 +1,12 @@
+Assuming you're running Linux, in
+
+gy /etc/lvm/lvm.conf
+set:
+
+use_lvmetad = 0
+
+Stop e start LVM:
+
+/etc/init.d/lvm stop
+
+/etc/init.d/lvm start

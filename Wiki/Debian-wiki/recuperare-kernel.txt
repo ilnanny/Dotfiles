@@ -1,0 +1,17 @@
+Open Terminal
+Mount the debian partition: sudo mount /dev/sdXY /mnt
+Mount some special partitions:
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+(optional) When you are connected to a network, use the DNS servers from your Live environment (otherwise host names can possibly not be resolved):
+cp /etc/resolv.conf /mnt/etc/resolv.conf
+Chroot into the /mnt: sudo chroot /mnt
+Install the Linux kernel: apt-get install linux-image-generic (no sudo required as you are root after a chroot)
+After a successful installation of the kernel, get out the chroot and unmount some filesystems:
+exit
+sudo umount /mnt/sys
+sudo umount /mnt/proc
+sudo umount /mnt/dev
+sudo umount /mnt
+Reboot and remove CD or USB: sudo reboot

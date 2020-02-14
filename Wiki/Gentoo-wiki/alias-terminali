@@ -1,0 +1,13 @@
+
+## | Alias Terminali | = tty,stty,term
+#
+#== Localizza in italiano
+
+alias localedef="localedef -v -c -i it_IT -f UTF-8 /usr/share/locale/it_IT.UTF-8 \
+LANG=it_IT.UTF-8 \
+export LANG \"
+
+
+#== Stampa l'otput di tutto quello che viene digitato
+
+alias catnull="cat > /dev/null"

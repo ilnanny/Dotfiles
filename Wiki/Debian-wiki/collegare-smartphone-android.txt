@@ -1,0 +1,74 @@
+
+Installare i seguenti pacchetti:
+
+Codice: Seleziona tutto
+    aptitude install jmtpfs mtp-tools
+
+
+Aggiungere il proprio utente al gruppo plugdev:
+
+Codice: Seleziona tutto
+    sudo adduser gianmario plugdev
+
+
+Connettere il celluare Android e identificare i suoi dati con il comando
+
+Codice: Seleziona tutto
+    lsusb
+
+che nel mio caso restituisce:
+
+Codice: Seleziona tutto
+    Bus 005 Device 004: ID 22b8:2e63 Motorola PCS
+
+
+In tale indicazione nel campo ID il numero "22b8" è l'identificazione per il produttore (MOTOROLA) mentre il secondo numero "2e63" rappresenta l'identificazione per il modello (MOTO X); al termine dell'identificazione sconnettere il cellulare.
+
+Ora nella cartella "/etc/udev/rules.d" si deve creare con un nuovo file denomitato "90-android.rules" che contenente le seguenti istruzioni:
+
+Codice: Seleziona tutto
+    # MOTOROLA Moto X
+    SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e63", MODE="0666"
+
+
+In seguito creare la cartella dove si monterà  il device Android con il comando
+
+Codice: Seleziona tutto
+    sudo mkdir /media/android
+
+
+e infine fare ripartire il servizio UDEV con
+
+Codice: Seleziona tutto
+    sudo service udev restart
+
+.
+A questo punto connettere nuovamente il cellulare e dare il comando
+
+Codice: Seleziona tutto
+    jmtpfs -l
+
+che dovrebbe riconoscere il device android: nel mio caso da come risultato:
+
+Codice: Seleziona tutto
+    Device 0 (VID=22b8 and PID=2e63) is a Motorola Moto X (XT1058).
+    Available devices (busLocation, devNum, productId, vendorId, product, vendor):
+    5, 5, 0x2e63, 0x22b8, Moto X (XT1058), Motorola
+
+
+Una volta riconosciuto il proprio cellulare dare il comando
+
+Codice: Seleziona tutto
+    sudo jmtpfs /media/android -o allow_other
+
+in modo da accedere alla memoria del cellulare: da Thunar ora viene visualizzato la device "android" dove è possibile navigare nelle vari cartelle del cellulare; al termine per scollegare il cellulare dare il comando
+
+Codice: Seleziona tutto
+    sudo umount jmtpfs
+
+
+Per abbreviare i comandi di cui sopra, ho aggiunto i seguenti alias nella ".bashrc" presente in "/root":
+
+Codice: Seleziona tutto
+    alias motoin='jmtpfs /media/android -o allow_other'
+    alias motoout='umount jmtpfs'

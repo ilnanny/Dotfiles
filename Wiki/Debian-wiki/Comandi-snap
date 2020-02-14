@@ -1,0 +1,34 @@
+sudo apt install snapd
+==========================
+https://snapcraft.io/store
+==========================
+
+##   Per installare un pacchetto
+sudo snap install nomepacchetto
+
+
+##   Per eseguire un pacchetto  (es. calculator)
+calculator-app.calculator
+
+
+##   Per visualizzare la lista degli snap
+snap list
+    0
+snap list | grep nomepacchetto
+
+
+##   Per aggiornare un pacchetto
+sudo snap refresh nomepacchetto
+
+
+##   Per eliminare un pacchetto snap
+sudo snap remove nomepacchetto
+
+
+##   Per visualizzare le operazioni recenti eseguite
+sudo snap changes
+
+
+
+
+

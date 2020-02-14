@@ -1,0 +1,40 @@
+Tastiera : loadkeys it
+setxkbmap it
+
+Altre applicazioni:
+Nel file
+geany /etc/profile.d/lang.sh
+
+commentere la riga:
+
+export            LANG=us_US
+
+e aggiungere la riga:
+
+export LANG=it_IT@euro
+
+Nel file
+
+geany /etc/profile.d/lang.csh
+
+commentere la riga:
+
+setenv LANG us_US
+
+e aggiungere la riga:
+
+setenv LANG it_IT
+
++++++++++++++++++++++++++++++++++++++++++
+Aggingere in ~.profile le righe :
+geany ~.profile
+
+export LANG=it_IT.UTF-8
+export LC_ALL=it_IT.UTF-8
+setxkbmap it
+--------------------------------------per altro prova----------------------------------------------
+sed -e 's/"us"/"it"/' /usr/share/X11/xorg.conf.d/90-keyboard-layout.conf > 
+
+/etc/X11/xorg.conf.d/90-keyboard-layout.conf
+
+

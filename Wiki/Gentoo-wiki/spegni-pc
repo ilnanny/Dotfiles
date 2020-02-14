@@ -1,0 +1,9 @@
+
+#Per riavviare shutdown -r now oppure init 6
+
+#Per spengere shutdown -h now oppure init 0 oppure halt
+
+#Per OpenBox:
+Esci,openbox --exit,system-log-out
+Riavvia,shutdown -r now,system-restart
+Spegni,shutdown -h now,system-shutdown

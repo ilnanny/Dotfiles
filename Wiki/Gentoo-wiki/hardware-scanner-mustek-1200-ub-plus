@@ -1,0 +1,29 @@
+ Download del firmware
+
+Scaricare il file 'sbfw.usb' da questo Link , ovvero:
+
+http://www.meier-geinitz.de/sane/gt68xx-backend/firmware/sbfw.usb
+
+Configurazione di Sane
+
+Copiare il file nella cartella 'gt68xx' come utente root:
+
+# cp sbfw.usb /usr/share/sane/gt68xx
+
+oppure:
+
+# cp sbfw /usr/share/sane/gt68xx
+
+quindi aprire come root il file 'gt68xx.conf' al fine di editarlo:
+
+# gedit /etc/sane.d/gt68xx.conf
+
+decommentando la seguente riga che da:
+
+#override "mustek-scanexpress-1200-ub-plus"
+
+deve diventare:
+
+override "mustek-scanexpress-1200-ub-plus"
+
+Alla fine del procedimento, salvare il file e testare il funzionamento dello scanner con Xsane. 

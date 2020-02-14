@@ -1,0 +1,21 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+# ==  FASTWEB-E06CD5
+#================================================
+#sudo lshw -C network
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+
+#Connetti alla rete
+sudo nmcli device wifi rescan
+sudo nmcli device wifi list
+sudo nmcli device wifi connect FASTWEB-E06CD5 password 6R87ATWE7R
+#sudo nmcli device wifi connect 'FASTWEB DA 5 GHz' password 6R87ATWE7R
+exit 0

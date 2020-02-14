@@ -1,0 +1,11 @@
+slackpkg update gpg
+
+slackpkg update
+
+slackpkg install-new && slackpkg upgrade-all && slackpkg clean-system
+
+------------
+problema dopo aggiornamento ,parte x ma si blocca tastiera e mouse :
+soluzione :
+installare il pacchetto mtdev
+installpkg mtdev

@@ -1,0 +1,32 @@
+Spostarsi nella cartella di compilazione es :builds
+
+ cd ~/builds
+ curl -L -O https://aur.archlinux.org/packages/fo/foo/foo.tar.gz
+
+E' anche possibile clonare il repository Git, che è denominato "Git Clone URL" nei "Dettagli del pacchetto":
+
+ cd ~/build-repos
+ git clone https://aur.archlinux.org/foo.git
+
+Compilare il pacchetto
+
+Spostarsi nella cartella di compilazione se non si fosse già lì, poi estrarre l'archivio precedentemente scaricato:
+
+ cd ~/builds
+ tar -xvzf foo.tar.xz
+
+Questo creerà una cartella di nome "foo" all'interno della directory di compilazione. 
+Controllo dei file e insatallazione
+
+ cd foo
+ nano PKGBUILD
+ nano foo.install
+
+Dopo aver verificato l'integrità dei file, eseguire makepkg come normale utente.
+
+ makepkg -s
+
+Installazione del pacchetto
+Questo pacchetto può essere installato usando l'opzione "upgrade" di pacman:
+
+sudo pacman -U foo-0.1-i686.pkg.tar.xz   

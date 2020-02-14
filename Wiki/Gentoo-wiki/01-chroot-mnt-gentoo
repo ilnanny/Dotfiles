@@ -1,0 +1,62 @@
+
+
+ == == Montare la partizione sulla quale risiede il sistema
+
+mount /dev/sdc3 /mnt/gentoo
+mount -o remount,rw /dev/sdc3 /mnt/gentoo
+
+mount --bind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /proc /mnt/gentoo/proc
+mount --bind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /tmp /mnt/gentoo/tmp
+
+chroot /mnt/gentoo /bin/bash
+
+env-update && source /etc/profile
+export PS1="\033[1;33m([chroot])\033[0m $PS1"
+
+
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+ == == 
+( grub-mkconfig –o /boot/grub/grub.cfg )
+
+ == == Uscire dal chroot:
+
+exit
+cd ~
+umount -f /mnt/gentoo/dev
+umount -f /mnt/gentoo/proc
+umount -f /mnt/gentoo/sys
+umount -f /mnt/gentoo/tmp
+umount -f /mnt/gentoo/
+ fuser -k /mnt 
+reboot 
+
+
+ == == == == == == == == == == == == ==
+ fuser -k /mnt                                                           
+ == == == == == == == == == == == == ==
+ == ==  Se si ricevono errori è possibile riprovare :
+
+grub-install --recheck /dev/sda
+
+ == == == == == == == == == == == == ==
+== creare il punto di mount in /media
+
+sudo mkdir /media/iso
+
+== montare  immagine ISO
+
+sudo mount -t iso9660 -o loop /media/Dati/OS/Linux/64bit/CloverOS-x86_64-20190209.iso /media/iso
+
+==  al posto di file.iso immettere percorso esatto del file iso
+
+== smontare l’immagine iso
+
+sudo umount /media/iso
+
+== == == == == == == == == == == == == ==

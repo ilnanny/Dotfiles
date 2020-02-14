@@ -1,0 +1,37 @@
+
+Settare la localizzazione
+
+it_IT.UTF-8 UTF-8
+in /etc/locale.gen
+e, dopo aver salvato, eseguire: 
+
+locale-gen
+locale -a
+Creare anche il file
+nano -w /etc/env.d/02locale 
+
+
+    LANG="it_IT.UTF-8"
+    LC_CTYPE="POSIX"
+    LC_NUMERIC="POSIX"
+    LC_TIME="POSIX"
+    LC_COLLATE="POSIX"
+    LC_MONETARY="POSIX"
+    LC_MESSAGES="POSIX"
+    LC_PAPER="POSIX"
+    LC_NAME="POSIX"
+    LC_ADDRESS="POSIX"
+    LC_TELEPHONE="POSIX"
+    LC_MEASUREMENT="POSIX"
+    LC_IDENTIFICATION="POSIX"
+    LC_ALL=''
+
+
+
+
+eseguire
+locale-gen
+env-update
+source /etc/profile
+
+

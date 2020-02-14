@@ -1,0 +1,5 @@
+Audio:
+
+root@DellT3500 /home/ilnanny # lspci  | grep Audio
+00:1b.0 Audio device: Intel Corporation 82801JI (ICH10 Family) HD Audio Controller
+02:00.1 Audio device: NVIDIA Corporation GF100 High Definition Audio Controller (rev a1)

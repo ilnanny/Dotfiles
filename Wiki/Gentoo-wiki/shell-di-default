@@ -1,0 +1,58 @@
+geany Ci sono due modalità:
+
+   grep ilnanny /etc/passwd
+    root:x:0:0:root:/root:ilnanny
+    ilnanny:x:1000:1000::/home/ilnanny:bash
+
+
+   echo $0
+    bash
+
+__________________
+
+Per trovare tutte le shell disponibili:
+
+     cat /etc/shells
+      # /etc/shells: valid login shells
+      /bin/bash
+      /bin/csh
+      /bin/dash
+      /bin/esh
+      /bin/fish
+      /bin/ksh
+      /bin/mksh
+      /bin/sash
+      /bin/sh
+      /bin/tcsh
+      /bin/zsh
+
+___________________________
+impostare la shell di default :
+
+#   chsh -s /bin/bash ilnanny
+______________________________________________
+impostare la shell di default solo per l'utente:
+
+#    chsh -s /bin/bash ilnanny
+
+________        __________          _________
+
+ opzioni chsh:
+
+
+ -s shell
+
+Imposta shell come shell di login.
+
+ -l , --list-shells
+
+Stampa l'elenco delle shell elencate in / etc / shells ed esci.
+
+ -h , --help
+
+Stampa un messaggio di utilizzo ed esci.
+
+ -v , --version
+
+Stampa le informazioni sulla versione ed esci.
+__________________________________________________  fine

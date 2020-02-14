@@ -1,0 +1,58 @@
+Installa font .ttf
+Installare i Font .ttf 
+font-manager -i %f
+*.ttf;*.TTF;*.otf;*.OTF
+
+icona : fonts
+______________________________________________________
+Stampa file
+Stampa il file selezionato
+lp %f
+file di testo
+icona : printer
+____________________________________________________
+Monta/smonta ISO
+mountiso %f %n
+*.iso;*.ISO
+icona : drive-optical
+______________________________________________________
+Calcolo MD5/SHA
+Controlla la somma MD5/SHA 
+gtkhash %f
+tutto tranne cartelle
+icona: gtkhash
+______________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

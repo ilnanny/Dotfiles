@@ -1,0 +1,33 @@
+ Casper
+Debian Live Project
+Sommario
+
+User
+Download
+FAQ
+ISO Howto
+ISO Howto (multiarch)
+ISO per Multimedia Howto
+Tips
+Installare un Mirror Debian (piccolo howto)
+Sviluppo
+Bootloader
+Casper
+live-package
+Wishlist
+Progetto
+Linee guida
+Il Team
+Altre risorse
+Perchè Debian Live
+Altro (non supportato)
+Installer
+Debian Live su HD
+fromhd
+Casper è un programma scritto alla Canonical e usato per Ubuntu Live. Integra gli initramfs-tools per costruire un initramfs che possa effettuare il boot di un sistema live.
+Per provare questa tecnologia potete seguire l'ISO Howto.
+Potete prelevare direttamente l'upstream con questo comando:
+$ bzr branch http://bazaar.launchpad.net/~ubuntu-core-dev/casper/trunk casper
+Abbiamo modificato casper per adattarlo a Debian (vedere debian/changelog per i dettagli). Potete anche prelevarlo dal nostro repository bzr con:
+$ bzr branch http://bzr.debian.org/bzr/debian-live/casper casper-debian
+Oppure potete scaricare i pacchetti dagli usuali mirror Debian.

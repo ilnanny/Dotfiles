@@ -1,0 +1,31 @@
+
+Converte da bmp a jpg con imagemagick
+
+
+for i in `ls *.bmp`; do convert $i $i.jpg; done
+
+
+oppure
+
+
+mogrify -format jpg *.bmp
+
+
+
+oppure
+
+
+convert filename.bmp filename.jpg
+
+
+
+Da png a bmp senza trasparenza
+for i in `ls *.png`; do convert $i $i.bmp; done
+
+
+
+
+
+
+
+

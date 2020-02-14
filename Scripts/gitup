@@ -1,0 +1,21 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+git config --global user.name "ilnanny"
+git config --global user.email ilnannyhack@gmail.com
+git add .
+git status
+git commit -m "Update"
+git pull
+git push
+exit 0
+
+
+
+

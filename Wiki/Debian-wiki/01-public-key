@@ -1,0 +1,8 @@
+install -y dirmngr
+
+install -y apt-transport-https
+
+apt-key adv --keyserver keyring.debian.org --recv-keys 379CE192D401AB61
+
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61

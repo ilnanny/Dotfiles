@@ -1,0 +1,37 @@
+Nuova Installazione - E ora che si fa?
+
+Cosi... Avete installato una copia nuova nuova di Sabayon Linux e vi state chiedendo cosa fare.
+
+Anzitutto imparate bene ad usare il gestore dei pacchetti, è di importanza vitale capire come si usa. Quindi documentatevi, e poi cominciate ad agire.
+
+Ora che conoscete il gestore dei pacchetti, otteniamo la lista aggiornata dei pacchetti. Dovete essere root per eseguire questi comandi, quindi avviate su con la vostra password di root, se questa sarà quella corretta il vostro prompt cambierà a #. A differenza di altre distribuzioni qua è molto meglio se NON USATE sudo ma su.
+
+     # equo update
+
+Se ci sono delle lamentele riguardo altre istanze di Entropy aperte, è estremamente probabile che il mitico Magneto stia facendo il lavoro sporco al posto vostro. È altresì possibile che ci sia aperta un'istanza di Sulfur. Nel caso, chiudetela. Se ancora vi sono problemi ma di differente natura, provate:
+
+     # equo update --force
+
+Adesso che avete fatto, la cosa migliore è aggiornare Entropy all'ultima versione prima di aggiornare tutto il resto del sistema.
+
+     # equo install entropy sulfur equo
+
+Vi è una remota possibilità che il processo fallisca. In genere accade quando state utilizzando una versione di Sabayon molto indietro rispetto al punto di evoluzione cui la distro (ed Entropy con lei) è giunta. Se incontrate problemi, provate ad eseguire
+
+     # equo install entropy sulfur equo --relaxed
+
+A questo punto aggiorniamo eventuali files di configurazione:
+
+     # equo conf update
+
+Siamo pronti per aggiornare
+
+     # equo upgrade --ask
+
+Seguite la procedura, visto che vi metterà al corrente di ciò che fa e vi chiederà delle conferme. L'aggiornamento scaricherà i file binari, dopodiché li installerà. La lunghezza del processo dipende da quanti pacchetti vengono coinvolti, dal vostro computer e dalla banda. Dopo che tutto sarà completo, siate sicuri di eseguire:
+
+     # equo conf update
+
+Tenete presente che è un bene conoscere i file di configurazione del vostro sistema, visto che ne influenzano parecchio il comportamento. Per la maggior parte degli utenti scegliere l'opzione -5 sarà una soluzione ottima, ma si dovrebbero sempre osservare i cambiamenti ai file di configurazione, poiché alcune configurazioni potrebbero essere sovrascritte malgrado la nostra volontà.
+
+Ora che avete riavviato e tutto funziona ed è aggiornato, di tanto in tanto Magneto vi informerà che vi sono aggiornamenti. Potete anche pensare di manutenere il vostro sistema usando Sulfur, se preferite l'uso di una interfaccia grafica alla CLI. 

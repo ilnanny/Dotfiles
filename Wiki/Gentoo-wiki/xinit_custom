@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Xinitrc Gentoo
+
+DEFAULT_SESSION="openbox"
+
+# Reindirizza gli errori su un file nella home utente, se possibile
+for errfile in "$HOME/.wm-errors" "${TMPDIR-/tmp}/wm-$USER" "/tmp/wm-$USER"
+do
+    if ( cp /dev/null "$errfile" 2> /dev/null )
+    then
+        chmod 600 "$errfile"
+        exec > "$errfile" 2>&1
+        break
+    fi
+done
+
+# Imposta Xresources
+userresources=$HOME/.Xresources
+
+# Unisci ciò che è disponibile
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+# Demone urxvt
+urxvtd -q -o -f
+# parametri xserver
+xset s 0
+xset dpms 0 0 1800
+
+# Avvia il WM
+case $1 in
+openbox)
+        exec $1
+        ;;
+*)
+        exec $DEFAULT_SESSION
+        ;;
+esac

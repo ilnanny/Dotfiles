@@ -1,0 +1,1 @@
+7za a -t7z -mx=9 -mfb=256 -md=256m -ms=on  "/percorso/completo/miofile.7z" .

@@ -1,0 +1,3 @@
+umount /root/.gvfs
+find . -inum 554009 -exec rm{} \;
+rm -rf .gvfs

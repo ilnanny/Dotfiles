@@ -1,0 +1,28 @@
+Installing Lumina packages on Slackware
+
+Lumina is available to users of Slackware through the SlackBuilds repository of build scripts. The following steps will install the Lumina® package on an installation of Slackware that has been set up with the Full collection of official Slackware packages. Please note the comments in parenthesis should not be typed, they suggestions rather than literal commands.
+
+    wget http://slackbuilds.org/slackbuilds/14.1/libraries/qt5.tar.gz
+    tar xzf qt5.tar.gz
+    cd qt5
+    wget http://download.qt-project.org/official_releases/qt/5.4/5.4.2/single/qt-everywhere-opensource-src-5.4.2.tar.xz
+    (check qt5.info text file for exact DOWNLOAD path)
+    su
+    (enter root password)
+    source /etc/profile
+    ./qt5.SlackBuild
+    (wait a few hours)
+    installpkg /tmp/qt5-5.4.2-i486-1_SBo.tgz
+    exit
+    cd ..
+    wget http://slackbuilds.org/slackbuilds/14.1/desktop/lumina.tar.gz
+    tar xzf lumina.tar.gz
+    cd lumina
+    wget https://github.com/trueos/lumina/archive/v0.8.4-Release-P1.tar.gz
+    (check lumina.info text file for exact DOWNLOAD path)
+    su
+    (enter root password)
+    source /etc/profile
+    ./lumina.SlackBuild
+    installpkg /tmp/lumina-0.8.4-i486-1_SBo.tgz
+    exit

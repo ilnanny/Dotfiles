@@ -1,0 +1,107 @@
+T3500-Xeon W3650
+____________________________________________________
+
+ lspci | grep -i VGA
+02:00.0 VGA compatible controller: NVIDIA Corporation GF100GL [Quadro 4000] (rev a3)
+
+ lspci -vv | grep NVIDIA
+02:00.0 VGA compatible controller: NVIDIA Corporation GF100GL [Quadro 4000] (rev a3) (prog-if 00 [VGA controller])
+	Subsystem: NVIDIA Corporation GF100GL [Quadro 4000]
+	Kernel modules: nouveau, nvidia_drm, nvidia
+02:00.1 Audio device: NVIDIA Corporation GF100 High Definition Audio Controller (rev a1)
+	Subsystem: NVIDIA Corporation GF100 High Definition Audio Controller
+
+ dmesg | grep NVRM
+[    7.374814] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[    7.374824] NVRM: No NVIDIA graphics adapter found!
+[    7.428402] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[    7.428411] NVRM: No NVIDIA graphics adapter found!
+[    7.457950] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[    7.457961] NVRM: No NVIDIA graphics adapter found!
+[    7.513084] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[    7.513095] NVRM: No NVIDIA graphics adapter found!
+[    7.556213] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[    7.556223] NVRM: No NVIDIA graphics adapter found!
+[   17.288981] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   17.288992] NVRM: No NVIDIA graphics adapter found!
+[   17.334150] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   17.334160] NVRM: No NVIDIA graphics adapter found!
+[   98.166737] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   98.166747] NVRM: No NVIDIA graphics adapter found!
+[   98.210330] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   98.210341] NVRM: No NVIDIA graphics adapter found!
+[   98.270159] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   98.270169] NVRM: No NVIDIA graphics adapter found!
+[   98.313259] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   98.313269] NVRM: No NVIDIA graphics adapter found!
+[   98.361099] NVRM: The NVIDIA Quadro 4000 GPU installed in this system is
+               NVRM:  supported through the NVIDIA 390.xx Legacy drivers. Please
+               NVRM:  visit http://www.nvidia.com/object/unix.html for more
+               NVRM:  information.  The 430.14 NVIDIA driver will ignore
+               NVRM:  this GPU.  Continuing probe...
+[   98.361109] NVRM: No NVIDIA graphics adapter found!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________________________________________________
+----vechhio pc
+gentoo /home/ilnanny # lspci | grep -i VGA
+01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cedar [Radeon HD 5000/6000/7350/8350 Series]

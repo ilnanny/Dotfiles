@@ -1,0 +1,24 @@
+# Begin ~/.bashrc
+
+# Personal aliases and functions.
+
+# Personal environment variables and startup programs should go in
+# ~/.bash_profile.  System wide environment variables and startup
+# programs are in /etc/profile.  System wide aliases and functions are
+# in /etc/bashrc.
+
+if [ -f "/etc/bashrc" ] ; then
+  source /etc/bashrc
+fi
+
+#Alias
+alias sync='sudo scratch sync' 
+alias update='sudo scratch sysup' 
+alias search='scratch search' 
+alias install='sudo scratch install' 
+alias remove='sudo scratch remove' 
+alias revdep='sudo revdep' 
+alias ripdep='sudo revdep -r'
+alias clean='sudo updateconf' 
+alias cleanup='history -c && history -w' 
+# End ~/.bashrc

@@ -1,0 +1,20 @@
+Aggiornamento del BIOS
+
+Per prima cosa scaricate il programma dmidecode
+Codice:	
+# emerge dmidecode	
+
+che vi permetterà di capire che versione del BIOS state utilizzando con il comando
+Codice:	
+# dmidecode -s bios-version
+01.01.19	
+
+Ora controllate se esiste una nuova versione sul sito dell == 
+http://www.dell.com/support/home/it/it/itbsdt1?app=drivers&~ck=mn  
+==  (sezione BIOS) e scaricate la nuova versione.
+Il programma per essere eseguito ha bisogno un ambiente DOS che possiamo avere grazie a SystemRescueCD 
+
+    Copiare il file dell'aggiornamento del BIOS (.exe) sulla chiavetta
+    Riavviare e usare F12 per potere fare il boot da usb
+    Scegliere la voce con FreeDOS e poi scegliere "Load FreeDOS without drivers" (o qualcosa del genere)
+    Ora siete in ambiente DOS e dovete scegliere il drive della chiavetta usb (solitamente il C o il D) e lanciare il file .exe per fare l'update del BIOS

@@ -1,0 +1,23 @@
+--con file MD5SUM
+-----
+comando:
+md5sum distrolinux-amd64.iso
+
+output tipo:
+dccff28314d9ae4ed262cfc6f35e5153  distrolinux-amd64.iso
+
+comando:
+md5sum -c MD5SUMS | grep distrolinux-amd64.iso
+
+output tipo:
+distrolinux-amd64.iso: OK
+
+
+--senza file MD5SUM
+----
+comando:
+md5sum distrolinux-amd64.iso
+
+output tipo:
+dccff28314d9ae4ed262cfc6f35e5153.
+

@@ -1,0 +1,6 @@
+Se desideri mantenere la versione stabile, basta lanciare slackpkg che aggiorna tutto automaticamente:
+
+geany /etc/slackpkg/mirrors
+e togli la spunta a italia
+ slackpkg update
+ slackpkg upgrade-all

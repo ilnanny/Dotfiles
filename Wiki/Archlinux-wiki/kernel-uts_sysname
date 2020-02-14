@@ -1,0 +1,35 @@
+
+Archlinux:
+__ cambia il nome alla cartella /lib/module/x.x.x(numero_kernel) es:
+al posto di 5.0.9-1-lts scrivi 5.0.9-ilnanny-1-openrc
+__ cambia il nome al l'interno del makefile  es:
+in /lib/modules/5.0.9-ilnanny-1-openrc/build/Makefile
+aggiungi o sostituisci la voce :
+EXTRAVERSION = -ilnanny
+
+crea il simlink :
+ln -s /lib/modules/5.0.9-ilnanny-1-openrc/build/ /usr/src/linux
+    make -j5
+    make install
+    make --install initramfs 
+
+e lo compili
+
+
+
+
+
+
+
+
+
+
+============================================
+per raspberry:
+Cambia la definizione di  UTS_SYSNAME :
+
+    linux-x.xx.xx/include/linux/uts.h
+e lo compili.
+
+#define UTS_SYSNAME "Linux"
+

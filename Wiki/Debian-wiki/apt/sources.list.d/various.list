@@ -1,0 +1,23 @@
+
+# virtualbox
+#deb http://download.virtualbox.org/virtualbox/debian buster contrib
+
+###Liveconfig
+deb http://repo.liveconfig.com/debian/ main main
+
+###NodeJs
+deb https://deb.nodesource.com/node_12.x buster main
+deb-src https://deb.nodesource.com/node_12.x buster main
+
+###Spotify
+deb http://repository.spotify.com stable non-free
+
+###Teamviewer
+deb http://linux.teamviewer.com/deb stable main
+
+###TOR
+#deb [arch=i386,amd64,armel,armhf] http://deb.torproject.org/torproject.org stable main
+#deb-src [arch=i386,amd64,armel,armhf] http://deb.torproject.org/torproject.org stable main
+
+###video-dl
+#deb http://repo.daniil.it lenny main

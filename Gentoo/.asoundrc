@@ -1,0 +1,3 @@
+defaults.pcm.!card Intel
+defaults.pcm.!device 0
+defaults.pcm.!ctlc Intel

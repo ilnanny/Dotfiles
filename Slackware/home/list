@@ -1,0 +1,5 @@
+totale 2
+lrwxrwxrwx 1 ilnanny root 62  6 apr 04.22 01-apps -> /media/Dati/Git/Dotfiles/01-Files/Wiki-Memo-txt/Gentoo/01-apps
+lrwxrwxrwx 1 ilnanny root  7 26 mar 21.48 bashrc -> .bashrc
+lrwxrwxrwx 1 ilnanny root 29 26 mar 21.48 conkyrc -> /home/ilnanny/.conky/conkycon
+-rwxrwxrwx 1 ilnanny root  0  9 apr 08.37 list

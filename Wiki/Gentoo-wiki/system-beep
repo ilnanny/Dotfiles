@@ -1,0 +1,23 @@
+Abilitar-Disabilitare il System Beep in Linux (Debian, Ubuntu)
+
+Come fare per disattivare quel fastidiosissimo beep che esce dalle casse interne del nostro pc su linux (Debian, Ubuntu, Kubuntu, etc) ?
+
+Modificate il file /etc/modprobe.d/blacklist digitando:
+
+
+sudo geany /etc/modprobe.d/blacklist
+
+e aggiungete la seguente riga alla fine del file:
+
+
+blacklist pcspkr
+
+Salvate e uscite.
+Ora non resta che aggiornare i mod:
+
+
+sudo rmmod pcspkr
+
+Per riattivarli è sufficiente rimuovere la riga appena inserita in 
+/etc/modprobe.d/blacklist
+e riaggiornare i moduli con la stessa procedura.

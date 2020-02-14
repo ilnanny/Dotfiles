@@ -1,0 +1,31 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+# ___      Archlinux
+
+
+alias pacman='sudo pacman --color auto'
+alias update='sudo pacman -Syyu'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rs'
+alias mirror='sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -100"
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias search='sudo pacman -Ss'
+alias pacchetti='pacman -Ql'
+alias scc='sudo pacman -Scc'
+alias ynstall='yay -S'
+alias ysearch='yay -Ss'
+alias yremove='yay -Rs'
+
+
+# ___            Fine
+

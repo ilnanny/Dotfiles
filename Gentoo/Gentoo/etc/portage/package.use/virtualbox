@@ -1,0 +1,2 @@
+
+app-emulation/virtualbox alsa headless lvm opengl opus pam pax_kernel -pulseaudio python qt5 sdk udev -vboxwebsrv python

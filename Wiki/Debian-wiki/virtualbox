@@ -1,0 +1,4 @@
+deb http://hezeh.org/packages ascii main contrib non-free
+
+sudo apt-get update && sudo apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') virtualbox
+

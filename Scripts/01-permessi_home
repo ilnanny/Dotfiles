@@ -1,0 +1,24 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+echo "##################################################################"
+echo "# Assegno la proprietà ed i permessi di scrittura della cartella #"
+echo "# Home all'utente  ilnanny con gruppo ilnanny -ricorsivamente    #"
+echo "##################################################################"
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+#su -c 'umount /home/ilnanny/.gvfs/'
+su -c 'chown -R ilnanny:ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+echo "###########################################"
+echo "# Permessi attivati , chiudi il terminale #"
+echo "###########################################"
+echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
+exit 0

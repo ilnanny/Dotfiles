@@ -1,0 +1,54 @@
+Visualizza la partizione .
+
+sudo blkid
+
+
+aggiungi il risultato a /etc/grub.d/40_custom:
+------------------------------------------ 
+
+menuentry "LibreELEC" {
+    set root=(hd3,1)
+    linux /KERNEL boot=/dev/sdaX disk=/dev/sdX1 quiet
+}
+
+
+
+
+------------------------------------
+Oppure se rinomini le partizioni OE_SYSTEM e OE_DATA 
+
+scrivi in  lp /etc/grub.d/40_custom :
+
+---------------------------------------
+
+ #!/bin/sh
+ exec tail -n +3 $0
+ # This file provides an easy way to add custom menu entries.  Simply type the
+ # menu entries you want to add after this comment.  Be careful not to change
+ # the 'exec tail' line above.
+ #
+ menuentry "OpenELEC" {
+    search --set=root --label OE_SYSTEM --hint hd3,msdos1
+    linux /KERNEL boot=LABEL=OE_SYSTEM disk=LABEL=OE_DATA quiet
+ }
+ menuentry "OpenELEC debugging" {
+    search --set=root --label OE_SYSTEM --hint hd3,msdos1
+    linux /KERNEL boot=LABEL=OE_SYSTEM disk=LABEL=OE_DATA debugging
+ }
+ 
+ 
+ ---------------------------
+ nota :
+ hd3,msdos1  equivale a /dev/sdd1 che sarebbe OE_System
+ /dev/sdd2 sarebbe OE_DATA
+ 
+---------------------------------------------
+Rigenera GRUB2
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+o su debian e derivate :
+
+sudo update-grub2
+
+---------------------------------------------------

@@ -1,0 +1,20 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+# Visualizza il giorno corrente negli anni
+#================================================
+giorno=23
+mese=05
+anno=2012
+anno_corrente=$(date +%Y)
+
+for i in $(seq $anno $anno_corrente)
+do
+	echo -n "$i -> "
+	date --date "$i-$mese-$giorno" +%A
+done

@@ -1,0 +1,165 @@
+slackpkg update
+slackpkg install-new
+slackpkg upgrade-all
+=================================
+Funzioni di SlackPkg
+Le funzioni di slackpkg sono:
+
+slackpkg [OPTIONS] {install|remove|search|file-search|upgrade|reinstall|blacklist|download} {PATTERN|FILE}
+slackpkg [OPTIONS] {generate-template|install-template|remove-template} TEMPLATENAME
+slackpkg [OPTIONS] info PACKAGE
+slackpkg [OPTIONS] update [gpg]
+slackpkg [OPTIONS] {clean-system|upgrade-all|install-new}
+slackpkg [OPTIONS] {new-config|check-updates|help}
+Bene, ora cercherò di spiegarvi a cosa servono tutte queste opzioni, giusto per darvi una infarinatura generale. Se vorrete approfondire consultate in man, che questa guida non vuole assolutamente sostituire.
+
+Userò il termine pacchetto. Per pacchetto, però, intendo uno ufficiale della distribuzione. Per quelli presi da repository esterni (come il nostro), non vale questo discorso.
+
+Analisi delle funzioni
+In questo gruppo analizzeremo le opzioni: install, remove, search, file-search, upgrade, reinstall, blacklist
+
+install/reinstall
+install e reinstall svolgono, in linea di massima, lo stesso lavoro, ma in ambiti diversi: entrambi permettono di installare un pacchetto della distribuzione. La differenza è che "install" installa un pacchetto non presente nel sistema, "reinstall" reinstalla un pacchetto già presente nel sistema.
+
+Ad esempio; se digito slackpkg install xfce4 Avrò quest'output:
+
+[] xfce4-notifyd-0.1.0-i486-1.txz
+[] xfce4-power-management-0.8.5-i486-1.txz
+Basterà pertanto selezionare (mettendo un segno di spunta con la barra spaziatrice) il pacchetto desiderato ed il gioco è fatto.
+
+remove
+Questo comando esegue il contrario dei due precedenti. In breve, li rimuove. Nonostante questo si comporta alla stessa maniera dei precedenti: offre una schermata nella quale è possibile selezionare il pacchetto desiderato. L'unica differenza è che questo comando vale anche per i pacchetti estranei.
+
+search
+search è uno dei miei comandi preferiti. Grazie ad esso possiamo sapere quali pacchetti sono installati e quali no. A differenza degli altri non mostra un output grafico. Ecco un esempio: se digito sul mio terminale slackpkg search xorg otterrò quest'output:
+
+root@miamacchina:~# slackpkg search xorg     
+
+Looking for xorg in package list. Please wait... DONE
+
+The list below shows all packages with name matching "xorg".
+
+[ installed ] - xorg-server-1.7.7-i486-2_slack13.1
+[ installed ] - xorg-server-xephyr-1.7.7-i486-2_slack13.1
+[ installed ] - xorg-server-xnest-1.7.7-i486-2_slack13.1
+[ installed ] - xorg-server-xvfb-1.7.7-i486-2_slack13.1
+[ installed ] - xorg-cf-files-1.0.3-noarch-1
+[uninstalled] - xorg-docs-1.5-noarch-1
+[uninstalled] - xorg-sgml-doctools-1.4-noarch-1
+
+You can search specific files using "slackpkg file-search file".
+
+file-search
+file-search è un comando simile al precedente, ma ha una particolarità: trova il file desiderato in tutti i pacchetti in cui è contenuto. Ad esempio: Digitando slackpkg file-search mwm otterrò quest'output:
+
+root@miamacchina:~# slackpkg file-search mwm      
+
+Looking for mwm in package list. Please wait... DONE
+
+The list below shows the packages that contains "mwm" file.
+
+[uninstalled] - kdebase-workspace-4.4.3-i486-1
+[uninstalled] - lesstif-0.95.2-i486-1
+[uninstalled] - fvwm-2.4.20-i486-1
+
+You can search specific packages using "slackpkg search package".
+
+upgrade
+Questo comando permette di installare un aggiornamento di un determinato pacchetto, se questo è disponibile. Ad esempio, digitando slackpkg upgrade mozilla-firefox, sceglierete di aggiornare all'ultima versione di firefox disponibile sul mirror.
+
+
+blacklist
+Questo comando blocca l'upgrade, la reinstallazione o l'installazione tramite slackpkg.
+
+
+download
+Questo comando permette di effettuare esclusivamente il download di un pacchetto, evita quindi la sua installazione.
+
+
+generate/install/remove template
+Questa serie di comandi permette di creare, eliminare e installare un template dei pacchetti.
+
+Cos'è un template? Sicuramente ve lo sarete chiesto (e se così non fosse, lo spiegherò ugualmente :D)
+
+Semplicemente un template è un modello. È una lista dei pacchetti ufficiali installati nella macchina. Esso è utile quando si hanno più macchine con Slackware e nelle quali si vuole avere la stessa dotazioni di pacchetti. Questo è un esempio di un template (ovviamente ridotto, giusto per rendere l'idea).
+
+ConsoleKit
+M2Crypto
+MPlayer
+PyQt
+QScintilla
+a2ps
+aaa_base
+aaa_elflibs
+aaa_terminfo
+Il template andrà posizionato in /etc/slackpkg/templates. Se invece lo state generando esso verrà automaticamente posizionato in questo percorso.
+
+info
+Questo comando permette di ottenere informazioni riguardanti i pacchetti (sia installati che non). Ecco un esempio:
+
+root@miamacchina~# slackpkg info qt
+
+
+PACKAGE NAME:  qt-4.6.2_2d3d3e5-i486-1.txz
+PACKAGE LOCATION:  ./slackware/l
+PACKAGE SIZE (compressed):  49536 K
+PACKAGE SIZE (uncompressed):  119160 K
+PACKAGE DESCRIPTION:
+qt: Qt (a multi-platform C++ graphical user interface toolkit)
+qt:
+qt: Qt is a complete and well-developed object-oriented framework for
+qt: developing graphical user interface (GUI) applications using C++.
+qt:
+qt: Homepage:  http://qt.nokia.com
+qt:
+update [gpg]
+Questo comando permette di aggiornare le chiavi gpg precedentemente sincronizzate con il mirror scelto se scritto in questo modo:
+
+root@miamacchina:~# slackpkg update gpg
+Provvederà invece a sincronizzare tutto il repository (gpg, file list ecc.) se scritto in questo modo:
+
+root@miamacchina:~# slackpkg update
+
+clean-system
+Questo è un comando comodissimo se si vuole avere una panoramica completa dei pacchetti estranei alla distribuzione (per intenderci, quelli che non fanno parte della distribuzione come quelli presi dal nostro repository). Con questo comando si potranno facilmente scegliere più pacchetti da rimuovere. Se invece si vuole tornare ad avere una Slackware pulita basterà rimuoverli tutti ed il gioco è fatto. Se volete vedere anche voi i vostri pacchetti basterà digitare
+
+root@miamacchina~# slackpkg clean-system
+upgrade-all
+Questo dà lo stesso risultato del comando upgrade. L'unica differenza è che quest'ultimo vale per l'intera distribuzione. Per installare le patch di sicurezza è utile utilizzare questo comando.
+
+Come per il comando clean-system, questo vi mostrerà una panoramica dei pacchetti. In questo caso, però, i pacchetti mostrati saranno quelli disponibili per l'aggiornamento.
+
+appendice: come riconoscere una patch di sicurezza?
+Per sapere se avete installata la patch di un determinato pacchetto, basterà controllare la presenza del suffisso: _slack+numero-di-versione-della-distro. Ad esempio, prendiamo in esame bind. Questo è il pacchetto originale:
+
+bind-9.4.3_P4-i486-1.txz
+E questa è la relativa patch di sicurezza:
+
+bind-9.4.3_P5-i486-1_slack13.1.txz
+install-new
+Questo è un comando utile per chi usa la Slackware -current. Questo, infatti, provvede ad installare solo il software aggiunto alla lista dei pacchetti ufficiale della distribuzione.
+
+new-config
+Questo comando analizza tutti i file di configurazione presenti nel file system dopo l'upgrade delle patch e chiede cosa deve farne. (Per maggiori informazioni vedere più in basso, nella sezione relativa all'aggiornamento).
+
+check-updates
+Questo comando permette di controllare la presenza di cambiamenti nel changelog. Può essere eseguito anche da utente normale.
+
+Aggiornare la distribuzione con SlackPkg
+Aggiornare Slackware utilizzando SlackPkg è una cosa semplicissima. Innanzi tutto bisognerà specificare un mirror. Apriamo, quindi, un terminale e dopo essere diventati root digitiamo:
+
+nano /etc/slackpkg/mirrors
+Io ho scelto nano, ma ovviamente penso sia scontato dire che potete usare qualsiasi editor di testi, purchè lo facciate da root. Si aprirà quindi il file di configurazione del programma. Per scegliere un mirror basterà decommentare la riga relativa all'URL.
+
+Questo che vedete è un mirror non selezionato:
+
+# NAZIONE
+# ftp://......
+Voi dovete decommentare SOLO l'url. Proprio come vedete quì:
+
+# NAZIONE
+ftp://....
+Fatto questo salvate, chiudete l'editor di testi e digitate nel terminale:
+
+root@miamacchina:~# slackpkg update && slackpkg upgrade-all
+ATTENZIONE: Questi ultimi due comandi (update && upgrade-all) li dovrete dare ogni volta che dovrete installare gli aggiornamenti.

@@ -1,0 +1,41 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+##Backup Root ==dd==
+# dcfldd if=/dev/sdc1 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/backup_root.img.gz
+
+##Restore Root
+# gunzip -c /media/500GB/A-Backup/backup_root.img.gz | dcfldd of=/dev/sdc1
+
+
+##Backup Home ==dd==
+# dcfldd if=/dev/sdc2 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/backup_home.img.gz
+
+##Restore Home
+# gunzip -c /media/500GB/A-Backup/backup_home.img.gz | dcfldd of=/dev/sdc2
+
+#======================================================
+#======================================================
+##Backup Root ==dd==
+dcfldd if=/dev/sda2 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/backup_root.img.gz
+
+##Restore Root
+# gunzip -c /media/500GB/A-Backup/backup_root.img.gz | dcfldd of=/dev/sda2
+
+
+##Backup Home ==dd==
+dcfldd if=/dev/sda6 conv=sync,noerror bs=64K | gzip -c  > /media/500GB/A-Backup/backup_home.img.gz
+
+##Restore Home
+# gunzip -c /media/500GB/A-Backup/backup_home.img.gz | dcfldd of=/dev/sda6
+
+#======================================================
+#======================================================
+exit 0

@@ -1,0 +1,3 @@
+git clone https://github.com/varlesh/VLC-Arc-Dark.git ;\
+cd VLC-Arc-Dark ;\
+sudo make install
