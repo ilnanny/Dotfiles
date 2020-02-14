@@ -8,7 +8,7 @@ Screenshot 02
 <img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scrot2.png?raw=true"screen2">
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 Screenshot 03
-<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scot3.png?raw=true"screen3">
+<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scrot3.png?raw=true"screen3">
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 
  WorkStation. :Dell T3500 - T5500<br>
