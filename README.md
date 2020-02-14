@@ -1,12 +1,11 @@
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 <b>Personal Dotfile and Scripts for my  Gnu/Linux Boxes.</b>
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
-
 Screenshot 01
-<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scot1.png?raw=true"screen1">
+<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scrot1.png?raw=true"screen1">
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 Screenshot 02
-<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scot2.png?raw=true"screen2">
+<img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scrot2.png?raw=true"screen2">
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 Screenshot 03
 <img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scot3.png?raw=true"screen3">
