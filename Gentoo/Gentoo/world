@@ -5,8 +5,6 @@ app-admin/sudo
 app-arch/file-roller
 app-arch/unzip
 app-arch/zip
-app-cdr/ccd2iso
-app-cdr/cdrtools
 app-cdr/dvd+rw-tools
 app-cdr/xfburn
 app-dicts/aspell-it
@@ -17,8 +15,6 @@ app-emulation/virtualbox-bin
 app-misc/neofetch
 app-misc/ranger
 app-office/libreoffice-bin
-app-portage/cfg-update
-app-portage/conf-update
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/genlop
@@ -32,10 +28,8 @@ app-vim/vim-spell-it
 dev-java/openjdk-jre-bin
 dev-lang/sassc
 dev-lang/vala
-dev-libs/granite
 dev-perl/Font-TTF
 dev-python/pip
-dev-python/thunarx-python
 dev-util/android-tools
 dev-util/catfish
 dev-util/geany
@@ -56,12 +50,9 @@ media-sound/alsa-utils
 media-sound/audacity
 media-sound/cdtool
 media-sound/volumeicon
-media-video/parole
 media-video/vlc
 net-analyzer/speedtest-cli
 net-im/telegram-desktop-bin
-net-misc/connman
-net-misc/connman-gtk
 net-misc/networkmanager
 net-misc/ntp
 net-p2p/deluge
@@ -89,7 +80,6 @@ sys-libs/pam
 sys-process/anacron
 sys-process/htop
 www-client/firefox-bin
-www-client/seamonkey-bin
 x11-apps/mesa-progs
 x11-apps/xinit
 x11-base/xorg-drivers
@@ -98,7 +88,6 @@ x11-base/xorg-x11
 x11-misc/compton
 x11-misc/dunst
 x11-misc/lightdm
-x11-misc/menulibre
 x11-misc/nitrogen
 x11-misc/obconf
 x11-misc/obmenu-generator
@@ -114,9 +103,6 @@ x11-wm/openbox
 xfce-base/thunar
 xfce-base/xfce4-meta
 xfce-extra/thunar-archive-plugin
-xfce-extra/thunar-media-tags-plugin
-xfce-extra/thunar-shares-plugin
 xfce-extra/xfce4-alsa-plugin
 xfce-extra/xfce4-screenshooter
-xfce-extra/xfce4-vala
 xfce-extra/xfce4-whiskermenu-plugin

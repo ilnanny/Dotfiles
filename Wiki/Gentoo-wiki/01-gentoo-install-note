@@ -1,17 +1,27 @@
-=====================================================
-Crea le Cartelle e monta le partizioni:
+===========================================
+=Dell Workstation T3500 - T5500
+=Intel Xeon X5650 - X5675 =Westmere
+=Nvidia Quadro 4000 - 2000 =Fermi
+=Grub Bios PC '2010 - 2012'
+=Gentoo Linux amd64 openrc
+=Ssd dev/sdc "/"
+=Host Linux amd64 openrc,systemv,init6
+=Appunti di Gennaio 2016
+=Aggiornato Febbraio 2020
+==========================================
+== Crea le Cartelle e monta le partizioni:
 ==========================================
 
  mkdir /mnt/gentoo
- mount /dev/sda4 /mnt/gentoo
- mount -o remount,rw /dev/sda4 /mnt/gentoo
+ mount /dev/sdc2 /mnt/gentoo
+ mount -o remount,rw /dev/sdc2 /mnt/gentoo
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 
 ==========================================
 == Scarica lo stage3 e scompattalo
 ==========================================
-wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20200205T214502Z/stage3-amd64-20200205T214502Z.tar.xz
+ wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20160205T214502Z/stage3-amd64-20160205T214502Z.tar.xz
  tar xvfJ stage3-*.tar.xz --xattrs --numeric-owner
 ====================================================
  cd  --
@@ -26,21 +36,21 @@ wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20200205T214502Z/stag
 
 === Entra in chroot:
 
-mount --bind /dev /mnt/gentoo/dev
-mount --make-rslave /mnt/gentoo/dev
-mount --bind /proc /mnt/gentoo/proc
-mount --bind /sys /mnt/gentoo/sys
-mount --make-rslave /mnt/gentoo/sys
-mount --rbind /tmp /mnt/gentoo/tmp
+  mount --bind /dev /mnt/gentoo/dev
+  mount --make-rslave /mnt/gentoo/dev
+  mount --bind /proc /mnt/gentoo/proc
+  mount --bind /sys /mnt/gentoo/sys
+  mount --make-rslave /mnt/gentoo/sys
+  mount --rbind /tmp /mnt/gentoo/tmp
 
 == Se usi debian live:
 == export PATH="$PATH:/usr/sbin:/sbin:/bin"
 
-chroot /mnt/gentoo /bin/bash
+  chroot /mnt/gentoo /bin/bash
 
-export PS1="\033[1;33m([chroot])\033[0m $PS1"
+  export PS1="\033[1;33m([chroot])\033[0m $PS1"
 
-mirrorselect -i -o >> /etc/portage/make.conf
+  mirrorselect -i -o >> /etc/portage/make.conf
 
 ==========================================
 == Controllo rete carica i repo
@@ -81,15 +91,11 @@ mirrorselect -i -o >> /etc/portage/make.conf
 ==========================================================
 == Data e Ora
   date
-se la data non corrisponde :
+=se la data non corrisponde :
 
-  date 012807462020            == [corrisponde a ore 7:46 ,28 gennaio 2020 ]
+  date 012807462016       == [corrisponde a ore 7:46 ,28 gennaio 2016]
 
-== Lo copio sull'orologio hardware per i prossimi riavvi:
-
- hwclock --systohc
-
-== in caso di dualboot con windows naturalmente settare in local:
+== Microsoft Windows Dual Boot settare in 'local':
 
  nano -w /etc/conf.d/hwclock
 clock="local"
@@ -108,10 +114,10 @@ LANG="it_IT.UTF-8"
  locale -a
 ==========================================
 == Tastiera
- nano -w /etc/conf.d/keymaps
-keymap="it"
-windowkeys="YES"
-fix_euro="YES"
+  nano -w /etc/conf.d/keymaps
+  keymap="it"
+  windowkeys="YES"
+  fix_euro="YES"
 ===============================================================
 == Make conf
  nano -w /etc/portage/make.conf
@@ -125,10 +131,10 @@ fix_euro="YES"
 ====================================================================
 ==== Kernel
 
-emerge --ask gentoo-sources genkernel \
-intel-microcode grub mdadm gentoolkit \
-linux-firmware os-prober ntfs3g usbutils \
-pciutils consolekit e2fsprogs gvfs dev-vcs/git
+  emerge --ask gentoo-sources genkernel \
+  intel-microcode grub mdadm gentoolkit \
+  linux-firmware os-prober ntfs3g usbutils \
+  pciutils consolekit e2fsprogs gvfs dev-vcs/git
 
    cd /usr/src/linux
    zcat /proc/config.gz > .config
@@ -139,8 +145,8 @@ pciutils consolekit e2fsprogs gvfs dev-vcs/git
 
 ==== con genkernel:
 
- genkernel --makeopts=-j9 --kernel-config=/root/config all
- emerge -1 @module-rebuild
+  genkernel --makeopts=-j9 --kernel-config=/root/config all
+  emerge -1 @module-rebuild
 
   grub-install /dev/sda
   grub-mkconfig –o /boot/grub/grub.cfg
@@ -159,31 +165,41 @@ pciutils consolekit e2fsprogs gvfs dev-vcs/git
 ==========================================
 == Imposta un Hostname:
  nano -w /etc/conf.d/hostname
+
+T3500GEN
+
+== imposta localhost
+ nano -w /etc/hosts
+
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	T3500GEN
+
 ==========================================
 === Password di root:
- passwd
+  passwd
 ==========================================
 == Uscire da chroot :
 ==========================================
-exit
-cd ~
-umount -f /mnt/gentoo/dev
-umount -f /mnt/gentoo/proc
-umount -f /mnt/gentoo/sys
-umount -f /mnt/gentoo/tmp
-umount -f /mnt/gentoo/
-fuser -k /mnt
-reboot
+  exit
+  cd ~
+  umount -f /mnt/gentoo/dev
+  umount -f /mnt/gentoo/proc
+  umount -f /mnt/gentoo/sys
+  umount -f /mnt/gentoo/tmp
+  umount -f /mnt/gentoo/
+  fuser -k /mnt
+  reboot
 ==========================
-Rimuovi gli archivi
+=Rimuovi gli archivi
 
-rm /usr/portage-latest.tar.bz2
-rm /stage3-*.tar.xz
+  rm /usr/portage-latest.tar.bz2
+  rm /stage3-*.tar.xz
 ==========================
 
 ====  boot in gentoo  ====
 ==========================
-Nuovo Utente:
+=Nuovo Utente:
 ==========================
 useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
 
@@ -198,31 +214,31 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
  emerge --ask xorg-x11 xorg-server xorg-drivers xterm
 
 === Xfce:
-emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin
+ emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin
 
-carica il demone all'avvio:
+=carica il demone all'avvio:
  rc-update add dbus default
 
 === dm:
  emerge --ask lightdm
 
 = Sostituisci xdm con lightdm in :
-nano -w /etc/conf.d/xdm
+ nano -w /etc/conf.d/xdm
 
 = Carica il demone all'avvio:
  rc-update add xdm default
 
 == Cron
-emerge --ask anacron
-/etc/init.d/anacron start
-rc-update add anacron default
-gpasswd -a ilnanny cron
-nano -w /etc/crontab
+  emerge --ask anacron
+  /etc/init.d/anacron start
+  rc-update add anacron default
+  gpasswd -a ilnanny cron
+  nano -w /etc/crontab
 
-# Start anacron every 10 minutes
+# Avvia anacron ogni 10 minuti
 */10 * * *  root  /usr/sbin/anacron
 
-# Alternatively, run the anacron-provided 0anacron script every hour
+# Alternativamente avvia 0anacron ogni ora
 # 59 * * * *  root  /etc/cron.hourly/0anacron
 =============================================================
 # == Software :
@@ -232,45 +248,42 @@ nano -w /etc/crontab
 
  emerge --ask net-dns/avahi sys-fs/dosfstools media-fonts/dejavu app-misc/mime-types app-crypt/openpgp-keys-gentoo-release
 
-emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi xdg
+ emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi xdg
 
-emerge --ask x11-misc/i3lock  x11-misc/tintwizard media-gfx/feh volumemicon x11-misc/compton
+ emerge --ask x11-misc/i3lock  x11-misc/tintwizard media-gfx/feh volumemicon x11-misc/compton
 
-USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 nvidia" emerge --ask app-admin/conky
+ USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 nvidia" emerge --ask app-admin/conky
 
-USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm ntfs" emerge -av gparted
+ USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm ntfs" emerge -av gparted
 
-USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
+ USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
-USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
+ USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
 
-USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
+ USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
-emerge --ask parole
-inkscape \
-gimp \
-evince \
-android-file-transfer-linux \
-lsb-release \
-bleachbit \
-deluge \
-curl \
-file-roller \
-automake \
-autoconf \
-cmake \
-wgetpaste \
-speedtest-cli \
-zenity \
-telegram-desktop \
-ninja \
-nodejs \
-dev-lang/go \
-dev-util/android-tools \
-parcellite \
-dev-lang/vala \
-dev-libs/granite
-
+  emerge --ask android-tools \
+  android-file-transfer-linux \
+  autoconf \
+  automake \
+  bleachbit \
+  cmake \
+  curl \
+  deluge \
+  dev-lang/go \
+  evince \
+  file-roller \
+  gimp \
+  inkscape \
+  lsb-release \
+  ninja \
+  nodejs \
+  nomacs \
+  parcellite \
+  speedtest-cli \
+  telegram-desktop \
+  wgetpaste \
+  zenity
 ____________________________ ** N O T E 1 ____________________________
 
 ======================== MAKE CONF ==================================
@@ -288,7 +301,7 @@ FCFLAGS="${COMMON_FLAGS}"
 FFLAGS="${COMMON_FLAGS}"
 EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y --jobs=4 --load-average=8.1"
 LDFLAGS="-Wl,-O1 -Wl,--as-needed"
-MAKEOPTS="-j9 -s"
+MAKEOPTS="-j13 -s"
 
 # =============   =============   =============
 

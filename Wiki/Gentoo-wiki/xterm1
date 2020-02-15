@@ -1,0 +1,102 @@
+Configuring Xterm Fonts
+Here I will explain a number of ways in which you can configure xterm to make it look good and easier to read with larger fonts.
+
+If you look in the man page of xterm, you will find that you can configure the following aspects of xterm, namely :
+
+    Text colour
+    Font family
+    Font size
+    The xterm window position w.r.t the desktop
+
+and much more.
+
+Method 1: Choose the fonts and dimensions using Xfontsel
+
+The first thing you to do is decide on your choice of font and its size for your xterm. This can be achieved by running the command xfontsel as follows:
+
+$ xfontsel
+
+
+This will open an X window where you can decide on the font type and size. Once you have decided, note down the values as shown in the xfontsel dialog box. It will look something like this ...
+
+-*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
+
+
+...if you have selected a fixed, medium 18pt regular font with iso8859 support.
+
+These values will be used while starting xterm.
+
+To specify the size and position of the xterm window, you can use the -geometry option.
+
+Next test your settings. Execute xterm with the following settings:
+
+$ xterm -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24
+
+
+You will find that it opens with better font clarity. But it is very tedious to run the above command each time you want to open xterm.
+
+To make your task easier, you can create an alias for it and add it to your .bashrc or .bash_profile file.
+
+I have entered it in the .bashrc file in my home directory.
+
+#File: ~.bashrc
+alias xterm='xterm -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24'
+
+
+From now on, if you open Xterm, it will be opened with your desired settings.
+
+Method 2: Pass the parameters to your X server
+
+You can pass the Xterm parameters to your X server so that it will know how to display your xterm when you execute it.
+
+Here is how you do it.
+
+Create a '.Xresources' file in your home directory and enter the values that you want to set.
+
+My .Xresources file is as follows:
+
+# File : .Xresources
+xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
+xterm*font1: -*-*-*-*-*-*-2-*-*-*-*-*-*-*
+xterm*font2: -misc-fixed-*-r-normal-*-8-*-*-*-*-*-iso8859-*
+xterm*font3: -b&h-lucidatypewriter-bold-*-*-*-12-*-*-*-*-*-*-*
+xterm*font4: -*-screen-bold-r-normal-*-16-*-*-*-*-*-iso8859-*
+xterm*font5: -*-lucidatypewriter-medium-*-*-*-18-*-*-*-*-*-*-*
+xterm*font6: -*-lucidatypewriter-medium-*-*-*-20-*-*-*-*-*-*-*
+xterm*font7: -dec-terminal-bold-r-normal-*-14-*-*-*-*-*-iso8859-*
+
+XTerm*background: white
+XTerm*foreground: black
+XTerm*pointerColor: red
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: navy
+XTerm*internalBorder: 3
+XTerm*loginShell: true
+XTerm*scrollBar: false
+XTerm*scrollKey: true
+XTerm*saveLines: 1000
+XTerm*multiClickTime: 250
+
+
+As you can see in my .Xresources file above, I have set my xterm to start with a fixed font, white background and black foreground and with no scrollbar.
+
+I have also set other settings like the number of lines to save in history and so on.
+
+Method 3: Merge the Xterm settings with X server on the fly
+
+Alternately, you can also do the following to get the same effects.
+
+Create a file say .x_settings - the file can have any name - and copy the contents of .Xresources to it. Now each time you start an X session, type the following command in the console :
+
+$ xrdb -merge .x_settings
+
+
+Method 4: Change Xterm parameters using Shortcut keys
+
+Ctrl + Right mouse button - Pressing this simultaneously while you have focus in xterm window will open a pop-up menu which allows you to set the font size to your taste.
+
+Ctrl + Middle mouse button - Pressing simultaneously will open a different pop-up menu which allows you to set/unset a lot of other features of your xterm window like enabling/disabling the scroll bars and so on.
+
+As you can see, there are a number of ways of configuring Xterm in Linux.
+
+Two other x terminals which are light weight and having even more features like support for transparency that come to mind are eterm and aterm.
