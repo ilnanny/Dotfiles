@@ -7,19 +7,19 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-## sudoers file.
+## Sudoers file.
 ##
 ## User privilege
 ##
 root ALL=(ALL) ALL
 
-## wheel 
+## Wheel
 #%wheel ALL=(ALL) ALL
 
-## without a password
+## Senza password
 %wheel ALL=(ALL) NOPASSWD: ALL
 
-## sudo 
+## Sudo
 %sudo  ALL=(ALL) ALL
 
 

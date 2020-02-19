@@ -1,0 +1,1 @@
+xfconf-query --channel xfce4-session --property /sessions/Failsafe/Client0_Command --type string --set "openbox" --force-array

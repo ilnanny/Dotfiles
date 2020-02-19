@@ -1,5 +1,0 @@
-
-tar xzvf Lila-HD-icon-theme.tar.gz -C ~/.themes/
-
-use su or sudo 
-tar xzvf Lila-HD-icon-theme.tar.gz -C /usr/share/themes/

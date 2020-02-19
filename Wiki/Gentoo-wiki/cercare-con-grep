@@ -1,0 +1,30 @@
+Cerchiamo all'interno di un file
+
+Facciamo un esempio: poniamo di voler sapere se all'interno del file "spesa.txt" è presente la parola "zucchero".Per farlo sarà sufficiente digitare nella shell di Linux la seguente istruzione:
+
+
+grep "zucchero" spesa.txt
+
+sulla base di questa istruzione, grep restituirà tutte le linee del file indicato che contengono la parola cercata. Visto così, potrebbe non sembrare un granchè... facciamo quindi qualche altro esempio che ci aiuti a capire quanto possa essere importante questo comando.
+Effettuare ricerche ricorsive
+
+Poniamo di voler cercare sempre la parola "zucchero" non più in un singolo file, ma in tutti i file presenti in una data directory e nelle sue eventuali sub-directory:
+
+grep -r "zucchero" /home/listespesa/
+
+Nell esempio qui sopra abbiamo utilizzato grep con opzione ricorsiva (-r) per andare a scovare, non solo nella dir indicata ma anche in tutte le eventuali sub-directory, la presenza di file contenenti la parola indicata.
+Utilizzare grep con le regular expressions
+
+Il comando grep esprime la sua vera forza nel suo utilizzo combinato con le regular expressions (espressioni regolari).
+Nonostante questo argomento sia troppo lungo e complesso da affrontare in modo approfondito in questa sede, ritengo opportuno almeno un cenno a due caratteri particolari che, sono certo, saranno amici di molte vostre ricerche... sto parlando di punto (".") e asterisco ("*").
+
+Il punto (.) può essere utilizzato per indicare un (nota bene: un solo) carattere qualsiasi. Facciamo un esempio: poniamo di aver archiviato sul nostro computer le recensioni di centinaia di film visti in TV. Poniamo che ogni scheda sia stata scritta in un separato file txt. Ora supponiamo di voler cercare tra queste schede tutti i film di "Michelle Pfeiffer" ma poniamo di non ricordare esattamente come si scrive "Pfeiffer". Che fare? Semplice... ricorriamo al comando grep in combinazione con il punto (.). Scriviamo solo la parte di parola di cui siamo certi e sostituiamo con dei puntini le lettere di cui non siamo sicuri, così:
+
+grep -r "pf..ffer" /home/videoteca/
+
+Nell'esempio abbiamo messo due punti i quali indicano le lettere "ei" di cui non eravamo sicuri
+Consideriamo un'altra ipotesi: supponiamo di ricordare solo che il nome che stiamo cercando finisce con "ffer" e niente più:
+
+grep -r "*ffer" /home/videoteca/
+
+Questa istruzione ritornerà tutti i file in cui è presente una qualsiasi parola che termina con "ffer" in quanto il simbolo asterisco (*) indica non uno, bensì un arbitrario numero di lettere (0,1,2,10,100,...).

@@ -214,7 +214,7 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
  emerge --ask xorg-x11 xorg-server xorg-drivers xterm
 
 === Xfce:
- emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin
+ emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin xfce4-mount-plugin
 
 =carica il demone all'avvio:
  rc-update add dbus default
@@ -243,7 +243,7 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
 =============================================================
 # == Software :
  emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip conky evince ranger vim
-
+ USE="gstreamer" emerge --ask media-sound/pavucontrol
  emerge --ask  sys-firmware/alsa-firmware xfce-extra/xfce4-alsa-plugin media-sound/alsamixergui media-sound/alsa-utils x11-themes/sound-theme-freedesktop
 
  emerge --ask net-dns/avahi sys-fs/dosfstools media-fonts/dejavu app-misc/mime-types app-crypt/openpgp-keys-gentoo-release
@@ -283,7 +283,8 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
   speedtest-cli \
   telegram-desktop \
   wgetpaste \
-  zenity
+  zenity \
+  dev-ruby/rubygems
 ____________________________ ** N O T E 1 ____________________________
 
 ======================== MAKE CONF ==================================

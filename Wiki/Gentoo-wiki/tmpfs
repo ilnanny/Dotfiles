@@ -1,53 +1,19 @@
-MessaggioInviato: Mar Feb 20, 2007 7:03 am    Oggetto: TIP: emerge speed-up, compile in RAM not on disc.	Rispondi citando
-Just had a 'why didn't I think of that before!' moments that I would like to share. 
 
-After testing this on a couple of emerges I am quite confident it works AS LONG AS YOU HAVE ENOUGH RAM - enough is 768M or more, although may be okay on 512M with a minimal desktop or X-less server. Tested on three machines with (768M, 1G, and 3G of RAM). The emerge of xorg-server went from 1.5 hours to about 20 minutes on an athlon-xp, for example. 
 
-Portage uses /var/tmp/portage (by default) as it's working directory, everything is built in there before it gets merged to /. So, why not stick /var/tmp/portage in RAM? It's a tmp directory after all, saves all that I/O bottleneck... 
-
-Interested? Okay, here's what you have to do... 
-(I assume you are su'd as root, if not prepend sudo to all the following commands) 
-
-Codice:
 # nano /etc/fstab
 
-add the following line to the end - 
-Codice:
+
 none    /var/tmp/portage    tmpfs    nr_inodes=1M    0 0
 
-before we mount it, you may want to clear out your on disc /var/tmp/portage - 
-Codice:
+
 # rm -fdr /var/tmp/portage/*
 
-mount your new tmp directory - 
-Codice:
+
 # mount /var/tmp/portage
 
-try an emerge 
-Codice:
-# emerge freeciv
 
-quick wasn't it! ;-) 
+# emerge 'software_da_scaricare'
 
-notes: 
 
-1. I haven't had more than 130M used on an emerge yet, that was on an update (emerge -u world), however, I am not sure of the upper limits of the size of this directory during big/multiple emerges. It depends on how often portage/emerge clears it out. Anybody know, and can this behaviour be changed? 
 
-2. If you want to set an exact size for this you can change the entry in your fstab to - 
-Codice:
-none    /var/tmp/portage    tmpfs    nr_inodes=1M,size=256M    0 0
 
-I would not go below 256M for safety's sake!!! Saw this variant on the Jackass! forums. 
-
--------- 
-
-ADDENDUM: 
-1. creating a tmpfs seems to default to 50% of your total RAM size. Not to worry, as it doesn't use much if it isn't populated with files. I'm not sure precisely what will happen if it fills up...... 8O [EDIT: the emerge fails with "No space left on device"! Set size=100M and emerged mysql. mysql peaks at around 140M.] 
-
-[EDIT]1a. It would be useful to know what the biggest package in portage is.(?) When emerged how much space does it use at the maximum, if we added, say, 10% to the figure then that would give us our maximum acceptable size for the tmpfs. 
-
-2. Most of the space is taken up when emerge unpacks a dist tarball into /var/tmp/portage. It only seems to unpack one package at a time, and then removes it when it has finished. This behaviour may be different dependent on your setting for MAKEOPTS in make.conf, can't confirm this as I have only tested it with "-j2" (the default). 
-
-3. There's an entry on the WIKI that I missed that has a very cool script that turns this on and off when you need it, it's http://gentoo-wiki.com/TIP_Speeding_up_portage_with_tmpfs
-
-L'ultima modifica di funkyade il Mar Feb 20, 2007 1:26 pm, modificato 3 volte
