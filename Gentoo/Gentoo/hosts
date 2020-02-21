@@ -1,0 +1,4 @@
+# IPv4 and IPv6 localhost aliases
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	T3500GEN

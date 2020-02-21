@@ -1,0 +1,26 @@
+Nix è un package manager disponibile per Linux, con alcune caratteristiche peculiari rispetto a quelli standard.
+
+Tra queste enumeriamo solo il fatto che è multi distribuzione.
+
+Per installarlo:
+
+$ curl https://nixos.org/nix/install | sh
+
+Fatto questo, viene chiesto di lanciare un comando; nel mio caso:
+
+$ . /home/matte-ub/.nix-profile/etc/profile.d/nix.sh
+
+Se non esce un output, allora state a posto.
+
+A questo punto, ho provato ad installare Go:
+
+$ nix-shell -p go
+...............
+[nix-shell:~/.nix-profile/etc/profile.d]$ go version
+warning: GOPATH set to GOROOT 
+(/nix/store/kar43m349m9mk4d62h069zyfrpb2dnir-go-1.10.3/share/go) has no effect
+go version go1.10.3 linux/amd64
+
+Come vedete, dopo l'installazione, viene aperta la shell di Nix.
+
+Il pacchetto viene installato in locale, e quindi non è accessebile dall'esterno.

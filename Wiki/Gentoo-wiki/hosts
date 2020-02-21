@@ -1,9 +1,5 @@
-#
-# /etc/hosts: static lookup table for host names
-#
+# IPv4 e IPv6 alias
 
-#<ip-address>		<hostname.domain.org>	<hostname>
-127.0.0.1		localhost.localdomain	localhost
-::1			localhost.localdomain	localhost ip6-localhost
-
-# End of file
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	T3500VOID

@@ -35,7 +35,7 @@ UNDERLINE='\033[4m'
 printf "${GREEN}Aggiorno il Sistema\n"
 sudo xbps-install -Su
 printf "${GREEN}Installo i Software presenti nella Lista\n"
-sudo xbps-install -S \
+sudo xbps-install \
 android-file-transfer-linux \
 android-tools \
 arc-theme \

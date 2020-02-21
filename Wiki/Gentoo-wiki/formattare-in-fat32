@@ -2,5 +2,4 @@ mkfs.fat -F32 -v -l /dev/sdf1
 
 mkfs.fat -F32 -v -l /dev/sdh1
 
-
 mkfs.fat -F32 -v -l /dev/sdg1

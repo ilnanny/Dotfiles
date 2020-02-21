@@ -8,9 +8,6 @@
 #================================================
 #================================================
 #================================================
-printf "${GREEN}Aggiungo l'utente a Sudoers\n"
-echo 'frozen-files="/etc/sudoers"' >> /etc/dispatch-conf.conf
-sed -i "s/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
 chsh -s /bin/bash
 chsh -s /bin/bash ilnanny
 printf "${GREEN}Aggiungo l'utente ilnanny ai gruppi più usati\n"

@@ -1,105 +1,61 @@
->=dev-libs/glib-2.60.7-r1 dbus
+dev-libs/glib dbus
 
-# required by net-misc/networkmanager-1.18.4-r3::gentoo[wifi]
-# required by networkmanager (argument)
->=net-wireless/wpa_supplicant-2.9-r1 dbus
-# required by sys-boot/os-prober-1.77::gentoo
-# required by os-prober (argument)
->=sys-boot/grub-2.04-r1 mount
-# required by net-misc/networkmanager-1.18.4-r3::gentoo[wifi]
-# required by networkmanager (argument)
->=net-wireless/wpa_supplicant-2.9-r1 dbus
-# required by sys-boot/os-prober-1.77::gentoo
-# required by os-prober (argument)
->=sys-boot/grub-2.04-r1 mount
-# required by app-text/evince-3.32.1::gentoo
-# required by evince (argument)
->=app-text/poppler-0.82.0 cairo
-# required by dev-util/itstool-2.0.6::gentoo
-# required by gnome-extra/yelp-xsl-3.32.1::gentoo
-# required by app-text/yelp-tools-3.32.2::gentoo
-# required by app-text/evince-3.32.1::gentoo
-# required by evince (argument)
->=dev-libs/libxml2-2.9.9-r3 python
-# required by media-sound/pulseaudio-13.0::gentoo[alsa-plugin,alsa]
-# required by www-client/firefox-bin-72.0.2::gentoo[pulseaudio]
-# required by firefox-bin (argument)
->=media-plugins/alsa-plugins-1.2.1 pulseaudio
-# required by xfce-extra/thunar-volman-0.9.5::gentoo
-# required by xfce-base/xfce4-meta-4.14-r2::gentoo
-# required by xfce4-meta (argument)
->=xfce-base/thunar-1.8.11 udisks
-# required by xfce-base/thunar-1.8.11::gentoo[udisks]
-# required by xfce-base/xfdesktop-4.14.1::gentoo[thunar]
-# required by xfce-base/xfce4-meta-4.14-r2::gentoo
-# required by xfce4-meta (argument)
->=gnome-base/gvfs-1.40.2 udisks
-# required by sys-auth/polkit-0.115-r4::gentoo[consolekit]
-# required by gnome-extra/polkit-gnome-0.105-r2::gentoo
->=sys-auth/consolekit-1.2.1 policykit
-# required by dev-lang/spidermonkey-60.5.2_p0-r2::gentoo
-# required by sys-auth/polkit-0.115-r4::gentoo
-# required by gnome-extra/polkit-gnome-0.105-r2::gentoo
->=dev-lang/python-2.7.17:2.7 sqlite
-# required by gnome-base/gnome-keyring-3.31.91-r1::gentoo
-# required by app-crypt/libsecret-0.18.8::gentoo
-# required by gnome-extra/nm-applet-1.8.24::gentoo
-# required by nm-applet (argument)
->=app-crypt/pinentry-1.1.0-r2 gnome-keyring
-# required by net-im/telegram-desktop-1.9.10::gentoo
-# required by telegram-desktop (argument)
->=media-libs/openal-1.20.0 pulseaudio
-# required by net-im/telegram-desktop-1.9.10::gentoo
-# required by telegram-desktop (argument)
->=sys-libs/zlib-1.2.11-r2 minizip
-# required by dev-qt/qtcore-5.13.2-r2::gentoo
-# required by dev-qt/qtwidgets-5.13.2::gentoo
-# required by net-im/telegram-desktop-1.9.10::gentoo
-# required by telegram-desktop (argument)
->=dev-libs/libpcre2-10.33-r1 pcre16
-# required by dev-qt/qtwidgets-5.13.2::gentoo[gtk]
-# required by net-im/telegram-desktop-1.9.10::gentoo
-# required by telegram-desktop (argument)
->=dev-qt/qtgui-5.13.2 dbus
-# required by x11-misc/xdg-utils-1.1.3-r1::gentoo
-# required by x11-misc/xdg-utils (argument)
->=app-text/xmlto-0.0.28-r1 text
-# required by net-p2p/deluge-2.0.3-r2::gentoo
-# required by deluge (argument)
->=net-libs/libtorrent-rasterbar-1.2.3 python
-# required by net-libs/libtorrent-rasterbar-1.2.3::gentoo[python]
-# required by net-p2p/deluge-2.0.3-r2::gentoo
-# required by deluge (argument)
->=dev-libs/boost-1.72.0-r1 python
-# required by net-print/cups-filters-1.25.11::gentoo[postscript]
-# required by net-print/cups-2.2.13::gentoo
-# required by net-print/hplip-3.18.12::gentoo
-# required by hplip (argument)
->=app-text/ghostscript-gpl-9.50 cups
-# required by app-misc/neofetch-6.0.0::gentoo[X]
-# required by neofetch (argument)
->=www-client/w3m-0.5.3_p20180125 imlib
-# required by app-office/libreoffice-6.3.4.2::gentoo
-# required by libreoffice (argument)
->=dev-libs/xmlsec-1.2.28 nss
-# required by app-office/libreoffice-6.3.4.2::gentoo
-# required by libreoffice (argument)
->=media-libs/harfbuzz-2.6.4 icu
-# required by media-gfx/gimp-2.10.14::gentoo
-# required by gimp (argument)
->=media-libs/gegl-0.4.18 cairo
-# required by x11-drivers/xf86-video-nouveau-1.0.16::gentoo
-# required by @preserved-rebuild (argument)
->=x11-libs/libdrm-2.4.100 video_cards_nouveau
-# required by dev-java/openjdk-jre-bin-8.222_p10::gentoo[nsplugin]
-# required by dev-java/openjdk-jre-bin (argument)
->=dev-java/icedtea-web-1.6.2 nsplugin
-# required by app-portage/elogviewer-2.9::gentoo
-# required by app-portage/elogviewer (argument)
->=dev-python/PyQt5-5.13.2 gui widgets
-# required by media-gfx/brother-scan3-bin-0.2.13_p1::brother-overlay
-# required by media-gfx/brother-scan3-bin (argument)
->=media-gfx/sane-backends-1.0.27-r3 usb
-# required by media-plugins/gst-plugins-meta-1.14.3::gentoo
-# required by gst-plugins-meta (argument)
->=media-libs/gst-plugins-base-1.14.5-r1 theora
+net-wireless/wpa_supplicant dbus
+
+sys-boot/grub mount
+
+net-wireless/wpa_supplicant dbus
+
+sys-boot/grub mount
+
+app-text/poppler cairo
+
+dev-libs/libxml2 python
+
+media-plugins/alsa-plugins pulseaudio
+
+xfce-base/thunar udisks
+
+gnome-base/gvfs udisks
+
+sys-auth/consolekit policykit
+
+dev-lang/python sqlite
+
+app-crypt/pinentry gnome-keyring
+
+media-libs/openal pulseaudio
+
+sys-libs/zlib minizip
+
+dev-libs/libpcre2 pcre16
+
+dev-qt/qtgui dbus
+
+app-text/xmlto text
+
+net-libs/libtorrent-rasterbar python
+
+dev-libs/boost python
+
+app-text/ghostscript-gpl cups
+
+www-client/w3m imlib
+
+dev-libs/xmlsec nss
+
+media-libs/harfbuzz icu
+
+media-libs/gegl cairo
+
+x11-libs/libdrm video_cards_nouveau
+
+dev-java/icedtea-web nsplugin
+
+dev-python/PyQt5 gui widgets
+
+media-gfx/sane-backends usb
+
+media-libs/gst-plugins-base theora
+
+sys-kernel/debian-sources binary

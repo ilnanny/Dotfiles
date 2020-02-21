@@ -95,5 +95,23 @@ alias usblist='su -c "sh /home/ilnanny/bin/usblist"'
 alias wiki='cd /media/Dati/Git/Dotfiles/01-Files/Wiki/Gentoo-wiki && whereis'
 
 
+# ___      Alias Void
+
+
+alias ccache="xbps-remove -O"
+alias install="sudo xbps-install"
+alias lvs="sudo lvs"
+alias pkgdb="sudo xbps-pkgdb"
+alias query="sudo xbps-query"
+alias reconfigure="sudo xbps-reconfigure"
+alias remove="sudo xbps-remove -R"
+alias search="sudo xbps-query -Rs"
+alias sv="sudo sv"
+alias update="sudo xbps-install -Su"
+alias vgdisplay="sudo vgdisplay"
+alias vgs="sudo vgs"
+
+
+
 # ___     Fine
 

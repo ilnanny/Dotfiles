@@ -1,0 +1,318 @@
+=====================================================
+### O.S.: Funtoo Gnu Linux  | XFCE4
+### Host: Dell DXP061 |2010
+### CPU: Core 2 Quad Q6600 (4) @ 2.4GHz 
+### GPU: ATI Radeon HD 5000/6000/7350/8350 Series 
+### Memory: 5898MiB | ddr2 1600mhz
+### Boot: Grub-pc | MBR
+### Disk 1: /dev/sdb1 =/boot | ext2 =512M
+### Disk 2: /dev/sdc4 =/     | ext4 =80G
+### Disk 3: /dev/sdb5 =swap  |      =8G
+### Wiki: https://www.funtoo.org/Install
+=====================================================
+Crea le Cartelle e monta le partizioni:
+==========================================
+
+ mkdir /mnt/funtoo
+ mount /dev/sdc4 /mnt/funtoo
+
+ mkdir /mnt/funtoo/boot
+ mount /dev/sdb1 /mnt/funtoo/boot
+
+ cd /mnt/funtoo
+
+==========================================
+== Scarica lo stage3 e scompattalo 
+==========================================
+ wget stage3-core2_64-1.3-release-std-2019-02-05.tar.xz 
+
+ tar xpf stage3-core2_64-1.3-release-std-2019-02-05.tar.xz
+==========================================
+=== Entra in chroot:
+
+ cp /etc/resolv.conf /mnt/funtoo/etc/
+
+ mount -t proc none proc
+ mount --rbind /sys sys
+ mount --rbind /dev dev
+ cp /etc/resolv.conf /mnt/funtoo/etc/
+ env -i HOME=/root TERM=$TERM /bin/chroot . bash -l
+
+ export PS1="(chroot) $PS1"
+========================================== 
+== Controllo rete carica i repo
+ ping -c 5 google.com
+==========================================
+== Sincronizza portage 
+ install -d /var/git -o 250 -g 250
+ ego sync
+==========================================
+== Controlla e modifica :
+========================================== 
+01] /etc/fstab               # [ vedi note fine pagina ]
+02] /etc/boot.conf           # [ vedi note fine pagina ]
+03] /etc/localtime
+04] /usr/share/zoneinfo
+05] /etc/portage/make.conf   
+06] /etc/conf.d/hostname
+07] /etc/conf.d/keymaps	
+08] /etc/conf.d/hwclock
+09] /etc/conf.d/modules	
+==========================================
+== Controlla le partizioni e scrivi l'fstab
+ blkid -c /dev/null -o list
+ nano -w /etc/fstab
+========================================== 
+== Fuso Orario
+ ln -sf /usr/share/zoneinfo/Europe/Rome  /etc/localtime
+========================================== 
+== Data e Ora
+  date
+se la data non corrisponde :
+
+  date 041010252019                [corrisponde a ore 10:25 ,mercoledì ,10 aprile 2019 ]
+  
+Lo copio sull'orologio hardware per i prossimi riavvi:
+
+ hwclock --systohc
+ 
+in caso di dualboot con windos naturalmente settare in local:
+
+ nano -w /etc/conf.d/hwclock
+clock="local"
+====================================================================================
+== Localizzazione IT
+ nano -w /etc/locale.gen
+it_IT.UTF-8 UTF-8
+it_IT ISO-8859-1
+
+==  crea il file 02locale  
+ nano -w /etc/env.d/02locale
+LANG="it_IT.UTF-8"
+
+== Genera locale
+ locale-gen
+ locale -a
+========================================== 
+== Tastiera 
+ nano -w /etc/conf.d/keymaps
+keymap="it" 
+windowkeys="YES"
+fix_euro="YES"
+=========================================================================
+== Make conf ,[meglio impostare solo processore e lingua all'inizio.]
+ nano -w /etc/portage/make.conf
+
+
+L10N="it"
+LANG="it_IT.utf8"
+LINGUAS="it"
+INPUT_DEVICES="evdev"
+VIDEO_CARDS="nvidea vesa"
+
+==========================================
+== Sync,aggiornamento e profilo XFCE
+ ego sync 
+ epro mix-ins +xfce
+ env-update && source /etc/profile
+ emerge -auDN @world
+ 
+=== **:
+** se trovi errori nella sincronizzazione prova un backup e resync:
+  mv /var/git/meta-repo /var/git/meta-repo.old
+  ego sync
+==================================================================== 
+==== Kernel :[ Nello stage3 è compreso il'debian-sources']
+per i debian:
+ emerge -s debian-sources
+     
+per i gentoo:
+ emerge -s gentoo-sources
+====================================================================
+== Firmwares
+emerge --ask linux-firmware os-prober ntfs3g libisoburn
+====================================================================
+== Installa Grub
+ emerge --ask libpng
+ emerge -av grub
+ emerge --ask sys-firmware/intel-microcode iucode_tool
+ 
+== Drivers NVIDIA
+
+nano -w /etc/modprobe.d/nouveau-blacklist.conf
+
+ blacklist nouveau
+ options nouveau modeset=0
+ alias nouveau off
+ 
+== == == 
+nano -w /etc/portage/make.conf
+
+ VIDEO_CARDS="nvidia" 
+
+emerge --ask nvidia-drivers nvidia-kernel-modules
+
+== == == 
+nano -w /etc/portage/package.mask
+
+ >=x11-drivers/nvidia-drivers-341.0.0
+ >=x11-drivers/nvidia-kernel-modules-341.0.0
+ 
+== == == 
+nano -w /etc/conf.d/modules
+ modules="nvidia"
+ 
+== == ==  
+nano -w /etc/X11/xorg.conf
+
+Section "Device"
+    Identifier     "nvidia"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "[Name] [Model]"
+    Option    "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+ 
+== == ==   
+eselect opengl set nvidia
+eselect opencl set nvidia
+ 
+========================================== 
+== Configura il boot 
+ nano -w /etc/boot.conf    [bisognerà aggiornarlo ad ogni kernel]
+
+==== Scrivi il boot
+ grub-install --target=i386-pc --no-floppy /dev/sda
+ ego boot update
+ boot-update
+ emerge -1 @module-rebuild
+========================================== 
+== Rete:
+  emerge --ask networkmanager
+ 
+= carica il demone all'avvio:
+  rc-update add NetworkManager default
+
+= avvia la consolle grafica:
+  nmtui
+==========================================
+== Imposta un Hostname:
+ nano /etc/conf.d/hostname
+==========================================
+=== Password di root:
+ passwd
+==========================================
+== Uscire da chroot :
+==========================================
+ exit 
+ cd /mnt 
+ umount -lR funtoo 
+ reboot
+ 
+==========================
+======= boot in Funtoo 
+==========================
+Nuovo Utente:
+==========================
+useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
+
+ passwd nomeUtente
+==========================================
+=== Profili:
+ epro list
+ epro show
+ epro mix-ins +xfce +gfxcard-nvidia
+ env-update && source /etc/profile
+==========================================
+
+=== Xorg:
+ emerge --ask xorg-x11 xorg-server xorg-drivers xterm
+
+=== Xfce - Openbox 'vedi software'
+ emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin
+ emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 
+ emerge --ask thunar thunar-volman thunar-archive-plugin 
+
+=carica il demone all'avvio:
+ rc-update add dbus default
+
+=== lxdm:
+ emerge lxdm
+
+= Sostituisci xdm con lxdm in :
+nano -w /etc/conf.d/xdm    
+
+= Carica il demone all'avvio:
+ rc-update add xdm default
+
+== Cron
+  emerge --ask anacron
+  /etc/init.d/anacron start
+  rc-update add anacron default
+  gpasswd -a ilnanny cron
+  nano -w /etc/crontab
+
+# Avvia anacron ogni 10 minuti
+*/10 * * *  root  /usr/sbin/anacron
+
+# Alternativamente avvia 0anacron ogni ora
+# 59 * * * *  root  /etc/cron.hourly/0anacron
+=============================================================
+
+# == Software :
+
+ emerge --ask autoconf automake cmake curl ninja nodejs meson
+ 
+ emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite
+ 
+ USE="gstreamer"  emerge --ask  sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol
+
+ emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi 
+
+ emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton
+
+ USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 nvidia" emerge --ask app-admin/conky
+
+ USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm ntfs" emerge -av gparted
+
+ USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
+
+ USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
+
+ USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
+
+ emerge --ask android-tools android-file-transfer-linux bleachbit deluge dev-lang/go file-roller 
+  
+ emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct
+ 
+
+#==================================================================================================
+
+##                                 Fstab    Funtoo       
+#==================================================================================================
+##  ==    Pseudo Filestystem
+
+# devpts             /dev/pts         devpts       gid=5,mode=620               0   0
+# proc               /proc            proc         defaults                     0   0
+# tmpfs              /dev/shm         tmpfs        defaults                     0   0
+# /dev/cdrom         /mnt/cdrom       auto         noauto,owner,ro,comment=x-gvfs-show     0   0
+#==================================================================================================
+##  ==    LInux Filesystem
+
+## == sdc4 = Funtoo
+UUID=00084a44-ec1a-43a8-b137-d30dfb51744f   /	    ext4	rw,errors=remount-ro	0   1
+
+## == sda3 = Swap
+UUID=60d4be6e-bed0-4bbe-ab08-517738f0f6a0   swap	swap	sw	 0   0
+
+#==================================================================================================
+##  ==    Ntfs Filesystem
+
+## = sdb1 = Dati
+#UUID=76CDC3FF57CBA78E	/media/Dati	ntfs-3g	defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0
+
+#==================================================================================================
+
+
+** grub-mkconfig –o /boot/grub/grub.cfg
+   grub-mkconfig -o /boot/grub/grub.cfg

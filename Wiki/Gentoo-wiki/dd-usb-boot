@@ -1,3 +1,0 @@
-# dd if=/percorso/nome_immagine.iso of=/dev/sdb bs=4M; sync
-
-dd if=/media/DATI/GNU-LINUX/O.S./A-Backup/Backup-Debian/snapshot-1/snapshot-20170705_2042.iso of=/dev/sdf bs=4M; sync

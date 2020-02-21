@@ -1,11 +1,11 @@
 A different locales can be configured via:
-Code: [Select]
+
 ~HOME/.config/obmenu-generator/config.pl
 change:
-Code: [Select]
+
 "name_keys"           => ["Name"],
 to your lang, for example pl_PL:
-Code: [Select]
+
 "name_keys"           => ['Name[pl]', 'GenericName[pl]', 'Name'],
 
 Missing lang is about the category names and custom entries only.

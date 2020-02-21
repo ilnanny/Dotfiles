@@ -15,4 +15,3 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-exec openbox-session

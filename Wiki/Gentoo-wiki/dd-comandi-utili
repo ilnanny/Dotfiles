@@ -1,58 +1,52 @@
-Creare una .iso del CD/DVD inserito nel nostro lettore sr0
-
-dd if=/dev/sr0 of=file.iso
-
-Scrivere un immagine ISO su una penna USB sdb
-
-dd if=file.iso of=/dev/sdb
-
-Creare un backup della partizione sda1
-
-dd if=/dev/sda1 of=backup
-=====================================
-
-sudo dcfldd if=image.iso of=/dev/sdb
-
-sudo dd if=~/solydk_9_64_201803.iso of=/dev/sdx bs=64k oflag=dsync status=progress
-
-# dd if=FreeBSD-12.0-RELEASE-amd64-dvd1.iso of=/dev/da0 bs=1m conv=sync
-
-sudo dd if=/media/Dati/OS/Linux/64bit/slackware64-live-current.iso of=/dev/sde bs=64k oflag=dsync status=progress
-
-========================================  Slackware  =====================================
- ./iso2usb.sh -i /media/Dati/OS/Linux/64bit/slackware64-live-current.iso -o /dev/sde
-
-richiesto:
-install \
-extlinux \
-gdisk \
-isoinfo \
-sgdisk \
-syslinux
-=====================================
-
-Gentoo e sysrscd
-per masterizzazione di un sistema operativo OpenBSD usa image_name.fs 
 
 
-sudo emerge -av syslinux dosfstools
+#  ===   Scrivere un immagine ISO su pendrive ; es. /sdb
 
-isohybrid ~/path_to_your_iso
+    #funtoo
+    dd if=funtoo-livecd-area31-5.1-beta.iso of=/dev/sdx bs=4k status=progress
 
-lsblk (per identificare quale dispositivo è la tua penna)
+    #freebsd
+    dd if=FreeBSD-12.0-RELEASE-amd64-dvd1.iso of=/dev/da0 bs=1m conv=sync
 
-se hai bisogno di formattare la tua penna, usa piuttosto fat32:
+    #slackware
+    sudo dd if=/slackware64-live-current.iso of=/dev/sde bs=64k oflag=dsync status=progress
 
-sudo mkfs.vfat -I path_to_your_pen
 
-poi:
+#  ===   Creare una .iso del DVD ; es. /sr0
 
-sudo dd if=~/ path_to_your_iso of = path_to_your_pen ("/ dev / sdb" nel mio sistema operativo per esempio)
+    dd if=/dev/sr0 of=file.iso
 
-aspetta qualche minuto per lasciarlo scrivere al tuo pendrive, entro la fine del processo ti segnalerà le sue attività.
 
-gli appunti:
 
-isohybrid è disponibile sotto il pacchetto syslinux
+#  ===   Creare un backup della partizione ; es. /sda1
 
-mkfs.vfat è disponibile sotto il pacchetto dosfstools 
+    dd if=/dev/sda1 of=backup
+
+
+
+#  ===   Slackware
+
+    ./iso2usb.sh -i /media/Dati/OS/Linux/64bit/slackware64-live-current.iso -o /dev/sde
+
+#  === Software richiesto:
+
+    emerge --ask \
+    extlinux \
+    gdisk \
+    isoinfo \
+    sgdisk \
+    syslinux
+
+======================================================================================
+
+
+
+
+
+
+
+
+
+
+
+

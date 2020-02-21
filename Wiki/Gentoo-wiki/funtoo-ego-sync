@@ -1,3 +1,0 @@
-mv /var/git/meta-repo /var/git/meta-repo.old
-
-ego sync

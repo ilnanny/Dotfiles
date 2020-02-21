@@ -21,7 +21,7 @@ done
 export GPG_TTY=$(tty)
 export TERM="xterm"
 export EDITOR="nano"
-export BROWSER="firefox-bin"
+export BROWSER="firefox"
 export WEBBROWSER="firefox"
 export FILEMANAGER='thunar"
 export LC_TYPE="it_IT.UTF-8"

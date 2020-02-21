@@ -14,4 +14,4 @@ fi
 # exec gnome-session
 # exec startkde
 # exec startxfce4
-exec openbox-session
+# ...or the Window Manager of your choice
