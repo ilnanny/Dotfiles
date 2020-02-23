@@ -1,0 +1,29 @@
+ wget https://downloads.sourceforge.net/lsb/lsb-release-1.4.tar.gz && cd /lsb-release-1.4/
+
+#  ==   fix a minor display problem:
+
+sed -i "s|n/a|unavailable|" lsb_release
+
+#  ==   Install lsb_release :
+
+./help2man -N --include ./lsb_release.examples \
+              --alt_version_key=program_version ./lsb_release > lsb_release.1
+
+#  ==   Now, as the root user:
+
+install -v -m 644 lsb_release.1 /usr/share/man/man1 &&
+install -v -m 755 lsb_release   /usr/bin            &&
+install -v -m 755 help2man      /usr/bin
+
+#   =====       Config     =====
+
+echo 9.0 > /etc/lfs-release
+
+It is also a good idea to create a file to show the status of your new system with respect to the Linux Standards Base (LSB). To create this file, run:
+
+cat > /etc/lsb-release << "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="9.0"
+DISTRIB_CODENAME="<your name here>"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF
