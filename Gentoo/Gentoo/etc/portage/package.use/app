@@ -1,0 +1,15 @@
+app-admin/system-config-printer gnome-keyring policykit
+
+app-crypt/pinentry gnome-keyring
+
+app-emulation/virtualbox alsa headless lvm opengl opus pam pax_kernel python qt5 sdk udev java vboxwebsrv vnc
+
+app-emulation/virtualbox-bin additions chm headless python rdesktop-vrdp
+
+app-office/libreoffice-bin java
+
+app-text/ghostscript-gpl cups
+
+app-text/poppler cairo
+
+app-text/xmlto text

@@ -1,61 +1,11 @@
-dev-libs/glib dbus
 
-net-wireless/wpa_supplicant dbus
 
-sys-boot/grub mount
 
-net-wireless/wpa_supplicant dbus
 
-sys-boot/grub mount
 
-app-text/poppler cairo
 
-dev-libs/libxml2 python
 
-media-plugins/alsa-plugins pulseaudio
 
-xfce-base/thunar udisks
 
-gnome-base/gvfs udisks
 
-sys-auth/consolekit policykit
 
-dev-lang/python sqlite
-
-app-crypt/pinentry gnome-keyring
-
-media-libs/openal pulseaudio
-
-sys-libs/zlib minizip
-
-dev-libs/libpcre2 pcre16
-
-dev-qt/qtgui dbus
-
-app-text/xmlto text
-
-net-libs/libtorrent-rasterbar python
-
-dev-libs/boost python
-
-app-text/ghostscript-gpl cups
-
-www-client/w3m imlib
-
-dev-libs/xmlsec nss
-
-media-libs/harfbuzz icu
-
-media-libs/gegl cairo
-
-x11-libs/libdrm video_cards_nouveau
-
-dev-java/icedtea-web nsplugin
-
-dev-python/PyQt5 gui widgets
-
-media-gfx/sane-backends usb
-
-media-libs/gst-plugins-base theora
-
-sys-kernel/debian-sources binary

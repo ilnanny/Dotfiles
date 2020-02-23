@@ -21,7 +21,7 @@
 ==========================================
 == Scarica lo stage3 e scompattalo
 ==========================================
- wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20160205T214502Z/stage3-amd64-20160205T214502Z.tar.xz
+ wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20200219T214502Z/stage3-amd64-20200219T214502Z.tar.xz
  tar xvfJ stage3-*.tar.xz --xattrs --numeric-owner
 ====================================================
  cd  --
@@ -131,10 +131,10 @@ LANG="it_IT.UTF-8"
 ====================================================================
 ==== Kernel
 
-  emerge --ask gentoo-sources genkernel \
+  emerge --ask gentoo-kernel-bin\
   intel-microcode grub mdadm gentoolkit \
   linux-firmware os-prober ntfs3g usbutils \
-  pciutils consolekit e2fsprogs gvfs dev-vcs/git
+  pciutils elogind e2fsprogs gvfs dev-vcs/git
 
    cd /usr/src/linux
    zcat /proc/config.gz > .config
@@ -158,7 +158,7 @@ LANG="it_IT.UTF-8"
 
 = carica il demone all'avvio:
   rc-update add NetworkManager default
-  rc-update add consolekit default
+  rc-update add elogind default
 = avvia la consolle grafica:
   nmtui
 
@@ -213,6 +213,47 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
 === Xorg:
  emerge --ask xorg-x11 xorg-server xorg-drivers xterm
 
+== Drivers NVIDIA
+
+nano -w /etc/modprobe.d/nouveau-blacklist.conf
+
+ blacklist nouveau
+ options nouveau modeset=0
+ alias nouveau off
+
+== == ==
+nano -w /etc/portage/make.conf
+
+ VIDEO_CARDS="nvidia"
+
+emerge --ask nvidia-drivers nvidia-kernel-modules
+
+== == ==
+nano -w /etc/portage/package.mask
+
+ >=x11-drivers/nvidia-drivers-341.0.0
+ >=x11-drivers/nvidia-kernel-modules-341.0.0
+
+== == ==
+nano -w /etc/conf.d/modules
+ modules="nvidia"
+
+== == ==
+nano -w /etc/X11/xorg.conf
+
+Section "Device"
+    Identifier     "nvidia"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "[Name] [Model]"
+    Option    "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+
+== == ==
+eselect opengl set nvidia
+eselect opencl set nvidia
+
+
 === Xfce:
  emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin xfce4-mount-plugin
 
@@ -242,15 +283,48 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
 # 59 * * * *  root  /etc/cron.hourly/0anacron
 =============================================================
 # == Software :
- emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip conky evince ranger vim
- USE="gstreamer" emerge --ask media-sound/pavucontrol
- emerge --ask  sys-firmware/alsa-firmware xfce-extra/xfce4-alsa-plugin media-sound/alsamixergui media-sound/alsa-utils x11-themes/sound-theme-freedesktop
+=== Xfce - Openbox 'vedi software'
+ emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin
+ emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2
+ emerge --ask thunar thunar-volman thunar-archive-plugin
 
- emerge --ask net-dns/avahi sys-fs/dosfstools media-fonts/dejavu app-misc/mime-types app-crypt/openpgp-keys-gentoo-release
+=carica il demone all'avvio:
+ rc-update add dbus default
 
- emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi xdg
+=== lxdm:
+ emerge lxdm
 
- emerge --ask x11-misc/i3lock  x11-misc/tintwizard media-gfx/feh volumemicon x11-misc/compton
+= Sostituisci xdm con lxdm in :
+nano -w /etc/conf.d/xdm
+
+= Carica il demone all'avvio:
+ rc-update add xdm default
+
+== Cron
+  emerge --ask anacron
+  /etc/init.d/anacron start
+  rc-update add anacron default
+  gpasswd -a ilnanny cron
+  nano -w /etc/crontab
+
+# Avvia anacron ogni 10 minuti
+*/10 * * *  root  /usr/sbin/anacron
+
+# Alternativamente avvia 0anacron ogni ora
+# 59 * * * *  root  /etc/cron.hourly/0anacron
+=============================================================
+
+# == Software :
+
+ emerge --ask autoconf automake cmake curl ninja nodejs meson
+
+ emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite
+
+ USE="gstreamer"  emerge --ask  sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol
+
+ emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi
+
+ emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton
 
  USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 nvidia" emerge --ask app-admin/conky
 
@@ -262,103 +336,38 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
-  emerge --ask android-tools \
-  android-file-transfer-linux \
-  autoconf \
-  automake \
-  bleachbit \
-  cmake \
-  curl \
-  deluge \
-  dev-lang/go \
-  evince \
-  file-roller \
-  gimp \
-  inkscape \
-  lsb-release \
-  ninja \
-  nodejs \
-  nomacs \
-  parcellite \
-  speedtest-cli \
-  telegram-desktop \
-  wgetpaste \
-  zenity \
-  dev-ruby/rubygems
-____________________________ ** N O T E 1 ____________________________
+ emerge --ask android-tools android-file-transfer-linux bleachbit deluge dev-lang/go file-roller
 
-======================== MAKE CONF ==================================
+ emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct
 
-# =============  Configurazioni Globali  ==============
 
-ABI_X86="64"
-CBUILD="x86_64-pc-linux-gnu"
-CHOST="${CBUILD}"
-CPU_FLAGS_X86="aes mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
-COMMON_FLAGS="-march=westmere -O2 -pipe"
-CFLAGS="${COMMON_FLAGS}"
-CXXFLAGS="${COMMON_FLAGS}"
-FCFLAGS="${COMMON_FLAGS}"
-FFLAGS="${COMMON_FLAGS}"
-EMERGE_DEFAULT_OPTS="--keep-going=y --autounmask-write=y --jobs=4 --load-average=8.1"
-LDFLAGS="-Wl,-O1 -Wl,--as-needed"
-MAKEOPTS="-j13 -s"
+#==================================================================================================
 
-# =============   =============   =============
+##                                 Fstab    Gentoo
+#==================================================================================================
+##  ==    Pseudo Filestystem
 
-ACCEPT_KEYWORDS="amd64"
-ACCEPT_LICENSE="* -@EULA"
-CONFIG_PROTECT="/etc /usr/share/config /usr/share/gnupg/qualified.txt"
-DISTDIR="/usr/portage/distfiles"
-FEATURES="${FEATURES} buildpkg parallel-fetch  -userpriv"
-PKGDIR="/usr/portage/packages"
-PORTAGE_COMPRESS="bzip2"
-PORTAGE_COMPRESS_FLAGS="-11"
-PORTAGE_COMPRESSION_COMMAND="bzip2"
-PORTAGE_CONFIGROOT="/"
-PORTAGE_ELOG_CLASSES="warn error info log qa"
-PORTAGE_ELOG_SYSTEM="save"
-PORTAGE_NICENESS="1000"
-PORTDIR_OVERLAY=/usr/local/portage
-PORTAGE_TMPDIR="/var/tmp"
-PORTDIR="/usr/portage"
+# devpts             /dev/pts         devpts       gid=5,mode=620               0   0
+# proc               /proc            proc         defaults                     0   0
+# tmpfs              /dev/shm         tmpfs        defaults                     0   0
+# /dev/cdrom         /mnt/cdrom       auto         noauto,owner,ro,comment=x-gvfs-show     0   0
+#==================================================================================================
+##  ==    LInux Filesystem
 
-# =============   =============   =============
+## == sdc2 = Gentoo
+UUID=00084a44-ec1a-43a8-b137-d30dfb51744f   /	    ext4	rw,errors=remount-ro	0   1
 
-ALSA_CARDS="hda-intel"
-GRUB_PLATFORMS="pc"
-KERNEL="linux"
-INPUT_DEVICES="evdev mouse keyboard"
-L10N="it"
-LANG="it_IT.utf8"
-LINGUAS="it"
-LIRC_DEVICES="audio audio_alsa serial"
-USERLAND="GNU"
-VIDEO_CARDS="nvidia"
+## == sda3 = Swap
+UUID=60d4be6e-bed0-4bbe-ab08-517738f0f6a0   swap	swap	sw	 0   0
 
-# =============   =============   =============
+#==================================================================================================
+##  ==    Ntfs Filesystem
 
-USE="X gtk -gnome -kde -qt4 -minimal symlink utils xvmc \
-udev build openrc nls -systemd xkb truetype consolekit \
-startup-notification jpeg png svg alsa mp3 static-libs "
+## = sdb1 = Dati
+#UUID=76CDC3FF57CBA78E	/media/Dati	ntfs-3g	defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0
 
-# =============   =============   =============
+#==================================================================================================
 
-____________________________ ** N O T E 2 ____________________________
 
-#  ============================= Fstab Gentoo
-
-#  ===================================================================================
-
-#  ===  Root
-UUID=30739d16-11e2-4b20-bc4d-f96363bd3eca    /    ext4   rw,errors=remount-ro  0   1
-
-#  ===  Swap
-#/dev/sda5       none      swap      sw      0  0
-
-#  ===================================================================================
-
-#  ===  Dati-ntfs
-UUID=76CDC3FF57CBA78E   /media/Dati   ntfs-3g   defaults,rw,uid=1000,locale=it_IT.UTF-8  0  0
-
-#  =============================================================================================
+** grub-mkconfig –o /boot/grub/grub.cfg
+   grub-mkconfig -o /boot/grub/grub.cfg
