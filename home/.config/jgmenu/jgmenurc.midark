@@ -20,7 +20,7 @@ menu_border          = 1
 menu_halign          = left
 menu_valign          = top
 
-sub_spacing          = 5
+sub_spacing         = 5
 sub_hover_action     = 1
 
 item_margin_y        = 5
@@ -30,29 +30,32 @@ item_radius          = 0
 item_border          = 0
 
 
-sep_height           =
-font                 = Decker : 13px
-color_font           = #FFFFFF
+sep_height           = 5
+
+font                 = Roboto 12px
+color_font           = #E0E5F1
 icon_size            = 24
 
 
 icon_theme           = Lila_HD
 
-color_menu_bg        = #474747
-color_menu_fg        = #D2D2D2
+color_menu_bg        = #606977
+color_menu_fg        = #2B303B
 
-color_menu_border    = #474747
+color_menu_border    = #606977
 
-color_norm_bg        = #474747
-color_norm_fg        = #D2D2D2
+color_norm_bg        = #606977
+color_norm_fg        = #2b303b
 
-color_sel_bg         = #768199
-color_sel_fg         = #D2D2D2
-color_sel_border     = #474747
+color_sel_bg         = #8fa1b3
+color_sel_fg         = #2b303b
+color_sel_border     = #606977
 
-color_sep_fg         = #474747
+color_sep_fg         = #606977
 
+
+icon_theme           = Lila_HD
 
 #______________________________________
 
-csv_name_format     = %n (%g
+csv_name_format     = %n (%g)

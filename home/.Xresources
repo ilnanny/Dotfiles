@@ -9,42 +9,42 @@
 !
 *.foreground: #F2F6FC
 *.background: #535353
-*.cursorColor: #bbbbbb
+*.cursorColor: #BBBBBB
 !
 ! Black / Nero
 *.color0:      #000000
 *.color8:      #555555
 !
 ! Red / Rosso
-*.color1:      #ff5555
-*.color9:      #ff5555
+*.color1:      #FF5555
+*.color9:      #FF5555
 !
 ! Green / Verde
-*.color2:      #55ff55
-*.color10:     #55ff55
+*.color2:      #55FF55
+*.color10:     #55FF55
 !
 ! Yellow / Giallo
-*.color3:      #ffff55
-*.color11:     #ffff55
+*.color3:      #FFFF55
+*.color11:     #FFFF55
 !
 ! Blue / Blu
-*.color4:      #5555ff
-*.color12:     #5555ff
+*.color4:      #5555FF
+*.color12:     #5555FF
 !
 ! Magenta
-*.color5:      #ff55ff
-*.color13:     #ff55ff
+*.color5:      #FF55FF
+*.color13:     #FF55FF
 !
 ! Cyan / Ciano
-*.color6:      #55ffff
-*.color14:     #55ffff
+*.color6:      #55FFFF
+*.color14:     #55FFFF
 !
 ! White / Bianco
-*.color7:      #bbbbbb
-*.color15:     #ffffff
+*.color7:      #BBBBBB
+*.color15:     #FFFFFF
 !
 ! Bold, Italic, Underline / Grassetto Corsivo Sottolineato
-*.colorBD:     #ff5e7d
+*.colorBD:     #FF5E7D
 !*.colorIT:
 !*.colorUL:
 !
@@ -98,3 +98,33 @@ rofi.separator-style: solid
 ! Cursor
 ! -------------------------------------------------------------
 Xcursor.theme: Lila_HD-cursor
+
+! ------------------------------------------------------------------
+! URxvt
+! ------------------------------------------------------------------
+URxvt*saveline: 15000
+URxvt*termName: rxvt-256color
+URxvt*iso14755: false
+URxvt*depth: 32
+URxvt*background: [90]#535353
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
+URxvt*letterSpace: -1
+URxvt.font: xft:Monospace:size=11
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.m-c: perl:clipboard:copy
+URxvt.keysym.m-v: perl:clipboard:paste
+URxvt.urlLauncher: exo-open
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+URxvt.geometry: 80x24
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 4
+URxvt*buffered: false
+! ------------------------------------------------------------------
