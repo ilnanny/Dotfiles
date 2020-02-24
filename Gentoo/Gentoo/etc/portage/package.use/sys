@@ -1,3 +1,4 @@
+sys-apps/dbus X
 
 sys-auth/polkit gtk introspection nls pam -consolekit elogind -examples -jit -kde -systemd -test
 

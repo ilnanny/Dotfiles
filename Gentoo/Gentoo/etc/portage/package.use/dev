@@ -1,10 +1,12 @@
 dev-cpp/cairomm X gtkmm 
 
+dev-db/sqlite -icu
+
 dev-java/openjdk-jre-bin cups nsplugin webstart
 
 dev-java/icedtea-web nsplugin
 
-dev-lang/python sqlite
+dev-lang/python -bluetooth sqlite
 
 dev-libs/boost python
 

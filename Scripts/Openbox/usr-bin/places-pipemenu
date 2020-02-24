@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 
-#================================================
-#================================================
-#   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com   =
-#   Github    : https://github.com/ilnanny      =
-#================================================
-#================================================
-
 # <menu id="places" label="Places" execute="/path/to/places-pipemenu ~/" />
 # or, if you want the "recent files" menu incorporated at the top, use:
 # <menu id="places" label="Places" execute="/path/to/places-pipemenu --recent ~/" />
 # make sure you have recent-files-pipemenu, and enter its path below.
 
 readonly recent_script=/usr/bin/recent-files-pipemenu
-readonly terminal=termite
+readonly terminal=xterm
 readonly text_editor=subl3
 if hash "thunar" &>/dev/null; then
     readonly open_folder_cmd=thunar
@@ -81,10 +72,10 @@ case $1 in
         output='<openbox_pipe_menu>'
         if [[ -x $recent_script ]]; then
             output="$output
-  <separator label=\"Recently opened...\"/>
+  <separator label=\"File Recenti...\"/>
   <menu execute=\"$recent_script\" id=\"recent\" label=\"files\"/>"
         else
-            echo "$0 : cannot find executable script $recent_script" >&2
+            echo "$0 : nessuno script eseguibile $recent_script" >&2
         fi
         ;;
     *) output='<openbox_pipe_menu>'
@@ -93,7 +84,7 @@ esac
 path=${1:-$HOME}
 path=${path%/}
 
-[[ -d $path ]] || { echo "$0 : $path is not a directory" >&2 ; exit 1 ; }
+[[ -d $path ]] || { echo "$0 : $path non è una directory" >&2 ; exit 1 ; }
 
 # only escape if string needs it
 case $path in

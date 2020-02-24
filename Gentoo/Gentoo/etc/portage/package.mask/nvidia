@@ -1,1 +1,3 @@
->=x11-drivers/nvidia-drivers-391.0.0
+
+>=x11-drivers/nvidia-drivers-341.0.0
+>=x11-drivers/nvidia-kernel-modules-341.0.0

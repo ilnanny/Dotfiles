@@ -1,3 +1,5 @@
+app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 
+
 app-admin/system-config-printer gnome-keyring policykit
 
 app-crypt/pinentry gnome-keyring

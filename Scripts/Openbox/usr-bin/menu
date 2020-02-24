@@ -70,25 +70,25 @@ while getopts ":hvqwcbmrl" opt; do
                 -padding 10 -line-padding 4)
             ;;
         m)
-            rofi -location 1 -yoffset 10 -xoffset 10 \
+            rofi -location 1 -yoffset 35 -xoffset 45 \
                 -modi run,drun -show drun -line-padding 10 \
                 -columns 3 -padding 10 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Lila_HD"
             ;;
         r)
             rofi -modi run,drun -show drun -line-padding 10 \
-                -columns 2 -padding 10 -hide-scrollbar \
+                -columns 3 -padding 10 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Lila_HD"
             ;;
         l)
-            ANS=$(echo "  Blocca Schermo|  Chiudi Sessione|  Riavvia Computer|  Spegni Computer" | \
-                rofi -sep "|" -dmenu -i -p 'System ' "" -width 10 \
-                -hide-scrollbar -eh 1 -line-padding 4 -padding 10 -lines 4)
+            ANS=$(echo "  Blocco   Schermo |  Chiudi   Sessione |  Riavvia  Computer |  Spegni   Computer"| \
+                rofi -sep "|" -dmenu -i -p 'Esegui' "" -width 12 \
+                -hide-scrollbar -eh 1 -line-padding 4 -padding 12 -lines 4)
             case "$ANS" in
                 *Lockscreen) lockscreen -- scrot ;;
                 *Esci) openbox --exit ;;
-                *Riavvia) reboot ;;
-                *Spegni) poweroff
+                *Riavvia) xterm -e sudo shutdown -r now ;;
+                *Spegni) xterm -e sudo shutdown -h now
             esac
             ;;
         *)

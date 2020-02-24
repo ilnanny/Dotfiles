@@ -4,3 +4,5 @@ net-libs/libtorrent-rasterbar python
 net-p2p/amule upnp
 
 net-wireless/wpa_supplicant dbus
+
+net-wireless/bluez -systemd

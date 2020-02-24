@@ -1,12 +1,4 @@
 #!/usr/bin/env python2
-#================================================
-#================================================
-#   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com   =
-#   Github    : https://github.com/ilnanny      =
-#================================================
-#================================================
 
 import sys
 import os
@@ -138,7 +130,7 @@ if __name__ == "__main__":
 
     if gui:     # output formatted keybinds text in text window
         DLG = "zenity --text-info --title='Openbox Keybinds' "
-        DLG += "--window-icon=/usr/share/icons/48.png "
+        DLG += "--window-icon=/usr/share/icons/48x48.png "
         DLG += "--filename=$HOME/.config/openbox/kbinds.txt "
-        DLG += "--width=700 --height=600 "
+        DLG += "--width=800 --height=700 "
         os.system(DLG)

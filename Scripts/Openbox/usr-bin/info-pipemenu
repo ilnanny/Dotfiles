@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
-
-#================================================
-#================================================
-#   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com   =
-#   Github    : https://github.com/ilnanny      =
-#================================================
-#================================================
-# info-pipemenu
-
+#  __________________________________________________________
+#   informazioni online dell 'O.S.' e di alcuni Apllicativi.
+#  __________________________________________________________
 for i in "$@"; do
     case "$i" in
         -h|--help) echo "$HELP" ; exit 0
@@ -20,12 +12,20 @@ if ! . "/usr/lib/common/include.cfg" 2>/dev/null; then
     echo $"Error: Failed to source /usr/lib/common/include.cfg" >&2 ; exit 1
 fi
 
-menuStart
-menuSeparator 'Gentoo Linux Online'
-menuItem 'Gentoo Forum Eng' 'xdg-open "https://forums.gentoo.org/index.php"'
-menuItem 'Gentoo Forum Ita' 'xdg-open "https://forums.gentoo.org/viewforum-f-41.html"'
-menuItem 'Gentoo Wiki' 'xdg-open "https://wiki.gentoo.org/wiki/Main_Page"'
+#Gentoo
+#menuStart
+#menuSeparator 'Gentoo Linux Online'
+#menuItem 'Gentoo Forum Eng' 'xdg-open "https://forums.gentoo.org/index.php"'
+#menuItem 'Gentoo Forum Ita' 'xdg-open "https://forums.gentoo.org/viewforum-f-41.html"'
+#menuItem 'Gentoo Wiki' 'xdg-open "https://wiki.gentoo.org/wiki/Main_Page"'
 
+#Void
+menuStart
+menuSeparator 'Void Linux Online'
+menuItem 'Start Page' 'xdg-open "https://voidlinux.org/"'
+menuItem 'Forum Stackexchange' 'xdg-open "https://unix.stackexchange.com/questions/tagged/void-linux"'
+menuItem 'Forum Reddit' 'xdg-open "https://www.reddit.com/r/voidlinux"'
+menuItem 'Void Wiki' 'xdg-open "https://wiki.voidlinux.org/Main_Page"'
 menuSeparator 'Guide'
 
 menuSubmenu 'Openbox' 'Openbox'

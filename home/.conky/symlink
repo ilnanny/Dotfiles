@@ -9,5 +9,5 @@ ln -s ~/.conky/4cpu ~/.conkyrc
 ln -s ~/.conky/8cpu ~/.conkyrc
 ln -s ~/.conky/12cpu ~/.conkyrc
 
-killall conky &&
+killall conky && conky &
 

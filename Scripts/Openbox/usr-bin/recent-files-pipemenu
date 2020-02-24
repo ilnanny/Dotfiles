@@ -16,9 +16,9 @@ elif [ -r "${HOME}/.local/share/recently-used.xbel" ]; then
 elif [ -r "${HOME}/.recently-used.xbel" ]; then
     file_path="${HOME}/.recently-used.xbel"
 else
-    echo "$0: non trovo il file recently-used.xbel" >&2
+    echo "$0: cannot find a readable recently-used.xbel file" >&2
     echo '<openbox_pipe_menu>
-<separator label="Nessun file recently-used.xbel trovato." />
+<separator label="No recently-used.xbel file found." />
 </openbox_pipe_menu>'
     exit 1
 fi
@@ -74,7 +74,7 @@ files=$(perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "$files")
 output='<openbox_pipe_menu>
 '"$files"'
 <separator/>
-  <item label="Elimina  Files Recenti">
+  <item label="Clear Recent Files">
     <action name="Execute">
       <command>&apos;'"$0"'&apos; --clear</command>
     </action>

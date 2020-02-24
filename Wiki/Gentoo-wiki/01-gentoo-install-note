@@ -22,14 +22,14 @@
 == Scarica lo stage3 e scompattalo
 ==========================================
  wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20200219T214502Z/stage3-amd64-20200219T214502Z.tar.xz
- tar xvfJ stage3-*.tar.xz --xattrs --numeric-owner
+ tar xpf  stage3-amd64-20200219T214502Z.tar.xz
 ====================================================
  cd  --
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 ==========================================
 == Scarica portage e scompattalo
- cd /usr/
+ cd /mnt/gentoo/usr/
  wget https://gentoo.osuosl.org/snapshots/portage-latest.tar.bz2
  tar xvjpf portage-latest.tar.bz2 --xattrs --numeric-owner
 ====================================================
@@ -43,14 +43,10 @@
   mount --make-rslave /mnt/gentoo/sys
   mount --rbind /tmp /mnt/gentoo/tmp
 
-== Se usi debian live:
-== export PATH="$PATH:/usr/sbin:/sbin:/bin"
 
   chroot /mnt/gentoo /bin/bash
 
   export PS1="\033[1;33m([chroot])\033[0m $PS1"
-
-  mirrorselect -i -o >> /etc/portage/make.conf
 
 ==========================================
 == Controllo rete carica i repo
@@ -66,7 +62,7 @@
 == Scegli un profilo
  =============================
  eselect profile list
- eselect profile set 16
+ eselect profile set 20
  env-update && source /etc/profile
 ==========================================
 == Modifica i Files:
@@ -131,10 +127,12 @@ LANG="it_IT.UTF-8"
 ====================================================================
 ==== Kernel
 
-  emerge --ask gentoo-kernel-bin\
-  intel-microcode grub mdadm gentoolkit \
+  emerge --ask gentoo-kernel-bin \
+  intel-microcode grub
+
+  emerge --ask mdadm gentoolkit \
   linux-firmware os-prober ntfs3g usbutils \
-  pciutils elogind e2fsprogs gvfs dev-vcs/git
+  pciutils elogind e2fsprogs gvfs dev-vcs/git net-misc/ntp
 
    cd /usr/src/linux
    zcat /proc/config.gz > .config
@@ -154,7 +152,7 @@ LANG="it_IT.UTF-8"
 
 ====================================================================
 == Rete:
-  emerge --ask  networkmanager dhcpcd
+  USE="-bindist" emerge --ask networkmanager net-misc/dhcpcd
 
 = carica il demone all'avvio:
   rc-update add NetworkManager default
@@ -211,7 +209,7 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
  env-update && source /etc/profile
 
 === Xorg:
- emerge --ask xorg-x11 xorg-server xorg-drivers xterm
+ emerge --ask xorg-x11 xorg-server xorg-drivers xterm xinit xrandr
 
 == Drivers NVIDIA
 
@@ -226,7 +224,7 @@ nano -w /etc/portage/make.conf
 
  VIDEO_CARDS="nvidia"
 
-emerge --ask nvidia-drivers nvidia-kernel-modules
+emerge --ask nvidia-drivers
 
 == == ==
 nano -w /etc/portage/package.mask
@@ -253,22 +251,6 @@ EndSection
 eselect opengl set nvidia
 eselect opencl set nvidia
 
-
-=== Xfce:
- emerge --ask xfce4-meta xfce4-terminal thunar thunar-volman thunar-archive-plugin xfce4-mount-plugin
-
-=carica il demone all'avvio:
- rc-update add dbus default
-
-=== dm:
- emerge --ask lightdm
-
-= Sostituisci xdm con lightdm in :
- nano -w /etc/conf.d/xdm
-
-= Carica il demone all'avvio:
- rc-update add xdm default
-
 == Cron
   emerge --ask anacron
   /etc/init.d/anacron start
@@ -281,17 +263,25 @@ eselect opencl set nvidia
 
 # Alternativamente avvia 0anacron ogni ora
 # 59 * * * *  root  /etc/cron.hourly/0anacron
-=============================================================
-# == Software :
-=== Xfce - Openbox 'vedi software'
- emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin
- emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2
+==============================================
+
+=== Xfce4
+ emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin xfce-extra/xfce4-screenshooter
+
+=== Openbox
+ emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 dunst
+
+ emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance xfce4-screenshooter
+
+ emerge --ask xfce4-panel xfce4-terminal keybinder
+
+=== Thunar
  emerge --ask thunar thunar-volman thunar-archive-plugin
 
-=carica il demone all'avvio:
+ =carica il demone all'avvio:
  rc-update add dbus default
 
-=== lxdm:
+=== Lxdm
  emerge lxdm
 
 = Sostituisci xdm con lxdm in :
@@ -300,35 +290,17 @@ nano -w /etc/conf.d/xdm
 = Carica il demone all'avvio:
  rc-update add xdm default
 
-== Cron
-  emerge --ask anacron
-  /etc/init.d/anacron start
-  rc-update add anacron default
-  gpasswd -a ilnanny cron
-  nano -w /etc/crontab
-
-# Avvia anacron ogni 10 minuti
-*/10 * * *  root  /usr/sbin/anacron
-
-# Alternativamente avvia 0anacron ogni ora
-# 59 * * * *  root  /etc/cron.hourly/0anacron
-=============================================================
-
-# == Software :
+# == Strumenti , media , grafica .
 
  emerge --ask autoconf automake cmake curl ninja nodejs meson
 
- emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite
+ emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite layman genlop
 
- USE="gstreamer"  emerge --ask  sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol
+ USE="gstreamer"  emerge --ask  sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol  pamix volumeicon
 
- emerge --ask x11-wm/openbox x11-misc/obmenu x11-misc/obtheme x11-misc/obconf lxappearance obtheme nitrogen x11-misc/rofi
+ USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
 
- emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton
-
- USE="X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 nvidia" emerge --ask app-admin/conky
-
- USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm ntfs" emerge -av gparted
+ USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
 
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
@@ -343,31 +315,39 @@ nano -w /etc/conf.d/xdm
 
 #==================================================================================================
 
-##                                 Fstab    Gentoo
-#==================================================================================================
-##  ==    Pseudo Filestystem
+#==                                  Fstab  Gentoo
+#=========================================================================================
+#    ==    FileSystem Virtuale
 
-# devpts             /dev/pts         devpts       gid=5,mode=620               0   0
-# proc               /proc            proc         defaults                     0   0
-# tmpfs              /dev/shm         tmpfs        defaults                     0   0
-# /dev/cdrom         /mnt/cdrom       auto         noauto,owner,ro,comment=x-gvfs-show     0   0
-#==================================================================================================
-##  ==    LInux Filesystem
+#devpts          /dev/pts       devpts  gid=5,mode=620          0  0
+#proc		/proc		proc	defaults		0  0
+#shm		/dev/shm	tmpfs	nodev,nosuid,noexec	0  0
+#=========================================================================================
+#   ==    FileSystem  Linux
 
-## == sdc2 = Gentoo
-UUID=00084a44-ec1a-43a8-b137-d30dfb51744f   /	    ext4	rw,errors=remount-ro	0   1
+# === Root
+/dev/sdc2       /             ext4      rw,errors=remount-ro    0  1
 
-## == sda3 = Swap
-UUID=60d4be6e-bed0-4bbe-ab08-517738f0f6a0   swap	swap	sw	 0   0
+# === Swap
+/dev/sdc1       none      swap      sw      0  0
 
-#==================================================================================================
-##  ==    Ntfs Filesystem
+#=========================================================================================
+#   ==    FileSystem  Ntfs
 
-## = sdb1 = Dati
-#UUID=76CDC3FF57CBA78E	/media/Dati	ntfs-3g	defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0
+# === Dati
+UUID=76CDC3FF57CBA78E   /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF-8 0  0
 
-#==================================================================================================
+#=========================================================================================
 
+** Note:
 
 ** grub-mkconfig –o /boot/grub/grub.cfg
    grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+** == Se usi debianper il chroot:
+   == export PATH="$PATH:/usr/sbin:/sbin:/bin"
+
+#=========================================================
+

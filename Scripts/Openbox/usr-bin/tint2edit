@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
-
-#================================================
+#===========================================
 
 readonly TITLE="Tint2 Edit"
+readonly ICON="--window-icon=/usr/share/icons/48x48.png"
 readonly CHECKLIST="zenity --width=400 --height=500 $ICON --list --checklist --multiple"
 readonly TPATH="$HOME/.config/tint2"
 readonly FILES=($(find "$TPATH" -maxdepth 4 -type f))
-
+readonly HELP='
+\ttint2edit a script to edit selected tint2 config files
+\nOptions:
+\t-h --help   show this message
+\nNo other options are supported.
+\nTint2 files must be in ~/.config/tint2
+Checkmarked tint2s will be opened in the text editor.
+Multiple tint2s can be chosen.'
 
 case "$@" in
     -h|--help) echo -e "$HELP" ; exit 0
@@ -20,7 +27,7 @@ edit_Configs() {
             ARRAY+=("$file")
         fi
     done
-    MSG="<big>Seleziona il tint2 config da editaret</big>\n\n"
+    MSG="<big>Select tint2 configs to edit</big>\n\n"
     ANSWER=$($CHECKLIST --title="$TITLE" --text="$MSG" --column="Select" --column="Name" $LIST --separator=" ")
     if [[ $? == 1 ]]; then
         exit 0

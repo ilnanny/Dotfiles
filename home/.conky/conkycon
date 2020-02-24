@@ -148,15 +148,15 @@ ${offset 1}${color1}Uso:${font}${color}${fs_used /media/Dati} ${alignr}${color1}
 #-------------------------------------
 ${voffset -4}${font}${color}Rete $stippled_hr${font}
 #°°°°°°°°°°°°°°°
-#     Wlan1    °
+#     wlan0    °
 #°°°°°°°°°°°°°°°
-${if_up wlan1}
-${voffset -5}${color0}${font ConkyColors:size=16}s${font}${color}${goto 32}${voffset -12}Up: ${font}${color1}${upspeed wlan1}${color}${font} ${alignr}${color2}${upspeedgraph wlan1 8,60 87C7F9 87B4F9}${color2}
-${goto 32}Totale: ${font}${color2}${totalup wlan1}${color}${font}
-${voffset 2}${color0}${font ConkyColors:size=16}t${font}${color}${goto 32}${voffset -12}Down: ${font}${color1}${downspeed wlan1}${color}${font} ${alignr}${color2}${downspeedgraph wlan1 8,60 87C7F9 87B4F9}${color}
-${goto 32}Totale: ${font}${color2}${totaldown wlan1}${color}${font}
-${color0}${font ConkyColors:size=16}j${font}${color}${voffset -6}${goto 32}Segnale: ${font}${color1}${wireless_link_qual_perc wlan1}%${color}${font} ${alignr}${color2}${wireless_link_bar 8,60 wlan1}${color}
-${voffset 2}${color0}${font ConkyColors:size=16}B${font}${color}${goto 32}${voffset -6}Ip Locale: ${alignr}${color2}${addr wlan1}${color}
+${if_up wlan0}
+${voffset -5}${color0}${font ConkyColors:size=16}s${font}${color}${goto 32}${voffset -12}Up: ${font}${color1}${upspeed wlan0}${color}${font} ${alignr}${color2}${upspeedgraph wlan0 8,60 87C7F9 87B4F9}${color2}
+${goto 32}Totale: ${font}${color2}${totalup wlan0}${color}${font}
+${voffset 2}${color0}${font ConkyColors:size=16}t${font}${color}${goto 32}${voffset -12}Down: ${font}${color1}${downspeed wlan0}${color}${font} ${alignr}${color2}${downspeedgraph wlan0 8,60 87C7F9 87B4F9}${color}
+${goto 32}Totale: ${font}${color2}${totaldown wlan0}${color}${font}
+${color0}${font ConkyColors:size=16}j${font}${color}${voffset -6}${goto 32}Segnale: ${font}${color1}${wireless_link_qual_perc wlan0}%${color}${font} ${alignr}${color2}${wireless_link_bar 8,60 wlan0}${color}
+${voffset 2}${color0}${font ConkyColors:size=16}B${font}${color}${goto 32}${voffset -6}Ip Locale: ${alignr}${color2}${addr wlan0}${color}
 #°°°°°°°°°°°°°°°
 #      Eth0    °
 #°°°°°°°°°°°°°°°

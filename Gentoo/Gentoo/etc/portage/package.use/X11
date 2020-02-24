@@ -1,6 +1,6 @@
-x11-misc/dunst dunstify
+x11-libs/gtk+ X cups introspection cloudprint vim-syntax xinerama colord
 
-app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 
+x11-misc/dunst dunstify
 
 x11-misc/tint2 tint2conf startup-notification svg
 
