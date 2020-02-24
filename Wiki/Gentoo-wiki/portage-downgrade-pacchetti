@@ -1,8 +1,0 @@
-prima vedere le versioni disponibili con  eix nome_pacchetto
-emerge -av =ramo/versione-pacchetto
-
-esempio:
-
-emerge -av =kde-base/kdelibs-4.3.5
-
-emerge -av =dev-libs/openssl-1.0.2o-r6

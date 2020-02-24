@@ -1,5 +1,0 @@
-esempio evolve 
-
-
-xfconf-query -c xsettings -p /Net/ThemeName -s "Evolve"
-xfconf-query -c xfwm4 -p /general/theme -s "Evolve"

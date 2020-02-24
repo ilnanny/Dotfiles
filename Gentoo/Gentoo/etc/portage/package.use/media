@@ -6,6 +6,8 @@ media-gfx/sane-backends usb
 
 media-gfx/xsane tiff gimp lcms ocr
 
+media-libs/libcanberra gstreamer
+
 media-libs/gegl cairo
 
 media-libs/gst-plugins-base theora
@@ -23,6 +25,8 @@ media-plugins/gst-plugins-meta  X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http
 media-sound/audacity flac id3tag lame libav midi twolame vorbis
 
 media-sound/pulseaudio gnome
+
+media-sound/xmms curl
 
 media-video/ffmpeg opus
 

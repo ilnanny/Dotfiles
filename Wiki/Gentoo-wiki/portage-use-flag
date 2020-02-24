@@ -1,6 +1,0 @@
-
-esempio aggiungere imlib nelle use-flag di conky
-
-echo "app-admin/conky imlib" >> /etc/portage/package.use
-
-emerge --ask conky
