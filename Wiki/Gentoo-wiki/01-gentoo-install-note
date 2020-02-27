@@ -273,7 +273,8 @@ eselect opencl set nvidia
 
  emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance xfce4-screenshooter
 
- emerge --ask xfce4-panel xfce4-terminal keybinder
+ emerge --ask xfce4-panel xfce4-terminal keybinder xfce-extra/tumbler xdg-utils xdg-user-dirs-gtk xdg-user-dirs
+
 
 === Thunar
  emerge --ask thunar thunar-volman thunar-archive-plugin

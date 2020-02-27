@@ -1,7 +1,0 @@
-dev-cpp/ms-gsl ~amd64
-dev-cpp/range-v3 ~amd64
-dev-libs/jsoncpp ~amd64
-dev-libs/pcc-libs ~amd64
-dev-libs/range ~amd64
-dev-python/jinja ~amd64
-dev-util/cmake ~amd64

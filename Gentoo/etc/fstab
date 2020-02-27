@@ -1,0 +1,24 @@
+#
+#                           Fstab  Gentoo
+#___________________________________________________________________________
+# ______   FileSystem Virtuale
+
+#devpts   /dev/pts      devpts    gid=5,mode=620        0  0
+#proc     /proc         proc      defaults              0  0
+#shm      /dev/shm      tmpfs     nodev,nosuid,noexec   0  0
+#___________________________________________________________________________
+# ______   FileSystem  Linux
+
+# Root
+/dev/sdc2      /       ext4    rw,errors=remount-ro    0  1
+
+# Swap
+/dev/sdc1     none     swap     sw      0  0
+
+#___________________________________________________________________________
+# ______   FileSystem  Ntfs
+
+# Dati
+/dev/sdb1  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF-8 0  0
+
+#___________________________________________________________________________

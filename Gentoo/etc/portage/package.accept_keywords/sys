@@ -1,0 +1,13 @@
+sys-apps/bleachbit                   ~amd64
+sys-apps/debianutils                 ~amd64
+sys-apps/inxi                        ~amd64
+sys-apps/pacman                      ~amd64
+sys-apps/portage                     ~amd64
+sys-apps/yarn                        ~amd64
+sys-boot/plymouth-openrc-plugin      ~amd64
+sys-boot/woeusb                      ~amd64
+sys-fs/android-file-transfer-linux   ~amd64
+sys-fs/squashfuse                    ~amd64
+sys-kernel/gentoo-kernel-bin         ~amd64
+sys-kernel/gentoo-sources            ~amd64
+sys-kernel/installkernel-gentoo      ~amd64

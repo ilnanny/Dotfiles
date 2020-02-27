@@ -5,7 +5,8 @@ emerge mpd mpc
 Nota, mpc è un client per MPD. MPC si connette a un MPD e lo controlla in base ai comandi e gli argomenti passati ad esso. Se non viene fornito alcun comando, lo stato corrente viene stampata (come ‘mpc status’).
 Configurazione
 
-Al termine dell’installazione di MPD diventare root, o usare sudo, per aprire con il proprio editor di testo preferito il file /etc/mpd.conf per modificarlo.
+Al termine dell’installazione di MPD diventare root,
+gy /etc/mpd.conf
 Si dovrebbe vedere qualcosa di simile a questo:
 
 music_directory       "/home/user/Music"         # Your music dir.
@@ -15,7 +16,7 @@ log_file              "/home/user/.mpd/mpd.log"
 pid_file              "/home/user/.mpd/mpd.pid"
 state_file            "/home/user/.mpd/mpdstate"
 #user                  "user"
-audio_output { 
+audio_output {
          type                    "alsa"
          name                    "HDA-intel"
          device                  "hw:0,0"     # optional
@@ -41,8 +42,8 @@ Fatelo partire con il comando
 
 . Prima di aggiungerlo come un demone predefinito sul sistema, bisogna fare ancora qualche modifica nel file mpd.conf quindi aprirlo di nuovo. Nella sezione bind at address cambiare la variabile da localhost ad any ed aggiungere la sezione per fare http in streaming:
 
-audio_output {    
-        type            "httpd"    
+audio_output {
+        type            "httpd"
         name            "My HTTP Stream"
         encoder         "vorbis"                # optional, vorbis or lame
         port            "8000"

@@ -1,0 +1,16 @@
+Importante, ai fini di avere la massima compatibilità è consigliabile installare un BIOS europeo SCPH-70004-v12, una volta recuperati i files posizionarli nel folder /home/$USER/.config/PCSX2/bios
+
+Caricati i file lanciamo PCSX2 e andiamo nella configurazione del BIOS e selezioniamo il BIOS desiderato. A quel punto saremo pronti a fare il primo boot della nostra PS2.
+
+Terminata la configurazione di massima potremmo quindi procedere alla configurazione dei dettaglio. Nel caso di giochi più vecchi andrà benissimo la configurazione di default, mentre nel caso di giochi più recenti, dovremmo settare l’emulatore in modo da ottimizzarlo.
+Ecco ad esempio la guida che ho seguito per Gran Turismo 4
+
+Va detto però che la macchina su cui girerà l’emulatore dovrà essere piuttosto performante, scordatevi dunque di emulare una PS2 su un vecchio PC, ma serve almeno un PC di fascia media.
+
+Configurazione consigliata:
+
+    Processore i3
+    Ram 8GB
+    Scheda video dedicata con almeno 1GB di RAM
+
+Infine PCSX2 esiste per Windows, Linux e Mac. Ovviamente la versione più supportata è quella per Windows.

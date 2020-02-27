@@ -1,0 +1,41 @@
+media-gfx/brother-scan4-bin usb
+
+media-gfx/darktable colord cups flickr geolocation gnome-keyring gphoto2 graphicsmagick
+
+media-gfx/sane-backends usb
+
+media-gfx/xsane tiff gimp lcms ocr
+
+media-libs/libcanberra gstreamer
+
+media-libs/gegl cairo
+
+media-libs/gst-plugins-base theora
+
+media-libs/harfbuzz icu
+
+media-libs/libvpx postproc
+
+media-libs/openal pulseaudio
+
+media-libs/mesa bindist
+
+media-plugins/alsa-plugins pulseaudio
+
+media-plugins/gst-plugins-meta  X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264
+
+media-sound/audacity flac id3tag lame libav midi twolame vorbis
+
+media-sound/pulseaudio gnome
+
+media-sound/xmms curl
+
+media-video/ffmpeg opus
+
+media-video/vlc X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265
+
+
+
+
+
+

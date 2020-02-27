@@ -1,0 +1,17 @@
+app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2
+
+app-admin/system-config-printer gnome-keyring policykit
+
+app-crypt/pinentry gnome-keyring
+
+app-emulation/virtualbox alsa headless lvm opengl opus pam pax_kernel python qt5 sdk udev java vboxwebsrv vnc
+
+app-emulation/virtualbox-bin additions rdesktop-vrdp
+
+app-office/libreoffice-bin   java
+
+app-text/ghostscript-gpl cups
+
+app-text/poppler cairo
+
+app-text/xmlto text
