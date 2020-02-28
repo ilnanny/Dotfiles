@@ -7,7 +7,9 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-
-echo "devi avere installato il pacchetto ntpdate"
+echo "__________________________________________"
+echo "                                          "
+echo "  Devi aver Installato il pacchetto Ntp   "
+echo "__________________________________________"
 sudo ntpdate it.pool.ntp.org
 exit

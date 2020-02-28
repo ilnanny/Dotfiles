@@ -134,13 +134,6 @@ LANG="it_IT.UTF-8"
   linux-firmware os-prober ntfs3g usbutils \
   pciutils elogind e2fsprogs gvfs dev-vcs/git net-misc/ntp
 
-   cd /usr/src/linux
-   zcat /proc/config.gz > .config
-   make menuconfig
-   make -j8 && make modules modules_install
-   make install
-   emerge @module-rebuild
-
 ==== con genkernel:
 
   genkernel --makeopts=-j9 --kernel-config=/root/config all
@@ -164,7 +157,7 @@ LANG="it_IT.UTF-8"
 == Imposta un Hostname:
  nano -w /etc/conf.d/hostname
 
-T3500GEN
+hostname"T3500GEN"
 
 == imposta localhost
  nano -w /etc/hosts
