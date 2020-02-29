@@ -6,6 +6,7 @@
 #=   D.A.Page  : http://ilnanny.deviantart.com   =
 #=   Github    : https://github.com/ilnanny      =
 #=================================================
+# Richiede il software lshw
 #=================================================
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root

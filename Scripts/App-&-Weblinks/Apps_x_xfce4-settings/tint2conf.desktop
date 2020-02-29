@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Tint2 Settings
+GenericName=Panel configurator
+Comment=Tool to configure the tint2 panel
+Exec=tint2conf
+Icon=tint2conf
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
+Name[it_IT.UTF-8]=tint2conf

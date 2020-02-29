@@ -1,25 +1,10 @@
 #!/usr/bin/env python
-#
-# Ciao!
-# Forse ti starai chiedendo cosa sia questo gigantesco blob di dati binari
-# è anche preoccupato che stiamo facendo qualcosa di nefasto (buono per te per essere
-# paranoico!). Questa è una codifica base85 di un file zip, questo file zip contiene
+# Questa è una codifica base85 di un file zip, che contiene
 # un'intera copia di pip (versione 19.0.3).
-#
-# Pip è una cosa che installa i pacchetti, pip stesso è un pacchetto che qualcuno
-# potrebbe voler installare, specialmente se stanno cercando di eseguire get-pip.py
-# script. Pip ha un sacco di codice per gestire la sicurezza dell'installazione
-# pacchetti, vari casi limite su varie piattaforme e altri tipi di questo tipo
-# "conoscenza tribale" che è stata codificata nella sua base di codice. A causa di ciò
-# fondamentalmente includiamo un'intera copia di pip all'interno di questo blob. Lo facciamo
-# perché le alternative tentano di implementare un "minipip" che probabilmente
-# non fa le cose correttamente e ha strani casi limite, o comprime il pip stesso
-# in un singolo file.
-#
-# Se ti stai chiedendo come viene creato, sta utilizzando un'attività invoke localizzata
+# Utilizzando un'attività invoke localizzata
 # in tasks/generate.py chiamato "installer". Può essere invocato usando
-# `` invoca generate.installer``.
-# lancialo : python /media/Dati/Git/Dotfiles/Scripts/get-pip.py
+# `` invoke generate.installer``.
+# `` python /media/Dati/Git/Dotfiles/Scripts/get-pip.py ``.
 
 import os.path
 import pkgutil
@@ -87,10 +72,10 @@ def bootstrap(tmpdir=None):
     #Wrapper per fornire un certificato predefinito con la priorità più bassa
     class CertInstallCommand(InstallCommand):
         def parse_args(self, args):
-            # If cert isn't specified in config or environment, we provide our
-            # own certificate through defaults.
-            # This allows user to specify custom cert anywhere one likes:
-            # config, environment variable or argv.
+             # Se il certificato non è specificato nella configurazione o nell'ambiente, forniamo il nostro
+             # certificato proprio tramite valori predefiniti.
+             # Ciò consente all'utente di specificare il certificato personalizzato ovunque ci si desideri:
+             # config, variabile d'ambiente o argv.
             if not self.parser.get_default_values().cert:
                 self.parser.defaults["cert"] = cert_path  # calculated below
             return super(CertInstallCommand, self).parse_args(args)
@@ -101,20 +86,19 @@ def bootstrap(tmpdir=None):
     implicit_setuptools = True
     implicit_wheel = True
 
-    # Check if the user has requested us not to install setuptools
+    # Controlla se l'utente ci ha richiesto di non installare setuptools
     if "--no-setuptools" in sys.argv or os.environ.get("PIP_NO_SETUPTOOLS"):
         args = [x for x in sys.argv[1:] if x != "--no-setuptools"]
         implicit_setuptools = False
     else:
         args = sys.argv[1:]
 
-    # Controlla se l'utente ci ha richiesto di non installare la ruota 
+    # Controlla se l'utente ha richiesto di non installare wheel
     if "--no-wheel" in args or os.environ.get("PIP_NO_WHEEL"):
         args = [x for x in args if x != "--no-wheel"]
         implicit_wheel = False
 
-    # Vogliamo solo installare setuptools e wheel se non lo fanno
-    # esiste già sulla piattaforma di destinazione.
+    # Se non à già installato setuptools e  wheel lo installo
     if implicit_setuptools:
         try:
             import setuptools  # noqa
@@ -141,7 +125,7 @@ def bootstrap(tmpdir=None):
         elif implicit_wheel and req.name == "wheel":
             implicit_wheel = False
 
-    # Add any implicit installations to the end of our args
+    # Aggiungi eventuali installazioni implicite alla fine dei nostri argomenti
     if implicit_pip:
         args += ["pip"]
     if implicit_setuptools:
@@ -149,28 +133,28 @@ def bootstrap(tmpdir=None):
     if implicit_wheel:
         args += ["wheel"]
 
-    # Add our default arguments
+    # Aggiungi i nostri argomenti predefiniti
     args = ["install", "--upgrade", "--force-reinstall"] + args
 
     delete_tmpdir = False
     try:
-        # Create a temporary directory to act as a working directory if we were
-        # not given one.
+        # Crea una directory temporanea che funga da directory di lavoro
+        # se non ce ne fosse data una.
         if tmpdir is None:
             tmpdir = tempfile.mkdtemp()
             delete_tmpdir = True
 
-        # We need to extract the SSL certificates from requests so that they
-        # can be passed to --cert
+        # Dobbiamo estrarre i certificati SSL dalle richieste in modo
+        # che possano essere passati a --cert
         cert_path = os.path.join(tmpdir, "cacert.pem")
         with open(cert_path, "wb") as cert:
             cert.write(pkgutil.get_data("pip._vendor.certifi", "cacert.pem"))
 
-        # Execute the included pip and use it to install the latest pip and
-        # setuptools from PyPI
+        # Eseguire il pip incluso e utilizzarlo per installare l'ultimo pip e
+        # setuptools da PyPI
         sys.exit(pip._internal.main(args))
     finally:
-        # Remove our temporary directory
+        # Rimuove la directory temporanea
         if delete_tmpdir and tmpdir:
             shutil.rmtree(tmpdir, ignore_errors=True)
 
@@ -178,21 +162,21 @@ def bootstrap(tmpdir=None):
 def main():
     tmpdir = None
     try:
-        # Create a temporary working directory
+        # Crea una directory temporanea di lavoro
         tmpdir = tempfile.mkdtemp()
 
-        # Unpack the zipfile into the temporary directory
+        # Decomprimi il file zip nella directory temporanea
         pip_zip = os.path.join(tmpdir, "pip.zip")
         with open(pip_zip, "wb") as fp:
             fp.write(b85decode(DATA.replace(b"\n", b"")))
 
-        # Add the zipfile to sys.path so that we can import it
+        # Aggiunge il file zip a sys.path in modo che possiamo importarlo
         sys.path.insert(0, pip_zip)
 
-        # Run the bootstrap
+        # Àvvia bootstrap
         bootstrap(tmpdir=tmpdir)
     finally:
-        # Clean up our temporary working directory
+        # Pulisci la nostra directory di lavoro temporanea
         if tmpdir:
             shutil.rmtree(tmpdir, ignore_errors=True)
 

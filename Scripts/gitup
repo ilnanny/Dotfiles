@@ -53,7 +53,7 @@ git commit -m "$input"
 
 #  Invia i file locali a github
 printf "${Cyan}===================================\n"
-printf "${Yellow} ===   Aggiorno il Repo Online   ===\n"
+printf "${Yellow}===   Aggiorno il Repo Online   ===\n"
 printf "${Cyan}===================================${Red}\n"
 git push -u origin master
 

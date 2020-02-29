@@ -3,13 +3,23 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-#Registra uno screencast in mpeg in /tmp/:
-#================================================
 #
-ffmpeg -f x11grab -s 1920x1080 -i :0.0 /tmp/screencast.mpg
+# Richiede il software ffmpeg
+#
+# Registro un video con estensione 'avi' con il codec 'libx264'
+# con una risoluzione di 1920x1080 a 60 frame per secondo.
 echo ="================================================"
-echo ="     Il tuo video è stato slavato in /tmp       "
+echo ="  Per Fermare la registrazione premi CTRL+CANC  "
 echo ="================================================"
+sleep 2
+ffmpeg -f x11grab -r 60 -s 1920x1080 -i :0.0 -vcodec libx264 /tmp/screencast.avi
+echo ="================================================"
+echo ="      Ecco il tuo video salvato in   /tmp       "
+echo ="================================================"
+sleep 1
+thunar /tmp
+
+

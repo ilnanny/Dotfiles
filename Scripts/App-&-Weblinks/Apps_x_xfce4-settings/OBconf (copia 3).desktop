@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=LXappearance
+Name[it]=Personalizza aspetto e stile
+GenericName=LXappearance
+Comment=Customizes look and feel of your desktop and applications
+Icon=preferences-desktop-theme
+Exec=lxappearance
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
+Name[it_IT.UTF-8]=lxappearance

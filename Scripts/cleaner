@@ -3,14 +3,14 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
 echo "#################################################"
 echo "#  ELIMINO FILE TEMPORANEI E CESTINO DI SISTEMA #"
 echo "#################################################"
-sudo rm -fr /tmp/* 
+sudo rm -fr /tmp/*
 sudo rm -rfv ~/.cache ~/.local/share/Trash ~/.thumbnails
 sudo rm -rf  ~/.local/share/Trash/files/*
 echo "#############################################"
@@ -26,7 +26,6 @@ echo "#############################################"
 echo "#        RIGENERO IL DESKTOP DATABASE       #"
 echo "#############################################"
 sudo update-desktop-database
-update-desktop-database
 echo "#############################################"
 echo "#        FATTO , CHIUDI IL TERMINALE !      #"
 echo "#############################################"

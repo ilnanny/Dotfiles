@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=NVIDIA X Server Settings
+Comment=Configure NVIDIA X Server Settings
+Exec=/usr/bin/nvidia-settings
+Icon=nvidia-settings
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;

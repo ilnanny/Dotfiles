@@ -3,7 +3,7 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
@@ -14,7 +14,7 @@ function check_exit_value {
     # https://help.gnome.org/users/zenity/stable/usage.html.en
     if [ $exit_value != 0 ]; then
         exit 1
-    fi   
+    fi
 }
 
 
@@ -29,7 +29,7 @@ check_exit_value
 expected_checksum=$(zenity --entry --title="$title" --text="Checksum corretto" --entry-text="")
 
 
-check_exit_value 
+check_exit_value
 
 
 sumtype=$(zenity --title="$title" --text="Checksum type" --list --radiolist --column "Scegli" --column "Tipo" TRUE MD5 FALSE SHA1 FALSE SHA256)
@@ -61,4 +61,4 @@ else
 fi
 
 
- 
+
