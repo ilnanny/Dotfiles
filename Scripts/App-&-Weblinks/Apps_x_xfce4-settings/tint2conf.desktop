@@ -8,5 +8,5 @@ Icon=tint2conf
 Terminal=false
 StartupNotify=true
 Type=Application
-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
 Name[it_IT.UTF-8]=tint2conf
