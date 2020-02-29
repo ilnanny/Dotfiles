@@ -33,7 +33,7 @@ echo `# pacman -Syu` \
 	`# File manager(GUI)` pcmanfm gvfs xarchiver \
 	`# Filesystems` exfat-utils ntfs-3g  \
 	`# Gparted` gparted \
-	`# Video player` vlc qt4 mpv \
+	`# Video player` vlc qt5ct mpv \
 	`# Office` libreoffice \
 	`# Bitmap/vector edit` gimp inkscape krita \
 	`# Audio/video edit` audacity handbrake obs-studio \

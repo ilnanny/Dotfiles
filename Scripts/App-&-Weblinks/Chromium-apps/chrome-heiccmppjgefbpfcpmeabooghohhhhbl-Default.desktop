@@ -1,4 +1,5 @@
 #!/usr/bin/env xdg-open
+
 [Desktop Entry]
 Version=1.0
 Terminal=false
@@ -7,3 +8,4 @@ Name=eBay | Tecnologia, moda, fai da te: p...
 Exec=/usr/bin/chromium --profile-directory=Default --app-id=heiccmppjgefbpfcpmeabooghohhhhbl
 Icon=chrome-heiccmppjgefbpfcpmeabooghohhhhbl-Default
 StartupWMClass=crx_heiccmppjgefbpfcpmeabooghohhhhbl
+Name[it_IT.UTF-8]=eBay 

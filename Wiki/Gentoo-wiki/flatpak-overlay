@@ -1,0 +1,35 @@
+Crea il file repositorio:
+
+  nano -w /etc/portage/repos.conf/flatpak-overlay.conf
+
+[flatpak-overlay]
+priority = 50
+location = <repo-location>/flatpak-overlay
+sync-type = git
+sync-uri = https://github.com/fosero/flatpak-overlay.git
+auto-sync = Yes
+
+Aggiungi il repo alla sincro
+  emaint -r flatpak-overlay sync
+
+Aggiorna i repository
+  emerge --sync
+
+Installa il software necessario
+  emerge --ask sys-apps/flatpak
+
+Esempio se utilizzo XFCE4 o WM vari con Openrc ,aggiungo anche le use flag:
+
+   USE="curl gtk policykit seccomp -doc -gnome -introspection -kde" emerge --ask sys-apps/flatpak
+
+=================================
+Software:
+ sys-apps/flatpak
+Dipendenze:
+ acct-group/flatpak
+ acct-user/flatpak
+ sys-apps/xdg-desktop-portal
+ sys-fs/libostree
+ sys-apps/xdg-desktop-portal-gtk
+ sys-apps/flatpak
+=================================

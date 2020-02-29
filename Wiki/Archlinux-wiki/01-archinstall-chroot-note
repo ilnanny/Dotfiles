@@ -1,18 +1,17 @@
 =====================================================
 Crea le Cartelle e monta le partizioni:
 ==========================================
-
+ blkid -c /dev/null -o list
  mkdir /mnt/archlinux/
  mount /dev/sdc3 /mnt/archlinux/
  mount -o remount,rw /dev/sdc3 /mnt/archlinux/
- cp -L /etc/resolv.conf /mnt/archlinux/etc/
  cd /mnt/archlinux/
 
 ==========================================
 == Scarica l''immagine  e scompattala
 ==========================================
 wget https://archlinux.beccacervello.it/archlinux/iso/2020.02.01/archlinux-bootstrap-2020.02.01-x86_64.tar.gz
-tar xzf archlinux-bootstrap-2020.02.01-x86_64.tar.gz -C /mnt/archlinux/
+tar xzf archlinux-bootstrap-2020.02.01-x86_64.tar.gz
 taglia tutte i file dalla cartella root.x86_64 e incolla in /mnt/archlinux
 ====================================================
  cd  --
@@ -72,7 +71,7 @@ nano /etc/hosts
 _______________________________________________________kernel e password
 mkinitcpio -p linux
 passwd
-_______________________________________________________software
+_______________________________________________________softwares
 pacman -Syu
 pacman -S grub os-prober ntfs-3g freetype2 fuse2 dosfstools mtools
 pacman -S iw networkmanager wpa_supplicant curl wget wgetpaste gnome-keyring

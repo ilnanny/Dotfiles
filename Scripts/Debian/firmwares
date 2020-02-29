@@ -1,32 +1,29 @@
 #!/bin/bash
 #================================================
-#================================================
 #   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Author    : Cristian Pozzessere < ilnanny > =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-#================================================
-# Codici colore ANSI
-#
-# Black        0;30     Dark Gray     1;30
-# Red          0;31     Light Red     1;31
-# Green        0;32     Light Green   1;32
-# Brown/Orange 0;33     Yellow        1;33
-# Blue         0;34     Light Blue    1;34
-# Purple       0;35     Light Purple  1;35
-# Cyan         0;36     Light Cyan    1;36
-# Light Gray   0;37     White         1;37
-#
-# Costanti
-#
-Cyan="\033[0;36m"	# Cyan
-Red='\033[0;31m'	# Red
-LRed='\033[1;31m'	# Light Red
-Yellow='\033[1;33m'	# Yellow
-Nc='\033[0m' 		# No Color
-
-# #################################################################
+#             Codici colore ANSI                =
+#_______________________________________________=
+# Black        0;30     Dark Gray     1;30      =
+# Red          0;31     Light Red     1;31      =
+# Green        0;32     Light Green   1;32      =
+# Brown/Orange 0;33     Yellow        1;33      =
+# Blue         0;34     Light Blue    1;34      =
+# Purple       0;35     Light Purple  1;35      =
+# Cyan         0;36     Light Cyan    1;36      =
+# Light Gray   0;37     White         1;37      =
+#_______________________________________________=
+#                  Costanti                     =
+#_______________________________________________=
+Cyan="\033[0;36m"
+Red="\033[0;31m"
+LRed="\033[1;31m"
+Yellow="\033[1;33m"
+Nc="\033[0m"
+#_______________________________________________=
 #
 clear
 printf "\n"
@@ -34,11 +31,11 @@ printf "${Cyan}#################################################################
 printf "${Cyan}#                                                                                                 #\n"
 printf "${Cyan}# ${Yellow}INSTALLAZIONE FIRMWARE VARI                                                                     ${Cyan}#\n"
 printf "${Cyan}#                                                                                                 #\n"
-printf "${Cyan}# ${Yellow}firmware-iwlwifi       (Binary firmware for Intel Wireless cards)                               ${Cyan}#\n"
+printf "${Cyan}# ${Yellow}firmware-iwlwifi       (Binary Firmware for Intel Wireless cards)                               ${Cyan}#\n"
 printf "${Cyan}# ${Yellow}amd64-microcode        (CPU AMD Firmware)                                                       ${Cyan}#\n"
 printf "${Cyan}# ${Yellow}intel-microcode        (CPU Intel Firmware)                                                     ${Cyan}#\n"
-printf "${Cyan}# ${Yellow}firmware-linux-free    (Binary firmware for various drivers in the Linux kernel (meta-package)  ${Cyan}#\n"
-printf "${Cyan}# ${Yellow}firmware-linux-nonfree (Binary firmware for various drivers in the Linux kernel)                ${Cyan}#\n"
+printf "${Cyan}# ${Yellow}firmware-linux-free    (Binary Firmware for various drivers in the Linux kernel (meta-package)  ${Cyan}#\n"
+printf "${Cyan}# ${Yellow}firmware-linux-nonfree (Binary Firmware for various drivers in the Linux kernel)                ${Cyan}#\n"
 printf "${Cyan}#                                                                                                 #\n"
 printf "${Cyan}# ${Yellow}Opzioni di installazione firmware:                                                              ${Cyan}#\n"
 printf "${Cyan}#                                                                                                 #\n"
@@ -51,7 +48,7 @@ printf "${Cyan}#################################################################
 printf "\n"
 
 while true; do
-  read -p "Seleziona una opzione (1, 2, 3, 4) : " INPUT
+  read -p "Seleziona un  opzione (1, 2, 3, 4) : " INPUT
   case $INPUT in
     [1]* ) sudo apt-get -y install amd64-microcode firmware-linux-free firmware-linux-nonfree; break;;
     [2]* ) sudo apt-get -y install intel-microcode firmware-linux-free firmware-linux-nonfree; break;;
@@ -62,5 +59,5 @@ while true; do
 done
 
 printf "\n"
-read -n 1 -s -p "Premi un tasto per continuare "
+read -n 1 -s -p "Premi un tasto per Continuare "
 clear

@@ -286,7 +286,7 @@ nano -w /etc/conf.d/xdm
 
 # == Strumenti , media , grafica .
 
- emerge --ask autoconf automake cmake curl ninja nodejs meson yarn
+ emerge --ask autoconf automake cmake curl ninja nodejs meson yarn xsel
 
  emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite layman genlop
 
@@ -306,7 +306,7 @@ nano -w /etc/conf.d/xdm
 
  emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct
 
- emerge --ask porthole sys-fs/squashfuse inxi lshw
+ emerge --ask porthole sys-fs/squashfuse inxi lshw uget
 #==================================================================================================
 
 #==                                  Fstab  Gentoo

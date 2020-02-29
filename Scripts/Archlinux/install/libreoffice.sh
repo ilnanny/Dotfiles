@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 #================================================
 #================================================
 #   O.S.      : Gnu Linux                       =
@@ -7,13 +7,8 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-{
-work-monitor \
- && feh -F "$HOME/.config/wallpaper/wallpaper.png" --bg-fill \
- && (intellij-idea-community > /dev/null 2>&1 &) \
- && (firefox > /dev/null 2>&1 &) \
- && (spotify > /dev/null 2>&1 &)\
- && (amazon-chime > /dev/null 2>&1 &) \
- && (amazon-outlook > /dev/null 2>&1 &) \
- && (redshift -O 3500 > /dev/null 2>&1 &)
-} &> /dev/null
+set -e
+
+#Install Libre Office
+sudo pacman -S libreoffice-fresh --noconfirm --needed
+

@@ -1,17 +1,14 @@
 #!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
 set -e
-##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxforum.com
-##################################################################################################################
-#
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
-#
-##################################################################################################################
+
 
 echo "Network Discovery"
 
@@ -28,8 +25,6 @@ sudo pacman -S --noconfirm --needed gvfs-smb
 #change nsswitch.conf for access to nas servers
 #original line comes from the package filesystem
 #hosts: files mymachines myhostname resolve [!UNAVAIL=return] dns
-#ArcoLinux line
-#hosts: files mymachines resolve [!UNAVAIL=return] mdns dns wins myhostname
 
 #first part
 sudo sed -i 's/files mymachines myhostname/files mymachines/g' /etc/nsswitch.conf

@@ -11,5 +11,6 @@ echo "__________________________________________"
 echo "                                          "
 echo "  Devi aver Installato il pacchetto Ntp   "
 echo "__________________________________________"
+echo "                                          "
 sudo ntpdate it.pool.ntp.org
 exit

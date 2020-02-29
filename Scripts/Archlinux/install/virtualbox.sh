@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 #================================================
 #================================================
 #   O.S.      : Gnu Linux                       =
@@ -7,6 +7,10 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-[ -f "$1" ] || exit 1
+set -e
 
-feh --bg-fill "$1" 
+#Install VirtualBox and optional components
+sudo pacman -S virtualbox --noconfirm --needed
+sudo pacman -S virtualbox-host-dkms --noconfirm --needed
+sudo pacman -S virtualbox-guest-iso --noconfirm --needed
+yaourt -S virtualbox-ext-oracle --noconfirm --needed

@@ -1,4 +1,5 @@
 #!/usr/bin/env xdg-open
+
 [Desktop Entry]
 Version=1.0
 Terminal=false
@@ -7,3 +8,4 @@ Name=Amazon Music Unlimited: ascolta oltre...
 Exec=/usr/bin/chromium --profile-directory=Default --app-id=jgpjnjncdpikakohoiaedneankmchnld
 Icon=chrome-jgpjnjncdpikakohoiaedneankmchnld-Default
 StartupWMClass=crx_jgpjnjncdpikakohoiaedneankmchnld
+Name[it_IT.UTF-8]=Amazon Music Unlimited

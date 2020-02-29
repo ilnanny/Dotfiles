@@ -3,7 +3,7 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
@@ -24,11 +24,11 @@ MEMPER="$(( ( $MEMUSED * 100 ) / $MEMTOTAL ))"
   SWAPUSED="$(( ( ( $SwapTotal - $SwapFree ) - $SwapCached ) / 1024 ))"
   SWAPTOTAL="$(( $SwapTotal / 1024))"
   SWAPFREE="$(( $SWAPTOTAL - $SWAPUSED ))"
-  SWAPPER="$(( ( $SWAPUSED * 100 ) / $SWAPTOTAL ))" 
+  SWAPPER="$(( ( $SWAPUSED * 100 ) / $SWAPTOTAL ))"
 } || {
   SWAPUSED="0"
   SWAPTOTAL="0"
-  SWAPPER="0" 
+  SWAPPER="0"
 }
 
 # display the information
