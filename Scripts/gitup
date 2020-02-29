@@ -20,7 +20,7 @@
 #_______________________________________________=
 Cyan="\033[0;36m"
 Red="\033[0;31m"
-LRed="\033[1;31m"
+LBlue="\033[1;34m"
 Yellow="\033[1;33m"
 Nc="\033[0m"
 clear
@@ -32,18 +32,18 @@ clear
 #__________________________________________________
 #
 # Verifica se disponi degli ultimi file di github
-printf "${Cyan}################################################################\n"
-printf "${Yellow}Verifica prima i file più recenti online\n"
-printf "${Cyan}################################################################${Red}\n"
+printf "${Cyan}===================================================\n"
+printf "${Yellow}===   Verifica prima i file più recenti online  ===\n"
+printf "${Cyan}===================================================${Red}\n"
 git pull
 
 # Esegue il backup di tutti i files nella cartella del progetto
 git add --all .
 
 # Scrive un commento al commit
-printf "${Cyan}####################################\n"
-printf "${Yellow}Scrivi il tuo Commento!\n"
-printf "${Cyan}####################################${Red}\n"
+printf "${Cyan}===============================\n"
+printf "${Yellow}==   Scrivi il tuo Commento  ==\n"
+printf "${Cyan}===============================${Red}\n"
 
 read input
 
@@ -52,11 +52,13 @@ read input
 git commit -m "$input"
 
 #  Invia i file locali a github
-
+printf "${Cyan}===================================\n"
+printf "${Yellow} ===   Aggiorno il Repo Online   ===\n"
+printf "${Cyan}===================================${Red}\n"
 git push -u origin master
 
-printf "${Cyan}################################################################\n"
-printf "${Yellow}###################    Repository Aggiornato    ################\n"
-printf "${Cyan}################################################################\n"
+printf "${Cyan}==============================================\n"
+printf "${Yellow}=========   Repository Aggiornato    =========\n"
+printf "${Cyan}==============================================\n"
 
 
