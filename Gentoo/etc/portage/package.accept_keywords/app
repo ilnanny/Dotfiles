@@ -1,4 +1,7 @@
+app-arch/pet2tgz                          ~amd64
 app-backup/rdiff-backup                   ~amd64
+app-cdr/cddetect                          ~amd64
+app-cdr/pburn                             ~amd64
 app-crypt/zulucrypt                       ~amd64
 app-emulation/virtualbox-additions        ~amd64
 app-emulation/virtualbox                  ~amd64
