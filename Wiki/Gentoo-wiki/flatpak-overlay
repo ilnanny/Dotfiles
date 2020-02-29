@@ -4,25 +4,23 @@ Crea il file repositorio:
 
 [flatpak-overlay]
 priority = 50
-location = <repo-location>/flatpak-overlay
+location = /usr/local/portage/flatpak-overlay
 sync-type = git
-sync-uri = https://github.com/fosero/flatpak-overlay.git
+sync-uri = git://github.com/fosero/flatpak-overlay.git
 auto-sync = Yes
 
-Aggiungi il repo alla sincro
+Crea l'albero del repo e sincronizzalo in locale
   emaint -r flatpak-overlay sync
 
-Aggiorna i repository
-  emerge --sync
 
-Installa il software necessario
+Compila il software necessario
   emerge --ask sys-apps/flatpak
 
-Esempio se utilizzo XFCE4 o WM vari con Openrc ,aggiungo anche le use flag:
+Esempio se non uso gnome e kde ecc ,aggiungo le use flag:
 
    USE="curl gtk policykit seccomp -doc -gnome -introspection -kde" emerge --ask sys-apps/flatpak
 
-=================================
+=================================           Legenda             =================================
 Software:
  sys-apps/flatpak
 Dipendenze:
@@ -32,4 +30,24 @@ Dipendenze:
  sys-fs/libostree
  sys-apps/xdg-desktop-portal-gtk
  sys-apps/flatpak
-=================================
+===================================================================================================
+Puoi scaricare applicazioni dal sito ufficiale :
+
+https://flathub.org/home
+_________________________________________________
+Oppure da terminale  :[flatpak --help]
+
+aggiungere prima il repository di flathub :
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+___________________________________________________________________________________________
+
+cercare il nome dell’applicazione :
+
+flatpak search <nome-applicazione>
+
+ad esempio per installare Spotify:
+
+flatpak install https://flathub.org/repo/appstream/com.spotify.Client.flatpakref
+
+===================================================================================================
