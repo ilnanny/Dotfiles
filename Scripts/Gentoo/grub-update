@@ -3,7 +3,7 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
@@ -15,6 +15,6 @@ grub-mkconfig –o /boot/grub/grub.cfg
 
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "###################################################"
-echo "#               CHIUDI IL TERMINALE               #" 
+echo "#               CHIUDI IL TERMINALE               #"
 echo "###################################################"
 exit 0

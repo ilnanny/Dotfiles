@@ -3,7 +3,7 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
@@ -12,8 +12,8 @@ sudo emerge --sync
 sudo emerge -uDN world
 sudo emerge -uDN system
 sudo emerge --depclean
-sudo rm -fr /tmp/* 
+sudo rm -fr /tmp/*
 sudo rm -rfv ~/.cache ~/.local/share/Trash ~/.thumbnails
-rm -fr /tmp/* 
+rm -fr /tmp/*
 rm -rfv ~/.cache ~/.local/share/Trash ~/.thumbnails
 exit 0

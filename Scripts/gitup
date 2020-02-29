@@ -6,16 +6,35 @@
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-#================================================
-git config --global user.name "ilnanny"
-git config --global user.email ilnannyhack@gmail.com
-git add .
-git status
-git commit -m "Update"
+# Controlla ed aggiungi nome utente ed email a git
+# git config --global user.name "mio_nome_utente"
+# git config --global user.email miaemail@mail.com
+#===================================================
+#
+# Verifica se disponi degli ultimi file di github
+echo "Verifica prima i file più recenti online"
 git pull
-git push
-exit 0
 
+# Esegue il backup di tutti i files nella cartella del progetto
+git add --all .
 
+# Scrive un commento al commit
+echo "####################################"
+echo "Scrivi il tuo Commento!"
+echo "####################################"
+
+read input
+
+# Effettua il commit nel repository locale con un messaggio contenente i dettagli dell'ora e il testo di commit
+
+git commit -m "$input"
+
+#  Invia i file locali a github
+
+git push -u origin master
+
+echo "################################################################"
+echo "###################    Repository Aggiornato    ######################"
+echo "################################################################"
 
 

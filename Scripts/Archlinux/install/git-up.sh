@@ -1,27 +1,27 @@
 #!/bin/bash
 
-# checking if you have the latest files from github
-echo "Checking for newer files online first"
+# verifica se disponi degli ultimi file di github
+echo "Verifica prima i file più recenti online"
 git pull
 
-# Below command will backup everything inside the project folder
+# Esegue il backup di tutti i files nella cartella del progetto
 git add --all .
 
-# Give a comment to the commit if you want
+# Dai un commento al commit
 echo "####################################"
-echo "Write your commit comment!"
+echo "Scrivi il tuo Commento!"
 echo "####################################"
 
 read input
 
-# Committing to the local repository with a message containing the time details and commit text
+# Effettua il commit nel repository locale con un messaggio contenente i dettagli dell'ora e il testo di commit
 
 git commit -m "$input"
 
-# Push the local files to github
+#  Invia i file locali a github
 
 git push -u origin master
 
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "###################    Repository Aggiornato    ######################"
 echo "################################################################"

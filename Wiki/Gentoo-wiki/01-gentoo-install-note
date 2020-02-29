@@ -304,7 +304,7 @@ nano -w /etc/conf.d/xdm
 
  emerge --ask android-tools android-file-transfer-linux bleachbit deluge dev-lang/go file-roller
 
- emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct
+ emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct dcfldd pburn
 
  emerge --ask porthole sys-fs/squashfuse inxi lshw uget
 #==================================================================================================

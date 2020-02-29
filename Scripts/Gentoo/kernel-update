@@ -3,51 +3,56 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 #================================================
-# Seleziona il kernel.
-#emerge gentoo-sources
-#eselect kernel list
-#eselect kernel set #
 
-# Copia la configurazione del kernel corrente in /root
-# gunzip /proc/config.gz -c > /root/config; cp /root/config /root/config-$(uname -r)
+ echo "
+=========================================================
+         #     Note :
+         #     emerge gentoo-sources
+         #     eselect kernel list
+         #     eselect kernel set
+========================================================="
 
-# Opzionalmente cambia le impostazioni del modulo nel file di configurazione, o usa --menuconfig con genkernel.
-genkernel --makeopts=-j5 --splash --kernel-config=/root/config all
+echo "   # Copio la configurazione del kernel corrente in /root
+________________________________________________________________"
+ gunzip /proc/config.gz -c > /root/config
 
-# Aggiorna i pacchetti con i moduli del kernel
+sleep 1
+echo "
+   # Eseguo la compilazione del Kernel
+________________________________________________________________"
+genkernel --makeopts=-j9 --splash --kernel-config=/root/config all
+
+echo "
+   # Aggiorno i pacchetti con i moduli del kernel
+________________________________________________________________"
+sleep 1
 emerge -1 @module-rebuild
 
-# Ripulisci i vecchi file
+echo "
+   # Ripulisco i vecchi file
+________________________________________________________________"
+sleep 1
 for name in $(ls /lib/modules/ | sort -V | head -n -3); do
   rm -rf /boot/{initramfs,kernel,System.map}-genkernel-x86_64-${name:?}
   rm -rf /lib/modules/${name:?}
 done
 
-# Aggiorna il file di configurazione di avvio
+echo "
+   # Aggiorno il file di configurazione di avvio
+________________________________________________________________"
+sleep 1
 grub-mkconfig -o /boot/grub/grub.cfg
+echo "
+  # Nuovo Kernel aggiornato e configurato
+   # Puoi riavviare il Sistema !
+________________________________________________________________"
 
 
 
-echo"
-#=============================================================================================
-#                                       Note                                                 # 
-#                      ---------------------------------------                               #
-#  echo 'sys-kernel/gentoo-sources ~amd64' >> /etc/portage/package.keywords ## Non 'stable'  #
-#  emerge gentoo-sources                                                                     #
-#  eselect kernel list                                                                       #
-#  eselect kernel set                                                                        #
-#  cd /usr/src/linux                                                                         #
-#  make oldconfig                                                                            #
-#       o                                                                                    #
-#  make menuconfig                                                                           #
-#  make && make modules_install && make install                                              #
-#                                                                                            #
-#=============================================================================================
-"
