@@ -1,27 +1,49 @@
 #!/bin/bash
 #================================================
-#================================================
 #   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
+#   Author    : Cristian Pozzessere < ilnanny > =
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
+#             Codici colore ANSI                =
+#_______________________________________________=
+# Black        0;30     Dark Gray     1;30      =
+# Red          0;31     Light Red     1;31      =
+# Green        0;32     Light Green   1;32      =
+# Brown/Orange 0;33     Yellow        1;33      =
+# Blue         0;34     Light Blue    1;34      =
+# Purple       0;35     Light Purple  1;35      =
+# Cyan         0;36     Light Cyan    1;36      =
+# Light Gray   0;37     White         1;37      =
+#_______________________________________________=
+#                  Costanti                     =
+#_______________________________________________=
+Cyan="\033[0;36m"
+Red="\033[0;31m"
+LRed="\033[1;31m"
+Yellow="\033[1;33m"
+Nc="\033[0m"
+clear
+#_______________________________________________=
+#
 # Controlla ed aggiungi nome utente ed email a git
 # git config --global user.name "mio_nome_utente"
 # git config --global user.email miaemail@mail.com
-#===================================================
+#__________________________________________________
 #
 # Verifica se disponi degli ultimi file di github
-echo "Verifica prima i file più recenti online"
+printf "${Cyan}################################################################\n"
+printf "${Yellow}Verifica prima i file più recenti online\n"
+printf "${Cyan}################################################################${Red}\n"
 git pull
 
 # Esegue il backup di tutti i files nella cartella del progetto
 git add --all .
 
 # Scrive un commento al commit
-echo "####################################"
-echo "Scrivi il tuo Commento!"
-echo "####################################"
+printf "${Cyan}####################################\n"
+printf "${Yellow}Scrivi il tuo Commento!\n"
+printf "${Cyan}####################################${Red}\n"
 
 read input
 
@@ -33,8 +55,8 @@ git commit -m "$input"
 
 git push -u origin master
 
-echo "################################################################"
-echo "###################    Repository Aggiornato    ######################"
-echo "################################################################"
+printf "${Cyan}################################################################\n"
+printf "${Yellow}###################    Repository Aggiornato    ################\n"
+printf "${Cyan}################################################################\n"
 
 

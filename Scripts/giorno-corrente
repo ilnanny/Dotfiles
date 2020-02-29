@@ -1,20 +1,61 @@
 #!/bin/bash
-#================================================
-#================================================
+#==================================================
 #   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
+#   Author    : Cristian Pozzessere < ilnanny > =
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
-#================================================
-# Visualizza il giorno corrente negli anni
-#================================================
-giorno=23
-mese=05
-anno=2012
+#==================================================
+#             Codici colore ANSI                =
+#_______________________________________________=
+# Black        0;30     Dark Gray     1;30      =
+# Red          0;31     Light Red     1;31      =
+# Green        0;32     Light Green   1;32      =
+# Brown/Orange 0;33     Yellow        1;33      =
+# Blue         0;34     Light Blue    1;34      =
+# Purple       0;35     Light Purple  1;35      =
+# Cyan         0;36     Light Cyan    1;36      =
+# Light Gray   0;37     White         1;37      =
+#_______________________________________________=
+#                  Costanti                     =
+#_______________________________________________=
+Cyan="\033[0;36m"
+Red="\033[0;31m"
+LRed="\033[1;31m"
+Yellow="\033[1;33m"
+Nc="\033[0m"
+#_______________________________________________=
+#
+clear
+printf " \n"
+printf "${Cyan}=============================================\n"
+printf " \n"
+printf "${Yellow}  Visualizza il Giorno Corrente negli Anni\n"
+printf " \n"
+printf "${Cyan}=============================================\n"
+printf " \n"
+printf "${Yellow}
+    Scrivi il giorno (numero)${LRed}\n"
+read input0
+	giorno="$input0"
+printf " \n"
+printf "${Yellow}
+    Scrivi il mese (numero)${LRed}\n"
+read input1
+	mese="$input1"
+printf " \n"
+printf "${Yellow}
+    Scrivi l'anno' (numero)${LRed}\n"
+read input2
+	anno="$input2"
+printf " \n"
+printf "${Yellow}
+    Ecco il risultato   \n"
+printf "${Cyan}=============================================${LRed}\n"
 anno_corrente=$(date +%Y)
-
+sleep 1
 for i in $(seq $anno $anno_corrente)
 do
-	echo -n "$i -> "
-	date --date "$i-$mese-$giorno" +%A
+echo -n "$i -> "
+date --date "$i-$mese-$giorno" +%A
 done
+printf "${Cyan}=============================================\n"
