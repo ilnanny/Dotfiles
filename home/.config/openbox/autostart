@@ -24,19 +24,17 @@ xfsettingsd &
 nitrogen --restore &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Trasparenze.
-#compositor --start &
-sleep 1; compton &
+compton &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Pannelli-Dock.
 sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
 #sleep 1; tint2 -c ~/.config/tint2/transvert.tint2rc &
 sleep 1; xfce4-panel &
-#sleep 1; tint2-session --start &
 #sleep 1; polybar-session &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
 sleep 2; volumeicon &
-sleep 2; pnmixer &
+#sleep 2; pnmixer &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
 sleep 1; numlockx &
@@ -74,10 +72,9 @@ sleep 1; parcellite &
 sleep 1; xfce4-terminal --drop-down
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
-sleep 2; parole /home/ilnanny/bin/radio.xspf &
+sleep 2; vlc /home/ilnanny/bin/radio.xspf
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
-#sleep 2; thunderbird-bin &
 sleep 2; thunderbird &
 
 #_________________________________________________________________________________
