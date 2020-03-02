@@ -1,9 +1,0 @@
- rimuovere il file user-dirs.dirs 
-
-rm ~/.config/user-dirs.dirs
-
- rigenerare il file user-dirs.dirs 
-
-xdg-user-dirs-update 
-
- riavviare

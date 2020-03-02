@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=OBconf
-Comment=Tweak settings for Openbox
-Icon=obconf
-Exec=obconf %f
-Terminal=false
-StartupNotify=true
-Type=Application
-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
