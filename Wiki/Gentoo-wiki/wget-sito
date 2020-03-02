@@ -1,0 +1,3 @@
+wget -k -r -p -D sitoweb.it --restrict-file-names=unix nomesito
+
+https://www.html.it/guide/shell-scripting-la-guida
