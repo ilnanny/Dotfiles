@@ -16,7 +16,7 @@ Exec=inkscape %F
 TryExec=inkscape
 Terminal=false
 StartupNotify=true
-Icon=org.inkscape.Inkscape
+Icon=inkscape
 X-Ayatana-Desktop-Shortcuts=Drawing
 X-XFCE-Source=file:///usr/share/applications/org.inkscape.Inkscape.desktop
 

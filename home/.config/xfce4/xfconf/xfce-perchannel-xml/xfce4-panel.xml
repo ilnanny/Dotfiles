@@ -6,10 +6,11 @@
     <value type="int" value="2"/>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="2"/>
-      <property name="position" type="string" value="p=5;x=25;y=494"/>
+      <property name="position" type="string" value="p=5;x=21;y=497"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="35"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="5"/>
         <value type="int" value="17"/>
         <value type="int" value="18"/>
         <value type="int" value="3"/>
@@ -19,7 +20,8 @@
         <value type="int" value="4"/>
         <value type="int" value="20"/>
         <value type="int" value="6"/>
-        <value type="int" value="5"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
       </property>
       <property name="mode" type="uint" value="2"/>
       <property name="background-style" type="uint" value="1"/>
@@ -29,13 +31,10 @@
         <value type="double" value="0.000000"/>
         <value type="double" value="0.060000"/>
       </property>
+      <property name="length" type="uint" value="1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-8" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="show-notifications" type="bool" value="true"/>
-    </property>
     <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15822571341.desktop"/>
@@ -94,6 +93,16 @@
       <property name="button-title" type="string" value=""/>
       <property name="show-button-title" type="bool" value="false"/>
       <property name="button-icon" type="string" value="menu-light"/>
+    </property>
+    <property name="plugin-8" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15831178951.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15831823801.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

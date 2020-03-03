@@ -8,7 +8,7 @@ notification_type=0
 
 [StatusIcon]
 stepsize=5
-onclick=alsamixergui 
+onclick=pavucontrol
 theme=Default
 use_panel_specific_icons=true
 lmb_slider=true

@@ -1,5 +1,5 @@
 [Desktop]
 Session=xfce
-Setxkbmap=it
+Xkbmap=it
 L10N="it"
 LANG="it_IT.utf8"
