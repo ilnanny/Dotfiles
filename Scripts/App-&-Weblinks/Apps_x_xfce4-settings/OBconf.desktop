@@ -6,4 +6,4 @@ Exec=obconf %f
 Terminal=false
 StartupNotify=true
 Type=Application
-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;

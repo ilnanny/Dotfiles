@@ -10,7 +10,7 @@ DESKTOP_ENV="OPENBOX"
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Wifi.
-sudo nmcli device wifi connect FASTWEB-E06CD5 password 6R87ATWE7R
+#sudo nmcli device wifi connect FASTWEB-E06CD5 password 6R87ATWE7R
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Tastiera.
 setxkbmap it
@@ -19,8 +19,6 @@ setxkbmap it
 xfsettingsd &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Sfondo Desktop.
-#feh --bg-scale /usr/share/backgrounds/${WALLPAPER} &
-#WALLPAPER="rockyduck.png"
 nitrogen --restore &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Trasparenze.
@@ -28,26 +26,19 @@ compton &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Pannelli-Dock.
 sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
-#sleep 1; tint2 -c ~/.config/tint2/transvert.tint2rc &
 sleep 1; xfce4-panel &
-#sleep 1; polybar-session &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
-sleep 2; volumeicon &
-#sleep 2; pnmixer &
+sleep 1; volumeicon &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
-sleep 1; numlockx &
+numlockx &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Rete.
 nm-applet --sm-disable &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Notifiche
 dunst &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Super-Key
-#ksuperkey -e 'Super_L=Alt_L|F1' &
-#ksuperkey -e 'Super_R=Alt_L|F1' &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Beep di sistema
 xset b off
@@ -65,17 +56,16 @@ sleep 2; xdg-user-dirs-gtk-update &
 sleep 2; conky --daemonize
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Clipboard Manager.
-#sleep 1; clipit &
 sleep 1; parcellite &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
 sleep 1; xfce4-terminal --drop-down
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
-sleep 2; vlc /home/ilnanny/bin/radio.xspf
+#sleep 2; vlc /home/ilnanny/bin/radio.xspf
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
-sleep 2; thunderbird &
+#sleep 2; thunderbird &
 
 #_________________________________________________________________________________
 #                                     Fine
