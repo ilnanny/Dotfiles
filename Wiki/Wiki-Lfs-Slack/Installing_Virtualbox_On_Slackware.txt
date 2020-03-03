@@ -1,0 +1,153 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-03T05:59:44+01:00
+
+====== Installing Virtualbox On Slackware ======
+Created martedì 03 marzo 2020
+
+Installing Virtualbox on Slackware
+Posted by	xathrya
+Virtualbox, one of player on Virtualization Technology. Developed by Sun Microsystem (now owned by Oracle). This article will discuss about Virtualbox, how to install and configure on Slackware machine.
+
+In this article I use:
+
+Slackware machine, mine is Slackware64 14.0 with multilib support (non-multilib or even 32-bit system is OK)
+Virtualbox 4.2.0 (provided by SlackBuilds.org)
+or Virtualbox 4.2.6 (provided by Oracle)
+You can use method slackbuilds or binary provided by Oracle. both are OK. The advantage of using binary provided by Oracle is you can choose to install latest version.
+
+Enabling Virtualization Support
+There would be such a waste if you have installed Virtualbox but you have not enabled the virtualization support, or even you don’t have virtualization support (but it’s rarely happen at this time).
+
+To make sure you have it, restart your machine and enter BIOS / UEFI mode. Make sure you have enabled Virtualization. It depends on the BIOS manufacture.
+
+Method 1: Slackbuild Installations
+Stage 1: Install acpica
+
+ACPI CA is a collection of program which includes:
+
+iasl, an ASL compiler/decompiler
+acpisrc, a source code conversion tool
+acpiexec, a user-space AML interpreter
+acpixtract, convert ascii ACPI tables to binary
+Why ACPI CA? ACPI CA is needed to be installed as it is a dependency of VirtualBox.
+
+Now download the materials from here.
+
+To build ACPI CA, we need to download following:
+
+ACPICA for unix
+acpica.tar.gz
+Now place the material into 1 directory and extract the acpica.tar.gz file. You should find a newly created directory acpica. Open it and copy the acpica source to it. Run the slackbuilds script and wait. It should make a new package on /tmp/ directory. Install it using upgradepkg. The complete commands can be found here:
+
+
+tar -zxvf acpica.tar.gz
+mv acpica-unix2-20120420.tar.gz acpica/
+cd acpica
+./acpica.SlackBuild
+upgradepkg --install-new /tmp/acpica-*.tgz
+
+tar -zxvf acpica.tar.gz
+mv acpica-unix2-20120420.tar.gz acpica/
+cd acpica
+./acpica.SlackBuild
+upgradepkg --install-new /tmp/acpica-*.tgz
+Stage 2: Install VirtualBox Kernel
+
+Virtualbox kernel a package for virtualization needed by VirtualBox. It is a kernel module. Therefore when you build one with current machine and then change the kernel version, you must rebuild this packages. To build the package for a kernel different from the running one, start the KERNEL variable as in
+
+
+KERNEL=3.7.5 ./virtualbox-kernel.SlackBuild
+1
+KERNEL=3.7.5 ./virtualbox-kernel.SlackBuild
+If you have built virtualbox with HARDENING=no, then you have to do the same for virtualbox-kernel.
+
+Download required materials from here.
+
+The one you need to download are:
+
+virtualbox-kernel source
+virtualbox-kernel.tar.gz
+Do following:
+
+
+tar -zxvf virtualbox.tar.gz
+mv virtualbox-kernel-4.2.0.tar.xz virtualbox-kernel/ 
+cd virtualbox-kernel
+./virtualbox-kernel.SlackBuild 
+upgradepkg --install-new /tmp/virtualbox-kernel-*.tgz
+
+tar -zxvf virtualbox.tar.gz
+mv virtualbox-kernel-4.2.0.tar.xz virtualbox-kernel/ 
+cd virtualbox-kernel
+./virtualbox-kernel.SlackBuild 
+upgradepkg --install-new /tmp/virtualbox-kernel-*.tgz
+Stage 3: Install VirtualBox
+
+You can download the material here.
+
+To build a Virtualbox, you need to download following:
+
+VirtualBox 4.2.0 source
+VBoxGuestAddition 4.2.0 iso
+UserManual.pdf
+SDKRef.pdf
+SlackBuild script
+Now do the following (change it if necessary):
+
+
+tar -zxvf virtualbox.tar.gz
+mv virtualbox-kernel-4.2.0.tar.xz virtualbox/
+mv UserManual.pdf virtualbox/
+mv SDKRef.pdf virtualbox/
+mv VBoxGuestAdditions_4.2.0.iso virtualbox/
+cd virtualbox
+./virtualbox.SlackBuild 
+upgradepkg --install-new /tmp/virtualbox-*.tgz
+
+tar -zxvf virtualbox.tar.gz
+mv virtualbox-kernel-4.2.0.tar.xz virtualbox/
+mv UserManual.pdf virtualbox/
+mv SDKRef.pdf virtualbox/
+mv VBoxGuestAdditions_4.2.0.iso virtualbox/
+cd virtualbox
+./virtualbox.SlackBuild 
+upgradepkg --install-new /tmp/virtualbox-*.tgz
+Post Installation
+
+Once you complete all the steps, you have successfully install VirtualBox.
+
+But, for running VirtualBox you need to do something more. You need to run virtualbox-kernel if you want to run virtualbox. Just invoke /etc/rc.d/rc.vboxdrv start before running VirtualBox. Make sure you have flag it as executable.
+
+You can also create a simple script like this and place it to any directory recognized by shell. In my case I place it at /usr/bin as vboxmgr and whenever I want to start VirtualBox I will start virtualbox-kernel by typing vboxmgr start.
+
+
+#!/bin/sh
+
+case $1 in
+		"start")
+						/etc/rc.d/rc.vboxdrv start
+		;;
+		"stop")
+						/etc/rc.d/rc.vboxdrv stop
+		;;
+		"restart")
+						(/etc/rc.d/rc.vboxdrv stop) &amp;&amp; (/etc/rc.d/rc.vboxdrv start)
+esac
+
+#!/bin/sh
+ 
+case $1 in
+		"start")
+						/etc/rc.d/rc.vboxdrv start
+		;;
+		"stop")
+						/etc/rc.d/rc.vboxdrv stop
+		;;
+		"restart")
+						(/etc/rc.d/rc.vboxdrv stop) &amp;&amp; (/etc/rc.d/rc.vboxdrv start)
+esac
+Method 2: Using Binary Installation by Oracle
+Using this method we can download binary provided by Oracle. The package can be download at this page. But unfortunately, there are official support for Slackware. Therefore we need to download the one which supported by all distribution. In the time of writing this article, the latest installer version is VirtualBox 4.2.6 which can be downloaded from here for 64-bit version. Do you want 32-bit version? Download it here.
+
+Just run the installer and you have done!

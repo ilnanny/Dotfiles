@@ -1,6 +1,0 @@
-Operation:
-    build           build only packages
-    install         install packages
-    remove          remove packages in system
-    upgrade         upgrade packages and install new dependencies (if any)
-    extra           various extra options

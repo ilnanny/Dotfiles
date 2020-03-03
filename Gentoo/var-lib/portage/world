@@ -4,7 +4,10 @@ app-arch/file-roller
 app-arch/unrar
 app-arch/unzip
 app-cdr/iat
+app-cdr/pburn
+app-cdr/xfburn
 app-crypt/rhash
+app-editors/leafpad
 app-emulation/virtualbox-bin
 app-misc/neofetch
 app-misc/ranger
@@ -13,7 +16,6 @@ app-portage/eix
 app-portage/genlop
 app-portage/gentoolkit
 app-portage/layman
-app-portage/porthole
 app-text/evince
 app-text/wgetpaste
 dev-lang/go
@@ -24,7 +26,6 @@ dev-libs/keybinder
 dev-libs/libsass
 dev-libs/mpc
 dev-perl/Image-Imlib2
-dev-python/pip
 dev-python/pretty-yaml
 dev-ruby/sass
 dev-util/android-tools
@@ -33,19 +34,18 @@ dev-util/dialog
 dev-util/geany
 dev-vcs/git
 gnome-base/gvfs
+gnome-extra/nm-applet
 gnome-extra/zenity
-lxde-base/lxappearance
 lxde-base/lxdm
 lxde-base/menu-cache
-media-fonts/dejavu
+mail-client/thunderbird
 media-gfx/gimp
 media-gfx/inkscape
 media-gfx/nomacs
 media-gfx/optipng
+media-gfx/scrot
 media-libs/imlib2
 media-sound/alsa-utils
-media-sound/mpd
-media-sound/pamix
 media-sound/pavucontrol
 media-sound/volumeicon
 media-video/vlc
@@ -55,10 +55,13 @@ net-libs/nodejs
 net-mail/qtools
 net-misc/curl
 net-misc/dhcpcd
+net-misc/netifrc
 net-misc/networkmanager
 net-misc/ntp
 net-p2p/deluge
 sys-apps/bleachbit
+sys-apps/dcfldd
+sys-apps/flatpak
 sys-apps/inxi
 sys-apps/lsb-release
 sys-apps/lshw
@@ -82,6 +85,9 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
 sys-process/anacron
 sys-process/htop
+www-client/firefox
+www-client/httrack
+www-client/uget
 x11-apps/xrandr
 x11-base/xorg-server
 x11-base/xorg-x11
@@ -96,9 +102,11 @@ x11-misc/parcellite
 x11-misc/qt5ct
 x11-misc/rofi
 x11-misc/tint2
+x11-misc/xsel
+x11-misc/zim
 x11-terms/xfce4-terminal
 x11-terms/xterm
-x11-themes/arc-theme
+ x11-themes/gtk-engines-murrine
 x11-themes/sound-theme-freedesktop
 x11-wm/openbox
 xfce-base/thunar

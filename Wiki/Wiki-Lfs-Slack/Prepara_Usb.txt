@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-03T06:01:44+01:00
+
+====== Prepara Usb ======
+Created martedì 03 marzo 2020
+
+sudo mkdir /tmp/iso
+sudo mount -o loop /media/Dati/OS/Linux/32BIT/slackellive-openbox-7.1.iso /tmp/iso
+cd /tmp/iso/boot
+  sudo sh install_on_usb.sh --usb /media/Dati/OS/Linux/32BIT/slackellive-openbox-7.1.iso /dev/sde
+  cd ~/
+  sudo umount /tmp/iso
+build-live-system.sh --usb /tmp/live /dev/sdx

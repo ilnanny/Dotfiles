@@ -1,4 +1,0 @@
-Resize di 'Dati'
-
-ntfsresize --force --force -s 925042212864 'dev/sdc1'
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -

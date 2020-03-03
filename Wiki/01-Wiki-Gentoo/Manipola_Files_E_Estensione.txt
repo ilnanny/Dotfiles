@@ -1,0 +1,76 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-03T06:08:27+01:00
+
+====== Manipola Files E Estensione ======
+Created martedì 03 marzo 2020
+
+Rinominare più file da minuscolo a maiuscolo e viceversa
+
+per rinominare i file da minuscolo a maiuscolo spostarsi nella cartella contente i file da rinominare e lanciare questo comando:
+
+for i in *; do mv $i $(echo $i | tr [:lower:] [:upper:]); done
+
+per rinominare i file da maiuscolo a minuscolo spostarsi nella cartella contente i file da rinominare e lanciare questo comando:
+
+for i in *; do mv $i $(echo $i | tr [:upper:] [:lower:]); done
+
+Cambiare l'estensione
+
+E' possibile cambiare l'estensione ad un file inviado l'output del comando al tool sed. Supponiamo di voler cambiare l'estensione dei file seguenti da .jpg a .jpeg.
+
+ls
+1.jpg  2.jpg  3.jpg  4.jpg
+
+Ecco come utilizzare sed per cambiare l'estensione:
+
+ for i in `ls`; do mv $i `echo $i | sed s/jpg/jpeg/g`;done
+
+Il risultato sarà il seguente:
+
+ls
+1.jpeg  2.jpeg  3.jpeg  4.jpeg
+
+Rinominare in modo veloce
+
+Se vogliamo rinominare tutti i files contenuti all'interno di una cartella (ad esempio per sostituire uno spazio con un trattino basso) è possibile usare il seguente comando.
+
+ls -1 | rename 's/\ /_/g'
+
+nota: per far sì che il comando accetti lo spazio come carattere standard è necessario anteporre il carattere "\". Se avessimo voluto sostituire un "." con un "_" bastava scrivere "s/./_/g"
+Aggiungere un prefisso a più file
+
+Con questo comando aggiungiamo "prefisso_" a tutti i file e cartelle contenuti nella posizione in cui ci troviamo (non ricorsivo).
+
+for filename in * ; do mv $filename prefisso_$filename; done
+
+Ad esempio si potrebbe sostituire "*" con "*.txt* per manipolare solo i file con estensione txt.
+Aggiungere un prefisso a più file ricorsivamente
+
+Con questo script aggiungiamo "prefisso_" a tutti i file *.avi ricorsivamente dalla cartella in cui lo lanciamo:
+
+#!/bin/bash
+
+inputdir=$1
+
+echo Sto cercando i file
+
+for file in $(find $inputdir -iname "*.avi")
+do
+		name=$(basename $file .avi) ;
+		directory=$(dirname $file);
+		echo rinomino il file $file
+
+		mv $file $directory/prefisso_$name.avi
+
+done
+
+ad esempio se il nostro script si chiama aggiunta_prefisso e vogliamo modificare il nome dei file presenti in /tmp scriveremo:
+
+aggiunta_prefisso /tmp
+
+Altro modo per rinominare
+
+lista=`find -name "*.PDF"`; for i in $lista; do j=`echo $i | sed -e 's:PDF:pdf:g'` ; mv $i $j ; done
+
+In questo modo cambiamo le estensioni dei file .PDF da maiuscolo a minuscolo.

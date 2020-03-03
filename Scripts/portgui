@@ -1,0 +1,371 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#   Progect   :  Gentoo Package Manager GUI     =
+#================================================
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+RED='\033[0;41;30m'
+STD='\033[0;0;39m'
+GREEN='\033[1;32;3m'
+PURPLE="\e[1;35m"
+LCYAN="\e[1;36m"
+ATTENZIONE="\e[0;31m"
+YELLOW="\e[1;33m"
+# ---------------------------------- PRIVILEGI-ROOT
+if [ "$EUID" -ne 0 ]
+then echo "Eseguire lo script con i permessi di amministratore (su o sudo)"
+exit
+fi
+
+# ---------------------------------- CERCA
+cerca(){
+
+clear
+
+echo -e "${PURPLE}";
+echo -e "${PURPLE} 1) Aggiorna eix e cerca";
+echo -e "${PURPLE} 2) Cerca";
+echo -e "${PURPLE} ";
+echo -e "${LCYAN} 9) Menu ";
+
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 9]:" Cerca
+echo -e "${STD}"
+case $Cerca in
+1)
+echo -n " quale pacchetto vuoi cercare ? :>" ; read pack
+eix-update
+eix $pack
+echo
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; cerca ;;
+2)
+echo -n " quale pacchetto vuoi cercare ?>" ; read pack
+eix $pack
+echo
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; cerca ;;
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- APPLICAZIONI
+app(){
+
+clear
+
+echo -e "${PURPLE} 1) Installa da Portage Tree ";
+echo -e "${PURPLE} 2) Installa da Overlays";
+echo -e "${PURPLE} 3) Disinstalla ";
+echo -e "${PURPLE} ";
+echo -e "${LCYAN} 9) Menu ${PURPLE}";
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 3 - 9]: " var
+echo -e "${STD}"
+case $var in
+1)
+echo -n "pacchetto da installare " ; read INSTALLA ; emerge --ask $INSTALLA
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; app ;;
+
+2)
+echo "devi prima scaricare l'ebuild"
+echo "premi un tasto per continuare" ; read -n1
+#cd ~/Scaricati/
+cd /media/Dati/overlay-master/
+echo -n "Indica Categoria/Pacchetto dell'appilcazione da installare" ; read rp ; ls
+echo -n "Inserisci .ebuild " ; read ebuild
+mkdir -p /usr/local/portage/$rp ; cp $ebuild /usr/local/portage/$rp
+#mv $ebuild /mnt/DATI/gentoo/'installazione gentoo'/ebuild/
+cd /usr/local/portage/$rp ; repoman manifest
+emerge --ask $rp
+echo
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; app ;;
+
+3)
+echo -n "Indica categoria/pacchetto da rimuovere" ; read ctpr
+emerge --depclean --ask $ctpr
+echo
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; app ;;
+
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- USE-FLAG
+uf(){
+
+clear
+echo -e "${PURPLE} ";
+echo -e "${PURPLE} 1) Abilita Use-Flag ";
+echo -e "${PURPLE} 2) Disabilita Use-Flag ";
+echo -e "${PURPLE} ";
+echo -e "${LCYAN} 9) Menu ";
+
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 9]: " var
+echo -e "${STD}"
+case $var in
+
+1)
+echo -n "Indica Categoria/Pacchetto da ricompilare" ; read cpt
+echo -n "Indica Use-flag da abilitare" ; read use
+euse --enable $use --package $cpt ; emerge --ask --changed-use --deep @world
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; uf ;;
+
+2)
+echo -n "Indica Categoria/Pacchetto da ricompliare" ; read dcpt
+echo -n "Indica Use-flag da disabilitare" ; read duse
+euse --disable $duse --package $dcpt ; emerge --ask --changed-use --deep @world
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; uf ;;
+
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- AGGIORNA-SISTEMA
+as(){
+
+clear
+echo -e "${PURPLE} 1) Aggiorna Portage Tree ";
+echo -e "${PURPLE} 2) Aggiorna Pacchetti e Dipendenze ";
+echo -e "${PURPLE} 3) emerge --update --newuse --deep @world ";
+echo -e "${PURPLE} 4) emerge --ask --depclean";
+echo -e "${PURPLE} 5) emerge @preserved-rebuild ";
+echo -e "${LCYAN} 9) Menu";
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 3 - 4 - 5 - 9]: " var
+echo -e "${STD}"
+case $var in
+
+1)
+emerge --sync
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; as ;;
+
+2)
+echo -e " $ATTENZIONE Stai per lanciare $RED emerge --update --changed-use --deep --with-bdeps=y @world
+$ATTENZIONE Premi [s] per Continuare , un'altro tasto per tornare alle scelte"
+read -sn 1
+if [ "$REPLY" = "s" -o  "$REPLY" = "S" ]
+	then
+emerge --update --changed-use --deep --with-bdeps=y @world
+		echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; as
+
+else
+as
+fi
+;;
+
+3)
+echo -e " $ATTENZIONE Stai per lanciare $RED emerge --update --newuse --deep @world
+$ATTENZIONE Premi [s] per Continuare , un'altro tasto per tornare alle scelte"
+read -sn 1
+if [ "$REPLY" = "s" -o  "$REPLY" = "S" ]
+	then
+emerge --update --newuse --deep @world
+		echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; as
+else
+as
+fi
+;;
+
+4)
+echo -e " $ATTENZIONE Stai per lanciare $RED emerge --ask --depclean
+$ATTENZIONE Premi [s] per Continuare , un'altro tasto per tornare alle scelte"
+read -sn 1
+if [ "$REPLY" = "s" -o  "$REPLY" = "S" ]
+	then
+emerge --ask --depclean
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; as
+else
+as
+fi
+;;
+
+5)
+echo -e " $ATTENZIONE Stai per lanciare $RED emerge @preserved-rebuild
+$ATTENZIONE Premi [s] per Continuare , un'altro tasto per tornare alle scelte"
+read -sn 1
+if [ "$REPLY" = "s" -o  "$REPLY" = "S" ]
+	then
+emerge @preserved-rebuild
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; as
+else
+as
+fi
+;;
+
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- PULIZIA-SISTEMA
+ps(){
+
+clear
+echo -e "${PURPLE} 1) Pulizia /var/tmp/portage";
+echo -e "${PURPLE} 2) Esegui eclean-dist ";
+echo -e "${LCYAN} 9) Menu";
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 9]:" var
+echo -e "${STD}"
+case $var in
+
+1)
+echo "stai per eliminare le cartelle in /var/tmp/portage/ "
+echo " premi un tasto per continuare" ; read -n1
+ /usr/bin/find /var/tmp/portage/  -mindepth 1 -maxdepth 1 -exec /bin/rm -rf {} +;
+		echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; ps ;;
+
+2)
+echo "stai per eseguire eclean-dist"
+echo "premi un tasto per continuare" ; 	read -n1
+	eclean-dist
+		echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; ps ;;
+
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- NEWS
+news(){
+
+clear
+echo -e "${PURPLE} 1) Leggi Vecchie News";
+echo -e "${PURPLE} 2) Leggi Nuove News";
+echo -e "${PURPLE} 3) Lista delle News";
+echo -e "${PURPLE} 4) Cancella News ";
+echo -e "${LCYAN} 9) Menu ";
+
+echo -e "${GREEN}"
+read -p  " Scegli la tua operazione [1 - 2 - 9]:" var
+echo -e "${STD}"
+case $var in
+
+1)
+eselect news read
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; news ;;
+
+2)
+eselect news read new
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; news ;;
+
+3)
+eselect news list
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; news ;;
+
+4)
+eselect news purge
+echo -e "${YELLOW} !!! ESEGUITO !!! "
+echo -e "${LCYAN} premi un tasto per continuare" ; read -n1 ; news ;;
+
+9) break ;;
+*)
+echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ; cerca ;;
+esac
+}
+
+# ---------------------------------- ESCI
+esci(){
+clear
+echo
+echo " Grazie per aver usato il mio script "
+echo
+exit
+}
+
+
+
+
+
+# ---------------------------------- MENU
+
+menu() {
+clear
+echo -e "${PURPLE} ╔═════════════════════════════════════════╗ "
+echo -e "${PURPLE} ║ ╔══   GENTOO PACKAGE MANAGER GUI   ═══╗ ║ "
+echo -e "${PURPLE} ║ ║  [1] Cerca App                      ║ ║ "
+echo -e "${PURPLE} ║ ║  [2] Installa/Rimuovi App           ║ ║ "
+echo -e "${PURPLE} ║ ║  [3] Gestione Use-Flag              ║ ║ "
+echo -e "${PURPLE} ║ ║  [4] Aggiorna Sistema               ║ ║ "
+echo -e "${PURPLE} ║ ║  [5] Pulizia Sistema                ║ ║ "
+echo -e "${PURPLE} ║ ║  [6] Le tue News                    ║ ║ "
+echo -e "${PURPLE} ║ ║  [0] Esci                           ║ ║ "
+echo -e "${PURPLE} ║ ║ ╚═══════════════════════════════════╝ ║ "
+echo -e "${PURPLE} ║ ╚═══════════════════════════════════════╝ "
+echo -e "${PURPLE} ╚═ Scegli la tua operazione ╗"
+}
+
+# ---------------------------------- OPZIONI
+
+opzioni(){
+local choice
+read -p "                      [0 - 6]╝ " choice
+case $choice in
+1) cerca ;;
+2) app ;;
+3) uf ;;
+4) as ;;
+5) ps ;;
+6) news ;;
+0) esci ;;
+*) echo -e "${RED}Scelta non valida...${STD}" && sleep 2 ;;
+esac
+}
+
+######### script0 ################
+while true
+do
+
+	menu
+	opzioni
+done

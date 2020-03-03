@@ -145,4 +145,3 @@ Using this method we can download binary provided by Oracle. The package can be 
 
 Just run the installer and you have done!
 
-Happy hacking 😀

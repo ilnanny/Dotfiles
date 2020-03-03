@@ -1,0 +1,122 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-03T06:03:34+01:00
+
+====== Thunar-Azioni Personali-Slack ======
+Created martedì 03 marzo 2020
+
+Thunar Custom Actions as root
+You add a new Custom Action by select Edit -> Configure custom actions...
+Press on + button.
+Edit file as root
+Under Basic
+Type a name: Edit as root
+Type in Command: gksu mousepad %f
+Choose an icon, for example mousepad
+
+Under Appearance Conditions
+Type in Filepattern: *
+select Text Files
+Click OK
+Click Close
+When you right click on a text file can you select "Edit as root"
+Open terminal as root
+Under Basic
+Type a name: Open terminal as root
+Type in Command: gksu /usr/bin/Terminal --default-working-directory=%f
+Choose an icon, for example gksu-root-terminal
+
+Under Appearance Conditions
+Type in Filepattern: *
+Select Directories
+Click OK
+Click Close
+When you right click on a directory can you select "Open terminal as root"
+Open directory as root
+Under Basic
+Type a name: Open directory as root
+Type in Command: gksu thunar %f
+Choose an icon, for example system-file-manager
+
+Under Appearance Conditions
+Type in Filepattern: *
+select Directories
+Click OK
+Click Close
+When you right click on a directory can you select "Open directory as root"
+
+Install Salix/Slackware package
+You need the sinstallscript see below.
+Under Basic
+Type a name: Install package
+Type in Command: gksu /usr/sbin/sinstallpkg %n
+Choose an icon, for example tgz
+
+Under Appearance Conditions
+Type in Filepattern: *.tgz;*.txz
+select Other files
+Click OK
+Click Close
+When you right click on a tgz/txz file can you select "Install package"
+Unpack the sinstallpkg.tar.gz in /usr/sbin/ directory (Downloaded 682 times)
+Make it executable, run in a terminal as root
+chmod +x /usr/sbin/sinstallpkg 
+
+==================================================================================
+zioni personalizzate Thunar come root
+Aggiungi una nuova azione personalizzata selezionando Modifica -> Configura azioni personalizzate ...
+Premere il pulsante +.
+Modifica il file come root
+Sotto Basic
+Digita un nome: Modifica come root
+Digitare in comando: gksu mousepad% f
+Scegli un'icona, ad esempio il mousepad
+
+In condizioni di aspetto
+Digitare Filepattern: *
+seleziona File di testo
+Clicca OK
+Clicca Chiudi
+Quando fai clic con il tasto destro su un file di testo puoi selezionare "Modifica come root"
+Aprire il terminale come root
+Sotto Basic
+Digita un nome: apri il terminale come root
+Digitare in comando: gksu / usr / bin / Terminal --default-working-directory =% f
+Scegli un'icona, ad esempio gksu-root-terminal
+
+In condizioni di aspetto
+Digitare Filepattern: *
+Seleziona le directory
+Clicca OK
+Clicca Chiudi
+Quando fai clic destro su una directory puoi selezionare "Apri terminale come root"
+Apri la directory come root
+Sotto Basic
+Digita un nome: apri la directory come root
+Digitare in comando: gksu thunar% f
+Scegli un'icona, ad esempio system-file-manager
+
+In condizioni di aspetto
+Digitare Filepattern: *
+seleziona Directory
+Clicca OK
+Clicca Chiudi
+Quando fai clic destro su una directory puoi selezionare "Apri directory come root"
+Installa il pacchetto Salix / Slackware
+Hai bisogno del sinottico vedi sotto.
+Sotto Basic
+Digita un nome: Installa pacchetto
+Digitare in comando: gksu / usr / sbin / sinstallpkg% n
+Scegli un'icona, ad esempio tgz
+
+In condizioni di aspetto
+Digitare Filepattern: * .tgz; *. Txz
+seleziona Altri file
+Clicca OK
+Clicca Chiudi
+Quando fai clic con il tasto destro su un file tgz / txz puoi selezionare "Installa pacchetto"
+Spacchetta il file sinstallpkg.tar.gz nella directory / usr / sbin / (scaricato 682 volte)
+Rendilo eseguibile, esegui un terminale come root
+chmod + x / usr / sbin / sinstallpkg
+
+======================================================================================================
