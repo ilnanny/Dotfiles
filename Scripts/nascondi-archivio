@@ -3,7 +3,7 @@
 #================================================
 #   O.S.      : Gnu Linux                       =
 #   Author    : Cristian Pozzessere   = ilnanny =
-#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
@@ -15,6 +15,5 @@ cat picture.png archive.zip > nome_visualizzato.png
 #Per windows
 
 #copy picture.png + archive.rar hidden_archive_in_pic.png
-
 
 #per recuperare il file ,basta rinominarlo in rar,

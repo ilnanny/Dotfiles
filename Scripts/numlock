@@ -6,5 +6,6 @@
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
+# Dipende :numlock
 #================================================
-/usr/bin/enable_X11_numlock & 
+/usr/bin/enable_X11_numlock &

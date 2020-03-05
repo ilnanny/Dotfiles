@@ -10,10 +10,10 @@
 # Questo script ha bisogno del software 'rofi' per funzionare!!
 # (https://github.com/davatorium/rofi)
 # Altro software:
-#'libqualculate'   =calcolatrice-cli.
-#'surfraw'         =ricerca nel web-cli.
-#'greenclip'       =clipboard-cli.
-#(https://github.com/erebe/greenclip)
+# 'libqualculate'   =calcolatrice-cli.
+# 'surfraw'         =ricerca nel web-cli.
+# 'greenclip'       =clipboard-cli.
+# (https://github.com/erebe/greenclip)
 #  _______________       ______________   ________________   ____#
 
 Name=$(basename "$0")
@@ -32,7 +32,7 @@ Options:
      -m      Menu Personalizzato
      -c      Clipboard a linea di comando
      -b      Cerca per parola chiave sul web
-     -l      Menu per uscire dalla Sessione 
+     -l      Menu per uscire dalla Sessione
 
 EOF
 }

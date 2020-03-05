@@ -1,0 +1,16 @@
+aggiungi al grub.cfg
+__________________________________________________
+
+menuentry "GhostBSD"{
+set root=(hd0,3)
+chainloader +1
+}
+
+__________________________________________________
+cambia hd0,3 con la partizione/disco utilizzata
+
+(fd0)   /dev/fd0
+(hd0)   /dev/sda
+(hd1)   /dev/sdb
+(hd2)   /dev/sdc
+__________________________________________________

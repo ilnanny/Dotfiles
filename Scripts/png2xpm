@@ -7,6 +7,7 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #Converte immagini dal formato  .png a .xpm
+# dipende : imagemagick
 #================================================
 for f in close-*.png hide-*.png maximize-*.png;
 do

@@ -10,14 +10,14 @@
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 #
-cp -a /media/Dati/Git/Dotfiles/Scripts/01-permessi_home /usr/local/bin/
-cp -a /media/Dati/Git/Dotfiles/Scripts/01-permessi_root /usr/local/bin/
+cp -a /media/Dati/Git/Dotfiles/Scripts/permessi_home /usr/local/bin/
+cp -a /media/Dati/Git/Dotfiles/Scripts/permessi_root /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/bleachbit1 /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/checksum /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/cleaner /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/fflushed-hdd /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/grub /usr/local/bin/
-cp -a /media/Dati/Git/Dotfiles/Scripts/grub2 /usr/local/bin/
+#cp -a /media/Dati/Git/Dotfiles/Scripts/grub2 /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/oraesatta /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/updeskdb /usr/local/bin/
 cp -a /media/Dati/Git/Dotfiles/Scripts/usblist /usr/local/bin/

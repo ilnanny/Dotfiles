@@ -16,7 +16,7 @@ set -o errexit
 echo "Connetti alla rete
 sudo nmcli device wifi rescan
 sudo nmcli device wifi list
-sudo nmcli device wifi connect FASTWEB-E06CD5 password mypassword
-sudo nmcli device wifi connect 'FASTWEB DA 5 GHz' password mypassword
+sudo nmcli device wifi connect FASTWEB-E06CD5 password my_password
+sudo nmcli device wifi connect 'FASTWEB DA 5 GHz' password my_password
 "
 read

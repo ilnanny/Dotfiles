@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Etcher
+Comment=Crea Usb Avviabili
+Exec=sudo /media/Dati/Softwares/Gnu-Linux/balena-etcher/balenaEtcher.AppImage %F
+Type=Application
+Icon=etcher
+StartupNotify=true
+GenericName=Balena Etcher
+Name[it_IT.UTF-8]=Etcher
+Terminal=false
+Categories=XFCE;GTK;Settings;Utility;System;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
