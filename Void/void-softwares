@@ -51,30 +51,43 @@ ffmpeg \
 file-roller \
 fontconfig \
 freetype \
+geany \
 gparted \
 gtk-engine-murrine \
+gvim-huge \
 htop \
 inetutils \
 inkscape \
 libreoffice \
 lshw \
 mtpfs \
+mtools \
 multibootusb \
+nano \
 neofetch \
+ninja \
+nodejs \
 parted \
+psmisc \
+qt5ct \
+ranger \
 unzip \
+vim \
 volumeicon \
 wget \
 WoeUSB \
+xarchiver \
 xdg-user-dirs \
 xdg-user-dirs-gtk \
 xfce-polkit \
 xfce4-dev-tools \
 xfce4-screenshooter \
 xfce4-whiskermenu-plugin \
+xterm \
 youtube-dl \
-zip \
-zenity
+zenity \
+zip
+
 printf "${GREEN}Installo il tema di icone Lila HD\n"
 sh /media/Dati/Git/Dotfiles/Scripts/lilahd-install.sh
 exit 0
