@@ -1,8 +1,8 @@
-aggiungi al grub.cfg
+aggiungi al 40_custom in /etc/grub.d
 __________________________________________________
 
 menuentry "GhostBSD"{
-set root=(hd0,3)
+set root=(hd2,3)
 chainloader +1
 }
 
