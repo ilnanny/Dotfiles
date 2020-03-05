@@ -1,0 +1,33 @@
+Gli algoritmi  più comuni sono:
+
+  MD5 stringa di 128bit = 32 caratteri
+  SHA (Secure Hash Algoritm)
+  - SHA1 stringa di 160bit = 40 caratteri
+  - SHA2
+  sha256 stringa di 256bit = 64 caratteri
+  sha512 stringa di 512bit = 128 caratteri
+  (sha224 stringa di 224bit = 56 caratteri)
+  (sha384 stringa di 384bit = 96 caratteri)
+___________________________________________________________________
+
+
+Per il calcolo :
+  md5sum nomecompletofile.estensione
+  sha1sum nomecompletofile.estensione
+  sha256sum nomecompletofile.estensione
+  sha512sum nomecompletofile.estensione
+
+Per verificarlo:
+
+ sha256sum nomecompletofile.estensione|grep esitorisultato
+
+in questo caso, se il calcolo coincide, verrà dato un OK.
+
+altrimenti non ci sarà alcun output
+
+Esiste anche una gui che si chiama gtkhash
+ ___________________________________________________________________
+
+ es:
+ cd /home/ilnanny/
+ sha256sum GhostBSD-20.02-XFCE.iso|grep 4c6a28846fcd5625eb642a0ed38e53c40d6492edf2fcea7d5be3bb11442af57c

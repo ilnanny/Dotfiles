@@ -1,0 +1,42 @@
+installare nload
+$ nload
+---------------------
+
+installare iftop
+$ iftop -n
+---------------------
+
+installare iptraf
+$ iptraf
+---------------------
+
+installare nethogs
+$ nethogs
+---------------------
+
+installare bmon
+$ bmon
+---------------------
+
+installare bwm-ng
+$ bwm-ng
+---------------------
+
+installare vnstat
+$ vnstat -l -i eth0
+$ vnstat -l -i wlan0
+---------------------
+
+installare cbm
+$ cbm
+---------------------
+
+installare speedometer
+$ speedometer
+---------------------
+
+installare pktstat
+$ pktstat
+---------------------
+
+
