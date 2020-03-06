@@ -1,0 +1,37 @@
+
+SDConfig file for /etc/init.d/pure-ftpd
+
+## Consente l'avvio del server
+IS_CONFIGURED="yes"
+
+## FTP Server,Port
+SERVER="-S 21"
+
+## Numero di connessioni totali e per ip
+MAX_CONN="-c 30"
+MAX_CONN_IP="-C 10"
+
+## Ǹon consente i caricamenti se è piena
+DISK_FULL="-k 90%"
+
+## Autenticazione
+AUTH="-l unix"
+
+## Misc. Others
+MISC_OTHER="-A -j -E -Z -p"
+
+## Legenda MISC_OTHER :
+# -A: chroot
+# -E: proibisce il login anonimo
+# -j: autocrea la home di un utente se non esiste
+# -R: disabilita il comando chmod
+# -x e -X: non permette la scrittura (e lettura)
+#         di file con il punto iniziale
+# -Z: abilita dei controlli automatici sull'uso di chmod
+#    in modo che gli utenti non impostino permessi assurdi
+# -p: specifica il range di porte da usare per il passive-mode
+# -r: non sovrascrive mai i file, ma li rinomina
+# -T e -t: abilitano la limitazione di banda
+#
+
+

@@ -4,6 +4,7 @@ ln -s /media/Dati/Musica/ /home/ilnanny/Musica
 ln -s /media/Dati/Git/ /home/ilnanny/Git
 ln -s /media/Dati/Git/Dotfiles/Wiki/ /home/ilnanny/Documenti
 ln -s /media/Dati/Git/Dotfiles/Scripts/ /home/ilnanny/bin
+ln -s /media/Dati/Git/Dotfiles/Wiki /home/ilnanny/Notebooks/Wiki
 
 ##
 
