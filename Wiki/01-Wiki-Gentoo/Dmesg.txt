@@ -1,3 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 dmesg | grep -iC 3 "graphics"
 
 dmesg | grep -iC 3 "video"
@@ -9,3 +12,275 @@ dmesg | grep -i tty
 dmesg | grep -i memory
 
 dmesg | grep -i dma
+
+_________________________________T3500GEN______________________________________
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -iC 3 "graphics"
+[    1.077276] ACPI: Added _OSI(Processor Aggregator Device)
+[    1.077277] ACPI: Added _OSI(Linux-Dell-Video)
+[    1.077278] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    1.077279] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    1.144470] ACPI: 3 ACPI AML tables successfully acquired and loaded
+[    1.150856] ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+[    1.169674] ACPI: Interpreter enabled
+
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -iC 3 "video"
+[    1.077275] ACPI: Added _OSI(Processor Device)
+[    1.077275] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    1.077276] ACPI: Added _OSI(Processor Aggregator Device)
+[    1.077277] ACPI: Added _OSI(Linux-Dell-Video)
+[    1.077278] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    1.077279] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    1.144470] ACPI: 3 ACPI AML tables successfully acquired and loaded
+--
+[    1.408960] UDP-Lite hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    1.409164] NET: Registered protocol family 1
+[    1.409169] NET: Registered protocol family 44
+[    1.417299] pci 0000:02:00.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    1.417311] pci 0000:02:00.1: D0 power state depends on 0000:02:00.0
+[    1.417385] PCI: CLS 64 bytes, default 64
+[    1.417434] Trying to unpack rootfs image as initramfs...
+--
+[    6.134575] tg3 0000:05:00.0 eth1: RXcsums[1] LinkChgREG[0] MIirq[0] ASF[0] TSOcap[1]
+[    6.134576] tg3 0000:05:00.0 eth1: dma_rwctrl[76180000] dma_mask[64-bit]
+[    6.172043] mc: Linux media interface: v0.10
+[    6.181829] videodev: Linux video capture interface: v2.00
+[    6.218507] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    6.218632] mousedev: PS/2 mouse device common for all mice
+[    6.222151] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+--
+[    6.269544] device-mapper: uevent: version 1.0.3
+[    6.269937] device-mapper: ioctl: 4.41.0-ioctl (2019-09-16) initialised: dm-devel@redhat.com
+[    6.394679] usbcore: registered new interface driver snd-usb-audio
+[    6.395363] uvcvideo: Found UVC 1.00 device USB 2.0 Camera (0c45:6366)
+[    6.422809] uvcvideo 1-1.4:1.0: Entity type for entity Extension 4 was not initialized!
+[    6.422811] uvcvideo 1-1.4:1.0: Entity type for entity Extension 3 was not initialized!
+[    6.422812] uvcvideo 1-1.4:1.0: Entity type for entity Processing 2 was not initialized!
+[    6.422814] uvcvideo 1-1.4:1.0: Entity type for entity Camera 1 was not initialized!
+[    6.422899] input: USB 2.0 Camera: USB Camera as /devices/pci0000:00/0000:00:1a.7/usb1/1-1/1-1.4/1-1.4:1.0/input/input4
+[    6.422986] usbcore: registered new interface driver uvcvideo
+[    6.422987] USB Video Class driver (1.1.1)
+[    6.428257] usbcore: registered new interface driver rtl8812au
+[    6.464995] input: PC Speaker as /devices/platform/pcspkr/input/input5
+[    6.468798] usb 1-1.1: ath9k_htc: Firmware ath9k_htc/htc_9271-1.4.0.fw requested
+--
+[   12.898346] ------------[ cut here ]------------
+[   12.898349] Bad or missing usercopy whitelist? Kernel memory exposure attempt detected from SLUB object 'nvidia_stack_t' (offset 11864, size 3)!
+[   12.898359] WARNING: CPU: 5 PID: 2533 at mm/usercopy.c:75 usercopy_warn+0x7d/0xa0
+[   12.898360] Modules linked in: fuse iTCO_wdt iTCO_vendor_support gpio_ich ppdev dell_smm_hwmon intel_powerclamp coretemp kvm_intel kvm irqbypass crct10dif_pclmul ghash_clmulni_intel snd_hda_codec_hdmi aesni_intel crypto_simd dell_wmi cryptd dell_smbios glue_helper dcdbas intel_cstate intel_uncore snd_hda_codec_analog pktcdvd dell_wmi_descriptor sparse_keymap wmi_bmof pcspkr snd_hda_codec_generic ath9k_htc ledtrig_audio ath9k_common ath9k_hw ath dm_mod mac80211 i2c_i801 uvcvideo lpc_ich videobuf2_vmalloc videobuf2_memops input_leds mousedev videobuf2_v4l2 snd_usb_audio cfg80211 videobuf2_common snd_usbmidi_lib rfkill snd_rawmidi videodev snd_seq_device libarc4 mc 8812au(O) tg3 nvidia(PO) libphy parport_pc parport drm agpgart evdev mac_hid vboxnetadp(O) snd_hda_intel snd_intel_dspcfg vboxnetflt(O) snd_hda_codec snd_hda_core snd_hwdep snd_pcm vboxdrv(O) snd_timer snd soundcore i7core_edac acpi_cpufreq ext4 crc32c_generic crc16 mbcache jbd2 sr_mod cdrom uas usb_storage sd_mod hid_generic
+[   12.898395]  ata_generic pata_acpi usbhid hid uhci_hcd crc32_pclmul ata_piix crc32c_intel libata scsi_mod ehci_pci ehci_hcd wmi
+[   12.898403] CPU: 5 PID: 2533 Comm: X Tainted: P          IO      5.5.5 #1
+[   12.898404] Hardware name: Dell Inc. Precision WorkStation T3500  /09KPNV, BIOS A17 05/28/2013
+
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -i usb
+[    1.345390] ACPI: bus type USB registered
+[    1.345390] usbcore: registered new interface driver usbfs
+[    1.345390] usbcore: registered new interface driver hub
+[    1.347150] usbcore: registered new device driver usb
+[    1.960515] usbcore: registered new interface driver usbserial_generic
+[    1.960524] usbserial: USB Serial support registered for generic
+[    2.236989] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.237902] ehci-pci 0000:00:1a.7: new USB bus registered, assigned bus number 1
+[    2.253834] ehci-pci 0000:00:1a.7: USB 2.0 started, EHCI 1.00
+[    2.253907] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.05
+[    2.253909] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.253911] usb usb1: Product: EHCI Host Controller
+[    2.253913] usb usb1: Manufacturer: Linux 5.5.5 ehci_hcd
+[    2.253915] usb usb1: SerialNumber: 0000:00:1a.7
+[    2.254070] hub 1-0:1.0: USB hub found
+[    2.254849] ehci-pci 0000:00:1d.7: new USB bus registered, assigned bus number 2
+[    2.270575] ehci-pci 0000:00:1d.7: USB 2.0 started, EHCI 1.00
+[    2.270648] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.05
+[    2.270650] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.270652] usb usb2: Product: EHCI Host Controller
+[    2.270654] usb usb2: Manufacturer: Linux 5.5.5 ehci_hcd
+[    2.270656] usb usb2: SerialNumber: 0000:00:1d.7
+[    2.270960] hub 2-0:1.0: USB hub found
+[    2.272208] uhci_hcd: USB Universal Host Controller Interface driver
+[    2.272747] uhci_hcd 0000:00:1a.0: new USB bus registered, assigned bus number 3
+[    2.272829] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.272831] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.272832] usb usb3: Product: UHCI Host Controller
+[    2.272833] usb usb3: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.272834] usb usb3: SerialNumber: 0000:00:1a.0
+[    2.272994] hub 3-0:1.0: USB hub found
+[    2.273638] uhci_hcd 0000:00:1a.1: new USB bus registered, assigned bus number 4
+[    2.273716] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.273717] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.273719] usb usb4: Product: UHCI Host Controller
+[    2.273720] usb usb4: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.273721] usb usb4: SerialNumber: 0000:00:1a.1
+[    2.273821] hub 4-0:1.0: USB hub found
+[    2.274478] uhci_hcd 0000:00:1a.2: new USB bus registered, assigned bus number 5
+[    2.274553] usb usb5: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.274554] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.274556] usb usb5: Product: UHCI Host Controller
+[    2.274557] usb usb5: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.274558] usb usb5: SerialNumber: 0000:00:1a.2
+[    2.274713] hub 5-0:1.0: USB hub found
+[    2.275355] uhci_hcd 0000:00:1d.0: new USB bus registered, assigned bus number 6
+[    2.275426] usb usb6: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.275427] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.275429] usb usb6: Product: UHCI Host Controller
+[    2.275430] usb usb6: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.275431] usb usb6: SerialNumber: 0000:00:1d.0
+[    2.275527] hub 6-0:1.0: USB hub found
+[    2.276171] uhci_hcd 0000:00:1d.1: new USB bus registered, assigned bus number 7
+[    2.276247] usb usb7: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.276248] usb usb7: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.276249] usb usb7: Product: UHCI Host Controller
+[    2.276250] usb usb7: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.276251] usb usb7: SerialNumber: 0000:00:1d.1
+[    2.276340] hub 7-0:1.0: USB hub found
+[    2.276999] uhci_hcd 0000:00:1d.2: new USB bus registered, assigned bus number 8
+[    2.277080] usb usb8: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.05
+[    2.277082] usb usb8: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.277083] usb usb8: Product: UHCI Host Controller
+[    2.277084] usb usb8: Manufacturer: Linux 5.5.5 uhci_hcd
+[    2.277085] usb usb8: SerialNumber: 0000:00:1d.2
+[    2.277184] hub 8-0:1.0: USB hub found
+[    2.583906] usb 1-1: new high-speed USB device number 2 using ehci-pci
+[    2.608723] usb 1-1: New USB device found, idVendor=1a40, idProduct=0101, bcdDevice= 1.11
+[    2.608726] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    2.608728] usb 1-1: Product: USB 2.0 Hub
+[    2.609133] hub 1-1:1.0: USB hub found
+[    2.730559] usb 1-4: new high-speed USB device number 3 using ehci-pci
+[    2.740555] usb 8-1: new low-speed USB device number 2 using uhci_hcd
+[    2.755729] usb 1-4: New USB device found, idVendor=0bda, idProduct=8812, bcdDevice= 0.00
+[    2.755732] usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    2.755734] usb 1-4: Product: 802.11n NIC
+[    2.755736] usb 1-4: Manufacturer: Realtek
+[    2.755738] usb 1-4: SerialNumber: 123456
+[    2.929219] usb 8-1: New USB device found, idVendor=0461, idProduct=4e22, bcdDevice= 1.00
+[    2.929222] usb 8-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    2.929224] usb 8-1: Product: USB Optical Mouse
+[    2.929226] usb 8-1: Manufacturer: PixArt
+[    2.947358] usbcore: registered new interface driver usbhid
+[    2.947359] usbhid: USB HID core driver
+[    2.948690] input: PixArt USB Optical Mouse as /devices/pci0000:00/0000:00:1d.2/usb8/8-1/8-1:1.0/0003:0461:4E22.0001/input/input2
+[    2.948865] hid-generic 0003:0461:4E22.0001: input,hidraw0: USB HID v1.11 Mouse [PixArt USB Optical Mouse] on usb-0000:00:1d.2-1/input0
+[    2.987226] usb 1-1.1: new high-speed USB device number 4 using ehci-pci
+[    3.022494] usb 1-1.1: New USB device found, idVendor=0846, idProduct=9030, bcdDevice= 1.08
+[    3.022498] usb 1-1.1: New USB device strings: Mfr=16, Product=32, SerialNumber=48
+[    3.022499] usb 1-1.1: Product: WNA1100
+[    3.022501] usb 1-1.1: Manufacturer: NETGEAR WNA
+[    3.022503] usb 1-1.1: SerialNumber: 12345
+[    3.193896] usb 1-1.2: new high-speed USB device number 5 using ehci-pci
+[    3.225148] usb 1-1.2: New USB device found, idVendor=2717, idProduct=ff40, bcdDevice= 4.14
+[    3.225151] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.225153] usb 1-1.2: Product: Mi 9T
+[    3.225155] usb 1-1.2: Manufacturer: Xiaomi
+[    3.225157] usb 1-1.2: SerialNumber: 20857928
+[    3.400571] usb 1-1.3: new high-speed USB device number 6 using ehci-pci
+[    3.426866] usb 1-1.3: New USB device found, idVendor=0951, idProduct=1666, bcdDevice= 1.10
+[    3.426869] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.426871] usb 1-1.3: Product: DataTraveler 3.0
+[    3.426873] usb 1-1.3: Manufacturer: Kingston
+[    3.426875] usb 1-1.3: SerialNumber: 08606E6B678AE34107270605
+[    3.429115] usb-storage 1-1.3:1.0: USB Mass Storage device detected
+[    3.429525] scsi host4: usb-storage 1-1.3:1.0
+[    3.429618] usbcore: registered new interface driver usb-storage
+[    3.430257] usbcore: registered new interface driver uas
+[    3.533900] usb 8-2: new low-speed USB device number 3 using uhci_hcd
+[    3.600550] usb 1-1.4: new high-speed USB device number 7 using ehci-pci
+[    3.655535] usb 1-1.4: New USB device found, idVendor=0c45, idProduct=6366, bcdDevice= 1.00
+[    3.655538] usb 1-1.4: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+[    3.655544] usb 1-1.4: Product: USB 2.0 Camera
+[    3.655546] usb 1-1.4: Manufacturer: Sonix Technology Co., Ltd.
+[    3.655548] usb 1-1.4: SerialNumber: SN0001
+[    3.720224] usb 8-2: New USB device found, idVendor=413c, idProduct=2107, bcdDevice= 1.04
+[    3.720227] usb 8-2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.720229] usb 8-2: Product: Dell USB Entry Keyboard
+[    3.720231] usb 8-2: Manufacturer: DELL
+[    3.739537] input: DELL Dell USB Entry Keyboard as /devices/pci0000:00/0000:00:1d.2/usb8/8-2/8-2:1.0/0003:413C:2107.0002/input/input3
+[    3.793935] hid-generic 0003:413C:2107.0002: input,hidraw1: USB HID v1.11 Keyboard [DELL Dell USB Entry Keyboard] on usb-0000:00:1d.2-2/input0
+[    6.261481] usb 1-1.4: 3:1: cannot get freq at ep 0x84
+[    6.394679] usbcore: registered new interface driver snd-usb-audio
+[    6.395363] uvcvideo: Found UVC 1.00 device USB 2.0 Camera (0c45:6366)
+[    6.422899] input: USB 2.0 Camera: USB Camera as /devices/pci0000:00/0000:00:1a.7/usb1/1-1/1-1.4/1-1.4:1.0/input/input4
+[    6.422986] usbcore: registered new interface driver uvcvideo
+[    6.422987] USB Video Class driver (1.1.1)
+[    6.428257] usbcore: registered new interface driver rtl8812au
+[    6.468798] usb 1-1.1: ath9k_htc: Firmware ath9k_htc/htc_9271-1.4.0.fw requested
+[    6.468871] usbcore: registered new interface driver ath9k_htc
+[    6.797646] usb 1-1.1: ath9k_htc: Transferred FW: ath9k_htc/htc_9271-1.4.0.fw, size: 51008
+[   12.450950] elogind-daemon[2444]: Watching system buttons on /dev/input/event3 (DELL Dell USB Entry Keyboard)
+[   12.898360] Modules linked in: fuse iTCO_wdt iTCO_vendor_support gpio_ich ppdev dell_smm_hwmon intel_powerclamp coretemp kvm_intel kvm irqbypass crct10dif_pclmul ghash_clmulni_intel snd_hda_codec_hdmi aesni_intel crypto_simd dell_wmi cryptd dell_smbios glue_helper dcdbas intel_cstate intel_uncore snd_hda_codec_analog pktcdvd dell_wmi_descriptor sparse_keymap wmi_bmof pcspkr snd_hda_codec_generic ath9k_htc ledtrig_audio ath9k_common ath9k_hw ath dm_mod mac80211 i2c_i801 uvcvideo lpc_ich videobuf2_vmalloc videobuf2_memops input_leds mousedev videobuf2_v4l2 snd_usb_audio cfg80211 videobuf2_common snd_usbmidi_lib rfkill snd_rawmidi videodev snd_seq_device libarc4 mc 8812au(O) tg3 nvidia(PO) libphy parport_pc parport drm agpgart evdev mac_hid vboxnetadp(O) snd_hda_intel snd_intel_dspcfg vboxnetflt(O) snd_hda_codec snd_hda_core snd_hwdep snd_pcm vboxdrv(O) snd_timer snd soundcore i7core_edac acpi_cpufreq ext4 crc32c_generic crc16 mbcache jbd2 sr_mod cdrom uas usb_storage sd_mod hid_generic
+[   12.898395]  ata_generic pata_acpi usbhid hid uhci_hcd crc32_pclmul ata_piix crc32c_intel libata scsi_mod ehci_pci ehci_hcd wmi
+[  133.350043] usb 1-1.4: 3:1: cannot get freq at ep 0x84
+[  133.420534] usb 1-1.4: 3:1: cannot get freq at ep 0x84
+[  267.971271] usb 1-1.2: USB disconnect, device number 5
+
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -i tty
+[    0.345044] printk: console [tty0] enabled
+[    1.945417] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -i memory
+[    0.026026] check: Scanning 1 areas for low memory corruption
+[    0.026825] Early memory node ranges
+[    0.083594] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.083595] PM: Registered nosave memory: [mem 0x0009f000-0x000effff]
+[    0.083596] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.083597] PM: Registered nosave memory: [mem 0xdfdf9000-0xdfdf9fff]
+[    0.083598] PM: Registered nosave memory: [mem 0xdfdfa000-0xdfe4afff]
+[    0.083598] PM: Registered nosave memory: [mem 0xdfe4b000-0xdfe4bfff]
+[    0.083599] PM: Registered nosave memory: [mem 0xdfe4c000-0xdfe4cfff]
+[    0.083600] PM: Registered nosave memory: [mem 0xdfe4d000-0xdfe4dfff]
+[    0.083600] PM: Registered nosave memory: [mem 0xdfe4e000-0xdfffffff]
+[    0.083601] PM: Registered nosave memory: [mem 0xe0000000-0xf7ffffff]
+[    0.083602] PM: Registered nosave memory: [mem 0xf8000000-0xfcffffff]
+[    0.083602] PM: Registered nosave memory: [mem 0xfd000000-0xfdffffff]
+[    0.083603] PM: Registered nosave memory: [mem 0xfe000000-0xfecfffff]
+[    0.083604] PM: Registered nosave memory: [mem 0xfed00000-0xfedfffff]
+[    0.083604] PM: Registered nosave memory: [mem 0xfee00000-0xfeefffff]
+[    0.083605] PM: Registered nosave memory: [mem 0xfef00000-0xffafffff]
+[    0.083605] PM: Registered nosave memory: [mem 0xffb00000-0xffffffff]
+[    0.319851] Memory: 12223668K/12580444K available (12291K kernel code, 1344K rwdata, 4284K rodata, 1664K init, 3384K bss, 356776K reserved, 0K cma-reserved)
+[    0.444452] Freeing SMP alternatives memory: 32K
+[    1.067719] x86/mm: Memory block size: 128MB
+[    1.890115] Freeing initrd memory: 31184K
+[    1.904292] check: Scanning for low memory corruption every 60 seconds
+[    1.984311] Freeing unused decrypted memory: 2040K
+[    1.984710] Freeing unused kernel image (initmem) memory: 1664K
+[    2.008295] Freeing unused kernel image (text/rodata gap) memory: 2044K
+[    2.008821] Freeing unused kernel image (rodata/data gap) memory: 1860K
+[    5.893282] EDAC i7core: Driver loaded, 1 memory controller(s) found.
+[   12.898349] Bad or missing usercopy whitelist? Kernel memory exposure attempt detected from SLUB object 'nvidia_stack_t' (offset 11864, size 3)!
+
+┌─[✔]───[ilnanny@T3500GEN]───[~]───[13 files, totale 212K]
+└───▶ dmesg | grep -i dma
+[    0.026453] ACPI: DMAR 0x00000000000FD391 0000C8 (v01 DELL   B10K     00000015 ASL  00000061)
+[    0.026820]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.026821]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.026844]   DMA zone: 64 pages used for memmap
+[    0.026845]   DMA zone: 21 pages reserved
+[    0.026846]   DMA zone: 3998 pages, LIFO batch:0
+[    0.026918]   DMA32 zone: 14264 pages used for memmap
+[    0.026919]   DMA32 zone: 912889 pages, LIFO batch:63
+[    0.427143] DMAR-IR: This system BIOS has enabled interrupt remapping
+[    1.383962] pnp 00:02: [dma 0 disabled]
+[    1.890173] DMAR: Host address width 40
+[    1.890175] DMAR: DRHD base: 0x000000fedc0000 flags: 0x1
+[    1.890190] DMAR: dmar0: reg_base_addr fedc0000 ver 1:0 cap c90780106f0462 ecap f020fe
+[    1.890191] DMAR: RMRR base: 0x000000dfe58000 end: 0x000000dfe6ffff
+[    1.890193] DMAR: ATSR flags: 0x0
+[    1.904047] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    2.245269] ata1: SATA max UDMA/133 cmd 0xfe00 ctl 0xfe10 bmdma 0xfec0 irq 20
+[    2.245273] ata2: SATA max UDMA/133 cmd 0xfe20 ctl 0xfe30 bmdma 0xfec8 irq 20
+[    2.401762] ata3: SATA max UDMA/133 cmd 0xfe40 ctl 0xfe50 bmdma 0xfed0 irq 20
+[    2.401765] ata4: SATA max UDMA/133 cmd 0xfe60 ctl 0xfe70 bmdma 0xfed8 irq 20
+[    3.033148] ata1.00: ATA-9: CT240BX500SSD1,  M6CR013, max UDMA/133
+[    3.035455] ata1.01: ATA-8: HITACHI HUA722010ALA330, JP4ONS01, max UDMA/133
+[    3.043095] ata1.00: configured for UDMA/133
+[    3.048133] ata1.01: configured for UDMA/133
+[    3.655542] ata2.00: ATAPI: PLDS DVD+/-RW DH-16ACS  H, JD11, max UDMA/100
+[    3.656864] ata2.01: ATA-9: KingDian S280 240GB, S0626A0, max UDMA/133
+[    3.661573] ata2.00: configured for UDMA/100
+[    3.667699] ata2.01: configured for UDMA/133
+[    6.113914] tg3 0000:01:00.0 eth0: dma_rwctrl[76180000] dma_mask[64-bit]
+[    6.134576] tg3 0000:05:00.0 eth1: dma_rwctrl[76180000] dma_mask[64-bit]
+______________________________________________________________________________________________________-

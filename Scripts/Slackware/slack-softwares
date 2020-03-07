@@ -86,5 +86,6 @@ zenity
 printf "${GREEN}Installo il tema di icone Lila HD\n"
 sh /media/Dati/Git/Dotfiles/Scripts/lilahd-install
 sh /media/Dati/Git/Dotfiles/Scripts/arch-theme
+
 exit 0
 

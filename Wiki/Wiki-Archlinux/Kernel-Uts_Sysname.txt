@@ -17,13 +17,6 @@ e lo compili
 
 
 
-
-
-
-
-
-
-
 ============================================
 per raspberry:
 Cambia la definizione di  UTS_SYSNAME :

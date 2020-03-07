@@ -1,1 +1,6 @@
 
+# required by dev-libs/libappindicator-12.10.0-r301::gentoo
+# required by x11-misc/redshift-1.12-r3::gentoo[ayatana]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3

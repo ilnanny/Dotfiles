@@ -3,8 +3,8 @@ ________________________________________________________________________________
            == ==  Montare la partizione sulla quale risiede il sistema  == ==
 __________________________________________________________________________________________
 
- mount /dev/sdb2 /mnt
- mount -o remount,rw /dev/sdb2 /mnt
+ mount /dev/sdc3 /mnt
+ mount -o remount,rw /dev/sdc3 /mnt
  mount --bind /dev /mnt/dev
  mount --make-rslave /mnt/dev
  mount --bind /proc /mnt/proc

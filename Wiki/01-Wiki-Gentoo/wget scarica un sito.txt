@@ -1,0 +1,22 @@
+
+wget scarica un sito
+
+Esiste un programma, incluso in tutte le distribuzioni Linux, che è in grado di scaricare interi siti internet. Il comando si chiama wget e può essere usato per recuperare file su http, https o ftp. Inutile dire che tutto ciò funziona solo ed esclusivamente per siti ‘statici’ (html, css, javascript) e non ha senso con siti che utilizzano linguaggi di scripting lato server come il php.
+
+Vediamo un po’ come fare.
+
+wget -r -p -k -l 0 www.sitodascaricare.com
+
+Ecco fatto. Ma vediamo un po’ cosa significano i parametri che gli abbiamo passato.
+
+La -r sta per –recursive e dice al programma di scaricare ricorsivamente tutto il contenuto delle cartelle. La -p sta per –page-requisites e fa sì che il programma scarichi tutte quante le immagini e gli altri file necessari affinchè i file html vengano visualizzati. Il comando -l sta per –level e indica il livello di ricorsione desiderato: 0 vuol dire illimitato e quindi wget scaricherà tutte le cartelle e le sottocartelle.
+
+Il comando -k è il comando fondamentale. Sta per –convert-links e si occupa di convertire tutti i links alle pagine web, in link locali alle pagine da voi scaricate. In questo modo il sito sarà perfettamente consultabile offline.
+
+Bene… è tutto. È stato semplicissimo. Dopo un po’ di tempo avremo il nostro sito copiato in locale.
+
+Bisogna però dire che alcuni siti attuano un controllo sull’User Agent che sta scaricando il materiale e impediscono a wget di fare il suo lavoro. Fortunatamente esiste anche lo switch -U che consente di falsificare l’User Agent.
+
+wget -r -p -k -l 0 -U Mozilla www.sitoprotetteo.com
+
+Un’ultima importante opzione è -np, che sta per –no-parent. Quest’opzione dice a wget di non risalire alle directory superiori: è molto utile qualora vogliate scaricare solamente una sottocartella del sito in questione. Senza quest’opzione, infatti, è molto probabile che a furia di “ricorrere” vi trovate anche cartelle che non vi interessavano minimamente.

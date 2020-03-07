@@ -1,0 +1,37 @@
+Comando : redshift -h
+Uso: redshift -l LAT:LON -t GIORNO:NOTTE [OPZIONI...]
+
+Imposta la temperatura del colore dello schermo in base all'orario del giorno.
+
+  -h		Mostra questo messaggio di aiuto
+  -v		Output prolisso
+  -V		Mostra la versione del programma
+
+  -b DAY:NIGHT	Luminosità dello schermo da applicare (between 0.1 and 1.0)
+  -c FILE	Carica le impostazioni dal file di configurazione specificato
+  -g R:G:B	Correzione gamma aggiuntiva da applicare
+  -l LAT:LON	 La tua posizione attuale
+  -l PROVIDER	Seleziona il fornitore per gli aggiornamenti automatici della posizione
+  		(Digita 'list' per vedere i provider disponibili)
+  -m METHOD	Metodo da utilizzare per impostare la temperatura del colore
+  		(Digita 'list' per vedere i metodi disponibili)
+  -o		Modalità One shot (non regolare continuamente la temperatura del colore)
+  -O TEMP	Modalità manuale One shot (impostare la temperatura del colore)
+  -p            Modalità di stampa (stampa solo parametri ed esci)
+  -P            Ripristina la gamma esistente prima di applicarne una nuova
+  -x            Modalità di ripristino (rimuove la regolazione dallo schermo)
+  -r            Disabilita lo sbiadimento tra le temperature di colore
+  -t            GIORNO: NOTTE Temperatura colore da impostare di giorno / notte
+
+La temperatura neutra è di 6500 K. L'uso di questo valore non cambierà il colore
+temperatura del display. Impostazione della temperatura del colore su un valore superiore
+in questo modo si ottiene più luce blu e si determina un valore inferiore
+più luce rossa.
+
+
+Valori predefiniti:
+
+  Temperatura giornaliera: 6500K
+  Temperatura notturna: 4500K
+
+Segnalare i bug all'indirizzo <https://github.com/jonls/redshift/issues>

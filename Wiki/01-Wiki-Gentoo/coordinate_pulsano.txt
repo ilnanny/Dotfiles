@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-07T00:33:48+01:00
+
+====== Coordinate Pulsano ======
+Creato sabato 07 marzo 2020
+
+Coordinate di Pulsano in gradi decimali
+Latitudine : 40.3810900°
+Longitudine : 17.3561200°
+
+Coordinate di Pulsano in gradi e minuti decimali
+Latitudine : 40°22.8654′ N
+Longitudine : 17°21.3672′ E
+

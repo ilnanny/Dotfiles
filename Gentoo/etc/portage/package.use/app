@@ -12,6 +12,8 @@ app-emulation/virtualbox-bin additions rdesktop-vrdp
 
 app-office/libreoffice-bin   java
 
+app-misc/geoclue gtk modemmanager
+
 app-text/ghostscript-gpl cups
 
 app-text/poppler cairo

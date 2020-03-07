@@ -8,5 +8,5 @@
 // about configuring polkit.
 
 polkit.addAdminRule(function(action, subject) {
-    return ["unix-user:0"];
+    return ["unix-user:root"];
 });

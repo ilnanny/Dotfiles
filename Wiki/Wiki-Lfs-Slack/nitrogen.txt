@@ -1,0 +1,11 @@
+nitrogen
+
+dipendenze:
+
+gtkmm \
+mm-common \
+atkmm \
+pangomm \
+cairomm \
+glibmm \
+libsigc++

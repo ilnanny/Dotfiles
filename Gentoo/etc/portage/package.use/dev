@@ -2,6 +2,8 @@ dev-cpp/cairomm X gtkmm
 
 dev-db/sqlite secure-delete -icu
 
+dev-db/mysql mariadb
+
 dev-java/openjdk-jre-bin cups nsplugin webstart
 
 dev-java/icedtea-web nsplugin
@@ -17,6 +19,8 @@ dev-libs/libpcre2 pcre16
 dev-libs/libxml2 python
 
 dev-libs/xmlsec nss
+
+dev-perl/DBD-mysql router
 
 dev-python/PyQt5 gui widgets
 

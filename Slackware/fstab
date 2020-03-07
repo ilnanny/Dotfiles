@@ -4,7 +4,6 @@
 ## == CARTELLE
 #==================================================================================================
 /dev/cdrom         /mnt/cdrom       auto         noauto,owner,ro,comment=x-gvfs-show     0   0
-/dev/fd0           /mnt/floppy      auto         noauto,users,rw,umask=00                0   0
 devpts             /dev/pts         devpts       gid=5,mode=620               0   0
 proc               /proc            proc         defaults                     0   0
 tmpfs              /dev/shm         tmpfs        defaults                     0   0
@@ -24,3 +23,10 @@ UUID=********-****-****-****-************   swap	swap	sw	 0   0
 UUID=76CDC3FF57CBA78E	/media/Dati	ntfs-3g	defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0
 
 #==================================================================================================
+
+proc /proc proc defaults 0 0
+sysfs /sys sysfs defaults 0 0
+tmpfs /dev/shm tmpfs defaults 0 0
+/dev/sdc3 / ext4 defaults 1 1
+/dev/sdc1  swap  swap defaults  0  0
+/dev/sdb1 /media/Dati	ntfs-3g	defaults,rw,uid=1000,locale=it_IT.UTF-8	    0   0
