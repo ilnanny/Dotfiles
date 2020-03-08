@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+Name=Customize Look and Feel
+Name[it]=Personalizza aspetto e stile
+GenericName=Customize Look and Feel
+GenericName[it]=Personalizza aspetto e stile
+Comment=Customizes look and feel of your desktop and applications
+Comment[it]=Gestore delle impostazioni grafico per Xfce 4
+Keywords=windows;preferences;settings;theme;style;appearance;
+Keywords[it]=finestre;preferenze;impostazioni;tema;stile;look
+Icon=preferences-desktop
+Exec=xfce4-settings-manager
+NotShowIn=GNOME;KDE;XFCE;MATE;
+StartupNotify=false
+Categories=GTK;Settings;DesktopSettings;X-LXDE-Settings;
+Name[it_IT.UTF-8]=Gestore delle impostazioni
+X-XFCE-Source=file:///usr/share/applications/lxappearance.desktop
+Path=
+Terminal=false

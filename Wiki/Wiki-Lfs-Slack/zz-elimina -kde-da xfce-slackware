@@ -1,9 +1,9 @@
 ------------------------------------------------
 ** Add user account
 
-useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash $USER
+useradd -m -g users -G wheel,floppy,audio,video,cdrom,plugdev,power,netdev,lp,scanner -s /bin/bash ilnanny
 
-passwd $USER
+passwd ilnanny
 
 ------------------------------------------------
 ** Configure package manager
@@ -12,18 +12,18 @@ nano /etc/slackpkg/mirrors
 
 Uncomment a single mirror URL. Make sure that the URL mentions the release number for the version of Slackware you are running. Also, pick a mirror which is close to you or of which you know it is fast. When you have done that, you need to initialize slackpkg's database by running:
 
-# slackpkg update gpg
-# slackpkg update
+   slackpkg update gpg
+   slackpkg update
 
 ------------------------------------------------
 ** Installing updates using slackpkg
 
 The slackpkg update command will connect to a Slackware mirror and update the local package information database on your computer. This command does not actually install any package. The usual routine for upgrading your Slackware to the latest patches is as follows:
 
-# slackpkg update
-# slackpkg install-new
-# slackpkg upgrade-all
-# slackpkg clean-system
+   slackpkg update
+   slackpkg install-new
+   slackpkg upgrade-all
+   slackpkg clean-system
 
 The “install-new”, “upgrade-all” and “clean-system” commands will always show you a list of candidate packages to act on before excecuting anything. This allows you to review the suggested package alterations and select/deselect anything you do not agree with. The “clean-system” is technically only needed after you upgrade from one Slackware release to the next (say, from 14.1 to 14.2) and it is meant to remove any Slackware package which is not (or no longer) part of the core distribution.
 
@@ -38,21 +38,21 @@ change default runlevel to 4
 
 Open /etc/sudoers file with your favorite text editor as root, then remove comment character, #, in front of line "%wheel ALL=(ALL) ALL" and save.
 
-# visudo
+   visudo
 or
-# nano /etc/sudoers
+   nano /etc/sudoers
 
-# Uncomment to allow people in group wheel to run all commands
-# %wheel ALL=(ALL) ALL
+   Uncomment to allow people in group wheel to run all commands
+   %wheel ALL=(ALL) ALL
 
 Change above line as in below and save file.
 
-# Uncomment to allow people in group wheel to run all commands
+   Uncomment to allow people in group wheel to run all commands
 %wheel ALL=(ALL) ALL
 
 If you did not add your user to the wheel group when creating the user, you need to add your user name to group wheel also.
 
-# gpasswd -aG $USER wheel
+   gpasswd -aG ilnanny wheel
 
 
 
@@ -66,15 +66,15 @@ to not show KDE applications in the the xfce menu, you can use the OnlyShowIn=KD
 
 just open a terminal, and su root
 then
-# cd /usr/share/applications/kde4
+   cd /usr/share/applications/kde4
 and then
-# for i in `ls *desktop`; do echo OnlyShowIn=KDE >> $i; done
+   for i in `ls *desktop`; do echo OnlyShowIn=KDE >> $i; done
 
 and your xfce menu is clean again.
 -------------
 and to revert that action, so to show kde applicatiions in the xfce menu again:
-# cd /usr/share/applications/kde4
-# for i in `ls *desktop`; do grep -v "OnlyShowIn=KDE" $i > temp && mv temp $i; done
+   cd /usr/share/applications/kde4
+   for i in `ls *desktop`; do grep -v "OnlyShowIn=KDE" $i > temp && mv temp $i; done
 
 and they are back again.
 ------------------------------------------------------------------------------------------------------------

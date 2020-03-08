@@ -1,0 +1,85 @@
+2020-03-03	rc.xml KEYBINDS
+-------------------------------
+
+ 0	W-1           				GoToDesktop
+ 1	W-2           				GoToDesktop
+ 2	W-3           				GoToDesktop
+ 3	W-4           				GoToDesktop
+ 4	C-W-1         				SendToDesktop
+ 5	C-W-2         				SendToDesktop
+ 6	C-W-3         				SendToDesktop
+ 7	C-W-4         				SendToDesktop
+ 8	A-Tab         				NextWindow
+ 9	W-Tab         				NextWindow
+10	C-A-Right     				DesktopNext
+11	C-A-Left      				DesktopPrevious
+12	W-Left        				UnmaximizeFull
+13	W-Right       				UnmaximizeFull
+14	C-W-f         				MaximizeFull
+15	W-S-F         				UnmaximizeFull
+16	W-S-k         				Unmaximize
+17	W-S-j         				Unmaximize
+18	W-k           				Unmaximize
+19	W-h           				Unmaximize
+20	W-j           				Unmaximize
+21	W-l           				Unmaximize
+22	W-z           				Unmaximize
+23	W-x           				Unmaximize
+24	W-c           				Unmaximize
+25	W-Right       				MoveRelative
+26	W-Left        				MoveRelative
+27	W-Up          				MoveRelative
+28	W-Down        				MoveRelative
+29	W-S-Right     				ResizeRelative
+30	W-S-Left      				ResizeRelative
+31	W-S-Down      				ResizeRelative
+32	W-S-Up        				ResizeRelative
+33	S-W-Left      				SendToDesktopLeft
+34	S-W-Right     				SendToDesktopRight
+35	S-W-Up        				SendToDesktopUp
+36	S-W-Down      				SendToDesktopDown
+37	A-Escape      				Lower
+38	Print         				/usr/bin/xfce4-screenshooter
+39	A-Print       				scrot -d 5 'screenshot_%Y%m%d-%H%M%S_$wx$h.png' -e 'mv $f $$(xdg-user-.....
+40	W-f           				exo-open --launch FileManager
+41	W-t           				exo-open --launch TerminalEmulator
+42	W-w           				exo-open --launch WebBrowser
+43	W-e           				subl3
+44	C-A-m         				xfce4-settings-manager
+45	W-m           				deadbeef
+46	W-v           				pavucontrol
+47	W-s           				skippy-xd
+48	W-Return      				exo-open --launch TerminalEmulator
+49	C-A-Delete     			menu -l
+50	W-S-Escape     			Exit
+51	C-S-BackSpace  			Restart
+52	C-S-Return     			Reconfigure
+53	W-Escape      				xkill
+54	A-F1          				jgmenu_run
+55	A-F2          				menu -r
+56	A-F4          				Close
+57	A-F5          				Iconify
+58	A-F6          				ToggleMaximize
+59	A-F8          				ToggleDecorations
+60	W-d           				ToggleShowDesktop
+61	W-b           				ToggleDecorations
+62	A-r           				Resize
+63	A-m           				Move
+64	S-W-q         				Close
+65	W-space       				root-menu
+66	A-space       				client-menu
+67	W-KP_1        				UnmaximizeFull
+68	W-KP_2        				UnmaximizeFull
+69	W-KP_3        				UnmaximizeFull
+70	W-KP_4        				UnmaximizeFull
+71	W-KP_5        				MaximizeFull
+72	W-KP_6        				UnmaximizeFull
+73	W-KP_7        				UnmaximizeFull
+74	W-KP_8        				UnmaximizeFull
+75	W-KP_9        				UnmaximizeFull
+76	W-Right       				UnmaximizeFull
+77	W-Left        				UnmaximizeFull
+78	W-Up          				MaximizeFull
+79	W-Down        				UnmaximizeFull
+80	W-A-Left      				UnmaximizeFull
+81	W-A-Right     				UnmaximizeFull

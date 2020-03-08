@@ -1,0 +1,72 @@
+#________________________________________________________________________________
+#
+#                       OpenBox Softwares and Daemons Start
+#________________________________________________________________________________
+#
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Ambiente Grafico.
+DESKTOP_ENV="OPENBOX"
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Polkit Gnome.
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Wifi.
+#sudo nmcli device wifi connect FASTWEB-E06CD5 password 6R87ATWE7R
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Tastiera.
+setxkbmap it
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni XFCE.
+xfsettingsd &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Sfondo Desktop.
+nitrogen --restore &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Trasparenze.
+compton &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Pannelli-Dock.
+sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
+sleep 1; xfce4-panel &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
+sleep 1; volumeicon &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
+numlockx &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Rete.
+nm-applet --sm-disable &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Notifiche
+dunst &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Beep di sistema
+xset b off
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni X.
+xrdb -merge .Xresources
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Nomi Cartelle
+sleep 2; xdg-user-dirs-gtk-update &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Desktop Virtuali
+#skippyrc --config ~/.skippyrc --start-daemon &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Conky.
+sleep 2; conky --daemonize
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Clipboard Manager.
+sleep 1; parcellite &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
+sleep 1; xfce4-terminal --drop-down
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
+#sleep 2; vlc /home/ilnanny/bin/radio.xspf
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
+#sleep 2; thunderbird &
+
+#_________________________________________________________________________________
+#                                     Fine
+#_________________________________________________________________________________

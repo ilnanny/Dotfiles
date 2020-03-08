@@ -1,0 +1,30 @@
+
+# ---------------------------------------  >  Chiavi di autenticazione
+
+eval $(gpg-agent --daemon)
+eval $(gnome-keyring-daemon)
+export "$(gnome-keyring-daemon --start --components=pkcs11,secrets)"
+
+# ---------------------------------------  >  Window Manager.
+
+DESKTOP_ENV="OPENBOX"
+
+# ---------------------------------------  >  Lingua
+LANG=it_IT.UTF-8
+Session=openbox
+Setxkbmap=it
+setxkbmap it
+
+# ---------------------------------------  >  Xfce
+
+export XDG_CURRENT_DESKTOP=XFCE
+#export DE="xfce"
+export DE="openbox"
+
+# ---------------------------------------  >  Dbus con openbox
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+# ---------------------------------------  >  Fine

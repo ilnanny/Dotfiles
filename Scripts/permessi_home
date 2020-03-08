@@ -15,7 +15,7 @@ echo "# Home all'utente  ilnanny con gruppo ilnanny -ricorsivamente    #"
 echo "##################################################################"
 echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
 #su -c 'umount /home/ilnanny/.gvfs/'
-su -c 'chown -R ilnanny:ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
+su -c 'chown -R ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
 echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
 echo "###########################################"
 echo "# Permessi attivati , chiudi il terminale #"

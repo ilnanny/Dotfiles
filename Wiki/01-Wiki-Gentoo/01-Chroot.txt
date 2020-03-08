@@ -1,8 +1,11 @@
-__________________________________________________________________________________________
- == == == == == == == == == == == == == == == == == == == == == == == == == == == == ==
-           == ==  Montare la partizione sulla quale risiede il sistema  == ==
-__________________________________________________________________________________________
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
 
+ Montare la partizione sulla quale risiede il sistema 
+
+== _____________________________________________________ ==
+
+'''
  mount /dev/sdc2 /mnt
  mount -o remount,rw /dev/sdc2 /mnt
  mount --bind /dev /mnt/dev
@@ -11,25 +14,34 @@ ________________________________________________________________________________
  mount --bind /sys /mnt/sys
  mount --make-rslave /mnt/sys
  mount --rbind /tmp /mnt/tmp
+'''
 
+'''
  chroot /mnt /bin/bash
  export PS1="\033[1;33m([chroot])\033[0m $PS1"
+'''
 
  grub-install /dev/sda
  grub-mkconfig -o /boot/grub/grub.cfg
-_________________________________________
 
+== _____________________________________________________ ==
+
+
+'''
  grub-mkconfig –o /boot/grub/grub.cfg
+'''
 
-== Resolv conf
+
+== Resolv conf ==
 nano -w /etc/resolv.conf
 
 search lan
 nameserver 192.168.1.254
 nameserver 2001:b07:2e2:98e0::1
-____________________________________________________________
- == == == == == == == == == == == == == == == == == == == ==
-             == ==  Uscire dal chroot == ==
+
+== _____________________________________________________ ==
+
+== == ==   Uscire dal chroot   == == ==
 
  exit
  cd ~
@@ -40,28 +52,40 @@ ____________________________________________________________
  umount -f /mnt/
  fuser -k /mnt/
  reboot
-____________________________________________________________
- == == == == == == == == == == == == == == == == == == == ==
- == ==  Se si ricevono errori è possibile riprovare :  == ==
 
+== _____________________________________________________ ==
+
+ == ==  Se si ricevono errori è possibile riprovare :
+
+'''
  grub-install --recheck /dev/sda
+'''
 
-____________________________________________________________
- == == == == == == == == == == == == == == == == == == == ==
-               == ==  Immagini ISO :  == ==
+
+== _____________________________________________________ ==
+
+               
+
+== == ==   Immagini ISO    == == ==
 
 __ creare il punto di mount in /media
 
+'''
  mkdir /media/iso
+'''
 
 __ montare  immagine ISO
 
+'''
  mount -t iso9660 -o loop /media/Dati/OS/Linux/64bit/linux-os.iso /media/iso
+'''
 
 __ al posto di file.iso immettere percorso esatto del file iso
 
 __ smontare l’immagine iso
 
  umount /media/iso
-_______________________________________________________________________________
-== == == == == == == == == == == == == ==== == == == == == == == == == == == ==
+
+== _____________________________________________________ ==
+
+

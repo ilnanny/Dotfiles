@@ -1,0 +1,7 @@
+BUILDDIR=/usr/src/slapt-src
+PKGEXT=tgz
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/slkbuild/14.2/
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/sbo/14.2/
+SOURCE=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current
+SOURCE=http://packages.slackonly.com/pub/packages/current/x86_64
+SOURCE=http://www.slackel.gr/repo/x86_64/current

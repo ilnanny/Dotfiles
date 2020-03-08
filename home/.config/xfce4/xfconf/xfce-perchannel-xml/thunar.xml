@@ -2,19 +2,14 @@
 
 <channel name="thunar" version="1.0">
   <property name="last-view" type="string" value="ThunarIconView"/>
-  <property name="last-location-bar" type="string" value="ThunarLocationEntry"/>
-  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
-  <property name="last-separator-position" type="int" value="181"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
+  <property name="last-separator-position" type="int" value="176"/>
   <property name="last-show-hidden" type="bool" value="true"/>
-  <property name="last-window-maximized" type="bool" value="false"/>
-  <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_NEVER"/>
-  <property name="last-window-width" type="int" value="759"/>
-  <property name="last-window-height" type="int" value="568"/>
-  <property name="last-menubar-visible" type="bool" value="false"/>
-  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
-  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
-  <property name="last-statusbar-visible" type="bool" value="false"/>
+  <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_ALWAYS"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="misc-thumbnail-mode" type="string" value="THUNAR_THUMBNAIL_MODE_ALWAYS"/>
-  <property name="misc-show-delete-action" type="bool" value="true"/>
+  <property name="last-menubar-visible" type="bool" value="true"/>
+  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-window-width" type="int" value="739"/>
+  <property name="last-window-height" type="int" value="567"/>
 </channel>

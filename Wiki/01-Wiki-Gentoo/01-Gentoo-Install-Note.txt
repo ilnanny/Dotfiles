@@ -2,15 +2,24 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
 ===========================================
-=Dell Workstation T3500 - T5500
-=Intel Xeon X5650 - X5675 =Westmere
-=Nvidia Quadro 4000 - 2000 =Fermi
-=Grub Bios PC '2010 - 2012'
-=Gentoo Linux amd64 openrc
-=Ssd dev/sdc "/"
-=Host Linux amd64 openrc,systemv,init6
-=Appunti di Gennaio 2016
-=Aggiornato Febbraio 2020
+
+== = Dell Workstation T3500 - T5500 ==
+
+== = Intel Xeon X5650 - X5675 =Westmere ==
+
+== = Nvidia Quadro 4000 - 2000 =Fermi ==
+
+== =Grub Bios PC '2010 - 2012' ==
+
+== =Gentoo Linux amd64 openrc ==
+
+== =Ssd dev/sdc "/" ==
+
+== =Host Linux amd64 openrc,systemv,init6 ==
+
+== =Appunti di Gennaio 2016 ==
+
+== =Aggiornato Febbraio 2020 ==
 ==========================================
 
 == Crea le Cartelle e monta le partizioni: ==
@@ -144,7 +153,7 @@ LANG="it_IT.UTF-8"
 
 ====================================================================
 
-==== Kernel ====
+== Kernel ==
 
   emerge --ask gentoo-kernel-bin \
   intel-microcode grub
@@ -153,7 +162,7 @@ LANG="it_IT.UTF-8"
   linux-firmware os-prober ntfs3g usbutils \
   pciutils elogind e2fsprogs gvfs dev-vcs/git net-misc/ntp
 
-==== con genkernel: ====
+== con genkernel: ==
 
   genkernel --makeopts=-j9 --kernel-config=/root/config all
   emerge -1 @module-rebuild
@@ -189,7 +198,7 @@ hostname"T3500GEN"
 
 ==========================================
 
-=== Password di root: ===
+== Password di root: ==
   passwd
 ==========================================
 

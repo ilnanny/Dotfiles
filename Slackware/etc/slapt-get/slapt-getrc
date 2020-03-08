@@ -1,0 +1,10 @@
+WORKINGDIR=/var/slapt-get
+EXCLUDE=^aaa_elflibs,^aaa_base,^devs,^glibc.*,^kernel-.*,^rootuser-settings,^zzz-settings.*,-i?86-
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/x86_64/slackware-14.2/:OFFICIAL
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/x86_64/slackware-14.2/extra/:OFFICIAL
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/x86_64/14.2/:PREFERRED
+SOURCE=http://www.mirrorservice.org/sites/download.salixos.org/x86_64/extra-14.2/:OFFICIAL
+SOURCE=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/:CUSTOM
+SOURCE=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/:CUSTOM
+SOURCE=http://packages.slackonly.com/pub/packages/current-x86_64/:CUSTOM
+SOURCE=http://www.slackel.gr/repo/x86_64/current/:CUSTOM

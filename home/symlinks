@@ -1,14 +1,14 @@
-$$
+$$ User
 
-ln -s /media/Dati/Musica/ /home/ilnanny/Musica
-ln -s /media/Dati/Git/ /home/ilnanny/Git
-ln -s /media/Dati/Git/Dotfiles/Wiki/ /home/ilnanny/Documenti
-ln -s /media/Dati/Git/Dotfiles/Scripts/ /home/ilnanny/bin
-ln -s /media/Dati/Git/Dotfiles/Wiki /home/ilnanny/Notebooks/Wiki
+ln -s /media/Dati/Musica/ $HOME/Musica
+ln -s /media/Dati/Git/ $HOME/Git
+ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
+ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
+ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
 
-##
+## Root
 
-sudo rm -r /usr/share/backgrounds
-sudo ln -s /media/Dati/Git/backgrounds/backgrounds /usr/share/backgrounds
-sudo cp -r -a /media/Dati/Git/Dotfiles/Scripts/Openbox/usr-lib/common /usr-lib/common
-sudo cp -r -a/media/Dati/Git/Dotfiles/Scripts/Openbox/usr-bin/conkyedit /usr/bin
+rm -r /usr/share/backgrounds
+ln -s /media/Dati/Git/backgrounds/backgrounds /usr/share/backgrounds
+cp -r -a /media/Dati/Git/Dotfiles/Scripts/Openbox/usr-lib/common /usr-lib/common
+cp -r -a/media/Dati/Git/Dotfiles/Scripts/Openbox/usr-bin/conkyedit /usr/bin

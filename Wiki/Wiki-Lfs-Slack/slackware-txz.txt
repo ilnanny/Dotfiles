@@ -1,0 +1,9 @@
+scarica il pacchetto e lo installi con upgradepkg --install-new nome_pacchetto.txz
+esempio software ocl-icd:
+
+scarichi il pacchetto :
+wget http://slackware.cs.utah.edu/pub/slackware/slackware64-current/slackware64/l/ocl-icd-2.2.12-x86_64-2.txz
+
+installi:
+upgradepkg --install-new ocl-icd-2.2.12-x86_64-2.txz
+Fine

@@ -1,0 +1,33 @@
+/etc/gdm/Xsession: Beginning session setup...
+/etc/gdm/Xsession: Setup done, will execute: /usr/bin/ssh-agent -- startxfce4
+/usr/bin/startxfce4: X server already running on display :0
+xrdb:  "Xcursor.theme" on line 110 overrides entry on line 9
+xfce4-session-Message: SSH authentication agent is already running
+
+(xfce4-session:1354): xfce4-session-WARNING **: xfsm_manager_load_session: Something wrong with /home/ilnanny/.cache/sessions/xfce4-session-T3500SLACK:0, Does it exist? Permissions issue?
+
+** (xfce4-clipman:1374): WARNING **: Clipboard manager is already running.
+
+(xfce4-clipman:1374): Gdk-CRITICAL **: IA__gdk_window_thaw_toplevel_updates_libgtk_only: assertion 'private->update_and_descendants_freeze_count > 0' failed
+
+(xfce4-terminal:1555): xfce4-terminal-WARNING **: Unable to parse color "rgb(0,0,0)".
+
+(xfce4-terminal:1555): xfce4-terminal-WARNING **: One of the terminal colors was not parsed successfully. The default palette has been applied.
+
+(xfce4-panel:1369): xfce4-panel-CRITICAL **: panel-window.c:2960 (panel_window_thaw_autohide): expression 'window->autohide_block > 0' failed.
+
+(xfce4-terminal:1780): xfce4-terminal-WARNING **: Unable to parse color "rgb(0,0,0)".
+
+(xfce4-terminal:1780): xfce4-terminal-WARNING **: One of the terminal colors was not parsed successfully. The default palette has been applied.
+Recupero della lista degli slackbuild da http://www.mirrorservice.org/sites/download.salixos.org/slkbuild/14.2/...In cache
+Recupero della lista degli slackbuild da http://www.mirrorservice.org/sites/download.salixos.org/sbo/14.2/...In cache
+Recupero della lista degli slackbuild da http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/...Scaricamento fallito: 404
+Recupero della lista degli slackbuild da http://packages.slackonly.com/pub/packages/current/x86_64/...Scaricamento fallito: 404
+Recupero della lista degli slackbuild da http://www.slackel.gr/repo/x86_64/current/...Scaricamento fallito: 404
+WARNING: Could not find all icon sizes for the application icon
+
+(xfce4-terminal:1780): xfce4-terminal-WARNING **: Unable to parse color "rgb(0,0,0)".
+
+(xfce4-terminal:1780): xfce4-terminal-WARNING **: One of the terminal colors was not parsed successfully. The default palette has been applied.
+error attempting to read pkg description
+error attempting to read pkg description

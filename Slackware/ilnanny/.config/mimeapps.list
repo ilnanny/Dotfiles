@@ -1,0 +1,5 @@
+[Added Associations]
+text/plain=leafpad.desktop;
+application/x-shellscript=leafpad.desktop;
+x-scheme-handler/mailto=exo-mail-reader.desktop
+text/x-csrc=geany.desktop;
