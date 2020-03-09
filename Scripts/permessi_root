@@ -14,10 +14,9 @@ echo "# Root all'utente root con gruppo root ,ricorsivamente           #"
 echo "##################################################################"
 echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
 su -c 'chown -R root /root && chmod -R 775 /root'
-#su -c 'chown -R root:root /root && chmod -R 644 /root'
 echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
 echo "###########################################"
-echo "# Permessi attivati , chiudi il terminale #" 
+echo "# Permessi attivati , chiudi il terminale #"
 echo "###########################################"
 echo "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"
 exit 0

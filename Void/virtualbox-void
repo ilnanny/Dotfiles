@@ -1,9 +1,0 @@
-
-sudo xbps-install -S \
-virtualbox-ose \
-virtualbox-ose-dkms \
-virtualbox-ose-guest
-
-su
-
-gpasswd -a ilnanny vboxusers

@@ -1,0 +1,130 @@
+! ------------------------------------------------
+! =  O.S.      : Gnu Linux                       =
+! =  Author    : Cristian Pozzessere   = ilnanny =
+! =  D.A.Page  : http://ilnanny.deviantart.com   =
+! =  Github    : https://github.com/ilnanny      =
+! ------------------------------------------------
+!   Tema dei colori XTerm : Dark Pastel
+! ------------------------------------------------
+!
+*.foreground: #F2F6FC
+*.background: #535353
+*.cursorColor: #BBBBBB
+!
+! Black / Nero
+*.color0:      #000000
+*.color8:      #555555
+!
+! Red / Rosso
+*.color1:      #FF5555
+*.color9:      #FF5555
+!
+! Green / Verde
+*.color2:      #55FF55
+*.color10:     #55FF55
+!
+! Yellow / Giallo
+*.color3:      #FFFF55
+*.color11:     #FFFF55
+!
+! Blue / Blu
+*.color4:      #5555FF
+*.color12:     #5555FF
+!
+! Magenta
+*.color5:      #FF55FF
+*.color13:     #FF55FF
+!
+! Cyan / Ciano
+*.color6:      #55FFFF
+*.color14:     #55FFFF
+!
+! White / Bianco
+*.color7:      #BBBBBB
+*.color15:     #FFFFFF
+!
+! Bold, Italic, Underline / Grassetto Corsivo Sottolineato
+*.colorBD:     #FF5E7D
+!*.colorIT:
+!*.colorUL:
+!
+!   Ricarica la configurazione con :
+!   xrdb $HOME/.Xresources
+!   Copia in X la configurazione
+!   xrdb -merge .x_settings
+
+! --------------------------------------
+!   XTerm Geometria  e Aspetto
+! --------------------------------------
+XTerm*termName: xterm-256color
+XTerm*cursorColor: white
+XTerm*VT100.geometry: 80x24
+!
+!   Cerca font mono con:
+!   fc-match mono
+!   Aumenta la grandezza del font che di default è 6x13 punti
+!
+XTerm.vt100.faceName: Liberation Mono:size=13:antialias=false
+!
+!   Grandezza Medium di default ;vale anche per aterm,uxterm.
+!
+xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
+XTerm*dynamicColors: true
+XTerm*utf8: 2
+XTerm*eightBitInput: true
+XTerm*saveLines: 10000
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: false
+XTerm*scrollBar: false
+XTerm*rightScrollBar: false
+XTerm*jumpScroll: true
+XTerm*multiScroll: true
+XTerm*toolBar: false
+!
+!   Ricarica la configurazione con :
+!   xrdb $HOME/.Xresources
+!
+! -------------------------------------------------------------
+!   Rofi Aspetto
+! -------------------------------------------------------------
+rofi.font: Monospace 12
+rofi.color-enabled: true
+rofi.color-window: #535353, #535353, #535353
+rofi.color-normal: #535353, #C5CAD6, #535353, #8892C2, #535353
+rofi.separator-style: solid
+!
+!
+! -------------------------------------------------------------
+! Cursor
+! -------------------------------------------------------------
+Xcursor.theme: Lila_HD-cursor
+
+! ------------------------------------------------------------------
+! URxvt
+! ------------------------------------------------------------------
+URxvt*saveline: 15000
+URxvt*termName: rxvt-256color
+URxvt*iso14755: false
+URxvt*depth: 32
+URxvt*background: [90]#535353
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
+URxvt*letterSpace: -1
+URxvt.font: xft:Monospace:size=11
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.m-c: perl:clipboard:copy
+URxvt.keysym.m-v: perl:clipboard:paste
+URxvt.urlLauncher: exo-open
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+URxvt.geometry: 80x24
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 4
+URxvt*buffered: false
+! ------------------------------------------------------------------

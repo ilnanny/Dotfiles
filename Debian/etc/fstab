@@ -1,0 +1,24 @@
+#
+##                                    Fstab    Debian
+#============================================================================================
+## == Filesystem Virtuali
+#=========================
+/dev/sr0     /media/cdrom0     udf,iso9660     user,noauto         0   0
+#devpts       /dev/pts          devpts          gid=5,mode=620      0   0
+#proc         /proc             proc            defaults            0   0
+#tmpfs        /dev/shm          tmpfs           defaults            0   0
+#============================================================================================
+## == Filesystem Linux
+#=========================
+## == sdc3 : Debian
+UID=ad88b5b7-e99f-4a36-b4ea-625f92046b29   /      ext4    errors=remount-ro  0   1
+## ==sdc1-swap
+UUID=2ca0d78c-cd0f-4213-9f46-7d172aae39d5  none   swap    sw                 0   0
+
+#============================================================================================
+## == Filesystem Ntfs
+#=========================
+## == sdc1 : Dati
+UUID=76CDC3FF57CBA78E  /media/Dati  ntfs-3g  defaults,rw,uid=1000,locale=it_IT.UTF-8  0   0
+
+#============================================================================================

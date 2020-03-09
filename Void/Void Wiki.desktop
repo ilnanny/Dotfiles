@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Void Wiki
+Exec=xdg-open https://docs.voidlinux.org/about/index.html
+Icon=start-here-void
+

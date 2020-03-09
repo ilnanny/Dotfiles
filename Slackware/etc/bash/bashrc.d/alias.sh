@@ -74,6 +74,7 @@ alias backup='sh /home/ilnanny/bin/backup'
 alias blb='sh /home/ilnanny/bin/bleachbit1'
 alias cleaner='sh /home/ilnanny/bin/cleaner'
 alias clone='cd ~/Git && git clone'
+alias kernelconf="gunzip /proc/config.gz -c > /media/Dati/Git/Dotfiles/config-$(uname -n)-$(uname -r)"
 alias fstab='sudo geany /etc/fstab'
 alias gitup='sh /home/ilnanny/bin/gitup'
 alias goapp='sudo thunar /usr/share/applications/'
@@ -93,28 +94,6 @@ alias myip=' sudo wget -qO- http://ipecho.net/plain'
 alias showalias='cat /etc/bash/bashrc.d/alias.sh'
 alias usblist='su -c "sh /home/ilnanny/bin/usblist"'
 alias wiki='cd /media/Dati/Git/Dotfiles/01-Files/Wiki/Gentoo-wiki && whereis'
-
-# ___      Alias Slackware
-
-
-alias explode='sudo explodepkg'
-alias getclean='sudo slapt-get --autoclean && sudo slapt-get --clean'
-alias getin='sudo slapt-get -i'
-alias getr='sudo slapt-get -remove'
-alias getsearch='sudo slapt-get --search'
-alias getup='sudo slapt-get -u'
-alias getupgrade='sudo slapt-get --upgrade'
-alias goslapt-get='sudo thunar /etc/slapt-get/'
-alias ipk='sudo pkg -i'
-alias ipkg='sudo installpkg'
-alias makepkg='sudo makepkg'
-alias rpk='sudo pkg -r'
-alias rpkg='sudo removepkg'
-alias slackinstall=' sudo slackpkg install'
-alias slacksearch=' sudo slackpkg search'
-alias slackupdate='sudo slackpkg update'
-alias slackupgrade='sudo slackpkg upgrade-all'
-alias slapt-getrc='sudo geany /etc/slapt-get /slapt-getrc'
 
 
 # ___     Fine

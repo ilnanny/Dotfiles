@@ -1,45 +1,29 @@
 
-http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
-http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86/
 http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
 
-http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86/
 http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
 
-http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86/
 http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
 
-http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86/
 http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
-
-http://repository.slacky.eu/slackware-14.2/
 
 http://repository.slacky.eu/slackware64-14.2/
 
-http://www.microlinux.fr/microlinux/desktop-14.2-32bit/
 http://www.microlinux.fr/microlinux/desktop-14.2-64bit/
 
-http://www.microlinux.fr/microlinux/extras-14.2-32bit/
 http://www.microlinux.fr/microlinux/extras-14.2-64bit/
 
-http://www.microlinux.fr/microlinux/server-14.2-32bit/
 http://www.microlinux.fr/microlinux/server-14.2-64bit/
-
-http://studioware.org/files/packages/slackware-14.2/
 
 http://studioware.org/files/packages/slackware64-14.2/
 
-http://panos.slackonly.com/pub/packages/14.2-x86/
 http://panos.slackonly.com/pub/packages/14.2-x86_64/
-http://panos.slackonly.com/pub/packages/current-x86/
 http://panos.slackonly.com/pub/packages/current-x86_64/
 
-http://rlworkman.net/pkgs/14.2/
 http://rlworkman.net/pkgs/current/
-http://www.slackel.gr/repo/i486/current/
+
 http://www.slackel.gr/repo/x86_64/current/
 
-http://connochaetos.org/slack-n-free/slack-n-free-14.2/
 http://connochaetos.org/slack-n-free/slack-n-free64-14.2/
 
 

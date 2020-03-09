@@ -10,5 +10,4 @@ ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
 
 rm -r /usr/share/backgrounds
 ln -s /media/Dati/Git/backgrounds/backgrounds /usr/share/backgrounds
-cp -r -a /media/Dati/Git/Dotfiles/Scripts/Openbox/usr-lib/common /usr-lib/common
-cp -r -a/media/Dati/Git/Dotfiles/Scripts/Openbox/usr-bin/conkyedit /usr/bin
+

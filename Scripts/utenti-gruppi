@@ -31,6 +31,7 @@ gpasswd -a ilnanny lightdm
 gpasswd -a ilnanny locate.mpd
 gpasswd -a ilnanny lpadmin
 gpasswd -a ilnanny lxdm
+gpasswd -a ilnanny mlocate
 gpasswd -a ilnanny netdev
 gpasswd -a ilnanny networkmanager
 gpasswd -a ilnanny ntp
@@ -51,6 +52,7 @@ gpasswd -a ilnanny wheel
 gpasswd -a root    gdm
 gpasswd -a root    lightdm
 gpasswd -a root    lxdm
-
+gpasswd -a root    slim
+gpasswd -a root    sddm
 
 exit 0

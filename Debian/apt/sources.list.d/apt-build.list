@@ -1,1 +1,0 @@
-deb [trusted=yes] file:/var/cache/apt-build/repository apt-build main

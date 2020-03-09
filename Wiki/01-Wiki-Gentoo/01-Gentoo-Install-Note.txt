@@ -1,29 +1,31 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
-===========================================
+== ========================================== ==
 
 == = Dell Workstation T3500 - T5500 ==
 
-== = Intel Xeon X5650 - X5675 =Westmere ==
+== = Intel Xeon X5650 - X5675  =Westmere ==
 
 == = Nvidia Quadro 4000 - 2000 =Fermi ==
 
-== =Grub Bios PC '2010 - 2012' ==
+== = Grub Bios PC '2010 - 2012' ==
 
-== =Gentoo Linux amd64 openrc ==
+== = Gentoo Linux amd64 openrc ==
 
-== =Ssd dev/sdc "/" ==
+== = Ssd : dev/sdc "/" "swap" ==
 
-== =Host Linux amd64 openrc,systemv,init6 ==
+== = Host : Linux amd64 openrc ==
 
-== =Appunti di Gennaio 2016 ==
+== = Appunti di Gennaio 2016 ==
 
-== =Aggiornato Febbraio 2020 ==
-==========================================
+== = Aggiornato Febbraio 2020 ==
+
+== ========================================== ==
 
 == Crea le Cartelle e monta le partizioni: ==
-==========================================
+
+== ========================================== ==
 
  mkdir /mnt/gentoo
  mount /dev/sdc2 /mnt/gentoo
@@ -31,26 +33,29 @@ Wiki-Format: zim 0.4
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 
-==========================================
+== ========================================== ==
 
 == Scarica lo stage3 e scompattalo ==
-==========================================
+
+== ========================================== ==
  wget http://distfiles.gentoo.org/releases/amd64/autobuilds/20200219T214502Z/stage3-amd64-20200219T214502Z.tar.xz
  tar xpf  stage3-amd64-20200219T214502Z.tar.xz
-====================================================
+
+== ========================================== ==
  cd  --
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
-==========================================
+
+== ========================================== ==
 
 == Scarica portage e scompattalo ==
  cd /mnt/gentoo/usr/
  wget https://gentoo.osuosl.org/snapshots/portage-latest.tar.bz2
  tar xvjpf portage-latest.tar.bz2 --xattrs --numeric-owner
-====================================================
 
-=== Entra in chroot: ===
+== ========================================== ==
 
+=== Monta i filesystem ed entra in chroot: ===
   mount --bind /dev /mnt/gentoo/dev
   mount --make-rslave /mnt/gentoo/dev
   mount --bind /proc /mnt/gentoo/proc
@@ -58,34 +63,34 @@ Wiki-Format: zim 0.4
   mount --make-rslave /mnt/gentoo/sys
   mount --rbind /tmp /mnt/gentoo/tmp
 
-
   chroot /mnt/gentoo /bin/bash
-
   export PS1="\033[1;33m([chroot])\033[0m $PS1"
 
-==========================================
+== ========================================== ==
 
 == Controllo rete carica i repo ==
+ ping -c 5 www.google.com
 
- ping -c 5 google.com
-==========================================
+== ========================================== ==
 
 == Sincronizza portage ==
  mkdir /etc/portage/repos.conf
  cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
  emerge --sync
  eselect news read
- =============================
+
+== ========================================== ==
 
 == Scegli un profilo ==
- =============================
+
+== ========================================== ==
  eselect profile list
  eselect profile set 20
  env-update && source /etc/profile
-==========================================
+
+== ========================================== ==
 
 == Modifica i Files: ==
-
 = 01] /etc/fstab
 = 03] /etc/localtime
 = 04] /usr/share/zoneinfo
@@ -94,84 +99,86 @@ Wiki-Format: zim 0.4
 = 07] /etc/conf.d/keymaps
 = 08] /etc/conf.d/hwclock
 = 09] /etc/conf.d/modules
-==========================================
+
+== ========================================== ==
 
 == Controlla le partizioni e scrivi l'fstab ==
  blkid -c /dev/null -o list
  nano -w /etc/fstab
-==========================================
+
+== ========================================== ==
 
 == Fuso Orario ==
-
  emerge --config sys-libs/timezone-data
  ln -sf /usr/share/zoneinfo/Europe/Rome  /etc/localtime
-==========================================================
+
+== ========================================== ==
 
 == Data e Ora ==
   date
-=se la data non corrisponde :
 
+== =se la data non corrisponde : ==
   date 012807462016       == [corrisponde a ore 7:46 ,28 gennaio 2016]
 
 == Microsoft Windows Dual Boot settare in 'local': ==
-
  nano -w /etc/conf.d/hwclock
 clock="local"
-==========================================================================
+
+== ========================================== ==
 
 == Localizzazione IT ==
  nano -w /etc/locale.gen
 it_IT.UTF-8 UTF-8
 it_IT ISO-8859-1
 
-== crea il file 02locale ==
+== Crea il file 02locale ==
  nano -w /etc/env.d/02locale
 LANG="it_IT.UTF-8"
 
 == Genera locale ==
  locale-gen
  locale -a
-==========================================
+
+== ========================================== ==
 
 == Tastiera ==
   nano -w /etc/conf.d/keymaps
   keymap="it"
   windowkeys="YES"
   fix_euro="YES"
-===============================================================
+
+== ========================================== ==
 
 == Make conf ==
  nano -w /etc/portage/make.conf
 
 == ** in fondo alla pagina ==
-=====================================================================
+
+== ========================================== ==
 
 == Sync aggiornamento ==
  emerge --sync
  env-update && source /etc/profile
  emerge -auDN @world
 
-====================================================================
+== ========================================== ==
 
 == Kernel ==
-
   emerge --ask gentoo-kernel-bin \
   intel-microcode grub
-
   emerge --ask mdadm gentoolkit \
   linux-firmware os-prober ntfs3g usbutils \
   pciutils elogind e2fsprogs gvfs dev-vcs/git net-misc/ntp
 
-== con genkernel: ==
+== con genkernel e conf in root ==
 
   genkernel --makeopts=-j9 --kernel-config=/root/config all
   emerge -1 @module-rebuild
-
   grub-install /dev/sda
   grub-mkconfig –o /boot/grub/grub.cfg
-  grub-mkconfig -o /boot/grub/grub.cfg
+  grub-mkconfig -o [[/boot/grub/grub.cfg]]
 
-====================================================================
+== ========================================== ==
 
 == Rete: ==
   USE="-bindist" emerge --ask networkmanager net-misc/dhcpcd
@@ -182,7 +189,7 @@ LANG="it_IT.UTF-8"
 = avvia la consolle grafica:
   nmtui
 
-==========================================
+== ========================================== ==
 
 == Imposta un Hostname: ==
  nano -w /etc/conf.d/hostname
@@ -196,14 +203,16 @@ hostname"T3500GEN"
 ::1		localhost
 127.0.1.1	T3500GEN
 
-==========================================
+== ========================================== ==
 
 == Password di root: ==
   passwd
-==========================================
+
+== ========================================== ==
 
 == Uscire da chroot : ==
-==========================================
+
+== ========================================== ==
   exit
   cd ~
   umount -f /mnt/gentoo/dev
@@ -213,21 +222,24 @@ hostname"T3500GEN"
   umount -f /mnt/gentoo/
   fuser -k /mnt
   reboot
-==========================
-=Rimuovi gli archivi
 
+== ========================================== ==
+=Rimuovi gli archivi
   rm /usr/portage-latest.tar.bz2
   rm /stage3-*.tar.xz
-==========================
+
+== ========================================== ==
 
 ==== boot in gentoo ====
-==========================
-=Nuovo Utente:
-==========================
-useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
 
+== ========================================== ==
+=Nuovo Utente:
+
+== ========================================== ==
+useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
  passwd ilnanny
-==========================================
+
+== ========================================== ==
 
 === Profili: ===
  eselect profile list
@@ -238,9 +250,7 @@ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,us
  emerge --ask xorg-x11 xorg-server xorg-drivers xterm xinit xrandr
 
 == Drivers NVIDIA ==
-
 nano -w /etc/modprobe.d/nouveau-blacklist.conf
-
  blacklist nouveau
  options nouveau modeset=0
  alias nouveau off
@@ -289,7 +299,8 @@ eselect opencl set nvidia
 
 # Alternativamente avvia 0anacron ogni ora
 # 59 * * * *  root  /etc/cron.hourly/0anacron
-==============================================
+
+== ========================================== ==
 
 === Xfce4 ===
  emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin xfce-extra/xfce4-screenshooter
@@ -301,10 +312,8 @@ eselect opencl set nvidia
 
  emerge --ask xfce4-panel xfce4-terminal keybinder xfce-extra/tumbler xdg-utils xdg-user-dirs-gtk xdg-user-dirs
 
-
 === Thunar ===
  emerge --ask thunar thunar-volman thunar-archive-plugin
-
  =carica il demone all'avvio:
  rc-update add dbus default
 
@@ -333,17 +342,19 @@ nano -w /etc/conf.d/xdm
 
  USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
 
- emerge --ask android-tools android-file-transfer-linux bleachbit deluge dev-lang/go xarchiver squashfuse inxi 
+ emerge --ask android-tools android-file-transfer-linux bleachbit deluge dev-lang/go xarchiver squashfuse inxi
 
  emerge --ask gimp inkscape lsb-release nomacs speedtest-cli telegram-desktop qt5ct dcfldd lshw uget
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
- emerge --ask 
+ emerge --ask
 
 === GTK3+ ===
 USE="hscolour profile" emerge --ask dev-haskell/gtk3
-#==================================================================================================
+
+== ========================================== ==
+
 
 #==                                  Fstab  Gentoo
 #=========================================================================================

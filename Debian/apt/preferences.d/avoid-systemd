@@ -1,4 +1,0 @@
-Package: systemd-sysv
-Pin: release o=Debian
-Pin-Priority: -1
-

@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Archlinux Wiki
+Exec=xdg-open https://wiki.archlinux.org/index.php/Installation_guide_(Italiano)
+Icon=start-here-archlinux
+

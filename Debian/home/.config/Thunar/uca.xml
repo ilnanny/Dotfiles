@@ -1,0 +1,202 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Apri un Terminale qui </name>
+	<unique-id>1519087650955555-2</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Crea Symlink</name>
+	<unique-id>1556791377792315-1</unique-id>
+	<command>ln -s %f &quot;symlink a %n&quot;</command>
+	<description>crea un collegamento simbolico</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>dialog-password</icon>
+	<name>Super Utente</name>
+	<unique-id>1556820005359575-3</unique-id>
+	<command>sudo thunar %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>editcopy</icon>
+	<name>Copia in</name>
+	<unique-id>1518979542113323-3</unique-id>
+	<command>cp -a -r  %F $(zenity --file-selection --directory)</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>folder-move</icon>
+	<name>Sposta in</name>
+	<unique-id>1518414274287792-5</unique-id>
+	<command>mv %F $(zenity --file-selection --directory)</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>shellscript</icon>
+	<name>Rendi Eseguibile</name>
+	<unique-id>1556819970607542-2</unique-id>
+	<command>chmod +x %f</command>
+	<description></description>
+	<patterns>*.sh;*.py</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>printer-printing</icon>
+	<name>Stampa</name>
+	<unique-id>1480694167418860-1</unique-id>
+	<command>xfprint4 %f</command>
+	<description></description>
+	<patterns>*.pdf;*.doc;*.txt;*.docx;*.odt;*.jpeg;*.gif;*.jpg;*.png;*.ttf;*.xcf;*.ai;*.psd</patterns>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>preferences-system-search</icon>
+	<name>Cerca con Catfish </name>
+	<unique-id>1559686486607624-1</unique-id>
+	<command>catfish --path=%f</command>
+	<description>Ricerca di un file in una directory</description>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>vlc</icon>
+	<name>Esegui Audio/Video</name>
+	<unique-id>1557991618105003-1</unique-id>
+	<command>vlc %F</command>
+	<description>Riproduci file multimediali con VLC</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>terminal</icon>
+	<name>Esegui Script</name>
+	<unique-id>1556819956847486-1</unique-id>
+	<command>xfce4-terminal -e %f --hold</command>
+	<description>esegue script</description>
+	<patterns>*</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>folder-remote</icon>
+	<name>Condividi in Lan</name>
+	<unique-id>1518414450696004-10</unique-id>
+	<command>net usershare add %n %f “” Everyone:F guest_ok=n &amp;&amp; chmod 777 %f</command>
+	<description>Condivide la cartella in LAN</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>archive-extract</icon>
+	<name>Estrai Zip*</name>
+	<unique-id>1518324722592450-1</unique-id>
+	<command>unzip \*.zip</command>
+	<description></description>
+	<patterns>*.zip</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>archive-insert</icon>
+	<name>Estrai Rar*</name>
+	<unique-id>1530524871999921-1</unique-id>
+	<command>unrar \*.rar</command>
+	<description></description>
+	<patterns>*.rar</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>system-devices-panel</icon>
+	<name>MD5 e SHA</name>
+	<unique-id>1521425314397498-2</unique-id>
+	<command>zenity --info --title=&quot;%n&quot; --text=&quot;%nnn$(md5sum) MD5nn$(sha1sum) SHA1nn$(sha256sum) SHA256&quot;</command>
+	<description></description>
+	<patterns>*.pdf;*.doc;*.txt;*.docx;*.odt;*.iso</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>gnome-mime-image-jpeg</icon>
+	<name>PNG 2 JPG</name>
+	<unique-id>1557902957821974-2</unique-id>
+	<command>convert %f  -quality 98 %f.jpg</command>
+	<description>converte tutte le immagini png in jpg</description>
+	<patterns>*.png</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>Adobeillustrator</icon>
+	<name>PNG 2 XBM</name>
+	<unique-id>1557903228102246-6</unique-id>
+	<command>convert %f -quality 95 %f.xbm</command>
+	<description></description>
+	<patterns>*.png</patterns>
+	<directories/>
+	<image-files/>
+</action>
+<action>
+	<icon>image-png</icon>
+	<name>SVG2PNG 300*</name>
+	<unique-id>1556426909041201-1</unique-id>
+	<command>for i in *; do inkscape $i -d=300 -C --export-png=`echo $i | sed -e s/svg$/png/`; done</command>
+	<description>Converte da svg a png in 300dpi</description>
+	<patterns>*.svg</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>image-png</icon>
+	<name>Svg2Png</name>
+	<unique-id>1561802536679730-2</unique-id>
+	<command>for i in *; do inkscape $i -C --export-png=`echo $i | sed -e s/svg$/png/`; done</command>
+	<description>esporta immagine png da un file svg</description>
+	<patterns>*.svg</patterns>
+	<image-files/>
+</action>
+</actions>

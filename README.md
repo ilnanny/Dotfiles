@@ -29,5 +29,5 @@ Screenshot 03
 Lila HD Icon Theme  : https://github.com/ilnanny/Lila-HD-icon-theme<br>
 Desktop Backgrounds : https://github.com/ilnanny/backgrounds<br>
 Artworks Resources  : https://github.com/ilnanny/Artwork-Resources<br>
-Gnu Linux Themes     : https://github.com/ilnanny/linux-themes<br>
+Gnu Linux Themes    : https://github.com/ilnanny/linux-themes<br>
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
