@@ -96,7 +96,7 @@ $stippled_hr
 #-------------------------------------
 #--  Sistema
 #-------------------------------------
-${voffset 4}${color0}${font ConkyColorsLogos:size=16}g${font}${offset -23}${voffset 10}${color}${voffset -16}${goto 32}Kernel: ${alignr}${color2}${kernel}${color}
+${voffset 4}${color0}${font ConkyColorsLogos:size=16}d${font}${offset -23}${voffset 10}${color}${voffset -16}${goto 32}Kernel: ${alignr}${color2}${kernel}${color}
 ${voffset 4}${color0}${font ConkyColors:size=16}o${font}${offset -23}${voffset 10}${color}${voffset -16}${goto 32}Uptime: ${alignr}${color2}${uptime}${color}
 #-------------------------------------
 #-- Processori
@@ -129,9 +129,9 @@ ${goto 32}${voffset -23}${goto 32}CPU12: ${font Coda::size=10}${color1}${cpu cpu
 #-------------------------------------
 ${voffset 4}${font}Memoria $stippled_hr${font}
 ${voffset 2}${color0}${font ConkyColors:size=16}g${font}${color}${goto 32}${voffset -3}RAM: ${font}${color1}$memperc%${color}${font}${alignr}${color2}${membar 8,60 }${color}
-${offset 1}${color1}Usata: ${font}${color2}${mem}${color1}${font}${alignr}Dis:.: ${font}${color2}${memeasyfree}${color}${font}
+${offset 1}${color1}Us: ${font}${color2}${mem}${color1}${font}${alignr}Dis: ${font}${color2}${memeasyfree}${color}${font}
 ${voffset 2}${color0}${font ConkyColors:size=16}g${font}${color}${goto 32}${voffset -3}SWAP: ${font}${color1}$swapperc%${color}${font}${alignr}${color2}${swapbar 8,60 }${color}
-${offset 1}${color1}Usata: ${font}${color2}${swap}${color1}${font}${alignr}Dis:.: ${font}${color2}${swapmax}${color}${font}
+${offset 1}${color1}Us: ${font}${color2}${swap}${color1}${font}${alignr}Dis: ${font}${color2}${swapmax}${color}${font}
 #-------------------------------------
 #--  HDD
 #-------------------------------------
