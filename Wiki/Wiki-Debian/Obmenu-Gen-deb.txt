@@ -1,0 +1,54 @@
+Openbox Menu Generator
+
+Openbox Menu Generator generates a static or dynamic menu, with or without icons, a pipe menu for Openbox window manager.
+
+It can be used instead of the standard Debian menu.
+Installation
+
+  sudo apt-get install obmenu-generator
+
+Alternate installation method
+
+Install dependencies:
+
+  sudo apt-get install build-essential cpanminus git
+
+Install the generator:
+
+  git clone git://github.com/trizen/obmenu-generator
+  sudo cp obmenu-generator/obmenu-generator /usr/bin
+  sudo cp -r obmenu-generator/schema.pl ~/.config/obmenu-generator/
+  sudo cpanm Linux::DesktopFiles
+  sudo cpanm Data::Dump
+  sudo chmod +x /usr/bin/obmenu-generator
+
+Run the generator in a terminal
+
+Dynamic menu with icons:
+
+  obmenu-generator -p -i
+
+Static menu with icons:
+
+  obmenu-generator -s -i
+
+The older menu will be moved from the file:
+
+  ~HOME/.config/openbox/menu.xml
+
+to the backup file:
+
+  ~HOME/.config/openbox/menu.xml.bak
+
+Troubleshooting
+
+If the menu creation stops or doesn't work at all, after fresh Sparky installation:
+
+1. Remove its configuration folder with all the files:
+
+ rm -rf ~HOME/.config/obmenu-generator
+
+2. Re-install it:
+
+ sudo apt-get update
+ sudo apt-get install --reinstall obmenu-generator

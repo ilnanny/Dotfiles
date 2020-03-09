@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/#!/bin/bash
 #================================================
 #================================================
 #   O.S.      : Gnu Linux                       =
@@ -55,9 +55,9 @@ alias ping='ping -c www.google.com'
 alias pipinstall='pip install --user'
 alias ps="ps auxf"
 alias reboot='sudo reboot'
-alias riavvia='sudo reboot'
+alias riavvia="su -c 'shutdown -r now'"
 alias rm="rm -v"
-alias spegni='sudo shutdown -r now'
+alias spegni="su -c 'shutdown -h now'"
 alias svg2png='for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done'
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias utenti="cut -d: -f1 /etc/passwd"
@@ -74,7 +74,6 @@ alias backup='sh /home/ilnanny/bin/backup'
 alias blb='sh /home/ilnanny/bin/bleachbit1'
 alias cleaner='sh /home/ilnanny/bin/cleaner'
 alias clone='cd ~/Git && git clone'
-alias kernelconf="gunzip /proc/config.gz -c > /media/Dati/Git/Dotfiles/config-$(uname -n)-$(uname -r)"
 alias fstab='sudo geany /etc/fstab'
 alias gitup='sh /home/ilnanny/bin/gitup'
 alias goapp='sudo thunar /usr/share/applications/'
