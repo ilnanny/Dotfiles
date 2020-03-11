@@ -6,9 +6,9 @@ Per riavviare shutdown -r now oppure init 6
 
 Per spengere shutdown -h now oppure init 0 oppure halt
 
-Menu  OpenBox:
-Label:        Openrc:               Systemd:
+Openbox
+Label:        Comando:              Comando:              Comando:
 
 Esci          openbox --exit        system-log-out
-Riavvia       shutdown -r now       system-restart
-Spegni        shutdown -h now       system-shutdown
+Riavvia       shutdown -r now       system-restart       init 6
+Spegni        shutdown -h now       system-shutdown      init 0
