@@ -160,7 +160,7 @@
 # ftp://ftp.sunet.se/mirror/slackware.com/slackware64-14.2/
 # http://ftp.sunet.se/mirror/slackware.com/slackware64-14.2/
 # SWITZERLAND (CH)
-# ftp://mirror.switch.ch/mirror/slackwa/slackware64-14.2/
+# ftp://mirror.switch.ch/mirror/slackware/slackware64-14.2/
 # http://mirror.switch.ch/ftp/mirror/slackware/slackware64-14.2/
 # TAIWAN (TW)
 # ftp://ftp.isu.edu.tw/pub/Linux/Slackware/slackware64-14.2/
@@ -359,6 +359,3 @@
 # http://spout.ussg.indiana.edu/linux/slackware/slackware64-current/
 # ftp://teewurst.cc.columbia.edu/pub/linux/slackware/slackware64-current/
 # http://teewurst.cc.columbia.edu/pub/linux/slackware/slackware64-current/
-#http://mirrors.slackware.com/slackware/slackware64-current/
-http://ftp.osuosl.org/.2/slackware/slackware64-current/
-#http://mirrors.slackware.com/slackware/slackware64-current/

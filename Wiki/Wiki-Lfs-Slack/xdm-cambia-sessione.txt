@@ -1,0 +1,4 @@
+per cambiare sessione in xdm :
+ xwmconfig
+
+e scegli il dm

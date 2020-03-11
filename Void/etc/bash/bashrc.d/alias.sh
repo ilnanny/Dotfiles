@@ -51,6 +51,7 @@ alias mv="mv -v"
 alias myscript='geany /home/ilnanny/bin/zz-ilnanny'
 alias nn='sudo nano'
 alias pgrep="pgrep -l"
+alias pl="sudo pluma"
 alias ping='ping -c www.google.com'
 alias pipinstall='pip install --user'
 alias ps="ps auxf"
@@ -58,11 +59,11 @@ alias reboot='sudo reboot'
 alias riavvia="su -c 'shutdown -r now'"
 alias rm="rm -v"
 alias spegni="su -c 'shutdown -h now'"
-alias svg2png='for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done'
-alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias svg2png="for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done"
+alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias utenti="cut -d: -f1 /etc/passwd"
 alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Pubblici"
-alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0'
+alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3  --audio-quality 0"
 alias youtube-video="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
 
@@ -90,23 +91,10 @@ alias gowiki='thunar /media/Dati/Git/Dotfiles/Wiki/'
 alias mioscript='geany /media/Dati/Git/Dotfile/Scripts/zz-ilnanny'
 alias memousb='sh /home/ilnanny/bin/usblist'
 alias myip=' sudo wget -qO- http://ipecho.net/plain'
-alias showalias='cat /etc/bash/bashrc.d/alias.sh'
+alias showalias='cat /etc/bash/bashrc.d/*.sh'
 alias usblist='su -c "sh /home/ilnanny/bin/usblist"'
 alias wiki='cd /media/Dati/Git/Dotfiles/01-Files/Wiki/Gentoo-wiki && whereis'
 
-# ___      Alias Void
 
-alias sv="sudo sv"
-alias lvs="sudo lvs"
-alias vgs="sudo vgs"
-alias vgdisplay="sudo vgdisplay"
-alias install="sudo xbps-install"
-alias query="sudo xbps-query"
-alias remove="sudo xbps-remove -R"
-alias pkgdb="sudo xbps-pkgdb"
-alias reconfigure="sudo xbps-reconfigure"
-alias update="sudo xbps-install -Su"
-alias search="sudo xbps-query -Rs"
-alias ccache="xbps-remove -O"
 # ___     Fine
 

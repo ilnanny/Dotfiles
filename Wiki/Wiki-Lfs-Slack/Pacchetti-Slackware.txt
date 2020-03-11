@@ -5,9 +5,9 @@ I pacchetti slackware usa
 installpkg nomepacchetto.tgz
 upgradepkg nomepacchetto.tgz
 removepkg nomepacchetto.tgz
-makepkg                      crea pacchetti in formato leggibile da slackware
-explodepkg                   estrae pacchetti slackware nella cartella corrente
-rpm2targz                    converte rpm in tgz 
+makepkg                        crea pacchetti in formato leggibile da slackware
+explodepkg                     estrae pacchetti slackware nella cartella corrente
+rpm2targz                      converte rpm in tgz 
 es: rpm2targz nomefile.rpm
  
 ----------------------------------------------------------------------

@@ -1,0 +1,6 @@
+ Disattivare i messaggi fortune in Slackware
+Argomento: linuxTags: linux, slackware, fortune
+
+Per disattivare i messaggi fortune senza dover disinstallare il pacchetto bsd-games, eliminare i permessi di esecuzione ai relativi script di avvio:
+
+    chmod -x /etc/profile.d/bsd-games-login-fortune.*

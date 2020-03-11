@@ -1,4 +1,14 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
 
+# ___      Alias Void
 
 
 alias sv="sudo sv"
@@ -14,5 +24,4 @@ alias update="sudo xbps-install -Su"
 alias search="sudo xbps-query -Rs"
 alias ccache="xbps-remove -O"
 
-
-
+# ___      Fine

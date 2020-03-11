@@ -40,8 +40,6 @@ shopt -s autocd cdable_vars cdspell
 shopt -s cmdhist histappend histreedit histverify
 [[ $DISPLAY ]] && shopt -s checkwinsize
 #
-set -o vi
-set -o notify
 #
 #  ________________________________    Colori Ansi     ________________________________
 case "$TERM" in
