@@ -328,7 +328,7 @@ nano -w /etc/conf.d/xdm
 
 # == Strumenti , media , grafica .
 
- emerge --ask autoconf automake cmake curl ninja nodejs meson yarn xsel
+ emerge --ask autoconf automake cmake curl ninja nodejs meson yarn xsel util-linux
 
  emerge --ask sudo htop eix wgetpaste mlocate firefox-bin geany unzip evince vim zenity media-fonts/dejavu parcellite layman genlop
 
