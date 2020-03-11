@@ -1,4 +1,4 @@
-<?xml encoding="UTF-8" version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
@@ -27,8 +27,8 @@
 <action>
 	<icon>dialog-password</icon>
 	<name>Super Utente</name>
-	<unique-id>1556820005359575-3</unique-id>
-	<command>sudo thunar %f</command>
+	<unique-id>1583642843161364-1</unique-id>
+	<command>sudo thunar </command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
@@ -198,5 +198,13 @@
 	<description>esporta immagine png da un file svg</description>
 	<patterns>*.svg</patterns>
 	<image-files/>
+</action>
+<action>
+	<icon>slackware-package</icon>
+	<name>SlackInstall</name>
+	<unique-id>1583890431230196-1</unique-id>
+	<command>sudo /usr/sbin/sinstallpkg% n</command>
+	<description>Installa il pacchetto Slackware</description>
+	<patterns>*.tgz;*.txz</patterns>
 </action>
 </actions>

@@ -1,0 +1,37 @@
+#! /bin/sh
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+#set -e
+
+# nome utente
+echo "Imposta nome utente per Git"
+
+read input0
+
+# Git global user name
+git config --global user.name "$input0"
+
+#  email 
+echo "Imposta email per Git"
+
+read input1
+
+# Git global email
+git config --global user.email "$input1"
+
+#  editor
+echo "Quale editor preferisci?"
+echo "geany, leafpad, notepadqq, etc."
+
+read input2
+
+# Imposta editor
+git config --global core.editor "$input2"
+
+echo "Tutte le info sono impostate!"

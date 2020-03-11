@@ -8,9 +8,10 @@
 #================================================
 #   Dipende  : ntfsprogs                        =
 #================================================
-#Imposta l'utente Root
+# Imposta l'utente Root
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
-#Spegni il PC tra trenta minuti
+#
+# Spegni il PC tra trenta minuti
 sudo shutdown -h +30
 exit 0
