@@ -1,0 +1,6 @@
+su
+cd /media/Dati/Backup-Gentoo/
+
+tar cvfz gentoo-etc-`date +%d%m%y`.tgz /etc 
+tar cvfz gentoo-packages-`date +%d%m%y`.tgz /usr/portage/packages
+cp /var/lib/portage/world /media/Dati/Backup-Gentoo/

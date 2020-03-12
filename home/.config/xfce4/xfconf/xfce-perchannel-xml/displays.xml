@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="displays" version="1.0">
+  <property name="ActiveProfile" type="string" value="Default"/>
   <property name="Default" type="empty">
-    <property name="DVI-I-1" type="string" value="1. Acer 23&quot;">
+    <property name="DVI-I-1" type="string" value="Acer 23&quot;">
       <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="f69d0afd949324622dfb042e1d10fe9328324a29"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60.000000"/>
       <property name="Rotation" type="int" value="0"/>

@@ -1,14 +1,14 @@
 [Desktop Entry]
 Version=1.0
-Exec=/usr/bin/catfish %f
-Icon=catfish
-StartupNotify=false
+Exec=xfce4-appfinder
+Icon=edit-find
+StartupNotify=true
 Terminal=false
 Type=Application
 Categories=Utility;X-XFCE;
 Name=Application Finder
-Name[it]=Catfish ricerca di file
+Name[it]=Trova applicazioni
 Comment=Find and launch applications installed on your system
-Comment[it]=Cerca nel file system
+Comment[it]=Trova e avvia le applicazioni installate nel sistema
 X-XFCE-Source=file:///usr/share/applications/xfce4-appfinder.desktop
 Path=

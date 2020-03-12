@@ -1,1 +1,4 @@
-tar cvfz etc-`date +%d%m%y`.tgz /etc_gentoo
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+tar cvfz etc-`date +%d%m%y`.tgz /etc
