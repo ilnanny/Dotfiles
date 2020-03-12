@@ -64,7 +64,7 @@ echo "============================"
 echo "============================"
 echo "Remove downloaded folder:"
 echo "============================"
- rm -rf /tmp/Lila-HD-icon-theme
+rm -rf /tmp/Lila-HD-icon-theme
 echo "============================"
 echo "Enjoy"
 echo "============================"

@@ -19,7 +19,7 @@ clear
 printf "${yellow}Di seguito tutti i drivers installati nel Sistema${blue}\n"
 lshw | grep -i driver | perl -pe 's/^.*driver=(\S+).*$/$1/g;' | sort -u
 
-printf "${yellow}Fatto, chiudi il terminale.\n"
+printf "${yellow}Fatto, chiudi il terminale!\n"
 exit 4
 
 

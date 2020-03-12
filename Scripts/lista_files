@@ -6,6 +6,8 @@
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
+# Elenca in colonna tutti i file presenti in dir
+# e gli scrive in un file di testo.
 #================================================
 ls > lista_file.txt
 

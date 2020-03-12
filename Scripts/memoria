@@ -31,15 +31,15 @@ MEMPER="$(( ( $MEMUSED * 100 ) / $MEMTOTAL ))"
   SWAPPER="0"
 }
 
-# display the information
+# Visualizza informazioni
 /bin/echo
-/bin/echo "Memory"
-/bin/echo "Used: $MEMUSED"
-/bin/echo "Free: $MEMFREE"
-/bin/echo "Total: $MEMTOTAL"
+/bin/echo "Memoria"
+/bin/echo "Usata:  $MEMUSED"
+/bin/echo "Libera: $MEMFREE"
+/bin/echo "Totale: $MEMTOTAL"
 /bin/echo
 /bin/echo "Swap"
-/bin/echo "Used: $SWAPUSED"
-/bin/echo "Free: $SWAPFREE"
-/bin/echo "Total: $SWAPTOTAL"
+/bin/echo "Usata:  $SWAPUSED"
+/bin/echo "Libera: $SWAPFREE"
+/bin/echo "Totale: $SWAPTOTAL"
 /bin/echo
