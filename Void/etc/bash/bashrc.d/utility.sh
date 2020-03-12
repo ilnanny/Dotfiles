@@ -8,9 +8,9 @@
 #================================================
 #================================================
 
-#  ________________________________    Utilità TTY    ________________________________
+#  _______________________________    Utilità TTY
 #
-estrai()
+extract()
 {
     arg="$1"; shift
     case $arg in
@@ -52,7 +52,7 @@ estrai()
 
 killp()
 {
-    local pid name sig="-TERM"   # default signal
+    local pid name sig="-TERM"   # segnale di default
     [[ $# -lt 1 || $# -gt 2 ]] && printf "Utilizza: killp [-SIGNAL] pattern" && return 1
     [[ $# -eq 2 ]] && sig=$1
     for pid in $(mp | awk '!/awk/ && $0~pat { print $1 }' pat=${!#}); do
@@ -101,17 +101,7 @@ ii()
     echo
 }
 #
-# ___            Less Termcap
-#
-export LESS_TERMCAP_it=$'\e[01;31m'
-export LESS_TERMCAP_mb=$'\e[01;31m'
-export LESS_TERMCAP_md=$'\e[01;31m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;44;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[01;32m'
-#
+
 # ___            Screen Preexec
 #
 if [[ "$SCREEN_RUN_HOST" == "" ]]
@@ -191,14 +181,14 @@ case ${TERM} in
 ;;
 
 esac
-#
-#
-## ___            Gentoo Wgetpaste
-#
+
+
+#  _______________________________    Gentoo Wgetpaste
+
 if ${use_color} ; then
        alias emerge='emerge --color=y'
        alias eix='eix -F'
 fi
-#
-# ___            Fine
+
+#  _______________________________    Fine
 

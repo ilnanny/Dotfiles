@@ -1,6 +1,6 @@
 #________________________________________________________________________________
 #
-#                       OpenBox Softwares and Daemons Start
+#                   Avvio Softwares e Demoni in Openbox
 #________________________________________________________________________________
 #
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Ambiente Grafico.
@@ -25,7 +25,7 @@ nitrogen --restore &
 compton &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Pannelli-Dock.
-sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
+#sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
 sleep 1; xfce4-panel &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
@@ -49,17 +49,14 @@ xrdb -merge .Xresources
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Nomi Cartelle
 sleep 2; xdg-user-dirs-gtk-update &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Desktop Virtuali
-#skippyrc --config ~/.skippyrc --start-daemon &
-
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Conky.
 sleep 2; conky --daemonize
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Clipboard Manager.
-sleep 1; parcellite &
+#sleep 1; parcellite &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
-sleep 1; xfce4-terminal --drop-down
+#sleep 1; xfce4-terminal --drop-down
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
 #sleep 2; vlc /home/ilnanny/bin/radio.xspf
@@ -67,6 +64,9 @@ sleep 1; xfce4-terminal --drop-down
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
 #sleep 2; thunderbird &
 
-#_________________________________________________________________________________
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Desktop Virtuali
+#skippyrc --config ~/.skippyrc --start-daemon &
+
+#________________________________________________________________________
 #                                     Fine
-#_________________________________________________________________________________
+#________________________________________________________________________

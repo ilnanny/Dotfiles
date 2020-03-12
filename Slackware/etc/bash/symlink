@@ -1,3 +1,12 @@
+# Per Gentoo,Slackware e Void :
+
+ mv /home/ilnanny/.bashrc /home/ilnanny/.bashrc.bk
+ mv /root/.bashrc /root/.bashrc.bk
 
  ln -s /etc/bash/bashrc /home/ilnanny/.bashrc
- 
+ ln -s /etc/bash/root/bashrc /root/.bashrc
+
+# Per Debian e Archlinux anche :
+
+ mv /etc/bash.bashrc /etc/bash.bashrc.bk
+ ln -s /etc/bash/bashrc /etc/bash.bashrc

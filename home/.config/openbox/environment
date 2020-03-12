@@ -5,15 +5,18 @@ eval $(gpg-agent --daemon)
 eval $(gnome-keyring-daemon)
 export "$(gnome-keyring-daemon --start --components=pkcs11,secrets)"
 
-# ---------------------------------------  >  Window Manager.
-
+# ---------------------------------------  >  Session Manager.
+export GNOME_DESKTOP_SESSION_ID="openbox"
 DESKTOP_ENV="OPENBOX"
 
-# ---------------------------------------  >  Lingua
-LANG=it_IT.UTF-8
-Session=openbox
-Setxkbmap=it
-setxkbmap it
+# ---------------------------------------  > Impostazioni
+export BROWSER="firefox"
+export FILEMANAGER="thunar"
+export LC_TYPE="it_IT.UTF-8"
+export LANG="it_IT.UTF-8"
+export XKBMAP="it"
+export XDG_CONFIG_HOME="$HOME/.config"
+
 
 # ---------------------------------------  >  Xfce
 

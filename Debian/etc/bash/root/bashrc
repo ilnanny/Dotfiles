@@ -1,0 +1,36 @@
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#      Configurazioni Globali Bash Shell
+# I file di configurazione per le varie distro
+# sono collocate in /etc/bash - etc/bash/bash.d
+#================================================
+
+# ________________________  Shell Interattiva
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# ________________________  Profili
+for SH in /etc/profile.d/*.sh; do
+       . $SH
+done
+
+# ________________________  Alias
+for sh in /etc/bash/bashrc.d/* ; do
+	[[ -r ${sh} ]] && source "${sh}"
+done
+
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+
+# ________________________  Shell
+
+PS1="\[\e[0;31m\][\u]\[\e[0;32m\][\A]\[\e[0;31m\][\w]\\$\[$(tput sgr0)\]"
+
+# ________________________  Fine

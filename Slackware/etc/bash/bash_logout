@@ -1,0 +1,7 @@
+# /etc/bash/bash_logout
+
+# Pulisci il terminale alla disconnessione.
+clear
+
+# Attiva messaggi Fortune.
+#fortune

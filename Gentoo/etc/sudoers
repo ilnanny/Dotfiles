@@ -1,17 +1,16 @@
-# sudoers file.
-##
-##
-## User privilege specification
-##
+#  Privilegi utenti x gruppo.
+# ____________________________ 
+
+## Amministratore di sistema.
 root ALL=(ALL) ALL
 
-##
+## Utenti del gruppo wheel.
 # %wheel ALL=(ALL) ALL
 
-##
+## Gruppo wheel senza password.
 %wheel ALL=(ALL) NOPASSWD: ALL
 
-##
-# %sudo	ALL=(ALL) ALL
+## Users no password [Slackware]
+# %users ALL=(ALL) NOPASSWD: ALL
 
-
+# Fine  /etc/sudoers

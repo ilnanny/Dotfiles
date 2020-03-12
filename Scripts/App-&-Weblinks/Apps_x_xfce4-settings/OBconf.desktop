@@ -2,7 +2,7 @@
 Name=OBconf
 Comment=Tweak settings for Openbox
 Icon=obconf
-Exec=obconf %f
+Exec=obconf
 Terminal=false
 StartupNotify=true
 Type=Application

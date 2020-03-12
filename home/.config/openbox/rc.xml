@@ -16,10 +16,10 @@
     <policy>UnderMouse</policy>
     <center>yes</center>
     <monitor>Primary</monitor>
-    <primaryMonitor>Active</primaryMonitor>
+    <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Teiera</name>
+    <name>Arc-Polo-Dark</name>
     <titleLayout>LIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
@@ -71,7 +71,7 @@
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
-    <popupShow>Always</popupShow>
+    <popupShow>NonPixel</popupShow>
     <popupPosition>Center</popupPosition>
     <popupFixedPosition>
       <x>10</x>
@@ -79,10 +79,10 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>0</top>
-    <bottom>0</bottom>
-    <left>0</left>
-    <right>0</right>
+    <top>2</top>
+    <bottom>2</bottom>
+    <left>2</left>
+    <right>2</right>
   </margins>
   <dock>
     <position>Floating</position>
@@ -563,7 +563,7 @@
   <mouse>
     <dragThreshold>2</dragThreshold>
     <doubleClickTime>400</doubleClickTime>
-    <screenEdgeWarpTime>600</screenEdgeWarpTime>
+    <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
     <context name="Frame">
       <mousebind action="Press" button="A-Left">
