@@ -11,7 +11,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="34"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="45"/>
+        <value type="int" value="5"/>
         <value type="int" value="11"/>
         <value type="int" value="32"/>
         <value type="int" value="3"/>
@@ -38,7 +38,7 @@
       <property name="position" type="string" value="p=2;x=979;y=14"/>
       <property name="size" type="uint" value="21"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="22"/>
+        <value type="int" value="7"/>
         <value type="int" value="15"/>
         <value type="int" value="26"/>
         <value type="int" value="14"/>
@@ -132,7 +132,6 @@
         <value type="string" value="thunar"/>
       </property>
     </property>
-    <property name="plugin-22" type="string" value="showdesktop"/>
     <property name="plugin-23" type="string" value="clock">
       <property name="timezone" type="string" value="Europe/Rome"/>
       <property name="digital-format" type="string" value="%H:%M"/>
@@ -158,11 +157,6 @@
     <property name="plugin-32" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-45" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15839877536.desktop"/>
-      </property>
-    </property>
     <property name="plugin-46" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
     </property>
@@ -170,6 +164,12 @@
       <property name="items" type="array">
         <value type="string" value="158399818010.desktop"/>
       </property>
+    </property>
+    <property name="plugin-5" type="string" value="whiskermenu"/>
+    <property name="plugin-7" type="string" value="applicationsmenu">
+      <property name="show-button-title" type="bool" value="false"/>
+      <property name="button-icon" type="string" value="/home/ilnanny/.icons/menu/menul.png"/>
+      <property name="button-title" type="string" value=""/>
     </property>
   </property>
 </channel>

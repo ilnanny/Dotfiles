@@ -36,9 +36,9 @@ DropdownHeight=45
 ScrollingOnOutput=FALSE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0,930000
-FontName=Source Code Pro 12
-ColorForeground=#c42fd47acff9
+FontName=Source Code Pro 11
 ColorCursor=#839496
 ColorPalette=#073642;#dc322f;#859900;#b58900;#268bd2;#d33682;#2aa198;#eee8d5;#002b36;#cb4b16;#586e75;#657b83;#839496;#6c71c4;#93a1a1;#fdf6e3
-ColorBackground=#23c92e142b9c
+ColorForeground=#cd58d47ac7ba
+ColorBackground=#262632313838
 

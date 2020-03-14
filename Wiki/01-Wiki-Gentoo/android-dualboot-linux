@@ -1,0 +1,15 @@
+
+
+sudo nano /etc/grub.d/40_custom
+
+
+menuentry "Android-x86" {
+set root='(hd0,1)'
+linux /android-9.0-r1/kernel quiet root=/dev/ram0 androidboot.hardware=generic_x86 acpi_sleep=s3_bios,s3_mode SRC=/android-9.0-r1
+initrd /android-9.0-r1/initrd.img}
+
+
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+
