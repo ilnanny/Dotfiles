@@ -348,7 +348,7 @@ nano -w /etc/conf.d/xdm
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
- emerge --ask
+ emerge --ask gcolors2
 
 === GTK3+ ===
 USE="hscolour profile" emerge --ask dev-haskell/gtk3
@@ -390,5 +390,6 @@ UUID=76CDC3FF57CBA78E   /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UT
 ** == Se usi debianper il chroot:
    == export PATH="$PATH:/usr/sbin:/sbin:/bin"
 
-#=========================================================
+== ========================================== ==
+
 

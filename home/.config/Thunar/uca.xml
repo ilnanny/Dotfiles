@@ -27,8 +27,8 @@
 <action>
 	<icon>dialog-password</icon>
 	<name>Super Utente</name>
-	<unique-id>1583642843161364-1</unique-id>
-	<command>sudo thunar </command>
+	<unique-id>1556820005359575-3</unique-id>
+	<command>sudo thunar %f</command>
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
@@ -129,26 +129,6 @@
 	<directories/>
 </action>
 <action>
-	<icon>archive-extract</icon>
-	<name>Estrai Zip*</name>
-	<unique-id>1518324722592450-1</unique-id>
-	<command>unzip \*.zip</command>
-	<description></description>
-	<patterns>*.zip</patterns>
-	<directories/>
-	<other-files/>
-</action>
-<action>
-	<icon>archive-insert</icon>
-	<name>Estrai Rar*</name>
-	<unique-id>1530524871999921-1</unique-id>
-	<command>unrar \*.rar</command>
-	<description></description>
-	<patterns>*.rar</patterns>
-	<directories/>
-	<other-files/>
-</action>
-<action>
 	<icon>system-devices-panel</icon>
 	<name>MD5 e SHA</name>
 	<unique-id>1521425314397498-2</unique-id>
@@ -172,25 +152,6 @@
 	<image-files/>
 </action>
 <action>
-	<icon>Adobeillustrator</icon>
-	<name>PNG 2 XBM</name>
-	<unique-id>1557903228102246-6</unique-id>
-	<command>convert %f -quality 95 %f.xbm</command>
-	<description></description>
-	<patterns>*.png</patterns>
-	<directories/>
-	<image-files/>
-</action>
-<action>
-	<icon>image-png</icon>
-	<name>SVG2PNG 300*</name>
-	<unique-id>1556426909041201-1</unique-id>
-	<command>for i in *; do inkscape $i -d=300 -C --export-png=`echo $i | sed -e s/svg$/png/`; done</command>
-	<description>Converte da svg a png in 300dpi</description>
-	<patterns>*.svg</patterns>
-	<image-files/>
-</action>
-<action>
 	<icon>image-png</icon>
 	<name>Svg2Png</name>
 	<unique-id>1561802536679730-2</unique-id>
@@ -198,13 +159,5 @@
 	<description>esporta immagine png da un file svg</description>
 	<patterns>*.svg</patterns>
 	<image-files/>
-</action>
-<action>
-	<icon>slackware-package</icon>
-	<name>SlackInstall</name>
-	<unique-id>1583890431230196-1</unique-id>
-	<command>sudo /usr/sbin/sinstallpkg% n</command>
-	<description>Installa il pacchetto Slackware</description>
-	<patterns>*.tgz;*.txz</patterns>
 </action>
 </actions>
