@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
 Type=Link
-Name=openssh-wiki-gentoo
-Comment=
-Icon=distributor-logo-gentoo
-URL=https://wiki.gentoo.org/wiki/SSH/it#Installazione
+Name=Cups
+Comment=Accedi alle Stampanti
+Icon=print
+URL=http://localhost:631/admin
 
 -----------------------------------------------------------------------------------------
 salvalo con l'estensione  '.dekstop'

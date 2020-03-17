@@ -1,72 +1,73 @@
-#________________________________________________________________________________
+#__________________________________________________________________________
 #
 #                   Avvio Softwares e Demoni in Openbox
-#________________________________________________________________________________
+#__________________________________________________________________________
 #
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Ambiente Grafico.
 DESKTOP_ENV="OPENBOX"
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Polkit Gnome.
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Beep di sistema
+xset b off
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Wifi.
-#sudo nmcli device wifi connect FASTWEB-E06CD5 password 6R87ATWE7R
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Clipboard Manager.
+#sleep 1; parcellite &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Tastiera.
-setxkbmap it
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Conky.
+sleep 2; conky --daemonize
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Desktop Virtuali
+#skippyrc --config ~/.skippyrc --start-daemon &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
+#sleep 2; thunderbird &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Rete.
+nm-applet --sm-disable &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
+sleep 1; volumeicon &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Wifi.
+#sudo nmcli device wifi connect FASTWEB-E06CD5 password
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni X.
+xrdb -merge .Xresources
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni XFCE.
 xfsettingsd &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Sfondo Desktop.
-nitrogen --restore &
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
+numlockx &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Trasparenze.
-compton &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Notifiche
+dunst &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Nomi Cartelle
+sleep 2; xdg-user-dirs-gtk-update &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Pannelli-Dock.
 #sleep 1; tint2 -c ~/.config/tint2/transoriz.tint2rc &
 sleep 1; xfce4-panel &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
-sleep 1; volumeicon &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
-numlockx &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Rete.
-nm-applet --sm-disable &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Notifiche
-dunst &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Beep di sistema
-xset b off
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni X.
-xrdb -merge .Xresources
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Nomi Cartelle
-sleep 2; xdg-user-dirs-gtk-update &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Conky.
-sleep 2; conky --daemonize
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Clipboard Manager.
-#sleep 1; parcellite &
-
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
-#sleep 1; xfce4-terminal --drop-down
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Polkit Gnome.
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
 #sleep 2; vlc /home/ilnanny/bin/radio.xspf
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Email Manager.
-#sleep 2; thunderbird &
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Sfondo Desktop.
+nitrogen --restore &
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Desktop Virtuali
-#skippyrc --config ~/.skippyrc --start-daemon &
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Tastiera.
+setxkbmap it
 
-#________________________________________________________________________
-#                                     Fine
-#________________________________________________________________________
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Trasparenze.
+compton &
+
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
+#sleep 1; xfce4-terminal --drop-down
+
+________________________________________________________________________
+#                                 Fine
+#_______________________________________________________________________

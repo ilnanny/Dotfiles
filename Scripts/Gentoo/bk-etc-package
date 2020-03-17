@@ -26,10 +26,16 @@ Nc="\033[0m"
 clear
 #_______________________________________________=
 #Imposta l'utente Root
-#set -o errexit
-#[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 #____________________________________________________=
 
+cd /media/Dati/Backup-Gentoo/
+
+tar cvfz gentoo-etc-`date +%d%m%y`.tgz /etc
+tar cvfz gentoo-packages-`date +%d%m%y`.tgz /usr/portage/packages
+cp /var/lib/portage/world /media/Dati/Backup-Gentoo/
+echo "Fatto chiudi il terminale !"
 
 
 

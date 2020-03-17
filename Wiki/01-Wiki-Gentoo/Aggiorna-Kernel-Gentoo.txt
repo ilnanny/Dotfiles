@@ -1,6 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 ===========================================
  ##         Gentoo genkernel
-===================================================================
+===========================================
  eselect kernel list
 eselect kernel set #
 
@@ -8,16 +11,17 @@ eselect kernel set #
 gunzip /proc/config.gz -c > /root/config; cp /root/config /root/config-$(uname -r)
 
 #  Opzionalmente cambia le impostazioni del modulo nel file di configurazione, o usa --menuconfig con genkernel.
-======        ======              ======        ======            ======        ======            ======        ======
+
+===========================================
 
 se hai messo il file config in /root linux puoi dare.:
 genkernel --makeopts=-j13 --kernel-config=/root/config all
-======        ======              ======        ======            ======        ======            ======        ======
+===========================================
 
 oppure se hai messo il file config in usr src linux puoi dare.:
 
 genkernel --makeopts=-j9 --kernel-config=/usr/src/linux/.config all
-======        ======              ======        ======            ======        ======            ======        ======
+===========================================
 
 o ancora ..con menuconfig affini la compilazione
 
@@ -43,12 +47,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ===============================================
 " = oppure make -j8 menuconfig   o ancora  make -j8 xconfig = "
 
-    make -j8 olddefconfig
-    make -j8 modules_prepare
-    emerge --ask @module-rebuild
-    make -j8
-    make install
-    make --install initramfs
+	make -j8 olddefconfig
+	make -j8 modules_prepare
+	emerge --ask @module-rebuild
+	make -j8
+	make install
+	make --install initramfs
 
   grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -56,12 +60,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 Moduli kernel
 
-cd /usr/src/linux
-make menuconfig
+ cd /usr/src/linux
+ make menuconfig
 
-make -j8
-make modules_install
-make install
+ make -j8
+ make modules_install
+ make install
 =====================================
 oppure per cambiare nome e usare il vecchio conf:
 include/linux/uts.h make oldconfig
+===========================================

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=Cups
+Comment=Accedi alle Stampanti
+Icon=stock-print
+URL=http://localhost:631/admin

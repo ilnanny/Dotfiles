@@ -7,22 +7,19 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-if [ $USER != "root" ]
-then
-clear
-echo "Script eseguibile solo da root"
-exit
-fi
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#
 if [ "$editor" = "" ];then
-editor1=`which gedit`
-editor2=`which kedit`
-editor3=`which mcedit`
-editor4=`which vi`
+editor1=`which geany`
+editor2=`which nano`
+editor4=`which vim`
 editor=""
 if [ "$editor1" ];then
-editor="gedit"
+editor="geany"
 elif [ "$editor2" ];then
-editor="gedit"
+editor="geany"
 elif [ "$editor3" ];then
 editor="luit -encoding ISO-8859-1 mcedit"
 elif [ "$editor4" ];then

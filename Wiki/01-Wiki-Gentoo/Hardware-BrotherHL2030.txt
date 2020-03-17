@@ -1,8 +1,11 @@
-Installazione da overlay (layman)
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+Installazione da overlay
 layman -f -a brother-overlay
 
-sudo emerge -av media-gfx/brother-scan3-bin
-
+emerge -av media-gfx/brother-scan3-bin
+emerge --ask system-config-printer
 
 ================================
 installazione manuale:
@@ -11,7 +14,7 @@ Suppongo che tu abbia già un'installazione di CUPS funzionante e che il support
 1. emerge rpm2targz
 2. Scarica i file brhl2030lpr-2.0.1-1.i386.rpm e cupswrapperHL2030-2.0.1-1.i386.rpm dal sito Web Brother.
 3. Converti i file RPM in tarballs con rpm2targz, ed estraili:
-Codice  :
+
 
  rpm2targz brhl2030lpr-2.0.1-1.i386.rpm
  rpm2targz cupswrapperHL2030-2.0.1-1.i386.rpm
@@ -19,8 +22,8 @@ Codice  :
  tar xzf brhl2030lpr-2.0.1-1.i386.tar.gz
 
 Questo crea una directory usr e var nella directory di lavoro corrente
-4.  Come root, copia tutti i file che sono stati estratti nella directory usr nelle directory corrispondenti in /usr/.
-Codice  :
+4. Come root, copia tutti i file che sono stati estratti nella directory usr nelle directory corrispondenti in /usr/.
+
 
  cp usr/bin/brprintconflsr2 /usr/bin/
  cp usr/lib/libbrcomplpr2.so /usr/lib/
@@ -28,20 +31,25 @@ Codice  :
 
 5. Modifica lo script /usr/local/Brother/cupswrapper/cupswrapperHL2030-2.0.1
 scrivi
- /etc/init.d/cupsd    al posto di
+ /etc/init.d/cupsd
+al posto di
  /etc/init.d/cups
+
 questa modifica è richiesta in tre posizioni in questo file.
 6. Avvia lo script
 /usr/local/Brother/cupswrapper/cupswrapperHL2030-2.0.1
 per configurare la stampante laser.
 7. Crea un link simbolico da /usr/local/Brother/inf/brHL2030rc a /usr/local/Brother/inf/brPrintList.
-Codice  :
+
 
 cd /usr/local/Brother/inf
 ln -sf brHL2030rc brPrintList
 
-8. La stampante è impostata su carta in formato A4 .
-9. Avvia la console di amministrazione di CUPS ( http://localhost:631 potrebbe funzionare); la tua Brother HL-2030 dovrebbe essere elencato e dovresti essere in grado di stampare una pagina di prova.
+rc-service cupsd start
+rc-update add cupsd default
+ http://localhost:631/admin/
+ emerge --ask system-config-printer
 
-Bus 007 Device 007: ID 04f9:0027 Brother Industries, Ltd HL-2030 Laser Printer
-usb://Brother/HL-2030%20series?serial=C6J186766|Brother HL-2030 series
+8. La stampante è impostata su carta in formato A4 .
+9. Avvia la console di amministrazione di CUPS
+ http://localhost:631/admin/
