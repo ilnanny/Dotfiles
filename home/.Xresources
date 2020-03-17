@@ -7,44 +7,44 @@
 !   Tema dei colori XTerm : Dark Pastel
 ! ------------------------------------------------
 !
-*.foreground: #F2F6FC
-*.background: #535353
+*.foreground: #CDD4C7
+*.background: #263238
 *.cursorColor: #BBBBBB
 !
 ! Black / Nero
-*.color0:      #000000
-*.color8:      #555555
+*.color0:      #073642
+*.color8:      #002B36
 !
 ! Red / Rosso
-*.color1:      #FF5555
-*.color9:      #FF5555
+*.color1:      #D1615F
+*.color9:      #CB4B16
 !
 ! Green / Verde
-*.color2:      #55FF55
-*.color10:     #55FF55
+*.color2:      #859900
+*.color10:     #75A297
 !
 ! Yellow / Giallo
-*.color3:      #FFFF55
-*.color11:     #FFFF55
+*.color3:      #B58900
+*.color11:     #D7D48E
 !
 ! Blue / Blu
-*.color4:      #5555FF
-*.color12:     #5555FF
+*.color4:      #7EB1D5
+*.color12:     #96B7C8
 !
 ! Magenta
-*.color5:      #FF55FF
-*.color13:     #FF55FF
+*.color5:      #D33682
+*.color13:     #C46CA1
 !
 ! Cyan / Ciano
-*.color6:      #55FFFF
-*.color14:     #55FFFF
+*.color6:      #7ECDCD
+*.color14:     #A5D5D5
 !
 ! White / Bianco
-*.color7:      #BBBBBB
-*.color15:     #FFFFFF
+*.color7:      #F3F0E7
+*.color15:     #F3F3F3
 !
 ! Bold, Italic, Underline / Grassetto Corsivo Sottolineato
-*.colorBD:     #FF5E7D
+*.colorBD:     #DF5C6B
 !*.colorIT:
 !*.colorUL:
 !
