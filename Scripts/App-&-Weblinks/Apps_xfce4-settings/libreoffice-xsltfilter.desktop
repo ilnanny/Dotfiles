@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Exec=libreoffice
+MimeType=application/vnd.oasis.opendocument.text-flat-xml;application/vnd.oasis.opendocument.spreadsheet-flat-xml;application/vnd.oasis.opendocument.graphics-flat-xml;application/vnd.oasis.opendocument.presentation-flat-xml;
+Name=LO-XSLT
+GenericName=XSLT based filters
+GenericName[en]=XSLT based filters
+NoDisplay=true
+StartupNotify=true
+X-GIO-NoFuse=true
+X-KDE-Protocols=file,http,ftp,webdav,webdavs
+Name[it_IT.UTF-8]=LO-XSLT
+Icon=web-browser-cache

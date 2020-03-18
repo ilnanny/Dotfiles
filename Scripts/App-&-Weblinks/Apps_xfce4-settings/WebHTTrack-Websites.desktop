@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Categories=Network;
+Terminal=false
+Name=Browse Mirrored Websites
+Comment=Browse Websites Mirrored by WebHTTrack
+Keywords=browse mirrored;
+Exec=webhttrack browse
+Icon=httrack
+Name[it_IT.UTF-8]=Mirrored Sites

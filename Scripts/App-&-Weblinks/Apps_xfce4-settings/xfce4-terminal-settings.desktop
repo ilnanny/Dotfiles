@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Xfce Terminal
+Name[it]=Terminale di Xfce
+Comment=Configure Xfce Terminal
+Comment[it]=Configura il terminale di Xfce
+Exec=xfce4-terminal --preferences
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+StartupNotify=true
+NotShowIn=GNOME;
+Name[it_IT.UTF-8]=Imposta Terminale

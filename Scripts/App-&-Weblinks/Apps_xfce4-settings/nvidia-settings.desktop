@@ -8,4 +8,4 @@ Terminal=false
 StartupNotify=true
 Type=Application
 Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
-Name[it_IT.UTF-8]=NVIDIA Settings
+Name[it_IT.UTF-8]=Imposta Nvidia

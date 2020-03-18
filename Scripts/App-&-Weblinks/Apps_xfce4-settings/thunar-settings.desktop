@@ -10,4 +10,4 @@ Terminal=false
 Type=Application
 Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
 StartupNotify=true
-Name[it_IT.UTF-8]=Impostazioni Thunar
+Name[it_IT.UTF-8]=Imposta Thunar

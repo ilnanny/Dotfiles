@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Hardware Lister
+Type=Application
+Comment=Hardware Lister
+Exec=/usr/sbin/gtk-lshw
+TryExec=/usr/sbin/gtk-lshw
+Icon=lshw
+Categories=System;

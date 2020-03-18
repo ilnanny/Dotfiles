@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Java Web Start
+GenericName=Java Web Start
+Comment=Start Java Web Start applications
+Exec=javaws %u
+NoDisplay=true
+Terminal=false
+Icon=javaws
+MimeType=application/x-java-jnlp-file;
+Categories=Network;
+Name[it_IT.UTF-8]=JWS

@@ -4,7 +4,7 @@ sys-auth/polkit gtk introspection nls pam -consolekit elogind -examples -jit -kd
 
 sys-boot/grub mount
 
-sys-block/gparted btrfs cryptsetup dmraid f2fs fat mdadm ntfs policykit  hfs reiser4 reiserfs udf
+sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs mdadm ntfs policykit reiser4 reiserfs udf
 
 sys-fs/android-file-transfer-linux fuse qt5
 

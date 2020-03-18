@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Screenshot
+Name[it]=Istantanea
+Comment=Take screenshots of the entire screen, of the active window or of a region
+Comment[it]=Scatta un'istantanea dell'intero schermo, di una sua porzione o della finestra attiva
+Icon=applets-screenshooter
+Exec=xfce4-screenshooter
+Type=Application
+StartupNotify=true
+Terminal=false
+Categories=GTK;Utility;

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Bulk Rename
+Name[it]=Rinominamento di massa
+Comment=Rename Multiple Files
+Comment[it]=Rinomina più file
+GenericName=Bulk Rename
+GenericName[it]=Rinominamento di massa
+Exec=/usr/lib64/Thunar/ThunarBulkRename %F
+Icon=Thunar
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;Core;GTK;Filesystem;
+
+# vi:set encoding=UTF-8:
+Name[it_IT.UTF-8]=Bulk Rename

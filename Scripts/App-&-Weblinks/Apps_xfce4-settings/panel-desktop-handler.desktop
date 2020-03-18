@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Create Launcher on the panel
+Name[it]=Crea un avviatore sul pannello
+Comment=Add a new launcher to the panel based on the information of this desktop file
+Comment[it]=Aggiunge un nuovo avviatore sul pannello sulla base delle informazioni contenute in questo file desktop
+Exec=xfce4-panel --add=launcher %u
+Icon=application-x-executable
+Terminal=false
+NoDisplay=true
+StartupNotify=false
+MimeType=application/x-desktop;
+Name[it_IT.UTF-8]=Avviatore Pannello

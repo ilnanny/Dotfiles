@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=xfce4-appfinder --collapsed
+Icon=system-run
+StartupNotify=true
+Terminal=false
+Categories=Utility;X-XFCE;X-Xfce-Toplevel;
+OnlyShowIn=XFCE;
+Name=Run Program...
+Name[it]=Esegui programma…
+Comment=Enter a command you want to launch
+Comment[it]=Inserire il comando da avviare
+Name[it_IT.UTF-8]=Esegui ...

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Avahi VNC Server Browser
+Name[it]=Esploratore Avahi per server VNC
+Comment=Browse for Zeroconf-enabled VNC Servers
+Comment[it]=Esplora i server VNC con Zeroconf abilitato
+Exec=/usr/bin/bvnc
+Terminal=false
+Type=Application
+Icon=network-wired
+Categories=GNOME;Network;
+StartupNotify=false
+GenericName=
+Name[it_IT.UTF-8]=\sAvahi VNC

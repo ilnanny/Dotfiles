@@ -1,9 +1,12 @@
+net-dns/avahi gtk3 python
+
+net-ftp/pure-ftpd mysql resolveids vchroot
 
 net-libs/libtorrent-rasterbar python
 
-net-p2p/amule upnp
+net-print/cups zeroconf
 
-net-ftp/pure-ftpd mysql resolveids vchroot
+net-p2p/amule upnp
 
 net-wireless/wpa_supplicant dbus
 

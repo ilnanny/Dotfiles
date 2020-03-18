@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Mouse and Touchpad
+Name[it]=Mouse e touchpad
+Comment=Configure pointer device behavior and appearance
+Comment[it]=Configurazione del comportamento e dell'aspetto del dispositivo di puntamento
+Exec=xfce4-mouse-settings
+Icon=preferences-desktop-peripherals
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpPage=mouse
+Name[it_IT.UTF-8]=Imposta Mouse

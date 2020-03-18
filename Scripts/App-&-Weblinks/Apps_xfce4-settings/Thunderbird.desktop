@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Mozilla Thunderbird
+Comment=Mozilla Thunderbird Mail Client
+Exec=/usr/bin/thunderbird %u
+Icon=thunderbird
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+Categories=Network;Mail
+StartupNotify=true
+Name[it_IT.UTF-8]=Thunderbird

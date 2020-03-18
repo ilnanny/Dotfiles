@@ -10,4 +10,4 @@ Terminal=false
 StartupNotify=true
 Type=Application
 Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;
-Name[it_IT.UTF-8]=lxappearance
+Name[it_IT.UTF-8]=Aspetto LX

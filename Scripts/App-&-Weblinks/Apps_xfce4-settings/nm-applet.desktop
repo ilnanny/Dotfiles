@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name[it]=Rete
+Name=Network
+Comment[it]=Gestisce le connessioni di rete
+Comment=Manage your network connections
+Icon[it]=nm-device-wireless
+Icon=nm-device-wireless
+Exec=nm-applet
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=KDE;GNOME;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=NetworkManager
+X-GNOME-Bugzilla-Component=nm-applet
+X-GNOME-UsesNotifications=true

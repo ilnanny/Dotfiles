@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pburn CD/DVD/Blu-ray writer
+Type=Application
+Comment=A burning tool with GTK+ frontend
+Exec=pburn
+TryExec=pburn
+Icon=tools-media-optical-burn
+Categories=AudioVideo;DiscBurning;
+Name[it_IT.UTF-8]=Pburn

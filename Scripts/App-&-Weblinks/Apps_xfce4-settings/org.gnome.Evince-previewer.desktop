@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name[it]=Anteprima di stampa
+Name=Print Preview
+Comment[it]=Visualizza in anteprima il documento da stampare
+Comment=Preview before printing
+TryExec=evince-previewer
+Exec=evince-previewer %U
+StartupNotify=true
+Terminal=false
+Type=Application
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon[it]=document-print-preview
+Icon=document-print-preview
+NoDisplay=true
+Categories=GNOME;GTK;Office;Viewer;Graphics;2DGraphics;VectorGraphics;
+Name[it_IT.UTF-8]=Anteprima Stampa

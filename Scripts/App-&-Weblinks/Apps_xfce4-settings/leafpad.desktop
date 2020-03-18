@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Leafpad
+Comment=Simple text editor
+Comment[it]=Semplice editor di testi
+Exec=leafpad %f
+Icon=leafpad
+Terminal=false
+Type=Application
+MimeType=text/plain;
+Categories=GTK;Utility;TextEditor;
