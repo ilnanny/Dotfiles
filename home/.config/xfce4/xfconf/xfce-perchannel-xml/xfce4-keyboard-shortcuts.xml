@@ -39,6 +39,7 @@
       <property name="&lt;Alt&gt;F2" type="string" value="menu -r">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
+      <property name="F4" type="string" value="xfce4-terminal --drop-down"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

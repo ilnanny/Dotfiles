@@ -20,26 +20,29 @@
         <value type="int" value="1"/>
         <value type="int" value="47"/>
         <value type="int" value="2"/>
-        <value type="int" value="8"/>
         <value type="int" value="6"/>
         <value type="int" value="28"/>
         <value type="int" value="4"/>
+        <value type="int" value="8"/>
       </property>
       <property name="mode" type="uint" value="2"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.000000"/>
-        <value type="double" value="0.000000"/>
-        <value type="double" value="0.000000"/>
-        <value type="double" value="0.060000"/>
+        <value type="double" value="0.149020"/>
+        <value type="double" value="0.196078"/>
+        <value type="double" value="0.219608"/>
+        <value type="double" value="0.350000"/>
       </property>
       <property name="length" type="uint" value="1"/>
+      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="nrows" type="uint" value="1"/>
     </property>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=2;x=979;y=14"/>
+      <property name="position" type="string" value="p=11;x=976;y=11"/>
       <property name="size" type="uint" value="21"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="7"/>
+        <value type="int" value="9"/>
         <value type="int" value="15"/>
         <value type="int" value="26"/>
         <value type="int" value="14"/>
@@ -52,12 +55,12 @@
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.083333"/>
-        <value type="double" value="0.083333"/>
-        <value type="double" value="0.083333"/>
-        <value type="double" value="0.092527"/>
+        <value type="double" value="0.149020"/>
+        <value type="double" value="0.196078"/>
+        <value type="double" value="0.219608"/>
+        <value type="double" value="0.300000"/>
       </property>
-      <property name="length" type="uint" value="100"/>
+      <property name="length" type="uint" value="90"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="autohide-behavior" type="uint" value="0"/>
     </property>
@@ -103,6 +106,7 @@
       <property name="items" type="array">
         <value type="string" value="15831178951.desktop"/>
       </property>
+      <property name="disable-tooltips" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -166,17 +170,15 @@
       <property name="items" type="array">
         <value type="string" value="158399818010.desktop"/>
       </property>
+      <property name="disable-tooltips" type="bool" value="true"/>
     </property>
     <property name="plugin-5" type="string" value="whiskermenu"/>
-    <property name="plugin-7" type="string" value="applicationsmenu">
-      <property name="show-button-title" type="bool" value="false"/>
-      <property name="button-icon" type="string" value="/home/ilnanny/.icons/menu/menul.png"/>
-      <property name="button-title" type="string" value=""/>
-    </property>
     <property name="plugin-4" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15842387361.desktop"/>
       </property>
+      <property name="disable-tooltips" type="bool" value="true"/>
     </property>
+    <property name="plugin-9" type="string" value="showdesktop"/>
   </property>
 </channel>

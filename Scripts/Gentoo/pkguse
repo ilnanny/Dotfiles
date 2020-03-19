@@ -1,0 +1,65 @@
+#!/bin/bash
+
+eix --only-names $1 > /tmp/pkglist
+if [[ $(head -n 1 /tmp/pkglist) != */* ]]; then
+   echo No packages found.
+   rm /tmp/pkglist
+   exit 1
+fi
+
+title=`dialog --stdout --no-items --menu $1 0 0 0 --file /tmp/pkglist`
+rm /tmp/pkglist
+if [[ $title == "" ]]; then
+   exit 1
+fi
+
+equery -NC u $title > /tmp/uselist
+head -n -5 /tmp/uselist > /tmp/uselistc
+rm /tmp/uselist
+if [[ `head -n 1 /tmp/uselistc` == "" ]]; then
+   echo No USE options.
+   rm /tmp/uselistc
+   exit 1
+fi
+touch /tmp/usechoice
+i=1
+while read p; do
+      s=`printf "%s" "${p:0:1}"`
+      t=`expr "$p" : '.*\([+-] [+-] [^ ]*\)'`
+      d="`expr "$p" : '.*\(: .*\)'`"
+      if [[ "$s" != [+-] ]]; then
+      	 echo equery error.
+	 rm /tmp/usechoice
+	 rm /tmp/uselisctc
+	 exit 1
+      fi
+      if [[ "$s" == "+" ]];
+      then 
+      	 echo "${t:4}" \""${d:2}"\" on >> /tmp/usechoice
+      else
+      	 echo "${t:4}" \""${d:2}"\" off >> /tmp/usechoice
+      fi
+((i++))
+done < /tmp/uselistc
+rm uselistc
+choices=`dialog --stdout --checklist $title 0 0 0 --file /tmp/usechoice`
+rm /tmp/usechoice
+if [[ $choices == "" ]]; then
+   exit 1
+fi
+
+prefinal=`echo $title $choices`
+final=`dialog --stdout --inputbox "String to be added to package.use:" 0 0 "$prefinal"`
+if [[ $final == "" ]]; then
+   exit 1
+fi
+echo $final
+while true; do
+    read -p "Do you want to write this to package.use? (yes/no)" yn
+    case $yn in
+        yes ) echo $final | sudo tee --append /etc/portage/package.use; break;;
+        no ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+   

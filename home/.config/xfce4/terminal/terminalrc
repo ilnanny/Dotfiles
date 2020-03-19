@@ -34,11 +34,11 @@ DropdownPositionVertical=7
 DropdownAlwaysShowTabs=FALSE
 DropdownHeight=45
 ScrollingOnOutput=FALSE
+BackgroundDarkness=0,950000
+FontName=Nimbus Mono L 11
+ColorForeground=#c404d2c5d22d
+ColorBackground=#263238
+ColorCursor=#708284
+ColorPalette=rgb(53,64,70);rgb(200,60,67);rgb(136,151,61);rgb(165,119,6);rgb(100,181,199);rgb(198,28,111);rgb(37,146,134);rgb(234,227,203);rgb(71,91,98);rgb(189,54,19);rgb(148,190,112);rgb(213,212,170);rgb(136,170,182);rgb(136,187,200);rgb(134,161,161);rgb(252,244,220)
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0,930000
-FontName=Source Code Pro 11
-ColorCursor=#839496
-ColorPalette=#073642;#dc322f;#859900;#b58900;#268bd2;#d33682;#2aa198;#eee8d5;#002b36;#cb4b16;#586e75;#657b83;#839496;#6c71c4;#93a1a1;#fdf6e3
-ColorForeground=#cd58d47ac7ba
-ColorBackground=#262632313838
 

@@ -1,0 +1,24 @@
+emerge --ask sys-fs/squashfs-tools
+
+Come root, copia image.squashfs in qualche directory vuota, ad es .:
+
+cp /mnt/clonezilla/live/image.squashfs /media/Dati/iso/image.squashfs
+cd /media/Dati/iso/image.squashfs
+
+Decomprimi il file e spostalo altrove (cosi hai ancora un backup):
+
+unsquashfs image.squashfs
+mv image.squashfs /media/Dati/iso/image.squashfs
+
+Vai in squashfs-root, aggiungi/modificaq e  ricrea il image.squashfs:
+
+cd /media/Dati/iso/image.squashfs
+mksquashfs squashfs-root image.squashfs -b 1024k -comp xz -Xbcj x86 -e boot
+
+copia il image.squashfs appena creato su quello esistente sul tuo drive USB, ad es.:
+
+cp image.squashfs /mnt/clonezilla/live/
+
+quindi riavviare e utilizzare LIVE USB
+
+Nota: i comandi precedenti fanno parte di squashfs-tools

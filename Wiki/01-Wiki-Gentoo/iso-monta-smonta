@@ -1,0 +1,7 @@
+ su
+
+ mkdir /mdeia/iso
+
+ mount /path/to/image.iso /media/iso -o loop
+
+ umount /media/iso

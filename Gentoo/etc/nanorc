@@ -1,23 +1,23 @@
 #
-# ------------------------------- Impostazioni Nano 
+# ------------------------------- > Impostazioni Nano
 
-# include syntax highlighting
+# ------------- > Syntax Highlighting
 include "~/.nano/syntax-highlighting/*.nanorc"
 
- ------------- > AutoTab 4 Spazi
+# ------------- > AutoTab 4 Spazi
 set tabsize 4
 set tabstospaces
 
- ------------- > Scorrimento 
+# ------------- > Scorrimento
 set smooth
 
- ------------- > Indentazione Auto
+# ------------- > Indentazione Auto
 set autoindent
 
 # ------------- > Numeri di Riga
 set linenumbers
 
- ------------- > Disabilita Backups
+# ------------- > Disabilita Backups
 unset backup
 
 # ------------------------- > Annulla con Ctrl+z
@@ -44,4 +44,4 @@ bind ^G gotoline all
 # ------------------------- > Annulla indentazione
 bind ^A unindent all
 
-# --------------------------- Fine 
+# --------------------------- Fine
