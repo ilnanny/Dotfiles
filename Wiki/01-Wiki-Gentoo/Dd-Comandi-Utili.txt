@@ -1,41 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 
 
 #  ===   Scrivere un immagine ISO su pendrive ; es. /sdb
 
-    #funtoo
-    dd if=funtoo-livecd-area31-5.1-beta.iso of=/dev/sdx bs=4k status=progress
+	#funtoo
+	dd if=funtoo-livecd-area31-5.1-beta.iso of=/dev/sdx bs=4k status=progress
 
-    #freebsd
-    dd if=FreeBSD-12.0-RELEASE-amd64-dvd1.iso of=/dev/da0 bs=1m conv=sync
+	#freebsd
+	dd if=FreeBSD-12.0-RELEASE-amd64-dvd1.iso of=/dev/da0 bs=1m conv=sync
 
-    #slackware
-    sudo dd if=/slackware64-live-current.iso of=/dev/sde bs=64k oflag=dsync status=progress
+	#slackware
+	sudo dd if=/slackware64-live-current.iso of=/dev/sde bs=64k oflag=dsync status=progress
 
 
 #  ===   Creare una .iso del DVD ; es. /sr0
 
-    dd if=/dev/sr0 of=file.iso
+	dd if=/dev/sr0 of=file.iso
 
 
 
-#  ===   Creare un backup della partizione ; es. /sda1
+#  ===   Creare un backup della partizione  con data ; es. /sdc2
 
-    dd if=/dev/sda1 of=backup
+	dd if=/dev/sdc2 of=/media/Dati/Backup-Gentoo/backup-`date +%d%m%y` bs=40k status=progress
 
 
 
 #  ===   Slackware
 
-    ./iso2usb.sh -i /media/Dati/OS/Linux/64bit/slackware64-live-current.iso -o /dev/sde
+	./iso2usb.sh -i /media/Dati/OS/Linux/64bit/slackware64-live-current.iso -o /dev/sde
 
 #  === Software richiesto:
 
-    emerge --ask \
-    extlinux \
-    gdisk \
-    isoinfo \
-    sgdisk \
-    syslinux
+	emerge --ask \
+	extlinux \
+	gdisk \
+	isoinfo \
+	sgdisk \
+	syslinux
 
 ======================================================================================
 
