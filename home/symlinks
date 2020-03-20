@@ -4,6 +4,7 @@ ln -s /media/Dati/Musica/ $HOME/Musica
 ln -s /media/Dati/Git/ $HOME/Git
 ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
 ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
+mkdir $HOME/Notebooks
 ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
 
 ## Root
