@@ -1,6 +1,4 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for solydxk on Tue Apr 18 20:46:36 2017.
-# https://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
 cycle:		0:05:00
@@ -32,14 +30,14 @@ dpmsOff:	4:00:00
 grabDesktopImages:  False
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:	
+imageDirectory:
 
 mode:		blank
 selected:	-1
 
 textMode:	url
 textLiteral:	XScreenSaver
-textFile:	
+textFile:
 textProgram:	fortune
 textURL:	http://planet.debian.org/rss20.xml
 
