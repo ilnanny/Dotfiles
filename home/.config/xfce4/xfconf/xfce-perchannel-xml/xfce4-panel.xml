@@ -28,10 +28,10 @@
       <property name="mode" type="uint" value="2"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.149020"/>
-        <value type="double" value="0.196078"/>
-        <value type="double" value="0.219608"/>
-        <value type="double" value="0.350000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.130872"/>
       </property>
       <property name="length" type="uint" value="1"/>
       <property name="leave-opacity" type="uint" value="100"/>
@@ -55,10 +55,10 @@
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.149020"/>
-        <value type="double" value="0.196078"/>
-        <value type="double" value="0.219608"/>
-        <value type="double" value="0.300000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.000000"/>
+        <value type="double" value="0.050336"/>
       </property>
       <property name="length" type="uint" value="90"/>
       <property name="position-locked" type="bool" value="true"/>
@@ -123,7 +123,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-16" type="string" value="systray">
-      <property name="size-max" type="uint" value="20"/>
+      <property name="size-max" type="uint" value="16"/>
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="false"/>
       <property name="names-ordered" type="array">
@@ -153,7 +153,7 @@
       <property name="sort-order" type="uint" value="4"/>
       <property name="middle-click" type="uint" value="1"/>
       <property name="flat-buttons" type="bool" value="true"/>
-      <property name="show-handle" type="bool" value="true"/>
+      <property name="show-handle" type="bool" value="false"/>
     </property>
     <property name="plugin-28" type="string" value="launcher">
       <property name="items" type="array">

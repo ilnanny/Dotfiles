@@ -36,9 +36,9 @@ DropdownHeight=45
 ScrollingOnOutput=FALSE
 BackgroundDarkness=0,950000
 FontName=Nimbus Mono L 11
-ColorForeground=#c404d2c5d22d
 ColorBackground=#263238
-ColorCursor=#708284
-ColorPalette=rgb(53,64,70);rgb(200,60,67);rgb(136,151,61);rgb(165,119,6);rgb(100,181,199);rgb(198,28,111);rgb(37,146,134);rgb(234,227,203);rgb(71,91,98);rgb(189,54,19);rgb(148,190,112);rgb(213,212,170);rgb(136,170,182);rgb(136,187,200);rgb(134,161,161);rgb(252,244,220)
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+ColorCursor=#708284
+ColorPalette=#1B2930;#C83C43;#88973D;#a57706;#2176c7;#c61c6f;#259286;#eae3cb;#475b62;#bd3613;#475b62;#536870;#708284;#5956ba;#819090;#fcf4dc
+ColorForeground=#A2BBBE
 

@@ -1,0 +1,47 @@
+#
+# ------------------------------- Impostazioni Nano
+
+# ------------- > Syntax Highlighting
+include "~/.nano/syntax-highlighting/*.nanorc"
+
+ ------------- > AutoTab 4 Spazi
+set tabsize 4
+set tabstospaces
+
+ ------------- > Scorrimento
+set smooth
+
+ ------------- > Indentazione Auto
+set autoindent
+
+# ------------- > Numeri di Riga
+set linenumbers
+
+ ------------- > Disabilita Backups
+unset backup
+
+# ------------------------- > Annulla con Ctrl+z
+bind ^Z undo all
+
+# ------------------------- > Ripete con Ctrl+y
+bind ^Y redo all
+
+# ------------------------- > Cerca con Ctrl+f
+bind ^F whereis all
+
+# ------------------------- > Risultato precedente
+bind ^P findprevious all
+
+# ------------------------- > Prossimo risultato
+bind ^N findnext all
+
+# ------------------------- > Cerca e sostituisci con Ctrl+r
+bind ^R replace all
+
+# ------------------------- > Vai alla riga con Ctrl+g
+bind ^G gotoline all
+
+# ------------------------- > Annulla indentazione
+bind ^A unindent all
+
+# --------------------------- Fine

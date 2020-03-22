@@ -1,1 +1,9 @@
+# Tint2 xfce Sessionfile
+# DO NO edit this file, it will be overwritten by tint2zen
+# Make a custom sessionfile instead and use -z or --session FILE option
+# To load session at startup use the following line
 
+# tint2-session &
+
+/home/ilnanny/.config/tint2/transoriz.tint2rc
+/home/ilnanny/.config/tint2/transvert.tint2rc

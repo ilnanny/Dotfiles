@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop,gcolor2-gcolor2.desktop,etcher.desktop,gparted.desktop,virtualbox-bin.desktop,cups.desktop,porthole.desktop,xdman.desktop
-recent=etcher.desktop,xdman.desktop,xterm.desktop,porthole.desktop,libreoffice-writer.desktop,cups.desktop,avahi-discover.desktop,firefox.desktop,gcolor2-gcolor2.desktop
+recent=xdman.desktop,etcher.desktop,deluge.desktop,gparted.desktop,xterm.desktop,porthole.desktop,libreoffice-writer.desktop,cups.desktop,avahi-discover.desktop,firefox.desktop
 button-title=Applicazioni
 button-icon=/home/ilnanny/.icons/menu/menu-light.png
 button-single-row=false
@@ -21,8 +21,8 @@ position-commands-alternate=true
 position-categories-alternate=true
 stay-on-focus-out=false
 confirm-session-command=true
-menu-width=458
-menu-height=845
+menu-width=396
+menu-height=619
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=true

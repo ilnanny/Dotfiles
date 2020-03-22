@@ -19,44 +19,44 @@
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Arc-Polo-Dark</name>
+    <name>Nokto-Eta-remix</name>
     <titleLayout>LIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Decker</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Decker</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Segoe UI</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Segoe UI</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Segoe UI</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Segoe UI</name>
+      <name>Standard Symbols L</name>
       <size>11</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
   </theme>
@@ -79,10 +79,10 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>2</top>
-    <bottom>2</bottom>
-    <left>2</left>
-    <right>2</right>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
   </margins>
   <dock>
     <position>Floating</position>
