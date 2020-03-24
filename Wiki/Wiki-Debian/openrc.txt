@@ -1,0 +1,5 @@
+apt install openrc
+
+for file in /etc/rc0.d/K*; do s=`basename $(readlink "$file")` ; /etc/init.d/$s stop; done
+
+reboot

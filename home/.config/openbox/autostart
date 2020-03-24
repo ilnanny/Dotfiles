@@ -52,7 +52,7 @@ sleep 1; xfce4-panel &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Polkit Gnome.
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Radio Deejay.
 #sleep 2; vlc /home/ilnanny/bin/radio.xspf
 

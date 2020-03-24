@@ -1,1 +1,9 @@
-sudo apt-get install build-essential cpanminus git &amp;&amp; git clone git://github.com/trizen/obmenu-generator &amp;&amp; sudo cp obmenu-generator/obmenu-generator /usr/bin &amp;&amp; mkdir .config/obmenu-generator &amp;&amp; sudo cp -r obmenu-generator/schema.pl ~/.config/obmenu-generator/ &amp;&amp; sudo cpanm Linux::DesktopFiles &amp;&amp; sudo cpanm Data::Dump &amp;&amp; sudo chmod +x /usr/bin/obmenu-generator &amp;&amp; obmenu-generator -p -i
+sudo apt install build-essential cpanminus git
+git clone git://github.com/trizen/obmenu-generator
+sudo cp obmenu-generator/obmenu-generator /usr/bin
+mkdir .config/obmenu-generator
+sudo cp -r obmenu-generator/schema.pl ~/.config/obmenu-generator/
+sudo cpanm Linux::DesktopFiles
+sudo cpanm Data::Dump
+sudo chmod +x /usr/bin/obmenu-generator
+obmenu-generator -p -i
