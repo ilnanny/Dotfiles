@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-03-25T14:58:46+01:00
+
+====== Shell-Whereis ======
+
+
+Per cercare il path del file/programma ,usare whereis.
+Ad esempio se voglio cercare dove si trova il path di shotdown:
+
+
+ whereis shutdown
+
+ shutdown: /sbin/shutdown /usr/share/man/man2/shutdown.2.bz2 /usr/share/man/man8/shutdown.8.bz2 /usr/share/man/man3p/shutdown.3p.bz2

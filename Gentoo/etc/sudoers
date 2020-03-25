@@ -1,5 +1,5 @@
-#  Privilegi utenti x gruppo.
-# ____________________________ 
+#  Privilegi utenti X gruppo.
+# ____________________________
 
 ## Amministratore di sistema.
 root ALL=(ALL) ALL

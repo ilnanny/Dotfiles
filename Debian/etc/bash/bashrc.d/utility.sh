@@ -8,8 +8,9 @@
 #================================================
 #================================================
 
-#  _______________________________    Utilità TTY
+#  ________________________________    Utilità TTY    ________________________________
 #
+## ___  Extract Files
 extract()
 {
     arg="$1"; shift
@@ -50,6 +51,8 @@ extract()
     esac
 }
 
+#
+## ___   Kill Pid
 killp()
 {
     local pid name sig="-TERM"   # segnale di default
@@ -61,24 +64,8 @@ killp()
     done
 }
 
-mdf()
-{
-    local cols
-    cols=$(( ${COLUMNS:-$(tput cols)} / 3 ))
-    for fs in "$@"; do
-        [[ ! -d $fs ]] && printf "%s :Nessun file o directory con questo nome" "$fs" && continue
-        local info=($(command df -P $fs | awk 'END{ print $2,$3,$5 }'))
-        local free=($(command df -Pkh $fs | awk 'END{ print $4 }'))
-        local nbstars=$((cols * info[1] / info[0]))
-        local out="["
-        for ((i=0; i<cols; i++)); do
-            [[ $i -lt $nbstars ]] && out=$out"*" || out=$out"-"
-        done
-        out="${info[2]} $out] (${free[*]} free on $fs)"
-        printf "%s" "$out"
-    done
-}
-
+#
+## ___   My IP
 mip()
 {
     local ip
@@ -100,95 +87,14 @@ ii()
     echo -e "\n\e[1;31mConnessioni Aperte:\e[m "        ; netstat -pan --inet;
     echo
 }
+
 #
-
-# ___            Screen Preexec
+## ___   Gentoo Wgetpaste
 #
-if [[ "$SCREEN_RUN_HOST" == "" ]]
-then
-    SCREEN_RUN_HOST="$LC_SCREEN_RUN_HOST"
-    SCREEN_RUN_USER="$LC_SCREEN_RUN_USER"
-fi
-
-preexec_interactive_mode=""
-
-function preexec () {
-    true
-}
-
-function precmd () {
-    true
-}
-
-function preexec_invoke_cmd () {
-    precmd
-    preexec_interactive_mode="yes"
-}
-
-function preexec_invoke_exec () {
-    if [[ -n "$COMP_LINE" ]]
-    then
-        return
-    fi
-    if [[ -z "$preexec_interactive_mode" ]]
-    then
-        return
-    else
-        if [[ 0 -eq "$BASH_SUBSHELL" ]]
-        then
-            preexec_interactive_mode=""
-        fi
-    fi
-    if [[ "preexec_invoke_cmd" == "$BASH_COMMAND" ]]
-    then
-        preexec_interactive_mode=""
-        return
-    fi
-
-    local this_command=`history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g"`;
-
-    preexec "$this_command"
-}
-
-function preexec_install () {
-
-    set -o functrace > /dev/null 2>&1
-    shopt -s extdebug > /dev/null 2>&1
-
-    PROMPT_COMMAND="${PROMPT_COMMAND}"$'\n'"preexec_invoke_cmd;";
-    trap 'preexec_invoke_exec' DEBUG
-}
-
-case ${TERM} in
-
-    screen-256*)
-
-        precmd () {
-            echo -ne "\033kbash\033\\" > /dev/stderr
-        }
-
-        preexec () {
-            local CMD=`echo "$BASH_COMMAND"  | cut -d " " -f 1`
-            if [[ "$CMD" == "exec" ]] || [[ "$CMD" == "sudo" ]]
-            then
-                local CMD=`echo "$BASH_COMMAND"  | cut -d " " -f 2`
-            fi
-            echo -ne "\033k$CMD\033\\" > /dev/stderr
-        }
-
-        preexec_install
-
-;;
-
-esac
-
-
-#  _______________________________    Gentoo Wgetpaste
-
 if ${use_color} ; then
        alias emerge='emerge --color=y'
        alias eix='eix -F'
 fi
-
-#  _______________________________    Fine
+#
+# ___            Fine
 

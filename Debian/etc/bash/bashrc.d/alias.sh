@@ -13,12 +13,12 @@
 
 alias 300dpi="for i in *; do inkscape $i -d=300 -C --export-png=`echo $i | sed -e s/svg$/png/`; done"
 alias 7zip='7za a -t7z -mx=9 -mfb=256 -md=256m -ms=on'
-alias bashome="sudo geany ~/.bashrc"
 alias adb="sudo adb"
 alias blkid='sudo blkid -c /dev/null -o list'
 alias cat='cat -n'
 alias chgrp='chgrp --preserve-root'
 alias chown='chown --preserve-root'
+alias conkyres="killall conky && conky &"
 alias cp="cp -v"
 alias df='df -h'
 alias egrep='egrep --color=auto'
@@ -28,6 +28,7 @@ alias fc='sudo fc-cache -fv'
 alias fgrep='fgrep --color=auto'
 alias fixpng="find . -type f -name "*.png" -exec convert {} -strip {} \;"
 alias free="free -mt"
+alias gc="git clone"
 alias grep="grep -i --color=auto"
 alias gruppi="cut -d: -f1 /etc/group"
 alias gy='sudo geany'
@@ -70,6 +71,7 @@ alias youtube-video="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[e
 
 
 alias ath='su -c "zcat /proc/config.gz | grep CONFIG_ATH"'
+alias bashome="sudo geany ~/.bashrc"
 alias backup='sh /home/ilnanny/bin/backup'
 alias blb='sh /home/ilnanny/bin/bleachbit1'
 alias cleaner='sh /home/ilnanny/bin/cleaner'

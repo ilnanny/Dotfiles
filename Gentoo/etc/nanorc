@@ -2,7 +2,7 @@
 # ------------------------------- > Impostazioni Nano
 
 # ------------- > Syntax Highlighting
-include "~/.nano/syntax-highlighting/*.nanorc"
+#include "~/.nano/syntax-highlighting/*.nanorc"
 
 # ------------- > AutoTab 4 Spazi
 set tabsize 4
@@ -11,7 +11,7 @@ set tabstospaces
 # ------------- > Scorrimento
 set smooth
 
-# ------------- > Indentazione Auto
+# ------------- > AutoIndentazione
 set autoindent
 
 # ------------- > Numeri di Riga
