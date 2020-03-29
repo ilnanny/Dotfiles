@@ -1,19 +1,40 @@
 #!/bin/bash
 #================================================
-#================================================
 #   O.S.      : Gnu Linux                       =
-#   Author    : Cristian Pozzessere   = ilnanny =
+#   Author    : Cristian Pozzessere < ilnanny > =
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-#
+#             Codici colore ANSI                =
+#_______________________________________________=
+# Black        0;30     Dark Gray     1;30      =
+# Red          0;31     Light Red     1;31      =
+# LBlue        0;32     Light LBlue   1;32      =
+# Brown/Orange 0;33     Yellow        1;33      =
+# Blue         0;34     Light Blue    1;34      =
+# Purple       0;35     Light Purple  1;35      =
+# Cyan         0;36     Light Cyan    1;36      =
+# Light Gray   0;37     White         1;37      =
+#_______________________________________________=
+#                  Costanti                     =
+#_______________________________________________=
+Cyan="\033[0;36m"
+Red="\033[0;31m"
+LBlue="\033[1;34m"
+Yellow="\033[1;33m"
+Nc="\033[0m"
+clear
+#_______________________________________________=
+#Imposta l'utente Root
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
-printf "${GREEN}Aggiungo l'utente a Sudoers\n"
+#____________________________________________________=
+
+printf "${Red}Aggiungo l'utente a Sudoers\n"
 echo 'frozen-files="/etc/sudoers"' >> /etc/dispatch-conf.conf
 sed -i "s/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
 chsh -s /bin/bash ilnanny
-printf "${GREEN}Aggiungo l'utente ilnanny ai gruppi più usati\n"
+printf "${Cyan}Aggiungo l'utente ilnanny ai gruppi più usati\n"
 gpasswd -a ilnanny adbusers
 gpasswd -a ilnanny adm
 gpasswd -a ilnanny audio
@@ -55,4 +76,4 @@ gpasswd -a root    lxdm
 gpasswd -a root    slim
 gpasswd -a root    sddm
 
-exit 0
+printf "${Yellow}Fatto ,puoi chiudere il Terminale adesso !\n"

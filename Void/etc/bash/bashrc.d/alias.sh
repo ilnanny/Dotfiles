@@ -13,12 +13,12 @@
 
 alias 300dpi="for i in *; do inkscape $i -d=300 -C --export-png=`echo $i | sed -e s/svg$/png/`; done"
 alias 7zip='7za a -t7z -mx=9 -mfb=256 -md=256m -ms=on'
+alias bashome="sudo geany ~/.bashrc"
 alias adb="sudo adb"
 alias blkid='sudo blkid -c /dev/null -o list'
 alias cat='cat -n'
 alias chgrp='chgrp --preserve-root'
 alias chown='chown --preserve-root'
-alias conkyres="killall conky && conky &"
 alias cp="cp -v"
 alias df='df -h'
 alias egrep='egrep --color=auto'
@@ -26,7 +26,7 @@ alias emoji='cat /home/ilnanny/bin/ascii-emoji'
 alias eps2svg='for i in *; do inkscape $i --export-plain-svg=`echo $i | sed -e s/eps$/svg/`; done'
 alias fc='sudo fc-cache -fv'
 alias fgrep='fgrep --color=auto'
-alias fixpng="find . -type f -name "*.png" -exec convert {} -strip {} \;"
+alias fixpng="find . -type f -name '*.png' -exec convert {} -strip {} \;"
 alias free="free -mt"
 alias gc="git clone"
 alias grep="grep -i --color=auto"
@@ -51,6 +51,7 @@ alias mp='sudo mousepad'
 alias mv="mv -v"
 alias myscript='geany /home/ilnanny/bin/zz-ilnanny'
 alias nn='sudo nano'
+alias paths="echo '${PATH//:/$'\n'}'"
 alias pgrep="pgrep -l"
 alias ping='ping -c www.google.com'
 alias pipinstall='pip install --user'
@@ -58,8 +59,8 @@ alias ps="ps auxf"
 alias reboot='sudo reboot'
 alias riavvia='sudo reboot'
 alias rm="rm -v"
-alias spegni='sudo shutdown -r now'
-alias svg2png='for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done'
+alias spegni="su -c 'shutdown -r now'"
+alias svg2png="for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done"
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias utenti="cut -d: -f1 /etc/passwd"
 alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Pubblici"
@@ -71,7 +72,6 @@ alias youtube-video="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[e
 
 
 alias ath='su -c "zcat /proc/config.gz | grep CONFIG_ATH"'
-alias bashome="sudo geany ~/.bashrc"
 alias backup='sh /home/ilnanny/bin/backup'
 alias blb='sh /home/ilnanny/bin/bleachbit1'
 alias cleaner='sh /home/ilnanny/bin/cleaner'

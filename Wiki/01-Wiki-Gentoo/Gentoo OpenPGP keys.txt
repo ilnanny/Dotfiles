@@ -1,0 +1,52 @@
+The Gentoo release media OpenPGP keys are now available as a binary keyring. These can be installed via the app-crypt/gentoo-keys package:
+root #emerge --ask app-crypt/gentoo-keys
+
+This will install the keyring to the /var/lib/gentoo/gkeys/keyrings/gentoo/release location.
+FILE /etc/portage/make.confEnabling GPG support in Portage
+
+PORTAGE_GPG_DIR="/var/lib/gentoo/gkeys/keyrings/gentoo/release"
+
+FILE /etc/portage/repos.conf/gentoo.confClear the sync-uri variable
+
+[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+# Disable synchronization by clearing the values or setting auto-sync = no
+# Do not set value of the variables in this configuration file using quotes ('' or "")!
+sync-type = webrsync
+sync-uri =
+auto-sync = yes
+sync-webrsync-verify-signature = true
+
+Make sure that app-crypt/gnupg package is installed:
+root #emerge --ask app-crypt/gnupg
+
+Use gpg to verify that the keys in the keyring are the correct keys:
+root #gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --with-fingerprint --list-keys --keyid-format 0xlong
+
+Verify the fingerprints of the key(s) against those listed on the official Gentoo release engineering project page.
+Important
+If any of the keys installed from app-crypt/gentoo-keys should expire, run gkeys from app-crypt/gkeys to refresh them from the key server:
+root #emerge --ask app-crypt/gkeys
+root #gkeys refresh-key -C gentoo
+
+Repeat the following command for each key you wish to trust. (Substitute the keyid '0x...' for the desired key you wish to trust.)
+root #gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --edit-key 0xDB6B8C1F96D8BF6D trust
+
+Should a GPG command-line menu appear, fully trust the key and quit the program by entering the following:
+gpg>4
+gpg>quit
+
+The system is now set-up to sync using only OpenPGP/gpg verified snapshots.
+Several command options are available to perform the sync.
+Note
+Only one of the following commands is needed to sync. See the Portage's sync wiki article for more details.
+root #emerge --sync
+root #emaint sync -a
+root #emaint sync --repo gentoo
+root #emerge-webrsync
+Verify distfiles
+
+To re-verify the integrity and (potentially) re-download previously removed/corrupted distfiles for all currently installed packages, run:
+root #emerge --ask --fetchonly --emptytree @world

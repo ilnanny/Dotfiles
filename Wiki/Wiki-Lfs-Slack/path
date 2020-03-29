@@ -1,0 +1,15 @@
+file da controllare :
+
+ /etc/profile.d (magari il file env.sh)
+ /etc/environment
+
+ whereis env
+env: /usr/bin/env /bin/env
+
+
+
+
+
+________________________________________________________________________________________________
+echo $PATH
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
