@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Bootloader/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Installation/Bootloader/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Bootloader/ko","wgTitle":"X86/Installation/Bootloader/ko","wgCurRevisionId":194418,"wgRevisionId":194418,"wgArticleId":79616,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Installation/Bootloader/ko","wgRelevantArticleId":79616,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],
+"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Bootloader/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Bootloader/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Bootloader_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Bootloader/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Bootloader/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;oldid=194418" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FBootloader-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBootloader%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBootloader%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Bootloader/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:X86/Installation/Bootloader/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FBootloader&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Bootloader.html" title="Handbook:X86/Installation/Bootloader">Handbook:X86/Installation/Bootloader</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/Bootloader (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Bootloader.html" title="Handbook:X86/Installation/Bootloader (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Arranque (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/ブートローダの設定 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Gerenciador de Boot (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Bootloader (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/配置系统引导程序Bootloader (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">부트로더 설정</strong>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.EB.B6.80.ED.8A.B8.EB.A1.9C.EB.8D.94_.EC.84.A0.ED.83.9D"><span class="tocnumber">1</span> <span class="toctext">부트로더 선택</span></a></li>
+<li class="toclevel-1"><a href="#.EA.B8.B0.EB.B3.B8:_GRUB2_.EC.82.AC.EC.9A.A9"><span class="tocnumber">2</span> <span class="toctext">기본: GRUB2 사용</span></a>
+<ul>
+<li class="toclevel-2"><a href="#GRUB2_.EC.84.A4.EC.B9.98.ED.95.98.EA.B8.B0"><span class="tocnumber">2.1</span> <span class="toctext">GRUB2 설치하기</span></a></li>
+<li class="toclevel-2"><a href="#GRUB2_.EC.84.A4.EC.A0.95"><span class="tocnumber">2.2</span> <span class="toctext">GRUB2 설정</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.8C.80.EC.95.88:_LILO_.EC.82.AC.EC.9A.A9"><span class="tocnumber">3</span> <span class="toctext">대안: LILO 사용</span></a>
+<ul>
+<li class="toclevel-2"><a href="#LILO_.EC.84.A4.EC.B9.98.ED.95.98.EA.B8.B0"><span class="tocnumber">3.1</span> <span class="toctext">LILO 설치하기</span></a></li>
+<li class="toclevel-2"><a href="#LILO_.EC.84.A4.EC.A0.95"><span class="tocnumber">3.2</span> <span class="toctext">LILO 설정</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.8C.80.EC.95.88:_efibootmgr_.EC.82.AC.EC.9A.A9"><span class="tocnumber">4</span> <span class="toctext">대안: efibootmgr 사용</span></a></li>
+<li class="toclevel-1"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.8B.A4.EC.8B.9C_.EB.B6.80.ED.8C.85"><span class="tocnumber">5</span> <span class="toctext">시스템 다시 부팅</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".EB.B6.80.ED.8A.B8.EB.A1.9C.EB.8D.94_.EC.84.A0.ED.83.9D">부트로더 선택</span></h2>
+<p>리눅스 커널을 설정하고, 시스템 도구를 설치하고, 설정 파일을 편집하고 나면, 리눅스 설치의 일부로서 마지막으로 중요한 부분, 부트로더를 설치할 차례입니다.
+</p><p>부트로더는 부팅 과정에서 리눅스 커널의 실행을 담당합니다. 부트로더가 없으면 시스템에서는 전원 단추를 누른 후 그 다음 과정을 어떻게 처리해야 할지 모릅니다.
+</p><p>x86에서는 BIOS 기반 시스템에서 <a href="#.EA.B8.B0.EB.B3.B8:_GRUB2_.EC.82.AC.EC.9A.A9">GRUB2</a> 또는 <a href="#.EB.8C.80.EC.95.88:_LILO_.EC.82.AC.EC.9A.A9">LILO</a>를 설정하는 방법, UEFI 시스템에서 [<a rel="nofollow" class="external autonumber" href="../../../Handbook_AMD64/Blocks/Bootloader/ko.html#.EA.B8.B0.EB.B3.B8:_GRUB2_.EC.82.AC.EC.9A.A9%7CGRUB2">[1]</a>] 또는 <a href="#.EB.8C.80.EC.95.88:_efibootmgr_.EC.82.AC.EC.9A.A9">efibootmgr</a>을 사용하는 방법을 문서에 남겨두었습니다.
+</p>
+<h2><span class="mw-headline" id=".EA.B8.B0.EB.B3.B8:_GRUB2_.EC.82.AC.EC.9A.A9">기본: GRUB2 사용</span></h2>
+<p>이전에, 젠투 리눅스는 <i>GRUB 레거시</i>를 추천 부트로더로 사용했습니다. 이름에서 의미하는 바와 같이, 이전 GRUB 꾸러미는 더이상 관리하지 않으며, GRUB2로 대체했습니다. 기존 GRUB에 대해 더 많은 정보를 보시려면, 젠투 위키의 <a href="../../../GRUB.html" title="GRUB">GRUB</a><sup style="color:#ff0077">en</sup> 게시물을 참고하십시오.
+</p>
+<h3><span class="mw-headline" id="GRUB2_.EC.84.A4.EC.B9.98.ED.95.98.EA.B8.B0">GRUB2 설치하기</span></h3>
+<p>GRUB2는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-boot/grub">sys-boot/grub</a> 꾸러미로 제공합니다.
+</p>
+<ul><li> BIOS를 사용하면:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-boot/grub</code></div></div> </dd></dl>
+<ul><li> UEFI를 사용하면, UEFI 사용자는 <span style="font-family: monospace; font-size: 95%">make.conf</span>에 <code>GRUB_PLATFORMS="efi-64"</code>를 추가해야합니다.</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>echo GRUB_PLATFORMS="efi-64" &gt;&gt; /etc/portage/make.conf</code></div></div></dd></dl>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-boot/grub</code></div></div> </dd></dl>
+<dl><dd> If GRUB2 was somehow emerged without first adding <code>GRUB_PLATFORMS="efi-64"</code> to <span style="font-family: monospace; font-size: 95%">make.conf</span> the line (as shown above) can be added then and dependencies for the <a href="../../../World_set_(Portage).html" title="World set (Portage)">world package set</a> re-calculated by passing the <code>--newuse --deep</code> options to <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge</span>:</dd></dl>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask&#160;--newuse --deep @world</code></div></div> </dd></dl>
+<p>이제 GRUB2 프로그램을 설치했지만, 활성화 상태는 아닙니다.
+</p>
+<h3><span class="mw-headline" id="GRUB2_.EC.84.A4.EC.A0.95">GRUB2 설정</span></h3>
+<p>다음, <span style="font-family: monospace; font-size: 95%">/boot/grub/</span>에 필요한 GRUB2 파일을 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">grub2-install</span>로 설치할 차례입니다. 첫번째 디스크(부팅할 디스크)를 <span style="font-family: monospace; font-size: 95%">/dev/sda</span>라고 가정하고, 다음 명령을 통해 GRUB2 파일을 설치합니다:
+</p>
+<ul><li> BIOS를 사용하면:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>grub2-install /dev/sda</code></div></div></dd></dl>
+<ul><li> UEFI를 사용하면:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>grub2-install --target=x86_64-efi --efi-directory=/boot</code></div></div></dd></dl>
+<dl><dd> <div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br /><span style="font-family: monospace; font-size: 95%">/boot</span> 공간을 vfat을 포맷하지 않았다면 efi 디렉터리 설정을 vfat EFI 시스템 공간 루트로 수정하십시오.</div></dd></dl>
+<dl><dd> <div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 경고</strong><br /><span style="font-family: monospace; font-size: 95%; font-weight: bold;">grub2-install</span>을 실행하기 전 EFI 시스템 공간을 마운트 했는지 확인하십시오. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">grub2-install</span> 프로그램이 잘못된 디렉터리를 사용한 어떤 설정 내지는 표시 <i>없이</i> 잘못된 디렉터의 EFI 파일로 GRUB 파일을 설치하는 수가 있습니다.</div></dd></dl>
+<p>다음, <span style="font-family: monospace; font-size: 95%">/etc/default/grub</span> 파일과 <span style="font-family: monospace; font-size: 95%">/etc/grub.d</span> 스크립트를 기반으로 정의한 사용자 설정을 기반으로 하여 GRUB2 설정을 만들 수 있습니다. GRUB2에서 어떤 커널로 부팅할지 (<span style="font-family: monospace; font-size: 95%">/boot/</span>에 존재하는 가장 최신의 버전), 루트 파일 시스템이 어디인지 자동으로 찾기 때문에 사용자가 직접 설정할 필요가 없습니다.
+</p><p>최종 GRUB2 설정을 만들려면 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">grub2-mkconfig</span> 명령을 실행하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>grub2-mkconfig -o /boot/grub/grub.cfg</code></div><pre>
+Generating grub.cfg ...
+Found linux image: /boot/vmlinuz-3.16.5-gentoo
+Found initrd image: /boot/initramfs-genkernel-x86-3.16.5-gentoo
+done
+</pre></div>
+<p>명령 출력은 최소한 시스템 부팅에 필요한 하나의 리눅스 이미지를 찾았다는 알림이 나와야 합니다. initramfs를 사용했거나, 커널 빌드시 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">genkernel</span>를 사용했다면, 마찬가지로 올바른 initrd 이미지를 찾아야 합니다. 이런 경우가 아니라면 <span style="font-family: monospace; font-size: 95%">/boot/</span>로 이동해서 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ls</span> 명령으로 내용을 확인해보십시오. 여전히 파일이 빠졌다면, 커널 설정으로 되돌아가서 설치 절차를 따르십시오.
+</p>
+<h2><span class="mw-headline" id=".EB.8C.80.EC.95.88:_LILO_.EC.82.AC.EC.9A.A9">대안: LILO 사용</span></h2>
+<h3><span class="mw-headline" id="LILO_.EC.84.A4.EC.B9.98.ED.95.98.EA.B8.B0">LILO 설치하기</span></h3>
+<p>LInuxLOader LILO는 검증되고 충실한 리눅스 부트로더입니다. 그러나 GRUB이 처리하는 바에 비하면 부족한 측면도 있습니다. LILO를 그래도 사용하는 이유는, 일부 시스템에서 GRUB이 처리할 수 없는 동작을 LILO에서 처리할 수 있기 때문입니다. 물론, 일부 사용자가 여전히 LILO에 집착하기 때문이기도 합니다. 어쨌든간에 젠투는 두 부트로더를 다 지원합니다.
+</p><p>LILO 설치는 순식간입니다. 그냥 emerge 명령을 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-boot/lilo</code></div></div> 
+<h3><span class="mw-headline" id="LILO_.EC.84.A4.EC.A0.95">LILO 설정</span></h3>
+<p>LILO를 설정하려면, 먼저 <span style="font-family: monospace; font-size: 95%">/etc/lilo.conf</span> 파일을 만드십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/lilo.conf</code></div></div>
+<p>설정 파일에서 부팅할 커널을 참조할 섹션을 사용합니다. 이 설정 파일에서 참조할 필요가 있는 커널 파일(및 커널 버전)과 initramfs 파일을 알아내십시오.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />루트 파일 시스템이 JFS라면, 각각의 부팅 항목 다음에 <code>append="ro"</code>를 추가하여 읽기 쓰기 마운팅이 가능하기 전에 JFS에서 로그를 작성을 제고하도록 하십시오</div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/lilo.conf</code></strong><strong>LILO 설정 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+boot=/dev/sda             # Install LILO in the MBR
+prompt                    # Give the user the chance to select another section
+timeout=50                # Wait 5 (five) seconds before booting the default section
+default=gentoo            # When the timeout has passed, boot the &quot;gentoo&quot; section
+  
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo            # Name we give to this section
+  read-only               # Start with a read-only root. Do not alter!
+  root=/dev/sda4          # Location of the root filesystem
+  
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo.rescue     # Name we give to this section
+  read-only               # Start with a read-only root. Do not alter!
+  root=/dev/sda4         # Location of the root filesystem
+  append=&quot;init=/bin/bb&quot;   # Launch the Gentoo static rescue shell
+  
+# The next two lines are only if you dualboot with a Windows system.
+# In this example, Windows is hosted on /dev/sda6.
+other=/dev/sda6
+  label=windows
+</pre>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />다른 분할 배치 형식을 사용하거나 다른 커널 이미지를 사용한다면, 그에 맞게 조절하십시오.</div>
+<p>initramfs가 필요하다면, 이 initramfs 파일을 참고하여 설정을 바꾸고 initramfs에게 실제 루트 장치가 어디있는지 알려주십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/lilo.conf</code></strong><strong>initramfs 정보를 부팅 항목에 추가하기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo
+  read-only
+  append=&quot;real_root=/dev/sda4&quot;
+  initrd=/boot/initramfs-genkernel-x86-3.16.5-gentoo
+</pre>
+</pre></div></pre>
+<p>추가 옵션을 커널에 전달해야 한다면 <code>append</code> 구문을 사용하십시오. 예를 들어 프레임버퍼를 활성화할 <code>video</code> 구문을 추가하려면:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/lilo.conf</code></strong><strong>video 매개변수를 부팅 옵션으로 추가하기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo
+  read-only
+  root=/dev/sda4
+  append=&quot;video=uvesafb:mtrr,ywrap,1024x768-32@85&quot;
+</pre>
+</pre></div></pre>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">genkernel</span>을 사용해본 사용자는 설치 CD에서 사용한 부팅 옵션과 동일한 옵션을 커널에 사용함을 알아야합니다. 예를 들어 SCSI 장치 활성화가 필요하다면 <code>doscsi</code>를 커널 옵션으로 추가합니다.
+</p><p>이제 파일을 저장하고 빠져나가십시오.
+</p><p>과정을 마무리 하려면 <span style="font-family: monospace; font-size: 95%">/sbin/lilo</span>를 실행하여 LILO가 <span style="font-family: monospace; font-size: 95%">/etc/lilo.conf</span> 설정을 시스템에 반영(디스크 자체에 설치)할 수 있게 하십시오. 커널 파일 이름을 바꾸고 시스템을 부팅하려면 커널을 새로 설치하고 <span style="font-family: monospace; font-size: 95%">lilo.conf</span> 파일을 바꾸어야 하며 매번 <span style="font-family: monospace; font-size: 95%">/sbin/lilo</span>를 실행해야 함을 숙지하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/sbin/lilo</code></div></div>
+<h2><span class="mw-headline" id=".EB.8C.80.EC.95.88:_efibootmgr_.EC.82.AC.EC.9A.A9">대안: efibootmgr 사용</span></h2>
+<p>UEFI 기반 시스템에서는, 부트로더 자체가 시스템의 UEFI 펌웨어입니다. 일부 시스템에서는 부팅하는 동안 UEFI 시스템의 기능을 확장하려 EFI 기반 부트로더를 넣지만, 별도의 시스템의 부팅과정을 보조할 추가 부트로더는 필요하지 않습니다.
+</p><p><a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-boot/efibootmgr">sys-boot/efibootmgr</a> 프로그램은 부트로더가 아니지만, UEFI 펌웨어와 소통하고 UEFI 펌웨어 설정을 업데이트할 때 사용하는 도구이기 때문에 이전에 설치한 리눅스 커널을 (필요한 경우)추가 옵션을 통해 부팅할 수 있으며, 또는 다중 부팅 항목을 넣을 수 있습니다. 이러한 동작간 작용은 EFI 변수로 처리할 수 있습니다(따라서 이를 처리하기 전에 EFI 변수가 필요합니다).
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />efibootmgr은 UEFI 시스템에서 부팅하는데 필수 요건이 <i>아닙니다</i>. 리눅스 커널 자체에서 즉시 부팅할 수 있으(ㄹ 것이)며, 추가 부팅 옵션은 리눅스 커널 자체의 일부로 활용할 수 있습니다(사용자가 부팅 매개 변수를 지원할 수 있는 커널 설정이 있습니다). 심지어 initramfs도 커널의 일부가 될 수 있습니다.</div>
+<p>먼저 프로그램을 설치하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-boot/efibootmgr</code></div></div> 
+<p>다음, 새로 설치한 리눅스 커널로 부팅할 "Gentoo" 항목을 UEFI 펌웨어에 알려주십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>efibootmgr --create --disk /dev/sda --part 2 --label "Gentoo" --loader "\efi\boot\bootx64.efi"</code></div></div>
+<p>초기 램 파일 시스템(initramfs)를 사용한다면, 적당한 부팅 옵션을 추가하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>efibootmgr -c -d /dev/sda -p 2 -L "Gentoo" -l "\efi\boot\bootx64.efi" initrd='\initramfs-genkernel-x86-3.16.5-gentoo'</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />EFI 정의를 활용한다면 디렉터리 구분자로서 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">\</kbd> 사용은 필수입니다.</div>
+<p>설정을 다 바꿨다면, 시스템을 다시 부팅할 때, 부팅 항목에 "Gentoo"가 뜹니다.
+</p><p><br />
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.8B.A4.EC.8B.9C_.EB.B6.80.ED.8C.85">시스템 다시 부팅</span></h2>
+<p>Exit the chrooted environment and unmount all mounted partitions. Then type in that one magical command that initiates the final, true test: <span style="font-family: monospace; font-size: 95%; font-weight: bold;">reboot</span>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>exit</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">cdimage ~#</code><span class="tripleclick-separator"></span><code>cd
+</code></div><div><code style="color: #ef2929; font-weight: bold;">cdimage ~#</code><span class="tripleclick-separator"></span><code>umount -l /mnt/gentoo/dev{/shm,/pts,}
+</code></div><div><code style="color: #ef2929; font-weight: bold;">cdimage ~#</code><span class="tripleclick-separator"></span><code>umount /mnt/gentoo{/boot,/sys,/proc,}
+</code></div><div><code style="color: #ef2929; font-weight: bold;">cdimage ~#</code><span class="tripleclick-separator"></span><code>reboot</code></div></div>
+<p>물론 부팅 CD를 제거하는걸 잊지 않으면 새 젠투 시스템 대신 CD로 부팅합니다.
+</p><p>새로 설치한 젠투 환경으로 다시 부팅하고 나면, <a href="../Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">젠투 설치 마무리</a>로 끝내십시오.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Tools/ko.html" title="이전 내용" class="btn btn-default">&#8592; 시스템 도구 설치</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../Finalizing/ko.html" title="다음 내용" class="btn btn-default">마무리 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153755
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.572 seconds
+Real time usage: 0.629 seconds
+Preprocessor visited node count: 2225/1000000
+Preprocessor generated node count: 3187/1000000
+Post‐expand include size: 85979/2097152 bytes
+Template argument size: 8939/2097152 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  517.306      1 - -total
+100.00%  517.306      1 - Handbook:Parts/Installation/Bootloader/ko
+ 58.56%  302.929      1 - Handbook:X86/Blocks/Bootloader/ko
+ 57.94%  299.750      1 - Handbook:AMD64/Blocks/Bootloader/ko
+ 31.87%  164.865      1 - Handbook:Parts/TOC/ko
+ 30.08%  155.625     15 - Template:RootCmd
+ 22.21%  114.899     15 - Template:GenericCmd
+ 13.68%   70.774      3 - Template:FileBox
+ 12.78%   66.112      3 - Template:PreBox
+ 11.55%   59.756      5 - Template:Emerge
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:79616-0!*!0!!en!*!* and timestamp 20160112153755 and revision id 194418
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;oldid=194418">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/ko&amp;oldid=194418</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 10:09.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Bootloader/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":826});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Bootloader/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:11 GMT -->
+</html>

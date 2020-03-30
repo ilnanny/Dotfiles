@@ -1,0 +1,85 @@
+
+
+Dear All, dear Devs,
+thanks first for releasing Devuan 2 (Ascii), it was time, ti's works flawlessly and is great, GREAT JOB!
+
+@ my side I would say 'mission accomplished', that's mean I have now 'Devuan' + parallelized 'OpenRC' + KDE and I done it too:
+
+1. Download  Devuan-DVD-ISO https://files.devuan.org/devuan_ascii/i … _dvd-1.iso
+2. Choose 'Graphical Expert Install'
+3. Choose 'Init  Select'
+4. Choose 'KDE'-Desktop
+
+After Install... update System and parallelize ' OpenRC' as follow:
+1. Edit 'OpenRC' configuration file with:
+
+sudo -i kate /etc/rc.conf
+
+2. Search for 'parallel' or look @ line N° 10, Original text:
+
+#rc_parallel="NO"
+
+and modify as follow:
+
+rc_parallel="YES"
+
+Save and close file, restart system to reload 'OpenRC', ENJOY!
+Note the '#' must be deleted in order to activate the whole line.
+
+Is the system faster with parallelized 'OpenRC'? YEA absolutely! and not only by booting but by using it too.
+
+Counter-check everything is like you want!
+1. Check 'OpenRC' is up and running:
+
+pidof /sbin/init && echo "openrc" || echo "other"
+
+Output:
+
+    1
+    openrc
+
+2. Check 'OpenRC' is parallelized:
+
+(ps -eo "ppid,args" 2>/dev/null || echo "ps call error") \
+| awk 'NR==1 || $1==1' | less
+
+Output:
+
+    PPID COMMAND
+    1 udevd --daemon
+    1 /usr/sbin/rsyslogd
+    1 /usr/bin/sddm
+    1 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+    1 /usr/sbin/cron
+    1 /usr/sbin/minidlnad -f /etc/minidlna.conf -P /run/minidlna/minidlna.pid
+    1 /usr/sbin/lircd
+    1 /usr/bin/dbus-daemon --system
+    1 /usr/sbin/bluetoothd
+    1 /usr/sbin/elogind -D
+    1 avahi-daemon: running [devuan.local]
+    1 /usr/sbin/cups-browsed
+    1 /usr/sbin/cupsd -C /etc/cups/cupsd.conf -s /etc/cups/cups-files.conf
+    1 /usr/sbin/NetworkManager
+    1 /usr/lib/policykit-1/polkitd --no-debug
+    1 /usr/sbin/ModemManager
+    1 /sbin/getty 38400 tty1
+    1 /sbin/getty 38400 tty2
+    1 /sbin/getty 38400 tty3
+    1 /sbin/getty 38400 tty4
+    1 /sbin/getty 38400 tty5
+    1 /sbin/getty 38400 tty6
+    1 dbus-launch --autolaunch f0a310180b0074f3045bafdf5b5212db --binary-syntax --close-stderr
+    1 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+    1 /usr/lib/udisks2/udisksd --no-debug
+    1 /usr/lib/upower/upowerd
+    1 /usr/bin/kwalletd5 --pam-login 15 3
+    1 /usr/bin/dbus-launch --exit-with-session --sh-syntax
+    1 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 15 --session
+    1 /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit --kded +kcminit_startup
+    1 kdeinit5: Running...
+
+YEA! Is parallelized! Process-Identification-Number (PID) is 1 = first process = 'init-system'.
+
+I hope this could help someone else, I'm absolutely satisfied! Thanks guys & girls
+
+Last edited by Terence (2019-08-08 08:36:27)

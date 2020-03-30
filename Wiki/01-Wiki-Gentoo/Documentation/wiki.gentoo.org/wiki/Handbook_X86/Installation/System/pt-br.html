@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/System/pt-br by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Manual:X86/Instalação/Sistema - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/System/pt-br","wgTitle":"X86/Installation/System/pt-br","wgCurRevisionId":309304,"wgRevisionId":309304,"wgArticleId":119758,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"pt-br","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],"wgMonthNamesShort":["","jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"],"wgRelevantPageName":"Handbook:X86/Installation/System/pt-br","wgRelevantArticleId":119758,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[
+],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/System/pt-br" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/System/pt-br&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_System_pt-br skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/System/pt-br.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/System/pt-br.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;oldid=309304" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FSystem-2Fpt-2Dbr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FSystem%2Fpt-br&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FSystem%2Fpt-br" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="pt-br.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/System/pt-br&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="pt-BR">
+							<span dir="auto">Manual:X86/Instalação/Sistema</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="pt-BR" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FSystem&amp;action=page&amp;filter=&amp;language=pt-br">translated version</a></span> of the page <a href="../System.html" title="Handbook:X86/Installation/System">Handbook:X86/Installation/System</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/System (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../System.html" title="Handbook:X86/Installation/System (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Sistema (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/システムの設定 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:X86/Installation/System/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">português do Brasil</span> • ‎<a href="ru.html" title="Handbook:X86/Installation/System (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/配置系统 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../About.html" title="Handbook:X86/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../Media.html" title="Handbook:X86/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking.html" title="Handbook:X86/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks.html" title="Handbook:X86/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage.html" title="Handbook:X86/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base.html" title="Handbook:X86/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel.html" title="Handbook:X86/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../System.html" title="Handbook:X86/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools.html" title="Handbook:X86/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader.html" title="Handbook:X86/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing.html" title="Handbook:X86/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:X86/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:X86/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:X86/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:X86/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:X86/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:X86/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:X86/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:X86/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:X86/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:X86/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:X86/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:X86/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:X86/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:X86/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:X86/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:X86/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:X86/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Informa.C3.A7.C3.A3o_do_sistema_de_arquivos"><span class="tocnumber">1</span> <span class="toctext">Informação do sistema de arquivos</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Sobre_o_fstab"><span class="tocnumber">1.1</span> <span class="toctext">Sobre o fstab</span></a></li>
+<li class="toclevel-2"><a href="#Criando_o_arquivo_fstab"><span class="tocnumber">1.2</span> <span class="toctext">Criando o arquivo fstab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Informa.C3.A7.C3.A3o_de_rede"><span class="tocnumber">2</span> <span class="toctext">Informação de rede</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Informa.C3.A7.C3.A3o_de_host_e_dom.C3.ADnio"><span class="tocnumber">2.1</span> <span class="toctext">Informação de host e domínio</span></a></li>
+<li class="toclevel-2"><a href="#Configurando_a_rede"><span class="tocnumber">2.2</span> <span class="toctext">Configurando a rede</span></a></li>
+<li class="toclevel-2"><a href="#Iniciando_automaticamente_a_rede_durante_o_boot"><span class="tocnumber">2.3</span> <span class="toctext">Iniciando automaticamente a rede durante o boot</span></a></li>
+<li class="toclevel-2"><a href="#O_arquivo_hosts"><span class="tocnumber">2.4</span> <span class="toctext">O arquivo hosts</span></a></li>
+<li class="toclevel-2"><a href="#Opcional:_Fazendo_o_PCMCIA_funcionar"><span class="tocnumber">2.5</span> <span class="toctext">Opcional: Fazendo o PCMCIA funcionar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Informa.C3.A7.C3.B5es_do_sistema"><span class="tocnumber">3</span> <span class="toctext">Informações do sistema</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Senha_do_root"><span class="tocnumber">3.1</span> <span class="toctext">Senha do root</span></a></li>
+<li class="toclevel-2"><a href="#Configura.C3.A7.C3.A3o_de_in.C3.ADcio_e_boot"><span class="tocnumber">3.2</span> <span class="toctext">Configuração de início e boot</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Informa.C3.A7.C3.A3o_do_sistema_de_arquivos">Informação do sistema de arquivos</span></h2>
+<h3><span class="mw-headline" id="Sobre_o_fstab">Sobre o fstab</span></h3>
+<p>No Linux todas as partições usadas pelo sistema devem ser listadas em <span style="font-family: monospace; font-size: 95%">/etc/fstab</span>. Esse arquivo contém os pontos de montagem das partições (onde elas se encontram na estrutura do sistema de arquivos), como elas devem ser montadas, quais opções especiais (automáticas ou não, se os usuários podem montá-las ou não, etc.)
+</p>
+<h3><span class="mw-headline" id="Criando_o_arquivo_fstab">Criando o arquivo fstab</span></h3>
+<p>O arquivo <span style="font-family: monospace; font-size: 95%">/etc/fstab</span> usa uma sintaxe do tipo tabela. Cada linha consiste de seis campos separados por espaço (espaço, tabulação ou ambos). Cada campo tem seu próprio significado:
+</p>
+<ol><li> O primeiro campo mostra a partição a ser montada (o caminho para o arquivo de dispositivo);</li>
+<li> O segundo campo mostra o ponto de montagem no qual a partição deve ser montada;</li>
+<li> O terceiro campo mostra o tipo de sistema de arquivo usado pela partição;</li>
+<li> O quarto campo mostra as opções de montagem usadas pelo <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mount</span> quando ele montar a partição. Como cada tipo de sistema de arquivos tem suas opções de montagem próprias, os usuários são encorajados a ler a página de manual do mount (<span style="font-family: monospace; font-size: 95%; font-weight: bold;">man mount</span>) para uma listagem completa. Opções múltiplas são separadas por vírgulas;</li>
+<li> O quinto campo é usado pelo <code>dump</code> para determinar se ele deve checar a necessidade de backup. É normalmente deixado como 0 (zero);</li>
+<li> O sexto campo é usado pelo <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fsck</span> para determinar a ordem na qual os sistemas de arquivos devem ser checados se o sistema de arquivo foi desativado adequadamente. O sistema de arquivo raiz deve conter 1 enquanto os demais devem conter 2 (ou 0 se a checagem não for necessária).</li></ol>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />O arquivo <span style="font-family: monospace; font-size: 95%">/etc/fstab</span> default fornecido pelo Gentoo não é um arquivo fstab válido mas apenas um modelo.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/fstab</code></div></div>
+<p>No restante deste texto, usamos os arquivos de dispositivo de bloco <span style="font-family: monospace; font-size: 95%">/dev/sd*</span> como partição. Os usuários podem também optar por usar os links simbólicos em <span style="font-family: monospace; font-size: 95%">/dev/disk/by-id/</span> ou <span style="font-family: monospace; font-size: 95%">/dev/disk/by-uuid/</span>. Esses nomes não estão sujeitos a mudanças, enquanto os nomes default dos arquivos de dispositivos de bloco dependem de um número de fatores (tais como a maneira e em qual ordem os discos são anexados ao sistema). Entretanto, a menos que alguém tenha intenção de mexer na ordem dos discos, pode-se continuar a usar os arquivos de dispositivos de bloco com segurança.
+</p><p>Vamos dar uma olhada em como criar as opções para a partição <span style="font-family: monospace; font-size: 95%">/boot/</span>. Isto é apenas um exemplo, e deve ser modificado de acordo com as decisões de particionamento feitas anteriormente nesta instalação.
+Em nosso exemplo de particionamento para x86, o <span style="font-family: monospace; font-size: 95%">/boot/</span> é normalmente a partição <span style="font-family: monospace; font-size: 95%">/dev/sda2</span>, como o ext2 como sistems de arquivos. Ele precisa ser checado durante o boot, então poderíamos escrever:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/fstab</code></strong><strong>Um exemplo da linha /boot para o arquivo /etc/fstab</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+/dev/sda2   /boot     ext2    defaults        0 2
+</pre>
+</pre></div></pre>
+<p>Alguns usuários podem não querer sua partição <span style="font-family: monospace; font-size: 95%">/boot/</span> montada automaticamente para aumentar a segurança do sistema. Essas pessoas devem substituir <i>defaults</i> por <i>noauto</i>. Isso significa que esses usuários precisarão montar manualmente essa partição toda vez que precisarem usá-la.
+</p><p>Escreva as linhas de acordo com o esquema de particionamento decidido anteriormente e acrescente linhas para dispositivos tais como drives de CD-ROM e, claro, se forem usadas outras partições ou drives, para esses também.
+</p><p>Abaixo é mostrado um exemplo mais elaborado de um arquivo <span style="font-family: monospace; font-size: 95%">/etc/fstab</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/fstab</code></strong><strong>Um exemplo de /etc/fstab completo</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+/dev/sda2   /boot        ext2    defaults,noatime     0 2
+/dev/sda3   none         swap    sw                   0 0
+/dev/sda4   /            ext4    noatime              0 1
+/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0
+</pre>
+</pre></div></pre>
+<p>Quando <code>auto</code> é usado no terceiro campo, ele faz com que o comando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mount</span> tente reconhecer o tipo de sistema de arquivo. Isso é recomendado para mídias removíveis uma vez que podem ser formatadas com algum sistema de arquivo qualquer. A opção <code>user</code> no quarto campo faz possível a montagem do CD para usuários não root.
+</p><p>Para aumentar o desempenho, a maioria do usuários pode adicionar a opção de montagem <code>noatime</code>, o que resulta em um sistema mais rápido uma vez que a data e hora de acesso não são registrados (eles não são geralmente necessários). Isso também é recomendado para usuários de drives de estado sólido (SSD), que devem também habilitar a opção de montagem <code>discard</code> (apenas no ext4 e btrfs, por enquanto), que faz com que o comando TRIM funcione.
+</p><p>Certifique-se que o arquivo <span style="font-family: monospace; font-size: 95%">/etc/fstab</span> está correto, salve-o e saia do editor para continuar.
+</p>
+<h2><span class="mw-headline" id="Informa.C3.A7.C3.A3o_de_rede">Informação de rede</span></h2>
+<h3><span class="mw-headline" id="Informa.C3.A7.C3.A3o_de_host_e_dom.C3.ADnio">Informação de host e domínio</span></h3>
+<p>Uma das escolhas que o usuário deve fazer é dar nome ao seu PC. Isso parece bem fácil, mas muitos usuários têm dificuldades em encontrar um nome apropriado para seu PC com Linux. Para acelerar as coisas, saiba que essa decisão não é definitiva - ela pode ser alterada mais tarde. Nos exemplos abaixo, é usado o nome de host "tux" dentro do domínio "homenetwork".
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/hostname</code></div><pre>
+# Set the hostname variable to the selected host name
+hostname=&quot;tux&quot;
+</pre></div>
+<p>Em segundo lugar, se um nome de domínio for necessário, configure-o em <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>. Isso apenas é necessário se seu ISP ou administrador de rede o disser, ou se a rede tiver um servidor DNS mas não um DHCP. Não se preocupe com nomes de DNS ou de domínios se o sistema usa DHCP para alocação dinâmica de endereços IP e configuração de rede.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />O arquivo <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span> não existe por default, assim, ele deve ser criado.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/net</code></div><pre>
+# Set the dns_domain_lo variable to the selected domain name
+dns_domain_lo=&quot;homenetwork&quot;
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Se não for configurado o nome de domínio, os usuários irão ver a mensagem "This is hostname.(none)" em suas telas de login. Isso pode ser corrigido editando o arquivo <span style="font-family: monospace; font-size: 95%">/etc/issue</span> e apagando a string <code>.\O</code> desse arquivo.</div>
+<p>Se for necessário um domínio NIS (usuários que não souberem o que é isso, provavelmente não precisarão), defina também:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/net</code></div><pre>
+# Set the nis_domain_lo variable to the selected NIS domain name
+nis_domain_lo=&quot;my-nisdomain&quot;
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Para maiores informações sobre a configuração de DNS e NIS, por favor veja os exemplos fornecidos em <span style="font-family: monospace; font-size: 95%">/usr/share/doc/netifrc-*/net.example.bz2</span> que podem ser lidos usando o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">bzless</span>. Pode também ser interessante instalar o pacote <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-dns/openresolv">net-dns/openresolv</a> para auxiliar a configuração de DNS/NIS.</div>
+<h3><span class="mw-headline" id="Configurando_a_rede">Configurando a rede</span></h3>
+<p>Durante a instalação do Gentoo Linux, a rede já foi configurada. Porém, a configuração foi para o CD de instalação e não para o ambiente instalado. Agora a configuração de rede será feita para o sistema Gentoo Linux instalado.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Informações mais detalhadas sobre configuração de rede, incluindo tópicos avançados como bonding, bridging, 802.1Q VLANs e redes sem fio são cobertas na seção de Configuração de Rede no Gentoo.</div>
+<p>Toda a configuração de rede está reunida no arquivo <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>. Ele usa uma sintaxe direta mas talvez não muito intuitiva. Mas não tema, tudo está explicado abaixo. Um exemplo completamente comentado que cobre muitas configurações diferentes está disponível em <span style="font-family: monospace; font-size: 95%">/usr/share/doc/netifrc-*/net.example.bz2</span>.
+</p><p>Primeiro instale o pacote <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/netifrc">net-misc/netifrc</a>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask&#160;--noreplace net-misc/netifrc</code></div></div> 
+<p>O DHCP é usado por default. Para o DHCP funcionar, é necessário instalar um cliente DHCP. Isso é descrito adiante em Ferramentas do Sistema Necessárias.
+</p><p>Se a conexão de rede precisa ser configurada por causa de opções específicas do DHCP ou porque o DHCP não é utilizado, então edite <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/net</code></div></div>
+<p>Configure ambas as variáveis <var>config_eth0</var> e <var>routes_eth0</var> para entrar com a informação de endereço IP e de roteamente:
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />É assumido que a interface de rede é chamada eth0. Isso, porém, é muito dependente do sistema. É recomendado assumir que a interface é nomeada da mesma forma que quando o sistema foi inicializado pela mídia de instalação se a mídia de instalação for razoavelmente recente. Mais informações podem ser encontradas em Nomes de Interface de Rede.</div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Static IP definition</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2 netmask 255.255.255.0 brd 192.168.0.255&quot;</span>
+<span class="nv">routes_eth0</span><span class="o">=</span><span class="s2">&quot;default via 192.168.0.1&quot;</span>
+</pre></div></pre>
+<p>Para usar DHCP, defina <var>config_eth0</var>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Definindo DHCP</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;dhcp&quot;</span>
+</pre></div></pre>
+<p>Por favor veja os arquivos <span style="font-family: monospace; font-size: 95%">/usr/share/doc/netifrc-*/net.example.bz2</span> para uma lista de todas as opções disponíveis. Certifique-se de também ler a página de manual (man page) se opções específicas do DHCP precisarem ser configuradas.
+</p><p>Se o sistema tem várias interfaces de rede, então repita os passos acima para <var>config_eth1</var>, <var>config_eth2</var>, etc.
+</p><p>Agora salve a configuração e saia para continuar.
+</p>
+<h3><span class="mw-headline" id="Iniciando_automaticamente_a_rede_durante_o_boot">Iniciando automaticamente a rede durante o boot</span></h3>
+<p>Para que as interfaces de rede sejam ativadas durante o boot, elas precisam ser adicionadas no runlevel default.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /etc/init.d
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ln -s net.lo net.eth0
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add net.eth0 default</code></div></div>
+<p>Se o sistema tem várias interfaces de rede, então os arquivos <span style="font-family: monospace; font-size: 95%">net.*</span> precisam ser criados assim como fizemos com o <span style="font-family: monospace; font-size: 95%">net.eth0</span>.
+</p><p>Se após a inicialização do sistema descobrirmos que o nome que usamos para a interface de rede (que está atualmente documentada como eth0) está errado, então execute os seguintes passos para corrigir isso:
+</p>
+<ol><li> Corrija o arquivo <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span> com o nome correto da interface de rede (tal como <code>enp3s0</code> em vez de <code>eth0</code>).</li>
+<li> Crie um novo link simbólico (como <span style="font-family: monospace; font-size: 95%">/etc/init.d/net.enp3s0</span>).</li>
+<li> Remova o link simbólico antigo (<span style="font-family: monospace; font-size: 95%; font-weight: bold;">rm /etc/init.d/net.eth0</span>).</li>
+<li> Adicione o novo ao runlevel default.</li>
+<li> Remova o antigo usando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update del net.eth0 default</span>.</li></ol>
+<h3><span class="mw-headline" id="O_arquivo_hosts">O arquivo hosts</span></h3>
+<p>Agora informe ao Linux sobre seu ambiente de rede. Isso é definido no arquivo <span style="font-family: monospace; font-size: 95%">/etc/hosts</span> e é utilizado na resolução de nomes de hosts em endereços IP para os hosts que não são resolvidos pelo servidor de nomes. 
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/hosts</code></div></div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/hosts</code></strong><strong>Preenchendo as informações de rede</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre># This defines the current system and must be set
+127.0.0.1     tux.homenetwork tux localhost
+  
+# Optional definition of extra systems on the network
+192.168.0.5   jenny.homenetwork jenny
+192.168.0.6   benny.homenetwork benny
+</pre></div></pre>
+<p>Salve e saia do editor para continuar.
+</p>
+<h3><span class="mw-headline" id="Opcional:_Fazendo_o_PCMCIA_funcionar">Opcional: Fazendo o PCMCIA funcionar</span></h3>
+<p>Usuários de PCMCIA devem agora instalar o pacote <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-apps/pcmciautils">sys-apps/pcmciautils</a>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-apps/pcmciautils</code></div></div> 
+<h2><span class="mw-headline" id="Informa.C3.A7.C3.B5es_do_sistema">Informações do sistema</span></h2>
+<h3><span class="mw-headline" id="Senha_do_root">Senha do root</span></h3>
+<p>Configure a senha do root usando o comando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">passwd</span>. 
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>passwd</code></div></div>
+<p>A conta de root é uma toda poderosa, então escolha uma senha forte. Depois uma conta de usuário comum será criada para operações diárias.
+</p>
+<h3><span class="mw-headline" id="Configura.C3.A7.C3.A3o_de_in.C3.ADcio_e_boot">Configuração de início e boot</span></h3>
+<p>Gentoo (ao menos quando usa OpenRC) usa <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span> para configurar os serviços, início, desligamento do sistema. Abra <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span> e aproveite todos os comentários no arquivo. Reveja as configurações e mude onde for necessário.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/rc.conf</code></div></div>
+<p>Em seguida, abra <span style="font-family: monospace; font-size: 95%">/etc/conf.d/keymaps</span> para manipular a configuração de teclado. Edite-o para configurar e escolher o teclado correto.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/keymaps</code></div></div>
+<p>Tenha um cuidado especial com a variável <var>keymap</var>. Se o mapa de teclado errado for selecionado, resultados estranhos aparecerão durante a digitação.
+</p><p>Finalmente, edite <span style="font-family: monospace; font-size: 95%">/etc/conf.d/hwclock</span> para definir as opções de relógio. Edite-o de acordo com suas preferências.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/hwclock</code></div></div>
+<p>Se o relógio de hardware não estiver usando UTC é necessário incluir <code>clock="local"</code> no arquivo. Senão o sistema pode apresentar comportamento errático do relógio.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Kernel/pt-br.html" title="Previous part" class="btn btn-default">&#8592; Configurando o kernel</a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../Tools/pt-br.html" title="Next part" class="btn btn-default">Instalando as ferramentas &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153852
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.532 seconds
+Real time usage: 0.595 seconds
+Preprocessor visited node count: 2101/1000000
+Preprocessor generated node count: 3284/1000000
+Post‐expand include size: 59334/2097152 bytes
+Template argument size: 8917/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  477.854      1 - -total
+100.00%  477.854      1 - Handbook:Parts/Installation/System/pt-br
+ 33.95%  162.245      1 - Handbook:Parts/TOC
+ 22.44%  107.210     13 - Template:RootCmd
+ 17.66%   84.406     13 - Template:GenericCmd
+ 11.82%   56.478      5 - Template:FileBox
+ 10.50%   50.151      5 - Template:PreBox
+  5.92%   28.286      5 - Template:Note/pt-br
+  5.25%   25.069      2 - Template:Emerge
+  4.24%   20.275      5 - Template:Note/core
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:119758-0!*!0!!en!*!* and timestamp 20160112153851 and revision id 309304
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;oldid=309304">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/pt-br&amp;oldid=309304</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 15 May 2015, at 01:56.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/System/pt-br"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":799});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/System/pt-br by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:42:00 GMT -->
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Networking/fr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Configurer le réseau - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Installation/Networking/fr","wgTitle":"AMD64/Installation/Networking/fr","wgCurRevisionId":256320,"wgRevisionId":256320,"wgArticleId":106568,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","janv","fév","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"],"wgRelevantPageName":"Handbook:AMD64/Installation/Networking/fr","wgRelevantArticleId":106568,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Installation/Networking/fr" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Installation/Networking/fr&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Installation_Networking_fr skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Installation/Networking/fr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Installation/Networking/fr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;oldid=256320" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FInstallation-2FNetworking-2Ffr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FNetworking%2Ffr&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FNetworking%2Ffr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="fr.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Installation/Networking/fr&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="fr">
+							<span dir="auto">Configurer le réseau</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Installation.html" title="Special:MyLanguage/Handbook:AMD64/Installation">Installation</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FInstallation%2FNetworking&amp;action=page&amp;filter=&amp;language=fr">translated version</a></span> of the page <a href="../Networking.html" title="Handbook:AMD64/Installation/Networking">Handbook:AMD64/Installation/Networking</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="cs.html" title="Handbook:AMD64/Installation/Networking/cs (100% translated)" class="mw-pt-progress mw-pt-progress--complete">čeština</a> • ‎<a href="de.html" title="Handbook:AMD64/Installation/Networking/de (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Networking.html" title="Handbook:AMD64/Installation/Networking (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Installation/Networking/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">français</span> • ‎<a href="ja.html" title="Handbook:AMD64/Installation/Networking/ja (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Installation/Networking/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Handbook:AMD64/Installation/Networking/pt-br (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:AMD64/Installation/Networking/ru (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:AMD64/Installation/Networking/tr (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Türkçe</a> • ‎<a href="zh-cn.html" title="Handbook:AMD64/Installation/Networking/zh-cn (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#D.C3.A9tection_automatique_du_r.C3.A9seau"><span class="tocnumber">1</span> <span class="toctext">Détection automatique du réseau</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Facultatif:_Configurer_tous_les_proxys"><span class="tocnumber">1.1</span> <span class="toctext">Facultatif: Configurer tous les proxys</span></a></li>
+<li class="toclevel-2"><a href="#Tester_le_r.C3.A9seau"><span class="tocnumber">1.2</span> <span class="toctext">Tester le réseau</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuration_automatique_du_r.C3.A9seau"><span class="tocnumber">2</span> <span class="toctext">Configuration automatique du réseau</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Par_d.C3.A9faut:_utilisation_de_net-setup"><span class="tocnumber">2.1</span> <span class="toctext">Par défaut: utilisation de net-setup</span></a></li>
+<li class="toclevel-2"><a href="#Alternative:_utilisation_de_PPP"><span class="tocnumber">2.2</span> <span class="toctext">Alternative: utilisation de PPP</span></a></li>
+<li class="toclevel-2"><a href="#Alternative:_utilisation_de_PPTP"><span class="tocnumber">2.3</span> <span class="toctext">Alternative: utilisation de PPTP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuration_manuelle_du_r.C3.A9seau"><span class="tocnumber">3</span> <span class="toctext">Configuration manuelle du réseau</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Charger_les_modules_r.C3.A9seau_appropri.C3.A9s"><span class="tocnumber">3.1</span> <span class="toctext">Charger les modules réseau appropriés</span></a></li>
+<li class="toclevel-2"><a href="#Utiliser_DHCP"><span class="tocnumber">3.2</span> <span class="toctext">Utiliser DHCP</span></a></li>
+<li class="toclevel-2"><a href="#Configurer_l.27acc.C3.A8s_sans_fil"><span class="tocnumber">3.3</span> <span class="toctext">Configurer l'accès sans fil</span></a></li>
+<li class="toclevel-2"><a href="#Comprendre_la_terminologie_r.C3.A9seau"><span class="tocnumber">3.4</span> <span class="toctext">Comprendre la terminologie  réseau</span></a></li>
+<li class="toclevel-2"><a href="#Utiliser_ifconfig_et_route"><span class="tocnumber">3.5</span> <span class="toctext">Utiliser ifconfig et route</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="D.C3.A9tection_automatique_du_r.C3.A9seau">Détection automatique du réseau</span></h2>
+<p>Il est possible que la connexion au réseau soit déjà opérationnelle.
+</p><p>Si votre système est connecté via Ethernet à un serveur DHCP, il est probable que votre connexion ait déjà été configurée automatiquement. Si tel est le cas, les commandes habituelles telles que <code>ssh</code>, <code>scp</code>, <code>ping</code>, <code>irssi</code>, <code>wget</code> et  <code>links</code> qui sont sur le CD d'installation fonctionnent.
+</p><p>Pour vérifier que votre connexion fonctionne, utilisez la commande <code>ifconfig</code>. Elle devrait afficher la liste des interfaces réseau opérationnelles – en plus de  <code>lo</code>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig</code></div><pre>
+(...)
+eth0      Link encap:Ethernet  HWaddr 00:50:BA:8F:61:7A
+          inet addr:192.168.0.2  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::50:ba8f:617a/10 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1498792 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1284980 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:1984 txqueuelen:100
+          RX bytes:485691215 (463.1 Mb)  TX bytes:123951388 (118.2 Mb)
+          Interrupt:11 Base address:0xe800 
+</pre></div>
+<p>Le nom de l'interface sur le système peut être tout à fait différent de <code>eth0</code>. Les média d'installation récents  pourraient montrer  des noms d'interfaces réseau standard  , comme <code>eno0</code>, <code>ens1</code> ou <code>enp5s0</code>. Recherchez juste l'interface dans la sortie de la commande <code>ifconfig</code>  qui a une adresse IP sur le réseau local.
+</p><p>Dans le reste de ce document, nous supposons que l'interface est appelée <code>eth0</code>.
+</p>
+<h3><span class="mw-headline" id="Facultatif:_Configurer_tous_les_proxys">Facultatif: Configurer tous les proxys</span></h3>
+<p>Si l'Internet est accessible via un proxy, il est nécessaire de définir des informations de proxy lors de l'installation. Il est très facile de définir un proxy: il suffit de définir une variable qui contient les informations du serveur proxy.
+</p><p>Dans la plupart des cas, il suffit de définir les variables à l'aide du nom d'hôte du serveur. Comme exemple, nous supposons que le proxy est appelé proxy.gentoo.org et le port 8080.
+</p><p>Pour configurer un proxy HTTP (pour le trafic HTTP et HTTPS):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export http_proxy="<a rel="nofollow" class="external free" href="http://proxy.gentoo.org:8080/">http://proxy.gentoo.org:8080</a>"</code></div></div>
+<p>Pour configurer un proxy FTP:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export ftp_proxy="<a rel="nofollow" class="external free" href="ftp://proxy.gentoo.org:8080/">ftp://proxy.gentoo.org:8080</a>"</code></div></div>
+<p>Pour configurer un proxy RSYNC :
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export RSYNC_PROXY="proxy.gentoo.org:8080"</code></div></div>
+<p>Si le serveur proxy requiert un nom d'utilisateur et un mot de passe, utilisez la syntaxe suivante pour définir la variable:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Adding username/password to the proxy variable</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>http://username:password@proxy.gentoo.org:8080
+</pre></div></pre></div>
+<h3><span class="mw-headline" id="Tester_le_r.C3.A9seau">Tester le réseau</span></h3>
+<p>Essayez d'interroger le serveur DNS de votre fournisseur (qui se trouve dans <span style="font-family: monospace; font-size: 95%">de/etc/resolv.conf</span>) et un site web de votre choix. Cela garantit que le réseau fonctionne correctement, que les paquets arrivent sur le net et  la résolution de nom du serveur DNS fonctionne correctement, etc.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ping -c 3 www.gentoo.org</code></div></div>
+<p>Si tout cela fonctionne, alors le reste de ce chapitre peut être ignoré pour passer directement à l'étape suivante de la procédure d'installation (<a href="../Disks/fr.html" title="Handbook:AMD64/Installation/Disks/fr">Préparer les disques</a>).
+</p>
+<h2><span class="mw-headline" id="Configuration_automatique_du_r.C3.A9seau">Configuration automatique du réseau</span></h2>
+<p>Si le réseau ne fonctionne pas immédiatement, certains média d'installation  permettent à l'utilisateur d'utiliser les commandes <code>net-setup</code> (pour des réseaux filaires et  sans fil), <code>pppoe-setup</code> (pour les utilisateurs de l'ADSL) ou <code>pptp</code> (pour des utilisateurs PPTP).
+</p><p>Si le médium d'installation ne contient aucun de ces outils, continuer avec la <a href="#Manual_network_configuration">Configuration Manuel du réseau</a>.
+</p>
+<ul><li> Les utilisateurs utilisant Ethernet devraient poursuivre la lecture en se rendant à <a href="#par_D.C3.A9faut:_Utilisation_de_net-setup">Par Défaut: utilisation de net-setup</a></li>
+<li> Les utilisateurs de l'ADSL devraient  poursuivre la lecture  en se rendant à <a href="#Alternative:_Utilisation_de_PPP">Alternative: utilisation de la PPA</a></li>
+<li> Les utilisateurs de PPTP devraient poursuivre la lecture   en se rendant à <a href="#Alternative:_utilisation_de_PPTP">Alternative: Utilisation de PPTP</a></li></ul>
+<h3><span class="mw-headline" id="Par_d.C3.A9faut:_utilisation_de_net-setup">Par défaut: utilisation de net-setup</span></h3>
+<p>La manière la plus simple de configurer la mise en réseau si cette configuration ne s'est pas produite automatiquement, est de lancer le script <code>net-setup</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>net-setup eth0</code></div></div>
+<p>L'exécution de la commande <code>net-setup</code> vous poser quelques questions au sujet de l'environnement réseau. À la fin, la connexion réseau devrait fonctionner. Testez alors la connexion réseau comme indiqué précédemment. Si les tests sont positifs, félicitations! Ignorez le reste de cette section et continuer avec le <a href="https://wiki.gentoo.org/index.php?title=Manuel:AMD64/Installation/Disques&amp;action=edit&amp;redlink=1" class="new" title="Manuel:AMD64/Installation/Disques (page does not exist)">Préparer les disques</a>.
+</p><p>Si le réseau ne fonctionne toujours pas, continuer avec <a href="#configuration_Manuelle_du_r.C3.A9seau">configuration manuelle du réseau</a>.
+</p>
+<h3><span class="mw-headline" id="Alternative:_utilisation_de_PPP">Alternative: utilisation de PPP</span></h3>
+<p>En supposant que le protocole PPPoE est nécessaire pour se connecter à l'Internet, le CD d'installation (toute version) a rendu les choses encore plus facile grâce à ppp. Utiliser le script <code>pppoe-setup</code>  pour configurer la connexion. Lors de l'installation, il vous sera demandé : quel périphérique Ethernet  est connecté à votre modem ADSL, le nom d'utilisateur, le mot de passe, les adresses ip des serveurs DNS et si un pare-feu de base est nécessaire ou non.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pppoe-setup
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pppoe-start</code></div></div>
+<p>Si quelque chose ne va pas, vérifiez que le nom d'utilisateur et le mot de passe sont corrects en regardant <span style="font-family: monospace; font-size: 95%">etc/ppp/pap-secrets</span> ou <span style="font-family: monospace; font-size: 95%">de/etc/ppp/chap-secrets</span> et assurez-vous d'utiliser le bon périphérique Ethernet. Si le périphérique Ethernet n'existe pas, les modules réseau appropriés doivent être chargés. Dans ce cas, continuer avec <a href="#configuration_Manuelle_du_r.C3.A9seau">configuration manuelle du réseau</a> qui va vous expliquer comment charger les modules réseau nécessaires.
+</p><p>Si tout a fonctionné, continuer avec <a href="https://wiki.gentoo.org/index.php?title=Manuel:AMD64/Installation/Disques&amp;action=edit&amp;redlink=1" class="new" title="Manuel:AMD64/Installation/Disques (page does not exist)">Préparer les disques</a>.
+</p>
+<h3><span class="mw-headline" id="Alternative:_utilisation_de_PPTP">Alternative: utilisation de PPTP</span></h3>
+<p>Si le support PPTP est nécessaire, utilisez la commande <code>pptpclient</code> qui est fourni par le CD d'installation. Mais d'abord, assurez-vous que la configuration est correcte. Modifier <span style="font-family: monospace; font-size: 95%">de/etc/ppp/pap-secrets</span> – ou <span style="font-family: monospace; font-size: 95%">de/etc/ppp/chap-secrets</span> – pour qu'il contienne le nom d'utilisateur et le mot de passe corrects :
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/ppp/chap-secrets</code></div></div>
+<p>Puis peaufinez <span style="font-family: monospace; font-size: 95%">de/etc/ppp/options.pptp</span> si nécessaire:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/ppp/options.pptp</code></div></div>
+<p>Quand tout cela est fait, il suffit d'exécuter <code>pptp</code> (avec les options qui n'ont pu être définies  dans <span style="font-family: monospace; font-size: 95%">options.pptp</span>) pour se connecter au serveur:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pptp &lt;server ip&gt;</code></div></div>
+<p>Continuez maintenant avec <a href="https://wiki.gentoo.org/index.php?title=Manuel:AMD64/Installation/Disques&amp;action=edit&amp;redlink=1" class="new" title="Manuel:AMD64/Installation/Disques (page does not exist)">Préparer les disques</a>.
+</p>
+<h2><span class="mw-headline" id="Configuration_manuelle_du_r.C3.A9seau">Configuration manuelle du réseau</span></h2>
+<h3><span class="mw-headline" id="Charger_les_modules_r.C3.A9seau_appropri.C3.A9s">Charger les modules réseau appropriés</span></h3>
+<p>Lorsque le CD d'Installation démarre, il tente de détecter les périphériques  et charge les modules du noyau appropriés (les pilotes) afin de prendre en compte le matériel. Dans la grande majorité des cas, il fait un très bon travail. Toutefois, dans certains cas, il peut advenir que  les modules du noyau nécessaires ne soient pas chargés.
+</p><p>Si <code>net-setup</code> ou <code>pppoe-setup</code> n'a pas réussi, alors il est possible que la carte réseau n'a pas été trouvée immédiatement. Cela signifie que les utilisateurs peuvent avoir à charger les modules appropriés du noyau manuellement.
+</p><p>Pour savoir quels modules du noyau sont fournis pour la mise en réseau, utiliser la commande <code>ls</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /lib/modules/`uname -r`/kernel/drivers/net</code></div></div>
+<p>Si un pilote est trouvé pour le périphérique réseau, utilisez la commande  <code>modprobe</code> pour charger le module du noyau. Par exemple, pour charger le module <span style="font-family: monospace; font-size: 95%">pcnet32</span> :
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>modprobe pcnet32</code></div></div>
+<p>Pour vérifier si la carte réseau est maintenant détectée, utilisez la commande <code>ifconfig</code>. Une carte réseau détectée aboutirait à quelque chose comme ceci (encore une fois, <span style="font-family: monospace; font-size: 95%">eth0</span> ici est juste un exemple):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0</code></div><pre>
+eth0      Link encap:Ethernet  HWaddr FE:FD:00:00:00:00  
+          BROADCAST NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+</pre></div>
+<p>Si, toutefois, le message d'erreur suivant s'affiche, la carte réseau n'est pas détectée:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0</code></div><pre>
+eth0: error fetching interface information: Device not found
+</pre></div>
+<p>Les noms d'interface réseau disponibles sur le système peuvent être énumérés par le système de fichiers <span style="font-family: monospace; font-size: 95%">/sys</span>&#160;:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /sys/class/net</code></div><pre>
+dummy0  eth0  lo  sit0  tap0  wlan0
+</pre></div>
+<p>Dans l'exemple ci-dessus, 6 interfaces sont trouvées. <span style="font-family: monospace; font-size: 95%">eth0</span> est le plus probablement l'adaptateur Ethernet (câble) alors que <span style="font-family: monospace; font-size: 95%">wlan0</span> est l'adaptateur sans fil.
+</p><p>En supposant que la carte réseau est maintenant détectée, réessayez la commande <code>net-setup</code> ou <code>pppoe-setup</code> (qui devrait maintenant fonctionner), mais pour les inconditionnels  nous expliquons aussi comment configurer le réseau manuellement.
+</p><p>Sélectionnez l'une des sections suivantes en prenant en compte la configuration de votre réseau:
+</p>
+<ul><li> <a href="#Using_DHCP">Utiliser DHCP</a> pour la recherche automatique de votre adresse IP</li>
+<li> <a href="#Preparing_for_wireless_access">Configurer un accès sans fil</a> si un réseau sans fil est utilisé</li>
+<li> <a href="#Understanding_network_terminology">Comprendre la terminologie des réseaux</a> vous explique les bases de la mise en réseau</li>
+<li> <a href="#Using_ifconfig_and_route">Utiliser ifconfig et route</a> vous explique comment configurer votre réseau manuellement</li></ul>
+<ul><li> <a href="#Using_DHCP">Using DHCP</a> for automatic IP retrieval</li>
+<li> <a href="#Preparing_for_wireless_access">Preparing for wireless access</a> if a wireless network is used</li>
+<li> <a href="#Understanding_network_terminology">Understanding network terminology</a> explains the basics about networking</li>
+<li> <a href="#Using_ifconfig_and_route">Using ifconfig and route</a> explains how to set up networking manually</li></ul>
+<h3><span class="mw-headline" id="Utiliser_DHCP">Utiliser DHCP</span></h3>
+<p>DHCP (Dynamic Host Configuration Protocol) rend possible de recevoir automatiquement des informations de mise en réseau (adresse IP, masque de réseau, adresse de diffusion, passerelle, serveurs de noms, etc.). Cela ne fonctionne que si un serveur DHCP existe dans le réseau (ou si le fournisseur d'accès internet fournit un service DHCP). Pour qu'une interface réseau recoive automatiquement ces informations, utilisez le démon <code>dhcpcd</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>dhcpcd eth0</code></div></div>
+<p>Certains administrateurs de réseau exigent que le nom d'hôte et le nom de domaine fourni par le serveur DHCP soient utilisés par le système. Dans ce cas, utilisez:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>dhcpcd -HD eth0</code></div></div>
+<p>Si cela fonctionne (essayez d'interroger un serveur sur Internet, comme Google), quand tout est réglé et prêt à continuer, ignorez le reste de cette section et continuez avec  <a href="https://wiki.gentoo.org/index.php?title=Manuel:AMD64/Installation/Disques&amp;action=edit&amp;redlink=1" class="new" title="Manuel:AMD64/Installation/Disques (page does not exist)">Préparer les disques</a>.
+</p>
+<h3><span class="mw-headline" id="Configurer_l.27acc.C3.A8s_sans_fil">Configurer l'accès sans fil</span></h3>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />La prise en charge de la commande <code>iwconfig</code>  peut être spécifique à l'architecture. Si la commande n'est pas disponible, veuillez suivre les instructions du projet <a rel="nofollow" class="external text" href="ftp://ftp.linux-wlan.org/pub/linux-wlan-ng/README">linux-wlan-ng</a>.</div>
+<p>Lors de l'utilisation d'une carte  réseau sans fil (802.11), les paramètres <i>sans fil</i> doivent être configurés avant d'aller plus loin. Pour voir les paramètres <i>sans fil</i> de la carte, on peut utiliser la commande <code>iwconfig</code>. L'exécution de <code>iwconfig</code> pourrait donner quelque chose qui ressemble à ceci :
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0</code></div><pre>
+eth0      IEEE 802.11-DS  ESSID:&quot;GentooNode&quot;                                   
+          Mode:Managed  Frequency:2.442GHz  Access Point: 00:09:5B:11:CC:F2    
+          Bit Rate:11Mb/s   Tx-Power=20 dBm   Sensitivity=0/65535               
+          Retry limit:16   RTS thr:off   Fragment thr:off                       
+          Power Management:off                                                  
+          Link Quality:25/10  Signal level:-51 dBm  Noise level:-102 dBm        
+          Rx invalid nwid:5901 Rx invalid crypt:0 Rx invalid frag:0 Tx          
+          excessive retries:237 Invalid misc:350282 Missed beacon:84            
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Certaines cartes sans fil peuvent avoir un nom de périphérique <span style="font-family: monospace; font-size: 95%">wlan0</span> ou <span style="font-family: monospace; font-size: 95%">ra0</span> au lieu de <span style="font-family: monospace; font-size: 95%">eth0</span>. Exécutez <code>iwconfig</code>, sans paramètres de ligne de commande pour déterminer le nom correct du périphérique.</div>
+<p>Pour la plupart des utilisateurs, il y a seulement deux paramètres qu'il pourrait être important de changer, l'ESSID (aka nom de réseau sans fil) ou  la clé WEP. Si l'ESSID et l'adresse du point d'accès  listés sont déjà ceux  du point d'accès de l'environnement et que l'environnement n'utilise pas  de clé WEP, alors la configuration sans fil fonctionne déjà.
+</p><p>Pour changer l'ESSID, ou ajouter une clé WEP, exécutez les commandes suivantes.
+</p>
+<ul><li> Pour définir le nom du réseau comme <i>GentooNode</i>:</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 essid GentooNode</code></div></div>
+<ul><li> Pour définir une clé WEP hexadécimale&#160;:</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key 1234123412341234abcd</code></div></div>
+<p>Pour définir une clé WEP ASCII, préfixez la clé avec <code>s:</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key s:some-password</code></div></div>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 essid GentooNode</code></div></div></dd></dl>
+<ul><li> To set a hex WEP key:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key 1234123412341234abcd</code></div></div></dd></dl>
+<ul><li> To set an ASCII WEP key, prefix the key with <code>s:</code>:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key s:some-password</code></div></div></dd></dl>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Si le réseau sans fil est configuré avec  WPA ou WPA2, alors la commande <code>wpa_supplicant</code> doit être utilisée. Pour plus d'informations sur la configuration des réseaux sans fil sous Gentoo Linux, lisez le chapitre sur les <a href="https://wiki.gentoo.org/index.php?title=Manuel:AMD64/R%C3%A9seau/sans_Fil&amp;action=edit&amp;redlink=1" class="new" title="Manuel:AMD64/Réseau/sans Fil (page does not exist)">réseaux sans fil </a> du nanuel de  Gentoo.</div>
+<p>Confirmer les paramètres <i>sans fil</i> en utilisant la commande <code>iwconfig</code>. Une fois que le sans-fil fonctionne, poursuivez avec  la configuration des options réseau au niveau de l'adresse IP comme décrit dans la section suivante (<a href="#Understanding_network_terminology">Comprendre la terminologie des réseaux</a>) ou utilisez l'outil  <code>net-setup</code> comme décrit précédemment.
+</p>
+<h3><span class="mw-headline" id="Comprendre_la_terminologie_r.C3.A9seau">Comprendre la terminologie  réseau</span></h3>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Si l'adresse IP, adresse de diffusion, le masque de réseau et les serveurs de noms sont connus,  sautez ce paragraphe et continuer avec <a href="#.C3.A0_l.27Aide_de_ifconfig_et_route">Utiliser ifconfig et route</a>.</div>
+<p>Si tout ce qui précède échoue, le réseau doit être configuré manuellement. Ce n'est pas difficile du tout. Cependant, une certaine connaissance de la terminologie des réseaux et des concepts de base est nécessaire. Après la lecture de cette section, les utilisateurs devraient savoir ce qu'est une passerelle, à quoi sert un masque de réseau, de quoi est constituée une  adresse de diffusion  et pourquoi les systèmes ont besoin de serveurs de noms.
+</p><p>Dans un réseau, les machines sont identifiées par leur adresse IP (adresse de Protocole Internet). Une telle adresse est perçue comme une combinaison de quatre nombres entre 0 et 255, tout du moins lors de l'utilisation d'IPv4 (IP version 4). En réalité, une telle adresse IPv4 se compose de 32 bits (des uns et des zéros). Voyons un exemple:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Exemple d'adresse IPv4</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Adresse IP  (nombre décimaux):192.168.0.2
+Adresse IP  (bits):           11000000 10101000 00000000 00000010
+                              -------- -------- -------- --------
+                              192      168       0        2
+</pre></div></pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Le successeur d'IPv4, IPv6, utilise 128 bits (zéros et de uns). Dans cette section, l'accent est mis sur les adresses IPv4.</div>
+<p>Il est facile de comprendre que tout hôte que quelqu'un est en mesure d'atteindre sur un réseau doit avoir une adresse IP  unique.  Afin de distinguer entre les hôtes à l'intérieur et à l'extérieur d'un réseau, l'adresse IP est divisée en deux parties: la partie réseau et la partie hôte.
+</p><p>La séparation est déterminée par le masque de réseau qui est une suite de 1 suivie d'une suite de 0 selon la structure d'une adresse IP.   La partie de l'adresse IP qui correspond aux 1 définit la partie réseau, l'autre définit la partie hôte.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Exemple de séparation entre réseau et hôte</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Adresse IP :            192      168      0         2
+                     11000000 10101000 00000000 00000010
+Masque de réseau:    11111111 11111111 11111111 00000000
+                       255      255     255        0
+                     +--------------------------+--------+
+                               Réseau              Hôte
+</pre></div></pre></div>
+<p>En d'autres termes, 192.168.0.14 fait toujours partie  du réseau exemple, mais pas 192.168.1.2.
+</p><p>L'adresse de diffusion est une adresse IP avec la même partie réseau que le réseau, mais seulement avec des 1 pour  la partie hôte. Chaque hôte sur le réseau est à l'écoute à cette adresse IP. Elle est vraiment destinée à la diffusion de  paquets.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Adresse de diffusion</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Adresse IP:               192      168      0         2
+                       11000000 10101000 00000000 00000010
+Adresse de diffusion:  11000000 10101000 00000000 11111111
+                          192      168      0        255
+                       +--------------------------+--------+
+                                Réseau              Hôte
+</pre></div></pre></div>
+<p>Pour pouvoir surfer sur Internet, chaque ordinateur du réseau doit connaître l'hôte qui partage la connexion Internet. Cet hôte est appelée la passerelle. Comme c'est un hôte comme les autres,  il possède une adresse IP sur le réseau (par exemple 192.168.0.1).
+</p><p>Précédemment, nous avons dit que chaque machine a sa propre adresse IP. Pour être en mesure d'atteindre cet hôte par un nom (au lieu d'une adresse IP), nous avons besoin d'un service qui puisse traduire un nom (comme dev.gentoo.org) en une adresse IP (comme 64.5.62.82). Un tel service est appelé "serveur de noms". Pour utiliser un tel service, les serveurs de noms nécessaires doivent être définis dans <span style="font-family: monospace; font-size: 95%">de/etc/resolv.conf</span>.
+</p><p>Dans certains cas, la passerelle sert également de serveur de noms. Sinon les serveurs de noms fournis par le fournisseur d'accès Internet (FAI) doivent être inscrits dans ce fichier.
+</p><p>Pour résumer, les informations suivantes sont nécessaires avant de continuer:
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Item réseau
+</th>
+<th> Exemple
+</th></tr>
+<tr>
+<td> L'adresse IP du système
+</td>
+<td> 192.168.0.2
+</td></tr>
+<tr>
+<td> Masque de réseau
+</td>
+<td> 255.255.255.0
+</td></tr>
+<tr>
+<td> Adresse de diffusion
+</td>
+<td> 192.168.0.255
+</td></tr>
+<tr>
+<td> Adresse de la passerelle
+</td>
+<td> 192.168.0.1
+</td></tr>
+<tr>
+<td> Serveurs de noms
+</td>
+<td> 195.130.130.5, 195.130.130.133
+</td></tr></table>
+<h3><span class="mw-headline" id="Utiliser_ifconfig_et_route">Utiliser ifconfig et route</span></h3>
+<p>La mise en place du réseau comprend trois étapes.
+</p>
+<ol><li> Attribuer une adresse IP à l'aide de la commande <code>ifconfig</code></li>
+<li> Configurer le routage par la passerelle à l'aide de <code>route</code></li>
+<li> Terminer en plaçant les adresses IP  des  serveur de noms <span style="font-family: monospace; font-size: 95%">de/etc/resolv.conf</span></li></ol>
+<ol><li> Assign an IP address using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ifconfig</span></li>
+<li> Set up routing to the gateway using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">route</span></li>
+<li> Finish up by placing the nameserver IPs in <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span></li></ol>
+<p>Pour attribuer une adresse IP, l'adresse IP, l'adresse de diffusion et le masque de réseau sont nécessaires. Ensuite, exécutez la commande suivante, en remplaçant <code>${IP_ADDR}</code> par la bonne adresse IP, <code>${BROADCAST}</code> par la bonne adresse de diffusion et <code>${NETMASK}</code> par le bon  masque de réseau:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0 ${IP_ADDR} broadcast ${BROADCAST} netmask ${NETMASK} up</code></div></div>
+<p>Configurer le routage à l'aide de la commande <code>route</code>. Remplacez <code>${PASSERELLE}</code> par la bonne adresse IP de la passerelle:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>route add default gw ${GATEWAY}</code></div></div>
+<p>Maintenant, ouvrez <span style="font-family: monospace; font-size: 95%">de/etc/resolv.conf</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/resolv.conf</code></div></div>
+<p>Documentez  les serveur de noms en vous servant de ce qui suit comme d'un modèle. Assurez-vous de remplacer <code>${NAMESERVER1}</code> et <code>${NAMESERVER2}</code> par les adresses de  serveurs de noms appropriées :
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Modèle par défaut à utiliser pour /etc/resolv.conf</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>nameserver ${NAMESERVER1}
+nameserver ${NAMESERVER2}
+</pre></div></pre></div>
+<p>C'est tout. Maintenant testez le réseau par un <i>ping</i> vers un serveur Internet (comme Google). Si cela fonctionne, félicitations. Continuez avec <a href="../Disks/fr.html" title="Handbook:AMD64/Installation/Disks/fr">Préparer les disques</a>.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Media/fr.html" title="Previous part" class="btn btn-default">&#8592; Choosing the media</a> <a href="../../fr.html" title="Handbook:AMD64/fr" class="btn btn-default">Accueil</a> <a href="../Disks/fr.html" title="Next part" class="btn btn-default">Préparer les disques &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154446
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.696 seconds
+Real time usage: 0.757 seconds
+Preprocessor visited node count: 3231/1000000
+Preprocessor generated node count: 2936/1000000
+Post‐expand include size: 76532/2097152 bytes
+Template argument size: 10830/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  576.473      1 - -total
+ 97.03%  559.373      1 - Handbook:Parts/Installation/Networking/fr
+ 37.49%  216.124     27 - Template:RootCmd
+ 36.41%  209.900      1 - Handbook:Parts/TOC
+ 30.24%  174.325     27 - Template:GenericCmd
+  6.10%   35.188     28 - Template:GenericCmd/Line
+  4.89%   28.205      5 - Template:CodeBox
+  4.18%   24.115      1 - Handbook:Parts/Navigator/fr
+  3.70%   21.313      5 - Template:PreBox
+  3.56%   20.535      1 - Handbook:Parts/Navigator
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:106568-0!*!0!!en!*!* and timestamp 20160112154446 and revision id 256320
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;oldid=256320">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Networking/fr&amp;oldid=256320</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 25 January 2015, at 11:19.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Installation/Networking/fr"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":978});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Networking/fr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:06 GMT -->
+</html>

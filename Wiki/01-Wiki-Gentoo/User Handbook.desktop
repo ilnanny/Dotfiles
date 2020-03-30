@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=firefox http://www.gentoo.org/doc/en/handbook/index.xml
+GenericName[en_US]=Open Namoroka and fireup the handbook page
+GenericName=Open Namoroka and fireup the handbook page
+Icon=accessories-text-editor
+MimeType=
+Name[en_US]=User Handbook
+Name=User Handbook
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

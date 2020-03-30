@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks/fr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Préparer les disques - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Installation/Disks/fr","wgTitle":"AMD64/Installation/Disks/fr","wgCurRevisionId":262792,"wgRevisionId":262792,"wgArticleId":107830,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","janv","fév","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"],"wgRelevantPageName":"Handbook:AMD64/Installation/Disks/fr","wgRelevantArticleId":107830,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Installation/Disks/fr" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Installation/Disks/fr&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Installation_Disks_fr skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Installation/Disks/fr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Installation/Disks/fr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;oldid=262792" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FInstallation-2FDisks-2Ffr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FDisks%2Ffr&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FDisks%2Ffr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="fr.html">Handbook</a></li><li id="ca-talk"><a href="../../../Handbook_Talk_AMD64/Installation/Disks/fr.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="fr">
+							<span dir="auto">Préparer les disques</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Installation.html" title="Special:MyLanguage/Handbook:AMD64/Installation">Installation</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FInstallation%2FDisks&amp;action=page&amp;filter=&amp;language=fr">translated version</a></span> of the page <a href="../Disks.html" title="Handbook:AMD64/Installation/Disks">Handbook:AMD64/Installation/Disks</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbook:AMD64/Installation/Disks/de (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Disks.html" title="Handbook:AMD64/Installation/Disks (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Installation/Disks/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">français</span> • ‎<a href="ja.html" title="Handbook:AMD64/Installation/Disks/ja (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Installation/Disks/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Handbook:AMD64/Installation/Disks/pt-br (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:AMD64/Installation/Disks/ru (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:AMD64/Installation/Disks/tr (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Türkçe</a> • ‎<a href="zh-cn.html" title="Handbook:AMD64/Installation/Disks/zh-cn (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Introduction_aux_p.C3.A9riph.C3.A9riques_d.C3.A9coup.C3.A9s_en_blocs"><span class="tocnumber">1</span> <span class="toctext">Introduction aux périphériques découpés en blocs</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Les_p.C3.A9riph.C3.A9riques_d.C3.A9coup.C3.A9s_en_blocs"><span class="tocnumber">1.1</span> <span class="toctext">Les périphériques découpés en blocs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Cr.C3.A9er_des_syst.C3.A8mes_de_fichiers"><span class="tocnumber">2</span> <span class="toctext">Créer des systèmes de fichiers</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introduction"><span class="tocnumber">2.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2"><a href="#Les_syst.C3.A8mes_de_fichiers"><span class="tocnumber">2.2</span> <span class="toctext">Les systèmes de fichiers</span></a></li>
+<li class="toclevel-2"><a href="#Appliquer_un_syst.C3.A8me_de_fichiers_.C3.A0_une_partition"><span class="tocnumber">2.3</span> <span class="toctext">Appliquer un système de fichiers à une partition</span></a></li>
+<li class="toclevel-2"><a href="#Activer_la_partition_d.27.C3.A9change"><span class="tocnumber">2.4</span> <span class="toctext">Activer  la partition d'échange</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Monter_les_partitions"><span class="tocnumber">3</span> <span class="toctext">Monter les partitions</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction_aux_p.C3.A9riph.C3.A9riques_d.C3.A9coup.C3.A9s_en_blocs">Introduction aux périphériques découpés en blocs</span></h2>
+<h3><span class="mw-headline" id="Les_p.C3.A9riph.C3.A9riques_d.C3.A9coup.C3.A9s_en_blocs">Les périphériques découpés en blocs</span></h3>
+<p>Nous allons étudier en profondeur les aspects de Gentoo qui concernent les disques, y compris les systèmes de fichiers de Linux, les partitions et les périphériques découpés en blocs. Une fois que les tenants et les aboutissants des disques et des systèmes de fichiers seront compris, nous configurerons  les partitions et les systèmes de fichiers pour l'installation de Gentoo Linux.
+</p><p>Pour commencer,intéressons-nous aux périphériques découpés en blocs. Le plus connu des périphériques découpés en blocs est sans doute  le premier disque sur un système Linux, à savoir <span style="font-family: monospace; font-size: 95%">sur/dev/sda</span>. Les disques SCSI et Serial ATA sont tous les deux étiquetés {{|Path/dev/sd*}}; même les disques IDE sont étiquetés {{|Path/dev/sd*}} avec la nouvelle structure de libata  dans le noyau. Avec l'ancienne structure des périphériques, le premier disque IDE est étiqueté {{|Path/dev/hda}}.
+</p><p>Les périphériques découpés en blocs ci-dessus représentent une interface abstraite pour le disque. Les programmes utilisateurs peuvent utiliser ces périphériques découpés en blocs pour  interagir avec votre disque sans se soucier de savoir s'il est IDE, SCSI ou quelque chose d'autre. Le programme peut simplement adresser le stockage sur le disque comme un groupe de blocs contigus de 512 octets, accessibles aléatoirement.
+</p><p><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Blocks/Disks/fr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Blocks/Disks/fr (page does not exist)">Handbook:AMD64/Blocks/Disks/fr</a>
+</p>
+<h2><span class="mw-headline" id="Cr.C3.A9er_des_syst.C3.A8mes_de_fichiers">Créer des systèmes de fichiers</span></h2>
+<h3><span class="mw-headline" id="Introduction">Introduction</span></h3>
+<p>Now that the partitions are created, it is time to place a filesystem on them. In the next section the various file systems that Linux supports are described. Readers that already know which filesystem to use can continue with <a href="#Applying_a_filesystem_to_a_partition">Applying a filesystem to a partition</a>. The others should read on to learn about the available filesystems...
+</p>
+<h3><span class="mw-headline" id="Les_syst.C3.A8mes_de_fichiers">Les systèmes de fichiers</span></h3>
+<p>Plusieurs systèmes de fichiers sont disponibles. Certains d'entre eux sont considérés stables sur  amd64 l'architecture, il est conseillé de lire sur les systèmes de fichiers et leur prise en charge avant d'en choisir un plus expérimental pour les partitions importantes.
+</p>
+<dl><dt> btrfs</dt>
+<dd> A next generation filesystem that provides many advanced features such as snapshotting, self-healing through checksums, transparent compression, subvolumes and integrated RAID. A few distributions have begun to ship it as an out-of-the-box option, but it is not production ready. Reports of filesystem corruption are common. Its developers urge people to run the latest kernel version for safety because the older ones have known problems. This has been the case for years and it is too early to tell if things have changed. Fixes for corruption issues are rarely backported to older kernels. Proceed with caution when using this filesystem!</dd>
+<dt> ext2</dt>
+<dd> This is the tried and true Linux filesystem but doesn't have metadata journaling, which means that routine ext2 filesystem checks at startup time can be quite time-consuming. There is now quite a selection of newer-generation journaled filesystems that can be checked for consistency very quickly and are thus generally preferred over their non-journaled counterparts. Journaled filesystems prevent long delays when the system is booted and the filesystem happens to be in an inconsistent state.</dd>
+<dt> ext3</dt>
+<dd> The journaled version of the ext2 filesystem, providing metadata journaling for fast recovery in addition to other enhanced journaling modes like full data and ordered data journaling. It uses an HTree index that enables high performance in almost all situations. In short, ext3 is a very good and reliable filesystem.</dd>
+<dt> ext4 </dt>
+<dd> Initially created as a fork of ext3, ext4 brings new features, performance improvements, and removal of size limits with moderate changes to the on-disk format. It can span volumes up to 1 EB and with maximum file size of 16TB. Instead of the classic ext2/3 bitmap block allocation ext4 uses extents, which improve large file performance and reduce fragmentation. Ext4 also provides more sophisticated block allocation algorithms (delayed allocation and multiblock allocation) giving the filesystem driver more ways to optimize the layout of data on the disk. Ext4 is the recommended all-purpose all-platform filesystem.</dd>
+<dt> JFS</dt>
+<dd> IBM's high-performance journaling filesystem. JFS is a light, fast and reliable B+tree-based filesystem with good performance in various conditions.</dd>
+<dt> ReiserFS</dt>
+<dd> A B+tree-based journaled filesystem that has good overall performance, especially when dealing with many tiny files at the cost of more CPU cycles. ReiserFS appears to be less maintained than other filesystems.</dd>
+<dt> XFS </dt>
+<dd> A filesystem with metadata journaling which comes with a robust feature-set and is optimized for scalability. XFS seems to be less forgiving to various hardware problems.</dd>
+<dt> vfat</dt>
+<dd> Also known as FAT32, is supported by Linux but does not support any permission settings. It is mostly used for interoperability with other operating systems (mainly Microsoft Windows) but is also a necessity for some system firmware (like UEFI).</dd></dl>
+<p>Lors de l'utilisation de ext2, ext3 ou ext4 sur une petite partition (moins de 8 GO), le système de fichiers doit être créé avec les options appropriées pour réserver suffisamment d'<i>inodes</i>. L'application <code>mke2fs</code>  utilise le paramètre <i>bytes-per-inodes</i> pour calculer le nombre d' <i>inodes</i> d'un système de fichiers. Sur des partitions plus petites, il est conseillé d'augmenter le nombre  d' <i>inodes</i> calculé.
+</p><p>Sur ext2, cela peut être fait à l'aide de la commande suivante:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mke2fs -T small /dev/&lt;device&gt;</code></div></div>
+<p>Sur ext3 et ext4, ajouter l'option <code>-v</code> pour activer la journalisation:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mke2fs -j -T small /dev/&lt;device&gt;</code></div></div>
+<p>En général, ceci quadruple le nombre d' <i>inodes</i> pour un système de fichiers étant donné que son paramètre <i>bytes-per-inode" passe de un tous les 16 ko à un tous les 4 ko. Cela peut être encore plus peaufiné en fournissant le rapport:</i>
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mke2fs -i &lt;ratio&gt; /dev/&lt;device&gt;</code></div></div>
+<h3><span class="mw-headline" id="Appliquer_un_syst.C3.A8me_de_fichiers_.C3.A0_une_partition">Appliquer un système de fichiers à une partition</span></h3>
+<p>Pour créer un système de fichiers sur une partition ou un volume,  des outils sont disponibles pour chaque système de fichiers:
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Système de fichiers
+</th>
+<th> Commande pour la création
+</th></tr>
+<tr>
+<td> ext2
+</td>
+<td> <code>mkfs.ext2</code>
+</td></tr>
+<tr>
+<td> ext3
+</td>
+<td> <code>mkfs.ext3</code>
+</td></tr>
+<tr>
+<td> ext4
+</td>
+<td> <code>mkfs.ext4</code>
+</td></tr>
+<tr>
+<td> reiserfs
+</td>
+<td> <code>mkreiserfs</code>
+</td></tr>
+<tr>
+<td> xfs
+</td>
+<td> <code>mkfs.xfs</code>
+</td></tr>
+<tr>
+<td> jfs
+</td>
+<td> <code>mkfs.jfs</code>
+</td></tr>
+<tr>
+<td> vfat
+</td>
+<td> <code>mkfs.vfat</code>
+</td></tr></table>
+<p>Par exemple, pour avoir la partition de démarrage (<span style="font-family: monospace; font-size: 95%">/dev/sda2</span>) en ext2 et la partition racine(<span style="font-family: monospace; font-size: 95%">/dev/sda4</span>) en ext4 tels que présenté dans  l'exemple de structure de partitions, il faut utiliser  les commandes suivantes:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkfs.ext2 /dev/sda2</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkfs.ext4 /dev/sda4</code></div></div>
+<p>Maintenant, vous pouvez créer les systèmes de fichiers sur les partitions – ou sur les volumes logiques – nouvellement créées.
+</p>
+<h3><span class="mw-headline" id="Activer_la_partition_d.27.C3.A9change">Activer  la partition d'échange</span></h3>
+<p><code>mkswap</code> est la commande à  utiliser pour initialiser les partitions d'échange – swap –:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkswap /dev/sda3</code></div></div>
+<p>Pour activer la partition d'échange, utilisez  la commande <code>swapon</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>swapon /dev/sda3</code></div></div>
+<p>Créer et activer la partition d'échange  avec les commandes ci-dessus mentionnées.
+</p>
+<h2><span class="mw-headline" id="Monter_les_partitions">Monter les partitions</span></h2>
+<p>Maintenant que les partitions sont initialisées et hébergent un système de fichiers, il est temps de les monter. Utilisez la commande <code>mount</code>, mais n'oubliez pas de créer les points de montage nécessaires pour chaque partition créée. À titre d'exemple, nous expliquons le  montage de   la partition racine – root –:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount /dev/sda4 /mnt/gentoo</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir /mnt/gentoo/boot</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount /dev/sda2 /mnt/gentoo/boot</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />If <span style="font-family: monospace; font-size: 95%">/tmp/</span> doit se trouver sur une partition séparée, pensez à changer ses droits d'accès après le montage :
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>chmod 1777 /mnt/gentoo/tmp</code></div></div>
+Cela vaut également pour  <span style="font-family: monospace; font-size: 95%">/var/tmp</span>.</div>
+<p>Plus loin, dans les instructions, le système de fichiers / proc (une interface virtuelle avec le noyau) ainsi que d'autres  pseudo-systèmes de fichiers du noyau seront montés. Mais d'abord, nous devons <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/fr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Stage/fr (page does not exist)">installer les fichiers d'installation de Gentoo</a>.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Networking/fr.html" title="Previous part" class="btn btn-default">&#8592; Configurer le réseau</a> <a href="../../fr.html" title="Handbook:AMD64/fr" class="btn btn-default">Accueil</a> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/fr&amp;action=edit&amp;redlink=1" class="new btn btn-default" title="Next part"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154449
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.484 seconds
+Real time usage: 0.540 seconds
+Preprocessor visited node count: 1265/1000000
+Preprocessor generated node count: 2337/1000000
+Post‐expand include size: 35318/2097152 bytes
+Template argument size: 3511/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  441.827      1 - -total
+ 96.41%  425.946      1 - Handbook:Parts/Installation/Disks/fr
+ 43.61%  192.670      1 - Handbook:Parts/TOC
+ 27.47%  121.372     10 - Template:RootCmd
+ 16.95%   74.870     10 - Template:GenericCmd
+  5.30%   23.426      1 - Handbook:Parts/Navigator/fr
+  4.44%   19.607      1 - Handbook:Parts/Navigator
+  4.14%   18.275      1 - Template:Note
+  3.95%   17.451      5 - Template:Path
+  3.62%   15.972     11 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:107830-0!*!0!!en!*!* and timestamp 20160112154448 and revision id 262792
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;oldid=262792">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Disks/fr&amp;oldid=262792</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 9 February 2015, at 12:22.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Installation/Disks/fr"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":760});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Disks/fr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:07 GMT -->
+</html>

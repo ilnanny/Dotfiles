@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Full/Portage/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Gentoo Linux amd64 Handbook: Working with Portage - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Full/Portage/de","wgTitle":"AMD64/Full/Portage/de","wgCurRevisionId":211338,"wgRevisionId":211338,"wgArticleId":86378,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Handbook:AMD64/Full/Portage/de","wgRelevantArticleId":86378,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Full/Portage/de" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Full/Portage/de&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Full_Portage_de skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Full/Portage/de.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Full/Portage/de.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;oldid=211338" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FFull-2FPortage-2Fde.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FFull%2FPortage%2Fde&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FFull%2FPortage%2Fde" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="de.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Full/Portage/de&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="de">
+							<span dir="auto">Gentoo Linux amd64 Handbook: Working with Portage</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Full.html" title="Special:MyLanguage/Handbook:AMD64/Full">Full</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FFull%2FPortage&amp;action=page&amp;filter=&amp;language=de">translated version</a></span> of the page <a href="../Portage.html" title="Handbook:AMD64/Full/Portage">Handbook:AMD64/Full/Portage</a> and the translation is 100% complete.</div>
+<hr /><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Portage_files"><span class="tocnumber">1</span> <span class="toctext">Portage files</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Configuration_directives"><span class="tocnumber">1.1</span> <span class="toctext">Configuration directives</span></a></li>
+<li class="toclevel-2"><a href="#Profile-specific_information"><span class="tocnumber">1.2</span> <span class="toctext">Profile-specific information</span></a></li>
+<li class="toclevel-2"><a href="#User-specific_configuration"><span class="tocnumber">1.3</span> <span class="toctext">User-specific configuration</span></a></li>
+<li class="toclevel-2"><a href="#Changing_Portage_file_and_directory_locations"><span class="tocnumber">1.4</span> <span class="toctext">Changing Portage file and directory locations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Storing_files"><span class="tocnumber">2</span> <span class="toctext">Storing files</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Portage_tree"><span class="tocnumber">2.1</span> <span class="toctext">Portage tree</span></a></li>
+<li class="toclevel-2"><a href="#Prebuilt_binaries"><span class="tocnumber">2.2</span> <span class="toctext">Prebuilt binaries</span></a></li>
+<li class="toclevel-2"><a href="#Source_code"><span class="tocnumber">2.3</span> <span class="toctext">Source code</span></a></li>
+<li class="toclevel-2"><a href="#Portage_database"><span class="tocnumber">2.4</span> <span class="toctext">Portage database</span></a></li>
+<li class="toclevel-2"><a href="#Portage_cache"><span class="tocnumber">2.5</span> <span class="toctext">Portage cache</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Building_software"><span class="tocnumber">3</span> <span class="toctext">Building software</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Temporary_portage_files"><span class="tocnumber">3.1</span> <span class="toctext">Temporary portage files</span></a></li>
+<li class="toclevel-2"><a href="#Building_directory"><span class="tocnumber">3.2</span> <span class="toctext">Building directory</span></a></li>
+<li class="toclevel-2"><a href="#Live_filesystem_location"><span class="tocnumber">3.3</span> <span class="toctext">Live filesystem location</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Logging_features"><span class="tocnumber">4</span> <span class="toctext">Logging features</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Ebuild_logging"><span class="tocnumber">4.1</span> <span class="toctext">Ebuild logging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Portage_configuration"><span class="tocnumber">5</span> <span class="toctext">Portage configuration</span></a></li>
+<li class="toclevel-1"><a href="#Build-specific_options"><span class="tocnumber">6</span> <span class="toctext">Build-specific options</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Configure_and_compiler_options"><span class="tocnumber">6.1</span> <span class="toctext">Configure and compiler options</span></a></li>
+<li class="toclevel-2"><a href="#Merge_options"><span class="tocnumber">6.2</span> <span class="toctext">Merge options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuration_file_protection"><span class="tocnumber">7</span> <span class="toctext">Configuration file protection</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Portage_protected_locations"><span class="tocnumber">7.1</span> <span class="toctext">Portage protected locations</span></a></li>
+<li class="toclevel-2"><a href="#Excluding_directories"><span class="tocnumber">7.2</span> <span class="toctext">Excluding directories</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Download_options"><span class="tocnumber">8</span> <span class="toctext">Download options</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Server_locations"><span class="tocnumber">8.1</span> <span class="toctext">Server locations</span></a></li>
+<li class="toclevel-2"><a href="#Fetch_commands"><span class="tocnumber">8.2</span> <span class="toctext">Fetch commands</span></a></li>
+<li class="toclevel-2"><a href="#Rsync_settings"><span class="tocnumber">8.3</span> <span class="toctext">Rsync settings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Gentoo_configuration"><span class="tocnumber">9</span> <span class="toctext">Gentoo configuration</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Branch_selection"><span class="tocnumber">9.1</span> <span class="toctext">Branch selection</span></a></li>
+<li class="toclevel-2"><a href="#Portage_features"><span class="tocnumber">9.2</span> <span class="toctext">Portage features</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Portage_behavior"><span class="tocnumber">10</span> <span class="toctext">Portage behavior</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Resource_management"><span class="tocnumber">10.1</span> <span class="toctext">Resource management</span></a></li>
+<li class="toclevel-2"><a href="#Output_behavior"><span class="tocnumber">10.2</span> <span class="toctext">Output behavior</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Using_one_branch"><span class="tocnumber">11</span> <span class="toctext">Using one branch</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Stable"><span class="tocnumber">11.1</span> <span class="toctext">Stable</span></a></li>
+<li class="toclevel-2"><a href="#Testing"><span class="tocnumber">11.2</span> <span class="toctext">Testing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Mixing_stable_with_testing"><span class="tocnumber">12</span> <span class="toctext">Mixing stable with testing</span></a>
+<ul>
+<li class="toclevel-2"><a href="#package.accept_keywords"><span class="tocnumber">12.1</span> <span class="toctext">package.accept_keywords</span></a></li>
+<li class="toclevel-2"><a href="#Testing_particular_versions"><span class="tocnumber">12.2</span> <span class="toctext">Testing particular versions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Masked_packages"><span class="tocnumber">13</span> <span class="toctext">Masked packages</span></a>
+<ul>
+<li class="toclevel-2"><a href="#package.unmask"><span class="tocnumber">13.1</span> <span class="toctext">package.unmask</span></a></li>
+<li class="toclevel-2"><a href="#package.mask"><span class="tocnumber">13.2</span> <span class="toctext">package.mask</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#dispatch-conf"><span class="tocnumber">14</span> <span class="toctext">dispatch-conf</span></a></li>
+<li class="toclevel-1"><a href="#etc-update"><span class="tocnumber">15</span> <span class="toctext">etc-update</span></a></li>
+<li class="toclevel-1"><a href="#quickpkg"><span class="tocnumber">16</span> <span class="toctext">quickpkg</span></a></li>
+<li class="toclevel-1"><a href="#Using_a_subset_of_the_Portage_tree"><span class="tocnumber">17</span> <span class="toctext">Using a subset of the Portage tree</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Excluding_packages_and_categories"><span class="tocnumber">17.1</span> <span class="toctext">Excluding packages and categories</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Adding_unofficial_ebuilds"><span class="tocnumber">18</span> <span class="toctext">Adding unofficial ebuilds</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Defining_a_Portage_overlay_directory"><span class="tocnumber">18.1</span> <span class="toctext">Defining a Portage overlay directory</span></a></li>
+<li class="toclevel-2"><a href="#Working_with_several_overlays"><span class="tocnumber">18.2</span> <span class="toctext">Working with several overlays</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Non-Portage_maintained_software"><span class="tocnumber">19</span> <span class="toctext">Non-Portage maintained software</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_Portage_with_self-maintained_software"><span class="tocnumber">19.1</span> <span class="toctext">Using Portage with self-maintained software</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">20</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#Per-package_environment_variables"><span class="tocnumber">21</span> <span class="toctext">Per-package environment variables</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_.2Fetc.2Fportage.2Fenv"><span class="tocnumber">21.1</span> <span class="toctext">Using /etc/portage/env</span></a></li>
+<li class="toclevel-2"><a href="#Example:_Using_debugging_for_specific_packages"><span class="tocnumber">21.2</span> <span class="toctext">Example: Using debugging for specific packages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Hooking_in_the_emerge_process"><span class="tocnumber">22</span> <span class="toctext">Hooking in the emerge process</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_.2Fetc.2Fportage.2Fbashrc_and_affiliated_files"><span class="tocnumber">22.1</span> <span class="toctext">Using /etc/portage/bashrc and affiliated files</span></a></li>
+<li class="toclevel-2"><a href="#Example:_Updating_the_file_database"><span class="tocnumber">22.2</span> <span class="toctext">Example: Updating the file database</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Executing_tasks_after_--sync"><span class="tocnumber">23</span> <span class="toctext">Executing tasks after --sync</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_.2Fetc.2Fportage.2Fpostsync.d_location"><span class="tocnumber">23.1</span> <span class="toctext">Using /etc/portage/postsync.d location</span></a></li>
+<li class="toclevel-2"><a href="#Example:_Running_eix-update"><span class="tocnumber">23.2</span> <span class="toctext">Example: Running eix-update</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Overriding_profile_settings"><span class="tocnumber">24</span> <span class="toctext">Overriding profile settings</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_.2Fetc.2Fportage.2Fprofile"><span class="tocnumber">24.1</span> <span class="toctext">Using /etc/portage/profile</span></a></li>
+<li class="toclevel-2"><a href="#Example:_Adding_nfs-utils_to_the_system_set"><span class="tocnumber">24.2</span> <span class="toctext">Example: Adding nfs-utils to the system set</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Applying_non-standard_patches"><span class="tocnumber">25</span> <span class="toctext">Applying non-standard patches</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_epatch_user"><span class="tocnumber">25.1</span> <span class="toctext">Using epatch_user</span></a></li>
+<li class="toclevel-2"><a href="#Example:_Applying_patches_to_Firefox"><span class="tocnumber">25.2</span> <span class="toctext">Example: Applying patches to Firefox</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Portage_files">Portage files</span></h2>
+<h3><span class="mw-headline" id="Configuration_directives">Configuration directives</span></h3>
+<p>Portage comes with a default configuration stored in <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span>. All Portage configuration is handled through variables. What variables portage listens to and what they mean are described later.
+</p><p>Since many configuration directives differ between architectures, Portage also has default configuration files which are part of the system profile. This profile is pointed to by the <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> symlink; Portage' configurations are set in the <span style="font-family: monospace; font-size: 95%">make.defaults</span> files of the profile and all parent profiles. We'll explain more about profiles and the <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> directory later on.
+</p><p>When changing a configuration variable, do not alter <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span> or <span style="font-family: monospace; font-size: 95%">make.defaults</span>. Instead use <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> which has precedence over the previous files. For more information, read the <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.conf.example</span>. As the name implies, this is merely an example file - Portage does not read in this file.
+</p><p>It is also possible to define a Portage configuration variable as an environment variable, but we don't recommend this.
+</p>
+<h3><span class="mw-headline" id="Profile-specific_information">Profile-specific information</span></h3>
+<p>We've already encountered the <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> directory. Well, this is not exactly a directory but a symbolic link to a profile, by default one inside <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/</span> although one can create their own profiles elsewhere and point to them. The profile this symlink points to is the profile to which the system adheres.
+</p><p>A profile contains architecture-specific information for Portage, such as a list of packages that belong to the system corresponding with that profile, a list of packages that don't work (or are masked-out) for that profile, etc.
+</p>
+<h3><span class="mw-headline" id="User-specific_configuration">User-specific configuration</span></h3>
+<p>When Portage's behavior needs to be changed regarding the installation of software, then the right set of files inside <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> will need to be changed. It is highly recommended to use files within <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> and highly discouraged to override the behavior through environment variables!
+</p><p>Within <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> users can create the following files:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">package.mask</span> which lists the packages that Portage should never try to install</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.unmask</span> which lists the packages Portage should be able to install even though the Gentoo developers highly discourage users from emerging them</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.accept_keywords</span> which lists the packages Portage should be able to install even though the package hasn't been found suitable for the system or architecture (yet)</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.use</span> which lists the USE flags to use for certain packages without having the entire system use those USE flags</li></ul>
+<p>These don't have to be files; they can also be directories that contain one file per package. More information about the <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> directory and a full list of possible files that can be created can be found in the Portage man page:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage</code></div></div>
+<h3><span class="mw-headline" id="Changing_Portage_file_and_directory_locations">Changing Portage file and directory locations</span></h3>
+<p>The previously mentioned configuration files cannot be stored elsewhere - Portage will always look for those configuration files at those exact locations. However, Portage uses many other locations for various purposes: build directory, source code storage, Portage tree location, ...
+</p><p>All these purposes have well-known default locations but can be altered to personal taste through <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>. The rest of this chapter explains what special-purpose locations Portage uses and how to alter their placement on the filesystem.
+</p><p>This document isn't meant to be used as a reference though. To get 100% coverage, please consult the Portage and make.conf man pages:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf</code></div></div>
+<h2><span class="mw-headline" id="Storing_files">Storing files</span></h2>
+<h3><span class="mw-headline" id="Portage_tree">Portage tree</span></h3>
+<p>The Portage tree default location is <span style="font-family: monospace; font-size: 95%">/usr/portage</span>. This is defined by the <var>PORTDIR</var> variable. When storing the Portage tree elsewhere (by altering this variable), don't forget to change the <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> symbolic link accordingly.
+</p><p>After changing the  <var>PORTDIR</var> variable, it is recommended to alter the following variables as well since they will not notice the  <var>PORTDIR</var> change. This is due to how Portage handles variables:  <var>PKGDIR</var>,  <var>DISTDIR</var>,  <var>RPMDIR</var>.
+</p>
+<h3><span class="mw-headline" id="Prebuilt_binaries">Prebuilt binaries</span></h3>
+<p>Even though Portage doesn't use prebuilt binaries by default, it has extensive support for them. When asking Portage to work with prebuilt packages, it will look for them in <span style="font-family: monospace; font-size: 95%">/usr/portage/packages</span>. This location is defined by the  <var>PKGDIR</var> variable.
+</p>
+<h3><span class="mw-headline" id="Source_code">Source code</span></h3>
+<p>Application source code is stored in <span style="font-family: monospace; font-size: 95%">/usr/portage/distfiles</span> by default. This location is defined by the <var>DISTDIR</var> variable.
+</p>
+<h3><span class="mw-headline" id="Portage_database">Portage database</span></h3>
+<p>Portage stores the state of the system (what packages are installed, what files belong to which package, ...) in <span style="font-family: monospace; font-size: 95%">/var/db/pkg</span>.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warnung</strong><br />Do not alter these files manually! It might break Portage's knowledge of the system.</div>
+<h3><span class="mw-headline" id="Portage_cache">Portage cache</span></h3>
+<p>The Portage cache (with modification times, virtuals, dependency tree information, ...) is stored in <span style="font-family: monospace; font-size: 95%">/var/cache/edb</span>. This location really is a cache: users can clean it if they are not running any Portage-related application at that moment.
+</p>
+<h2><span class="mw-headline" id="Building_software">Building software</span></h2>
+<h3><span class="mw-headline" id="Temporary_portage_files">Temporary portage files</span></h3>
+<p>Portage's temporary files are stored in <span style="font-family: monospace; font-size: 95%">/var/tmp/</span> by default. This is defined by the <var>PORTAGE_TMPDIR</var> variable.
+</p><p>When altering the <var>PORTAGE_TMPDIR</var> variable, it is recommended to also change the following variables as well since they will not notice the <var>PORTAGE_TMPDIR</var> change. This is due to how Portage handles variables: <var>BUILD_PREFIX</var>.
+</p>
+<h3><span class="mw-headline" id="Building_directory">Building directory</span></h3>
+<p>Portage creates specific build directories for each package it emerges inside <span style="font-family: monospace; font-size: 95%">/var/tmp/portage/</span>. This location is defined by the <var>BUILD_PREFIX</var> variable.
+</p>
+<h3><span class="mw-headline" id="Live_filesystem_location">Live filesystem location</span></h3>
+<p>By default Portage installs all files on the current filesystem (<span style="font-family: monospace; font-size: 95%">/</span>), but this can be changed by setting the <var>ROOT</var> environment variable. This is useful when creating new build images.
+</p>
+<h2><span class="mw-headline" id="Logging_features">Logging features</span></h2>
+<h3><span class="mw-headline" id="Ebuild_logging">Ebuild logging</span></h3>
+<p>Portage can create per-ebuild log files, but only when the <var>PORT_LOGDIR</var> variable is set to a location that is writable by Portage (through the Portage user). By default this variable is unset. If <var>PORT_LOGDIR</var> is not set, then there will not be any build logs with the current logging system, though users may receive some logs from the new <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span> support.
+</p><p>If <var>PORT_LOGDIR</var> is not defined and <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span> is used, then build logs and any other logs saved by elog will be made available, as explained below.
+</p><p>Portage offers fine-grained control over logging through the use of elog:
+</p>
+<ul><li> <var>PORTAGE_ELOG_CLASSES</var>: This is where users can define what kinds of messages to be logged. This can be any space-separated combination of info, warn, error, log, and qa.
+<ul><li> info: Logs "einfo" messages printed by an ebuild</li>
+<li> warn: Logs "ewarn" messages printed by an ebuild</li>
+<li> error: Logs "eerror" messages printed by an ebuild</li>
+<li> log: Logs the "elog" messages found in some ebuilds</li>
+<li> qa: Logs the "QA Notice" messages printed by an ebuild</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_SYSTEM</var>: This selects the module(s) to process the log messages. If left empty, logging is disabled. Any space-separated combination of save, custom, syslog, mail, save_summary, and mail_summary can be used. At least one module must be used in order to use elog.
+<ul><li> save: This saves one log per package in <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog</span>, or <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog</span> if $PORT_LOGDIR is not defined.</li>
+<li> custom: Passes all messages to a user-defined command in $PORTAGE_ELOG_COMMAND; this will be discussed later.</li>
+<li> syslog: Sends all messages to the installed system logger.</li>
+<li> mail: Passes all messages to a user-defined mailserver in $PORTAGE_ELOG_MAILURI; this will be discussed later. The mail features of elog require &gt;=portage-2.1.1.</li>
+<li> save_summary: Similar to save, but it merges all messages in <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog/summary.log</span>, or <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog/summary.log</span> if $PORT_LOGDIR is not defined.</li>
+<li> mail_summary: Similar to mail, but it sends all messages in a single mail when emerge exits.</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_COMMAND</var>: This is only used when the custom module is enabled. Users can specify a command to process log messages. Note that the command can make use of two variables: ${PACKAGE} is the package name and version, while ${LOGFILE} is the absolute path to the logfile. For instance:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example PORTAGE_ELOG_COMMAND definition</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_COMMAND</span><span class="o">=</span><span class="s2">&quot;/path/to/logger -p &#39;\${PACKAGE}&#39; -f &#39;\${LOGFILE}&#39;&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILURI</var>: This contains settings for the mail module such as address, user, password, mail server, and port number. The default setting is "root@localhost localhost". The following is an example for an SMTP server that requires username and password-based authentication on a particular port (the default is port 25):</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example PORTAGE_ELOG_MAILURI definition</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILURI</span><span class="o">=</span><span class="s2">&quot;user@some.domain username:password@smtp.some.domain:995&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILFROM</var>: Allows the user to set the "from" address of log mails; defaults to "Portage" if unset.</li></ul>
+<ul><li> <var>PORTAGE_ELOG_MAILSUBJECT</var>: Allows the user to create a subject line for log mails. Note that it can make use of two variables: ${PACKAGE} will display the package name and version, while ${HOST} is the fully qualified domain name of the host Portage is running on. For instance:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example PORTAGE_ELOG_MAILSUBJECT definition</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILSUBJECT</span><span class="o">=</span><span class="s2">&quot;package \${PACKAGE} was merged on \${HOST} with some messages&quot;</span>
+</pre></div></pre></div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Wichtig</strong><br />Users who used enotice with Portage-2.0.* must completely remove enotice, as it is incompatible with elog.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/EnvVar.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Portage/Variables.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Portage_configuration">Portage configuration</span></h2>
+<p>As noted previously, Portage is configurable through many variables which should be defined in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> or one of the subdirectories of <span style="font-family: monospace; font-size: 95%">/etc/portage/</span>. Please refer to the <span style="font-family: monospace; font-size: 95%">make.conf</span> and portage man pages for more and complete information:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage</code></div></div>
+<h2><span class="mw-headline" id="Build-specific_options">Build-specific options</span></h2>
+<h3><span class="mw-headline" id="Configure_and_compiler_options">Configure and compiler options</span></h3>
+<p>When Portage builds applications, it passes the contents of the following variables to the compiler and configure script:
+</p>
+<ul><li> <var>CFLAGS</var> and <var>CXXFLAGS</var> define the desired compiler flags for C and C++ compiling.</li>
+<li> <var>CHOST</var> defines the build host information for the application's configure script</li>
+<li> <var>MAKEOPTS</var> is passed to the make command and is usually set to define the amount of parallelism used during the compilation. More information about the make options can be found in the make man page.</li></ul>
+<p>The <var>USE</var> variable is also used during configure and compilations but has been explained in great detail in previous chapters.
+</p>
+<h3><span class="mw-headline" id="Merge_options">Merge options</span></h3>
+<p>When Portage has merged a newer version of a certain software title, it will remove the obsoleted files of the older version from the system. Portage gives the user a 5 second delay before unmerging the older version. These 5 seconds are defined by the <var>CLEAN_DELAY</var> variable.
+</p><p>It is possible to tell emerge to use certain options every time it is run by setting <var>EMERGE_DEFAULT_OPTS</var>. Some useful options would be <code>--ask</code>, <code>--verbose</code>, <code>--tree</code>, and so on.
+</p>
+<h2><span class="mw-headline" id="Configuration_file_protection">Configuration file protection</span></h2>
+<h3><span class="mw-headline" id="Portage_protected_locations">Portage protected locations</span></h3>
+<p>Portage overwrites files provided by newer versions of a software title if the files aren't stored in a protected location. These protected locations are defined by the <var>CONFIG_PROTECT</var> variable and are generally configuration file locations. The directory listing is space-delimited.
+</p><p>A file that would be written in such a protected location is renamed and the user is warned about the presence of a newer version of the (presumable) configuration file.
+</p><p>To find out about the current <var>CONFIG_PROTECT</var> setting, use the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --info</span> output:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --info | grep 'CONFIG_PROTECT='</code></div></div>
+<p>More information about Portage's configuration file protection is available in the CONFIGURATION FILES section of the emerge manpage:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h3><span class="mw-headline" id="Excluding_directories">Excluding directories</span></h3>
+<p>To 'unprotect' certain subdirectories of protected locations users can use the <var>CONFIG_PROTECT_MASK</var> variable.
+</p>
+<h2><span class="mw-headline" id="Download_options">Download options</span></h2>
+<h3><span class="mw-headline" id="Server_locations">Server locations</span></h3>
+<p>When the requested information or data is not available on the system, Portage will retrieve it from the Internet. The server locations for the various information and data channels are defined by the following variables:
+</p>
+<ul><li> <var>GENTOO_MIRRORS</var> defines a list of server locations which contain source code (distfiles)</li>
+<li> <var>PORTAGE_BINHOST</var> defines a particular server location containing prebuilt packages for the system</li></ul>
+<p>A third setting involves the location of the rsync server which users use to update their Portage tree. This is defined in the <span style="font-family: monospace; font-size: 95%">/etc/portage/repos.conf</span> file (or a file inside that directory if it is defined as a directory):
+</p>
+<ul><li> <var>sync-type</var> defines the type of server and defaults to <code>rsync</code></li>
+<li> <var>sync-uri</var> defines a particular server which Portage uses to fetch the Portage tree from</li></ul>
+<p>The <var>GENTOO_MIRRORS</var>, <var>sync-type</var>, and <var>sync-uri</var> variables can be set automatically through the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span> application. Of course, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/mirrorselect">app-portage/mirrorselect</a> needs to be installed first before it can be used. For more information, see mirrorselect's online help:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>mirrorselect --help</code></div></div>
+<p>If the environment requires the use of a proxy server, then the <var>http_proxy</var>, <var>ftp_proxy</var>, and <var>RSYNC_PROXY</var> variables can be declared.
+</p>
+<h3><span class="mw-headline" id="Fetch_commands">Fetch commands</span></h3>
+<p>When Portage needs to fetch source code, it uses wget by default. This can be changed through the <var>FETCHCOMMAND</var> variable.
+</p><p>Portage is able to resume partially downloaded source code. It uses wget by default, but this can be altered through the <var>RESUMECOMMAND</var> variable.
+</p><p>Make sure that the <var>FETCHCOMMAND</var> and <var>RESUMECOMMAND</var> store the source code in the correct location. Inside the variables the \${URI} and \${DISTDIR} variables can be used to point to the source code location and distfiles location respectively.
+</p><p>It is also possible to define protocol-specific handlers with <var>FETCHCOMMAND_HTTP</var>, <var>FETCHCOMMAND_FTP</var>, <var>RESUMECOMMAND_HTTP</var>, <var>RESUMECOMMAND_FTP</var>, and so on.
+</p>
+<h3><span class="mw-headline" id="Rsync_settings">Rsync settings</span></h3>
+<p>It is not possible to alter the rsync command used by Portage to update the Portage tree, but it is possible to set some variables related to the rsync command:
+</p>
+<ul><li> <var>PORTAGE_RSYNC_OPTS</var> sets a number of default variables used during sync, each space-separated. These shouldn't be changed unless you know exactly what you're doing. Note that certain absolutely required options will always be used even if <var>PORTAGE_RSYNC_OPTS</var> is empty.</li></ul>
+<ul><li> <var>PORTAGE_RSYNC_EXTRA_OPTS</var> can be used to set additional options when syncing. Each option should be space separated.
+<ul><li> <code>--timeout=&lt;number&gt;</code>: This defines the number of seconds an rsync connection can idle before rsync sees the connection as timed-out. This variable defaults to <code>180</code> but dialup users or individuals with slow computers might want to set this to <code>300</code> or higher.</li>
+<li> <code>--exclude-from=/etc/portage/rsync_excludes</code>: This points to a file listing the packages and/or categories rsync should ignore during the update process. In this case, it points to <span style="font-family: monospace; font-size: 95%">/etc/portage/rsync_excludes</span>.</li>
+<li> <code>--quiet</code>: Reduces output to the screen</li>
+<li> <code>--verbose</code>: Prints a complete filelist</li>
+<li> <code>--progress</code>: Displays a progress meter for each file</li></ul></li></ul>
+<ul><li> <var>PORTAGE_RSYNC_RETRIES</var> defines how many times rsync should try connecting to the mirror pointed to by the <var>SYNC</var> variable before bailing out. This variable defaults to <code>3</code>.</li></ul>
+<p>For more information on these options and others, please read man rsync.
+</p>
+<h2><span class="mw-headline" id="Gentoo_configuration">Gentoo configuration</span></h2>
+<h3><span class="mw-headline" id="Branch_selection">Branch selection</span></h3>
+<p>It is possible to change the default branch with the <var>ACCEPT_KEYWORDS</var> variable. It defaults to the architecture's stable branch. More information on Gentoo's branches can be found in the next chapter.
+</p>
+<h3><span class="mw-headline" id="Portage_features">Portage features</span></h3>
+<p>It is possible to activate certain portage features through the <var>FEATURES</var> variable. The Portage features have been discussed in previous chapters.
+</p>
+<h2><span class="mw-headline" id="Portage_behavior">Portage behavior</span></h2>
+<h3><span class="mw-headline" id="Resource_management">Resource management</span></h3>
+<p>With the <var>PORTAGE_NICENESS</var> variable users can augment or reduce the nice value portage runs with. The <var>PORTAGE_NICENESS</var> value is added to the current nice value.
+</p><p>For more information about nice values, see the nice man page:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man nice</code></div></div>
+<h3><span class="mw-headline" id="Output_behavior">Output behavior</span></h3>
+<p>The <var>NOCOLOR</var> variable, which defaults to <code>false</code>, defines if Portage should disable the use of colored output.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Portage/Files.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Portage/Branches.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Using_one_branch">Using one branch</span></h2>
+<h3><span class="mw-headline" id="Stable">Stable</span></h3>
+<p>The <var>ACCEPT_KEYWORDS</var> variable defines what software branch to use on the system. It defaults to the stable software branch for the system's architecture, for instance amd64.
+</p><p>It is recommended to stick with the stable branch. However, if stability is not that much important and/or the administrator wants to help out Gentoo by submitting bug reports to <a rel="nofollow" class="external free" href="https://bugs.gentoo.org/">https://bugs.gentoo.org</a>, then the testing branch can be used instead.
+</p>
+<h3><span class="mw-headline" id="Testing">Testing</span></h3>
+<p>To use more recent software, users can consider using the testing branch instead. To have Portage use the testing branch, add a ~ in front of the architecture.
+</p><p>The testing branch is exactly what it says - Testing. If a package is in testing, it means that the developers feel that it is functional but has not been thoroughly tested. Users using the testing branch might very well be the first to discover a bug in the package in which case they should file a bug report to let the developers know about it.
+</p><p>Beware though; using the testing branch might incur stability issues, imperfect package handling (for instance wrong/missing dependencies), too frequent updates (resulting in lots of building) or broken packages. Users that do not know how Gentoo works and how to solve problems, we recommend to stick with the stable and tested branch.
+</p><p>For example, to select the testing branch for the amd64 architecture, edit <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> and set:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Using the testing branch</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_KEYWORDS</span><span class="o">=</span><span class="s2">&quot;~amd64&quot;</span>
+</pre></div></pre>
+<p>When changing from stable to testing, users will find out that lots of packages will be updated. Keep in mind that, after moving to the testing branch, it might be challenging to go back to the stable branch.
+</p>
+<h2><span class="mw-headline" id="Mixing_stable_with_testing">Mixing stable with testing</span></h2>
+<h3><span class="mw-headline" id="package.accept_keywords">package.accept_keywords</span></h3>
+<p>It is possible to ask Portage to allow the testing branch for particular packages but use the stable branch for the rest of the system. To achieve this, add the package category and name in <span style="font-family: monospace; font-size: 95%">/etc/portage/package.accept_keywords</span>. It is also possible to create a directory (with the same name) and list the package in the files under that directory.
+</p><p>For instance, to use the testing branch for gnumeric:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.accept_keywords</code></strong><strong>Use the testing branch for just the gnumeric application</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>app-office/gnumeric
+</pre></div></pre>
+<h3><span class="mw-headline" id="Testing_particular_versions">Testing particular versions</span></h3>
+<p>To use a specific software version from the testing branch but don't want Portage to use the testing branch for subsequent versions, add in the version in the <span style="font-family: monospace; font-size: 95%">package.accept_keywords</span> location. In this case use the = operator. It is also possible to enter a version range using the &lt;=, &lt;, &gt; or &gt;= operators.
+</p><p>In any case, if version information is added, an operator <i>must</i> be used. Without version information, an operator cannot be used.
+</p><p>In the following example we ask Portage to allow installing gnumeric-1.2.13 even when it is in the testing branch:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.accept_keywords</code></strong><strong>Allow specific version selection</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>=app-office/gnumeric-1.2.13
+</pre></div></pre>
+<h2><span class="mw-headline" id="Masked_packages">Masked packages</span></h2>
+<h3><span class="mw-headline" id="package.unmask">package.unmask</span></h3>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Wichtig</strong><br />The Gentoo developers do not support the use of unmasking packages. Please exercise due caution when doing so. Support requests related to package.unmask and/or package.mask might not be answered.</div>
+<p>When a package has been masked by the Gentoo developers, yet despite the reason mentioned in the package.mask file (situated in <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/</span> by default) a user still wants to use this package, then add the desired version (usually this will be the exact same line from the <span style="font-family: monospace; font-size: 95%">package.mask</span> file in the profile) to the <span style="font-family: monospace; font-size: 95%">/etc/portage/package.unmask</span> file (or in a file in that directory if it is a directory).
+</p><p>For instance, if =net-mail/hotwayd-0.8 is masked, then it can be unmasked by adding the exact same line in the <span style="font-family: monospace; font-size: 95%">package.unmask</span> location:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.unmask</code></strong><strong>Unmasking a particular package/version</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>=net-mail/hotwayd-0.8
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />If an entry in <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/package.mask</span> contains a range of package versions, then it is necessary to unmask only the version(s) that are actually needed. Please read the previous section to learn how to specify versions.</div>
+<h3><span class="mw-headline" id="package.mask">package.mask</span></h3>
+<p>It is also possible to ask Portage not to take a certain package or a specific version of a package into account. To do so, mask the package by adding an appropriate line to the <span style="font-family: monospace; font-size: 95%">/etc/portage/package.mask</span> location (either in that file or in a file in this directory).
+</p><p>For instance, to prevent Portage from installing kernel sources newer than gentoo-sources-2.6.8.1, add the following line at the <span style="font-family: monospace; font-size: 95%">package.mask</span> location:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.mask</code></strong><strong>Mask gentoo-sources with a version greater than 2.6.8.1</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>&gt;sys-kernel/gentoo-sources-2.6.8.1
+</pre></div></pre>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Portage/Variables.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Portage/Tools.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="dispatch-conf">dispatch-conf</span></h2>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span> is a tool that aids in merging the <span style="font-family: monospace; font-size: 95%">._cfg0000_&lt;name&gt;</span> files. <span style="font-family: monospace; font-size: 95%">._cfg0000_&lt;name&gt;</span> files are generated by Portage when it wants to overwrite a file in a directory protected by the CONFIG_PROTECT variable.
+</p><p>With <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>, users are able to merge updates to their configuration files while keeping track of all changes. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span> stores the differences between the configuration files as patches or by using the RCS revision system. This means that if someone makes a mistake when updating a config file, the administrator can revert the file to the previous version at any time.
+</p><p>When using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>, users can ask to keep the configuration file as-is, use the new configuration file, edit the current one or merge the changes interactively. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span> also has some nice additional features:
+</p>
+<ul><li> Automatically merge configuration file updates that only contain updates to comments</li>
+<li> Automatically merge configuration files which only differ in the amount of whitespace</li></ul>
+<p>Edit <span style="font-family: monospace; font-size: 95%">/etc/dispatch-conf.conf</span> first and create the directory referenced by the archive-dir variable. Then, execute <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>dispatch-conf</code></div></div>
+<p>When running <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>, each changed config file will pass the revue one at a time. Press <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">u</kbd> to update (replace) the current config file with the new one and continue to the next file. Press <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">w</kbd> to zap (delete) the new config file and continue to the next file. Once all config files have been taken care of, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span> will exit. At any time, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">q</kbd> can be used to exit the application as well.
+</p><p>For more information, check out the dispatch-conf man page. It describes how to interactively merge current and new config files, edit new config files, examine differences between files, and more.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man dispatch-conf</code></div></div>
+<h2><span class="mw-headline" id="etc-update">etc-update</span></h2>
+<p>Another tool to merge configuration files is <span style="font-family: monospace; font-size: 95%; font-weight: bold;">etc-update</span>. It iss not as simple to use as <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>, nor as fully featured, but it does provide an interactive merging setup and can also auto-merge trivial changes.
+</p><p>However, unlike <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span>, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">etc-update</span> does not preserve the old versions of the config files. Once a file is updated, the old version is gone forever. Be very careful, as using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">etc-update</span> is significantly less safe than using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dispatch-conf</span> when desiring to keep old configuration files.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>etc-update</code></div></div>
+<p>After merging the straightforward changes, a list of protected files will be provided that have an update waiting. At the bottom the possible options are shown:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Options presented by etc-update</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Please select a file to edit by entering the corresponding number.
+              (-1 to exit) (-3 to auto merge all remaining files)
+                           (-5 to auto-merge AND not use &#39;mv -i&#39;):
+</pre></div></pre></div>
+<p>When entering <code>-1</code>, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">etc-update</span> will exit and discontinue any other changes. With <code>-3</code> or <code>-5</code>, all listed configuration files will be overwritten with the newer versions. It is therefore very important to first select the configuration files that should not be automatically updated. This is simply a matter of entering the number listed to the left of that configuration file.
+</p><p>As an example, we select the configuration file <span style="font-family: monospace; font-size: 95%">/etc/pear.conf</span>:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Updating a specific configuration file</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>Beginning of differences between /etc/pear.conf and /etc/._cfg0000_pear.conf
+[...]
+End of differences between /etc/pear.conf and /etc/._cfg0000_pear.conf
+1) Replace original with update
+2) Delete update, keeping original as is
+3) Interactively merge original with update
+4) Show differences again
+</pre></div></pre></div>
+<p>The differences between the two files are shown. If the updated configuration file can be used without problems, enter <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">1</kbd>. If the updated configuration file isn't necessary, or doesn't provide any new or useful information, enter <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">2</kbd>. If the current configuration file has to be interactively updated, enter <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">3</kbd>.
+</p><p>There is no point in further elaborating the interactive merging here. For completeness sake, we will list the possible commands that can be used while interactively merging the two files. Users are greeted with two lines (the original one, and the proposed new one) and a prompt at which the user can enter one of the following commands:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Commands available for the interactive merging</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>ed:     Edit then use both versions, each decorated with a header.
+eb:     Edit then use both versions.
+el:     Edit then use the left version.
+er:     Edit then use the right version.
+e:      Edit a new version.
+l:      Use the left version.
+r:      Use the right version.
+s:      Silently include common lines.
+v:      Verbosely include common lines.
+q:      Quit.
+</pre></div></pre></div>
+<p>After having finished updating the important configuration files, users can then automatically update all the other configuration files. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">etc-update</span> will exit if it doesn't find any more updateable configuration files.
+</p>
+<h2><span class="mw-headline" id="quickpkg">quickpkg</span></h2>
+<p>With <span style="font-family: monospace; font-size: 95%; font-weight: bold;">quickpkg</span> users can create archives of the packages that are already merged on the system. These archives can be used as prebuilt packages. Running <span style="font-family: monospace; font-size: 95%; font-weight: bold;">quickpkg</span> is straightforward: just add the names of the packages to archive.
+</p><p>For instance, to archive curl, orage, and procps:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>quickpkg curl orage procps</code></div></div>
+<p>The prebuilt packages will be stored in $PKGDIR (<span style="font-family: monospace; font-size: 95%">/usr/portage/packages/</span> by default). These packages are placed in <span style="font-family: monospace; font-size: 95%">$PKGDIR/CATEGORY</span>.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Portage/Branches.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Portage/CustomTree.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Using_a_subset_of_the_Portage_tree">Using a subset of the Portage tree</span></h2>
+<h3><span class="mw-headline" id="Excluding_packages_and_categories">Excluding packages and categories</span></h3>
+<p>It is possible to selectively update certain categories/packages and ignore the other categories/packages. This can be achieved by having rsync exclude categories/packages during the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> step.
+</p><p>Define the name of the file that contains the exclude patterns in the <var>PORTAGE_RSYNC_EXTRA_OPTS</var> variable in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Defining the exclude file</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_RSYNC_EXTRA_OPTS</span><span class="o">=</span><span class="s2">&quot;--exclude-from=/etc/portage/rsync_excludes&quot;</span>
+</pre></div></pre>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/rsync_excludes</code></strong><strong>Excluding all games</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>games-*/*
+</pre></div></pre>
+<p>Note however that this may lead to dependency issues since new, allowed packages might depend on new but excluded packages.
+</p>
+<h2><span class="mw-headline" id="Adding_unofficial_ebuilds">Adding unofficial ebuilds</span></h2>
+<h3><span class="mw-headline" id="Defining_a_Portage_overlay_directory">Defining a Portage overlay directory</span></h3>
+<p>It is possible to ask Portage to use ebuilds that are not officially available through the Portage tree. Create a new directory (for instance <span style="font-family: monospace; font-size: 95%">/usr/local/portage</span>) in which to store the 3rd-party ebuilds. Use the same directory structure as the official Portage tree!
+</p><p>Then define <var>PORTDIR_OVERLAY</var> in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> and have it point to the previously defined directory. When using Portage now, it will take those ebuilds into account as well without removing/overwriting those ebuilds the next time <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> is ran.
+</p>
+<h3><span class="mw-headline" id="Working_with_several_overlays">Working with several overlays</span></h3>
+<p>For the power users who develop on several overlays, test packages before they hit the Portage tree or just want to use unofficial ebuilds from various sources, the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/layman">app-portage/layman</a> package brings <span style="font-family: monospace; font-size: 95%; font-weight: bold;">layman</span>, a tool to help users keep the overlay repositories up to date.
+</p><p>First install and configure <span style="font-family: monospace; font-size: 95%; font-weight: bold;">layman</span> as shown in the <a href="../../../Project_Overlays/User_Guide.html" title="Project:Overlays/User Guide">Overlays User Guide</a>, and add the desired repositories with <span style="font-family: monospace; font-size: 95%; font-weight: bold;">layman -a</span>.
+</p><p>For instance, to enable the hardened-development overlay:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>layman -a hardened-development</code></div></div>
+<p>Regardless of how many repositories are used through <span style="font-family: monospace; font-size: 95%; font-weight: bold;">layman</span>, all the repositories can be updated with the following command:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>layman -S</code></div></div>
+<p>For more information on working with overlays, please read <span style="font-family: monospace; font-size: 95%; font-weight: bold;">man layman</span> and the previously linked layman/overlay users' guide.
+</p>
+<h2><span class="mw-headline" id="Non-Portage_maintained_software">Non-Portage maintained software</span></h2>
+<h3><span class="mw-headline" id="Using_Portage_with_self-maintained_software">Using Portage with self-maintained software</span></h3>
+<p>Sometimes users want to configure, install and maintain software individually without having Portage automate the process, even though Portage can provide the software titles. Known cases are kernel sources and nvidia drivers. It is possible to configure Portage so it knows that a certain package is manually installed on the system (and thus take this information into account when calculating dependencies). This process is called <i>injecting</i> and is supported by Portage through the <span style="font-family: monospace; font-size: 95%">/etc/portage/profile/package.provided</span> file.
+</p><p>For instance, to inform Portage about gentoo-sources-2.6.11.6 which has been installed manually, add the following line to <span style="font-family: monospace; font-size: 95%">/etc/portage/profile/package.provided</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.provided</code></strong><strong>Marking gentoo-sources-2.6.11.6 as manually installed</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>sys-kernel/gentoo-sources-2.6.11.6
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />This is a file that uses versions <i>without</i> an operator.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Portage/Tools.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Portage/Advanced.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Portage.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Full/Portage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/フル/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Full/Portage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Full/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/完整/使用Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>For most users, the information received thus far is sufficient for all their Linux operations. But Portage is capable of much more; many of its features are for advanced users or only applicable in specific corner cases. Still, that would not be an excuse not to document them.
+</p><p>Of course, with lots of flexibility comes a huge list of potential cases. It will not be possible to document them all here. Instead, we hope to focus on some generic issues which can then be bended to fit personal needs. More tweaks and tips can be found all over the Gentoo Wiki.
+</p><p>Most, if not all of these additional features can be easily found by digging through the manual pages that Portage provides:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf
+</code></div></div>
+<p>Finally, know that these are advanced features which, if not worked with correctly, can make debugging and troubleshooting very difficult. Make sure to mention these when hitting a bug and opening a bug report.
+</p>
+<h2><span class="mw-headline" id="Per-package_environment_variables">Per-package environment variables</span></h2>
+<h3><span class="mw-headline" id="Using_.2Fetc.2Fportage.2Fenv">Using /etc/portage/env</span></h3>
+<p>By default, package builds will use the environment variables defined in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>, such as <var>CFLAGS</var>, <var>MAKEOPTS</var> and more. In some cases though, it might be beneficial to provide different variables for specific packages. To do so, Portage supports the use of <span style="font-family: monospace; font-size: 95%">/etc/portage/env</span> and <span style="font-family: monospace; font-size: 95%">/etc/portage/package.env</span>.
+</p><p>The <span style="font-family: monospace; font-size: 95%">/etc/portage/package.env</span> file contains the list of packages for which deviating environment variables are needed as well as a specific identifier that tells Portage which changes to make. The identifier name is free format, and Portage will look for the variables in the <span style="font-family: monospace; font-size: 95%">/etc/portage/env/IDENTIFIER</span> file.
+</p>
+<h3><span class="mw-headline" id="Example:_Using_debugging_for_specific_packages">Example: Using debugging for specific packages</span></h3>
+<p>As an example, we enable debugging for the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/media-video/mplayer">media-video/mplayer</a> package.
+</p><p>First of all, set the debugging variables in a file called <span style="font-family: monospace; font-size: 95%">/etc/portage/env/debug-cflags</span>. The name is arbitrarily chosen, but of course reflects the reason of the deviation to make it more obvious later why a deviation was put in.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/env/debug-cflags</code></strong><strong>Specific variables for debugging</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -ggdb -pipe&quot;</span>
+<span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">FEATURES</span><span class="si">}</span><span class="s2"> nostrip&quot;</span>
+</pre></div></pre>
+<p>Next, we tag the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/media-video/mplayer">media-video/mplayer</a> package to use this content:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.env</code></strong><strong>Using debug-cflags for the mplayer package</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>media-video/mplayer debug-cflags
+</pre></div></pre>
+<h2><span class="mw-headline" id="Hooking_in_the_emerge_process">Hooking in the emerge process</span></h2>
+<h3><span class="mw-headline" id="Using_.2Fetc.2Fportage.2Fbashrc_and_affiliated_files">Using /etc/portage/bashrc and affiliated files</span></h3>
+<p>When Portage works with ebuilds, it uses a bash environment in which it calls the various build functions (like <code>src_prepare</code>, <code>src_configure</code>, <code>pkg_postinst</code>, etc.). But Portage also allows users to set up a specific bash environment.
+</p><p>The advantage of using a specific bash environment is that it allows users to hook in the emerge process during each step it performs. This can be done for every emerge (through <span style="font-family: monospace; font-size: 95%">/etc/portage/bashrc</span>) or by using per-package environments (through <span style="font-family: monospace; font-size: 95%">/etc/portage/env</span> as discussed earlier).
+</p><p>To hook in the process, the bash environment can listen to the variables <var>EBUILD_PHASE</var>, <var>CATEGORY</var> as well as the variables that are always available during ebuild development (such as <var>P</var>, <var>PF</var>, ...). Based on the values of these variables, additional steps/functions can then be executed.
+</p>
+<h3><span class="mw-headline" id="Example:_Updating_the_file_database">Example: Updating the file database</span></h3>
+<p>In this example, we'll use <span style="font-family: monospace; font-size: 95%">/etc/portage/bashrc</span> to call some file database applications to ensure their databases are up to date with the system. The applications used in the example are <span style="font-family: monospace; font-size: 95%; font-weight: bold;">aide</span> (an intrusion detection tool) and <span style="font-family: monospace; font-size: 95%; font-weight: bold;">updatedb</span> (to use with <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mlocate</span>), but these are meant as examples. Do <i>not</i> consider this as a guide for AIDE&#160;;-)
+</p><p>To use <span style="font-family: monospace; font-size: 95%">/etc/portage/bashrc</span> for this case, we need to "hook" in the <code>postrm</code> (after removal of files) and <code>postinst</code> (after installation of files) functions, because that is when the files on the file system have been changed.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/bashrc</code></strong><strong>Hooking into the postinst and postrm phases</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+if [ &quot;${EBUILD_PHASE}&quot; == &quot;postinst&quot; ] || [ &quot;${EBUILD_PHASE}&quot; == &quot;postrm&quot; ];
+then
+  echo &quot;:: Calling aide --update to update its database&quot;;
+  aide --update;
+  echo &quot;:: Calling updatedb to update its database&quot;;
+  updatedb;
+fi
+</pre>
+</pre></div></pre>
+<h2><span class="mw-headline" id="Executing_tasks_after_--sync">Executing tasks after --sync</span></h2>
+<h3><span class="mw-headline" id="Using_.2Fetc.2Fportage.2Fpostsync.d_location">Using /etc/portage/postsync.d location</span></h3>
+<p>Until now we've talked about hooking into the ebuild processes. However, Portage also has another important function: updating the Portage tree. In order to run tasks after updating the Portage tree, put a script inside <span style="font-family: monospace; font-size: 95%">/etc/portage/postsync.d</span> and make sure it is marked as executable.
+</p>
+<h3><span class="mw-headline" id="Example:_Running_eix-update">Example: Running eix-update</span></h3>
+<p>If <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eix-sync</span> was not used to update the tree, then it is still possible to update the eix database after running <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> (or <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span>) by putting a symlink to <span style="font-family: monospace; font-size: 95%">/usr/bin/eix</span> called <span style="font-family: monospace; font-size: 95%">eix-update</span> in <span style="font-family: monospace; font-size: 95%">/etc/portage/postsync.d</span>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ln -s /usr/bin/eix /etc/portage/postsync.d/eix-update</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />If a different name would be chosen, then it needs to be a script that calls <span style="font-family: monospace; font-size: 95%">/usr/bin/eix-update</span> instead. The eix binary looks at how it has been called to find out which function it has to execute. If a symlink would be created that points to eix yet isn't called eix-update, it will not run correctly.</div>
+<h2><span class="mw-headline" id="Overriding_profile_settings">Overriding profile settings</span></h2>
+<h3><span class="mw-headline" id="Using_.2Fetc.2Fportage.2Fprofile">Using /etc/portage/profile</span></h3>
+<p>By default, Gentoo uses the settings contained in the profile pointed to by <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> (a symbolic link to the right profile directory). These profiles define both specific settings as well as inherit settings from other profiles (through their parent file).
+</p><p>By using <span style="font-family: monospace; font-size: 95%">/etc/portage/profile</span>, users can override profile settings such as packages (what packages are considered to be part of the system set), forced use flags and more.
+</p>
+<h3><span class="mw-headline" id="Example:_Adding_nfs-utils_to_the_system_set">Example: Adding nfs-utils to the system set</span></h3>
+<p>When using an NFS-based file systems for rather critical file systems, it might be necessary to mark <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-fs/nfs-utils">net-fs/nfs-utils</a> as a system package, causing Portage to heavily warn administrators if they would attempt to unmerge it.
+</p><p>To accomplish that, we add the package to <span style="font-family: monospace; font-size: 95%">/etc/portage/profile/packages</span>, prepended with a <code>*</code>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/profile/packages</code></strong><strong>Marking nfs-utils as a system package</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>*net-fs/nfs-utils
+</pre></div></pre>
+<h2><span class="mw-headline" id="Applying_non-standard_patches">Applying non-standard patches</span></h2>
+<h3><span class="mw-headline" id="Using_epatch_user">Using epatch_user</span></h3>
+<p>To manage several ebuilds in a similar manner, ebuild developers use eclasses (sort-of shell libraries) that define commonly used functions. One of these eclasses is <span style="font-family: monospace; font-size: 95%">eutils.eclass</span> which offers an interesting function called <code>epatch_user</code>.
+</p><p>The <code>epatch_user</code> function applies source code patches that are found in <span style="font-family: monospace; font-size: 95%">/etc/portage/patches/&lt;category&gt;/&lt;package&gt;[-&lt;version&gt;[-&lt;revision&gt;]]</span>, whatever directory is found first. Sadly, not all ebuilds automatically call this function so just putting a patch in this location might not always work.
+</p><p>Luckily, with the information provided earlier in this chapter, users can call this function by hooking into, for instance, the prepare phase. The function can be called as many times as necessary - it will only apply the patches once.
+</p>
+<h3><span class="mw-headline" id="Example:_Applying_patches_to_Firefox">Example: Applying patches to Firefox</span></h3>
+<p>The <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/www-client/firefox">www-client/firefox</a> package is one of the many that already call <code>epatch_user</code> from within the ebuild, so there is no need to override anything specific.
+</p><p>If for some reason (for instance because a developer provided a patch and asked to check if it fixes the bug reported) patching Firefox is wanted, all that is needed is to put the patch in <span style="font-family: monospace; font-size: 95%">/etc/portage/patches/www-client/firefox</span> (probably best to use the full name and version so that the patch does not interfere with later versions) and rebuild Firefox.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Portage/CustomTree.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../../Networking/Introduction.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+<span class="error"><strong>Warning:</strong> Display title "Gentoo Linux amd64 Handbook: Working with Portage" overrides earlier display title "Handbuch:AMD64/Full/Portage".</span>
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160111214519
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 1.252 seconds
+Real time usage: 1.383 seconds
+Preprocessor visited node count: 4043/1000000
+Preprocessor generated node count: 5829/1000000
+Post‐expand include size: 298556/2097152 bytes
+Template argument size: 15021/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  921.629      1 - -total
+100.00%  921.629      1 - Handbook:Parts/Full/Portage
+ 40.13%  369.884      6 - Handbook:Parts/TOC
+ 29.79%  274.565      1 - Handbook:AMD64/Portage/Files
+ 29.50%  271.839      1 - Handbook:Parts/Portage/Files
+ 14.93%  137.593      1 - Handbook:AMD64/Portage/Tools
+ 14.90%  137.316      1 - Handbook:AMD64/Portage/Advanced
+ 14.58%  134.410      1 - Handbook:Parts/Portage/Tools
+ 14.55%  134.054      1 - Handbook:Parts/Portage/Advanced
+ 13.61%  125.458      1 - Handbook:AMD64/Portage/Branches
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:86378-0!*!0!!en!*!* and timestamp 20160111214518 and revision id 211338
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;oldid=211338">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Full/Portage/de&amp;oldid=211338</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 1 January 2015, at 20:39.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Full/Portage/de"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1585});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Full/Portage/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:22 GMT -->
+</html>

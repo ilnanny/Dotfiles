@@ -1,4 +1,5 @@
 www-client/firefox      ~amd64
 www-client/firefox-bin  ~amd64
+www-client/otter        ~amd64
 www-apps/hugo           ~amd64
 www-misc/zoneminder     ~amd64

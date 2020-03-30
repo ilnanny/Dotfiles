@@ -1,6 +1,8 @@
 media-gfx/birdfont               ~amd64
 media-gfx/inkscape               ~amd64
 media-libs/libtgvoip             ~amd64
+media-libs/libvpx                ~amd64
+media-libs/libwebp               ~amd64
 media-plugins/audacious-plugins  ~amd64
 media-sound/audacious            ~amd64
 media-video/webcamoid            ~amd64

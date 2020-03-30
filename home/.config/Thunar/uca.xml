@@ -114,7 +114,7 @@
 	<icon>terminal</icon>
 	<name>Esegui Script</name>
 	<unique-id>1556819956847486-1</unique-id>
-	<command>xfce4-terminal -e %f --hold</command>
+	<command>xterm -e %f --hold</command>
 	<description>esegue script</description>
 	<patterns>*</patterns>
 	<other-files/>

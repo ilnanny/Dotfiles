@@ -1,8 +1,0 @@
-su
-slapt-get -u
-slapt-get --upgrade
-
-slapt-get -i mozilla-firefox-l10n-it
-
-
-slapt-get --search l10n-it

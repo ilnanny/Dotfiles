@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Branches/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:AMD64/Portage/Branches/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Portage/Branches/ko","wgTitle":"AMD64/Portage/Branches/ko","wgCurRevisionId":193266,"wgRevisionId":193266,"wgArticleId":78810,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:AMD64/Portage/Branches/ko","wgRelevantArticleId":78810,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],
+"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Portage/Branches/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Portage/Branches/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Portage_Branches_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Portage/Branches/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Portage/Branches/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;oldid=193266" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FPortage-2FBranches-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FBranches%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FBranches%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Portage/Branches/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:AMD64/Portage/Branches/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FPortage%2FBranches&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Branches.html" title="Handbook:AMD64/Portage/Branches">Handbook:AMD64/Portage/Branches</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Portage/Mischen (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Branches.html" title="Handbook:AMD64/Portage/Branches (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Portage/Branches (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/Portage/ブランチ (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="ru.html" title="Handbook:AMD64/Portage/Branches (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/使用Portage/混合使用不同的软件分支 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:AMD64/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:AMD64/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:AMD64/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:AMD64/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:AMD64/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:AMD64/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:AMD64/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:AMD64/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:AMD64/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:AMD64/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:AMD64/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:AMD64/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:AMD64/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:AMD64/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:AMD64/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:AMD64/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../Files/ko.html" title="Handbook:AMD64/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../Variables/ko.html" title="Handbook:AMD64/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">소프트웨어 브랜치 함께 사용하기</strong>
+</td></tr>
+<tr>
+<td> <a href="../Tools/ko.html" title="Handbook:AMD64/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../CustomTree/ko.html" title="Handbook:AMD64/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/ko.html" title="Handbook:AMD64/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:AMD64/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:AMD64/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:AMD64/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:AMD64/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:AMD64/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:AMD64/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.EB.B8.8C.EB.9E.9C.EC.B9.98_.ED.95.9C.EA.B0.9C_.EC.82.AC.EC.9A.A9"><span class="tocnumber">1</span> <span class="toctext">브랜치 한개 사용</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.95.88.EC.A0.95"><span class="tocnumber">1.1</span> <span class="toctext">안정</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.ED.97.98"><span class="tocnumber">1.2</span> <span class="toctext">시험</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.ED.97.98_.EB.B8.8C.EB.9E.9C.EC.B9.98.EC.99.80_.EC.95.88.EC.A0.95_.EB.B8.8C.EB.9E.9C.EC.B9.98_.EB.B3.91.EC.9A.A9"><span class="tocnumber">1.3</span> <span class="toctext">시험 브랜치와 안정 브랜치 병용</span></a></li>
+<li class="toclevel-2"><a href="#package.accept_keywords"><span class="tocnumber">1.4</span> <span class="toctext">package.accept_keywords</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.81_.EB.B2.84.EC.A0.84_.EC.8B.9C.ED.97.98"><span class="tocnumber">1.5</span> <span class="toctext">각 버전 시험</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EA.B0.80.EB.A6.B0_.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">2</span> <span class="toctext">가린 꾸러미</span></a>
+<ul>
+<li class="toclevel-2"><a href="#package.unmask"><span class="tocnumber">2.1</span> <span class="toctext">package.unmask</span></a></li>
+<li class="toclevel-2"><a href="#package.mask"><span class="tocnumber">2.2</span> <span class="toctext">package.mask</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".EB.B8.8C.EB.9E.9C.EC.B9.98_.ED.95.9C.EA.B0.9C_.EC.82.AC.EC.9A.A9">브랜치 한개 사용</span></h2>
+<h3><span class="mw-headline" id=".EC.95.88.EC.A0.95">안정</span></h3>
+<p><var>ACCEPT_KEYWORDS</var> 변수에는 여러분의 시스템에서 어떤 소프트웨어 브랜치를 사용할 지 정의합니다. 기본값은 amd64와(과) 같은 여러분의 머신 아키텍처에 해당하는 안정 소프트웨어 브랜치입니다.
+</p><p>안정 브랜치 사용 만을 추천합니다. 그러나 안정성에 대해 신경쓰지 않고 <a rel="nofollow" class="external free" href="https://bugs.gentoo.org/">https://bugs.gentoo.org</a>로 버그 보고서 제출에 도움을 주고 싶다면, 다음을 계속 읽어내려가십시오.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.ED.97.98">시험</span></h3>
+<p>더 최신의 소프트웨어를 사용하려면 대신 시험 브랜치 사용을 고려해보실 수 있습니다. 포티지가 시험 브랜치를 사용하도록 하려면 여러분 아키텍처 키워드 앞에 ~ 를 붙이십시오.
+</p><p>시험 브랜치는 정확히 말 그대로 시험을 의미합니다. 꾸러미가 시험 중에 있을 경우에는 기능상으론 잘 동작하지만 개발자들이 전체적으로 시험을 하지 않았음을 의미합니다. 이런 경우, 꾸러미에서 버그를 먼저 잘 찾을 수 있으며, 개발자들이 버그 보고서의 내용을 알아챌 수 있도록 게시할 수 있습니다.
+</p><p>하지만 주의해야 할 것은 안정성 문제, 완전하지 않은 꾸러미 처리(잘못된/빠진 의존성), 상당히 빈번한 업데이트(엄청난 양의 빌드 결과물), 깨진 꾸러미가 있음을 알고있어야 합니다. 젠투가 어떤 식으로 동작하고 어떤 식으로 문제를 해결하는지 잘 모른다면, 그냥 안정 브랜치와 시험 브랜치 둘 중 하나를 계속 사용하시는 것이 좋습니다.
+</p><p>예를 들어 amd64 아키텍처에서 시험 브랜치를 하용하려면 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> 를 편집하고 다음을 설정하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>시험 브랜치 사용하기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_KEYWORDS</span><span class="o">=</span><span class="s2">&quot;~amd64&quot;</span>
+</pre></div></pre>
+<p>안정 브랜치에서 시험 브랜치로 바꾸면, 수많은 꾸러미를 업데이트하는 모습이 나타날 것입니다. 시험 브랜치로 옮겨갔다면, 안정 브랜치로 되돌아가는 일이 도전이 될 수 있음을 상기하십시오.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.ED.97.98_.EB.B8.8C.EB.9E.9C.EC.B9.98.EC.99.80_.EC.95.88.EC.A0.95_.EB.B8.8C.EB.9E.9C.EC.B9.98_.EB.B3.91.EC.9A.A9">시험 브랜치와 안정 브랜치 병용</span></h3>
+<h3><span class="mw-headline" id="package.accept_keywords">package.accept_keywords</span></h3>
+<p>일부 꾸러미는 시험 브랜치를 사용하고 시스템의 일부분에 대해 안정 브랜치를 사용하게끔 포티지에 요청할 수 있습니다. 이렇게 하려면 꾸러미 분류 항목과 사용하려는 시험 브랜치 이름을 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.accept_keywords</span>에 추가하십시오. (같은 이름으로) 디렉터리를 만들 수 있고, 디렉터리의 파일에 꾸러미를 적어넣을 수 있습니다.
+</p><p>gnumeric을 시험 브랜치에서 사용하려면 다음과 같이 넣습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.accept_keywords</code></strong><strong>gnumeric 프로그램만 시험 브랜치에서 사용하기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>app-office/gnumeric
+</pre></div></pre>
+<h3><span class="mw-headline" id=".EA.B0.81_.EB.B2.84.EC.A0.84_.EC.8B.9C.ED.97.98">각 버전 시험</span></h3>
+<p>시험 브랜치에서 지정 소프트웨어 버전을 사용하지만 일부 버전에 대해서는 포티지가 시험 브랜치를 사용하지 못하도록 하려면 <span style="font-family: monospace; font-size: 95%">package.accept_keywords</span> 위치에 버전을 추가해 넣을 수 있습니다. 이 경우 = 연산자를 사용해야 합니다. &lt;=, &lt;, &gt;, &gt;= 연산자를 사용해서 버전 범위를 넣어줄 수 있습니다.
+</p><p>어떤 경우에는 버전 정보를 추가하면 연산자를 <i>사용해야</i> 합니다. 버전 정보를 제거하면 연산자를 사용할 수 없습니다.
+</p><p>다음 예제를 통해 포티지에 gnumeric-1.2.13을 허용하라고 요청하겠습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.accept_keywords</code></strong><strong>선택한 특정 버전 허용</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>=app-office/gnumeric-1.2.13
+</pre></div></pre>
+<h2><span class="mw-headline" id=".EA.B0.80.EB.A6.B0_.EA.BE.B8.EB.9F.AC.EB.AF.B8">가린 꾸러미</span></h2>
+<h3><span class="mw-headline" id="package.unmask">package.unmask</span></h3>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />젠투 개발자들은 가림 해제한 꾸러미를 지원하지 않습니다. 이 부분을 다루신다면 위험이 따릅니다. package.unmask와 package.mask 와 관련된 지원 요청에 대해 답변해드리지 않겠습니다.</div>
+<p>젠투 개발자가 꾸러미를 가려놓았는데 package.mask 파일(기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles</span>)에 이유를 언급했음에도 불구하고 써보고 싶다면, <span style="font-family: monospace; font-size: 95%">/etc/portage/package.unmask</span> 파일(또는 디렉터리인 경우 디렉터리의 파일)에 사용하고자 하는 꾸러미와 버전(보통 프로파일의 <span style="font-family: monospace; font-size: 95%">package.mask</span> 파일에 있는 정확히 같은 줄)을 기입하십시오.
+</p><p>예를 들어 =net-mail/hotwayd-0.8이 가려진 상태라면 <span style="font-family: monospace; font-size: 95%">package.unmask</span>에 정확히 같은 줄을 추가하여 가려진 꾸러미를 원상복귀 할 수 있습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.unmask</code></strong><strong>각 package/version 가림 해제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>=net-mail/hotwayd-0.8
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br /><span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/package.mask</span>에 꾸러미 버전의 범위가 명시되어 있다면, 여러분은 실제로 원하는 꾸러미의 버전만을 원상복귀해야 합니다. package.unmask에서 버전을 지정하는 방법을 알아보시려면 이전 절을 참고하십시오.</div>
+<h3><span class="mw-headline" id="package.mask">package.mask</span></h3>
+<p>포티지가 각각의 꾸러미 또는 꾸러미의 지정 버전을 계정에 취하도록 하기를 원치 않을 경우 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.mask</span> 위치(파일 또는 해당 파일이 존재하는 디렉터리)에 적당한 줄을 추가하여 꾸러미를 가릴 수 있습니다.
+</p><p>예를 들어 포티지가 gentoo-sources-2.6.8.1 보다 더 최신의 커널 소스를 설치하지 못하게 하려면, <span style="font-family: monospace; font-size: 95%">package.mask</span> 위치에 다음 줄을 추가하십시오.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.mask</code></strong><strong>2.6.8.1 보다 큰 버전의 gentoo-sources 가리기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>&gt;sys-kernel/gentoo-sources-2.6.8.1
+</pre></div></pre>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Variables/ko.html" title="이전 내용" class="btn btn-default">&#8592; 변수 설정</a> <a href="../../ko.html" title="Handbook:AMD64/ko" class="btn btn-default">처음</a> <a href="../Tools/ko.html" title="다음 내용" class="btn btn-default">추가 도구 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112150709
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.284 seconds
+Real time usage: 0.319 seconds
+Preprocessor visited node count: 430/1000000
+Preprocessor generated node count: 1192/1000000
+Post‐expand include size: 23753/2097152 bytes
+Template argument size: 3222/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  246.644      1 - Handbook:Parts/Portage/Branches/ko
+100.00%  246.644      1 - -total
+ 59.31%  146.290      1 - Handbook:Parts/TOC/ko
+ 12.65%   31.195      5 - Template:FileBox
+ 10.13%   24.976      5 - Template:PreBox
+  7.33%   18.079      1 - Handbook:Parts/Navigator/ko
+  2.64%    6.501      1 - Template:Note/ko
+  2.42%    5.957      1 - Template:Important/ko
+  2.15%    5.291     10 - Template:Path
+  1.45%    3.567      1 - Template:Note/core
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:78810-0!*!0!!en!*!* and timestamp 20160112150709 and revision id 193266
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;oldid=193266">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/ko&amp;oldid=193266</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 08:40.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Portage/Branches/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":510});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Branches/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:28 GMT -->
+</html>

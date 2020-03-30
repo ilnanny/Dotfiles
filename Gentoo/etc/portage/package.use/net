@@ -1,7 +1,8 @@
-net-dns/avahi gtk3 python
 net-ftp/pure-ftpd mysql resolveids vchroot
 net-libs/libtorrent-rasterbar python
-net-print/cups zeroconf
+net-libs/webkit-gtk gnome-keyring
+net-misc/openssh -bindist
+net-misc/networkmanager -bindist
 net-p2p/amule upnp
 net-wireless/wpa_supplicant dbus
 net-wireless/bluez -systemd

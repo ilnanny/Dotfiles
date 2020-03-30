@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Networking/Modular/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Networking/Modular/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Networking/Modular/ko","wgTitle":"X86/Networking/Modular/ko","wgCurRevisionId":194522,"wgRevisionId":194522,"wgArticleId":79694,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Networking/Modular/ko","wgRelevantArticleId":79694,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],
+"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Networking/Modular/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Networking/Modular/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Networking_Modular_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Networking/Modular/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Networking/Modular/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;oldid=194522" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FNetworking-2FModular-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FNetworking%2FModular%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FNetworking%2FModular%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Networking/Modular/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:X86/Networking/Modular/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FNetworking%2FModular&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Modular.html" title="Handbook:X86/Networking/Modular">Handbook:X86/Networking/Modular</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Netzwerk/Modular (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Modular.html" title="Handbook:X86/Networking/Modular (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Redes/Modular (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/ネットワーク/モジュラー (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="ru.html" title="Handbook:X86/Networking/Modular (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/网络/模块化网络 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">모듈러 네트워크</strong>
+</td></tr>
+<tr>
+<td> <a href="../Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.EB.84.A4.ED.8A.B8.EC.9B.8C.ED.81.AC_.EB.AA.A8.EB.93.88"><span class="tocnumber">1</span> <span class="toctext">네트워크 모듈</span></a></li>
+<li class="toclevel-1"><a href="#.EC.9D.B8.ED.84.B0.ED.8E.98.EC.9D.B4.EC.8A.A4_.ED.95.B8.EB.93.A4.EB.9F.AC"><span class="tocnumber">2</span> <span class="toctext">인터페이스 핸들러</span></a></li>
+<li class="toclevel-1"><a href="#DHCP"><span class="tocnumber">3</span> <span class="toctext">DHCP</span></a></li>
+<li class="toclevel-1"><a href="#PPPoE.2FPPPoA.EB.A1.9C_ADSL_.EC.97.B0.EA.B2.B0"><span class="tocnumber">4</span> <span class="toctext">PPPoE/PPPoA로 ADSL 연결</span></a></li>
+<li class="toclevel-1"><a href="#APIPA.28.EC.9E.90.EB.8F.99_.EA.B0.9C.EC.9D.B8_IP_.EC.A3.BC.EC.86.8C_.EC.A7.80.EC.A0.95.29"><span class="tocnumber">5</span> <span class="toctext">APIPA(자동 개인 IP 주소 지정)</span></a></li>
+<li class="toclevel-1"><a href="#.EB.B3.B8.EB.94.A9"><span class="tocnumber">6</span> <span class="toctext">본딩</span></a></li>
+<li class="toclevel-1"><a href="#.EB.B8.8C.EB.A6.BF.EC.A7.95.28802.1d_.EC.A7.80.EC.9B.90.29"><span class="tocnumber">7</span> <span class="toctext">브릿징(802.1d 지원)</span></a></li>
+<li class="toclevel-1"><a href="#MAC_.EC.A3.BC.EC.86.8C"><span class="tocnumber">8</span> <span class="toctext">MAC 주소</span></a></li>
+<li class="toclevel-1"><a href="#.ED.84.B0.EB.84.90.EB.A7.81"><span class="tocnumber">9</span> <span class="toctext">터널링</span></a></li>
+<li class="toclevel-1"><a href="#VLAN_.28802.1q_.EC.A7.80.EC.9B.90.29"><span class="tocnumber">10</span> <span class="toctext">VLAN (802.1q 지원)</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".EB.84.A4.ED.8A.B8.EC.9B.8C.ED.81.AC_.EB.AA.A8.EB.93.88">네트워크 모듈</span></h2>
+<p>이제 모듈러 네트워크 스크립트를 작성하겠습니다. 기존 모듈과의 호환성을 유지하면서 새 인터페이스 형식과 설정 모듈을 쉽게 추가할 수 있음을 의미합니다.
+</p><p>모듈이 필요한 꾸러미를 설치했다면 모듈에서 기본적으로 불러옵니다. 설치한 꾸러미에서 지정하지 않은 모듈을 사용자가 지정하면 설치해야 할 꾸러미를 나타내면서 오류를 표시합니다. 모듈 설정은 동일한 서비스를 지닌 둘 이상의 꾸러미를 설치했을 때만 사용하며, 설치한 꾸러미 중 하나를 선호해야합니다.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />특별히 다른 부분을 지정하지 않는 이상 여기서 언급하는 모든 설정은 <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>에 저장합니다.</div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>모듈 지정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Prefer ifconfig over iproute2</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;ifconfig&quot;</span>
+  
+<span class="c"># You can also specify other modules for an interface</span>
+<span class="c"># In this case we prefer pump over dhcpcd</span>
+<span class="nv">modules_eth0</span><span class="o">=</span><span class="s2">&quot;pump&quot;</span>
+  
+<span class="c"># You can also specify which modules not to use - for example you may be</span>
+<span class="c"># using a supplicant or linux-wlan-ng to control wireless configuration but</span>
+<span class="c"># you still want to configure network settings per ESSID associated with.</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;!iwconfig&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id=".EC.9D.B8.ED.84.B0.ED.8E.98.EC.9D.B4.EC.8A.A4_.ED.95.B8.EB.93.A4.EB.9F.AC">인터페이스 핸들러</span></h2>
+<p>현재 인터페이스 처리 프로그램을 두가지로 제공하고 있으며, 하나는 ifconfig, 다른 하나는 iproute2입니다. 어떤 네트워크 설정을 진행하든 둘 중 하나만 필요합니다.
+</p><p>기본적으로 ifconfig를 사용합니다(net-tools 꾸러미는 시스템 프로파일의 일부). iproute2가 좀 더 강력하고 유연한 프로그램이지만 기본으로 들어있지 않습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-apps/iproute2</code></div></div> 
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>iproute2를 설치했지만 아직도 ifconfig를 선호함</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># To prefer ifconfig over iproute2 if both are installed as openrc prefers</span>
+<span class="c"># to use iproute2 then</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;ifconfig&quot;</span>
+</pre></div></pre>
+<p>ifconfig와 iproute2 둘 다 매우 비슷하기에 두 프로그램에서 모두 동작하는 기본 설정을 허용하겠습니다. 아래 두 코드는 사용자가 어떤 모듈을 쓰든지간에 상관 없이 동작합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>설정에 대한 접근 차이 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2/24&quot;</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2 netmask 255.255.255.0&quot;</span>
+  
+<span class="c"># We can also specify broadcast</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2/24 brd 192.168.0.255&quot;</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2 netmask 255.255.255.0 broadcast 192.168.0.255&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id="DHCP">DHCP</span></h2>
+<p>DHCP란 네트워크 주소 정보(IP 주소, DNS 서버, 게이트웨이 등)를 DHCP 서버에서 가져옴을 뜻합니다. 네트워크 상에 동작하는 DHCP 서버가 있다면 사용자는 DHCP를 사용하겠다고 각 클라이언트에서 알리고 네트워크를 자체적으로 설정합니다. 물론 사용자는 DHCP를 사용할 수 있기 전에 무선 네트워크, PPP 등 필요한 모든 수단에서 설정해야 합니다.
+</p><p>DHCP는 dhclient, dhcpcd, pump에서 제공합니다. 각각의 DHCP 모듈에는 장단점이 있습니다. 간단하게 내용 진행하고 넘어가겠습니다.
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th scope="col" width="10%">  DHCP 모듈
+</th>
+<th scope="col" width="15%">  꾸러미
+</th>
+<th scope="col" width="25%">  장점
+</th>
+<th scope="col" width="25%">  단점
+</th></tr>
+<tr>
+<td> dhclient
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/dhcp">net-misc/dhcp</a>
+</td>
+<td> BIND DNS 프로그램을 만든 사람들인 ISC에서 만들었습니다. 상당히 이리저리 설정하기 좋습니다
+</td>
+<td> 전반적으로 설정이 복잡하며, 프로그램이 필요이상 크고 DHCP에서 NTP 서버를 가져올수 없으며, 기본적으로 호스트 이름을 보내지 못합니다
+</td></tr>
+<tr>
+<td> dhcpcd
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/dhcpcd">net-misc/dhcpcd</a>
+</td>
+<td> 오랫동안 젠투 기본 프로그램이며, 외부 도구에 의존하지 않고, 젠투에서 열심히 개발했습니다
+</td>
+<td> 가끔은 느려질 수 있으며 IP 대여 시간이 한없이 지속되면 데몬 동작이 안됩니다
+</td></tr>
+<tr>
+<td> pump
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/pump">net-misc/pump</a>
+</td>
+<td> 가벼우며, 외부 도구에 의존하지 않습니다.
+</td>
+<td> 업스트림에서 더이상 관리하지 않아 신뢰성이 없으며, 특히 모뎀을 통해서는 DHCP에서 NIS 서버를 가져올 수 없습니다
+</td></tr></table>
+<p>하나 이상의 DHCP 클라이언트를 설치했다면 어떤 클라이언트를 사용할지 지정하십시오. 그렇지 않으면 dhcpcd가 있다고 할 경우 dhcpcd를 기본으로 사용합니다.
+</p><p>DHCP 모듈로 지정 돕션을 보내려면 module_eth0="..." 옵션을 사용하십시오(사용할 DHCP 모듈로 모듈을 바꿈 - 예: dhcpcd_eth0).
+</p><p>DHCP를 관계적 본질파악이 안되게끔 해보겠습니다. <var>dhcp_eth0</var> 변수를 사용하여 다음 명령을 지원합니다. 기본값은 다음 어떤 명령도 설정하지 않습니다:
+</p>
+<ul><li> release - 재사용할 IP 주소를 릴리스</li>
+<li> nodns - <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span>에 덮어쓰기 안함</li>
+<li> nontp - <span style="font-family: monospace; font-size: 95%">/etc/ntp.conf</span>에 덮어쓰기 안함</li>
+<li> nonis - <span style="font-family: monospace; font-size: 95%">/etc/yp.conf</span>에 덮어쓰기 안함</li></ul>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>DHCP 설정 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Only needed if you have more than one DHCP module installed</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;dhcpcd&quot;</span>
+  
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;dhcp&quot;</span>
+<span class="nv">dhcpcd_eth0</span><span class="o">=</span><span class="s2">&quot;-t 10&quot;</span> <span class="c"># Timeout after 10 seconds</span>
+<span class="nv">dhcp_eth0</span><span class="o">=</span><span class="s2">&quot;release nodns nontp nonis&quot;</span> <span class="c"># Only get an address</span>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />dhcpcd와 pump에서는 기본적으로 현재 호스트 이름을 DHCP서버로 보내므로 별도로 지정할 필요가 없습니다.</div>
+<h2><span class="mw-headline" id="PPPoE.2FPPPoA.EB.A1.9C_ADSL_.EC.97.B0.EA.B2.B0">PPPoE/PPPoA로 ADSL 연결</span></h2>
+<p>우선 ADSL 프로그램을 설치해야합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask net-dialup/ppp</code></div></div> 
+<p>그 다음 PPP net 스크립트를 만들고 PPP에서 사용할 이더넷 인터페이스용 net 스크립트도 만드십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ln -s /etc/init.d/net.lo /etc/init.d/net.ppp0
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ln -s /etc/init.d/net.lo /etc/init.d/net.eth0</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span> 에서 <var>rc_depend_strict</var>를 <code>YES</code>로 설정했는지 확인하십시오.
+</p><p>이제 <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>을 설정해야합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>기본 PPPoE 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0</span><span class="o">=</span>null <span class="o">(</span>Specify the ethernet interface<span class="o">)</span>
+<span class="nv">config_ppp0</span><span class="o">=</span><span class="s2">&quot;ppp&quot;</span>
+<span class="nv">link_ppp0</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span> <span class="o">(</span>Specify the ethernet interface<span class="o">)</span>
+<span class="nv">plugins_ppp0</span><span class="o">=</span><span class="s2">&quot;pppoe&quot;</span>
+<span class="nv">username_ppp0</span><span class="o">=</span><span class="s1">&#39;user&#39;</span>
+<span class="nv">password_ppp0</span><span class="o">=</span><span class="s1">&#39;password&#39;</span>
+<span class="nv">pppd_ppp0</span><span class="o">=</span><span class="s2">&quot;</span>
+<span class="s2">noauth</span>
+<span class="s2">defaultroute</span>
+<span class="s2">usepeerdns</span>
+<span class="s2">holdoff 3</span>
+<span class="s2">child-timeout 60</span>
+<span class="s2">lcp-echo-interval 15</span>
+<span class="s2">lcp-echo-failure 3</span>
+<span class="s2">noaccomp noccp nobsdcomp nodeflate nopcomp novj novjccomp&quot;</span>
+  
+<span class="nv">rc_need_ppp0</span><span class="o">=</span><span class="s2">&quot;net.eth0&quot;</span>
+</pre></div></pre>
+<p><span style="font-family: monospace; font-size: 95%">/etc/ppp/pap-secrets</span>에 암호를 설정할 수도 있습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/ppp/pap-secrets</code></strong><strong>pap-secrets 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre># The * is important
+&quot;username&quot;  *  &quot;password&quot;
+</pre></div></pre>
+<p>USB 모뎀에 PPPoE를 사용한다면 br2648ctl을 이머지했는지 확인하십시오. 올바르게 설정하는 방법은 <span style="font-family: monospace; font-size: 95%">/usr/portage/net-dialup/speedtouch-usb/files/README</span>를 읽어보십시오.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br /><span style="font-family: monospace; font-size: 95%">/usr/share/doc/netifrc-*/net.example.bz2</span>의 ADSL and PPP절을 주의깊게 읽어보십시오. 필요할지도 모르는 PPP 설정의 각 모든 부분의 자세한 설명이 들어있습니다.</div>
+<h2><span class="mw-headline" id="APIPA.28.EC.9E.90.EB.8F.99_.EA.B0.9C.EC.9D.B8_IP_.EC.A3.BC.EC.86.8C_.EC.A7.80.EC.A0.95.29">APIPA(자동 개인 IP 주소 지정)</span></h2>
+<p>APIPA는 인터페이스의 임의 주소 범위에서 ARP를 수행하여 169.254.0.0-169.254.255.255 범위에서 사용할 수 있는 주소를 찾습니다. 응답이 없으면 인터페이스에 주소를 할당합니다.
+</p><p>DHCP 서버가 없어 인터넷에 바로 연결할 수 없으며 모든 컴퓨터가 APIPA를 사용하는 경우에만 LAN 상에서 쓸만합니다.
+</p><p>APIPA 지원 기능을 활용하려면, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/iputils">net-misc/iputils</a> 또는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-analyzer/arping">net-analyzer/arping</a>을 이머지하십시오.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>APIPA 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Try DHCP first - if that fails then fallback to APIPA</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;dhcp&quot;</span>
+<span class="nv">fallback_eth0</span><span class="o">=</span><span class="s2">&quot;apipa&quot;</span>
+  
+<span class="c"># Just use APIPA</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;apipa&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id=".EB.B3.B8.EB.94.A9">본딩</span></h2>
+<p>본딩/트렁킹 기법으로 연결하려면 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/ifenslave">net-misc/ifenslave</a>를 이머지하십시오.
+</p><p>본딩은 네트워크 대역폭을 늘리거나 하드웨어 문제에 직면했을 때 탄력적 복구기능을 개선하는 용도로 사용합니다. 시스템에 동일한 네트워크에 연결한 두 네트워크 카드가 붙어있다면 관리자는 이들을 본딩하여 프로그램이 하나의 인터페이스로 간주하여 쓸 수 있습니다만, 이 경우 실제로는 두 네트워크 카드를 다 사용합니다.
+</p><p>본딩을 설정하는 방법은 여러가지가 있습니다. 이 중에서 802.3ad LACP 모드 같은 경우는 네트워크 스위치의 지원과 추가 설정이 필요합니다. 개별 옵션에 대한 참고사항은 로컬 사본 <span style="font-family: monospace; font-size: 95%">/usr/src/linux/Documentation/networking/bonding.txt</span>를 참고하십시오.
+</p><p>우선 연결할 인터페이스의 설정을 지우겠습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>인터페이스 설정 지우기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;null&quot;</span>
+<span class="nv">config_eth1</span><span class="o">=</span><span class="s2">&quot;null&quot;</span>
+<span class="nv">config_eth2</span><span class="o">=</span><span class="s2">&quot;null&quot;</span>
+</pre></div></pre>
+<p>다음, 인터페이스간 본딩을 지정하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>본딩 지정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">slaves_bond0</span><span class="o">=</span><span class="s2">&quot;eth0 eth1 eth2&quot;</span>
+<span class="nv">config_bond0</span><span class="o">=</span><span class="s2">&quot;192.168.100.4/24&quot;</span>
+<span class="c"># Pick a correct mode and additional configuration options which suit your needs</span>
+<span class="nv">mode_bond0</span><span class="o">=</span><span class="s2">&quot;balance-alb&quot;</span>
+</pre></div></pre>
+<p>실행 레벨에서 net.eth* 서비스를 제거하고 net.bond0을 만들어 올바른 실행 레벨에 추가하십시오.
+</p>
+<h2><span class="mw-headline" id=".EB.B8.8C.EB.A6.BF.EC.A7.95.28802.1d_.EC.A7.80.EC.9B.90.29">브릿징(802.1d 지원)</span></h2>
+<p>브릿징 기능 지원을 사용하려면 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/bridge-utils">net-misc/bridge-utils</a>를 이머지하십시오.
+</p><p>브릿징은 네트워크를 함께 이을때 사용합니다. ADSL 모뎀으로 인터넷에 연결하는 서버와 다른 컴퓨터가 ADSL 모뎀으로 인터넷에 연결할 수 있도록 하는 무선 액세스 카드를 보유한 시스템이 있다면 두 인터페이스를 브릿지로 한데 묶을 수 있습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>브릿지 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Configure the bridge - &quot;man brctl&quot; for more details</span>
+<span class="nv">brctl_br0</span><span class="o">=</span><span class="s2">&quot;setfd 0</span>
+<span class="s2">sethello 2</span>
+<span class="s2">stp on&quot;</span>
+  
+<span class="c"># To add ports to bridge br0</span>
+<span class="nv">bridge_br0</span><span class="o">=</span><span class="s2">&quot;eth0 eth1&quot;</span>
+  
+<span class="c"># You need to configure the ports to null values so dhcp does not get started</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;null&quot;</span>
+<span class="nv">config_eth1</span><span class="o">=</span><span class="s2">&quot;null&quot;</span>
+  
+<span class="c"># Finally give the bridge an address - you could use DHCP as well</span>
+<span class="nv">config_br0</span><span class="o">=</span><span class="s2">&quot;192.168.0.1/24&quot;</span>
+  
+<span class="c"># Depend on eth0 and eth1 as they may require extra configuration</span>
+<span class="nv">rc_need_br0</span><span class="o">=</span><span class="s2">&quot;net.eth0 net.eth1&quot;</span>
+</pre></div></pre>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />일부 브릿지 설정을 활용하려면, 변수 이름 문서를 참고하십시오.</div>
+<h2><span class="mw-headline" id="MAC_.EC.A3.BC.EC.86.8C">MAC 주소</span></h2>
+<p>네트워크 설정 파일을 통해서도 인터페이스 맥 주소를 바꿀 수 있습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>MAC 주소 변경 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># To set the MAC address of the interface</span>
+<span class="nv">mac_eth0</span><span class="o">=</span><span class="s2">&quot;00:11:22:33:44:55&quot;</span>
+  
+<span class="c"># To randomize the last 3 bytes only</span>
+<span class="nv">mac_eth0</span><span class="o">=</span><span class="s2">&quot;random-ending&quot;</span>
+  
+<span class="c"># To randomize between the same physical type of connection (e.g. fibre,</span>
+<span class="c"># copper, wireless) , all vendors</span>
+<span class="nv">mac_eth0</span><span class="o">=</span><span class="s2">&quot;random-samekind&quot;</span>
+  
+<span class="c"># To randomize between any physical type of connection (e.g. fibre, copper,</span>
+<span class="c"># wireless) , all vendors</span>
+<span class="nv">mac_eth0</span><span class="o">=</span><span class="s2">&quot;random-anykind&quot;</span>
+  
+<span class="c"># Full randomization - WARNING: some MAC addresses generated by this may</span>
+<span class="c"># NOT act as expected</span>
+<span class="nv">mac_eth0</span><span class="o">=</span><span class="s2">&quot;random-full&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id=".ED.84.B0.EB.84.90.EB.A7.81">터널링</span></h2>
+<p>터널링은 인터페이스 핸들러가 처리할 수 있으므로 프로그램을 추가로 설치할 필요가 없습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>터널링 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># For GRE tunnels</span>
+<span class="nv">iptunnel_vpn0</span><span class="o">=</span><span class="s2">&quot;mode gre remote 207.170.82.1 key 0xffffffff ttl 255&quot;</span>
+  
+<span class="c"># For IPIP tunnels</span>
+<span class="nv">iptunnel_vpn0</span><span class="o">=</span><span class="s2">&quot;mode ipip remote 207.170.82.2 ttl 255&quot;</span>
+  
+<span class="c"># To configure the interface</span>
+<span class="nv">config_vpn0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2 peer 192.168.1.1&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id="VLAN_.28802.1q_.EC.A7.80.EC.9B.90.29">VLAN (802.1q 지원)</span></h2>
+<p>VLAN 기능 지원을 사용하려면 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-apps/iproute2">sys-apps/iproute2</a>를 설치했는지, ifconfig대신 iproute2를 설정 모듈로 사용중인지 확인하십시오.
+</p><p>가상랜은 각각의 네트워크 장치가 하나의 네트워크 세그먼트에 연결했을 때(설사 그렇지 않더라도)취할 수 있는 네트워크 장치 그룹입니다. VLAN 구성원은 동일한 물리 네트워크를 공유하더라도 동일한 VLAN의 구성원만을 볼 수 있습니다.
+</p><p>VLAN을 설정하려면 우선 다음과 같이 <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>에 VLAN 번호를 지정하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>VLAN 번호 지정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">vlans_eth0</span><span class="o">=</span><span class="s2">&quot;1 2&quot;</span>
+</pre></div></pre>
+<p>다음 각각 VLAN의 인터페이스를 설정하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>각각의 VLAN에 대한 인터페이스 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_eth0_1</span><span class="o">=</span><span class="s2">&quot;172.16.3.1 netmask 255.255.254.0&quot;</span>
+<span class="nv">routes_eth0_1</span><span class="o">=</span><span class="s2">&quot;default via 172.16.3.254&quot;</span>
+  
+<span class="nv">config_eth0_2</span><span class="o">=</span><span class="s2">&quot;172.16.2.1 netmask 255.255.254.0&quot;</span>
+<span class="nv">routes_eth0_2</span><span class="o">=</span><span class="s2">&quot;default via 172.16.2.254&quot;</span>
+</pre></div></pre>
+<p>VLAN별 설정은 다음과 같이 vconfig로 처리합니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>VLAN 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">vlan1_name</span><span class="o">=</span><span class="s2">&quot;vlan1&quot;</span>
+<span class="nv">vlan1_ingress</span><span class="o">=</span><span class="s2">&quot;2:6 3:5&quot;</span>
+<span class="nv">eth0_vlan1_egress</span><span class="o">=</span><span class="s2">&quot;1:2&quot;</span>
+</pre></div></pre>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />일부 VLAN 설정을 위해, 변수 이름 문서를 참고하십시오.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Advanced/ko.html" title="이전 내용" class="btn btn-default">&#8592; 고급 설정</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../Wireless/ko.html" title="다음 내용" class="btn btn-default">무선 네트워크 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153806
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.416 seconds
+Real time usage: 0.458 seconds
+Preprocessor visited node count: 1473/1000000
+Preprocessor generated node count: 2950/1000000
+Post‐expand include size: 48301/2097152 bytes
+Template argument size: 13576/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  351.081      1 - -total
+100.00%  351.081      1 - Handbook:Parts/Networking/Modular/ko
+ 40.83%  143.357      1 - Handbook:Parts/TOC/ko
+ 18.51%   64.976     15 - Template:FileBox
+ 14.60%   51.244     15 - Template:PreBox
+ 10.72%   37.636      3 - Template:RootCmd
+  9.54%   33.489      2 - Template:Emerge
+  7.68%   26.964      8 - Template:Package
+  7.07%   24.830      3 - Template:GenericCmd
+  5.72%   20.099      1 - Handbook:Parts/Navigator/ko
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:79694-0!*!0!!en!*!* and timestamp 20160112153806 and revision id 194522
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;oldid=194522">http://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/ko&amp;oldid=194522</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 10:12.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Networking/Modular/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":648});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Networking/Modular/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:26 GMT -->
+</html>

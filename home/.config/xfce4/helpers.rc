@@ -1,4 +1,4 @@
-WebBrowser=firefox
 WebBrowserDismissed=true
-TerminalEmulator=xfce4-terminal
+TerminalEmulator=sakura
 
+WebBrowser=opera

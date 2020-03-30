@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/pt-br by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Instalando os arquivos de instalação do Gentoo - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Installation/Stage/pt-br","wgTitle":"AMD64/Installation/Stage/pt-br","wgCurRevisionId":307056,"wgRevisionId":307056,"wgArticleId":119216,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"pt-br","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],"wgMonthNamesShort":["","jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"],"wgRelevantPageName":"Handbook:AMD64/Installation/Stage/pt-br","wgRelevantArticleId":119216,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Installation/Stage/pt-br" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Installation/Stage/pt-br&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Installation_Stage_pt-br skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Installation/Stage/pt-br.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Installation/Stage/pt-br.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;oldid=307056" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FInstallation-2FStage-2Fpt-2Dbr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FStage%2Fpt-br&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FStage%2Fpt-br" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="pt-br.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Installation/Stage/pt-br&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="pt-BR">
+							<span dir="auto">Instalando os arquivos de instalação do Gentoo</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Installation.html" title="Special:MyLanguage/Handbook:AMD64/Installation">Installation</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="pt-BR" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FInstallation%2FStage&amp;action=page&amp;filter=&amp;language=pt-br">translated version</a></span> of the page <a href="../Stage.html" title="Handbook:AMD64/Installation/Stage">Handbook:AMD64/Installation/Stage</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbook:AMD64/Installation/Stage/de (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Stage.html" title="Handbook:AMD64/Installation/Stage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Installation/Stage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="Handbook:AMD64/Installation/Stage/ja (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Installation/Stage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">português do Brasil</span> • ‎<a href="ru.html" title="Handbook:AMD64/Installation/Stage/ru (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:AMD64/Installation/Stage/tr (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Türkçe</a> • ‎<a href="zh-cn.html" title="Handbook:AMD64/Installation/Stage/zh-cn (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../About.html" title="Handbook:AMD64/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../Media.html" title="Handbook:AMD64/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking.html" title="Handbook:AMD64/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks.html" title="Handbook:AMD64/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage.html" title="Handbook:AMD64/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base.html" title="Handbook:AMD64/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel.html" title="Handbook:AMD64/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../System.html" title="Handbook:AMD64/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools.html" title="Handbook:AMD64/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader.html" title="Handbook:AMD64/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing.html" title="Handbook:AMD64/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage.html" title="Handbook:AMD64/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE.html" title="Handbook:AMD64/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features.html" title="Handbook:AMD64/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar.html" title="Handbook:AMD64/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:AMD64/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:AMD64/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:AMD64/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:AMD64/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:AMD64/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:AMD64/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:AMD64/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:AMD64/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:AMD64/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:AMD64/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:AMD64/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:AMD64/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Instalando_um_arquivo_tar_de_stage"><span class="tocnumber">1</span> <span class="toctext">Instalando um arquivo tar de stage</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Ajustando_a_data_e_a_hora"><span class="tocnumber">1.1</span> <span class="toctext">Ajustando a data e a hora</span></a></li>
+<li class="toclevel-2"><a href="#Baixando_o_arquivo_tar_do_stage"><span class="tocnumber">1.2</span> <span class="toctext">Baixando o arquivo tar do stage</span></a></li>
+<li class="toclevel-2"><a href="#Desempacotando_o_arquivo_tar_de_stage"><span class="tocnumber">1.3</span> <span class="toctext">Desempacotando o arquivo tar de stage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configurando_as_op.C3.A7.C3.B5es_de_compila.C3.A7.C3.A3o"><span class="tocnumber">2</span> <span class="toctext">Configurando as opções de compilação</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introdu.C3.A7.C3.A3o"><span class="tocnumber">2.1</span> <span class="toctext">Introdução</span></a></li>
+<li class="toclevel-2"><a href="#CFLAGS_e_CXXFLAGS"><span class="tocnumber">2.2</span> <span class="toctext">CFLAGS e CXXFLAGS</span></a></li>
+<li class="toclevel-2"><a href="#MAKEOPTS"><span class="tocnumber">2.3</span> <span class="toctext">MAKEOPTS</span></a></li>
+<li class="toclevel-2"><a href="#Preparar.2C_acionar.2C_vai.21"><span class="tocnumber">2.4</span> <span class="toctext">Preparar, acionar, vai!</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Instalando_um_arquivo_tar_de_stage">Instalando um arquivo tar de stage</span></h2>
+<h3><span class="mw-headline" id="Ajustando_a_data_e_a_hora">Ajustando a data e a hora</span></h3>
+<p>Antes de instalar o Gentoo, certifique-se que a data e a hora estão corretas. Um relógio mal configurado pode levar a resultados estranhos no futuro!
+</p><p>Para verificar a data e a hora atual, execute <span style="font-family: monospace; font-size: 95%; font-weight: bold;">date</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>date</code></div><pre>
+Fri Mar 29 16:21:18 UTC 2005
+</pre></div>
+<p>Se a data/hora mostrada estiver errada, atualize-a usando a sintaxe <code>MMDDhhmmYYYY</code> (Mês, Dia, hora, minuto e Ano). Neste estágio, é recomendado usar horário UTC. Adiante na instalação, será definida a zona horária.
+</p><p>Por exemplo, para ajustar a data para 29 de março de 2014, 16:21:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>date 032916212014</code></div></div>
+<h3><span class="mw-headline" id="Baixando_o_arquivo_tar_do_stage">Baixando o arquivo tar do stage</span></h3>
+<p>Vá para o ponto de montagem do Gentoo onde o sistema de arquivos raiz está montado (provavelmente <span style="font-family: monospace; font-size: 95%">/mnt/gentoo</span>):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /mnt/gentoo</code></div></div>
+<p>Dependendo da mídia de instalação, estão disponíveis algumas ferramentas para baixar um stage. Uma dessas ferramentas é o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">links</span>, um navegador não gráfico baseado em menus. Para baixar um stage, acesse a lista de espelhos do Gentoo como da seguinte forma:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>links <a rel="nofollow" class="external free" href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></code></div></div>
+<p>Para usar um proxy HTTP com o <code>links</code>, passe a URL com a opção <code>-http-proxy</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>links -http-proxy servidor.proxy.com:8080 <a rel="nofollow" class="external free" href="https://www.gentoo.org/download/mirrors/">https://www.gentoo.org/download/mirrors/</a></code></div></div>
+<p>Próximo ao <span style="font-family: monospace; font-size: 95%; font-weight: bold;">links</span> há também o navegador <span style="font-family: monospace; font-size: 95%; font-weight: bold;">lynx</span>. Assim como o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">links</span> ele é um navegador não gráfico mas não baseado em menus.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>lynx <a rel="nofollow" class="external free" href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></code></div></div>
+<p>Se for necessário definir um proxy, exporte as variáveis <var>http_proxy</var> e/ou <var>ftp_proxy</var>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export http_proxy="<a rel="nofollow" class="external free" href="http://servidor.proxy.com:porta/">http://servidor.proxy.com:porta</a>"
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export ftp_proxy="<a rel="nofollow" class="external free" href="http://servidor.proxy.com:porta/">http://servidor.proxy.com:porta</a>"</code></div></div>
+<p>Na lista de espelhos, selecione um espelho próximo. Normalmente os espelhos HTTP são suficientes, mas outros protocolos estão também disponíveis. Mova para o diretório <span style="font-family: monospace; font-size: 95%">releases/amd64/autobuilds/</span>. Lá todos os arquivos de stage são mostrados (eles podem estar localizados dentro de subdiretórios nomeados segundo as subarquiteturas individuais). Selecione um e pressione <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">D</kbd> para baixar.
+</p><p>Assim como os CDs mínimos de instalação, arquivos adicionais estão disponíveis:
+</p>
+<ul><li> Um arquivo <span style="font-family: monospace; font-size: 95%">.CONTENTS</span> que contém a lista de todos os arquivos contidos no arquivo tar do stage.</li>
+<li> Um arquivo <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> que contém as somas de checagem do arquivo de stage, em diferentes algorítmos</li>
+<li> Um arquivo <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> que, como o arquivo <span style="font-family: monospace; font-size: 95%">.DIGESTS</span>, contém somas de checagem do arquivo de stage em diferentes algorítmos, mas também assinadas criptograficamente para validar que é provido pelo Projeto Gentoo</li></ul>
+<p>Quando finalizar, pressione <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Q</kbd> para sair do navagador.
+</p><p>Depois de baixar o arquivo de stage, é possível verificar sua integridade. Use o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">openssl</span> e compare a saída com as somas de checagem providas pelo arquivo <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> ou <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>.
+</p><p>Por exemplo, para validar a soma de checagem SHA512:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>openssl dgst -r -sha512 stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p>Outra forma é usar o comando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">sha512sum</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>sha512sum stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p>Para validar a soma de checagem Whirlpool:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>openssl dgst -r -whirlpool stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p>Compare a saída desses comandos com o valor registrado nos arquivos <span style="font-family: monospace; font-size: 95%">.DIGESTS(.asc)</span>. Os valores devem bater, senão o arquivo baixado pode estar corrompido (ou o arquivo .DIGESTS está).
+</p><p>Assim como com o arquivo ISO, é possível também verificar a assinatura criptográfica do arquivo <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> usando o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">gpg</span> para verificar que as somas de checagem não foram adulteradas.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --verify stage3-amd64-&lt;release&gt;.tar.bz2.DIGESTS.asc</code></div></div>
+<h3><span class="mw-headline" id="Desempacotando_o_arquivo_tar_de_stage">Desempacotando o arquivo tar de stage</span></h3>
+<p>Agora desempacote o stage baixado no sistema. Usamos o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">tar</span> para isso:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>tar xvjpf stage3-*.tar.bz2 --xattrs</code></div></div>
+<p>Certifique-se que as mesmas opções (<code>xvjpf</code> e <code>--xattrs</code>) são usadas. O x significa "extrair", o v para "verboso", para mostrar o que acontece durante o processo de extração (opcional), o j para descompactar com o bzip2, o p para "preservar" permissões e o f para indicar que queremos extrair um arquivo ("file"), não a entrada padrão. Finalmente, o <code>--xattrs</code> é para incluir os atributos estendidos armazenados no arquivo também.
+</p><p>Agora que o stage está instalado, continue com <a href="#Configurando_as_op.C3.A7.C3.B5es_de_compila.C3.A7.C3.A3o">Configurando as opções de compilação</a>.
+</p>
+<h2><span class="mw-headline" id="Configurando_as_op.C3.A7.C3.B5es_de_compila.C3.A7.C3.A3o">Configurando as opções de compilação</span></h2>
+<h3><span class="mw-headline" id="Introdu.C3.A7.C3.A3o">Introdução</span></h3>
+<p>Para otimizar o Gentoo, é possível ajustar algumas variáveis que impactam o comportamento do Portage. Todas essas variáveis podem ser ajustadas como variáveis de ambiente (usando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">export</span>) mas isso não é permanente. Para manter os ajustes, o Portage lê o arquivo <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>, que é um arquivo de configuração do Portage.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Uma listagem com comentários de todas as possíveis variáveis pode ser encontrada em <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/usr/share/portage/config/make.conf.example</span>. Para uma instalação com sucesso do Gentoo, apenas as variáveis mencionadas abaixo precisam ser ajustadas.</div>
+<p>Use um editor (neste guia usamos o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">nano</span>) para alterar as variáveis de otimização que iremos discutir a partir daqui.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p>Olhando o arquivo <span style="font-family: monospace; font-size: 95%">make.conf.example</span> fica óbvio como o arquivo deve ser estruturado: linhas de comentário iniciam com "#", outras linhas definem variáveis usando sintaxe VARIAVEL="conteúdo". Diversas dessas variáveis são discutidas a seguir.
+</p>
+<h3><span class="mw-headline" id="CFLAGS_e_CXXFLAGS">CFLAGS e CXXFLAGS</span></h3>
+<p>As variáveis <var>CFLAGS</var> e <var>CXXFLAGS</var> definem as flags de otimização para o compilador C e C++ GCC, respectivamente. Apesar de serem definidas globalmente aqui, para máxima performance seria necessário otimizar essas flags para cada programa separadamente. A razão disso é que cada programa é diferente. Entretanto, isso não é viável, por isso a definição dessas flags no arquivo <span style="font-family: monospace; font-size: 95%">make.conf</span>.
+</p><p>No arquivo <span style="font-family: monospace; font-size: 95%">make.conf</span> deve-se definir as flags de otimização que fariam o sistema mais responsivo de modo geral. Não coloque ajustes experimentais nessa variável; otimização demais pode fazer com que os programas comportem-se mal (abortem, ou ainda pior, funcionem mal).
+</p><p>Não iremos explicar todas as possíveis opções de otimização. Para compreender todas elas, leia o <a rel="nofollow" class="external text" href="http://gcc.gnu.org/onlinedocs/">Manual Online do GCC</a> ou as páginas info do gcc (<span style="font-family: monospace; font-size: 95%; font-weight: bold;">info gcc</span> -- funciona apenas em um sistema Linux já instalado). O arquivo <span style="font-family: monospace; font-size: 95%">make.conf.example</span> em si também contém muitos exemplos e informação; não se esqueça de lê-lo também.
+</p><p>Um primeiro ajuste é a flag <code>-march=</code> ou <code>-mtune=</code>, que especifica o nome da arquitetura alvo. As possíveis opções estão descritas no arquivo <span style="font-family: monospace; font-size: 95%">make.conf.example</span> (como comentários). Um valor comumente usado é "native", que diz ao compilador para selecionar a arquitetura do sistema atual (aquele no qual o Gentoo está sendo instalado).
+</p><p>Em segundo vem a flag <code>-O</code> (um O maiúsculo, não um zero), que especifica a flag da classe de otimização. Valores possíveis são "s" (para otimização por tamanho), 0 (zero - para nenhuma otimização), 1, 2 ou até 3 para flags de otimização para velocidade (cada classe tem as mesmas flags da anterior, mais algumas extras). <code>-O2</code> é o padrão recomendado. Sabe-se que <code>-O3</code> causa problemas se usada pelo sistema como um todo, então recomendamos ficar com <code>-O2</code>.
+</p><p>Uma flag de otimização popular é a <code>-pipe</code> (usa pipes em vez de arquivos temporários para comunicação entre os vários estágios da compilação). Ela não tem impacto no código gerado, mas usa mais memória. Em sistemas com pouca memória, o gcc pode ser morto. Nesse caso, não use essa flag.
+</p><p>Usar o <code>-fomit-frame-pointer</code> (que não mantém o ponteiro de frame em um registrador para funções que não precisam de um) pode ter sérias repercussões para depurar aplicações.
+</p><p>Se as variáveis <var>CFLAGS</var> e <var>CXXFLAGS</var> são definidas, combine as várias flags de otimização em uma string. Os valores default contidos no arquivo stage3 que é desempacotado devem ser adequados. Abaixo é apenas um exemplo:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Exemplo de CFLAGS e CXXFLAGS variables</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=native -O2 -pipe&quot;</span>
+<span class="c"># Use os mesmos valores para ambas variáveis</span>
+<span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CFLAGS</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div></pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />O <a href="../../../GCC_optimization.html" title="GCC optimization">Guia de otimização do GCC</a> contém mais informação sobre como as várias opções de compilação podem afetar um sistema.</div>
+<h3><span class="mw-headline" id="MAKEOPTS">MAKEOPTS</span></h3>
+<p>A variável <var>MAKEOPTS</var> define quantas compilações paralelas podem ocorrer quando um pacote estiver sendo instalado. Uma boa escolha é o número de CPUs (ou núcleos de CPU) em um sistema mais um, porém essa regra nem sempre é perfeita.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Exemplo de declaração de MAKEOPTS em make.conf</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">MAKEOPTS</span><span class="o">=</span><span class="s2">&quot;-j2&quot;</span>
+</pre></div></pre></div>
+<h3><span class="mw-headline" id="Preparar.2C_acionar.2C_vai.21">Preparar, acionar, vai!</span></h3>
+<p>Atualize o arquivo <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/etc/portage/make.conf</span> de acordo com suas preferências pessoais e grave (usuários do nano podem usar <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Ctrl</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">X</kbd>). 
+</p><p>Depois continue em <a href="../Base/pt-br.html" title="Handbook:AMD64/Installation/Base/pt-br">Instalando o sistema básico do Gentoo</a>.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Disks/pt-br.html" title="Previous part" class="btn btn-default">&#8592; Preparando os discos</a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../Base/pt-br.html" title="Next part" class="btn btn-default">Instalando o sistema base &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153825
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.484 seconds
+Real time usage: 0.526 seconds
+Preprocessor visited node count: 1747/1000000
+Preprocessor generated node count: 2736/1000000
+Post‐expand include size: 47513/2097152 bytes
+Template argument size: 5414/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  416.187      1 - -total
+ 96.19%  400.312      1 - Handbook:Parts/Installation/Stage/pt-br
+ 40.83%  169.925      1 - Handbook:Parts/TOC
+ 30.43%  126.657     13 - Template:RootCmd
+ 20.10%   83.640     13 - Template:GenericCmd
+  4.86%   20.232      1 - Handbook:Parts/Navigator
+  4.39%   18.259     14 - Template:GenericCmd/Line
+  3.75%   15.589     18 - Template:Path
+  3.68%   15.317      1 - Handbook:Templates/SetTitle
+  3.55%   14.786      2 - Template:CodeBox
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:119216-0!*!0!!en!*!* and timestamp 20160112153824 and revision id 307056
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;oldid=307056">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/pt-br&amp;oldid=307056</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 9 May 2015, at 00:27.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Installation/Stage/pt-br"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":709});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/pt-br by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:38 GMT -->
+</html>

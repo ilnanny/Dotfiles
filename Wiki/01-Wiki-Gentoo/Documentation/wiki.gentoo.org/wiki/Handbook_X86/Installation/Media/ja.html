@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Media/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:36:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>ハンドブック:X86/インストール/メディア - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Media/ja","wgTitle":"X86/Installation/Media/ja","wgCurRevisionId":245496,"wgRevisionId":245496,"wgArticleId":91498,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ja","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ja","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:X86/Installation/Media/ja","wgRelevantArticleId":91498,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Media/ja" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Media/ja&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Media_ja skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Media/ja.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Media/ja.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;oldid=245496" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FMedia-2Fja.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FMedia%2Fja&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FMedia%2Fja" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ja.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Media/ja&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ja">
+							<span dir="auto">ハンドブック:X86/インストール/メディア</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FMedia&amp;action=page&amp;filter=&amp;language=ja">translated version</a></span> of the page <a href="../Media.html" title="Handbook:X86/Installation/Media">Handbook:X86/Installation/Media</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/Medium (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Media.html" title="Handbook:X86/Installation/Media (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Medio (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">日本語</span> • ‎<a href="ko.html" title="Handbook:X86/Installation/Media/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Midia (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Media (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:X86/Installation/Media/tr (50% translated)" class="mw-pt-progress mw-pt-progress--med">Türkçe</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/选择安装媒介 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> インストール
+</th></tr>
+<tr>
+<td> <a href="../About/ja.html" title="Handbook:X86/Installation/About/ja">インストールについて</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">メディアの選択</strong>
+</td></tr>
+<tr>
+<td> <a href="../Networking/ja.html" title="Handbook:X86/Installation/Networking/ja">ネットワーク設定</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/ja.html" title="Handbook:X86/Installation/Disks/ja">ディスクの準備</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/ja.html" title="Handbook:X86/Installation/Stage/ja">stage3のインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../Base/ja.html" title="Handbook:X86/Installation/Base/ja">基本システムのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel/ja.html" title="Handbook:X86/Installation/Kernel/ja">カーネルの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../System/ja.html" title="Handbook:X86/Installation/System/ja">システムの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/ja.html" title="Handbook:X86/Installation/Tools/ja">ツールのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader/ja.html" title="Handbook:X86/Installation/Bootloader/ja">ブートローダの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/ja.html" title="Handbook:X86/Installation/Finalizing/ja">締めくくり</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Gentooの操作
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ja.html" title="Handbook:X86/Working/Portage/ja">Portageについて</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ja.html" title="Handbook:X86/Working/USE/ja">USEフラグ</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ja.html" title="Handbook:X86/Working/Features/ja">Portageの機能</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ja.html" title="Handbook:X86/Working/Initscripts/ja">Initスクリプトシステム</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ja.html" title="Handbook:X86/Working/EnvVar/ja">環境変数</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Portageの操作
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ja.html" title="Handbook:X86/Portage/Files/ja">ファイルとディレクトリ</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ja.html" title="Handbook:X86/Portage/Variables/ja">変数</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ja.html" title="Handbook:X86/Portage/Branches/ja">ソフトウェアブランチの併用</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ja.html" title="Handbook:X86/Portage/Tools/ja">追加ツール</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ja.html" title="Handbook:X86/Portage/CustomTree/ja">カスタムPortageツリー</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ja.html" title="Handbook:X86/Portage/Advanced/ja">高度な機能</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> ネットワーク設定
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ja.html" title="Handbook:X86/Networking/Introduction/ja">はじめに</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ja.html" title="Handbook:X86/Networking/Advanced/ja">高度な設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ja.html" title="Handbook:X86/Networking/Modular/ja">モジュール式ネットワーク</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ja.html" title="Handbook:X86/Networking/Wireless/ja">無線</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ja.html" title="Handbook:X86/Networking/Extending/ja">機能の追加</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ja.html" title="Handbook:X86/Networking/Dynamic/ja">動的な管理</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.E3.83.8F.E3.83.BC.E3.83.89.E3.82.A6.E3.82.A7.E3.82.A2.E8.A6.81.E4.BB.B6"><span class="tocnumber">1</span> <span class="toctext">ハードウェア要件</span></a></li>
+<li class="toclevel-1"><a href="#Gentoo_Linux.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.ABCD"><span class="tocnumber">2</span> <span class="toctext">Gentoo LinuxインストールCD</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Minimal.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.ABCD"><span class="tocnumber">2.1</span> <span class="toctext">MinimalインストールCD</span></a></li>
+<li class="toclevel-2"><a href="#.E5.BF.85.E8.A6.81.E3.81.AA.E3.81.A8.E3.81.8D.E3.81.AB.E4.BD.BF.E3.81.86Gentoo_LiveDVD"><span class="tocnumber">2.2</span> <span class="toctext">必要なときに使うGentoo LiveDVD</span></a></li>
+<li class="toclevel-2"><a href="#.E6.AC.A1.E3.81.AB.E3.81.99.E3.82.8B.E3.81.93.E3.81.A8.E3.81.AF.3F"><span class="tocnumber">2.3</span> <span class="toctext">次にすることは?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#CD.E3.81.AE.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89.E3.81.A8.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF"><span class="tocnumber">3</span> <span class="toctext">CDのダウンロードと書き込み</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E3.83.A1.E3.83.87.E3.82.A3.E3.82.A2.E3.81.AE.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89"><span class="tocnumber">3.1</span> <span class="toctext">メディアのダウンロード</span></a></li>
+<li class="toclevel-2"><a href="#.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89.E3.81.97.E3.81.9F.E3.83.95.E3.82.A1.E3.82.A4.E3.83.AB.E3.82.92.E6.A4.9C.E8.A8.BC.E3.81.99.E3.82.8B"><span class="tocnumber">3.2</span> <span class="toctext">ダウンロードしたファイルを検証する</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Microsoft_Windows.E4.B8.8A.E3.81.A7.E3.81.AE.E6.A4.9C.E8.A8.BC"><span class="tocnumber">3.2.1</span> <span class="toctext">Microsoft Windows上での検証</span></a></li>
+<li class="toclevel-3"><a href="#Linux.E4.B8.8A.E3.81.A7.E3.81.AE.E6.A4.9C.E8.A8.BC"><span class="tocnumber">3.2.2</span> <span class="toctext">Linux上での検証</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF"><span class="tocnumber">3.3</span> <span class="toctext">書き込み</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Microsoft_Windows.E3.81.A7.E3.81.AE.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF"><span class="tocnumber">3.3.1</span> <span class="toctext">Microsoft Windowsでの書き込み</span></a></li>
+<li class="toclevel-3"><a href="#Linux.E3.81.A7.E3.81.AE.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF"><span class="tocnumber">3.3.2</span> <span class="toctext">Linuxでの書き込み</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#CD.E3.82.92.E8.B5.B7.E5.8B.95.E3.81.99.E3.82.8B"><span class="tocnumber">4</span> <span class="toctext">CDを起動する</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Booting_the_installation_CD"><span class="tocnumber">4.1</span> <span class="toctext">Booting the installation CD</span></a></li>
+<li class="toclevel-2"><a href="#.E4.BE.8B.E5.A4.96.E7.9A.84.E3.81.AA.E3.83.8F.E3.83.BC.E3.83.89.E3.82.A6.E3.82.A7.E3.82.A2.E6.A7.8B.E6.88.90"><span class="tocnumber">4.2</span> <span class="toctext">例外的なハードウェア構成</span></a></li>
+<li class="toclevel-2"><a href="#.E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD:_.E3.83.A6.E3.83.BC.E3.82.B6.E3.82.A2.E3.82.AB.E3.82.A6.E3.83.B3.E3.83.88"><span class="tocnumber">4.3</span> <span class="toctext">追加可能: ユーザアカウント</span></a></li>
+<li class="toclevel-2"><a href="#.E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD.EF.BC.9A.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB.E4.B8.AD.E3.81.AE.E3.83.89.E3.82.AD.E3.83.A5.E3.83.A1.E3.83.B3.E3.83.88.E9.96.B2.E8.A6.A7"><span class="tocnumber">4.4</span> <span class="toctext">追加可能：インストール中のドキュメント閲覧</span></a></li>
+<li class="toclevel-2"><a href="#.E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD.EF.BC.9ASSH.E3.83.87.E3.83.BC.E3.83.A2.E3.83.B3.E3.81.AE.E9.96.8B.E5.A7.8B"><span class="tocnumber">4.5</span> <span class="toctext">追加可能：SSHデーモンの開始</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".E3.83.8F.E3.83.BC.E3.83.89.E3.82.A6.E3.82.A7.E3.82.A2.E8.A6.81.E4.BB.B6">ハードウェア要件</span></h2>
+<p>始める前に、x86の機械に首尾よくGentooをインストールするために必要なハードウェアの条件を示します。
+</p><p><br />
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<td>
+</td>
+<th> Minimal CD
+</th>
+<th> LiveDVD
+</th></tr>
+<tr>
+<th> CPU
+</th>
+<td> i486 or later
+</td>
+<td> <b>i686</b> or later
+</td></tr>
+<tr>
+<th> Memory
+</th>
+<td> 256 MB
+</td>
+<td> 512 MB
+</td></tr>
+<tr>
+<th> Diskspace
+</th>
+<td colspan="2">2.5 GB (excluding swap space)
+</td></tr>
+<tr>
+<th> Swapspace
+</th>
+<td colspan="2">At least 256 MB
+</td></tr></table>
+<p><a rel="nofollow" class="external text" href="https://www.gentoo.org/proj/en/base/amd64/">Gentoo AMD64 project site</a> （英語） は、Gentoo の AMD64 対応についての詳細を知るのに良い場所です。
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Gentoo_Linux.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.ABCD">Gentoo LinuxインストールCD</span></h2>
+<h3><span class="mw-headline" id="Minimal.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.ABCD">MinimalインストールCD</span></h3>
+<p>Gentoo MinimalインストールCDは、独立したGentoo環境を含むブート可能CDです。このCDを使うとLinuxをCDから起動することができます。起動時、接続されたハードウェアが検出されて適切なドライバが読み込まれます。 これらのCDは、Gentooの開発者によってメンテナンスされるもので、インターネット接続さえできれば誰でもGentooをインストールできるようにします。
+</p><p>MinimalインストールCDは、<span style="font-family: monospace; font-size: 95%">install-x86-minimal-&lt;release&gt;.iso</span>と呼ばれます。
+</p>
+<h3><span class="mw-headline" id=".E5.BF.85.E8.A6.81.E3.81.AA.E3.81.A8.E3.81.8D.E3.81.AB.E4.BD.BF.E3.81.86Gentoo_LiveDVD">必要なときに使うGentoo LiveDVD</span></h3>
+<p>必要な場合に使う、Gentooをインストール用の特別なDVDがGentoo Tenプロジェクトによって作成されています。この章以降で説明する方法は、MinimalインストールCDをターゲットにしているので、少々の差異があるかもしれません。しかしLiveDVD (または他の起動可能なLinux環境) は、ターミナル上で単純に<span style="font-family: monospace; font-size: 95%; font-weight: bold;">sudo su -</span>または<span style="font-family: monospace; font-size: 95%; font-weight: bold;">sudo -i</span>を実行するだけで、rootプロンプトの取得を行えます。
+</p>
+<h3><span class="mw-headline" id=".E6.AC.A1.E3.81.AB.E3.81.99.E3.82.8B.E3.81.93.E3.81.A8.E3.81.AF.3F">次にすることは?</span></h3>
+<p>stage3 tarballは最小限のGentoo環境を含んだアーカイブで、このマニュアルに従ってインストールを進めるのに適しています。以前は、Gentooハンドブックでは3つのstage tarballから1つを選ぶインストール方法を説明していました。現在でもstage1とstage2 tarballを提供していますが、公式なインストール手順ではstage3 tarballを使用します。もしstage1またはstage2 tarballからインストールしたいのであれば、Gentoo FAQ内の<a href="../../../FAQ/ja.html#Gentoo.E3.82.92stage1.E3.82.84stage2.E3.81.AE.E3.82.A2.E3.83.BC.E3.82.AB.E3.82.A4.E3.83.96.E3.81.8B.E3.82.89.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB.E3.81.99.E3.82.8B.E3.81.AB.E3.81.AF.EF.BC.9F" title="FAQ/ja">Gentooをstage1やstage2のアーカイブからインストールするには？</a>を読んでください。
+</p><p>stage3 tarballは、<a rel="nofollow" class="external text" href="https://www.gentoo.org/downloads/mirrors/">公式Gentooミラー</a>のいずれか
+の<span style="font-family: monospace; font-size: 95%">releases/x86/autobuilds/</span>からダウンロードできます。 インストールCDの中には含まれていません。
+</p>
+<h2><span class="mw-headline" id="CD.E3.81.AE.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89.E3.81.A8.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF">CDのダウンロードと書き込み</span></h2>
+<h3><span class="mw-headline" id=".E3.83.A1.E3.83.87.E3.82.A3.E3.82.A2.E3.81.AE.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89">メディアのダウンロード</span></h3>
+<p>Gentoo Linuxが使う既定のインストールメディアは、「MinimalインストールCD」です。このCDは起動可能で、Gentoo Linuxをインストールするために最適なツールを含んだとても小さなGentoo Linux環境を格納しています。このCDのイメージは、たくさんの <a rel="nofollow" class="external text" href="https://www.gentoo.org/downloads/mirrors/">ミラーサイト</a> のいずれかからダウンロード可能です。
+</p><p>上記のミラーでは、以下の場所でMinimalインストールCDを見つけられます:
+</p>
+<ol><li> <span style="font-family: monospace; font-size: 95%">releases/</span>ディレクトリに行く</li>
+<li> 適切なアーキテクチャを選択します。例えば<span style="font-family: monospace; font-size: 95%">x86/</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">autobuilds/</span>ディレクトリを選択</li>
+<li> <span style="font-family: monospace; font-size: 95%">current-iso/</span>ディレクトリを選択</li></ol>
+<p>この場所の中では、インストールCDファイルは<span style="font-family: monospace; font-size: 95%">.iso</span>という接尾辞 (拡張子) を持ちます。例えば、以下の一覧を見てみてください。
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>releases/x86/autobuilds/current-iso/におけるダウンロード可能なファイルの一覧の例</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[DIR] hardened/                                          05-Dec-2014 01:42    -   
+[   ] install-x86-minimal-20141204.iso                 04-Dec-2014 21:04  208M  
+[   ] install-x86-minimal-20141204.iso.CONTENTS        04-Dec-2014 21:04  3.0K  
+[   ] install-x86-minimal-20141204.iso.DIGESTS         04-Dec-2014 21:04  740   
+[TXT] install-x86-minimal-20141204.iso.DIGESTS.asc     05-Dec-2014 01:42  1.6K  
+[   ] stage3-x86-20141204.tar.bz2                      04-Dec-2014 21:04  198M  
+[   ] stage3-x86-20141204.tar.bz2.CONTENTS             04-Dec-2014 21:04  4.6M  
+[   ] stage3-x86-20141204.tar.bz2.DIGESTS              04-Dec-2014 21:04  720   
+[TXT] stage3-x86-20141204.tar.bz2.DIGESTS.asc          05-Dec-2014 01:42  1.5K
+</pre></div></pre></div>
+<p>上記の例では、<span style="font-family: monospace; font-size: 95%">install-x86-minimal-20141204.iso</span>というファイルがMinimalインストールCDそのものです。
+しかし見て分かりますが、他の関係ファイルも存在しています:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">.CONTENTS</span>ファイルは、インストールCDで利用可能な全てのファイルの一覧を含むテキストファイルです。このファイルは、インストールCDをダウンロードする前に、特定のファームウェアまたはドライバが含まれているかどうか調べるために使えます。</li>
+<li> <span style="font-family: monospace; font-size: 95%">.DIGESTS</span>ファイルは、様々なハッシュ形式とアルゴリズムで計算したISOファイルのハッシュ値を含んでいます。このファイルは、ダウンロードしたISOファイルが破損しているか否かを調べるために使われます。</li>
+<li> <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルは、(<span style="font-family: monospace; font-size: 95%">.DIGESTS</span>のような) ISOファイルのハッシュ値だけではなく、ファイルのデジタル署名を含みます。これは両方ともダウンロードしたファイルが破損しているか否かを調べるために使われますが、同様にダウンロードしたものがGentooリリースエンジニアリングチームによって実際に提供されたものであり、改竄されていないかを調べるためにも用います。</li></ul>
+<p>今のところ、この場所で利用可能な他のファイルは無視してください。インストールがもっと進んだ後に再登場しますので。<span style="font-family: monospace; font-size: 95%">.ISO</span>ファイルをダウンロードし、もしダウンロードの検証が必要であれば、ISOファイル用の<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルも同じようにダウンロードします。
+<span style="font-family: monospace; font-size: 95%">.CONTENTS</span>ファイルはダウンロードする必要はありません。これからのインストール手順ではもう参照しないからです。<span style="font-family: monospace; font-size: 95%">.DIGESTS</span>ファイルと<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>は、後者が署名されていることを除いて、同じ情報が含まれています。
+</p>
+<h3><span class="mw-headline" id=".E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89.E3.81.97.E3.81.9F.E3.83.95.E3.82.A1.E3.82.A4.E3.83.AB.E3.82.92.E6.A4.9C.E8.A8.BC.E3.81.99.E3.82.8B">ダウンロードしたファイルを検証する</span></h3>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 注意</strong><br />これは任意自由選択なステップで、Gentoo Linuxをインストールするために必須なものではありません。しかしながら、ダウンロードしたファイルが破損していないことを確かめ、Gentooインフラストラクチャ チームから実際に提供されていることを保証するため、推奨されます。</div>
+<p><span style="font-family: monospace; font-size: 95%">.DIGESTS</span>と<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルを通じ、ISOファイルの妥当性は、適切なツール群を用いて確認できます。この検証は通常、2つのステップで行われます。
+</p>
+<ol><li> まず、デジタル署名を検証します。これは、インストール·ファイルがGentooリリースエンジニアリングチームによって提供されていることを確認するためです。</li>
+<li> デジタル署名が正しければ、ダウンロードされたファイル自体が破損していないかを確かめるため、チェックサムを検証します。</li></ol>
+<h4><span class="mw-headline" id="Microsoft_Windows.E4.B8.8A.E3.81.A7.E3.81.AE.E6.A4.9C.E8.A8.BC">Microsoft Windows上での検証</span></h4>
+<p>Microsoft Windowsシステムでは、チェックサムとデジタル署名を検証するための適切なツール群が普通にある見込みはまずありません。
+</p><p>まずデジタル署名を検証するには、例えば<a rel="nofollow" class="external text" href="http://www.gpg4win.org/">GPG4Win</a>のようなツールを利用できます。インストール後、Gentooリリースエンジニアリングチームの公開鍵をインポートする必要があります。鍵の一覧は<a rel="nofollow" class="external text" href="https://www.gentoo.org/downloads/signatures/">署名のページ</a>で提供されています。インポート後、ユーザは<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルの署名を検証できるようになります。
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 重要</strong><br />これは<span style="font-family: monospace; font-size: 95%">.DIGESTS</span>ファイルが正しいことを検証しません。<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>が正しいことだけを検証します。このことはまた、チェックサムが<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルに含まれる値を用いて検証されるべきであることを意味します。そのため、上記の手順では<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルのみダウンロードするようになっています。</div>
+<p>チェックサム自体は、<a rel="nofollow" class="external text" href="http://www.sinf.gr/en/hashcalc.html">Hashcalcアプリケーション</a>を使って検証できますが、多数の代替も同様に存在します。ほとんどの場合、これらのツールはユーザに対して計算されたチェックサムを表示しますので、ユーザはこのチェックサムを<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルの中にある値で検証する必要があります。
+</p>
+<h4><span class="mw-headline" id="Linux.E4.B8.8A.E3.81.A7.E3.81.AE.E6.A4.9C.E8.A8.BC">Linux上での検証</span></h4>
+<p>Linuxシステムでは、デジタル署名を検証する最も一般的な方法は<a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gnupg">app-crypt/gnupg</a>ソフトウェアを使うことです。このパッケージがインストールされていると、<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルのデジタル署名を検証するために以下のコマンドが使えます。
+</p><p>まず、適切な鍵を利用できるようにするため、<a rel="nofollow" class="external text" href="https://www.gentoo.org/downloads/signatures/">署名のページ</a>よりダウンロードします:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>gpg --recv-keys 0xBB572E0E2D182910</code></div><pre>
+gpg: requesting key 0xBB572E0E2D182910 from hkp server pool.sks-keyservers.net
+gpg: key 0xBB572E0E2D182910: &quot;Gentoo Linux Release Engineering (Automated Weekly Release Key) &lt;releng@gentoo.org&gt;&quot; 1 new signature
+gpg: 3 marginal(s) needed, 1 complete(s) needed, classic trust model
+gpg: depth: 0  valid:   3  signed:  20  trust: 0-, 0q, 0n, 0m, 0f, 3u
+gpg: depth: 1  valid:  20  signed:  12  trust: 9-, 0q, 0n, 9m, 2f, 0u
+gpg: next trustdb check due at 2018-09-15
+gpg: Total number processed: 1
+gpg:         new signatures: 1
+</pre></div>
+<p>次に<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルのデジタル署名を検証します:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>gpg --verify install-x86-minimal-20141204.iso.DIGESTS.asc</code></div><pre>
+gpg: Signature made Fri 05 Dec 2014 02:42:44 AM CET
+gpg:                using RSA key 0xBB572E0E2D182910
+gpg: Good signature from &quot;Gentoo Linux Release Engineering (Automated Weekly Release Key) &lt;releng@gentoo.org&gt;&quot; [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 13EB BDBE DE7A 1277 5DFD  B1BA BB57 2E0E 2D18 2910
+</pre></div>
+<p>すべてが確実であることを完全に確かめるために、表示された指紋が<a rel="nofollow" class="external text" href="https://www.gentoo.org/downloads/signatures/">Gentooの署名のページ</a>上にある指紋かどうかを調べます。
+</p><p>デジタル署名が検証されれば、次にチェックサムを確認します。これは、ダウンロードしたISOファイルが破損していないことを確認するためです。
+<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>ファイルには、複数のハッシュアルゴリズムが含まれています。そのため、適切なものを検証するための1つの方法としては、<span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span>に登録された先頭のチェックサムを見てください。
+例えば、SHA512チェックサムを取得します:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>grep -A 1 -i sha512 install-x86-minimal-20141204.iso.DIGESTS.asc</code></div><pre>
+# SHA512 HASH
+364d32c4f8420605f8a9fa3a0fc55864d5b0d1af11aa62b7a4d4699a427e5144b2d918225dfb7c5dec8d3f0fe2cddb7cc306da6f0cef4f01abec33eec74f3024  install-x86-minimal-20141204.iso
+--
+# SHA512 HASH
+0719a8954dc7432750de2e3076c8b843a2c79f5e60defe43fcca8c32ab26681dfb9898b102e211174a895ff4c8c41ddd9e9a00ad6434d36c68d74bd02f19b57f  install-x86-minimal-20141204.iso.CONTENTS
+</pre></div>
+<p>上記の出力では、2つのSHA512チェックサムが表示されます。1つは<span style="font-family: monospace; font-size: 95%">install-x86-minimal-20141204.iso</span>ファイルのもので、1つはそれに付随する<span style="font-family: monospace; font-size: 95%">.CONTENTS</span>ファイルです。最初のチェックサムだけが重要で、その
+比較対象となるSHA512チェックサムは、以下のように生成することができます:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>sha512sum install-x86-minimal-20141204.iso</code></div><pre>
+364d32c4f8420605f8a9fa3a0fc55864d5b0d1af11aa62b7a4d4699a427e5144b2d918225dfb7c5dec8d3f0fe2cddb7cc306da6f0cef4f01abec33eec74f3024  install-x86-minimal-20141204.iso
+</pre></div>
+<p>双方のチェックサムが同一であれば、ファイルは破損していません。インストールを続行できます。
+</p>
+<h3><span class="mw-headline" id=".E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF">書き込み</span></h3>
+<p>もちろん、ISOファイルをダウンロードしただけでは、Gentoo Linuxのインストールは始められません。ISOファイルはブートCDに書き込む必要があり、しかもISOファイルそのものではなく、ISOファイルの<i>中身</i>を書き込む必要があります。以下にいくつかのよく使われる方法を示します--より詳細な情報が知りたい場合は<a href="../../../FAQ/ja.html#ISO.E3.83.95.E3.82.A1.E3.82.A4.E3.83.AB.E3.82.92.E3.83.87.E3.82.A3.E3.82.B9.E3.82.AF.E3.81.AB.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.82.80.E3.81.AB.E3.81.AF.EF.BC.9F" title="FAQ/ja">ISOファイルの書き込みについてのわたしたちのFAQ</a>を見てください。
+</p>
+<h4><span class="mw-headline" id="Microsoft_Windows.E3.81.A7.E3.81.AE.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF">Microsoft Windowsでの書き込み</span></h4>
+<p>Microsoft Windowsでは、ISOファイルのCD書き込みをサポートする多数のツールが存在します。
+</p>
+<ul><li> EasyCD Creatorを使う場合は、<span style="font-family: monospace; font-size: 95%">File</span>、<span style="font-family: monospace; font-size: 95%">Record CD from CD image</span>の順に選択してください。次に、<span style="font-family: monospace; font-size: 95%">Files of type</span>を<b>ISO image file</b>に変更してください。それから、ISOファイルの場所を見つけて<span style="font-family: monospace; font-size: 95%">Open</span>をクリックしてください。<span style="font-family: monospace; font-size: 95%">Start recording</span>をクリックすると、CD-RにISOイメージが正しく書き込まれます。</li>
+<li> Nero Burning ROMを使う場合は、自動的にポップアップするウィザードを中止して、<span style="font-family: monospace; font-size: 95%">File</span>メニューから<span style="font-family: monospace; font-size: 95%">Burn Image</span>を選択してください。書き込むイメージを選択して、<span style="font-family: monospace; font-size: 95%">Open</span>をクリックしてください。<span style="font-family: monospace; font-size: 95%">Burn</span>ボタンを押して、ほやほやのCDが焼きあがるのを待ちましょう。</li></ul>
+<h4><span class="mw-headline" id="Linux.E3.81.A7.E3.81.AE.E6.9B.B8.E3.81.8D.E8.BE.BC.E3.81.BF">Linuxでの書き込み</span></h4>
+<p>Linuxでは、ISOファイルのCD書き込みに<span style="font-family: monospace; font-size: 95%; font-weight: bold;">cdrecord</span>コマンドが利用可能です。これは<a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-cdr/cdrtools">app-cdr/cdrtools</a>パッケージに含まれます。
+</p><p>例えば、<span style="font-family: monospace; font-size: 95%">/dev/sr0</span>デバイス（これはシステム上の1番目のCDデバイスです。必要ならば正しいデバイスに置き換えてください）のCDにISOファイルを書き込むには：
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>cdrecord dev=/dev/sr0 install--minimal-20141204.iso</code></div></div>
+<p>Users that prefer a graphical user interface can use K3B, part of the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-cdr/k3b">app-cdr/k3b</a> package. In K3B, go to <span style="font-family: monospace; font-size: 95%">Tools</span> and use <span style="font-family: monospace; font-size: 95%">Burn CD Image</span>. Then follow the instructions provided by K3B.
+</p>
+<h2><span class="mw-headline" id="CD.E3.82.92.E8.B5.B7.E5.8B.95.E3.81.99.E3.82.8B">CDを起動する</span></h2>
+<h3><span class="mw-headline" id="Booting_the_installation_CD">Booting the installation CD</span></h3>
+<p>Once the installation CD is burned, it is time to boot it. Remove all CDs from the CD drives, reboot the system and enter the BIOS or UEFI. This is usually done by hitting <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">DEL</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd> or <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">ESC</kbd>, which is highly depending on the system and motherboard used. Inside the BIOS or UEFI menu, change the boot order so that the CD-ROM is tried before the hard disk. Without this change, the system will just reboot from the hard disk, ignoring the CD-ROM.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Important</strong><br />When installing Gentoo with the purpose of using the UEFI interface instead of BIOS, it is recommended to boot with UEFI immediately. If not, then it might be necessary to create a bootable UEFI USB stick (or other medium) once before finalizing the Gentoo Linux installation.</div>
+<p>Now place the installation CD in the CD-ROM drive and reboot. A boot prompt should be shown. At this screen, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd> will begin the boot process with the default boot options. To boot the installation CD with custom boot options, specify a kernel followed by boot options and then hit <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>.
+</p><p>At the boot prompt, users get the option of displaying the available kernels (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd>) and boot options (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F2</kbd>). If no choice is made within 15 seconds (either displaying information or using a kernel) then the installation CD will fall back to booting from disk. This allows installations to reboot and try out their installed environment without the need to remove the CD from the tray (something well appreciated for remote installations).
+</p><p>We mentioned specifying a kernel. On the installation CD, several kernels are provided. The default one is called <i>gentoo</i>. Other kernels are for specific hardware needs and the <i>-nofb</i> variants disable framebuffer support.
+</p><p>The next table gives a short overview of the available kernels.
+</p>
+<table class="table table-striped table-condensed" style="text-align: left;">
+
+<tr>
+<th> Kernel
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> gentoo
+</td>
+<td> Default kernel with support for K8 CPUs (including NUMA support) and EM64T CPUs
+</td></tr>
+<tr>
+<td> gentoo-nofb
+</td>
+<td> Same as <i>gentoo</i> but without framebuffer support
+</td></tr>
+<tr>
+<td> memtest86
+</td>
+<td> Test the local RAM for errors
+</td></tr></table>
+<p>Alongside the kernel, boot options help in tuning the boot process further. 
+</p>
+<table class="table table-striped table-condensed" style="text-align: left;">
+
+<tr>
+<th colspan="2"> Hardware options
+</th></tr>
+<tr>
+<td> acpi=on
+</td>
+<td> This loads support for ACPI and also causes the acpid daemon to be started by the CD on boot. This is only needed if the system requires ACPI to function properly. This is not required for Hyperthreading support.
+</td></tr>
+<tr>
+<td> acpi=off
+</td>
+<td> Completely disables ACPI. This is useful on some older systems and is also a requirement for using APM. This will disable any Hyperthreading support of your processor.
+</td></tr>
+<tr>
+<td> console=X
+</td>
+<td> This sets up serial console access for the CD. The first option is the device, usually ttyS0 on x86, followed by any connection options, which are comma separated. The default options are 9600,8,n,1.
+</td></tr>
+<tr>
+<td> dmraid=X
+</td>
+<td> This allows for passing options to the device-mapper RAID subsystem. Options should be encapsulated in quotes.
+</td></tr>
+<tr>
+<td> doapm
+</td>
+<td> This loads APM driver support. This also requires that <code>acpi=off</code>.
+</td></tr>
+<tr>
+<td> dopcmcia
+</td>
+<td> This loads support for PCMCIA and Cardbus hardware and also causes the pcmcia cardmgr to be started by the CD on boot. This is only required when booting from PCMCIA/Cardbus devices.
+</td></tr>
+<tr>
+<td> doscsi
+</td>
+<td> This loads support for most SCSI controllers. This is also a requirement for booting most USB devices, as they use the SCSI subsystem of the kernel.
+</td></tr>
+<tr>
+<td> sda=stroke
+</td>
+<td> This allows the user to partition the whole hard disk even when the BIOS is unable to handle large disks. This option is only used on machines with an older BIOS. Replace sda with the device that requires this option.
+</td></tr>
+<tr>
+<td> ide=nodma
+</td>
+<td> This forces the disabling of DMA in the kernel and is required by some IDE chipsets and also by some CDROM drives. If the system is having trouble reading from the IDE CDROM, try this option. This also disables the default hdparm settings from being executed.
+</td></tr>
+<tr>
+<td> noapic
+</td>
+<td> This disables the Advanced Programmable Interrupt Controller that is present on newer motherboards. It has been known to cause some problems on older hardware.
+</td></tr>
+<tr>
+<td> nodetect
+</td>
+<td> This disables all of the autodetection done by the CD, including device autodetection and DHCP probing. This is useful for doing debugging of a failing CD or driver.
+</td></tr>
+<tr>
+<td> nodhcp
+</td>
+<td> This disables DHCP probing on detected network cards. This is useful on networks with only static addresses.
+</td></tr>
+<tr>
+<td> nodmraid
+</td>
+<td> Disables support for device-mapper RAID, such as that used for on-board IDE/SATA RAID controllers.
+</td></tr>
+<tr>
+<td> nofirewire
+</td>
+<td> This disables the loading of Firewire modules. This should only be necessary if your Firewire hardware is causing a problem with booting the CD.
+</td></tr>
+<tr>
+<td> nogpm
+</td>
+<td> This disables gpm console mouse support.
+</td></tr>
+<tr>
+<td> nohotplug
+</td>
+<td> This disables the loading of the hotplug and coldplug init scripts at boot. This is useful for doing debugging of a failing CD or driver.
+</td></tr>
+<tr>
+<td> nokeymap
+</td>
+<td> This disables the keymap selection used to select non-US keyboard layouts.
+</td></tr>
+<tr>
+<td> nolapic
+</td>
+<td> This disables the local APIC on Uniprocessor kernels.
+</td></tr>
+<tr>
+<td> nosata
+</td>
+<td> This disables the loading of Serial ATA modules. This is used if the system is having problems with the SATA subsystem.
+</td></tr>
+<tr>
+<td> nosmp
+</td>
+<td> This disables SMP, or Symmetric Multiprocessing, on SMP-enabled kernels. This is useful for debugging SMP-related issues with certain drivers and motherboards.
+</td></tr>
+<tr>
+<td> nosound
+</td>
+<td> This disables sound support and volume setting. This is useful for systems where sound support causes problems.
+</td></tr>
+<tr>
+<td> nousb
+</td>
+<td> This disables the autoloading of USB modules. This is useful for debugging USB issues.
+</td></tr>
+<tr>
+<td> slowusb
+</td>
+<td> This adds some extra pauses into the boot process for slow USB CDROMs, like in the IBM BladeCenter.
+</td></tr>
+<tr>
+<th colspan="2"> Logical volume/device management
+</th></tr>
+<tr>
+<td> dolvm
+</td>
+<td> This enables support for Linux's Logical Volume Management.
+</td></tr>
+<tr>
+<th colspan="2"> Other options
+</th></tr>
+<tr>
+<td> debug
+</td>
+<td> Enables debugging code. This might get messy, as it displays a lot of data to the screen.
+</td></tr>
+<tr>
+<td> docache
+</td>
+<td> This caches the entire runtime portion of the CD into RAM, which allows the user to umount <span style="font-family: monospace; font-size: 95%">/mnt/cdrom</span> and mount another CDROM. This option requires that there is at least twice as much available RAM as the size of the CD.
+</td></tr>
+<tr>
+<td> doload=X
+</td>
+<td> This causes the initial ramdisk to load any module listed, as well as dependencies. Replace X with the module name. Multiple modules can be specified by a comma-separated list.
+</td></tr>
+<tr>
+<td> dosshd
+</td>
+<td> Starts sshd on boot, which is useful for unattended installs.
+</td></tr>
+<tr>
+<td> passwd=foo
+</td>
+<td> Sets whatever follows the equals as the root password, which is required for <i>dosshd</i> since the root password is by default scrambled.
+</td></tr>
+<tr>
+<td> noload=X
+</td>
+<td> This causes the initial ramdisk to skip the loading of a specific module that may be causing a problem. Syntax matches that of doload.
+</td></tr>
+<tr>
+<td> nonfs
+</td>
+<td> Disables the starting of portmap/nfsmount on boot.
+</td></tr>
+<tr>
+<td> nox
+</td>
+<td> This causes an X-enabled LiveCD to not automatically start X, but rather, to drop to the command line instead.
+</td></tr>
+<tr>
+<td> scandelay
+</td>
+<td> This causes the CD to pause for 10 seconds during certain portions the boot process to allow for devices that are slow to initialize to be ready for use.
+</td></tr>
+<tr>
+<td> scandelay=X
+</td>
+<td> This allows the user to specify a given delay, in seconds, to be added to certain portions of the boot process to allow for devices that are slow to initialize to be ready for use. Replace X with the number of seconds to pause.
+</td></tr></table>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The CD will check for <code>no*</code> options before <code>do*</code> options, so that options can be overriden in the exact order specified.</div>
+<p>Now boot the CD, select a kernel (if the default <code>gentoo</code> kernel does not suffice) and boot options. As an example, we boot the <code>gentoo</code> kernel, with <code>dopcmcia</code> as a kernel parameter:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">boot:</code><span class="tripleclick-separator"></span><code>gentoo dopcmcia</code></div></div>
+<p>Next the user will be greeted with a boot screen and progress bar. If the installation is done on a system with a non-US keyboard, make sure to immediately press <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd> + <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd> to switch to verbose mode and follow the prompt. If no selection is made in 10 seconds the default (US keyboard) will be accepted and the boot process will continue. Once the boot process completes, the user is automatically logged in to the "Live" Gentoo Linux environment as the <i>root</i> user, the super user. A root prompt is displayed on the current console, and one can switch to other consoles by pressing <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd> + <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F2</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd> + <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F3</kbd> and <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd> + <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F4</kbd>. Get back to the one started on by pressing <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd> + <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd>.
+</p><p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id=".E4.BE.8B.E5.A4.96.E7.9A.84.E3.81.AA.E3.83.8F.E3.83.BC.E3.83.89.E3.82.A6.E3.82.A7.E3.82.A2.E6.A7.8B.E6.88.90">例外的なハードウェア構成</span></h3>
+<p>インストールCDがブートするとき、すべてのハードウェア機器を検出して適切なカーネルモジュールを読み込もうとします。これは非常に多くの場合、とても良い仕事をします。しかしある場合において、システムに必要なカーネルモジュールを自動で読み込まないかもしれません。PCI自動検出機能がシステムのハードウェアを見逃した場合、適切なカーネルモジュールを手動で読み込む必要があります。
+</p><p>次の例は、(ある種類のネットワークインタフェイスをサポートする) 8139tooモジュールを読み込みます:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>modprobe 8139too</code></div></div> 
+<h3><span class="mw-headline" id=".E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD:_.E3.83.A6.E3.83.BC.E3.82.B6.E3.82.A2.E3.82.AB.E3.82.A6.E3.83.B3.E3.83.88">追加可能: ユーザアカウント</span></h3>
+<p>If other people need access to the installation environment, or there is need to run commands as a non-root user on the installation CD (such as to chat using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">irssi</span> without root privileges for security reasons), then an additional user account needs to be created and the root password set to a strong password.
+</p><p>To change the root password, use the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">passwd</span> utility:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>passwd</code></div><pre>
+New password: (新しいパスワードを入力)
+Re-enter password: (もう一度新しいパスワードを入力)
+</pre></div>
+<p>To create a user account, first enter their credentials, followed by the account's password. The <span style="font-family: monospace; font-size: 95%; font-weight: bold;">useradd</span> and <span style="font-family: monospace; font-size: 95%; font-weight: bold;">passwd</span> commands are used for these tasks.
+</p><p>In the next example, a user called <i>john</i> is created:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>useradd -m -G users john
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>passwd john</code></div><pre>
+New password: (Enter john's password)
+Re-enter password: (Re-enter john's password)
+</pre></div>
+<p>To switch from the (current) <i>root</i> user to the newly created user account, use the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">su</span> command:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>su - john</code></div></div>
+<h3><span class="mw-headline" id=".E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD.EF.BC.9A.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB.E4.B8.AD.E3.81.AE.E3.83.89.E3.82.AD.E3.83.A5.E3.83.A1.E3.83.B3.E3.83.88.E9.96.B2.E8.A6.A7">追加可能：インストール中のドキュメント閲覧</span></h3>
+<p>Gentooハンドブックをインストール中に見るには、最初に上記の方法でユーザアカウントを作ってください。そして<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F2</kbd>を押すことで新しい端末を使い始められます。
+</p><p>インストール中、 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">links</span>コマンドでGentooハンドブックを閲覧できます。もちろん、インターネット接続が機能し始めた瞬間からですけど。
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>links <a rel="nofollow" class="external free" href="../../ja.html">https://wiki.gentoo.org/wiki/Handbook:X86/ja</a></code></div></div>
+<p>元々の端末に戻るには、<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd>を押してください。
+</p>
+<h3><span class="mw-headline" id=".E8.BF.BD.E5.8A.A0.E5.8F.AF.E8.83.BD.EF.BC.9ASSH.E3.83.87.E3.83.BC.E3.83.A2.E3.83.B3.E3.81.AE.E9.96.8B.E5.A7.8B">追加可能：SSHデーモンの開始</span></h3>
+<p>To allow other users to access the system during the installation (perhaps to support during an installation, or even do it remotely), a user account needs to be created (as was documented earlier on) and the SSH daemon needs to be started.
+</p><p>To fire up the SSH daemon, execute the following command:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/sshd start</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />If users log on to the system, they will get a message that the host key for this system needs to be confirmed (through what is called a fingerprint). This is to be expected as it is the first time people log on to the system. However, later when the system is set up and someone logs on to the newly created system, the SSH client will warn that the host key has been changed. This is because the user now log on to - for SSH - a different server (namely the freshly installed Gentoo system rather than the live environment that the installation is currently using). Follow the instructions given on the screen then to replace the host key on the client system.</div>
+<p>To be able to use sshd, the network needs to function properly. Continue with the chapter on <a href="../Networking.html" title="Handbook:X86/Installation/Networking">Configuring the network</a>.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../About/ja.html" title="Previous part" class="btn btn-default">&#8592; インストールについて</a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../Networking/ja.html" title="Next part" class="btn btn-default">Configuring the network &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153303
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.708 seconds
+Real time usage: 0.788 seconds
+Preprocessor visited node count: 2084/1000000
+Preprocessor generated node count: 4068/1000000
+Post‐expand include size: 102607/2097152 bytes
+Template argument size: 9933/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  629.358      1 - Handbook:Parts/Installation/Media/ja
+100.00%  629.358      1 - -total
+ 34.72%  218.493      1 - Handbook:Parts/TOC/ja
+ 16.94%  106.631      7 - Template:Cmd
+ 14.97%   94.192     12 - Template:GenericCmd
+  9.60%   60.442      1 - Template:CodeBox
+  8.88%   55.870      1 - Template:PreBox
+  7.21%   45.370     44 - Template:Path
+  7.04%   44.316      1 - Handbook:X86/Blocks/Booting/ja
+  6.53%   41.119      1 - Handbook:AMD64/Blocks/Booting
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:91498-0!*!0!!en!*!* and timestamp 20160112153302 and revision id 245496
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;oldid=245496">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Media/ja&amp;oldid=245496</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 7 January 2015, at 11:28.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Media/ja"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":987});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Media/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:36:47 GMT -->
+</html>

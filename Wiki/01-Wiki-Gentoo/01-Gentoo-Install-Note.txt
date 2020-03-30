@@ -142,13 +142,13 @@ auto-sync = yes
 
  USE="samba" emerge --ask net-libs/libsoup
  USE="zerozonf" emerge --ask gnome-base/gvfs
- 
+
  emerge --ask mdadm gentoolkit \
  linux-firmware os-prober ntfs3g usbutils \
- pciutils elogind e2fsprogs dev-vcs/git net-misc/ntp 
+ pciutils elogind e2fsprogs dev-vcs/git net-misc/ntp
 #= carica il demone all'avvio:
  rc-update add elogind default
- 
+
 # == • Copia conf in /root [genkernel]
 
  genkernel --makeopts=-j9 --kernel-config=/root/config all
@@ -199,7 +199,7 @@ auto-sync = yes
  rm /usr/portage-latest.tar.bz2
  rm /stage3-.tar.xz
 #=====================================================================
-=# == • Boot in gentoo 
+=# == • Boot in gentoo
 #====
 
 # === •Nuovo Utente:
@@ -222,7 +222,7 @@ auto-sync = yes
  /etc/init.d/anacron start
  rc-update add anacron default
  gpasswd -a ilnanny cron
- 
+
  nano -w /etc/crontab
 # Avvia anacron ogni 10 minuti
 /10     root  /usr/sbin/anacron
@@ -246,46 +246,45 @@ auto-sync = yes
  nano -w /etc/conf.d/xdm
 #= Carica il demone all'avvio:
  rc-update add xdm default
- 
+
 # == •  Build/Sys
- emerge --ask autoconf automake cmake ninja nodejs meson yarn xsel util-linux
- emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop 
- emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd 
+ emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
+ emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop
+ emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd
  USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
- 
+
 # == •  Media
  USE="gstreamer" emerge --ask sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol pamix volumeicon
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
- 
- USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc 
- 
-# == •  Gfx 
- emerge --ask gimp inkscape gcolors2 nomacs qt5ct
- 
-# == •  Office 
- USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
- emerge --ask media-fonts/dejavu evince vim parcellite 
- 
-# == •  Www
- emerge --ask android-tools android-file-transfer-linux bleachbit deluge 
- emerge --ask firefox-bin  speedtest-cli telegram-desktop uget wgetpaste curl 
 
-  
+ USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
+
+# == •  Gfx
+ emerge --ask gimp inkscape gcolors2 nomacs qt5ct
+
+# == •  Office
+ USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
+ emerge --ask media-fonts/dejavu evince vim parcellite
+
+# == •  Www
+ emerge --ask android-tools android-file-transfer-linux bleachbit deluge
+ emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl
+
+
 # == • Conky
  USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
- 
+
 
 
 # == • GTK3+
  USE="hscolour profile" emerge --ask dev-haskell/gtk3
- 
+
 # == • Xfce4
 
  emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin \
-xfce-extra/xfce4-screenshooter xfce4-panel xfce4-terminal \
-xfce-extra/tumbler
- 
+xfce-extra/xfce4-screenshooter xfce4-panel xfce-extra/tumbler
+
 # == • Drivers NVIDIA
 
  nano -w /etc/modprobe.d/nouveau-blacklist.conf
@@ -319,7 +318,7 @@ EndSection
 
 == •
  eselect opengl set nvidia
- eselect opencl set nvidia 
+ eselect opencl set nvidia
 
 #=====================================================
 
@@ -346,7 +345,7 @@ UUID=76CDC3FF57CBA78E  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF
 ## == •                                    Note:
   grub-mkconfig –o /boot/grub/grub.cfg
   grub-mkconfig -o /boot/grub/grub.cfg
-  
+
 ## == •             Se usi debian per il chroot:
   export PATH="$PATH:/usr/sbin:/sbin:/bin"
 

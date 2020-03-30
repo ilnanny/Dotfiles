@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/tr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Gentoo kurulum dosyalarını yüklemek - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Installation/Stage/tr","wgTitle":"AMD64/Installation/Stage/tr","wgCurRevisionId":338912,"wgRevisionId":338912,"wgArticleId":130220,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"tr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],"wgMonthNamesShort":["","Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"],"wgRelevantPageName":"Handbook:AMD64/Installation/Stage/tr","wgRelevantArticleId":130220,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Installation/Stage/tr" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Installation/Stage/tr&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Installation_Stage_tr skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Installation/Stage/tr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Installation/Stage/tr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;oldid=338912" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FInstallation-2FStage-2Ftr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FStage%2Ftr&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FStage%2Ftr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="tr.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Installation/Stage/tr&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="tr">
+							<span dir="auto">Gentoo kurulum dosyalarını yüklemek</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Installation.html" title="Special:MyLanguage/Handbook:AMD64/Installation">Installation</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="tr" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FInstallation%2FStage&amp;action=page&amp;filter=&amp;language=tr">translated version</a></span> of the page <a href="../Stage.html" title="Handbook:AMD64/Installation/Stage">Handbook:AMD64/Installation/Stage</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbook:AMD64/Installation/Stage/de (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Stage.html" title="Handbook:AMD64/Installation/Stage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Installation/Stage/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="Handbook:AMD64/Installation/Stage/ja (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Installation/Stage/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Handbook:AMD64/Installation/Stage/pt-br (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:AMD64/Installation/Stage/ru (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Türkçe</span> • ‎<a href="zh-cn.html" title="Handbook:AMD64/Installation/Stage/zh-cn (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Kurulum
+</th></tr>
+<tr>
+<td> <a href="../About/tr.html" title="Handbook:AMD64/Installation/About/tr">Kurulum hakkında</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/tr.html" title="Handbook:AMD64/Installation/Media/tr">Ortamı seçme</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/tr.html" title="Handbook:AMD64/Installation/Networking/tr">Ağı yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/tr.html" title="Handbook:AMD64/Installation/Disks/tr">Diskleri hazırlama</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">stage3 kurulumu</strong>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Base/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Base/tr (page does not exist)">Temel sistem kurulumu</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Kernel/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Kernel/tr (page does not exist)">Çekirdeği yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/System/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/System/tr (page does not exist)">Sistemi yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Tools/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Tools/tr (page does not exist)">Araçları kurma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Bootloader/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Bootloader/tr (page does not exist)">Açılış yükleyici</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Finalizing/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Finalizing/tr (page does not exist)">Sonlandırma</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Gentoo ile çalışma
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Portage/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Working/Portage/tr (page does not exist)">Portage'a giriş</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/USE/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Working/USE/tr (page does not exist)">USE bayrakları</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Working/Features/tr (page does not exist)">Portage özellikleri</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Working/Initscripts/tr (page does not exist)">Init sistemi</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/EnvVar/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Working/EnvVar/tr (page does not exist)">Ortam değişkenleri</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Portage ile çalışma
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/Files/tr (page does not exist)">Dosya ve dizinler</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/Variables/tr (page does not exist)">Değişkenler</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Branches/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/Branches/tr (page does not exist)">Yazılım dalları</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Tools/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/Tools/tr (page does not exist)">Ek araçlar</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/CustomTree/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/CustomTree/tr (page does not exist)">Özel portage ağacı</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Advanced/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Portage/Advanced/tr (page does not exist)">Gelişmiş özellikler</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Ağ yapılandırması
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Introduction/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Introduction/tr (page does not exist)">Başlangıç</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Advanced/tr (page does not exist)">Gelişmiş yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Modular/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Modular/tr (page does not exist)">Modüler ağ</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Wireless/tr (page does not exist)">Kablosuz ağlar</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Extending/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Extending/tr (page does not exist)">Özellik ekleme</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Dynamic/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Networking/Dynamic/tr (page does not exist)">Dinamik ağ yönetimi</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Kurulum_dosyas.C4.B1n.C4.B1_y.C3.BCklemek"><span class="tocnumber">1</span> <span class="toctext">Kurulum dosyasını yüklemek</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Tarihi_ve_saati_ayarlamak"><span class="tocnumber">1.1</span> <span class="toctext">Tarihi ve saati ayarlamak</span></a></li>
+<li class="toclevel-2"><a href="#Kurulum_dosyas.C4.B1n.C4.B1_indirmek"><span class="tocnumber">1.2</span> <span class="toctext">Kurulum dosyasını indirmek</span></a></li>
+<li class="toclevel-2"><a href="#Kurulum_dosyas.C4.B1n.C4.B1_a.C3.A7mak"><span class="tocnumber">1.3</span> <span class="toctext">Kurulum dosyasını açmak</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Derleme_se.C3.A7eneklerini_d.C3.BCzenleme"><span class="tocnumber">2</span> <span class="toctext">Derleme seçeneklerini düzenleme</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Giri.C5.9F"><span class="tocnumber">2.1</span> <span class="toctext">Giriş</span></a></li>
+<li class="toclevel-2"><a href="#CFLAGS_ve_CXXFLAGS"><span class="tocnumber">2.2</span> <span class="toctext">CFLAGS ve CXXFLAGS</span></a></li>
+<li class="toclevel-2"><a href="#MAKEOPTS"><span class="tocnumber">2.3</span> <span class="toctext">MAKEOPTS</span></a></li>
+<li class="toclevel-2"><a href="#Haz.C4.B1rsan.C4.B1z_ba.C5.9Flayal.C4.B1m"><span class="tocnumber">2.4</span> <span class="toctext">Hazırsanız başlayalım</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Kurulum_dosyas.C4.B1n.C4.B1_y.C3.BCklemek">Kurulum dosyasını yüklemek</span></h2>
+<h3><span class="mw-headline" id="Tarihi_ve_saati_ayarlamak">Tarihi ve saati ayarlamak</span></h3>
+<p>Gentoo kurulumuna başlamadan önce, tarihin ve saatin doğru olduğuna emin olun. Hatalı bir saat ayarı gelecekte tuhaf davranışlara sebep olabilir!
+</p><p>Güncel zamanı görmek için date komutunu kullanabilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>date</code></div><pre>
+Fri Mar 29 16:21:18 UTC 2005
+</pre></div>
+<p>Eğer görünen zaman hatalı ise, <code>date AAGGssddYYYY</code> formatında bir komutla düzeltebilirsiniz (Ay, Gün, saat, dakika, Yıl). Zaman dilimi olarak UTC kullanabilirsiniz, ilerleyen bölümlerde zaman dilimi ayarlama detaylı olarak anlatılacak.
+</p><p>Örneğin sistemin zamanını 29 Mart 2014, 16:21 olarak ayarlamak için:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>date 032916212014</code></div></div>
+<h3><span class="mw-headline" id="Kurulum_dosyas.C4.B1n.C4.B1_indirmek">Kurulum dosyasını indirmek</span></h3>
+<p>Kök dizinin bağlı olduğu klasöre gidin (muhtemelen <span style="font-family: monospace; font-size: 95%">/mnt/gentoo</span>):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /mnt/gentoo</code></div></div>
+<p>Kurulum ortamına bağlı olarak, indirmek için birkaç yönteminiz var. Bunlardan bir tanesi de grafiksel olmayan (terminalde çalışan) bir web tarayıcı olan <code>links</code>. Kurulum dosyasını indirmek için Gentoo yansılarına şu şekilde ulaşabilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>links <a rel="nofollow" class="external free" href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></code></div></div>
+<p><code>links</code> ile bir HTTP proxy (ağ geçidi) kullanmak istiyorsanız, <i>-http-proxy</i> seçeneği ile belirtebilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>links -http-proxy proxy.server.com:8080 <a rel="nofollow" class="external free" href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></code></div></div>
+<p><code>links</code>'e benzer bir tarayıcı olarak, dilerseniz <code>lynx</code> de kullanabilirsiniz.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>lynx <a rel="nofollow" class="external free" href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></code></div></div>
+<p>Eğer proxy gerekiyorsa, <code>http_proxy</code> ve/veya <code>ftp_proxy</code> ortam değişkenlerini atayabilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export http_proxy="<a rel="nofollow" class="external free" href="http://proxy.sunucu.com:port/">http://proxy.sunucu.com:port</a>"
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export ftp_proxy="<a rel="nofollow" class="external free" href="http://proxy.sunucu.com:port/">http://proxy.sunucu.com:port</a>"</code></div></div>
+<p>Yansı listesinde, fiziki olarak size yakın bir yansı seçin. Genellikle HTTP yansılar yeterli olmakta, ancak dilerseniz diğer protokollerde erişim sağlanabilen yansılar da var. <span style="font-family: monospace; font-size: 95%">releases/amd64/autobuilds/</span> dizinine gidin. Kuruluma elverişli tüm dosyaları burada bulabilirsiniz (alt-mimariye göre dizinlere ayrılmış bir yapı da görebilirsiniz). Bir tane dosya seçip, indirmek için <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">D</kbd> tuşuna basın.
+</p><p>Minimal kurulum CD'lerinde olduğu gibi, burada da bazı yardımcı dosyalar bulunmakta:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">.CONTENTS</span> dosyası, ilgili kurulum dosyasında bulunan dosyaların listesini içerir</li>
+<li> <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> dosyası, kurulum dosyasının farklı algoritmalar ile çıkarılmış parmak izini içerir</li>
+<li> <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> dosyası da tıpkı <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> dosyası gibi parmakizlerini içerir, ancak kriptografik olarak Gentoo projesi tarafından imzalanmış dosyadır</li></ul>
+<ul><li> A <span style="font-family: monospace; font-size: 95%">.CONTENTS</span> file that contains a list of all files inside the stage tarball</li>
+<li> A <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> file that contains checksums of the stage file, in different algorithms</li>
+<li> A <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> file that, like the <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> file, contains checksums of the stage file in different algorithms, but is also cryptographically signed to ensure it is provided by the Gentoo project</li></ul>
+<p>İşlem tamamlandığında <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Q</kbd> tuluna basarak çıkabilirsiniz.
+</p><p>İndirdikten sonra, kurulum dosyasının bütünlüğünü kontrol edebilirsiniz. <code>openssl</code> kullanarak parmak izi üretip, <span style="font-family: monospace; font-size: 95%">.DIGESTS</span> veya <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> dosyasındaki iz ile karşılaştırabilirsiniz.
+</p><p>Örneğin SHA512 izini onaylamak için:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>openssl dgst -r -sha512 stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p><code>sha512sum</code> komutu da kullanabilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>sha512sum stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p>Whirlpool kontrolü için:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>openssl dgst -r -whirlpool stage3-amd64-&lt;release&gt;.tar.bz2</code></div></div>
+<p>Komutların çıktılarını <span style="font-family: monospace; font-size: 95%">.DIGESTS(.asc)</span> dosyaları ile kıyaslayabilirsiniz. Eğer değerler uyuşmuyorsa indirdiğiniz dosya hatalı olabilir.
+</p><p>ISO kalıbı gibi, bu dosyanın da kriptografik imzasını <span style="font-family: monospace; font-size: 95%">.DIGESTS.asc</span> yardımıyla onaylayabilirsiniz. Örnek olarak <code>gpg</code> ile kontrol edelim:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --verify stage3-amd64-&lt;release&gt;.tar.bz2.DIGESTS.asc</code></div></div>
+<h3><span class="mw-headline" id="Kurulum_dosyas.C4.B1n.C4.B1_a.C3.A7mak">Kurulum dosyasını açmak</span></h3>
+<p>Şimdi <code>tar</code> komutunun yardımı ile kurulum paketini sistemimize çıkartıyoruz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>tar xvjpf stage3-*.tar.bz2 --xattrs</code></div></div>
+<p>Kullandığınız seçeneklerin (<code>xvjpf</code> ve <code>--xattrs</code>) doğruluğunu kontrol edin. x çıkartmaya, v detaylı bilgi almaya, j dosyanın bir bzip2 dosyası olduğuna, p dosya içerisindeki izinlerin korunması gerektiğine, f de komuta bir paketi parametre olarak vereceğimizi işaret eder. <code>--xattrs</code> ise paketteki gelişmiş dosya etiketlerini de korumamız gerektiğini belirtir.
+</p><p>Paketimizi kurduğumuza göre <a href="#Derleme_se.C3.A7eneklerini_d.C3.BCzenleme">derleme seçeneklerini düzenleme</a> ile devam edebiliriz.
+</p>
+<h2><span class="mw-headline" id="Derleme_se.C3.A7eneklerini_d.C3.BCzenleme">Derleme seçeneklerini düzenleme</span></h2>
+<h3><span class="mw-headline" id="Giri.C5.9F">Giriş</span></h3>
+<p>Gentoo'yu kendi ihtiyacımıza göre düzenlemek için, Portage davranışını etkileyecek olan bazı değişkenleri ayarlayabiliriz. Tüm bunlar tabi ki <code>export</code> ile ayarlanabilir, ancak kalıcı olmaz. Bunun yerine Portage'ın okuduğu <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> dosyasında düzenlemeler yapacağız.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Tüm geçerli değişkenler <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/usr/share/portage/config/make.conf.example</span> dosyasında var. Ancak başarılı bir kurulum için aşağıdakilerin ayarlanması yeterli.</div>
+<p>Bir editör açıp (biz <code>nano</code> kullanacağız) bahsedeceğimiz değişkenleri ayarlayabiliriz.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%">make.conf.example</span> dosyasında da görülebileceği gibi dosyanın biçimlendirilme türü, yorum olan satıların "#" ile başlaması, diğer satırların da DEĞİŞKEN="içerik" şeklinde tanımlanması.
+</p>
+<h3><span class="mw-headline" id="CFLAGS_ve_CXXFLAGS">CFLAGS ve CXXFLAGS</span></h3>
+<p>CFLAGS ve CXXFLAGS değerleri, C ve C++ kodları derlememize yarayacak olan gcc derleyicisi tarafından kullanılmakta. Burada genel olarak tanımlayacağız ancak (yönetimi biraz karmaşık olsa da) sisteminizden maksimum performansı almak için her uygulamanın nasıl derlenmesi gerektiğini de tanımlayabilirsiniz.
+</p><p><span style="font-family: monospace; font-size: 95%">make.conf</span> dosyasında sistemin genelinde kullanılması faydalı olan seçenekler ayarlanmalıdır. Burada kararlı olduğundan emin olmadığınız, deneysel ayarlar uygularsanız faydadan çok zararını görürsünüz (çalışmayan veya hatalı çalışan uygulamalar).
+</p><p>Mümkün olan tüm değişkenleri anlatmayacağız. Dilerseniz  <a rel="nofollow" class="external text" href="http://gcc.gnu.org/onlinedocs/">GNU online belgeleri</a>'ni veya gcc bilgilendirme sayfasını (Linux sistemlerde <code>info gcc</code> komutuyla) inceleyebilirsiniz. <span style="font-family: monospace; font-size: 95%">make.conf.example</span> dosyası da gayet açıklayıcıdır, okumanızı tavsiye ederiz.
+</p><p>İlk ayarlardan biri hedef mimariyi belirleyen <code>-march=</code> veya <code>-mtune=</code> bayrağı. Kullanılabilecek değişkenler <span style="font-family: monospace; font-size: 95%">make.conf.example</span> dosyasında (yorumlu olarak) var. En sık kullanılan değer, derleyiciye mimariyi otomatik olarak seçmesini belirten <i>native</i> değişkeni.
+</p><p>Bir diğer değişken de gcc'nin optimizasyon seviyesini ayarlayan <code>-O</code> bayrağı (sıfır değil, büyük o harfi). Kullanılabilecek değişkenler s (boyut optimizasyonu), 0 (yani sıfır, optimizasyonsuz), 1, 2, hatta daha fazla optimizasyon için 3. Her seviye önceki seviyeye bazı eklemelerde bulunur. <code>-O3</code> sistem genelinde kullanıldığında bazı hatalara sebep olmaktadır, bu sebeple önerilen değer <code>-O2</code>'dir.
+</p><p>Diğer bir popüler bayrak da <code>-pipe</code>. Bu bayrak derlemenin bazı aşamalarında geçiş için geçici dosyalar yerine pipe (geçiş özelliği) kullanılmasını sağlar. Oluşturulan kodda bir değişiklik olmamakta, ancak derlemenin daha fazla RAM kullanarak daha hızlı tamamlanmasını sağlamaktadır. Düşük RAM'e sahip sistemlerde önerilmez.
+</p><p><code>-fomit-frame-pointer</code> gibi bazı değişkenler kullanılması uygulamalar hata ürettiğinde hataların ayıklanarak farkedilmesini zorlaştırıcı etkiler barındırmaktadır.
+</p><p>CFLAGS ve CXXFLAGS değerlendirilirken kullanmak istediğiniz bayrakları tek satırda toplayın. Kurulum paketinde gelen bayraklar genelde yeterli olmakta. Aşağıda da bir örnek görebilirsiniz:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Örnek CFLAGS ve CXXFLAGS değişkenleri</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-march=native -O2 -pipe&quot;</span>
+<span class="c"># Her iki değişken için de aynısını kullanalım</span>
+<span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CFLAGS</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div></pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Not</strong><br /><a href="../../../GCC_optimization/tr.html" title="GCC optimization/tr">GCC optimizasyon sayfasında</a> farklı bayrakların sistemi nasıl etkileyeceğine dair detaylı açıklamalar bulabilirsiniz.</div>
+<h3><span class="mw-headline" id="MAKEOPTS">MAKEOPTS</span></h3>
+<p><code>MAKEOPTS</code> değişkeni aynı anda işlemci katmanında kaç tane derleme işleminin paralel olarak yapılması gerektiğini ayarlar. Her durumda olmasa da, genellikle sistemdeki işlemci çekirdeği sayısının bir fazlası en uygun değer olarak tanımlanır.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>make.conf'da örnek MAKEOPTS tanımı</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">MAKEOPTS</span><span class="o">=</span><span class="s2">&quot;-j2&quot;</span>
+</pre></div></pre></div>
+<h3><span class="mw-headline" id="Haz.C4.B1rsan.C4.B1z_ba.C5.9Flayal.C4.B1m">Hazırsanız başlayalım</span></h3>
+<p><span style="font-family: monospace; font-size: 95%">/mnt/gentoo/etc/portage/make.conf</span> dosyasını isteğinize göre düzenleyip dosyayı kaydedin (nano ile düzenliyorsanız <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Ctrl+X</kbd> ile çıkış diyaloğunu açabilirsiniz). 
+</p><p>Ardından <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Base/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:AMD64/Installation/Base/tr (page does not exist)">temel sistem kurulumu</a> bölümünden devam edebilirsiniz.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Disks/tr.html" title="Previous part" class="btn btn-default">&#8592; Diskleri hazırlama</a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Base/tr&amp;action=edit&amp;redlink=1" class="new btn btn-default" title="Next part"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154440
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.548 seconds
+Real time usage: 0.649 seconds
+Preprocessor visited node count: 1697/1000000
+Preprocessor generated node count: 2627/1000000
+Post‐expand include size: 45048/2097152 bytes
+Template argument size: 5179/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  426.861      1 - -total
+ 96.08%  410.146      1 - Handbook:Parts/Installation/Stage/tr
+ 43.01%  183.613      1 - Handbook:Parts/TOC/tr
+ 30.49%  130.143     13 - Template:RootCmd
+ 20.15%   86.016     13 - Template:GenericCmd
+  4.36%   18.609     14 - Template:GenericCmd/Line
+  4.27%   18.220      1 - Handbook:Parts/Navigator
+  4.10%   17.513     21 - Template:Path
+  3.78%   16.141      1 - Handbook:Templates/SetTitle
+  3.31%   14.109      2 - Template:CodeBox
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:130220-0!*!0!!en!*!* and timestamp 20160112154439 and revision id 338912
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;oldid=338912">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/Stage/tr&amp;oldid=338912</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 10 July 2015, at 06:50.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Installation/Stage/tr"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":825});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/tr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:48:02 GMT -->
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/Portage/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Working/Portage/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Working/Portage/ko","wgTitle":"X86/Working/Portage/ko","wgCurRevisionId":192686,"wgRevisionId":192686,"wgArticleId":78372,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Working/Portage/ko","wgRelevantArticleId":78372,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],
+"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Working/Portage/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Working/Portage/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Working_Portage_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Working/Portage/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Working/Portage/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;oldid=192686" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FWorking-2FPortage-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FPortage%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FPortage%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Working/Portage/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:X86/Working/Portage/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FWorking%2FPortage&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Portage.html" title="Handbook:X86/Working/Portage">Handbook:X86/Working/Portage</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Arbeiten/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Portage.html" title="Handbook:X86/Working/Portage (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title=" Manual de Gentoo: X86/Trabajando/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/ワーキング/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Trabalhando/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Working/Portage (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/使用/Portage介绍 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <strong class="selflink">포티지 소개</strong>
+</td></tr>
+<tr>
+<td> <a href="../USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80.EB.A1.9C_.EC.98.A4.EC.8B.A0.EA.B2.83.EC.9D.84_.ED.99.98.EC.98.81.ED.95.A8"><span class="tocnumber">1</span> <span class="toctext">포티지로 오신것을 환영함</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC"><span class="tocnumber">2</span> <span class="toctext">포티지 트리</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.9D.B4.EB.B9.8C.EB.93.9C"><span class="tocnumber">2.1</span> <span class="toctext">이빌드</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">2.2</span> <span class="toctext">포티지 트리 업데이트</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B4.80.EB.A6.AC"><span class="tocnumber">3</span> <span class="toctext">프로그램 관리</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B2.80.EC.83.89"><span class="tocnumber">3.1</span> <span class="toctext">프로그램 검색</span></a></li>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.84.A4.EC.B9.98"><span class="tocnumber">3.2</span> <span class="toctext">프로그램 설치</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.A4.EC.B9.98.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EC.9D.98_.EB.AC.B8.EC.84.9C_.EC.B0.BE.EA.B8.B0"><span class="tocnumber">3.3</span> <span class="toctext">설치한 꾸러미의 문서 찾기</span></a></li>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.A0.9C.EA.B1.B0"><span class="tocnumber">3.4</span> <span class="toctext">프로그램 제거</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">3.5</span> <span class="toctext">시스템 업데이트</span></a></li>
+<li class="toclevel-2"><a href="#.EB.A9.94.ED.83.80.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">3.6</span> <span class="toctext">메타꾸러미</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.9D.BC.EC.9D.B4.EC.84.A0.EC.8A.A4"><span class="tocnumber">4</span> <span class="toctext">라이선스</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80.EC.97.90.EC.84.9C_.EB.B6.88.ED.8F.89.ED.95.A0_.EB.95.8C"><span class="tocnumber">5</span> <span class="toctext">포티지에서 불평할 때</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.9A.A9.EC.96.B4"><span class="tocnumber">5.1</span> <span class="toctext">용어</span></a></li>
+<li class="toclevel-2"><a href="#.EC.B0.A8.EB.8B.A8_.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">5.2</span> <span class="toctext">차단 꾸러미</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.80.EB.A0.A4.EB.86.93.EC.9D.80_.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">5.3</span> <span class="toctext">가려놓은 꾸러미</span></a></li>
+<li class="toclevel-2"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.80.EA.B2.BD.EC.9D.98_.ED.95.84.EC.9A.94.EC.84.B1"><span class="tocnumber">5.4</span> <span class="toctext">USE 플래그 변경의 필요성</span></a></li>
+<li class="toclevel-2"><a href="#.EB.B9.A0.EC.A7.84_.EC.9D.98.EC.A1.B4.EC.84.B1"><span class="tocnumber">5.5</span> <span class="toctext">빠진 의존성</span></a></li>
+<li class="toclevel-2"><a href="#.EC.95.A0.EB.A7.A4.EB.AA.A8.ED.98.B8.ED.95.9C_.EC.9D.B4.EB.B9.8C.EB.93.9C_.EC.9D.B4.EB.A6.84"><span class="tocnumber">5.6</span> <span class="toctext">애매모호한 이빌드 이름</span></a></li>
+<li class="toclevel-2"><a href="#.EC.88.9C.ED.99.98_.EC.9D.98.EC.A1.B4.EC.84.B1"><span class="tocnumber">5.7</span> <span class="toctext">순환 의존성</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0_.EC.8B.A4.ED.8C.A8"><span class="tocnumber">5.8</span> <span class="toctext">가져오기 실패</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EB.B3.B4.ED.98.B8"><span class="tocnumber">5.9</span> <span class="toctext">시스템 프로파일 보호</span></a></li>
+<li class="toclevel-2"><a href="#.EB.8B.A4.EC.9D.B4.EC.A0.9C.EC.8A.A4.ED.8A.B8_.EA.B2.80.EC.A6.9D_.EC.8B.A4.ED.8C.A8"><span class="tocnumber">5.10</span> <span class="toctext">다이제스트 검증 실패</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80.EB.A1.9C_.EC.98.A4.EC.8B.A0.EA.B2.83.EC.9D.84_.ED.99.98.EC.98.81.ED.95.A8">포티지로 오신것을 환영함</span></h2>
+<p>포티지는 아마도 프로그램 관리에 있어서 가장 주목할만한 혁신 요소가 아닐까 싶습니다. 상당한 유연성과 방대한 기능들로 갖춰진 포티지는 자주 볼 수 있는 최고의 리눅스용 프로그램 관리 도구입니다.
+</p><p>포티지는 온전히 <a rel="nofollow" class="external text" href="http://www.python.org/">파이썬</a><sup style="color:#ff0077">en</sup>과 <a rel="nofollow" class="external text" href="http://www.gnu.org/software/bash">배시</a><sup style="color:#ff0077">en</sup>로 작성했기에 사용자들에게 완전히 두 스크립트 언어로 보입니다.
+</p><p>대부분의 사용자들은 <code>emerge</code> 도구로 포티지를 다룹니다. 이 장의 내용은 emerge 맨 페이지에서 볼 수 있는 정보를 베끼지 않았습니다. emerge 옵션의 전체 설명은 man 페이지를 참조하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC">포티지 트리</span></h2>
+<h3><span class="mw-headline" id=".EC.9D.B4.EB.B9.8C.EB.93.9C">이빌드</span></h3>
+<p>꾸러미에 대해 이야기할 때면, 포티지 트리에서 젠투 사용자들이 사용할 수 있는 프로그램의 제목을 의미합니다. 포티지 트리는 포티지가 프로그램을 관리(설치, 검색, 요청 등)하기 위해 필요로 하는 모든 정보가 들어간 ebuild 파일의 모음입니다. 이 ebulid 파일은 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage</span> 안에 있습니다.
+</p><p>여러분이 관심있는 프로그램 제목에 대해 어떤 동작을 요청할 때마다 시스템의 기반 요소로 ebuild를 사용합니다. 때문에 시스템의 ebuild를 주기적으로 갱신하여 포티지가 새 프로그램과 보안 갱신 등을 알리는 동작은 매우 중요합니다.
+</p>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">포티지 트리 업데이트</span></h3>
+<p>보통 포티지 트리는 빠른 증분 파일 전송 유틸리티 <code>rsync</code>로 업데이트합니다. <code>emerge</code> 명령을 <code>rsync</code> 프론트엔드로 제공하는 만큼 포티지 트리 업데이트는 상당히 간단합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<p>방화벽 제한때문에 <code>rsync</code>를 사용할 수 없어도, 매일 만드는 포티지 트리 스냅샷으로 포티지 트리를 업데이트할 수 있습니다. <code>emerge-websync</code> 도구는 시스템에 최신 스냅샷을 가져오고 설치합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<p><code>emerge-websync</code>를 사용하는 또 다른 장점은 관리자가 젠투 출시 엔지니어링 GPG키로 서명한 포티지 트리 스냅샷만 가져올 수 있다는 점입니다. 이에 대한 자세한 내용은 포티지 기능의 검증된 포티지 트리 스냅샷 가져오기에서 찾으실 수 있습니다.
+</p>
+<h2><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B4.80.EB.A6.AC">프로그램 관리</span></h2>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B2.80.EC.83.89">프로그램 검색</span></h3>
+<p>프로그램을 포티지 트리에서 검색하는 방법에는 여러가지가 있습니다. 그중 한가지는 <code>emerge</code>로 찾는 방법입니다. 기본적으로 <code>emerge --search</code>가 제시한 단어에 일치하는 이름을 가진 꾸러미의 이름을 반환합니다.
+</p><p>예를 들어 "pdf"라는 이름을 가진 모든 꾸러미를 검색하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --search pdf</code></div></div>
+<p>이와 마찬가지로 설명에서 검색하려면 <code>--searchdesc</code> (또는 -S) 스위치를 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --searchdesc pdf</code></div></div>
+<p>많은 정보를 되돌려주는 출력 내용을 살펴보십시오. 확실히 이름표를 붙여놓았기 때문에 의미를 찾아보기 위해 그 이상 들어가지 않겠습니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>검색 명령 출력 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>*  net-print/cups-pdf
+      Latest version available: 1.5.2
+      Latest version installed: [ Not Installed ]
+      Size of downloaded files: 15 kB
+      Homepage:    http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
+      Description: Provides a virtual printer for CUPS to produce PDF files.
+      License:     GPL-2
+</pre></div></pre></div>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.84.A4.EC.B9.98">프로그램 설치</span></h3>
+<p>원하는 프로그램 이름을 찾았다면 emerge 명령으로 프로그램을 쉽게 설치할 수 있습니다. 예를 들어 gnumetric을 설치하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-office/gnumeric</code></div></div> 
+<p>수많은 프로그램이 서로 의존관계가 있기 때문에 어떤 프로그램 꾸러미의 설치를 시도할 때, 이처럼 수많은 의존요소를 설치합니다. 포티지가 의존요소를 잘 관리하니 걱정하지 않으셔도 됩니다. 여러분이 어떤 꾸러미의 설치를 요청할 때 포티지가 설치할 꾸러미를 살펴보려면 --pretend 스위치를 덧붙이십시오. 예를 들자면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --pretend gnumeric</code></div></div>
+<p>꾸러미를 설치하는 동안, 포티지는 (필요하다면) 인터넷에서 필요한 소스 코드를 내려받고 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage/distfiles</span>에 저장합니다. 그 다음 압축을 풀고 컴파일하고 꾸러미를 설치합니다. 포티지로 꾸러미를 설치하지 않고 소스코드를 다운로드만 하려면 emerge명령에 <code>--fetchonly</code>를 덧붙이십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --fetchonly gnumeric</code></div></div>
+<h3><span class="mw-headline" id=".EC.84.A4.EC.B9.98.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EC.9D.98_.EB.AC.B8.EC.84.9C_.EC.B0.BE.EA.B8.B0">설치한 꾸러미의 문서 찾기</span></h3>
+<p>대부분의 꾸러미는 문서가 딸려옵니다. 때로는, <i>doc</i> USE 플래그가 꾸러미의 문서를 설치할 지 말 지를 결정합니다. doc USE 플래그를 꾸러미에서 사용하는지 확인하려면 <code>emerge -vp PACKAGENAME</code>명령을 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge -vp alsa-lib</code></div><pre>
+...
+[ebuild  N    ] media-libs/alsa-lib-1.0.14_rc1  -debug +doc 698 kB
+</pre></div>
+<p>doc USE 플래그를 활성화하는 가장 좋은 방법은 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>에서 꾸러미마다 활성화하여 여러분이 얻고자 하는 해당 꾸러미의 문서를 가져오는 것입니다. 더 많은 내용을 보고자 한다면 <a href="../USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그 장</a>을 읽어보십시오.
+</p><p>꾸러미를 설치하고 나면 꾸러미에 대한 문서는 보통 <span style="font-family: monospace; font-size: 95%">/usr/share/doc</span> 디렉터리의 꾸러미 이름이 달린 하위디렉터리에서 찾을 수 있습니다. <span style="font-family: monospace; font-size: 95%">app-portage/gentoolkit</span>의 일부인 <code>equery</code>도구를 사용하면 설치한 모든 파일의 목록을 볼 수 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>ls -l /usr/share/doc/alsa-lib-1.0.14_rc1</code></div><pre>
+total 28
+-rw-r--r--  1 root root  669 May 17 21:54 ChangeLog.gz
+-rw-r--r--  1 root root 9373 May 17 21:54 COPYING.gz
+drwxr-xr-x  2 root root 8560 May 17 21:54 html
+-rw-r--r--  1 root root  196 May 17 21:54 TODO.gz
+</pre></div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>equery files alsa-lib | less</code></div><pre>
+media-libs/alsa-lib-1.0.14_rc1
+* Contents of media-libs/alsa-lib-1.0.14_rc1:
+/usr
+/usr/bin
+/usr/bin/alsalisp
+...
+</pre></div>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.A0.9C.EA.B1.B0">프로그램 제거</span></h3>
+<p>프로그램 꾸러미를 시스템에서 제거하려고 할 때 <code>emerge --unmerge</code>를 사용하십시오. 설치 이후 바뀐 프로그램의 설정 파일을 제외하고 여러분의 시스템에서 꾸러미로부터 설치한 모든 파일을 제거하도록 포티지에 알립니다. 설정 파일을 남겨서 꾸러미를 다시 설치한다면 꾸러미를 계속 다룰 수 있습니다.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 경고</strong><br />포티지는 제거하는 꾸러미가 다른 꾸러미에서 필요로 한지는 확인하지 않습니다. 그러나 중요한 꾸러미를 제거할 때는 꾸러미를 제거하여 시스템을 깨뜨릴 수 있음을 경고합니다.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --unmerge gnumeric</code></div></div>
+<p>시스템에서 꾸러미를 제거할 때, 프로그램을 설치했을 때 자동으로 설치한 꾸러미의 의존 요소는 그대로 남습니다. 제거할 수 있는 모든 의존요소를 포티지가 찾도록 하려면 emerge의 <code>--depclean</code> 기능을 사용하십시오. 이 내용은 나중에 문서에서 다루겠습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">시스템 업데이트</span></h3>
+<p>시스템의 완벽한 모양새를 유지하(고 최신 보안 갱신 요소를 설치하도록 알림을 받지 않으)려면 시스템을 주기적으로 갱신할 필요가 있습니다. 여러분이 처음 포티지 트리를 갱신할 때 포티지 트리에서 ebuild만 확인합니다. 포티지 트리를 업데이트하면, <code>emerge --update @world</code>로 시스템을 업데이트할 수 있습니다. 다음 예제에서는 <code>--ask</code> 스위치를 사용하여 업그레이드할 꾸러미의 목록을 표시하고 계속 할 것인지 물을 것을 포티지에 요청합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --ask @world</code></div></div>
+<p>포티지는 여러분이 설치한 프로그램의 최신 버전을 찾습니다. 그러나 이는 여러분이 확실히 설치한 프로그램의 버전만을 확인합니다 (프로그램의 목록은 <span style="font-family: monospace; font-size: 95%">/var/lib/portage/world</span>에 있습니다). 이 절차는 의존성까지 철저히 확인하진 않습니다. 의존 요소까지 갱신하려면 <code>--deep</code> 매개변수를 덧붙이십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep @world</code></div></div>
+<p>여전히 모든 꾸러미를 의미하지 않습니다. 시스템에 있는 일부 꾸러미는 컴파일 및 빌드과정에 필요하지만 꾸러미의 설치가 끝나면 의존성은 더이상 필요치 않습니다. 포티지는 이를 <i>빌드 의존성</i>이라고 부릅니다. 갱신 주기때마다 이들을 포함하려면 <code>--with-bdeps=y</code>를 덧붙이십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --with-bdeps=y @world</code></div></div>
+<p>여러분은 시스템에 분명하게 설치하지 않(지만 다른 프로그램의 의존요소로서 끌려옵니다)은 꾸러미에서 보안 업데이트를 진행할 때, 이 명령을 가끔씩은 실행해주는 것이 좋습니다.
+</p><p>시스템의 USE 설정을 바꾸었다면, 그에 따라 <code>--newuse</code>를 추가하는것이 좋습니다. 포티지는 플래그의 변경으로 새 꾸러미의 설치 또는 존재하는 꾸러미의 재 컴파일이 필요한지를 검증합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --with-bdeps=y --newuse @world</code></div></div>
+<h3><span class="mw-headline" id=".EB.A9.94.ED.83.80.EA.BE.B8.EB.9F.AC.EB.AF.B8">메타꾸러미</span></h3>
+<p>포티지 트리에서 어떤 꾸러미는 실제 내용을 포함하지는 않지만 꾸러미 모음을 설치하는데 사용합니다. 예를 들어 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/kde-base/kde-meta">kde-base/kde-meta</a> 꾸러미는 의존요소로서의 다양한 KDE 관련 꾸러미를 시스템에 가져와서 완전한 KDE 환경으로 설치합니다.
+</p><p>이런 꾸러미를 시스템에서 제거할 때 이 꾸러미에 대해 <code>emerge --unmerge</code>를 실행하면 시스템에 남아있던 의존 효과가 더 이상 남지 않습니다.
+</p><p>포티지는 또한 버려진 의존성을 잘 제거하는 기능을 갖추고 있지만, 프로그램의 가용성은 동적으로 바뀌므로, 우선 USE 플래그를 바꾸었을 때 새로 바뀐 내용을 포함하여 전체 시스템을 업데이트 하는것이 중요합니다. 이 과정을 수행하고 나면 <code>emerge --depclean</code>을 실행하여 버려진 의존성을 제거할 수 있습니다. 포티지에 최근 추가한 기능이긴 하지만, 이 절차가 끝나면, 더이상 필요하지 않아 방금 삭제한 프로그램에 동적으로 연결한 프로그램을 다시 빌드해야합니다.
+</p><p>이 모든 과정을 다음 3개의 명령으로 처리합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --newuse @world
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --depclean
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>revdep-rebuild</code></div></div>
+<p><code>revdep-rebuild</code>는  <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a> 꾸러미에서 제공합니다. 잊지 말고 우선 이머지하십시오
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-portage/gentoolkit</code></div></div> 
+<h2><span class="mw-headline" id=".EB.9D.BC.EC.9D.B4.EC.84.A0.EC.8A.A4">라이선스</span></h2>
+<p>포티지 버전 2.1.7부터 라이선스를 기반으로 하여 프로그램 설치를 수락 혹은 거절할 수 있습니다. 트리상의 모든 꾸러미는 ebuild에 LICENSE 엔트리를 가지고 있습니다. <code>emerge --search PACKAGENAME</code>을 실행하면 꾸러미의 라이선스를 알려줍니다.
+</p><p>기본적으로 포티지는 모든 라이선스를 허용하지만, 읽기를 요구하고 동의서에 동의여부를 확인해야 하는 <i>최종 사용자 사용허가서(EULA)</i>는 제외합니다.
+</p><p>허용할 라이선스를 제어하는 변수는 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에 설정할 수 있는 ACCEPT_LICENSE 입니다. 다음 예제에서는 기본값을 나타냅니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>ACCEPT_LICENSE 기본 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_LICENSE</span><span class="o">=</span><span class="s2">&quot;* -@EULA&quot;</span>
+</pre></div></pre>
+<p>이 설정을 통해 설치 과정상 EULA의 내용을 승인하려 직접 확인해야 하는 프로그램은 설치할 수 없습니다. EULA가 없는 꾸러미를 설치할 수 있습니다.
+</p><p><span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에 전체적으로 <code>ACCEPT_LICENSE</code>를 설정하거나 각 꾸러미를 기반으로 <span style="font-family: monospace; font-size: 95%">/etc/package/package.license</span>에 지정할 수 있습니다.
+</p><p>예를 들어 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/truecrypt">app-crypt/truecrypt</a>의 <span style="font-family: monospace; font-size: 95%">truecrypt-2.7</span> 라이선스를 허용하려면, <span style="font-family: monospace; font-size: 95%">/etc/portage/package.license</span>에 다음을 추가하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.license</code></strong><strong>truecrypt 꾸러미에 들어있는 truecrypt-2.7 라이선스 동의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>app-crypt/truecrypt truecrypt-2.7
+</pre></div></pre>
+<p>이를 통해 <span style="font-family: monospace; font-size: 95%">truecrypt-2.7</span> 라이선스를 가진 truecrypt 버전을 설치하지만, <span style="font-family: monospace; font-size: 95%">truecrypt-2.8</span> 라이선스를 가진 프로그램은 설치하지 않습니다.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />라이선스는 <span style="font-family: monospace; font-size: 95%">/usr/portage/license</span>에 저장하며 라이선스 그룹은 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/license_groups</span>에 저장합니다. <i>대문자</i>로 이루어진 요소들 중 첫번째 항목은 라이선스 그룹의 이름이며, 모든 항목의 다음에는 각각의 라이선스를 의미합니다.</div>
+<p><code>ACCEPT_LICENSE</code>에 정의한 라이선스 그룹은 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">@</kbd>기호가 붙습니다. 일반적으로 요청하는 설정은 자유 소프트웨어 및 자유 문서의 설치만 허용하는 설정입니다. 이렇게 하려면 현재 허용하는 라이선스(<code>-*</code>)를 제거하고 다음과 같이 자유 그룹에 속한 라이선스만 허용하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>자유 소프트웨어 및 자유 문서 라이선스만 동의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_LICENSE</span><span class="o">=</span><span class="s2">&quot;-* @FREE&quot;</span>
+</pre></div></pre>
+<p>이 경우 "free"는 대부분 보통 FSF나 OSI에서 설명합니다. 이 요구사항을 만나지 않는 라이선스를 가진 꾸러미는 시스템에 설치하지 않습니다.
+</p>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80.EC.97.90.EC.84.9C_.EB.B6.88.ED.8F.89.ED.95.A0_.EB.95.8C">포티지에서 불평할 때</span></h2>
+<h3><span class="mw-headline" id=".EC.9A.A9.EC.96.B4">용어</span></h3>
+<p>우리가 이전에 언급한대로라면, 포티지는 굉장히 강력하며 다른 프로그램 관리도구에서 빠진 수많은 기능을 지원한다고 했습니다. 이러한 점을 이해하기 위해, 더 자세히는 말고 적당한 선에서 포티지의 일부 모양새를 설명하도록 하겠습니다.
+</p><p>포티지에서 단일 꾸러미의 각기 다른버전이 시스템에 공존할 수 있습니다. 다른 배포판에서는 버전에 이름을 같이 붙이려 (예를 들자면 freetype과 freetype2와 같이) 하지만, 포티지는 <i>SLOT</i>이라는 용어를 사용합니다. ebuild는 이 버전에 대해 각각의 SLOT을 선언합니다. 제각각의 슬롯이 부여된 ebuild는 시스템에 공존할 수 있습니다. 예를 들어 freetype 꾸러미는 ebuild에 SLOT="1"과 SLOT="2"가 있습니다.
+</p><p>동일한 기능을 가지고 있으나 다른 방식으로 구현한 꾸러미도 있습니다. metalogd, sysklogd, syslog-ng 같은 경우는 모두 시스템 로거입니다. "시스템 로거" 기능에 따른 프로그램이지, 의존할 수 있는 프로그램은 아닙니다. 예를 들어, 다른 시스템 로거로서 metalogd는 바람직한 선택중 하나입니다. 포티지에서는 가상 요소를 허용합니다. 각 시스템 로거는 virtual 분류 항목의 logger 가상 꾸러미에 "배타적"인 로깅 서비스 의존성으로 참조하므로 이 프로그램은 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/virtual/logger">virtual/logger</a> 꾸러미에 의존할 수 있습니다. 가상 꾸러미를 설치하면, 로깅 꾸러미를 이미 설치하지 않았다면 (이 경우 가상 꾸러미를 고려함) 꾸러미에서 언급한 첫 로깅 꾸러미를 끌어옵니다.
+</p><p>포티지 트리에 있는 프로그램은 다른 브랜치에 둘 수 있습니다. 기본적으로 시스템에서는 젠투에서 안정적인 꾸러미로 간주하는 꾸러미만 받아들입니다. 대부분의 새 프로그램 제목을 제출하면 시험 브랜치에 추가하며, 안정화 상태로 표시하기 전에 수많은 시험 과정이 필요함을 의미합니다. 포티지 트리에 이 프로그램에 대한 이빌드가 존재하지만, 포티지에서 안정 브랜치에 올려놓기 전에는 업데이트하지 않습니다.
+</p><p>일부 프로그램은 몇가지 아키텍처에서만 동작합니다. 또는 다른 아키텍처에서 동작하지 않기도 하거나, 시험 과정이 더 필요하거나,  포티지 트리에 꾸러미를 제출한 개발자에게 다른 아키텍처에서 동작하는지 검증해달라고 요청합니다.
+</p><p>각각의 젠투 설치 과정은 시스템이 제 기능을 수행하는데 필요한 꾸러미 목록과 같은 여러 정보로 이루어진 프로파일을 충실히 따릅니다.
+</p>
+<h3><span class="mw-headline" id=".EC.B0.A8.EB.8B.A8_.EA.BE.B8.EB.9F.AC.EB.AF.B8">차단 꾸러미</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>차단한 꾸러미에 대한 포티지 경고(--pretend 옵션 사용)</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[blocks B     ] mail-mta/ssmtp (is blocking mail-mta/postfix-2.2.2-r1)
+</pre></div></pre></div>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>차단한 꾸러미에 대한 포티지 경고(--pretend 옵션 제외)</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Error: the mail-mta/postfix package conflicts with another package.
+!!!        both can&#39;t be installed on the same system together.
+!!!        Please use &#39;emerge --pretend&#39; to determine blockers.
+</pre></div></pre></div>
+<p>Ebuild에는 의존성에 대해 포티지에 알려줄 특정 내용을 포함하고 있습니다. 이들 중에 두가지 가능한 의존성이 있습니다. 하나는 빌드 의존성에 대해 선언한 DEPEND이고 다른 하나는 실행시간 의존성에 대해 선언한 RDEPEND 입니다. 이들 의존성 중 하나가 호환되지 않는 꾸러미나 가상요소를 분명하게 지목했다면 실행시 막아버립니다.
+</p><p>포티지의 최근 버전은 사용자가 따로 설정하지 않아도 별로 중요하지 않은 차단 같은건 충분히 알아서 잘 처리합니다만 경우에 따라서는 아래에 설명한대로 직접 고쳐야 할 때도 있습니다.
+</p><p>차단 상황을 고치려면, 꾸러미를 설치하지 않거나 차단을 유발하는 꾸러미를 먼저 제거하는 방법 둘 중 하나를 정할 수 있습니다. 주어진 예제에서는, postfix를 설치하지 않거나 ssmtp를 먼저 제거하는 방법을 선택할 수 있습니다.
+</p><p><code>&lt;media-video/mplayer-1.0_rc1-r2</code>와 같이 특정 요소에 대한 차단 꾸러미를 볼 수도 있습니다. 이런 경우에는 차단 꾸러미의 최신 버전으로 업데이트 하면 차단이 풀립니다.
+</p><p>아직 설치하지 못한 서로 차단하는 두 꾸러미들에게도 가능한 방법이 있습니다. 이 드문 경우에는 왜 두 꾸러미를 설치해야 하는지를 알아야 합니다. 대부분의 경우 둘 중 하나만 설치할 수 있습니다. 둘 다 설치해야 한다면, 젠투 버그 추적 시스템에 버그를 제출하십시오.
+</p>
+<h3><span class="mw-headline" id=".EA.B0.80.EB.A0.A4.EB.86.93.EC.9D.80_.EA.BE.B8.EB.9F.AC.EB.AF.B8">가려놓은 꾸러미</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가려놓은 꾸러미에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! all ebuilds that could satisfy &quot;bootsplash&quot; have been masked.
+</pre></div></pre></div>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가려놓은 꾸러미에 대한 포티지 경고 - 이유</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! possible candidates are:
+  
+- gnome-base/gnome-2.8.0_pre1 (masked by: ~x86 keyword)
+- lm-sensors/lm-sensors-2.8.7 (masked by: -sparc keyword)
+- sys-libs/glibc-2.3.4.20040808 (masked by: -* keyword)
+- dev-util/cvsd-1.0.2 (masked by: missing keyword)
+- games-fps/unreal-tournament-451 (masked by: package.mask)
+- sys-libs/glibc-2.3.2-r11 (masked by: profile)
+- net-im/skype-2.1.0.81 (masked by: skype-eula license(s))
+</pre></div></pre></div>
+<p>시스템에서 사용할 수 없는 꾸러미를 설치하려 할 때 이런 가려짐 오류가 나타납니다. 시스템에서 쓸 수 있는 다른 프로그램을 설치하려고 하거나 꾸러미가 쓸 수 있는 상태가 될 때까지 기다리셔야 합니다. 꾸러미를 가린 이유는 얼마든지 있습니다:
+</p>
+<dl><dt> ~arch 키워드</dt>
+<dd> 안정 브랜치에 놓이도록 충분한 시험을 거치지 않은 프로그램을 의미합니다. 며칠 혹은 몇 주 기다려보시고 다시 시도해보세요.</dd>
+<dt>   -arch 키워드 또는 -* 키워드</dt>
+<dd> 여러분이 보유한 아키텍처에서 동작하지 않음을 의미합니다. 꾸러미가 동작한다는 믿음이 있다면 버그질라 웹사이트에 버그로 올려주십시오.</dd>
+<dt>  missing keyword</dt>
+<dd> 여러분이 보유한 아키텍처에서 시험을 하지 않았음을 의미합니다. 아키텍처 포팅 팀에 꾸러미 시험을 의뢰하거나 그 팀원들을 위해 시험해주고 여러분이 발견한 사실에 대해 버그질라 웹사이트에 보고해주십시오.</dd>
+<dt>  package.mask</dt>
+<dd> 충돌, 불안정, 문제를 발견하여 의도적으로 '사용하지 마십시오'라고 표시한 꾸러미를 의미합니다.</dd>
+<dt> profile</dt>
+<dd> 꾸러미가 여러분의 프로파일에 맞지 않다는 것을 발견했음을 의미합니다. 이 꾸러미나 여러분의 프로파일에 호환되지 않는 요소를 설치했을 경우 해당 프로그램이 시스템을 깰 수도 있습니다.</dd>
+<dt> license</dt>
+<dd> 여러분이 설정한 ACCEPT_LICENSE와 설치하려는 꾸러미의 라이선스가 호환되지 않음을 의미합니다. <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> 나 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.license</span>에서 해당 라이선스나 올바른 라이선스 그룹을 허용하십시오.</dd></dl>
+<h3><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.80.EA.B2.BD.EC.9D.98_.ED.95.84.EC.9A.94.EC.84.B1">USE 플래그 변경의 필요성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>USE 플래그 변경 요구에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>The following USE changes are necessary to proceed:
+#required by app-text/happypackage-2.0, required by happypackage (argument)
+&gt;=app-text/feelings-1.0.0 test
+</pre></div></pre></div>
+<p><code>--autounmask</code>를 설정하지 않았을 때 다음과 같은 오류메시지가 뜰 때도 있습니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>USE 플래그 변경 요구에 대한 포티지 오류</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>emerge: there are no ebuilds built with USE flags to satisfy &quot;app-text/feelings[test]&quot;.
+!!! One of the following packages is required to complete your request:
+- app-text/feelings-1.0.0 (Change USE: +test)
+(dependency required by &quot;app-text/happypackage-2.0&quot; [ebuild])
+(dependency required by &quot;happypackage&quot; [argument])
+</pre></div></pre></div>
+<p>다른 꾸러미에만 의존하지 않는 꾸러미를 설치하려 할 때 이런 경고나 오류가 발생하지만, 어떤 USE 플래그 (또는 USE 플래그 모음)로 꾸러미를 반드시 빌드해야 할 필요가 있을때에도 그렇습니다. 주어진 예제에서는 app-text/feelings 꾸러미가 USE="test" 로 빌드해야겠지만 시스템에 이 플래그를 설정하지 않은 상황입니다.
+</p><p>이 문제를 해결하려면 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 전역 USE 플래그에 요구하는 USE 플래그를 추가하거나 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>에 지정 꾸러미에 대한 플래그를 설정하십시오.
+</p>
+<h3><span class="mw-headline" id=".EB.B9.A0.EC.A7.84_.EC.9D.98.EC.A1.B4.EC.84.B1">빠진 의존성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>빠진 의존요소에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>emerge: there are no ebuilds to satisfy &quot;&gt;=sys-devel/gcc-3.4.2-r4&quot;.
+  
+!!! Problem with ebuild sys-devel/gcc-3.4.2-r2
+!!! Possibly a DEPEND/*DEPEND problem.
+</pre></div></pre></div>
+<p>시스템에 존재하지 않는 다른 꾸러미에 의존하여 프로그램을 설치하려고 했습니다. 이미 알려진 문제라면 버그질라를 확인해주시고, 없다면 보고해 주시기 바랍니다. 브랜치를 뒤섞어 엎어놓지 않는한 이 일은 발생하지 않겠지만, 그렇기 때문에 이런 현상은 버그입니다.
+</p>
+<h3><span class="mw-headline" id=".EC.95.A0.EB.A7.A4.EB.AA.A8.ED.98.B8.ED.95.9C_.EC.9D.B4.EB.B9.8C.EB.93.9C_.EC.9D.B4.EB.A6.84">애매모호한 이빌드 이름</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>애매모호한 이빌드 이름에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[ Results for search key : listen ]
+[ Applications found : 2 ]
+  
+*  dev-tinyos/listen [ Masked ]
+      Latest version available: 1.1.15
+      Latest version installed: [ Not Installed ]
+      Size of files: 10,032 kB
+      Homepage:      http://www.tinyos.net/
+      Description:   Raw listen for TinyOS
+      License:       BSD
+  
+*  media-sound/listen [ Masked ]
+      Latest version available: 0.6.3
+      Latest version installed: [ Not Installed ]
+      Size of files: 859 kB
+      Homepage:      http://www.listen-project.org
+      Description:   A Music player and management for GNOME
+      License:       GPL-2
+  
+!!! The short ebuild name &quot;listen&quot; is ambiguous. Please specify
+!!! one of the above fully-qualified ebuild names instead.
+</pre></div></pre></div>
+<p>설치하려는 프로그램이 하나 이상의 꾸러미와 관련된 이름을 지니고 있습니다. 이럴 경우 카테고리 이름을 같이 넣어줘야 합니다. 포티지는 선택할 수 있는 일치 항목을 알려줍니다.
+</p>
+<h3><span class="mw-headline" id=".EC.88.9C.ED.99.98_.EC.9D.98.EC.A1.B4.EC.84.B1">순환 의존성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>순환 의존성에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Error: circular dependencies: 
+  
+ebuild / net-print/cups-1.1.15-r2 depends on ebuild / app-text/ghostscript-7.05.3-r1
+ebuild / app-text/ghostscript-7.05.3-r1 depends on ebuild / net-print/cups-1.1.15-r2
+</pre></div></pre></div>
+<p>설치하려는 둘 (이상) 의 꾸러미가 서로 의존성을 가져 설치할 수 없습니다. 거의 포티지 트리의 버그 같습니다. 조금 지난 후 다시 트리를 동기화 한 다음 재시도하십시오. 또한 이미 알려진 문제라면 버그질라를 확인할 수 있는데, 없다면 보고하십시오.
+</p>
+<h3><span class="mw-headline" id=".EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0_.EC.8B.A4.ED.8C.A8">가져오기 실패</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가져오기 실패에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Fetch failed for sys-libs/ncurses-5.4-r5, continuing...
+(...)
+!!! Some fetch errors were encountered.  Please see above for details.
+</pre></div></pre></div>
+<p>포티지가 다른 프로그램의 (쓸 수 있는 경우) 설치를 계속하려고 할 때 주어진 프로그램에 대한 소스코드를 내려받을 수 없습니다. 이 문제는 올바르게 동기화 하던 미러가 어긋났다거나 ebuild가 잘못된 위치를 가리켰기 때문에 발생할 수 있습니다. 어떤 이유 때문에 소스 코드가 있는 서버가 먹통이 되었을 수도 있었습니다.
+</p><p>문제가 여전히 생기면 몇시간 후 다시 시도하십시오.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EB.B3.B4.ED.98.B8">시스템 프로파일 보호</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>프로파일에서 보호한 꾸러미에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Trying to unmerge package(s) in system profile. &#39;sys-apps/portage&#39;
+!!! This could be damaging to your system.
+</pre></div></pre></div>
+<p>시스템의 핵심 꾸러미 제거를 요청했습니다. 이런 메시지가 뜨면 프로파일에서 필요하다고 적어넣은 꾸러미이기 때문에 시스템에서 제거해서는 안되겠습니다.
+</p>
+<h3><span class="mw-headline" id=".EB.8B.A4.EC.9D.B4.EC.A0.9C.EC.8A.A4.ED.8A.B8_.EA.B2.80.EC.A6.9D_.EC.8B.A4.ED.8C.A8">다이제스트 검증 실패</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>다이제스트 검증 실패</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>&gt;&gt;&gt; checking ebuild checksums
+!!! Digest verification failed:
+</pre></div></pre></div>
+<p>이는 포티지 트리에 뭔가 문제가 있다는 이야기입니다. 개발자가 꾸러미를 트리로 커밋할 때 자주 실수하기 때문입니다.
+</p><p>다이제스트 검증에 실패하면 꾸러미의 다이제스트를 다시 만들지 마십시오. <code>ebuild foo manifest</code>를 실행해도 문제는 고쳐지지 않습니다. 이렇게 하면 대부분 일을 더 꼬이게 합니다!
+</p><p>대신 트리가 올바르게 잡힐 때까지 한두시간 정도 기다려보십시오. 올바르지 않은 방법으로 오류가 나타났을 수도 있는 것이지만, 포티지 트리가 서서히 자리를 잡는데 시간이 좀 걸릴 수가 있습니다. 기다리는 동안에 버그질라를 확인해보시고 누군가가 이 문제를 보고했는지 찾아보거나 #gentoo(IRC)에서 질문하십시오. 만약 내용이 없다면 가서 깨진 꾸러미의 문제를 알려주십시오.
+</p><p>문제점을 고치고 나면, 포티지 트리를 다시 동기화 하여 수정한 다이제스트를 받으십시오.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />여러번 동기화 할 수 있다는 의미가 아닙니다! rsync 정책에 언급(<code>emerge --sync</code>를 실행할 때) 한 대로 자주 동기화를 수행하는 사용자는 추방됩니다! 사실 다음에 동기화 할 때까지 기다려서 rsync서버에 부하를 주지 않는것이 가장 좋습니다.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Installation/Finalizing/ko.html" title="이전 내용" class="btn btn-default">&#8592; 마무리</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../USE/ko.html" title="다음 내용" class="btn btn-default">USE 플래그 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112151749
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.588 seconds
+Real time usage: 0.640 seconds
+Preprocessor visited node count: 2899/1000000
+Preprocessor generated node count: 3607/1000000
+Post‐expand include size: 82291/2097152 bytes
+Template argument size: 15557/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  498.563      1 - -total
+100.00%  498.563      1 - Handbook:Parts/Working/Portage/ko
+ 32.93%  164.188      1 - Handbook:Parts/TOC/ko
+ 23.54%  117.380     18 - Template:GenericCmd
+ 22.19%  110.644     13 - Template:RootCmd
+ 11.12%   55.459     13 - Template:CodeBox
+ 10.68%   53.235     16 - Template:PreBox
+  9.15%   45.610      5 - Template:Cmd
+  5.16%   25.737      2 - Template:Emerge
+  5.06%   25.224     20 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:78372-0!*!0!!en!*!* and timestamp 20160112151749 and revision id 192686
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;oldid=192686">http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/ko&amp;oldid=192686</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 08:05.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Working/Portage/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":831});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/Portage/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:36 GMT -->
+</html>

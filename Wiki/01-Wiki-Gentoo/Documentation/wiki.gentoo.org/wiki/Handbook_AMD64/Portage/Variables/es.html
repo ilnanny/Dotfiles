@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Variables/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:AMD64/Portage/Variables - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Portage/Variables/es","wgTitle":"AMD64/Portage/Variables/es","wgCurRevisionId":270884,"wgRevisionId":270884,"wgArticleId":111484,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Handbook:AMD64/Portage/Variables/es","wgRelevantArticleId":111484,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Portage/Variables/es" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Portage/Variables/es&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Portage_Variables_es skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Portage/Variables/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Portage/Variables/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;oldid=270884" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FPortage-2FVariables-2Fes.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FVariables%2Fes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FVariables%2Fes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="es.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Portage/Variables/es&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="es">
+							<span dir="auto">Handbook:AMD64/Portage/Variables</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FPortage%2FVariables&amp;action=page&amp;filter=&amp;language=es">translated version</a></span> of the page <a href="../Variables.html" title="Handbook:AMD64/Portage/Variables">Handbook:AMD64/Portage/Variables</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Portage/Variablen (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Variables.html" title="Handbook:AMD64/Portage/Variables (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">español</span> • ‎<a href="ja.html" title="ハンドブック:AMD64/Portage/変数 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Portage/Variables/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Portage/Variables (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/使用Portage/变量 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Instalación
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/es.html" title="Handbook:AMD64/Installation/About/es">Acerca de la instalación</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/es.html" title="Handbook:AMD64/Installation/Media/es">Elegir los medios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/es.html" title="Handbook:AMD64/Installation/Networking/es">Configurar la red</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/es.html" title="Handbook:AMD64/Installation/Disks/es">Preparar los discos</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/es.html" title="Handbook:AMD64/Installation/Stage/es">Instalar el stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/es.html" title="Handbook:AMD64/Installation/Base/es">Instalar el sistema base</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/es.html" title="Handbook:AMD64/Installation/Kernel/es">Configurar el núcleo</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/es.html" title="Handbook:AMD64/Installation/System/es">Configurar el sistema</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/es.html" title="Handbook:AMD64/Installation/Tools/es">Instalar herramientas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/es.html" title="Handbook:AMD64/Installation/Bootloader/es">Configurar el cargador de arranque</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/es.html" title="Handbook:AMD64/Installation/Finalizing/es">Terminar</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/es.html" title="Handbook:AMD64/Working/Portage/es">Introducción a Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/es.html" title="Handbook:AMD64/Working/USE/es">Ajustes USE</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/es.html" title="Handbook:AMD64/Working/Features/es">Características de Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/es.html" title="Handbook:AMD64/Working/Initscripts/es">Guiones de inicio</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/es.html" title="Handbook:AMD64/Working/EnvVar/es">Variables de entorno</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Portage
+</th></tr>
+<tr>
+<td> <a href="../Files/es.html" title="Handbook:AMD64/Portage/Files/es">Archivos y directorios</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Variables</strong>
+</td></tr>
+<tr>
+<td> <a href="../Branches/es.html" title="Handbook:AMD64/Portage/Branches/es">Mezclar ramas de software</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/es.html" title="Handbook:AMD64/Portage/Tools/es">Herramientas adicionales</a>
+</td></tr>
+<tr>
+<td> <a href="../CustomTree/es.html" title="Handbook:AMD64/Portage/CustomTree/es">Árbol de Portage personalizado</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/es.html" title="Handbook:AMD64/Portage/Advanced/es">Características avanzadas</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Configuración de la red
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/es.html" title="Handbook:AMD64/Networking/Introduction/es">Comenzando</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/es.html" title="Handbook:AMD64/Networking/Advanced/es">Configuración avanzada</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/es.html" title="Handbook:AMD64/Networking/Modular/es">Configuración de red modular</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/es.html" title="Handbook:AMD64/Networking/Wireless/es">Redes inalámbricas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/es.html" title="Handbook:AMD64/Networking/Extending/es">Añadir funcionalidad</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/es.html" title="Handbook:AMD64/Networking/Dynamic/es">Gestión dinámica</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Configuraci.C3.B3n_de_Portage"><span class="tocnumber">1</span> <span class="toctext">Configuración de Portage</span></a></li>
+<li class="toclevel-1"><a href="#Opciones_espec.C3.ADficas_para_la_contrucci.C3.B3n_de_aplicaciones"><span class="tocnumber">2</span> <span class="toctext">Opciones específicas para la contrucción de aplicaciones</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Opciones_de_configuraci.C3.B3n_y_del_compilador"><span class="tocnumber">2.1</span> <span class="toctext">Opciones de configuración y del compilador</span></a></li>
+<li class="toclevel-2"><a href="#Opciones_al_integrar"><span class="tocnumber">2.2</span> <span class="toctext">Opciones al integrar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Protecci.C3.B3n_de_los_archivos_de_configuraci.C3.B3n"><span class="tocnumber">3</span> <span class="toctext">Protección de los archivos de configuración</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Ubicaciones_protegidas_por_Portage"><span class="tocnumber">3.1</span> <span class="toctext">Ubicaciones protegidas por Portage</span></a></li>
+<li class="toclevel-2"><a href="#Exclusi.C3.B3n_de_directorios"><span class="tocnumber">3.2</span> <span class="toctext">Exclusión de directorios</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Opciones_de_descarga"><span class="tocnumber">4</span> <span class="toctext">Opciones de descarga</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Ubicaciones_de_servidores"><span class="tocnumber">4.1</span> <span class="toctext">Ubicaciones de servidores</span></a></li>
+<li class="toclevel-2"><a href="#.C3.93rdenes_para_descargar"><span class="tocnumber">4.2</span> <span class="toctext">Órdenes para descargar</span></a></li>
+<li class="toclevel-2"><a href="#Configuraci.C3.B3n_de_rsync"><span class="tocnumber">4.3</span> <span class="toctext">Configuración de rsync</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuraci.C3.B3n_de_Gentoo"><span class="tocnumber">5</span> <span class="toctext">Configuración de Gentoo</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Selecci.C3.B3n_de_rama"><span class="tocnumber">5.1</span> <span class="toctext">Selección de rama</span></a></li>
+<li class="toclevel-2"><a href="#Caracter.C3.ADsticas_de_Portage"><span class="tocnumber">5.2</span> <span class="toctext">Características de Portage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Comportamiento_de_Portage"><span class="tocnumber">6</span> <span class="toctext">Comportamiento de Portage</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Gesti.C3.B3n_de_los_recursos"><span class="tocnumber">6.1</span> <span class="toctext">Gestión de los recursos</span></a></li>
+<li class="toclevel-2"><a href="#Comportamiento_de_la_salida"><span class="tocnumber">6.2</span> <span class="toctext">Comportamiento de la salida</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Configuraci.C3.B3n_de_Portage">Configuración de Portage</span></h2>
+<p>Como hemos indicado previamente, Portage se puede configurar mediante múltiples variables de entorno que se deben definir en <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> o en uno de los subdirectorios de <span style="font-family: monospace; font-size: 95%">/etc/portage/</span>. Por favor, eche un vistazo a las páginas del manual de <span style="font-family: monospace; font-size: 95%">make.conf</span> y portage para obtener información detallada:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage</code></div></div>
+<h2><span class="mw-headline" id="Opciones_espec.C3.ADficas_para_la_contrucci.C3.B3n_de_aplicaciones">Opciones específicas para la contrucción de aplicaciones</span></h2>
+<h3><span class="mw-headline" id="Opciones_de_configuraci.C3.B3n_y_del_compilador">Opciones de configuración y del compilador</span></h3>
+<p>Cuando Portage construye las aplicaciones, pasa el contenido de las siguientes variables al guión de compilación y configuración:
+</p>
+<ul><li> <var>CFLAGS</var> y <var>CXXFLAGS</var> define los parámetros deseados para la compilación de fuentes en C y C++</li>
+<li> <var>CHOST</var> define la plataforma correspondiente a la máquina en la que se construye para el guión de configuración</li>
+<li> <var>MAKEOPTS</var> se pasa a la orden make para definir el grado de paralelismo al compilar. Para más información acerca de sus opciones, vea la página man de make.</li></ul>
+<p>La variable <var>USE</var> también se usa al configurar y compilar, pero éste ha sido explicado ampliamente en capítulos previos.
+</p>
+<h3><span class="mw-headline" id="Opciones_al_integrar">Opciones al integrar</span></h3>
+<p>Cuando Portage integra una versión más nueva de algún paquete de software, también eliminará los archivos obsoletos de la versión anterior del sistema. Portage otorga un tiempo de gracia de 5 segundos al usuario antes de llevar esta tarea a cabo. Este tiempo se define por medio de la variable <var>CLEAN_DELAY</var>.
+</p><p>Puede decirle a emerge que use ciertas opciones cada vez que sea ejecutado configurando la variable <var>EMERGE_DEFAULT_OPTS</var>. algunas opciones útiles podrían ser <code>--ask</code>, <code>--verbose</code>, <code>--tree</code>, etc.
+</p>
+<h2><span class="mw-headline" id="Protecci.C3.B3n_de_los_archivos_de_configuraci.C3.B3n">Protección de los archivos de configuración</span></h2>
+<h3><span class="mw-headline" id="Ubicaciones_protegidas_por_Portage">Ubicaciones protegidas por Portage</span></h3>
+<p>Portage sobreescribe los archivos proporcionados por versiones más nuevas de un paquete si estos no estan almacenados en un lugar protegido. Estos lugares protegidos se definen con la variable <var>CONFIG_PROTECT</var> y generalmente corresponden a rutas de archivos de configuración. Este listado de directorios es delimitado con espacios en blanco.
+</p><p>Los archivos de configuración nuevos que se escriban en rutas protegidas lo serán con un nombre modificado y el usuario será advertido acerca de su presencia.
+</p><p>Puede averiguar qué lugares están protegidos en la variable <var>CONFIG_PROTECT</var> con la salida de la orden <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --info</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --info | grep 'CONFIG_PROTECT='</code></div></div>
+<p>Más información acerca de la protección de archivos de configuración por Portage está disponible en la sección de archivos de configuración (CONFIGURATION FILES) de la página man de emerge:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h3><span class="mw-headline" id="Exclusi.C3.B3n_de_directorios">Exclusión de directorios</span></h3>
+<p>Para 'desproteger' ciertos subdirectorios en directorios protegidos, use la variable <var>CONFIG_PROTECT_MASK</var>.
+</p>
+<h2><span class="mw-headline" id="Opciones_de_descarga">Opciones de descarga</span></h2>
+<h3><span class="mw-headline" id="Ubicaciones_de_servidores">Ubicaciones de servidores</span></h3>
+<p>Cuando la información o datos no están disponibles en su sistema, Portage los descargará de Internet. Las ubicaciones de los servidores para los canales de información y datos se definen mediante los siguientes variables:
+</p>
+<ul><li> <var>GENTOO_MIRRORS</var> define una lista de servidores que contienen código fuente (distfiles)</li>
+<li> <var>PORTAGE_BINHOST</var> define un servidor en particular que contiene paquetes pre-compilados para su sistema</li></ul>
+<p>Un tercer parámetro involucra la ubicación del servidor rsync utilizado al actualizar el árbol Portage. Esto se define en el fichero <span style="font-family: monospace; font-size: 95%">/etc/portage/repos.conf</span> (o en un fichero dentro de ese directorio si se ha definido como tal):
+</p>
+<ul><li> <var>sync-type</var> define el tipo de servidor y su valor por defecto es <code>rsync</code></li>
+<li> <var>sync-uri</var> define un servidor en particular desde el que Portage obtiene el árbol</li></ul>
+<p>Las variables <var>GENTOO_MIRRORS</var>, <var>sync-type</var> y <var>sync-uri</var> se pueden definir automáticamente mediante la orden <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span>. Debe hacer emerge <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/mirrorselect">app-portage/mirrorselect</a> antes de usarla. Para más información, vea la ayuda de mirrorselect en línea:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>mirrorselect --help</code></div></div>
+<p>Si su entorno requiere el uso de un servidor proxy, configure las variables <var>http_proxy</var>, <var>ftp_proxy</var> y <var>RSYNC_PROXY</var> para declararlos.
+</p>
+<h3><span class="mw-headline" id=".C3.93rdenes_para_descargar">Órdenes para descargar</span></h3>
+<p>Cuando Portage requiera descargar fuentes, utiliza por defecto la orden wget. Puede cambiar esto usando la variable <var>FETCHCOMMAND</var>.
+</p><p>Portage puede continuar una descarga hecha en forma parcial. Usa wget por defecto, pero puede cambiarlo usando la variable <var>RESUMECOMMAND</var>.
+</p><p>Asegúrese que sus  <var>FETCHCOMMAND</var> y <var>RESUMECOMMAND</var> guarde las fuentes en la ubicación correcta. Al definir las variables debe usar \${URI} y \${DISTDIR} para apuntar a la ubicación de las fuentes y la ubicación del directorio distfiles respectivamente.
+</p><p>Puede definir manejadores específicos por protocolo con <var>FETCHCOMMAND_HTTP</var>, <var>FETCHCOMMAND_FTP</var>, <var>RESUMECOMMAND_HTTP</var>, <var>RESUMECOMMAND_FTP</var>, etc.
+</p>
+<h3><span class="mw-headline" id="Configuraci.C3.B3n_de_rsync">Configuración de rsync</span></h3>
+<p>Aunque no se puede alterar la orden rsync usada para actualizar el árbol Portage, podrá configurar algunas de las variables para modificar su comportamiento:
+</p>
+<ul><li> <var>PORTAGE_RSYNC_OPTS</var> configura un número de variables por defecto usadas durante la sincronización, separado por espacios en blanco. Estos no deberían ser cambiados a no ser que sepa exactamente lo que está haciendo. Note que ciertas opciones requeridas con obligatoriedad serán siempre usadas aunque <var>PORTAGE_RSYNC_OPTS</var> no tenga valor asignado.</li></ul>
+<ul><li> <var>PORTAGE_RSYNC_EXTRA_OPTS</var> puede ser usado para configurar opciones adicionales al sincronizar. Cada opción deberá ser separada con un espacio en blanco.
+<ul><li> <code>--timeout=&lt;número&gt;</code>: define la cantidad de segundos que una conexión rsync puede permanecer sin que caduque. Esta variable tiene un valor por defecto <code>180</code>, pero los usuarios con conexiones vía telefónica o individuos con ordenadores lentos podrían aumentar a <code>300</code> o más.</li>
+<li> <code>--exclude-from=/etc/portage/rsync_excluir</code>: Esto apunta a un archivo que lista los paquetes y/o categorías que rsync debe ignorar durante el proceso de actualización. En este caso, apunta a <span style="font-family: monospace; font-size: 95%">/etc/portage/rsync_excluir</span>.</li>
+<li> <code>--quiet</code>: Reduce la cantidad de información que sale por pantalla</li>
+<li> <code>--verbose</code>: Muestra una lista completa de archivos</li>
+<li> <code>--progress</code>: Muestra un medidor de progreso por cada archivo</li></ul></li></ul>
+<ul><li> <var>PORTAGE_RSYNC_RETRIES</var> define la cantidda de veces que rsync debe intentar conectar con el servidor apuntado por la variable <var>SYNC</var> variable antes de abandonar. Por defector, esta variable es <code>3</code>.</li></ul>
+<p>Para mas información sobre estas y otras opciones, lea man rsync.
+</p>
+<h2><span class="mw-headline" id="Configuraci.C3.B3n_de_Gentoo">Configuración de Gentoo</span></h2>
+<h3><span class="mw-headline" id="Selecci.C3.B3n_de_rama">Selección de rama</span></h3>
+<p>Puede escoger su rama por defecto a través de la variable <var>ACCEPT_KEYWORDS</var>. El valor por defecto es la rama estable de su plataforma. Para más información acerca de las ramas de Gentoo, vea el capítulo siguiente.
+</p>
+<h3><span class="mw-headline" id="Caracter.C3.ADsticas_de_Portage">Características de Portage</span></h3>
+<p>Puede activar ciertas características de Portage por medio de la variable <var>FEATURES</var>. Estas han sido discutidas en capítulos anteriores.
+</p>
+<h2><span class="mw-headline" id="Comportamiento_de_Portage">Comportamiento de Portage</span></h2>
+<h3><span class="mw-headline" id="Gesti.C3.B3n_de_los_recursos">Gestión de los recursos</span></h3>
+<p>Con la variable <var>PORTAGE_NICENESS</var>, puede aumentar o reducir el valor "nice" con el que ejecuta Portage. El valor de la variable <var>PORTAGE_NICENESS</var> se suma al valor nice actual.
+</p><p>Para más información acerca de valores "nice", vea la página man de nice:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man nice</code></div></div>
+<h3><span class="mw-headline" id="Comportamiento_de_la_salida">Comportamiento de la salida</span></h3>
+<p>El valor de <var>NOCOLOR</var>, que por defecto es <code>false</code>, define si Portage desactiva el uso de los colores en su salida.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Files/es.html" title="Previous part" class="btn btn-default">&#8592; Archivos y directorios</a> <a href="../../es.html" title="Handbook:AMD64/es" class="btn btn-default">Home</a> <a href="../Branches/es.html" title="Next part" class="btn btn-default">Mezclar ramas &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112131351
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.304 seconds
+Real time usage: 0.340 seconds
+Preprocessor visited node count: 728/1000000
+Preprocessor generated node count: 2027/1000000
+Post‐expand include size: 25979/2097152 bytes
+Template argument size: 1135/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  262.727      1 - Handbook:Parts/Portage/Variables/es
+100.00%  262.727      1 - -total
+ 59.04%  155.102      1 - Handbook:Parts/TOC/es
+ 18.79%   49.371      5 - Template:Cmd
+ 13.84%   36.349      5 - Template:GenericCmd
+  8.71%   22.894      1 - Handbook:Parts/Navigator
+  3.58%    9.406      6 - Template:GenericCmd/Line
+  3.36%    8.823      1 - Template:Package
+  1.76%    4.612      2 - Template:Trim
+  1.55%    4.062      5 - Template:Path
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:111484-0!*!0!!en!*!* and timestamp 20160112131351 and revision id 270884
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;oldid=270884">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Variables/es&amp;oldid=270884</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 1 March 2015, at 20:51.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Portage/Variables/es"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":192});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Variables/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:14 GMT -->
+</html>

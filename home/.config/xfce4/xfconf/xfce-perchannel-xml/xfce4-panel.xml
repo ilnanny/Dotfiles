@@ -20,7 +20,6 @@
         <value type="int" value="1"/>
         <value type="int" value="47"/>
         <value type="int" value="2"/>
-        <value type="int" value="6"/>
         <value type="int" value="28"/>
         <value type="int" value="4"/>
         <value type="int" value="8"/>
@@ -96,12 +95,6 @@
       </property>
       <property name="disable-tooltips" type="bool" value="true"/>
     </property>
-    <property name="plugin-6" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15827355211.desktop"/>
-      </property>
-      <property name="disable-tooltips" type="bool" value="true"/>
-    </property>
     <property name="plugin-8" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15831178951.desktop"/>
@@ -172,7 +165,6 @@
       </property>
       <property name="disable-tooltips" type="bool" value="true"/>
     </property>
-    <property name="plugin-5" type="string" value="whiskermenu"/>
     <property name="plugin-4" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15842387361.desktop"/>
@@ -180,5 +172,10 @@
       <property name="disable-tooltips" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="showdesktop"/>
+    <property name="plugin-5" type="string" value="applicationsmenu">
+      <property name="button-title" type="string" value=""/>
+      <property name="button-icon" type="string" value="/home/ilnanny/.icons/menu/menul.svg"/>
+      <property name="show-button-title" type="bool" value="false"/>
+    </property>
   </property>
 </channel>

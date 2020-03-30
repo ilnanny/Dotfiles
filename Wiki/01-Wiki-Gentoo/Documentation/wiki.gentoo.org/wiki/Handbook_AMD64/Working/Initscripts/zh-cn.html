@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Working/Initscripts/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:43:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>手册：AMD64/使用Gentoo/初始化脚本（Initscript）系统 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Working/Initscripts/zh-cn","wgTitle":"AMD64/Working/Initscripts/zh-cn","wgCurRevisionId":334000,"wgRevisionId":334000,"wgArticleId":127988,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:AMD64/Working/Initscripts/zh-cn","wgRelevantArticleId":127988,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Working/Initscripts/zh-cn" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Working/Initscripts/zh-cn&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Working_Initscripts_zh-cn skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Working/Initscripts/zh-cn.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Working/Initscripts/zh-cn.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;oldid=334000" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FWorking-2FInitscripts-2Fzh-2Dcn.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FWorking%2FInitscripts%2Fzh-cn&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FWorking%2FInitscripts%2Fzh-cn" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="zh-cn.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Working/Initscripts/zh-cn&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="zh-CN">
+							<span dir="auto">手册：AMD64/使用Gentoo/初始化脚本（Initscript）系统</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="zh-CN" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FWorking%2FInitscripts&amp;action=page&amp;filter=&amp;language=zh-cn">translated version</a></span> of the page <a href="../Initscripts.html" title="Handbook:AMD64/Working/Initscripts">Handbook:AMD64/Working/Initscripts</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Arbeiten/Initskripts (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Initscripts.html" title="Handbook:AMD64/Working/Initscripts (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Working/Initscripts/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/ワーキング/Initscripts (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Working/Initscripts/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Working/Initscripts (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</span></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 安装
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/zh-cn.html" title="Handbook:AMD64/Installation/About/zh-cn">关于安装</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/zh-cn.html" title="Handbook:AMD64/Installation/Media/zh-cn">选择安装媒介</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/zh-cn.html" title="Handbook:AMD64/Installation/Networking/zh-cn">配置网络</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/zh-cn.html" title="Handbook:AMD64/Installation/Disks/zh-cn">准备磁盘</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/zh-cn.html" title="Handbook:AMD64/Installation/Stage/zh-cn">安装stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/zh-cn.html" title="Handbook:AMD64/Installation/Base/zh-cn">安装基本系统</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/zh-cn.html" title="Handbook:AMD64/Installation/Kernel/zh-cn">配置Linux内核</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/zh-cn.html" title="Handbook:AMD64/Installation/System/zh-cn">配置系统</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/zh-cn.html" title="Handbook:AMD64/Installation/Tools/zh-cn">安装系统工具</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/zh-cn.html" title="Handbook:AMD64/Installation/Bootloader/zh-cn">配置系统引导程序Bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/zh-cn.html" title="Handbook:AMD64/Installation/Finalizing/zh-cn">收尾安装工作</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Gentoo
+</th></tr>
+<tr>
+<td> <a href="../Portage/zh-cn.html" title="Handbook:AMD64/Working/Portage/zh-cn">Portage介绍</a>
+</td></tr>
+<tr>
+<td> <a href="../USE/zh-cn.html" title="Handbook:AMD64/Working/USE/zh-cn">USE标记</a>
+</td></tr>
+<tr>
+<td> <a href="../Features/zh-cn.html" title="Handbook:AMD64/Working/Features/zh-cn">Portage功能特性</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">初始化脚本（Initscript）系统</strong>
+</td></tr>
+<tr>
+<td> <a href="../EnvVar/zh-cn.html" title="Handbook:AMD64/Working/EnvVar/zh-cn">环境变量</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/zh-cn.html" title="Handbook:AMD64/Portage/Files/zh-cn">文件和目录</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/zh-cn.html" title="Handbook:AMD64/Portage/Variables/zh-cn">变量</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/zh-cn.html" title="Handbook:AMD64/Portage/Branches/zh-cn">混合使用不同的软件分支</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/zh-cn.html" title="Handbook:AMD64/Portage/Tools/zh-cn">额外的工具</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/zh-cn.html" title="Handbook:AMD64/Portage/CustomTree/zh-cn">定制Portage树</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/zh-cn.html" title="Handbook:AMD64/Portage/Advanced/zh-cn">高级特性</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 网络配置
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/zh-cn.html" title="Handbook:AMD64/Networking/Introduction/zh-cn">入门</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/zh-cn.html" title="Handbook:AMD64/Networking/Advanced/zh-cn">高级配置</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/zh-cn.html" title="Handbook:AMD64/Networking/Modular/zh-cn">模块化网络</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/zh-cn.html" title="Handbook:AMD64/Networking/Wireless/zh-cn">无线</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/zh-cn.html" title="Handbook:AMD64/Networking/Extending/zh-cn">添加功能</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/zh-cn.html" title="Handbook:AMD64/Networking/Dynamic/zh-cn">动态管理</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Runlevels"><span class="tocnumber">1</span> <span class="toctext">Runlevels</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Booting_the_system"><span class="tocnumber">1.1</span> <span class="toctext">Booting the system</span></a></li>
+<li class="toclevel-2"><a href="#Initscripts"><span class="tocnumber">1.2</span> <span class="toctext">Initscripts</span></a></li>
+<li class="toclevel-2"><a href="#How_init_works"><span class="tocnumber">1.3</span> <span class="toctext">How init works</span></a></li>
+<li class="toclevel-2"><a href="#Available_runlevels"><span class="tocnumber">1.4</span> <span class="toctext">Available runlevels</span></a></li>
+<li class="toclevel-2"><a href="#Working_with_initscripts"><span class="tocnumber">1.5</span> <span class="toctext">Working with initscripts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Updating_runlevels"><span class="tocnumber">2</span> <span class="toctext">Updating runlevels</span></a>
+<ul>
+<li class="toclevel-2"><a href="#rc-update"><span class="tocnumber">2.1</span> <span class="toctext">rc-update</span></a></li>
+<li class="toclevel-2"><a href="#Adding_and_removing_services"><span class="tocnumber">2.2</span> <span class="toctext">Adding and removing services</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuring_services"><span class="tocnumber">3</span> <span class="toctext">Configuring services</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Why_additional_configuration_is_needed"><span class="tocnumber">3.1</span> <span class="toctext">Why additional configuration is needed</span></a></li>
+<li class="toclevel-2"><a href="#conf.d_directory"><span class="tocnumber">3.2</span> <span class="toctext">conf.d directory</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Writing_initscripts"><span class="tocnumber">4</span> <span class="toctext">Writing initscripts</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Is_it_necessary"><span class="tocnumber">4.1</span> <span class="toctext">Is it necessary</span></a></li>
+<li class="toclevel-2"><a href="#Layout"><span class="tocnumber">4.2</span> <span class="toctext">Layout</span></a></li>
+<li class="toclevel-2"><a href="#Dependencies"><span class="tocnumber">4.3</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-2"><a href="#Controlling_the_order"><span class="tocnumber">4.4</span> <span class="toctext">Controlling the order</span></a></li>
+<li class="toclevel-2"><a href="#Standard_functions"><span class="tocnumber">4.5</span> <span class="toctext">Standard functions</span></a></li>
+<li class="toclevel-2"><a href="#Adding_custom_options"><span class="tocnumber">4.6</span> <span class="toctext">Adding custom options</span></a></li>
+<li class="toclevel-2"><a href="#Service_configuration_variables"><span class="tocnumber">4.7</span> <span class="toctext">Service configuration variables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Changing_runlevel_behavior"><span class="tocnumber">5</span> <span class="toctext">Changing runlevel behavior</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Who_might_benefit_from_this"><span class="tocnumber">5.1</span> <span class="toctext">Who might benefit from this</span></a></li>
+<li class="toclevel-2"><a href="#Using_softlevel"><span class="tocnumber">5.2</span> <span class="toctext">Using softlevel</span></a></li>
+<li class="toclevel-2"><a href="#Using_bootlevel"><span class="tocnumber">5.3</span> <span class="toctext">Using bootlevel</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Runlevels">Runlevels</span></h2>
+<h3><span class="mw-headline" id="Booting_the_system">Booting the system</span></h3>
+<p>When the system is booted, lots of text floats by. When paying close attention, one will notice this text is (usually) the same every time the system is rebooted. The sequence of all these actions is called the boot sequence and is (more or less) statically defined.
+</p><p>First, the boot loader will load the kernel image that is defined in the boot loader configuration. Then, the boot loader instructs the CPU to run execute kernel. When the kernel is loaded and run, it initializes all kernel-specific structures and tasks and starts the init process.
+</p><p>This process then makes sure that all filesystems (defined in <span style="font-family: monospace; font-size: 95%">/etc/fstab</span>) are mounted and ready to be used. Then it executes several scripts located in <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span>, which will start the services needed in order to have a successfully booted system.
+</p><p>Finally, when all scripts are executed, init activates the terminals (in most cases just the virtual consoles which are hidden beneath <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F2</kbd>, etc.) attaching a special process called <span style="font-family: monospace; font-size: 95%; font-weight: bold;">agetty</span> to it. This process will then make sure users are able to log on through these terminals by running login.
+</p>
+<h3><span class="mw-headline" id="Initscripts">Initscripts</span></h3>
+<p>Now init doesn't just execute the scripts in <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span> randomly. Even more, it doesn't run all scripts in <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span>, only the scripts it is told to execute. It decides which scripts to execute by looking into <span style="font-family: monospace; font-size: 95%">/etc/runlevels/</span>.
+</p><p>First, init runs all scripts from <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span> that have symbolic links inside <span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot/</span>. Usually, it will start the scripts in alphabetical order, but some scripts have dependency information in them, telling the system that another script must be run before they can be started.
+</p><p>When all <span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot/</span> referenced scripts are executed, init continues with running the scripts that have a symbolic link to them in <span style="font-family: monospace; font-size: 95%">/etc/runlevels/default/</span>. Again, it will use the alphabetical order to decide what script to run first, unless a script has dependency information in it, in which case the order is changed to provide a valid start-up sequence. The latter is also the reason why commands used during the installation of Gentoo Linux used <code>default</code>, as in <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update add sshd default</span>.
+</p>
+<h3><span class="mw-headline" id="How_init_works">How init works</span></h3>
+<p>Of course init doesn't decide all that by itself. It needs a configuration file that specifies what actions need to be taken. This configuration file is <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>.
+</p><p>Remember the boot sequence that was just described - init's first action is to mount all file systems. This is defined in the following line from <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>Initialization command</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>si::sysinit:/sbin/rc sysinit
+</pre></div></pre>
+<p>This line tells init that it must run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">/sbin/rc sysinit</span> to initialize the system. The <span style="font-family: monospace; font-size: 95%">/sbin/rc</span> script takes care of the initialization, so one might say that init doesn't do much - it delegates the task of initializing the system to another process.
+</p><p>Second, init executed all scripts that had symbolic links in <span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot/</span>. This is defined in the following line:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>Boot command invocation</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>rc::bootwait:/sbin/rc boot
+</pre></div></pre>
+<p>Again the rc script performs the necessary tasks. Note that the option given to rc (boot) is the same as the subdirectory of <span style="font-family: monospace; font-size: 95%">/etc/runlevels/</span> that is used.
+</p><p>Now init checks its configuration file to see what runlevel it should run. To decide this, it reads the following line from <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>Default runlevel selection</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>id:3:initdefault:
+</pre></div></pre>
+<p>In this case (which the majority of Gentoo users will use), the runlevel id is 3. Using this information, init checks what it must run to start runlevel 3:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>Runlevel definitions</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>l0:0:wait:/sbin/rc shutdown
+l1:S1:wait:/sbin/rc single
+l2:2:wait:/sbin/rc nonetwork
+l3:3:wait:/sbin/rc default
+l4:4:wait:/sbin/rc default
+l5:5:wait:/sbin/rc default
+l6:6:wait:/sbin/rc reboot
+</pre></div></pre>
+<p>The line that defines level 3, again, uses the rc script to start the services (now with argument <code>default</code>). Again note that the argument of rc is the same as the subdirectory from <span style="font-family: monospace; font-size: 95%">/etc/runlevels/</span>.
+</p><p>When rc has finished, init decides what virtual consoles it should activate and what commands need to be run at each console:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>Terminal definitions</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>c1:12345:respawn:/sbin/agetty 38400 tty1 linux
+c2:12345:respawn:/sbin/agetty 38400 tty2 linux
+c3:12345:respawn:/sbin/agetty 38400 tty3 linux
+c4:12345:respawn:/sbin/agetty 38400 tty4 linux
+c5:12345:respawn:/sbin/agetty 38400 tty5 linux
+c6:12345:respawn:/sbin/agetty 38400 tty6 linux
+</pre></div></pre>
+<h3><span class="mw-headline" id="Available_runlevels">Available runlevels</span></h3>
+<p>In a previous section, we saw that init uses a numbering scheme to decide what runlevel it should activate. A runlevel is a state in which the system is running and contains a collection of scripts (runlevel scripts or initscripts) that must be executed when entering or leaving a runlevel.
+</p><p>In Gentoo, there are seven runlevels defined: three internal runlevels, and four user-defined runlevels. The internal runlevels are called <i>sysinit</i>, <i>shutdown</i> and <i>reboot</i> and do exactly what their names imply: initialize the system, powering off the system, and rebooting the system.
+</p><p>The user-defined runlevels are those with an accompanying <span style="font-family: monospace; font-size: 95%">/etc/runlevels/</span> subdirectory: <i>boot</i>, <i>default</i>, <i>nonetwork</i> and <i>single</i>. The boot runlevel starts all system-necessary services which all other runlevels use. The remaining three runlevels differ in what services they start: default is used for day-to-day operations, nonetwork is used in case no network connectivity is required, and single is used when the system needs to be fixed.
+</p>
+<h3><span class="mw-headline" id="Working_with_initscripts">Working with initscripts</span></h3>
+<p>The scripts that the rc process starts are called init scripts. Each script in <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span> can be executed with the arguments <code>start</code>, <code>stop</code>, <code>restart</code>, <code>zap</code>, <code>status</code>, <code>ineed</code>, <code>iuse</code>, <code>needsme</code>, <code>usesme</code>, or <code>broken</code>.
+</p><p>To start, stop, or restart a service (and all depending services), the <code>start</code>, <code>stop</code>, and <code>restart</code> arguments should be used:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix start</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Only the services that need the given service are stopped or restarted. The other depending services (those that use the service but don't need it) are left untouched.</div>
+<p>To stop a service, but not the services that depend on it, use the <code>--nodeps</code> option together with the <code>stop</code> argument:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix --nodeps stop</code></div></div>
+<p>To see what status a service has (started, stopped, ...) use the <code>status</code> argument:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix status</code></div></div>
+<p>If the status information shows that the service is running, but in reality it is not, then reset the status information to "stopped" with the <code>zap</code> argument:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix zap</code></div></div>
+<p>To also ask what dependencies the service has, use <code>iuse</code> or <code>ineed</code>. With <code>ineed</code> it is possible to see the services that are really necessary for the correct functioning of the service. <code>iuse</code> on the other hand shows the services that can be used by the service, but are not necessary for the correct functioning.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix ineed</code></div></div>
+<p>Similarly, it is possible to ask what services require the service (<code>needsme</code>) or can use it (<code>usesme</code>):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix needsme</code></div></div>
+<p>Finally, to ask what dependencies the service requires that are missing:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix broken</code></div></div>
+<h2><span class="mw-headline" id="Updating_runlevels">Updating runlevels</span></h2>
+<h3><span class="mw-headline" id="rc-update">rc-update</span></h3>
+<p>Gentoo's init system uses a dependency-tree to decide what service needs to be started first. As this is a tedious task that we wouldn't want our users to have to do manually, we have created tools that ease the administration of the runlevels and init scripts.
+</p><p>With <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> it is possible to add and remove init scripts to a runlevel. The <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> tool will then automatically ask the <span style="font-family: monospace; font-size: 95%">depscan.sh</span> script to rebuild the dependency tree.
+</p>
+<h3><span class="mw-headline" id="Adding_and_removing_services">Adding and removing services</span></h3>
+<p>In earlier instructions, init scripts have already been added to the "default" runlevel. What "default" means has been explained earlier in this document. Next to the runlevel, the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> script requires a second argument that defines the action: <code>add</code>, <code>del</code>, or <code>show</code>.
+</p><p>To add or remove an init script, just give <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> the <code>add</code> or <code>del</code> argument, followed by the init script and the runlevel. For instance:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update del postfix default</code></div></div>
+<p>The <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update -v show</span> command will show all the available init scripts and list at which runlevels they will execute:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update -v show</code></div></div>
+<p>It is also possible to run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update show</span> (without <code>-v</code>) to just view enabled init scripts and their runlevels.
+</p>
+<h2><span class="mw-headline" id="Configuring_services">Configuring services</span></h2>
+<h3><span class="mw-headline" id="Why_additional_configuration_is_needed">Why additional configuration is needed</span></h3>
+<p>Init scripts can be quite complex. It is therefore not really desirable to have the users edit the init script directly, as it would make it more error-prone. It is however important to be able to configure such a service. For instance, users might want to give more options to the service itself.
+</p><p>A second reason to have this configuration outside the init script is to be able to update the init scripts without the fear that the user's configuration changes will be undone.
+</p>
+<h3><span class="mw-headline" id="conf.d_directory">conf.d directory</span></h3>
+<p>Gentoo provides an easy way to configure such a service: every init script that can be configured has a file in <span style="font-family: monospace; font-size: 95%">/etc/conf.d/</span>. For instance, the <span style="font-family: monospace; font-size: 95%">apache2</span> initscript (called <span style="font-family: monospace; font-size: 95%">/etc/init.d/apache2</span>) has a configuration file called <span style="font-family: monospace; font-size: 95%">/etc/conf.d/apache2</span>, which can contain the options to give to the Apache 2 server when it is started:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/apache2</code></strong><strong>Example options for apache2 init script</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">APACHE2_OPTS</span><span class="o">=</span><span class="s2">&quot;-D PHP5&quot;</span>
+</pre></div></pre>
+<p>Such a configuration file contains <i>only</i> variables (just like <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> does), making it very easy to configure services. It also allows us to provide more information about the variables (as comments).
+</p>
+<h2><span class="mw-headline" id="Writing_initscripts">Writing initscripts</span></h2>
+<h3><span class="mw-headline" id="Is_it_necessary">Is it necessary</span></h3>
+<p>No, writing an init script is usually not necessary as Gentoo provides ready-to-use init scripts for all provided services. However, some users might have installed a service without using portage, in which case they will most likely have to create an init script.
+</p><p>Do not use the init script provided by the service if it isn't explicitly written for Gentoo: Gentoo's init scripts are not compatible with the init scripts used by other distributions!
+</p>
+<h3><span class="mw-headline" id="Layout">Layout</span></h3>
+<p>The basic layout of an init script is shown below.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example initscript layout</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">#!/sbin/runscript</span>
+  
+depend<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Dependency information<span class="o">)</span>
+<span class="o">}</span>
+  
+start<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Commands necessary to start the service<span class="o">)</span>
+<span class="o">}</span>
+  
+stop<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Commands necessary to stop the service<span class="o">)</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>Every init script requires the start() function to be defined. All other sections are optional.
+</p>
+<h3><span class="mw-headline" id="Dependencies">Dependencies</span></h3>
+<p>There are two dependency-alike settings that can be defined which influence the start-up or sequencing of init scripts: <i>use</i> and <i>need</i>. Next to these two, there are also two order-influencing methods called <i>before</i> and <i>after</i>. These last two are no dependencies per se - they do not make the original init script fail if the selected one isn't scheduled to start (or fails to start).
+</p>
+<ul><li> The <i>use</i> settings informs the init system that this script uses functionality offered by the selected script, but does not directly depend on it. A good example would be <i>use logger</i> or <i>use dns</i>. If those services are available, they will be put in good use, but if the system does not have a logger or DNS server the services will still work. If the services exist, then they are started before the script that uses them.</li>
+<li> The <i>need</i> setting is a hard dependency. It means that the script that is needing another script will not start before the other script is launched successfully. Also, if that other script is restarted, then this one will be restarted as well.</li>
+<li> When using <i>before</i>, then the given script is launched before the selected one if the selected one is part of the init level. So an init script xdm that defines <i>before alsasound</i> will start before the alsasound script, but only if alsasound is scheduled to start as well in the same init level. If alsasound is not scheduled to start too, then this particular setting has no effect and xdm will be started when the init system deems it most appropriate.</li>
+<li> Similarly, <i>after</i> informs the init system that the given script should be launched after the selected one if the selected one is part of the init level. If not, then the setting has no effect and the script will be launched by the init system when it deems it most appropriate.</li></ul>
+<p>It should be clear from the above that <i>need</i> is the only "true" dependency setting as it affects if the script will be started or not. All the others are merely pointers towards the init system to clarify in which order scripts can be (or should be) launched.
+</p><p>Now, look at many of Gentoo's available init scripts and notice that some have dependencies on things that are no init scripts. These "things" we call virtuals.
+</p><p>A <i>virtual dependency</i> is a dependency that a service provides, but that is not provided solely by that service. An init script can depend on a system logger, but there are many system loggers available (metalogd, syslog-ng, sysklogd, ...). As the script cannot need every single one of them (no sensible system has all these system loggers installed and running) we made sure that all these services provide a virtual dependency.
+</p><p>For instance, take a look at the postfix dependency information:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/init.d/postfix</code></strong><strong>Dependency information of the postfix service</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need net
+  use logger dns
+  provide mta
+<span class="o">}</span>
+</pre></div></pre>
+<p>As can be seen, the postfix service:
+</p>
+<ul><li> Requires the (virtual) net dependency (which is provided by, for instance, <span style="font-family: monospace; font-size: 95%">/etc/init.d/net.eth0</span>).</li>
+<li> Uses the (virtual) logger dependency (which is provided by, for instance, <span style="font-family: monospace; font-size: 95%">/etc/init.d/syslog-ng</span>).</li>
+<li> Uses the (virtual) dns dependency (which is provided by, for instance, <span style="font-family: monospace; font-size: 95%">/etc/init.d/named</span>).</li>
+<li> Provides the (virtual) mta dependency (which is common for all mail servers).</li></ul>
+<h3><span class="mw-headline" id="Controlling_the_order">Controlling the order</span></h3>
+<p>As described in the previous section, it is possible to tell the init system what order it should use for starting (or stopping) scripts. This ordering is handled both through the dependency settings use and need, but also through the order settings before and after. As we have described these earlier already, let's take a look at the portmap service as an example of such init script.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/init.d/portmap</code></strong><strong>Dependency information of the portmap service</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need net
+  before inetd
+  before xinetd
+<span class="o">}</span>
+</pre></div></pre>
+<p>It is possible to use the "*" glob to catch all services in the same runlevel, although this isn't advisable.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Using the * glob</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  before *
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>If the service must write to local disks, it should need localmount. If it places anything in <span style="font-family: monospace; font-size: 95%">/var/run/</span> such as a pidfile, then it should start after bootmisc:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Dependency setting with needing localmount and after bootmisc</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need localmount
+  after bootmisc
+<span class="o">}</span>
+</pre></div></pre></div>
+<h3><span class="mw-headline" id="Standard_functions">Standard functions</span></h3>
+<p>Next to the <code>depend()</code> functionality, it is also necessary to define the <code>start()</code> function. This one contains all the commands necessary to initialize the service. It is advisable to use the <code>ebegin</code> and <code>eend</code> functions to inform the user about what is happening:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example start() function</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>start<span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">RC_CMD</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;restart&quot;</span> <span class="o">]</span><span class="p">;</span>
+  <span class="k">then</span>
+    <span class="c"># Do something in case a restart requires more than stop, start</span>
+  <span class="k">fi</span>
+  
+  ebegin <span class="s2">&quot;Starting my_service&quot;</span>
+  start-stop-daemon --start --exec /path/to/my_service <span class="se">\</span>
+    --pidfile /path/to/my_pidfile
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>Both <code>--exec</code> and <code>--pidfile</code> should be used in start and stop functions. If the service does not create a pidfile, then use <code>--make-pidfile</code> if possible, though it is recommended to test this to be sure. Otherwise, don't use pidfiles. It is also possible to add <code>--quiet</code> to the start-stop-daemon options, but this is not recommended unless the service is extremely verbose. Using <code>--quiet</code> may hinder debugging if the service fails to start.
+</p><p>Another notable setting used in the above example is to check the contents of the <var>RC_CMD</var> variable. Unlike the previous init script system, the newer openrc system does not support script-specific restart functionality. Instead, the script needs to check the contents of the <var>RC_CMD</var> variable to see if a function (be it <code>start()</code> or <code>stop()</code>) is called as part of a restart or not.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Make sure that <code>--exec</code> actually calls a service and not just a shell script that launches services and exits - that's what the init script is supposed to do.</div>
+<p>For more examples of the <code>start()</code> function, please read the source code of the available init scripts in the <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span> directory.
+</p><p>Another function that can (but does not have to) be defined is <code>stop()</code>. The init system is intelligent enough to fill in this function by itself if start-stop-daemon is used.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example stop() function</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>stop<span class="o">()</span> <span class="o">{</span>
+  ebegin <span class="s2">&quot;Stopping my_service&quot;</span>
+  start-stop-daemon --stop --exec /path/to/my_service <span class="se">\</span>
+    --pidfile /path/to/my_pidfile
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>If the service runs some other script (for example, Bash, Python, or Perl), and this script later changes names (for example, <span style="font-family: monospace; font-size: 95%">foo.py</span> to foo), then it is necessary to add <code>--name</code> to start-stop-daemon. This must specify the name that the script will be changed to. In this example, a service starts <span style="font-family: monospace; font-size: 95%">foo.py</span>, which changes names to foo:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example definition for a service that starts the foo script</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>start<span class="o">()</span> <span class="o">{</span>
+  ebegin <span class="s2">&quot;Starting my_script&quot;</span>
+  start-stop-daemon --start --exec /path/to/my_script <span class="se">\</span>
+    --pidfile /path/to/my_pidfile --name foo
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>start-stop-daemon has an excellent man page available if more information is needed:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man start-stop-daemon</code></div></div>
+<p>Gentoo's init script syntax is based on the POSIX Shell so people are free to use sh-compatible constructs inside their init scripts. Keep other constructs, like bash-specific ones, out of the init scripts to ensure that the scripts remain functional regardless of the change Gentoo might do on its init system.
+</p>
+<h3><span class="mw-headline" id="Adding_custom_options">Adding custom options</span></h3>
+<p>If the initscript needs to support more options than the ones we have already encountered, then add the option to the extra_commands variable, and create a function with the same name as the option. For instance, to support an option called restartdelay:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example definition of restartdelay method</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">extra_commands</span><span class="o">=</span><span class="s2">&quot;restartdelay&quot;</span>
+  
+restartdelay<span class="o">()</span> <span class="o">{</span>
+  stop
+  sleep <span class="m">3</span>    <span class="c"># Wait 3 seconds before starting again</span>
+  start
+<span class="o">}</span>
+</pre></div></pre></div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Important</strong><br />The function restart() cannot be overridden in openrc!</div>
+<h3><span class="mw-headline" id="Service_configuration_variables">Service configuration variables</span></h3>
+<p>In order to support configuration files in <span style="font-family: monospace; font-size: 95%">/etc/conf.d/</span>, no specifics need to be impleneted: when the init script is executed, the following files are automatically sourced (i.e. the variables are available to use):
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">/etc/conf.d/YOUR_INIT_SCRIPT</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/conf.d/basic</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span></li></ul>
+<p>Also, if the init script provides a virtual dependency (such as net), the file associated with that dependency (such as <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>) will be sourced too.
+</p>
+<h2><span class="mw-headline" id="Changing_runlevel_behavior">Changing runlevel behavior</span></h2>
+<h3><span class="mw-headline" id="Who_might_benefit_from_this">Who might benefit from this</span></h3>
+<p>Many laptop users know the situation: at home they need to start net.eth0, but they don't want to start net.eth0 while on the road (as there is no network available). With Gentoo the runlevel behaviour can be altered at will.
+</p><p>For instance, a second "default" runlevel can be created which can be booted that has other init scripts assigned to it. At boottime, the user can then select what default runlevel to use.
+</p>
+<h3><span class="mw-headline" id="Using_softlevel">Using softlevel</span></h3>
+<p>First of all, create the runlevel directory for the second "default" runlevel. As an example we create the <i>offline</i> runlevel:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir /etc/runlevels/offline</code></div></div>
+<p>Add the necessary init scripts to the newly created runlevel. For instance, to have an exact copy of the current default runlevel but without net.eth0:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /etc/runlevels/default
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>for service in *; do rc-update add $service offline; done
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update del net.eth0 offline
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update show offline</code></div><pre>
+(Partial sample Output)
+               acpid | offline
+          domainname | offline
+               local | offline
+            net.eth0 |
+</pre></div>
+<p>Even though net.eth0 has been removed from the offline runlevel, udev might want to attempt to start any devices it detects and launch the appropriate services, a functionality that is called hotplugging. By default, Gentoo does not enable hotplugging.
+</p><p>To enable hotplugging, but only for a selected set of scripts, use the <var>rc_hotplug</var> variable in <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/rc.conf</code></strong><strong>Enable hotplugging of the WLAN interface</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">rc_hotplug</span><span class="o">=</span><span class="s2">&quot;net.wlan !net.*&quot;</span>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />For more information on device initiated services, please see the comments inside <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span>.</div>
+<p>Edit the bootloader configuration and add a new entry for the offline runlevel. In that entry, add <code>softlevel=offline</code> as a boot parameter.
+</p>
+<h3><span class="mw-headline" id="Using_bootlevel">Using bootlevel</span></h3>
+<p>Using bootlevel is completely analogous to softlevel. The only difference here is that a second "boot" runlevel is defined instead of a second "default" runlevel.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Features.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../EnvVar.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154033
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.512 seconds
+Real time usage: 0.554 seconds
+Preprocessor visited node count: 2374/1000000
+Preprocessor generated node count: 3706/1000000
+Post‐expand include size: 75880/2097152 bytes
+Template argument size: 10530/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  409.060      1 - Handbook:Parts/Working/Initscripts/zh-cn
+100.00%  409.060      1 - -total
+ 29.15%  119.233      1 - Handbook:Parts/TOC/zh-cn
+ 22.99%   94.048     11 - Template:RootCmd
+ 20.35%   83.264     12 - Template:GenericCmd
+ 13.08%   53.498     16 - Template:PreBox
+ 10.17%   41.616      9 - Template:FileBox
+  7.11%   29.070      7 - Template:CodeBox
+  5.33%   21.802      1 - Handbook:Parts/Navigator
+  4.72%   19.315     15 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:127988-0!*!0!!en!*!* and timestamp 20160112154033 and revision id 334000
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;oldid=334000">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Initscripts/zh-cn&amp;oldid=334000</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 5 July 2015, at 14:37.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Working/Initscripts/zh-cn"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":757});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Working/Initscripts/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:43:47 GMT -->
+</html>

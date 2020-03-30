@@ -1,0 +1,45 @@
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Debian Multimedia
+deb [arch=amd64,i386] https://www.deb-multimedia.org buster main non-free
+
+###Google Chrome Browser
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+###Liveconfig
+deb http://repo.liveconfig.com/debian/ main main
+
+###MariaDB
+deb [arch=i386,amd64] http://mirror.23media.de/mariadb/repo/10.2/debian stretch main
+deb-src [arch=i386,amd64] http://mirror.23media.de/mariadb/repo/10.2/debian stretch main
+
+###NodeJs
+deb https://deb.nodesource.com/node_12.x buster main
+deb-src https://deb.nodesource.com/node_12.x buster main
+
+###Skype
+deb [arch=amd64] https://repo.skype.com/deb stable main
+
+###Spotify
+deb http://repository.spotify.com stable non-free
+
+###Steam
+deb [arch=i386,amd64] http://repo.steampowered.com/steam/ precise steam
+
+###Teamviewer
+deb http://linux.teamviewer.com/deb stable main
+
+###video-dl
+deb http://repo.daniil.it lenny main
+
+###Virtualbox
+deb [arch=i386,amd64] http://download.virtualbox.org/virtualbox/debian buster contrib
+
+###Wine
+deb [arch=i386] https://dl.winehq.org/wine-builds/debian/ buster main
+
+###yarn
+deb https://dl.yarnpkg.com/debian/ stable main

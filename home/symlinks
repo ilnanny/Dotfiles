@@ -6,7 +6,7 @@ ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
 ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
 mkdir $HOME/Notebooks
 ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
-ln -s /media/Dati/Dati/Scaricati/ /home/ilnanny/
+ln -s /media/Dati/Dati/Scaricati/ $HOME/Scaricati
 
 ## Root
 

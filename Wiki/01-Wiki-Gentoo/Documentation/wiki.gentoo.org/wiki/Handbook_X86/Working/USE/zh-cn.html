@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/USE/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:46:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>手册：X86/使用/USE标记 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Working/USE/zh-cn","wgTitle":"X86/Working/USE/zh-cn","wgCurRevisionId":335258,"wgRevisionId":335258,"wgArticleId":128562,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:X86/Working/USE/zh-cn","wgRelevantArticleId":128562,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Working/USE/zh-cn" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Working/USE/zh-cn&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Working_USE_zh-cn skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Working/USE/zh-cn.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Working/USE/zh-cn.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;oldid=335258" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FWorking-2FUSE-2Fzh-2Dcn.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FUSE%2Fzh-cn&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FUSE%2Fzh-cn" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="zh-cn.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Working/USE/zh-cn&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="zh-CN">
+							<span dir="auto">手册：X86/使用/USE标记</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="zh-CN" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FWorking%2FUSE&amp;action=page&amp;filter=&amp;language=zh-cn">translated version</a></span> of the page <a href="../USE.html" title="Handbook:X86/Working/USE">Handbook:X86/Working/USE</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Arbeiten/USE (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../USE.html" title="Handbook:X86/Working/USE (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Trabajando/USE (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="fr.html" title="Handbook:X86/Working/USE/fr (50% translated)" class="mw-pt-progress mw-pt-progress--med">français</a> • ‎<a href="ja.html" title="ハンドブック:X86/ワーキング/USE (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:X86/Working/USE/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Manual:X86/Trabalhando/USE (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Working/USE (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</span></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 安装
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/zh-cn.html" title="Handbook:X86/Installation/About/zh-cn">关于安装</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/zh-cn.html" title="Handbook:X86/Installation/Media/zh-cn">选择安装媒介</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/zh-cn.html" title="Handbook:X86/Installation/Networking/zh-cn">配置网络</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/zh-cn.html" title="Handbook:X86/Installation/Disks/zh-cn">准备磁盘</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/zh-cn.html" title="Handbook:X86/Installation/Stage/zh-cn">安装stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/zh-cn.html" title="Handbook:X86/Installation/Base/zh-cn">安装基本系统</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/zh-cn.html" title="Handbook:X86/Installation/Kernel/zh-cn">配置Linux内核</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/zh-cn.html" title="Handbook:X86/Installation/System/zh-cn">配置系统</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/zh-cn.html" title="Handbook:X86/Installation/Tools/zh-cn">安装系统工具</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/zh-cn.html" title="Handbook:X86/Installation/Bootloader/zh-cn">配置系统引导程序Bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/zh-cn.html" title="Handbook:X86/Installation/Finalizing/zh-cn">收尾安装工作</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Gentoo
+</th></tr>
+<tr>
+<td> <a href="../Portage/zh-cn.html" title="Handbook:X86/Working/Portage/zh-cn">Portage介绍</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">USE标记</strong>
+</td></tr>
+<tr>
+<td> <a href="../Features/zh-cn.html" title="Handbook:X86/Working/Features/zh-cn">Portage功能特性</a>
+</td></tr>
+<tr>
+<td> <a href="../Initscripts/zh-cn.html" title="Handbook:X86/Working/Initscripts/zh-cn">初始化脚本（Initscript）系统</a>
+</td></tr>
+<tr>
+<td> <a href="../EnvVar/zh-cn.html" title="Handbook:X86/Working/EnvVar/zh-cn">环境变量</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/zh-cn.html" title="Handbook:X86/Portage/Files/zh-cn">文件和目录</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/zh-cn.html" title="Handbook:X86/Portage/Variables/zh-cn">变量</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/zh-cn.html" title="Handbook:X86/Portage/Branches/zh-cn">混合使用不同的软件分支</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/zh-cn.html" title="Handbook:X86/Portage/Tools/zh-cn">额外的工具</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/zh-cn.html" title="Handbook:X86/Portage/CustomTree/zh-cn">定制Portage树</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/zh-cn.html" title="Handbook:X86/Portage/Advanced/zh-cn">高级特性</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 网络配置
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/zh-cn.html" title="Handbook:X86/Networking/Introduction/zh-cn">入门</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/zh-cn.html" title="Handbook:X86/Networking/Advanced/zh-cn">高级配置</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/zh-cn.html" title="Handbook:X86/Networking/Modular/zh-cn">模块化网络</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/zh-cn.html" title="Handbook:X86/Networking/Wireless/zh-cn">无线</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/zh-cn.html" title="Handbook:X86/Networking/Extending/zh-cn">添加功能</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/zh-cn.html" title="Handbook:X86/Networking/Dynamic/zh-cn">动态管理</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#What_are_USE_flags"><span class="tocnumber">1</span> <span class="toctext">What are USE flags</span></a>
+<ul>
+<li class="toclevel-2"><a href="#The_idea_behind_USE_flags"><span class="tocnumber">1.1</span> <span class="toctext">The idea behind USE flags</span></a></li>
+<li class="toclevel-2"><a href="#Definition_of_a_USE_flag"><span class="tocnumber">1.2</span> <span class="toctext">Definition of a USE flag</span></a></li>
+<li class="toclevel-2"><a href="#What_USE_flags_exist"><span class="tocnumber">1.3</span> <span class="toctext">What USE flags exist</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Using_USE_flags"><span class="tocnumber">2</span> <span class="toctext">Using USE flags</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Declare_permanent_USE_flags"><span class="tocnumber">2.1</span> <span class="toctext">Declare permanent USE flags</span></a></li>
+<li class="toclevel-2"><a href="#Declaring_USE_flags_for_individual_packages"><span class="tocnumber">2.2</span> <span class="toctext">Declaring USE flags for individual packages</span></a></li>
+<li class="toclevel-2"><a href="#Declaring_temporary_USE_flags"><span class="tocnumber">2.3</span> <span class="toctext">Declaring temporary USE flags</span></a></li>
+<li class="toclevel-2"><a href="#Precedence"><span class="tocnumber">2.4</span> <span class="toctext">Precedence</span></a></li>
+<li class="toclevel-2"><a href="#Adapting_the_entire_system_to_the_new_USE_flags"><span class="tocnumber">2.5</span> <span class="toctext">Adapting the entire system to the new USE flags</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Package_specific_USE_flags"><span class="tocnumber">3</span> <span class="toctext">Package specific USE flags</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Viewing_available_USE_flags"><span class="tocnumber">3.1</span> <span class="toctext">Viewing available USE flags</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Satisfying_REQUIRED_USE_conditions"><span class="tocnumber">4</span> <span class="toctext">Satisfying REQUIRED_USE conditions</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="What_are_USE_flags">What are USE flags</span></h2>
+<h3><span class="mw-headline" id="The_idea_behind_USE_flags">The idea behind USE flags</span></h3>
+<p>When installing Gentoo (or any other distribution, or even operating system for that matter) users make choices depending on the environment they are working with. A setup for a server differs from a setup for a workstation. A gaming workstation differs from a 3D rendering workstation.
+</p><p>This is not only true for choosing what packages to install, but also what features a certain package should support. If there is no need for OpenGL, why would someone bother to install and maintain OpenGL and build OpenGL support in most of the packages? If someone doesn't want to use KDE, why would they bother compiling packages with KDE support if those packages work flawlessly without?
+</p><p>To help users in deciding what to install/activate and what not, Gentoo wanted the user to specify his/her environment in an easy way. This forces the user into deciding what they really want and eases the process for portage to make useful decisions.
+</p>
+<h3><span class="mw-headline" id="Definition_of_a_USE_flag">Definition of a USE flag</span></h3>
+<p>Enter the USE flags. Such a flag is a keyword that embodies support and dependency-information for a certain concept. If someone defines a certain USE flag, Portage will know that they want support for the chosen keyword. Of course this also alters the dependency information for a package.
+</p><p>Take a look at a specific example: the kde keyword. If this keyword is not in the USE variable, all packages that have optional KDE support will be compiled <i>without</i> KDE support. All packages that have an optional KDE dependency will be installed <i>without</i> installing the KDE libraries (as dependency). When the kde keyword is defined, then those packages will be compiled <i>with</i> KDE support, and the KDE libraries <i>will</i> be installed as dependency.
+</p><p>By correctly defining the keywords the system will be tailored specifically to the user's needs.
+</p>
+<h3><span class="mw-headline" id="What_USE_flags_exist">What USE flags exist</span></h3>
+<p>There are two types of USE flags: global and local USE flags.
+</p>
+<ul><li> A <i>global USE flag</i> is used by several packages, system-wide. This is what most people see as USE flags.</li>
+<li> A <i>local USE flag</i> is used by a single package to make package-specific decisions.</li></ul>
+<p>A list of available global USE flags can be found <a rel="nofollow" class="external text" href="https://www.gentoo.org/dyn/use-index.xml#doc_chap1">online</a> or locally in <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.desc</span>.
+</p><p>A list of available local USE flags can be found <a rel="nofollow" class="external text" href="https://www.gentoo.org/dyn/use-index.xml#doc_chap2">online</a> or locally in <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.local.desc</span>.
+</p>
+<h2><span class="mw-headline" id="Using_USE_flags">Using USE flags</span></h2>
+<h3><span class="mw-headline" id="Declare_permanent_USE_flags">Declare permanent USE flags</span></h3>
+<p>As previously mentioned, all USE flags are declared inside the USE variable. To make it easy for users to search and pick USE flags, we already provide a default USE setting. This setting is a collection of USE flags we think are commonly used by the Gentoo users. This default setting is declared in the <span style="font-family: monospace; font-size: 95%">make.defaults</span> files that are part of the selected profile.
+</p><p>The profile the system listens to is pointed to by the <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> symlink. Each profile works on top of other profiles, and the end result is therefore the sum of all profiles. The top profile is the base profile (<span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/base</span>).
+</p><p>To view the currently active USE flags (completely), use <code>emerge --info</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^USE</code></div><pre>
+USE=&quot;a52 aac acpi alsa branding cairo cdr dbus dts ...&quot;
+</pre></div>
+<p>As can be seen, this variable already contains quite a lot of keywords. Do not alter any <span style="font-family: monospace; font-size: 95%">make.defaults</span> file to tailor the USE variable to personal needs though: changes in these file will be undone when the portage tree is updated!
+</p><p>To change this default setting, add or remove keywords to/from the USE variable. This is done globally by defining the USE variable in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>. In this variable one can add the extra USE flags required, or remove the USE flags that are no longer needed. This latter is done by prefixing the keyword with the minus-sign (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">-</kbd>).
+</p><p>For instance, to remove support for KDE and QT but add support for ldap, the following USE can be defined in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Updating USE in make.conf</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-kde -qt4 ldap&quot;</span>
+</pre></div></pre>
+<h3><span class="mw-headline" id="Declaring_USE_flags_for_individual_packages">Declaring USE flags for individual packages</span></h3>
+<p>Sometimes users want to declare a certain USE flag for one (or a couple) of applications but not system-wide. To accomplish this, edit <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>. This is usually a single file, but can also be a directory; see <code>man portage</code> for more information. The following examples assume <span style="font-family: monospace; font-size: 95%">package.use</span> is a single file.
+</p><p>For instance, to only have berkdb support for mysql:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.use</code></strong><strong>Enabling berkdb support for MySQL</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>dev-db/mysql berkdb
+</pre></div></pre>
+<p>Similarly it is possible to explicitly disable USE flags for a certain application. For instance, to disable java support in PHP (but have it for all other packages through the USE flag declaration in <span style="font-family: monospace; font-size: 95%">make.conf</span>):
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.use</code></strong><strong>Disable java support in PHP</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>dev-php/php -java
+</pre></div></pre>
+<h3><span class="mw-headline" id="Declaring_temporary_USE_flags">Declaring temporary USE flags</span></h3>
+<p>Sometimes users need to set a USE flag for a brief moment. Instead of editing <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> twice (to do and undo the USE changes) just declare the USE variable as an environment variable. Remember that this setting only applies for the command entered - re-emerging or updating this application (either explicitly or as part of a system update) will undo the changes that were triggered through the (temporary) USE flag definition.
+</p><p>The following example temporarily removes java from the USE setting during the installation of seamonkey:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>USE="-java" emerge seamonkey</code></div></div>
+<h3><span class="mw-headline" id="Precedence">Precedence</span></h3>
+<p>Of course there is a certain precedence on what setting has priority over the USE setting. The precedence for the USE setting is, ordered by priority (first has lowest priority):
+</p>
+<ol><li> Default USE setting declared in the <span style="font-family: monospace; font-size: 95%">make.defaults</span> files part of your profile</li>
+<li> User-defined USE setting in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span></li>
+<li> User-defined USE setting in <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span></li>
+<li> User-defined USE setting as environment variable</li></ol>
+<p>To view the final USE setting as seen by Portage, run <code>emerge --info</code>. This will list all relevant variables (including the USE variable) with their current definition as known to portage.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info</code></div></div>
+<h3><span class="mw-headline" id="Adapting_the_entire_system_to_the_new_USE_flags">Adapting the entire system to the new USE flags</span></h3>
+<p>After having altered USE flags, the system should be updated to reflect the necessary changes. To do so, use the <code>--newuse</code> option with <code>emerge</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --newuse @world</code></div></div>
+<p>Next, run portage's depclean to remove the conditional dependencies that were emerged on the "old" system but that have been obsoleted by the new USE flags.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warning</strong><br />Running <code>emerge --depclean</code> is a dangerous operation and should be handled with care. Double-check the provided list of "obsoleted" packages to make sure it doesn't remove packages that are needed. In the following example we add the <code>-p</code> switch to have depclean only list the packages without removing them.
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge -p --depclean</code></div></div>
+</div>
+<p>When depclean has finished, run <code>revdep-rebuild</code> to rebuild the applications that are dynamically linked against shared objects provided by possibly removed packages. <code>revdep-rebuild</code> is part of the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a> package; don't forget to emerge it first.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>revdep-rebuild</code></div></div>
+<p>When all this is accomplished, the system is using the new USE flag settings.
+</p>
+<h2><span class="mw-headline" id="Package_specific_USE_flags">Package specific USE flags</span></h2>
+<h3><span class="mw-headline" id="Viewing_available_USE_flags">Viewing available USE flags</span></h3>
+<p>Let's take the example of seamonkey: what USE flags does it listen to? To find out, we use <code>emerge</code> with the <code>--pretend</code> and <code>--verbose</code> options:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --pretend --verbose seamonkey</code></div><pre>
+These are the packages that I would merge, in order:
+  
+Calculating dependencies ...done!
+[ebuild   R   ] www-client/seamonkey-1.0.7  USE=&quot;crypt gnome java -debug -ipv6
+-ldap -mozcalendar -mozdevelop -moznocompose -moznoirc -moznomail -moznopango
+-moznoroaming -postgres -xinerama -xprint&quot; 0 kB
+</pre></div>
+<p><code>emerge</code> isn't the only tool for this job. In fact, there is a tool dedicated to package information called <code>equery</code> which resides in the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a> package
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-portage/gentoolkit</code></div></div> 
+<p>Now run equery with the <i>uses</i> argument to view the USE flags of a certain package. For instance, for the gnumeric package:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>equery --nocolor uses =gnumeric-1.6.3 -a</code></div><pre>
+[ Searching for packages matching =gnumeric-1.6.3... ]
+[ Colour Code&#160;: set unset ]
+[ Legend&#160;: Left column  (U) - USE flags from make.conf              ]
+[       &#160;: Right column (I) - USE flags packages was installed with ]
+[ Found these USE variables for app-office/gnumeric-1.6.3 ]
+ U I
+ - - debug &#160;: Enable extra debug codepaths, like asserts and extra output.
+              If you want to get meaningful backtraces see
+              http://www.gentoo.org/proj/en/qa/backtraces.xml .
+ + + gnome &#160;: Adds GNOME support
+ + + python&#160;: Adds support/bindings for the Python language
+ - - static&#160;:&#160;!!do not set this during bootstrap!! Causes binaries to be
+              statically linked instead of dynamically
+</pre></div>
+<h2><span class="mw-headline" id="Satisfying_REQUIRED_USE_conditions">Satisfying REQUIRED_USE conditions</span></h2>
+<p>Some ebuilds require or forbid certain combinations of USE flags in order to work properly. This is expressed via a <code>REQUIRED_USE</code> condition. This condition ensures that all features and dependencies are complete, the build will succeed and perform as expected. If any of these are not met, emerge will alert you and ask you to fix the issue.
+</p><p>Some example conditions are given below.
+</p>
+<table class="table">
+
+<tr style="vertical-align: top; white-space: nowrap;">
+<th> Example
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? ( bar )"</code>
+</td>
+<td> If <code>foo</code> is set, <code>bar</code> must be set
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? (&#160;!bar )"</code>
+</td>
+<td> If <code>foo</code> is set, <code>bar</code> must not be set
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? ( || ( bar baz ) )"</code>
+</td>
+<td> If <code>foo</code> is set, <code>bar</code> or <code>baz</code> must be set
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="^^ ( foo bar baz )"</code>
+</td>
+<td> Exactly one of <code>foo</code> <code>bar</code> or <code>baz</code> must be set
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="|| ( foo bar baz )"</code>
+</td>
+<td> At least one of <code>foo</code> <code>bar</code> or <code>baz</code> must be set
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="?? ( foo bar baz )"</code>
+</td>
+<td> No more than one of <code>foo</code> <code>bar</code> or <code>baz</code> may be set
+</td></tr></table>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Portage.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../Features.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154252
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.392 seconds
+Real time usage: 0.432 seconds
+Preprocessor visited node count: 1352/1000000
+Preprocessor generated node count: 2974/1000000
+Post‐expand include size: 38613/2097152 bytes
+Template argument size: 4443/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  335.861      1 - Handbook:Parts/Working/USE/zh-cn
+100.00%  335.861      1 - -total
+ 45.76%  153.687      1 - Handbook:Parts/TOC/zh-cn
+ 21.64%   72.693      8 - Template:RootCmd
+ 18.16%   60.998      9 - Template:GenericCmd
+  6.45%   21.679      1 - Handbook:Parts/Navigator
+  5.49%   18.443      3 - Template:FileBox
+  4.46%   14.995      1 - Template:Warning
+  4.02%   13.506      3 - Template:PreBox
+  3.86%   12.965      1 - Template:Emerge
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:128562-0!*!0!!en!*!* and timestamp 20160112154251 and revision id 335258
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;oldid=335258">http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/zh-cn&amp;oldid=335258</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 6 July 2015, at 05:49.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Working/USE/zh-cn"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":634});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/USE/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:47:00 GMT -->
+</html>

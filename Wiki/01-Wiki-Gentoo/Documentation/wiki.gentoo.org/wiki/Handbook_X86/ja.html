@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>ハンドブック:X86 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/ja","wgTitle":"X86/ja","wgCurRevisionId":275100,"wgRevisionId":275100,"wgArticleId":91362,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ja","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ja","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:X86/ja","wgRelevantArticleId":91362,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],
+"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["ja","en-us","en"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/ja" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/ja&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_ja skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Handbook_X86/ja.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Handbook_X86/ja.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;oldid=275100" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../Special_Browse/Handbook_X86-2Fja.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2Fja&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2Fja" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ja.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/ja&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ja">
+							<span dir="auto">ハンドブック:X86</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+															</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86&amp;action=page&amp;filter=&amp;language=ja">translated version</a></span> of the page <a href="../Handbook_X86.html" title="Handbook:X86">Handbook:X86</a> and the translation is 100% complete.</div>
+<hr /><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch: X86 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Handbook_X86.html" title="Handbook:X86 (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">日本語</span> • ‎<a href="ko.html" title="Handbook:X86/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Manual:X86 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:X86/tr (50% translated)" class="mw-pt-progress mw-pt-progress--med">Türkçe</a> • ‎<a href="zh-cn.html" title="手册:X86 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> インストール
+</th></tr>
+<tr>
+<td> <a href="Installation/About/ja.html" title="Handbook:X86/Installation/About/ja">インストールについて</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Media/ja.html" title="Handbook:X86/Installation/Media/ja">メディアの選択</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Networking/ja.html" title="Handbook:X86/Installation/Networking/ja">ネットワーク設定</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Disks/ja.html" title="Handbook:X86/Installation/Disks/ja">ディスクの準備</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Stage/ja.html" title="Handbook:X86/Installation/Stage/ja">stage3のインストール</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Base/ja.html" title="Handbook:X86/Installation/Base/ja">基本システムのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Kernel/ja.html" title="Handbook:X86/Installation/Kernel/ja">カーネルの設定</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/System/ja.html" title="Handbook:X86/Installation/System/ja">システムの設定</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Tools/ja.html" title="Handbook:X86/Installation/Tools/ja">ツールのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Bootloader/ja.html" title="Handbook:X86/Installation/Bootloader/ja">ブートローダの設定</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Finalizing/ja.html" title="Handbook:X86/Installation/Finalizing/ja">締めくくり</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Gentooの操作
+</th></tr>
+<tr>
+<td> <a href="Working/Portage/ja.html" title="Handbook:X86/Working/Portage/ja">Portageについて</a>
+</td></tr>
+<tr>
+<td> <a href="Working/USE/ja.html" title="Handbook:X86/Working/USE/ja">USEフラグ</a>
+</td></tr>
+<tr>
+<td> <a href="Working/Features/ja.html" title="Handbook:X86/Working/Features/ja">Portageの機能</a>
+</td></tr>
+<tr>
+<td> <a href="Working/Initscripts/ja.html" title="Handbook:X86/Working/Initscripts/ja">Initスクリプトシステム</a>
+</td></tr>
+<tr>
+<td> <a href="Working/EnvVar/ja.html" title="Handbook:X86/Working/EnvVar/ja">環境変数</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Portageの操作
+</th></tr>
+<tr>
+<td> <a href="Portage/Files/ja.html" title="Handbook:X86/Portage/Files/ja">ファイルとディレクトリ</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Variables/ja.html" title="Handbook:X86/Portage/Variables/ja">変数</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Branches/ja.html" title="Handbook:X86/Portage/Branches/ja">ソフトウェアブランチの併用</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Tools/ja.html" title="Handbook:X86/Portage/Tools/ja">追加ツール</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/CustomTree/ja.html" title="Handbook:X86/Portage/CustomTree/ja">カスタムPortageツリー</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Advanced/ja.html" title="Handbook:X86/Portage/Advanced/ja">高度な機能</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> ネットワーク設定
+</th></tr>
+<tr>
+<td> <a href="Networking/Introduction/ja.html" title="Handbook:X86/Networking/Introduction/ja">はじめに</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Advanced/ja.html" title="Handbook:X86/Networking/Advanced/ja">高度な設定</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Modular/ja.html" title="Handbook:X86/Networking/Modular/ja">モジュール式ネットワーク</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Wireless/ja.html" title="Handbook:X86/Networking/Wireless/ja">無線</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Extending/ja.html" title="Handbook:X86/Networking/Extending/ja">機能の追加</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Dynamic/ja.html" title="Handbook:X86/Networking/Dynamic/ja">動的な管理</a>
+</td></tr></table>
+<pre>この Gentoo ハンドブックは、Gentoo/Linux の情報を集約させる試みです。インターネット環境に基づいたインストール手順や、Gentoo や Portage の操作についてのパートを記載しています。
+</pre>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Gentoo.E3.81.AE.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB"><span class="tocnumber">1</span> <span class="toctext">Gentooのインストール</span></a></li>
+<li class="toclevel-1"><a href="#Gentoo.E3.81.AE.E6.93.8D.E4.BD.9C"><span class="tocnumber">2</span> <span class="toctext">Gentooの操作</span></a></li>
+<li class="toclevel-1"><a href="#Portage.E3.81.AE.E6.93.8D.E4.BD.9C"><span class="tocnumber">3</span> <span class="toctext">Portageの操作</span></a></li>
+<li class="toclevel-1"><a href="#Gentoo.E3.81.AE.E3.83.8D.E3.83.83.E3.83.88.E3.83.AF.E3.83.BC.E3.82.AF.E8.A8.AD.E5.AE.9A"><span class="tocnumber">4</span> <span class="toctext">Gentooのネットワーク設定</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Gentoo.E3.81.AE.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB">Gentooのインストール</span></h2>
+<p>このパートでは、Gentoo をシステムにインストールする方法について学びます。
+</p>
+<dl><dt> <a href="Installation/About/ja.html" title="Handbook:X86/Installation/About/ja">Gentoo Linuxのインストールについて</a></dt>
+<dd> この章では、このハンドブックにかかれているインストール方法について紹介します。</dd>
+<dt> <a href="Installation/Media/ja.html" title="Handbook:X86/Installation/Media/ja">適切なインストールメディアの選択</a></dt>
+<dd> Gentooは様々な方法でインストールできます。この章ではGentooをMinimalインストールCDを使ってインストールする方法を説明します。</dd>
+<dt> <a href="Installation/Networking/ja.html" title="Handbook:X86/Installation/Networking/ja">ネットワーク設定</a></dt>
+<dd> 最新版のソースコードをダウンロードできるようにするには、ネットワークを構成しなくてはいけません。</dd>
+<dt> <a href="Installation/Disks/ja.html" title="Handbook:X86/Installation/Disks/ja">ディスクの準備</a></dt>
+<dd> Gentooをインストールするためには、必要なパーティションを作らなくてはなりません。この章では、これから使用できるようにディスクをパーティションで区切る方法を説明します。</dd>
+<dt> <a href="Installation/Stage/ja.html" title="Handbook:X86/Installation/Stage/ja">Gentooインストールファイルをインストール</a></dt>
+<dd> Gentooのインストールはstage3アーカイブで行います。この章ではどのようにstage3アーカイブを展開して、Portageを設定するかを説明します。</dd>
+<dt> <a href="Installation/Base/ja.html" title="Handbook:X86/Installation/Base/ja">Gentoo基本システムのインストール</a></dt>
+<dd> stage3のインストールと設定が済めば、Gentoo基本システムを自由に使えるようになります。</dd>
+<dt> <a href="Installation/Kernel/ja.html" title="Handbook:X86/Installation/Kernel/ja">Linuxカーネルの設定</a></dt>
+<dd> 全てのディストリビューションで中核をなすのが、Linuxカーネルです。 本章では、カーネルの設定方法について説明します。</dd>
+<dt> <a href="Installation/System/ja.html" title="Handbook:X86/Installation/System/ja">システムの設定</a></dt>
+<dd> いくつかの重要な設定ファイルを編集する必要があります。この章ではこれらのファイルの概要と編集の方法を説明します。</dd>
+<dt> <a href="Installation/Tools/ja.html" title="Handbook:X86/Installation/Tools/ja">必要なシステムツールのインストール</a></dt>
+<dd> この章ではいくつか重要なツールの選択とインストールを説明します。</dd>
+<dt> <a href="Installation/Bootloader/ja.html" title="Handbook:X86/Installation/Bootloader/ja">ブートローダの設定</a></dt>
+<dd> この章では、適切なブートローダのインストールと設定について説明します。</dd>
+<dt> <a href="Installation/Finalizing/ja.html" title="Handbook:X86/Installation/Finalizing/ja">インストールの締めくくり</a></dt>
+<dd> ほぼインストールは完了しました。この章では、インストールの最後に行う最終仕上げについて説明しています。</dd></dl>
+<h2><span class="mw-headline" id="Gentoo.E3.81.AE.E6.93.8D.E4.BD.9C">Gentooの操作</span></h2>
+<dl><dt> <a href="Working/Portage/ja.html" title="Handbook:X86/Working/Portage/ja">Portageについて</a></dt>
+<dd> この章では、システムにおけるソフトウェアの管理をしていくのに、 ユーザーが知っておくべき手順を「簡単に」説明します。</dd>
+<dt> <a href="Working/USE/ja.html" title="Handbook:X86/Working/USE/ja">USEフラグ</a></dt>
+<dd> USEフラグはGentooの非常に重要な側面です。この章では、USEフラグによる動作を学ぶと共に、システムとUSEフラグがどのような関係を持っているか理解します。</dd>
+<dt> <a href="Working/Features/ja.html" title="Handbook:X86/Working/Features/ja">Portageの機能</a></dt>
+<dd> Portageの持つ、分散コンパイルやccacheのサポートなど、より多くの機能を知ってください。</dd>
+<dt> <a href="Working/Initscripts/ja.html" title="Handbook:X86/Working/Initscripts/ja">Initスクリプトシステム</a></dt>
+<dd> Gentooでは、ほかの特徴にくわえて、依存関係に従った実行順の決定と仮想的なinitスクリプトが可能となる特別なinitスクリプト形式を採用しています。この章では、こうした特徴をすべて説明し、これらのスクリプトをどのように扱うのかを説明します。</dd>
+<dt> <a href="Working/EnvVar/ja.html" title="Handbook:X86/Working/EnvVar/ja">環境変数</a></dt>
+<dd> Gentooではあなたのシステムに関する環境変数を簡単に管理できます。この章ではどのように行うか説明し、よく使われる変数について述べます。</dd></dl>
+<h2><span class="mw-headline" id="Portage.E3.81.AE.E6.93.8D.E4.BD.9C">Portageの操作</span></h2>
+<dl><dt> <a href="Portage/Files/ja.html" title="Handbook:X86/Portage/Files/ja">ファイルとディレクトリ</a></dt>
+<dd> Portageのことを深く知りたいと思ったら、最初にPortageのファイルとデータがどこに保存されているか知るべきです。</dd>
+<dt> <a href="Portage/Variables/ja.html" title="Handbook:X86/Portage/Variables/ja">変数</a></dt>
+<dd> Portageは、変数を通じて完全に設定できます。これらの設定は、設定ファイル内、もしくは環境変数に設定できます。</dd>
+<dt> <a href="Portage/Branches/ja.html" title="Handbook:X86/Portage/Branches/ja">ソフトウェアのブランチを併用する</a></dt>
+<dd> Gentooでは、安定性とアーキテクチャのサポートの観点から、いくつかのブランチに分けてソフトウェアを提供しています。「ソフトウェアのブランチを併用する」では、これらのブランチがどのように設定され、この分離をどのように個々に上書きできるのかを説明します。</dd>
+<dt> <a href="Portage/Tools/ja.html" title="Handbook:X86/Portage/Tools/ja">追加ツール</a></dt>
+<dd> Portageには、あなたのGentoo体験をより良いものにする追加のツールがあります。<code>dispatch-conf</code>やその他のツールの使い方を知るために読み進めてください。</dd>
+<dt> <a href="Portage/CustomTree/ja.html" title="Handbook:X86/Portage/CustomTree/ja">カスタムPortageツリー</a></dt>
+<dd> この章では、カスタムPortageツリーを使う方法、必要なカテゴリのみを同期する方法、パッケージの導入方法などについて、いくつかのヒントやトリックを提供します。</dd>
+<dt> <a href="Portage/Advanced/ja.html" title="Handbook:X86/Portage/Advanced/ja">高度な機能</a></dt>
+<dd> 時が経つにつれて、Portageは発展し成熟してきました。新しい機能はどんどん追加されていますが――そんな機能のほとんどは上級者にしか使われていません。この章ではそういった機能について詳しく解説します。</dd></dl>
+<h2><span class="mw-headline" id="Gentoo.E3.81.AE.E3.83.8D.E3.83.83.E3.83.88.E3.83.AF.E3.83.BC.E3.82.AF.E8.A8.AD.E5.AE.9A">Gentooのネットワーク設定</span></h2>
+<dl><dt> <a href="Networking/Introduction/ja.html" title="Handbook:X86/Networking/Introduction/ja">はじめに</a></dt>
+<dd> 手早くネットワークインターフェースを起動し、多くの一般的な環境で稼働させるためのガイドです。</dd>
+<dt> <a href="Networking/Advanced/ja.html" title="Handbook:X86/Networking/Advanced/ja">高度な設定</a></dt>
+<dd> ここでは設定がどのように働くのか学びます。 モジュール式ネットワークについて学ぶ前に、知っておく必要あります。</dd>
+<dt> <a href="Networking/Modular/ja.html" title="Handbook:X86/Networking/Modular/ja">モジュール式ネットワーク</a></dt>
+<dd> ここでは、異なるDHCPクライアントの選択方法や、ボンディング、ブリッジング、VLANなどを設定していきます。</dd>
+<dt> <a href="Networking/Wireless/ja.html" title="Handbook:X86/Networking/Wireless/ja">無線</a></dt>
+<dd> 無線ネットワークのためにGentooを設定します。</dd>
+<dt> <a href="Networking/Extending/ja.html" title="Handbook:X86/Networking/Extending/ja">機能の追加</a></dt>
+<dd> 大胆なユーザは、自作の機能をネットワークツールに組み込むことができます。</dd>
+<dt> <a href="Networking/Dynamic/ja.html" title="Handbook:X86/Networking/Dynamic/ja">動的な管理</a></dt>
+<dd> ラップトップユーザやあちこちのネットワークの間でコンピュータを移動する人向けです。</dd></dl>
+ <hr /><small>This article is based on a document formerly found on our main website <a rel="nofollow" class="external text" href="http://www.gentoo.org/">gentoo.org</a>. <br />The following people have contributed to the original document: <b>Sven Vermeulen, Grant Goodyear, Roy Marples, Daniel Robbins, Chris Houser, Jerry Alexandratos, Seemant Kulleen, Tavis Ormandy, Jason Huebel, Guy Martin, Pieter Van den Abeele, Joe Kallar, John P. Davis, Pierre-Henri Jondot, Eric Stockbridge, Rajiv Mangliani, Jungmin Seo, Stoyan Zhekov, Jared Hudson, Colin Morey, Jorge Paolo, Carl Anderson, Jon Portnoy, Zack Gilburd, Jack Morgan, Benny Chuang, Erwin, Joshua Kinard, Tobias Scherbaum, Xavier Neys, Joshua Saddler, Gerald J. Normandin Jr., Donnie Berkholz, Ken Nowack, Lars Weiler</b><br /><span style="color: #555;">They are listed here as the Wiki history does not provide for any attribution. If you edit the Wiki article, please do <b>not</b> add yourself here; your contributions are recorded on the history page.</span></small>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112035442
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.288 seconds
+Real time usage: 0.359 seconds
+Preprocessor visited node count: 156/1000000
+Preprocessor generated node count: 690/1000000
+Post‐expand include size: 17865/2097152 bytes
+Template argument size: 1060/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  263.354      1 - -total
+100.00%  263.354      1 - Handbook:Parts/ja
+ 87.88%  231.429      1 - Handbook:Parts/TOC/ja
+  1.31%    3.463      1 - Template:Migrated
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:91362-0!*!0!!en!*!* and timestamp 20160112035441 and revision id 275100
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;oldid=275100">http://wiki.gentoo.org/index.php?title=Handbook:X86/ja&amp;oldid=275100</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 3 March 2015, at 15:43.</li>
+																															<li id="privacy"><a href="../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/ja"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":564});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:33 GMT -->
+</html>

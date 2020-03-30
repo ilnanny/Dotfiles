@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Full/Working/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>젠투 리눅스 x86 핸드북: 젠투 다루기 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Full/Working/ko","wgTitle":"X86/Full/Working/ko","wgCurRevisionId":194394,"wgRevisionId":194394,"wgArticleId":79598,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Full/Working/ko","wgRelevantArticleId":79598,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],
+"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Full/Working/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Full/Working/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Full_Working_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Full/Working/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Full/Working/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;oldid=194394" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FFull-2FWorking-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FFull%2FWorking%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FFull%2FWorking%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Full/Working/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">젠투 리눅스 x86 핸드북: 젠투 다루기</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a> | <a href="../../../Special_MyLanguage/Handbook_X86/Full.html" title="Special:MyLanguage/Handbook:X86/Full">Full</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FFull%2FWorking&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Working.html" title="Handbook:X86/Full/Working">Handbook:X86/Full/Working</a> and the translation is 100% complete.</div>
+<hr /><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80.EB.A1.9C_.EC.98.A4.EC.8B.A0.EA.B2.83.EC.9D.84_.ED.99.98.EC.98.81.ED.95.A8"><span class="tocnumber">1</span> <span class="toctext">포티지로 오신것을 환영함</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC"><span class="tocnumber">2</span> <span class="toctext">포티지 트리</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.9D.B4.EB.B9.8C.EB.93.9C"><span class="tocnumber">2.1</span> <span class="toctext">이빌드</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">2.2</span> <span class="toctext">포티지 트리 업데이트</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B4.80.EB.A6.AC"><span class="tocnumber">3</span> <span class="toctext">프로그램 관리</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B2.80.EC.83.89"><span class="tocnumber">3.1</span> <span class="toctext">프로그램 검색</span></a></li>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.84.A4.EC.B9.98"><span class="tocnumber">3.2</span> <span class="toctext">프로그램 설치</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.A4.EC.B9.98.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EC.9D.98_.EB.AC.B8.EC.84.9C_.EC.B0.BE.EA.B8.B0"><span class="tocnumber">3.3</span> <span class="toctext">설치한 꾸러미의 문서 찾기</span></a></li>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.A0.9C.EA.B1.B0"><span class="tocnumber">3.4</span> <span class="toctext">프로그램 제거</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">3.5</span> <span class="toctext">시스템 업데이트</span></a></li>
+<li class="toclevel-2"><a href="#.EB.A9.94.ED.83.80.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">3.6</span> <span class="toctext">메타꾸러미</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.9D.BC.EC.9D.B4.EC.84.A0.EC.8A.A4"><span class="tocnumber">4</span> <span class="toctext">라이선스</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80.EC.97.90.EC.84.9C_.EB.B6.88.ED.8F.89.ED.95.A0_.EB.95.8C"><span class="tocnumber">5</span> <span class="toctext">포티지에서 불평할 때</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.9A.A9.EC.96.B4"><span class="tocnumber">5.1</span> <span class="toctext">용어</span></a></li>
+<li class="toclevel-2"><a href="#.EC.B0.A8.EB.8B.A8_.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">5.2</span> <span class="toctext">차단 꾸러미</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.80.EB.A0.A4.EB.86.93.EC.9D.80_.EA.BE.B8.EB.9F.AC.EB.AF.B8"><span class="tocnumber">5.3</span> <span class="toctext">가려놓은 꾸러미</span></a></li>
+<li class="toclevel-2"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.80.EA.B2.BD.EC.9D.98_.ED.95.84.EC.9A.94.EC.84.B1"><span class="tocnumber">5.4</span> <span class="toctext">USE 플래그 변경의 필요성</span></a></li>
+<li class="toclevel-2"><a href="#.EB.B9.A0.EC.A7.84_.EC.9D.98.EC.A1.B4.EC.84.B1"><span class="tocnumber">5.5</span> <span class="toctext">빠진 의존성</span></a></li>
+<li class="toclevel-2"><a href="#.EC.95.A0.EB.A7.A4.EB.AA.A8.ED.98.B8.ED.95.9C_.EC.9D.B4.EB.B9.8C.EB.93.9C_.EC.9D.B4.EB.A6.84"><span class="tocnumber">5.6</span> <span class="toctext">애매모호한 이빌드 이름</span></a></li>
+<li class="toclevel-2"><a href="#.EC.88.9C.ED.99.98_.EC.9D.98.EC.A1.B4.EC.84.B1"><span class="tocnumber">5.7</span> <span class="toctext">순환 의존성</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0_.EC.8B.A4.ED.8C.A8"><span class="tocnumber">5.8</span> <span class="toctext">가져오기 실패</span></a></li>
+<li class="toclevel-2"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EB.B3.B4.ED.98.B8"><span class="tocnumber">5.9</span> <span class="toctext">시스템 프로파일 보호</span></a></li>
+<li class="toclevel-2"><a href="#.EB.8B.A4.EC.9D.B4.EC.A0.9C.EC.8A.A4.ED.8A.B8_.EA.B2.80.EC.A6.9D_.EC.8B.A4.ED.8C.A8"><span class="tocnumber">5.10</span> <span class="toctext">다이제스트 검증 실패</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8.EB.9E.80"><span class="tocnumber">6</span> <span class="toctext">USE 플래그란</span></a>
+<ul>
+<li class="toclevel-2"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EA.B0.9C.EB.85.90"><span class="tocnumber">6.1</span> <span class="toctext">USE 플래그 개념</span></a></li>
+<li class="toclevel-2"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.A0.95.EC.9D.98"><span class="tocnumber">6.2</span> <span class="toctext">USE 플래그 정의</span></a></li>
+<li class="toclevel-2"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8.EC.97.90_.EC.9E.88.EB.8A.94_.EA.B2.83"><span class="tocnumber">6.3</span> <span class="toctext">USE 플래그에 있는 것</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.82.AC.EC.9A.A9"><span class="tocnumber">7</span> <span class="toctext">USE 플래그 사용</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.98.81.EA.B5.AC_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8"><span class="tocnumber">7.1</span> <span class="toctext">영구 USE 플래그 선언</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.9C.EB.B3.84_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.8B.B9_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8"><span class="tocnumber">7.2</span> <span class="toctext">개별 꾸러미당 USE 플래그 선언</span></a></li>
+<li class="toclevel-2"><a href="#.EC.9E.84.EC.8B.9C_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8"><span class="tocnumber">7.3</span> <span class="toctext">임시 USE 플래그 선언</span></a></li>
+<li class="toclevel-2"><a href="#.EC.9A.B0.EC.84.A0_.EC.B2.98.EB.A6.AC"><span class="tocnumber">7.4</span> <span class="toctext">우선 처리</span></a></li>
+<li class="toclevel-2"><a href="#.EC.A0.84.EC.B2.B4_.EC.8B.9C.EC.8A.A4.ED.85.9C.EC.97.90_.EC.83.88_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.A0.81.EC.9A.A9"><span class="tocnumber">7.5</span> <span class="toctext">전체 시스템에 새 USE 플래그 적용</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.B3.84_USE_.ED.94.8C.EB.9E.98.EA.B7.B8"><span class="tocnumber">8</span> <span class="toctext">꾸러미별 USE 플래그</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.82.AC.EC.9A.A9.ED.95.A0_.EC.88.98_.EC.9E.88.EB.8A.94_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.B4.EA.B8.B0"><span class="tocnumber">8.1</span> <span class="toctext">사용할 수 있는 USE 플래그 보기</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#REQUIRED_USE_.EC.83.81.ED.83.9C_.EC.B6.A9.EC.A1.B1"><span class="tocnumber">9</span> <span class="toctext">REQUIRED_USE 상태 충족</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EA.B8.B0.EB.8A.A5"><span class="tocnumber">10</span> <span class="toctext">포티지 기능</span></a></li>
+<li class="toclevel-1"><a href="#.EB.B6.84.EC.82.B0_.EC.BB.B4.ED.8C.8C.EC.9D.BC"><span class="tocnumber">11</span> <span class="toctext">분산 컴파일</span></a>
+<ul>
+<li class="toclevel-2"><a href="#distcc_.EC.82.AC.EC.9A.A9"><span class="tocnumber">11.1</span> <span class="toctext">distcc 사용</span></a></li>
+<li class="toclevel-2"><a href="#distcc_.EC.84.A4.EC.B9.98"><span class="tocnumber">11.2</span> <span class="toctext">distcc 설치</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_distcc_.EC.A7.80.EC.9B.90_.ED.99.9C.EC.84.B1.ED.99.94"><span class="tocnumber">11.3</span> <span class="toctext">포티지 distcc 지원 활성화</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.BB.B4.ED.8C.8C.EC.9D.BC_.EA.B0.9D.EC.B2.B4_.EC.BA.90.EC.8B.9C"><span class="tocnumber">12</span> <span class="toctext">컴파일 객체 캐시</span></a>
+<ul>
+<li class="toclevel-2"><a href="#ccache_.EC.A0.95.EB.B3.B4"><span class="tocnumber">12.1</span> <span class="toctext">ccache 정보</span></a></li>
+<li class="toclevel-2"><a href="#ccache_.EC.84.A4.EC.B9.98"><span class="tocnumber">12.2</span> <span class="toctext">ccache 설치</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_ccache_.EC.A7.80.EC.9B.90_.ED.99.9C.EC.84.B1.ED.99.94"><span class="tocnumber">12.3</span> <span class="toctext">포티지 ccache 지원 활성화</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.99.B8.EC.9D.98_.EC.9A.A9.EB.8F.84.EB.A1.9C_ccache_.EC.82.AC.EC.9A.A9"><span class="tocnumber">12.4</span> <span class="toctext">포티지 외의 용도로 ccache 사용</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.B0.94.EC.9D.B4.EB.84.88.EB.A6.AC_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EC.A7.80.EC.9B.90"><span class="tocnumber">13</span> <span class="toctext">바이너리 꾸러미 지원</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EB.A7.8C.EB.93.A4.EA.B8.B0"><span class="tocnumber">13.1</span> <span class="toctext">미리 빌드한 꾸러미 만들기</span></a></li>
+<li class="toclevel-2"><a href="#.EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EC.84.A4.EC.B9.98"><span class="tocnumber">13.2</span> <span class="toctext">미리 빌드한 꾸러미 설치</span></a></li>
+<li class="toclevel-2"><a href="#.EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.A5.BC_.EB.8B.A4.EB.A5.B8_.EA.B3.B3.EC.9C.BC.EB.A1.9C_.EB.B0.B0.ED.8F.AC"><span class="tocnumber">13.3</span> <span class="toctext">미리 빌드한 꾸러미를 다른 곳으로 배포</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.8C.8C.EC.9D.BC_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0"><span class="tocnumber">14</span> <span class="toctext">파일 가져오기</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Userfetch"><span class="tocnumber">14.1</span> <span class="toctext">Userfetch</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EA.B2.80.EC.A6.9D.ED.95.9C_.EC.A0.A0.ED.88.AC_ebuild_.ED.8A.B8.EB.A6.AC_.EC.8A.A4.EB.83.85.EC.83.B7_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0"><span class="tocnumber">15</span> <span class="toctext">검증한 젠투 ebuild 트리 스냅샷 가져오기</span></a></li>
+<li class="toclevel-1"><a href="#.EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8"><span class="tocnumber">16</span> <span class="toctext">실행 레벨</span></a></li>
+<li class="toclevel-1"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.B6.80.ED.8C.85"><span class="tocnumber">17</span> <span class="toctext">시스템 부팅</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Initscripts"><span class="tocnumber">17.1</span> <span class="toctext">Initscripts</span></a></li>
+<li class="toclevel-2"><a href="#init_.EB.8F.99.EC.9E.91_.EB.B0.A9.EB.B2.95"><span class="tocnumber">17.2</span> <span class="toctext">init 동작 방법</span></a></li>
+<li class="toclevel-2"><a href="#.EC.A1.B4.EC.9E.AC.ED.95.98.EB.8A.94_.EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8"><span class="tocnumber">17.3</span> <span class="toctext">존재하는 실행 레벨</span></a></li>
+<li class="toclevel-2"><a href="#.EC.B4.88.EA.B8.B0.ED.99.94_.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8.28initscript.29_.EB.8B.A4.EB.A3.A8.EA.B8.B0"><span class="tocnumber">17.4</span> <span class="toctext">초기화 스크립트(initscript) 다루기</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">18</span> <span class="toctext">실행 레벨 업데이트</span></a>
+<ul>
+<li class="toclevel-2"><a href="#rc-update"><span class="tocnumber">18.1</span> <span class="toctext">rc-update</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.9C.EB.B9.84.EC.8A.A4_.EC.B6.94.EA.B0.80.2F.EC.82.AD.EC.A0.9C"><span class="tocnumber">18.2</span> <span class="toctext">서비스 추가/삭제</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.84.9C.EB.B9.84.EC.8A.A4_.EC.84.A4.EC.A0.95"><span class="tocnumber">19</span> <span class="toctext">서비스 설정</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.99.9C_.EC.B6.94.EA.B0.80_.EC.84.A4.EC.A0.95.EC.9D.B4_.ED.95.84.EC.9A.94.ED.95.9C.EA.B0.80"><span class="tocnumber">19.1</span> <span class="toctext">왜 추가 설정이 필요한가</span></a></li>
+<li class="toclevel-2"><a href="#conf.d_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC"><span class="tocnumber">19.2</span> <span class="toctext">conf.d 디렉터리</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#initscript_.EC.9E.91.EC.84.B1"><span class="tocnumber">20</span> <span class="toctext">initscript 작성</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.ED.95.84.EC.9A.94.ED.95.9C.EA.B0.80.EC.9A.94"><span class="tocnumber">20.1</span> <span class="toctext">필요한가요</span></a></li>
+<li class="toclevel-2"><a href="#.EB.B0.B0.EC.B9.98"><span class="tocnumber">20.2</span> <span class="toctext">배치</span></a></li>
+<li class="toclevel-2"><a href="#.EC.9D.98.EC.A1.B4.EC.84.B1"><span class="tocnumber">20.3</span> <span class="toctext">의존성</span></a></li>
+<li class="toclevel-2"><a href="#.EC.88.9C.EC.84.9C_.EC.B2.98.EB.A6.AC"><span class="tocnumber">20.4</span> <span class="toctext">순서 처리</span></a></li>
+<li class="toclevel-2"><a href="#.ED.91.9C.EC.A4.80_.ED.95.A8.EC.88.98"><span class="tocnumber">20.5</span> <span class="toctext">표준 함수</span></a></li>
+<li class="toclevel-2"><a href="#.EA.B0.9C.EB.B3.84_.EC.98.B5.EC.85.98_.EC.B6.94.EA.B0.80"><span class="tocnumber">20.6</span> <span class="toctext">개별 옵션 추가</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.9C.EB.B9.84.EC.8A.A4_.EC.84.A4.EC.A0.95_.EB.B3.80.EC.88.98"><span class="tocnumber">20.7</span> <span class="toctext">서비스 설정 변수</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8_.EB.8F.99.EC.9E.91_.EB.B0.94.EA.BE.B8.EA.B8.B0"><span class="tocnumber">21</span> <span class="toctext">실행 레벨 동작 바꾸기</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EB.88.84.EA.B0.80_.EC.9D.B4.EB.93.9D.EC.9D.84_.EB.B3.BC.EA.B9.8C.EC.9A.94"><span class="tocnumber">21.1</span> <span class="toctext">누가 이득을 볼까요</span></a></li>
+<li class="toclevel-2"><a href="#.EC.86.8C.ED.94.84.ED.8A.B8_.EB.A0.88.EB.B2.A8_.EC.82.AC.EC.9A.A9"><span class="tocnumber">21.2</span> <span class="toctext">소프트 레벨 사용</span></a></li>
+<li class="toclevel-2"><a href="#.EB.B6.80.ED.8A.B8_.EB.A0.88.EB.B2.A8_.EC.82.AC.EC.9A.A9"><span class="tocnumber">21.3</span> <span class="toctext">부트 레벨 사용</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.99.98.EA.B2.BD_.EB.B3.80.EC.88.98"><span class="tocnumber">22</span> <span class="toctext">환경 변수</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EB.8F.84.EC.9E.85.EB.B6.80"><span class="tocnumber">22.1</span> <span class="toctext">도입부</span></a></li>
+<li class="toclevel-2"><a href="#.EC.A4.91.EC.9A.94_.EC.98.88.EC.A0.9C"><span class="tocnumber">22.2</span> <span class="toctext">중요 예제</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.A0.84.EC.97.AD_.EB.B3.80.EC.88.98_.EC.A0.95.EC.9D.98"><span class="tocnumber">23</span> <span class="toctext">전역 변수 정의</span></a>
+<ul>
+<li class="toclevel-2"><a href="#env.d_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC"><span class="tocnumber">23.1</span> <span class="toctext">env.d 디렉터리</span></a></li>
+<li class="toclevel-2"><a href="#env-update"><span class="tocnumber">23.2</span> <span class="toctext">env-update</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.A7.80.EC.97.AD_.EB.B3.80.EC.88.98_.EC.84.A4.EC.A0.95"><span class="tocnumber">24</span> <span class="toctext">지역 변수 설정</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.82.AC.EC.9A.A9.EC.9E.90.EB.B3.84_.EB.B3.80.EC.88.98"><span class="tocnumber">24.1</span> <span class="toctext">사용자별 변수</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.B8.EC.85.98.EB.B3.84_.EB.B3.80.EC.88.98"><span class="tocnumber">24.2</span> <span class="toctext">세션별 변수</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Komplett/Arbeiten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Working.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Todo/Trabajando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/フル/ワーキング (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Completo/Trabalhando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/全部/使用Gentoo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80.EB.A1.9C_.EC.98.A4.EC.8B.A0.EA.B2.83.EC.9D.84_.ED.99.98.EC.98.81.ED.95.A8">포티지로 오신것을 환영함</span></h2>
+<p>포티지는 아마도 프로그램 관리에 있어서 가장 주목할만한 혁신 요소가 아닐까 싶습니다. 상당한 유연성과 방대한 기능들로 갖춰진 포티지는 자주 볼 수 있는 최고의 리눅스용 프로그램 관리 도구입니다.
+</p><p>포티지는 온전히 <a rel="nofollow" class="external text" href="http://www.python.org/">파이썬</a><sup style="color:#ff0077">en</sup>과 <a rel="nofollow" class="external text" href="http://www.gnu.org/software/bash">배시</a><sup style="color:#ff0077">en</sup>로 작성했기에 사용자들에게 완전히 두 스크립트 언어로 보입니다.
+</p><p>대부분의 사용자들은 <code>emerge</code> 도구로 포티지를 다룹니다. 이 장의 내용은 emerge 맨 페이지에서 볼 수 있는 정보를 베끼지 않았습니다. emerge 옵션의 전체 설명은 man 페이지를 참조하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC">포티지 트리</span></h2>
+<h3><span class="mw-headline" id=".EC.9D.B4.EB.B9.8C.EB.93.9C">이빌드</span></h3>
+<p>꾸러미에 대해 이야기할 때면, 포티지 트리에서 젠투 사용자들이 사용할 수 있는 프로그램의 제목을 의미합니다. 포티지 트리는 포티지가 프로그램을 관리(설치, 검색, 요청 등)하기 위해 필요로 하는 모든 정보가 들어간 ebuild 파일의 모음입니다. 이 ebulid 파일은 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage</span> 안에 있습니다.
+</p><p>여러분이 관심있는 프로그램 제목에 대해 어떤 동작을 요청할 때마다 시스템의 기반 요소로 ebuild를 사용합니다. 때문에 시스템의 ebuild를 주기적으로 갱신하여 포티지가 새 프로그램과 보안 갱신 등을 알리는 동작은 매우 중요합니다.
+</p>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">포티지 트리 업데이트</span></h3>
+<p>보통 포티지 트리는 빠른 증분 파일 전송 유틸리티 <code>rsync</code>로 업데이트합니다. <code>emerge</code> 명령을 <code>rsync</code> 프론트엔드로 제공하는 만큼 포티지 트리 업데이트는 상당히 간단합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<p>방화벽 제한때문에 <code>rsync</code>를 사용할 수 없어도, 매일 만드는 포티지 트리 스냅샷으로 포티지 트리를 업데이트할 수 있습니다. <code>emerge-websync</code> 도구는 시스템에 최신 스냅샷을 가져오고 설치합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<p><code>emerge-websync</code>를 사용하는 또 다른 장점은 관리자가 젠투 출시 엔지니어링 GPG키로 서명한 포티지 트리 스냅샷만 가져올 수 있다는 점입니다. 이에 대한 자세한 내용은 포티지 기능의 검증된 포티지 트리 스냅샷 가져오기에서 찾으실 수 있습니다.
+</p>
+<h2><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B4.80.EB.A6.AC">프로그램 관리</span></h2>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EA.B2.80.EC.83.89">프로그램 검색</span></h3>
+<p>프로그램을 포티지 트리에서 검색하는 방법에는 여러가지가 있습니다. 그중 한가지는 <code>emerge</code>로 찾는 방법입니다. 기본적으로 <code>emerge --search</code>가 제시한 단어에 일치하는 이름을 가진 꾸러미의 이름을 반환합니다.
+</p><p>예를 들어 "pdf"라는 이름을 가진 모든 꾸러미를 검색하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --search pdf</code></div></div>
+<p>이와 마찬가지로 설명에서 검색하려면 <code>--searchdesc</code> (또는 -S) 스위치를 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --searchdesc pdf</code></div></div>
+<p>많은 정보를 되돌려주는 출력 내용을 살펴보십시오. 확실히 이름표를 붙여놓았기 때문에 의미를 찾아보기 위해 그 이상 들어가지 않겠습니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>검색 명령 출력 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>*  net-print/cups-pdf
+      Latest version available: 1.5.2
+      Latest version installed: [ Not Installed ]
+      Size of downloaded files: 15 kB
+      Homepage:    http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
+      Description: Provides a virtual printer for CUPS to produce PDF files.
+      License:     GPL-2
+</pre></div></pre></div>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.84.A4.EC.B9.98">프로그램 설치</span></h3>
+<p>원하는 프로그램 이름을 찾았다면 emerge 명령으로 프로그램을 쉽게 설치할 수 있습니다. 예를 들어 gnumetric을 설치하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-office/gnumeric</code></div></div> 
+<p>수많은 프로그램이 서로 의존관계가 있기 때문에 어떤 프로그램 꾸러미의 설치를 시도할 때, 이처럼 수많은 의존요소를 설치합니다. 포티지가 의존요소를 잘 관리하니 걱정하지 않으셔도 됩니다. 여러분이 어떤 꾸러미의 설치를 요청할 때 포티지가 설치할 꾸러미를 살펴보려면 --pretend 스위치를 덧붙이십시오. 예를 들자면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --pretend gnumeric</code></div></div>
+<p>꾸러미를 설치하는 동안, 포티지는 (필요하다면) 인터넷에서 필요한 소스 코드를 내려받고 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage/distfiles</span>에 저장합니다. 그 다음 압축을 풀고 컴파일하고 꾸러미를 설치합니다. 포티지로 꾸러미를 설치하지 않고 소스코드를 다운로드만 하려면 emerge명령에 <code>--fetchonly</code>를 덧붙이십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --fetchonly gnumeric</code></div></div>
+<h3><span class="mw-headline" id=".EC.84.A4.EC.B9.98.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EC.9D.98_.EB.AC.B8.EC.84.9C_.EC.B0.BE.EA.B8.B0">설치한 꾸러미의 문서 찾기</span></h3>
+<p>대부분의 꾸러미는 문서가 딸려옵니다. 때로는, <i>doc</i> USE 플래그가 꾸러미의 문서를 설치할 지 말 지를 결정합니다. doc USE 플래그를 꾸러미에서 사용하는지 확인하려면 <code>emerge -vp PACKAGENAME</code>명령을 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge -vp alsa-lib</code></div><pre>
+...
+[ebuild  N    ] media-libs/alsa-lib-1.0.14_rc1  -debug +doc 698 kB
+</pre></div>
+<p>doc USE 플래그를 활성화하는 가장 좋은 방법은 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>에서 꾸러미마다 활성화하여 여러분이 얻고자 하는 해당 꾸러미의 문서를 가져오는 것입니다. 더 많은 내용을 보고자 한다면 <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그 장</a>을 읽어보십시오.
+</p><p>꾸러미를 설치하고 나면 꾸러미에 대한 문서는 보통 <span style="font-family: monospace; font-size: 95%">/usr/share/doc</span> 디렉터리의 꾸러미 이름이 달린 하위디렉터리에서 찾을 수 있습니다. <span style="font-family: monospace; font-size: 95%">app-portage/gentoolkit</span>의 일부인 <code>equery</code>도구를 사용하면 설치한 모든 파일의 목록을 볼 수 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>ls -l /usr/share/doc/alsa-lib-1.0.14_rc1</code></div><pre>
+total 28
+-rw-r--r--  1 root root  669 May 17 21:54 ChangeLog.gz
+-rw-r--r--  1 root root 9373 May 17 21:54 COPYING.gz
+drwxr-xr-x  2 root root 8560 May 17 21:54 html
+-rw-r--r--  1 root root  196 May 17 21:54 TODO.gz
+</pre></div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>equery files alsa-lib | less</code></div><pre>
+media-libs/alsa-lib-1.0.14_rc1
+* Contents of media-libs/alsa-lib-1.0.14_rc1:
+/usr
+/usr/bin
+/usr/bin/alsalisp
+...
+</pre></div>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EC.A0.9C.EA.B1.B0">프로그램 제거</span></h3>
+<p>프로그램 꾸러미를 시스템에서 제거하려고 할 때 <code>emerge --unmerge</code>를 사용하십시오. 설치 이후 바뀐 프로그램의 설정 파일을 제외하고 여러분의 시스템에서 꾸러미로부터 설치한 모든 파일을 제거하도록 포티지에 알립니다. 설정 파일을 남겨서 꾸러미를 다시 설치한다면 꾸러미를 계속 다룰 수 있습니다.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 경고</strong><br />포티지는 제거하는 꾸러미가 다른 꾸러미에서 필요로 한지는 확인하지 않습니다. 그러나 중요한 꾸러미를 제거할 때는 꾸러미를 제거하여 시스템을 깨뜨릴 수 있음을 경고합니다.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --unmerge gnumeric</code></div></div>
+<p>시스템에서 꾸러미를 제거할 때, 프로그램을 설치했을 때 자동으로 설치한 꾸러미의 의존 요소는 그대로 남습니다. 제거할 수 있는 모든 의존요소를 포티지가 찾도록 하려면 emerge의 <code>--depclean</code> 기능을 사용하십시오. 이 내용은 나중에 문서에서 다루겠습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">시스템 업데이트</span></h3>
+<p>시스템의 완벽한 모양새를 유지하(고 최신 보안 갱신 요소를 설치하도록 알림을 받지 않으)려면 시스템을 주기적으로 갱신할 필요가 있습니다. 여러분이 처음 포티지 트리를 갱신할 때 포티지 트리에서 ebuild만 확인합니다. 포티지 트리를 업데이트하면, <code>emerge --update @world</code>로 시스템을 업데이트할 수 있습니다. 다음 예제에서는 <code>--ask</code> 스위치를 사용하여 업그레이드할 꾸러미의 목록을 표시하고 계속 할 것인지 물을 것을 포티지에 요청합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --ask @world</code></div></div>
+<p>포티지는 여러분이 설치한 프로그램의 최신 버전을 찾습니다. 그러나 이는 여러분이 확실히 설치한 프로그램의 버전만을 확인합니다 (프로그램의 목록은 <span style="font-family: monospace; font-size: 95%">/var/lib/portage/world</span>에 있습니다). 이 절차는 의존성까지 철저히 확인하진 않습니다. 의존 요소까지 갱신하려면 <code>--deep</code> 매개변수를 덧붙이십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep @world</code></div></div>
+<p>여전히 모든 꾸러미를 의미하지 않습니다. 시스템에 있는 일부 꾸러미는 컴파일 및 빌드과정에 필요하지만 꾸러미의 설치가 끝나면 의존성은 더이상 필요치 않습니다. 포티지는 이를 <i>빌드 의존성</i>이라고 부릅니다. 갱신 주기때마다 이들을 포함하려면 <code>--with-bdeps=y</code>를 덧붙이십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --with-bdeps=y @world</code></div></div>
+<p>여러분은 시스템에 분명하게 설치하지 않(지만 다른 프로그램의 의존요소로서 끌려옵니다)은 꾸러미에서 보안 업데이트를 진행할 때, 이 명령을 가끔씩은 실행해주는 것이 좋습니다.
+</p><p>시스템의 USE 설정을 바꾸었다면, 그에 따라 <code>--newuse</code>를 추가하는것이 좋습니다. 포티지는 플래그의 변경으로 새 꾸러미의 설치 또는 존재하는 꾸러미의 재 컴파일이 필요한지를 검증합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --with-bdeps=y --newuse @world</code></div></div>
+<h3><span class="mw-headline" id=".EB.A9.94.ED.83.80.EA.BE.B8.EB.9F.AC.EB.AF.B8">메타꾸러미</span></h3>
+<p>포티지 트리에서 어떤 꾸러미는 실제 내용을 포함하지는 않지만 꾸러미 모음을 설치하는데 사용합니다. 예를 들어 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/kde-base/kde-meta">kde-base/kde-meta</a> 꾸러미는 의존요소로서의 다양한 KDE 관련 꾸러미를 시스템에 가져와서 완전한 KDE 환경으로 설치합니다.
+</p><p>이런 꾸러미를 시스템에서 제거할 때 이 꾸러미에 대해 <code>emerge --unmerge</code>를 실행하면 시스템에 남아있던 의존 효과가 더 이상 남지 않습니다.
+</p><p>포티지는 또한 버려진 의존성을 잘 제거하는 기능을 갖추고 있지만, 프로그램의 가용성은 동적으로 바뀌므로, 우선 USE 플래그를 바꾸었을 때 새로 바뀐 내용을 포함하여 전체 시스템을 업데이트 하는것이 중요합니다. 이 과정을 수행하고 나면 <code>emerge --depclean</code>을 실행하여 버려진 의존성을 제거할 수 있습니다. 포티지에 최근 추가한 기능이긴 하지만, 이 절차가 끝나면, 더이상 필요하지 않아 방금 삭제한 프로그램에 동적으로 연결한 프로그램을 다시 빌드해야합니다.
+</p><p>이 모든 과정을 다음 3개의 명령으로 처리합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --newuse @world
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --depclean
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>revdep-rebuild</code></div></div>
+<p><code>revdep-rebuild</code>는  <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a> 꾸러미에서 제공합니다. 잊지 말고 우선 이머지하십시오
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-portage/gentoolkit</code></div></div> 
+<h2><span class="mw-headline" id=".EB.9D.BC.EC.9D.B4.EC.84.A0.EC.8A.A4">라이선스</span></h2>
+<p>포티지 버전 2.1.7부터 라이선스를 기반으로 하여 프로그램 설치를 수락 혹은 거절할 수 있습니다. 트리상의 모든 꾸러미는 ebuild에 LICENSE 엔트리를 가지고 있습니다. <code>emerge --search PACKAGENAME</code>을 실행하면 꾸러미의 라이선스를 알려줍니다.
+</p><p>기본적으로 포티지는 모든 라이선스를 허용하지만, 읽기를 요구하고 동의서에 동의여부를 확인해야 하는 <i>최종 사용자 사용허가서(EULA)</i>는 제외합니다.
+</p><p>허용할 라이선스를 제어하는 변수는 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에 설정할 수 있는 ACCEPT_LICENSE 입니다. 다음 예제에서는 기본값을 나타냅니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>ACCEPT_LICENSE 기본 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_LICENSE</span><span class="o">=</span><span class="s2">&quot;* -@EULA&quot;</span>
+</pre></div></pre>
+<p>이 설정을 통해 설치 과정상 EULA의 내용을 승인하려 직접 확인해야 하는 프로그램은 설치할 수 없습니다. EULA가 없는 꾸러미를 설치할 수 있습니다.
+</p><p><span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에 전체적으로 <code>ACCEPT_LICENSE</code>를 설정하거나 각 꾸러미를 기반으로 <span style="font-family: monospace; font-size: 95%">/etc/package/package.license</span>에 지정할 수 있습니다.
+</p><p>예를 들어 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/truecrypt">app-crypt/truecrypt</a>의 <span style="font-family: monospace; font-size: 95%">truecrypt-2.7</span> 라이선스를 허용하려면, <span style="font-family: monospace; font-size: 95%">/etc/portage/package.license</span>에 다음을 추가하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.license</code></strong><strong>truecrypt 꾸러미에 들어있는 truecrypt-2.7 라이선스 동의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>app-crypt/truecrypt truecrypt-2.7
+</pre></div></pre>
+<p>이를 통해 <span style="font-family: monospace; font-size: 95%">truecrypt-2.7</span> 라이선스를 가진 truecrypt 버전을 설치하지만, <span style="font-family: monospace; font-size: 95%">truecrypt-2.8</span> 라이선스를 가진 프로그램은 설치하지 않습니다.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />라이선스는 <span style="font-family: monospace; font-size: 95%">/usr/portage/license</span>에 저장하며 라이선스 그룹은 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/license_groups</span>에 저장합니다. <i>대문자</i>로 이루어진 요소들 중 첫번째 항목은 라이선스 그룹의 이름이며, 모든 항목의 다음에는 각각의 라이선스를 의미합니다.</div>
+<p><code>ACCEPT_LICENSE</code>에 정의한 라이선스 그룹은 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">@</kbd>기호가 붙습니다. 일반적으로 요청하는 설정은 자유 소프트웨어 및 자유 문서의 설치만 허용하는 설정입니다. 이렇게 하려면 현재 허용하는 라이선스(<code>-*</code>)를 제거하고 다음과 같이 자유 그룹에 속한 라이선스만 허용하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>자유 소프트웨어 및 자유 문서 라이선스만 동의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_LICENSE</span><span class="o">=</span><span class="s2">&quot;-* @FREE&quot;</span>
+</pre></div></pre>
+<p>이 경우 "free"는 대부분 보통 FSF나 OSI에서 설명합니다. 이 요구사항을 만나지 않는 라이선스를 가진 꾸러미는 시스템에 설치하지 않습니다.
+</p>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80.EC.97.90.EC.84.9C_.EB.B6.88.ED.8F.89.ED.95.A0_.EB.95.8C">포티지에서 불평할 때</span></h2>
+<h3><span class="mw-headline" id=".EC.9A.A9.EC.96.B4">용어</span></h3>
+<p>우리가 이전에 언급한대로라면, 포티지는 굉장히 강력하며 다른 프로그램 관리도구에서 빠진 수많은 기능을 지원한다고 했습니다. 이러한 점을 이해하기 위해, 더 자세히는 말고 적당한 선에서 포티지의 일부 모양새를 설명하도록 하겠습니다.
+</p><p>포티지에서 단일 꾸러미의 각기 다른버전이 시스템에 공존할 수 있습니다. 다른 배포판에서는 버전에 이름을 같이 붙이려 (예를 들자면 freetype과 freetype2와 같이) 하지만, 포티지는 <i>SLOT</i>이라는 용어를 사용합니다. ebuild는 이 버전에 대해 각각의 SLOT을 선언합니다. 제각각의 슬롯이 부여된 ebuild는 시스템에 공존할 수 있습니다. 예를 들어 freetype 꾸러미는 ebuild에 SLOT="1"과 SLOT="2"가 있습니다.
+</p><p>동일한 기능을 가지고 있으나 다른 방식으로 구현한 꾸러미도 있습니다. metalogd, sysklogd, syslog-ng 같은 경우는 모두 시스템 로거입니다. "시스템 로거" 기능에 따른 프로그램이지, 의존할 수 있는 프로그램은 아닙니다. 예를 들어, 다른 시스템 로거로서 metalogd는 바람직한 선택중 하나입니다. 포티지에서는 가상 요소를 허용합니다. 각 시스템 로거는 virtual 분류 항목의 logger 가상 꾸러미에 "배타적"인 로깅 서비스 의존성으로 참조하므로 이 프로그램은 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/virtual/logger">virtual/logger</a> 꾸러미에 의존할 수 있습니다. 가상 꾸러미를 설치하면, 로깅 꾸러미를 이미 설치하지 않았다면 (이 경우 가상 꾸러미를 고려함) 꾸러미에서 언급한 첫 로깅 꾸러미를 끌어옵니다.
+</p><p>포티지 트리에 있는 프로그램은 다른 브랜치에 둘 수 있습니다. 기본적으로 시스템에서는 젠투에서 안정적인 꾸러미로 간주하는 꾸러미만 받아들입니다. 대부분의 새 프로그램 제목을 제출하면 시험 브랜치에 추가하며, 안정화 상태로 표시하기 전에 수많은 시험 과정이 필요함을 의미합니다. 포티지 트리에 이 프로그램에 대한 이빌드가 존재하지만, 포티지에서 안정 브랜치에 올려놓기 전에는 업데이트하지 않습니다.
+</p><p>일부 프로그램은 몇가지 아키텍처에서만 동작합니다. 또는 다른 아키텍처에서 동작하지 않기도 하거나, 시험 과정이 더 필요하거나,  포티지 트리에 꾸러미를 제출한 개발자에게 다른 아키텍처에서 동작하는지 검증해달라고 요청합니다.
+</p><p>각각의 젠투 설치 과정은 시스템이 제 기능을 수행하는데 필요한 꾸러미 목록과 같은 여러 정보로 이루어진 프로파일을 충실히 따릅니다.
+</p>
+<h3><span class="mw-headline" id=".EC.B0.A8.EB.8B.A8_.EA.BE.B8.EB.9F.AC.EB.AF.B8">차단 꾸러미</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>차단한 꾸러미에 대한 포티지 경고(--pretend 옵션 사용)</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[blocks B     ] mail-mta/ssmtp (is blocking mail-mta/postfix-2.2.2-r1)
+</pre></div></pre></div>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>차단한 꾸러미에 대한 포티지 경고(--pretend 옵션 제외)</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Error: the mail-mta/postfix package conflicts with another package.
+!!!        both can&#39;t be installed on the same system together.
+!!!        Please use &#39;emerge --pretend&#39; to determine blockers.
+</pre></div></pre></div>
+<p>Ebuild에는 의존성에 대해 포티지에 알려줄 특정 내용을 포함하고 있습니다. 이들 중에 두가지 가능한 의존성이 있습니다. 하나는 빌드 의존성에 대해 선언한 DEPEND이고 다른 하나는 실행시간 의존성에 대해 선언한 RDEPEND 입니다. 이들 의존성 중 하나가 호환되지 않는 꾸러미나 가상요소를 분명하게 지목했다면 실행시 막아버립니다.
+</p><p>포티지의 최근 버전은 사용자가 따로 설정하지 않아도 별로 중요하지 않은 차단 같은건 충분히 알아서 잘 처리합니다만 경우에 따라서는 아래에 설명한대로 직접 고쳐야 할 때도 있습니다.
+</p><p>차단 상황을 고치려면, 꾸러미를 설치하지 않거나 차단을 유발하는 꾸러미를 먼저 제거하는 방법 둘 중 하나를 정할 수 있습니다. 주어진 예제에서는, postfix를 설치하지 않거나 ssmtp를 먼저 제거하는 방법을 선택할 수 있습니다.
+</p><p><code>&lt;media-video/mplayer-1.0_rc1-r2</code>와 같이 특정 요소에 대한 차단 꾸러미를 볼 수도 있습니다. 이런 경우에는 차단 꾸러미의 최신 버전으로 업데이트 하면 차단이 풀립니다.
+</p><p>아직 설치하지 못한 서로 차단하는 두 꾸러미들에게도 가능한 방법이 있습니다. 이 드문 경우에는 왜 두 꾸러미를 설치해야 하는지를 알아야 합니다. 대부분의 경우 둘 중 하나만 설치할 수 있습니다. 둘 다 설치해야 한다면, 젠투 버그 추적 시스템에 버그를 제출하십시오.
+</p>
+<h3><span class="mw-headline" id=".EA.B0.80.EB.A0.A4.EB.86.93.EC.9D.80_.EA.BE.B8.EB.9F.AC.EB.AF.B8">가려놓은 꾸러미</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가려놓은 꾸러미에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! all ebuilds that could satisfy &quot;bootsplash&quot; have been masked.
+</pre></div></pre></div>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가려놓은 꾸러미에 대한 포티지 경고 - 이유</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! possible candidates are:
+  
+- gnome-base/gnome-2.8.0_pre1 (masked by: ~x86 keyword)
+- lm-sensors/lm-sensors-2.8.7 (masked by: -sparc keyword)
+- sys-libs/glibc-2.3.4.20040808 (masked by: -* keyword)
+- dev-util/cvsd-1.0.2 (masked by: missing keyword)
+- games-fps/unreal-tournament-451 (masked by: package.mask)
+- sys-libs/glibc-2.3.2-r11 (masked by: profile)
+- net-im/skype-2.1.0.81 (masked by: skype-eula license(s))
+</pre></div></pre></div>
+<p>시스템에서 사용할 수 없는 꾸러미를 설치하려 할 때 이런 가려짐 오류가 나타납니다. 시스템에서 쓸 수 있는 다른 프로그램을 설치하려고 하거나 꾸러미가 쓸 수 있는 상태가 될 때까지 기다리셔야 합니다. 꾸러미를 가린 이유는 얼마든지 있습니다:
+</p>
+<dl><dt> ~arch 키워드</dt>
+<dd> 안정 브랜치에 놓이도록 충분한 시험을 거치지 않은 프로그램을 의미합니다. 며칠 혹은 몇 주 기다려보시고 다시 시도해보세요.</dd>
+<dt>   -arch 키워드 또는 -* 키워드</dt>
+<dd> 여러분이 보유한 아키텍처에서 동작하지 않음을 의미합니다. 꾸러미가 동작한다는 믿음이 있다면 버그질라 웹사이트에 버그로 올려주십시오.</dd>
+<dt>  missing keyword</dt>
+<dd> 여러분이 보유한 아키텍처에서 시험을 하지 않았음을 의미합니다. 아키텍처 포팅 팀에 꾸러미 시험을 의뢰하거나 그 팀원들을 위해 시험해주고 여러분이 발견한 사실에 대해 버그질라 웹사이트에 보고해주십시오.</dd>
+<dt>  package.mask</dt>
+<dd> 충돌, 불안정, 문제를 발견하여 의도적으로 '사용하지 마십시오'라고 표시한 꾸러미를 의미합니다.</dd>
+<dt> profile</dt>
+<dd> 꾸러미가 여러분의 프로파일에 맞지 않다는 것을 발견했음을 의미합니다. 이 꾸러미나 여러분의 프로파일에 호환되지 않는 요소를 설치했을 경우 해당 프로그램이 시스템을 깰 수도 있습니다.</dd>
+<dt> license</dt>
+<dd> 여러분이 설정한 ACCEPT_LICENSE와 설치하려는 꾸러미의 라이선스가 호환되지 않음을 의미합니다. <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> 나 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.license</span>에서 해당 라이선스나 올바른 라이선스 그룹을 허용하십시오.</dd></dl>
+<h3><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.80.EA.B2.BD.EC.9D.98_.ED.95.84.EC.9A.94.EC.84.B1">USE 플래그 변경의 필요성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>USE 플래그 변경 요구에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>The following USE changes are necessary to proceed:
+#required by app-text/happypackage-2.0, required by happypackage (argument)
+&gt;=app-text/feelings-1.0.0 test
+</pre></div></pre></div>
+<p><code>--autounmask</code>를 설정하지 않았을 때 다음과 같은 오류메시지가 뜰 때도 있습니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>USE 플래그 변경 요구에 대한 포티지 오류</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>emerge: there are no ebuilds built with USE flags to satisfy &quot;app-text/feelings[test]&quot;.
+!!! One of the following packages is required to complete your request:
+- app-text/feelings-1.0.0 (Change USE: +test)
+(dependency required by &quot;app-text/happypackage-2.0&quot; [ebuild])
+(dependency required by &quot;happypackage&quot; [argument])
+</pre></div></pre></div>
+<p>다른 꾸러미에만 의존하지 않는 꾸러미를 설치하려 할 때 이런 경고나 오류가 발생하지만, 어떤 USE 플래그 (또는 USE 플래그 모음)로 꾸러미를 반드시 빌드해야 할 필요가 있을때에도 그렇습니다. 주어진 예제에서는 app-text/feelings 꾸러미가 USE="test" 로 빌드해야겠지만 시스템에 이 플래그를 설정하지 않은 상황입니다.
+</p><p>이 문제를 해결하려면 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 전역 USE 플래그에 요구하는 USE 플래그를 추가하거나 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>에 지정 꾸러미에 대한 플래그를 설정하십시오.
+</p>
+<h3><span class="mw-headline" id=".EB.B9.A0.EC.A7.84_.EC.9D.98.EC.A1.B4.EC.84.B1">빠진 의존성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>빠진 의존요소에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>emerge: there are no ebuilds to satisfy &quot;&gt;=sys-devel/gcc-3.4.2-r4&quot;.
+  
+!!! Problem with ebuild sys-devel/gcc-3.4.2-r2
+!!! Possibly a DEPEND/*DEPEND problem.
+</pre></div></pre></div>
+<p>시스템에 존재하지 않는 다른 꾸러미에 의존하여 프로그램을 설치하려고 했습니다. 이미 알려진 문제라면 버그질라를 확인해주시고, 없다면 보고해 주시기 바랍니다. 브랜치를 뒤섞어 엎어놓지 않는한 이 일은 발생하지 않겠지만, 그렇기 때문에 이런 현상은 버그입니다.
+</p>
+<h3><span class="mw-headline" id=".EC.95.A0.EB.A7.A4.EB.AA.A8.ED.98.B8.ED.95.9C_.EC.9D.B4.EB.B9.8C.EB.93.9C_.EC.9D.B4.EB.A6.84">애매모호한 이빌드 이름</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>애매모호한 이빌드 이름에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[ Results for search key : listen ]
+[ Applications found : 2 ]
+  
+*  dev-tinyos/listen [ Masked ]
+      Latest version available: 1.1.15
+      Latest version installed: [ Not Installed ]
+      Size of files: 10,032 kB
+      Homepage:      http://www.tinyos.net/
+      Description:   Raw listen for TinyOS
+      License:       BSD
+  
+*  media-sound/listen [ Masked ]
+      Latest version available: 0.6.3
+      Latest version installed: [ Not Installed ]
+      Size of files: 859 kB
+      Homepage:      http://www.listen-project.org
+      Description:   A Music player and management for GNOME
+      License:       GPL-2
+  
+!!! The short ebuild name &quot;listen&quot; is ambiguous. Please specify
+!!! one of the above fully-qualified ebuild names instead.
+</pre></div></pre></div>
+<p>설치하려는 프로그램이 하나 이상의 꾸러미와 관련된 이름을 지니고 있습니다. 이럴 경우 카테고리 이름을 같이 넣어줘야 합니다. 포티지는 선택할 수 있는 일치 항목을 알려줍니다.
+</p>
+<h3><span class="mw-headline" id=".EC.88.9C.ED.99.98_.EC.9D.98.EC.A1.B4.EC.84.B1">순환 의존성</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>순환 의존성에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Error: circular dependencies: 
+  
+ebuild / net-print/cups-1.1.15-r2 depends on ebuild / app-text/ghostscript-7.05.3-r1
+ebuild / app-text/ghostscript-7.05.3-r1 depends on ebuild / net-print/cups-1.1.15-r2
+</pre></div></pre></div>
+<p>설치하려는 둘 (이상) 의 꾸러미가 서로 의존성을 가져 설치할 수 없습니다. 거의 포티지 트리의 버그 같습니다. 조금 지난 후 다시 트리를 동기화 한 다음 재시도하십시오. 또한 이미 알려진 문제라면 버그질라를 확인할 수 있는데, 없다면 보고하십시오.
+</p>
+<h3><span class="mw-headline" id=".EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0_.EC.8B.A4.ED.8C.A8">가져오기 실패</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>가져오기 실패에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Fetch failed for sys-libs/ncurses-5.4-r5, continuing...
+(...)
+!!! Some fetch errors were encountered.  Please see above for details.
+</pre></div></pre></div>
+<p>포티지가 다른 프로그램의 (쓸 수 있는 경우) 설치를 계속하려고 할 때 주어진 프로그램에 대한 소스코드를 내려받을 수 없습니다. 이 문제는 올바르게 동기화 하던 미러가 어긋났다거나 ebuild가 잘못된 위치를 가리켰기 때문에 발생할 수 있습니다. 어떤 이유 때문에 소스 코드가 있는 서버가 먹통이 되었을 수도 있었습니다.
+</p><p>문제가 여전히 생기면 몇시간 후 다시 시도하십시오.
+</p>
+<h3><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EB.B3.B4.ED.98.B8">시스템 프로파일 보호</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>프로파일에서 보호한 꾸러미에 대한 포티지 경고</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>!!! Trying to unmerge package(s) in system profile. &#39;sys-apps/portage&#39;
+!!! This could be damaging to your system.
+</pre></div></pre></div>
+<p>시스템의 핵심 꾸러미 제거를 요청했습니다. 이런 메시지가 뜨면 프로파일에서 필요하다고 적어넣은 꾸러미이기 때문에 시스템에서 제거해서는 안되겠습니다.
+</p>
+<h3><span class="mw-headline" id=".EB.8B.A4.EC.9D.B4.EC.A0.9C.EC.8A.A4.ED.8A.B8_.EA.B2.80.EC.A6.9D_.EC.8B.A4.ED.8C.A8">다이제스트 검증 실패</span></h3>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>다이제스트 검증 실패</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>&gt;&gt;&gt; checking ebuild checksums
+!!! Digest verification failed:
+</pre></div></pre></div>
+<p>이는 포티지 트리에 뭔가 문제가 있다는 이야기입니다. 개발자가 꾸러미를 트리로 커밋할 때 자주 실수하기 때문입니다.
+</p><p>다이제스트 검증에 실패하면 꾸러미의 다이제스트를 다시 만들지 마십시오. <code>ebuild foo manifest</code>를 실행해도 문제는 고쳐지지 않습니다. 이렇게 하면 대부분 일을 더 꼬이게 합니다!
+</p><p>대신 트리가 올바르게 잡힐 때까지 한두시간 정도 기다려보십시오. 올바르지 않은 방법으로 오류가 나타났을 수도 있는 것이지만, 포티지 트리가 서서히 자리를 잡는데 시간이 좀 걸릴 수가 있습니다. 기다리는 동안에 버그질라를 확인해보시고 누군가가 이 문제를 보고했는지 찾아보거나 #gentoo(IRC)에서 질문하십시오. 만약 내용이 없다면 가서 깨진 꾸러미의 문제를 알려주십시오.
+</p><p>문제점을 고치고 나면, 포티지 트리를 다시 동기화 하여 수정한 다이제스트를 받으십시오.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />여러번 동기화 할 수 있다는 의미가 아닙니다! rsync 정책에 언급(<code>emerge --sync</code>를 실행할 때) 한 대로 자주 동기화를 수행하는 사용자는 추방됩니다! 사실 다음에 동기화 할 때까지 기다려서 rsync서버에 부하를 주지 않는것이 가장 좋습니다.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Installation/Finalizing/ko.html" title="이전 내용" class="btn btn-default">&#8592; 마무리</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../../Working/USE/ko.html" title="다음 내용" class="btn btn-default">USE 플래그 &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Komplett/Arbeiten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Working.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Todo/Trabajando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/フル/ワーキング (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Completo/Trabalhando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/全部/使用Gentoo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8.EB.9E.80">USE 플래그란</span></h2>
+<h3><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EA.B0.9C.EB.85.90">USE 플래그 개념</span></h3>
+<p>젠투(또는 기타 배포판이나 어떤 운영체제든)를 설치할 때, 사용자는 다룰 환경에 따라 몇가지 선택을 하고 싶어합니다. 서버에 대한 설정은 워크스테이션에 대한 설정과 다릅니다. 게임용 워크스테이션은 3D 렌더링 워크스테이션과 다릅니다.
+</p><p>꾸러미를 설치할 때만 그런게 아니며 각각의 꾸러미에서 어떤 기능을 선택해야 하느냐를 따질때도 마찬가지입니다. OpenGL이 필요하지 않은데, 왜 대부분 꾸러미에서의 OpenGL의 설치 및 관리, 빌드 지원이 우릴 귀찮게 할까요? KDE를 쓰고 싶지 않은데, 왜 굳이 없어도 완벽하게 돌아가는 KDE 지원이 꾸러미 컴파일 과정에서 귀찮게 할까요?
+</p><p>사용자가 어떤 꾸러미를 설치하고 활성화 해야 할 지 말지 결정하는 일련의 과정을 돕기 위해, 젠투에서는 사용자가 쉬운 방법으로 환경을 지정하길 원했습니다. 이런 일련의 사고를 통해 사용자가 정말 원하는게 무엇인지 결정하도록 사용자를 끌어넣었고, 쓸모있는 결정을 만드는 포티지의 처리 과정을 쉽게 만들었습니다.
+</p>
+<h3><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.A0.95.EC.9D.98">USE 플래그 정의</span></h3>
+<p>USE 플래그를 입력하십시오. 각각의 플래그는 지원 기능과 각각의 개념에 대한 의존성 정보를 포함하는 키워드입니다. 어떤 USE 플래그를 지정하면, 포티지에서는 선택한 키워드에 대해 사용자가 어떤 지원 기능을 원하는지 알아차립니다. 물론 이 과정에서 꾸러미에 대한 의존성 정보로 바꾸기도 합니다.
+</p><p>몇가지 특정 예를 살펴보겠습니다: kde 키워드가 있습니다. 이 키워드를 USE 변수에 넣지 않으면, 모든 꾸러미는 KDE 지원 <i>없이</i> 선택적인 KDE 지원을 컴파일합니다. 선택적 KDE 의존성을 지닌 모든 꾸러미는 KDE 라이브러리를 (의존 요소로) 설치하<i>지 않</i>고 설치합니다. kde 키워드를 지정하면 이 꾸러미에 KDE 지원 기능을 <i>함께</i> 컴파일하며 KDE 라이브러리를 의존 요소로 설치<i>합니다</i>.
+</p><p>올바르게 키워드를 지정하면 사용자의 요구에 맞춰 시스템의 모양새가 갖춰집니다.
+</p>
+<h3><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8.EC.97.90_.EC.9E.88.EB.8A.94_.EA.B2.83">USE 플래그에 있는 것</span></h3>
+<p>USE 플래그에는 두가지 방식이 있습니다. 하나는 전역, 하나는 지역입니다.
+</p>
+<ul><li> <i>전역 USE 플래그</i>는 다양한 꾸러미에서 시스템 전체적으로 사용합니다. 대부분 사람들이 USE 플래그로 보는 키워드입니다.</li>
+<li> <i>지역 USE 플래그</i>는 단일 꾸러미에서 꾸러미별 결정을 내릴때 사용합니다.</li></ul>
+<p>사용할 수 있는 전역 USE 플래그는 <a rel="nofollow" class="external text" href="https://www.gentoo.org/dyn/use-index.xml#doc_chap1">온라인</a><sup style="color:#ff0077">en</sup> 또는 로컬 위치의 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.desc</span>에서 찾아볼 수 있습니다.
+</p><p>사용할 수 있는 지역 USE 플래그는 <a rel="nofollow" class="external text" href="https://www.gentoo.org/dyn/use-index.xml#doc_chap2">온라인</a><sup style="color:#ff0077">en</sup> 또는 로컬 위치의 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.local.desc</span>에서 찾아볼 수 있습니다.
+</p>
+<h2><span class="mw-headline" id="USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.82.AC.EC.9A.A9">USE 플래그 사용</span></h2>
+<h3><span class="mw-headline" id=".EC.98.81.EA.B5.AC_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8">영구 USE 플래그 선언</span></h3>
+<p>앞에서 이야기한 바와 같이, 모든 USE 플래그는 USE 변수에 선언합니다. 사용자가 USE 플래그를 쉽게 검색하고 고를 수 있도록 하기 위해 기본 USE 설정을 제공합니다. 이 설정은 젠투 사용자가 보통 사용한다고 간주하는 USE 플래그의 모음입니다. 이 기본 설정은 선택한 프로파일의 일부인 <span style="font-family: monospace; font-size: 95%">make.defaults</span> 파일에 선언했습니다.
+</p><p>시스템이 살펴보는 프로파일은 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span>이 가리킵니다. 각각의 프로파일은 다른 프로파일의 상위에서 동작하며 최종 결과는 모든 프로파일의 합입니다. 최상위 프로파일은 베이스 프로파일(<span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/base</span>)입니다.
+</p><p>현재 활성화 한 (전체) USE 플래그를 보려면 <kbd>emerge --info</kbd>를 사용하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^USE</code></div><pre>
+USE=&quot;a52 aac acpi alsa branding cairo cdr dbus dts ...&quot;
+</pre></div>
+<p>보시는 바와 같이, 변수에 수많은 키워드가 있습니다. 개인적인 용도로 USE 변수를 새로 뜯어고칠 목적으로 <span style="font-family: monospace; font-size: 95%">make.defaults</span> 파일의 내용을 어떤 부분이든 바꾸지 마십시오. 이 파일의 내용을 바꾸면 포티지 트리를 업데이트했을때 되돌릴 수 없습니다!
+</p><p>기본 값을 바꾸려면 USE 변수에서 키워드를 추가하거나 제거하십시오. <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 전역 범위의 USE 변수값을 지정하시면 됩니다. 이 변수에서 필요한 추가 USE 플래그를 추가하거나 더 이상 필요하지 않은 USE 플래그를 제거할 수 있습니다. 플래그 제거는 키워드 앞에 음수 부호(<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">-</kbd>)를 붙이시면 됩니다.
+</p><p>KDE와 QT 지원을 제거하고 ldap 지원을 추가한다면, <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 USE 값을 다음처럼 지정할 수 있습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>make.conf에서 USE 업데이트</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-kde -qt4 ldap&quot;</span>
+</pre></div></pre>
+<h3><span class="mw-headline" id=".EA.B0.9C.EB.B3.84_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.8B.B9_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8">개별 꾸러미당 USE 플래그 선언</span></h3>
+<p>사용자가 시스템 범위가 아닌 하나(이상의) 프로그램에 대한 각각의 USE 플래그를 지정하려고 하는 경우가 있습니다. 이럴 때는 <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>를 편집하십시오. 보통 단일 파일이지만 디렉터리일 수도 있습니다: 더 많은 내용은 <code>man portage</code>를 살펴보십시오. 다음 예제에서 <span style="font-family: monospace; font-size: 95%">package.use</span>는 단일 파일로 간주합니다.
+</p><p>mysql에 대해 berkdb 지원만 포함한다면:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.use</code></strong><strong>MySQL에 berkdb 지원 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>dev-db/mysql berkdb
+</pre></div></pre>
+<p>이와 비슷하게 각각의 프로그램에 대해 USE 플래그를 분명히 비활성화할 수 있습니다. PHP에 대한 java 지원을 비활성화할 경우(하지만 <span style="font-family: monospace; font-size: 95%">make.conf</span>의 USE 플래그 지정을 통해 다른 꾸러미에는 활성화할 경우):
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/package.use</code></strong><strong>PHP에서 java지원 비활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>dev-php/php -java
+</pre></div></pre>
+<h3><span class="mw-headline" id=".EC.9E.84.EC.8B.9C_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.84.A0.EC.96.B8">임시 USE 플래그 선언</span></h3>
+<p>잠깐동안 USE 플래그를 설정해야 할 때도 있습니다. <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>를 두 번 편집하는 대신(USE값 바꾸기를 했다가 취소) USE 변수를 환경 변수처럼 지정하면 됩니다. 입력한 명령에 대해서만 이 설정을 적용함을 기억하십시오. 프로그램을 다시 이머지하거나 업데이트(분명히 둘 다 하든지 시스템 업데이트의 일부로 처리하든지)하면 (임시로) 지정한 USE 플래그로 바꾸어놓은 상태를 되돌립니다.
+</p><p>다음 예제에서는 seamonkey를 설치하는 과정에서 USE 설정의 java 플래그를 잠깐동안 제거합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>USE="-java" emerge seamonkey</code></div></div>
+<h3><span class="mw-headline" id=".EC.9A.B0.EC.84.A0_.EC.B2.98.EB.A6.AC">우선 처리</span></h3>
+<p>물론 어떤 설정이 USE 설정에 우선하는가에 대한 우선 처리 방식이 있습니다. USE 설정에 대한 우선 처리는 우선 순위에 따릅니다(처음 항목은 우선순위가 낮음)
+</p>
+<ol><li> 프로파일의 일부인 <span style="font-family: monospace; font-size: 95%">make.defaults</span> 파일에서 지정한 기본 USE 설정</li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 사용자 지정 USE 설정</li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/portage/package.use</span>의 사용자 지정 USE 설정</li>
+<li> 환경 변수로 지정한 사용자 지정 USE 설정</li></ol>
+<p>포티지에서 본 최종 USE 설정을 보려면 <code>emerge --info</code>를 실행하십시오. 포티지에서 알고 있는 현재 지정 값을 지닌 모든 관련 변수(USE 변수 포함)를 보여줍니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info</code></div></div>
+<h3><span class="mw-headline" id=".EC.A0.84.EC.B2.B4_.EC.8B.9C.EC.8A.A4.ED.85.9C.EC.97.90_.EC.83.88_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EC.A0.81.EC.9A.A9">전체 시스템에 새 USE 플래그 적용</span></h3>
+<p>USE 플래그 값을 바꾸고 나면 필요한 변경 사항을 반영하기 위해 시스템을 업데이트해야합니다. 업데이트를 진행하려면 <code>emerge</code> 명령에 <code>--newuse</code> 옵션을 사용하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --update --deep --newuse @world</code></div></div>
+<p>다음, 포티지의 depclean을 실행하여 "이전" 시스템에 이머지한 꾸러미 중, 새 USE 플래그 모음에서 사라진 조건부 의존성을 제거하십시오.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 경고</strong><br /><code>emerge --depclean</code> 명령 실행은 위험한 동작이며 조심스레 취급해야합니다. 필요한 꾸러미를 제거하는지 확인하기 위해 "오래된" 꾸러미 목록을 다시한번 살펴보십시오. 다음 예제에서는 실제로 꾸러미를 제거하지 않고 depclean할 꾸러미의 목록이 무엇인지 <code>-p</code> 스위치로 확인합니다.
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge -p --depclean</code></div></div>
+</div>
+<p>depclean이 끝나면, <code>revdep-rebuild</code>를 실행하여 제거했을지도 모르는 꾸러미에서 제공하는 공유 객체에 동적으로 연결한 프로그램을 다시 빌드하십시오. <code>revdep-rebuild</code>는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a>의 일부입니다. 이 꾸러미를 꼭 이머지하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>revdep-rebuild</code></div></div>
+<p>모든 과정을 끝나면 시스템에서는 새 USE 플래그를 사용합니다.
+</p>
+<h2><span class="mw-headline" id=".EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.B3.84_USE_.ED.94.8C.EB.9E.98.EA.B7.B8">꾸러미별 USE 플래그</span></h2>
+<h3><span class="mw-headline" id=".EC.82.AC.EC.9A.A9.ED.95.A0_.EC.88.98_.EC.9E.88.EB.8A.94_USE_.ED.94.8C.EB.9E.98.EA.B7.B8_.EB.B3.B4.EA.B8.B0">사용할 수 있는 USE 플래그 보기</span></h3>
+<p>seamonkey 예제를 보도록 하겠습니다. 어떤 USE 플래그를 살펴보고 있을까요? <code>emerge</code> 명령에 <code>--pretend</code>옵션과 <code>--verbose</code>옵션으로 확인해보겠습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --pretend --verbose seamonkey</code></div><pre>
+These are the packages that I would merge, in order:
+  
+Calculating dependencies ...done!
+[ebuild   R   ] www-client/seamonkey-1.0.7  USE=&quot;crypt gnome java -debug -ipv6
+-ldap -mozcalendar -mozdevelop -moznocompose -moznoirc -moznomail -moznopango
+-moznoroaming -postgres -xinerama -xprint&quot; 0 kB
+</pre></div>
+<p><code>emerge</code>만 이 작업을 하는 도구가 아닙니다. 실제로 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/gentoolkit">app-portage/gentoolkit</a> 꾸러미에 있는 <code>equery</code>가 꾸러미 정보를 제공하기도 합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-portage/gentoolkit</code></div></div> 
+<p>이제 equery에 <i>uses</i> 매개변수를 붙여 각각의 꾸러미에서 사용하는 USE 플래그를 살펴보겠습니다. gnumeric 꾸러미의 내용을 살펴보면:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>equery --nocolor uses =gnumeric-1.6.3 -a</code></div><pre>
+[ Searching for packages matching =gnumeric-1.6.3... ]
+[ Colour Code&#160;: set unset ]
+[ Legend&#160;: Left column  (U) - USE flags from make.conf              ]
+[       &#160;: Right column (I) - USE flags packages was installed with ]
+[ Found these USE variables for app-office/gnumeric-1.6.3 ]
+ U I
+ - - debug &#160;: Enable extra debug codepaths, like asserts and extra output.
+              If you want to get meaningful backtraces see
+              http://www.gentoo.org/proj/en/qa/backtraces.xml .
+ + + gnome &#160;: Adds GNOME support
+ + + python&#160;: Adds support/bindings for the Python language
+ - - static&#160;:&#160;!!do not set this during bootstrap!! Causes binaries to be
+              statically linked instead of dynamically
+</pre></div>
+<h2><span class="mw-headline" id="REQUIRED_USE_.EC.83.81.ED.83.9C_.EC.B6.A9.EC.A1.B1">REQUIRED_USE 상태 충족</span></h2>
+<p>일부 이빌드에서는 제대로 동작하게 하려 일부 USE 플래그 조합을 요구하거나 막는 경우가 있습니다. 이런 경우 <code>REQUIRED_USE</code> 조건으로 표현합니다. 이 조건은 모든 기능과 의존성이 완벽한지 확인하며, 빌드를 성공시키고, 기대하던 동작이 가능하도록 합니다. 이 조건을 만나지 못하면 이머지에서는 문제를 해결하도록 경고하고 요구합니다.
+</p><p>일부 예제 조건을 하단에 보여드리겠습니다.
+</p>
+<table class="table">
+
+<tr style="vertical-align: top; white-space: nowrap;">
+<th> 예제
+</th>
+<th> 설명
+</th></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? ( bar )"</code>
+</td>
+<td> <code>foo</code>를 설정했다면, <code>bar</code>를 설정해야 함
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? (&#160;!bar )"</code>
+</td>
+<td> <code>foo</code>를 설정했다면, <code>bar</code> 는 설정하지 말아야 함
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="foo? ( || ( bar baz ) )"</code>
+</td>
+<td> <code>foo</code>를 설정했다면, <code>bar</code> 또는 <code>baz</code> 를 설정해야함
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="^^ ( foo bar baz )"</code>
+</td>
+<td> <code>foo</code>, <code>bar</code>, <code>baz</code> 중 하나만 설정해야 함
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="|| ( foo bar baz )"</code>
+</td>
+<td> 최소한 <code>foo</code>, <code>bar</code>, <code>baz</code> 중 하나는 설정해야 함
+</td></tr>
+<tr>
+<td> <code>REQUIRED_USE="?? ( foo bar baz )"</code>
+</td>
+<td> <code>foo</code>, <code>bar</code>, <code>baz</code> 중 하나만 설정할 수 있음
+</td></tr></table>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/Portage/ko.html" title="이전 내용" class="btn btn-default">&#8592; 포티지 소개</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../../Working/Features/ko.html" title="다음 내용" class="btn btn-default">Portage features &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Komplett/Arbeiten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Working.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Todo/Trabajando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/フル/ワーキング (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Completo/Trabalhando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/全部/使用Gentoo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EA.B8.B0.EB.8A.A5">포티지 기능</span></h2>
+<p>포티지는 여러분의 더 나은 젠투 경험을 만들어줄 여러가지 추가 기능이 있습니다. 이 수많은 기능들은 성능, 신뢰성, 보안 등을 개선하기 위한 몇가지 프로그램 도구에 의지합니다.
+</p><p>이들 포티지 기능을 활성화 하거나 비활성화 하려면, 공백으로 구분한 여러 기능 키워드가 들어있는 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 <var>FEATURES</var> 변수를 편집할 필요가 있습니다. 대부분의 경우 기능과 관련한 추가 도구를 설치해야 합니다.
+</p><p>여기에 언급한 포티지 지원 기능이 기능 전부를 의미하지는 않습니다. 전체적으로 간단히 살펴보려면 <span style="font-family: monospace; font-size: 95%">make.conf</span> 맨 페이지를 참고하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf</code></div></div>
+<p><var>FEATURES</var> 변수에 어떤 값을 기본으로 지정했는지 보려면 <code>emerge --info</code>를 실행하여 <var>FEATURES<var> 변수를 찾아보거나 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">grep</span>으로 출력 내용을 잡아내십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^FEATURES=</code></div></div>
+<h2><span class="mw-headline" id=".EB.B6.84.EC.82.B0_.EC.BB.B4.ED.8C.8C.EC.9D.BC">분산 컴파일</span></h2>
+<h3><span class="mw-headline" id="distcc_.EC.82.AC.EC.9A.A9">distcc 사용</span></h3>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">distcc</span> 프로그램은 네트워크 상에서 반드시 동일할 필요가 없는 많은 장비들로 분산 컴파일을 수행하는 프로그램입니다. distcc 클라이언트는 사용가능한 distcc 서버(distccd 실행)에 필요한 정보를 보내서 클라이언트에 대한 소스코드 일부를 컴파일 할 수 있게 합니다. 이 네트워크를 통해 컴파일 시간이 더 빨라집니다.
+</p><p>distcc에 대한 더 자세한 정보(와 젠투에서 동작하게 하는 방법)는 <a href="../../../Distcc/ko.html" title="Distcc/ko">distcc</a> 글에서 찾아 보실 수 있습니다.
+</p>
+<h3><span class="mw-headline" id="distcc_.EC.84.A4.EC.B9.98">distcc 설치</span></h3>
+<p>distcc에는 컴파일할 내용을 전달하는 컴퓨터의 작업을 감시하는 그래픽 감시 프로그램이 있습니다. <code>USE=gnome</code> 또는 <code>USE=gtk</code>를 설정하면 이 도구를 자동으로 설치합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-devel/distcc</code></div></div> 
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_distcc_.EC.A7.80.EC.9B.90_.ED.99.9C.EC.84.B1.ED.99.94">포티지 distcc 지원 활성화</span></h3>
+<p>distcc를 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 <var>FEATURES</var> 변수에 추가하십시오. 다음, 여러분이 원하는대로 <var>MAKEOPTS</var> 변수를 편집하십시오. 알려진 지침대로라면 "-jX"의 X에 distccd를 실행하는 CPU의 갯수 + 1을 채워넣는 것입니다만, 단순히 지침일 뿐입니다.
+</p><p>이제 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">distcc-config</span>를 실행하고 사용할 수 있는 distcc 서버의 목록을 입력하십시오. 간단한 예로, 사용할 수 있는 DistCC 서버가 192.168.1.102(현재 호스트), 192.168.1.103, 192.168.1.104(두개의 "원격" 호스트)라고 가정합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>distcc-config --set-hosts "192.168.1.102 192.168.1.103 192.168.1.104"</code></div></div>
+<p>마찬가지로 distccd 데몬 실행도 잊지 마십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add distccd default
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/distccd start</code></div></div>
+<h2><span class="mw-headline" id=".EC.BB.B4.ED.8C.8C.EC.9D.BC_.EA.B0.9D.EC.B2.B4_.EC.BA.90.EC.8B.9C">컴파일 객체 캐시</span></h2>
+<h3><span class="mw-headline" id="ccache_.EC.A0.95.EB.B3.B4">ccache 정보</span></h3>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">ccache</span>는 빠른 컴파일러 캐시입니다. 프로그램을 컴파일 할 때 중간 내용을 캐시해서 같은 프로그램을 언제 다시 컴파일 하든지 상관없이 컴파일 타임은 급격하게 줄입니다. ccache를 처음 실행할 때 보통 컴파일 할 때보다 훨씬 느립니다. 그 다음 다시 컴파일 할 때 더 빨라집니다. ccache는 같은 프로그램을 여러번 컴파일 할 때만 도움됩니다. 따라서 이는 대부분 프로그램 개발자들에게만 유용합니다.
+</p><p>ccache에 대한 더 많은 내용은 <a rel="nofollow" class="external text" href="http://ccache.samba.org/">홈페이지</a><sup style="color:#ff0077">en</sup>를 방문해보십시오.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 경고</strong><br />ccache는 수많은 컴파일 실패를 유발하는 것으로 알려져 있습니다. ccache가 낡아빠진 코드 객체나 깨진 파일을 유지하여 꾸러미를 이머지하지 못하게 하기도 합니다. 만약 이런 일이 일어난다면(즉, "File not recognized: File truncated"와 같은 오류 메시지를 만났다면), 버그를 보고 하기 전에 ccache를 비활성화 한 상태(<span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 <code>FEATURES="-ccache"</code>)에서 프로그램을 다시 컴파일 해보십시오. 개발작업을 하지 않는 한 ccache를 활성화하지 마십시오.</div>
+<h3><span class="mw-headline" id="ccache_.EC.84.A4.EC.B9.98">ccache 설치</span></h3>
+<p>ccache를 설치하려면 다음 명령을 실행하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask dev-util/ccache</code></div></div> 
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_ccache_.EC.A7.80.EC.9B.90_.ED.99.9C.EC.84.B1.ED.99.94">포티지 ccache 지원 활성화</span></h3>
+<p><span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>를 열고 <var>FEATURES</var> 변수에 <code>ccache</code>를 추가하십시오. 다음 <var>CCACHE_SIZE</var>라고 하는 새 변수를 추가하고, <code>2G</code>로 설정하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>포티지 ccache  지원 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;... ccache ...&quot;</span>
+<span class="nv">CCACHE_SIZE</span><span class="o">=</span><span class="s2">&quot;2G&quot;</span>
+</pre></div></pre>
+<p>ccache 기능을 확인하려면 ccache에게 통계 데이터를 제공해달라고 요청하십시오. 포티지가 다른 ccache 홈 디렉터리를 사용하기 때문에 <var>CCACHE_DIR</var> 변수를 임시로 설정해야합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>CCACHE_DIR="/var/tmp/ccache" ccache -s</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%">/var/tmp/ccache</span> 위치는 포티지의 기본 ccache 홈 디렉터리 입니다. <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>의 <var>CCACHE_DIR</var> 변수 값을 설정하여 위치를 바꿀 수 있습니다.
+</p><p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">ccache</span>를 자체적으로 실행할 때, <span style="font-family: monospace; font-size: 95%">${HOME}/.ccache</span> 기본 위치를 사용하는데, 이것이 (포티지) ccache 통계를 요청할 때 <var>CCACHE_DIR</var> 변수를 설정해야 할 이유입니다.
+</p>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.99.B8.EC.9D.98_.EC.9A.A9.EB.8F.84.EB.A1.9C_ccache_.EC.82.AC.EC.9A.A9">포티지 외의 용도로 ccache 사용</span></h3>
+<p>비 포티지 컴파일을 목적으로 ccache를 사용하려면 <var>PATH</var>변수의 앞부분에 (<span style="font-family: monospace; font-size: 95%">/usr/bin</span> 앞에) <span style="font-family: monospace; font-size: 95%">/usr/lib/ccache/bin</span>을 추가하십시오. 사용자 홈 디렉터리에 있는 <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span>을 편집하면 됩니다. <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span>을 활용하는 방법이 <var>PATH</var> 변수를 정의하는 방법입니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">~/.bash_profile</code></strong><strong>다른 PATH 값보다 우선하여 ccache 위치 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/lib/ccache/bin:/opt/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id=".EB.B0.94.EC.9D.B4.EB.84.88.EB.A6.AC_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EC.A7.80.EC.9B.90">바이너리 꾸러미 지원</span></h2>
+<h3><span class="mw-headline" id=".EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EB.A7.8C.EB.93.A4.EA.B8.B0">미리 빌드한 꾸러미 만들기</span></h3>
+<p>포티지는 미리 빌드한 꾸러미의 설치를 지원합니다. 젠투가 자체적으로 미리 빌드한 꾸러미를 제공하는 것은 아니지만, 포티지에서 미리 빌드한 꾸러미를 완전히 인식할 수 있습니다.
+</p><p>미리 빌드한 꾸러미를 만들려면, 꾸러미가 이미 시스템에 설치되어 있는 경우 <code>quickpkg</code>를 사용하고, emerge에 <code>--buildpkg</code>옵션이나 <code>--buildpkgonly</code>옵션을 붙여서 사용하십시오.
+</p><p>여러분이 설치한 모든 단일 꾸러미에 대해 포티지로 미리 빌드한 꾸러미를 만들려면 <var>FEATURES</var> 변수에 <code>buildpkg</code>를 추가하십시오.
+</p><p>미리 빌드한 꾸러미를 만들기 위한 더 많은 지원은 catalyst로 받을 수 있습니다. catalyst에 대한 더 많은 정보를 보시려면 <a href="../../../Project_Catalyst/FAQ.html" title="Project:Catalyst/FAQ">Catalyst 자주 묻는 질문</a><sup style="color:#ff0077">en</sup>을 읽어보십시오.
+</p>
+<h3><span class="mw-headline" id=".EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8_.EC.84.A4.EC.B9.98">미리 빌드한 꾸러미 설치</span></h3>
+<p>비록 젠투에서 제공하는건 아니지만, 미리 빌드한 꾸러미를 저장한 중앙 저장소를 만들 수 있습니다. 이 저장소를 사용하려면 <var>PORTAGE_BINHOST</var> 변수를 통해 저장소를 포티지에서 인식하도록 해야합니다. 예를 들어, 미리 빌드한 꾸러미가 <a rel="nofollow" class="external free" href="ftp://buildhost/gentoo">ftp://buildhost/gentoo</a> 에 있다면:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>PORTAGE_BINHOST 위치 추가</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_BINHOST</span><span class="o">=</span><span class="s2">&quot;ftp://buildhost/gentoo&quot;</span>
+</pre></div></pre>
+<p>미리 빌드한 꾸러미를 설치하려면, emerge 명령에 <code>--usepkg</code>옵션 다음에 <code>--getbinpkg</code> 옵션을 추가하십시오. 이 구성자는 후자가 emerge 에게 소스코드를 가져오고 컴파일 하기 전에 미리 빌드한 꾸러미의 설치를 시도해보라고 알리며, 앞서 정의한 서버에서 미리 빌드한 꾸러미를 내려받으라고 요청합니다.
+</p><p>미리 빌드한 꾸러미를 통해 gnumeric을 설치하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --usepkg --getbinpkg gnumeric</code></div></div>
+<p>더 많은 emerge의 미리 빌드한 꾸러미 옵션은 emerge 맨 페이지에서 찾아보실 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h3><span class="mw-headline" id=".EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EA.BE.B8.EB.9F.AC.EB.AF.B8.EB.A5.BC_.EB.8B.A4.EB.A5.B8_.EA.B3.B3.EC.9C.BC.EB.A1.9C_.EB.B0.B0.ED.8F.AC">미리 빌드한 꾸러미를 다른 곳으로 배포</span></h3>
+<p>미리 빌드한 꾸러미를 다른 사용자에게 배포한다면, 이 꾸러미 사용을 허락했는지 확인하십시오. 업스트림 꾸러미의 배포 조항을 확인하십시오. 예를 들어, GNU GPL 조항에 따라 꾸러미를 배포한다면, 소스코드를 바이너리와 함께 배포해야 합니다.
+</p><p>빌드한 바이너리를 배포할 수 없을 경우 ebuild에 <var>RESTRICT</var> 변수를 통해 <code>bindist</code> 제한을 걸 수 있습니다. 때로는 이 제한을 하나 이상의 USE 플래그에 넣을 수 있습니다.
+</p><p>기본적으로 포티지는 제한을 이유로 어떤 꾸러미도 가리지 않습니다. 이런 정책은 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 <var>ACCEPT_RESTRICT</var> 변수를 설정하여 시스템 전체적으로 바꿀 수 있습니다. 예를 들어 <code>bindist</code>  값을 가진 꾸러미를 가리려면 <span style="font-family: monospace; font-size: 95%">make.conf</span>에 다음 줄을 추가하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>배포 가능한 바이너리만 허용</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_RESTRICT</span><span class="o">=</span><span class="s2">&quot;* -bindist&quot;</span>
+</pre></div></pre>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge</span>  명령에 <code>--accept-restrict</code>  옵션을 적용하여<var>ACCEPT_RESTRICT</var> 변수를 중복 적용할 수 있습니다. 예를 들어, <code>--accept-restrict=-bindist</code> 옵션은 <code>bindist</code> 제약 조건으로 임시로 꾸러미를 가립니다.
+</p><p>꾸러미를 배포할 때 <var>ACCEPT_LICENSE</var> 변수 설정을 고려할 수 있습니다. <a href="../../Working/Portage/ko.html#.EB.9D.BC.EC.9D.B4.EC.84.A0.EC.8A.A4" title="Handbook:X86/Working/Portage/ko"> 라이선스</a> 항목을 참고하십시오.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />사용자는 꾸러미 라이선스 조항과 해당 국가의 법률을 전적으로 따를 의무가 있습니다. 바이너리 배포를 허용하지 않을 경우 안내 목적으로만 <var>RESTRICT</var> 또는 <var>LICENSE</var>와 같은 메타데이터 변수를 ebuild에서 설정할 수 있습니다. 법적 조항이 <i>아니므로</i>, 따르지는 마십시오.</div>
+<h2><span class="mw-headline" id=".ED.8C.8C.EC.9D.BC_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0">파일 가져오기</span></h2>
+<h3><span class="mw-headline" id="Userfetch">Userfetch</span></h3>
+<p>포티지를 루트 권한으로 실행할 때 <code>FEATURES="userfetch"</code> 설정은 꾸러미 소스코드를 가져오는 동안 포티지가 루트 권한을 버릴 수 있게 합니다. 이 방법은 약간의 보안성 개선책입니다.
+</p>
+<h2><span class="mw-headline" id=".EA.B2.80.EC.A6.9D.ED.95.9C_.EC.A0.A0.ED.88.AC_ebuild_.ED.8A.B8.EB.A6.AC_.EC.8A.A4.EB.83.85.EC.83.B7_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0">검증한 젠투 ebuild 트리 스냅샷 가져오기</span></h2>
+<p>관리자는 젠투 인프라에서 출시한 암호화 검증한 포티지 트리 스냅샷을 통해 지역 포티지 트리를 업데이트만 할 수 있습니다. 이런 조치를 통해 rsync 미러에서 내려받은 트리의 원하지 않는 코드나 꾸러미를 멋대로 추가하지 못하게합니다.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />다음 명령은 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> 동기화 방식으로 설정하여 업데이트하는 방식입니다.</div>
+<p>젠투 릴리즈 미디어의 OpenPGP 키는 이제 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gentoo-keys">app-crypt/gentoo-keys</a> 꾸러미로 설치한 이진 키 모음으로 사용할 수 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gentoo-keys</code></div></div> 
+<p>이 명령은 <span style="font-family: monospace; font-size: 95%">/var/lib/gentoo/gkeys/keyrings/gentoo/release</span> 위치에 키 모음을 설치합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>포티지 GPG 지원 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;webrsync-gpg&quot;</span>
+<span class="nv">PORTAGE_GPG_DIR</span><span class="o">=</span><span class="s2">&quot;/var/lib/gentoo/gkeys/keyrings/gentoo/release&quot;</span>
+</pre></div></pre>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/repos.conf/gentoo.conf</code></strong><strong>sync-uri 변수 지우기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">[DEFAULT]</span>
+<span class="na">main-repo</span> <span class="o">=</span> <span class="s">gentoo</span>
+ 
+<span class="k">[gentoo]</span>
+<span class="c1"># Disable synchronization by clearing the values or setting auto-sync = no</span>
+<span class="c1"># Do not set value of the variables in this configuration file using quotes (&#39;&#39; or &quot;&quot;)!</span>
+<span class="c1"># For portage-2.2.18 use &#39;websync&#39;</span>
+<span class="c1"># For portage-2.2.19 and greater use &#39;webrsync&#39; (websync was renamed to webrsync)</span>
+<span class="na">sync-type</span> <span class="o">=</span> <span class="s">websync</span>
+<span class="na">sync-uri</span> <span class="o">=</span> 
+<span class="na">auto-sync</span> <span class="o">=</span> <span class="s">yes</span>
+</pre></div></pre>
+<p><a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gnupg">app-crypt/gnupg</a> 꾸러미를 설치했는지 확인하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gnupg</code></div></div> 
+<p>키 모듬의 키가 올바른 키인지 확인하기 위해 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">gpg</span> 명령을 사용하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --with-fingerprint --list-keys</code></div></div>
+<p>아래 목록에 있는 키의 지문키를 검증하십시오
+<a href="../../../Project_RelEng.html#Release_security_and_signing" title="Project:RelEng">Project:RelEng#Release_security_and_signing</a><br />
+다음 키를 신뢰한다면 각 키에 대해 명령 실행을 반복하십시오(신뢰하려는 키의 앞부분에 있는 '0x...' 키 ID는 빼십시오).
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --edit-key 0xDB6B8C1F96D8BF6D trust</code></div></div>
+<p>이제 OpenPGP/gpg로 검증한 스냅샷만 동기화하도록 설정했습니다:
+<br />
+대부분 명령 옵션은 동기화할 때 사용할 수 있습니다.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />{{{1}}}</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emaint sync -a</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emaint sync --repo gentoo</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<p><b>원래 설치, 설정 절차</b>
+</p><p>포티지에서 스냅샷을 검증하도록 설정하려면, 먼저 저장한 포티지 트리 스냅샷에 서명할 젠투 인프라의 키인 신뢰 저장소를 구축하십시오. 물론, GPG키를 <a href="../../../GnuPG/ko.html#.ED.82.A4_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0" title="GnuPG/ko">적당한 지침</a>(지문 키 검사와 유사함)에 따라 검증할 수 있습니다. <a href="../../../Project_RelEng.html" title="Project:RelEng">프로젝트 페이지</a><sup style="color:#ff0077">en</sup>에서 출시 엔지니어링 팀의 GPG키 목록을 찾을 수 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir -p /etc/portage/gpg
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>chmod 0700 /etc/portage/gpg</code></div></div>
+<p><a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gnupg">app-crypt/gnupg</a>를 설치했는지 확인하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gnupg</code></div></div> 
+<p>다음 명령에 나타난 키값은 출시 엔지니어링 사이트에 나타난 키로 바꾸십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /etc/portage/gpg --keyserver subkeys.pgp.net --recv-keys 0xDB6B8C1F96D8BF6D
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /etc/portage/gpg --edit-key 0xDB6B8C1F96D8BF6D trust</code></div></div>
+<p>다음, <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> 를 편집하고 서명한 포티지 트리 스냅샷을 검증할 지원을 활성화(<code>FEATURES="webrsync-gpg"</code>)한 후 일반적인 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> 방식의 포티지 트리 업데이트를 비활성화하십시오.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>포티지에서 GPG 지원 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;webrsync-gpg&quot;</span>
+<span class="nv">PORTAGE_GPG_DIR</span><span class="o">=</span><span class="s2">&quot;/etc/portage/gpg&quot;</span>
+</pre></div></pre>
+<p><span style="font-family: monospace; font-size: 95%">/etc/portage/repos.conf</span> 파일에서 <var>sync-type</var>변수와 <var>sync-uri</var>변수를 주석처리하여 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> 명령이 더이상 동작하지 않게 하십시오(따라서 소스에서 잠재적으로 검증하지 않은 이빌드를 더이상 가져오지 않습니다):
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/repos.conf/gentoo.conf</code></strong><strong>sync-type, sync-uri 변수 지우기</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">[DEFAULT]</span>
+<span class="na">main-repo</span> <span class="o">=</span> <span class="s">gentoo</span>
+ 
+<span class="k">[gentoo]</span>
+<span class="c1"># Disable synchronization by clearing the values</span>
+<span class="c1"># Do not set value of the variables in this configuration file using quotes (&#39;&#39; or &quot;&quot;)!</span>
+<span class="na">sync-type</span> <span class="o">=</span> 
+<span class="na">sync-uri</span> <span class="o">=</span>
+</pre></div></pre>
+<p>다 됐습니다. 그 다음 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-websync</span>를 실행하면 유효한 서명을 가진 스냅샷만 파일 시스템에 뿌립니다.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/USE.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../../Working/Initscripts.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Komplett/Arbeiten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Working.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Todo/Trabajando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/フル/ワーキング (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Completo/Trabalhando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/全部/使用Gentoo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id=".EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8">실행 레벨</span></h2>
+<h2><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.B6.80.ED.8C.85">시스템 부팅</span></h2>
+<p>시스템을 부팅하면 수많은 텍스트가 떠다닙니다. 더 자세히 들여다보면 여러분이 다시 부팅할 때마다 이 텍스트가 같은 내용이 항상 나오는 것을 보실 수 있습니다. 이 동작의 순서를 부트 시퀀스라고 하며, (더 혹은 덜) 정적으로 정의합니다.
+</p><p>먼저 부트로더는 CPU한테 커널을 실행하라고 알린 다음에 부트로더 설정에 지정되어 있는 커널 이미지를 메모리에 불러옵니다. 커널을 불러와서 실행한 후 모든 커널 관련 구조를 초기화하고 init 과정을 시작합니다.
+</p><p>이 프로세스는 (<span style="font-family: monospace; font-size: 95%">/etc/fstab</span>에 지정한) 모든 파일 시스템을 마운트 했는지 사용할 준비가 되었는지를 확인합니다. 그 다음 시스템을 성공적으로 부팅하기 위해 필요한 서비스를 시작하려고 <span style="font-family: monospace; font-size: 95%">/etc/init.d</span>의 수 많은 스크립트를 실행합니다.
+</p><p>마지막으로 모든 스크립트를 실행하고 나면, init 에서 터미널(대부분의 경우 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F1</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Alt</kbd>+<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">F2</kbd> 키로 숨겨놓은 가상 콘솔입니다)을 활성화하고 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">agetty</span>라고 하는 특별한 프로세스를 터미널에 붙입니다. 이 과정에서 로그인을 실행하여 터미널로 로그온을 할 수 있는지 확인합니다.
+</p>
+<h3><span class="mw-headline" id="Initscripts">Initscripts</span></h3>
+<p>여기서 init는 <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span>에 있는 스크립트를 임의대로 실행하는 것이 아닙니다. 게다가 <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span>에 있는 모든 스크립트를 실행하는 것도 아니며 실행하라고 지시한 스크립트만 실행합니다. 이는 <span style="font-family: monospace; font-size: 95%">/etc/runlevels/</span>를 확인하여 어떤 스크립트를 실행할 지 결정합니다.
+</p><p>먼저 init는 <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span>에서 <span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot</span>에 심볼릭 링크한 모든 스크립트를 실행합니다. 보통 철자순으로 스크립트를 실행하겠지만 어떤 스크립트의 경우 이들 스크립트를 실행하기 전에 다른 스크립트를 먼저 실행해야 한다고 시스템에 알려주는 의존성 정보를 가지고 있습니다.
+</p><p><span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot</span>가 참조하는 스크립트를 실행하고 나면 init는 <span style="font-family: monospace; font-size: 95%">/etc/runlevels/default</span>에 심볼릭 링크한 스크립트의 실행을 계속합니다. 다시 한 번 말씀드리지만, 어떤 스크립트를 먼저 실행할 지는 유효한 시작 순서를 제공하도록 순서를 바꾸는 의존성 정보를 가지고 있지 않는 한 철자순서를 사용하여 결정합니다. 후자는 왜 젠투리눅스 설치 과정에서 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update add sshd default</span>의 <code>default</code>를 사용하는 지에 대한 답입니다.
+</p>
+<h3><span class="mw-headline" id="init_.EB.8F.99.EC.9E.91_.EB.B0.A9.EB.B2.95">init 동작 방법</span></h3>
+<p>물론 init 에서 모든 사항을 자체적으로 결정하지 못합니다. 어떤 동작을 취해야 할지 지시하는 설정 파일이 필요합니다. 이 설정 파일은 <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>입니다.
+</p><p>우리가 적은대로 부팅 순서를 기억한다면, 여러분이 기억하기로는 init에서 처음 하는 동작은 모든 파일 시스템의 마운트입니다. <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>의 다음 줄에 설정했습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>초기화 명령</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>si::sysinit:/sbin/rc sysinit
+</pre></div></pre>
+<p>이 줄은 시스템을 초기화하는 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">/sbin/rc sysinit</span>을 실행해야 한다고 init에 일러줍니다. <span style="font-family: monospace; font-size: 95%">/sbin/rc</span> 스크립트는 초기화를 다루므로 init이 더 이상 진행하지 말도록 여러분이 알려야 합니다. -- 이는 시스템이 초기화 작업을 수행하도록 다른 프로세스에 일임합니다.
+</p><p>두번째로, init은 <span style="font-family: monospace; font-size: 95%">/etc/runlevels/boot</span>에 심볼릭 링크를 걸어둔 모든 스크립트를 실행합니다. 이는 다음의 줄에서 설정했습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>부팅 명령 실행</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>rc::bootwait:/sbin/rc boot
+</pre></div></pre>
+<p>다시 말씀드리지만 rc 스크립트는 필요한 작업을 수행합니다. 참고로 rc (boot) 에 주어진 옵션은 이것이 사용하는 <span style="font-family: monospace; font-size: 95%">/etc/runlevels</span>의 하위 디렉터리와 같습니다.
+</p><p>이제 init 는 어떤 실행 레벨을 실행할 지 설정 파일을 확인합니다. <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>에서 다음 줄을 읽어 들들이고 실행할 실행 레벨을 결정합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>기본 실행 레벨 선택</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>id:3:initdefault:
+</pre></div></pre>
+<p>이 경우 (대부분의 젠투 사용자들이 사용할 경우), 실행레벨 id는 3입니다. 이 정보를 사용하여 init 은 실행레벨 3을 시작하기 위해 무엇을 실행해야 하는지 확인합니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>실행 레벨 정의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>l0:0:wait:/sbin/rc shutdown
+l1:S1:wait:/sbin/rc single
+l2:2:wait:/sbin/rc nonetwork
+l3:3:wait:/sbin/rc default
+l4:4:wait:/sbin/rc default
+l5:5:wait:/sbin/rc default
+l6:6:wait:/sbin/rc reboot
+</pre></div></pre>
+<p>다시 말해 런레벨 3를 설정하는 줄에서 서비스를 시작하기 위해 (이 시점의 매개변수는 <code>default</code>입니다) rc 스크립트를 사용합니다. 강조해서 말하지만 rc 매개변수는 <span style="font-family: monospace; font-size: 95%">/etc/runlevels</span>의 하위 디렉터리 이름과 같습니다.
+</p><p>rc 실행이 끝나면 init은 어떤 가상 콘솔을 활성화 할지, 각 콘솔에서 실행할 명령을 결정합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/inittab</code></strong><strong>터미널 정의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>c1:12345:respawn:/sbin/agetty 38400 tty1 linux
+c2:12345:respawn:/sbin/agetty 38400 tty2 linux
+c3:12345:respawn:/sbin/agetty 38400 tty3 linux
+c4:12345:respawn:/sbin/agetty 38400 tty4 linux
+c5:12345:respawn:/sbin/agetty 38400 tty5 linux
+c6:12345:respawn:/sbin/agetty 38400 tty6 linux
+</pre></div></pre>
+<h3><span class="mw-headline" id=".EC.A1.B4.EC.9E.AC.ED.95.98.EB.8A.94_.EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8">존재하는 실행 레벨</span></h3>
+<p>이전 절에서, init에서 어떤 실행 레벨을 활성화 할지 결정하는 숫자 방식을 활용함을 보았습니다. 실행 레벨은 시스템이 실행중인 상태를 나타내며, 실행 레벨에 진입하거나 벗어날때 실행해야 할 여러가지 스크립트(실행 레벨 스크립트 또는 초기화 스크립트)를 가지고 있습니다.
+</p><p>젠투에서는 세가지의 내부 런레벨과 네가지의 사용자 정의 런레벨 즉, 일곱가지 런레벨을 정의했습니다. 내부 런레벨은 <i>sysinit</i>, <i>shutdown</i>, <i>reboot</i>가 있고 이들 이름이 함축하는 일을 정확하게 수행합니다. 시스템을 초기화하고 시스템을 종료하며 시스템을 다시 시작합니다.
+</p><p>사용자 런레벨은 <span style="font-family: monospace; font-size: 95%">/etc/runlevels</span>의 하위 디렉터리 <i>boot</i>, <i>default</i>, <i>nonetwork</i>, <i>single</i>과 연결됩니다. boot 런레벨은 모든 기타 런레벨에서 사용하려는, 전체 시스템에서 필요한 서비스를 시작합니다. 나머지 세가지 런레벨은 어떤 서비스를 시작하느냐에 따라 차이가 있습니다. default는 항상 실행할 때 사용하고, nonetwork는 네트워크 연결이 필요하지 않을 때 사용하며, single은 시스템을 복구해야 할때 사용합니다.
+</p>
+<h3><span class="mw-headline" id=".EC.B4.88.EA.B8.B0.ED.99.94_.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8.28initscript.29_.EB.8B.A4.EB.A3.A8.EA.B8.B0">초기화 스크립트(initscript) 다루기</span></h3>
+<p>rc 프로세스를 시작하는 스크립트를 초기화 스크립트라고 부릅니다. <span style="font-family: monospace; font-size: 95%">/etc/init.d</span>에 있는 각각의 스크립트는 다음 매개 변수, <code>start</code>, <code>stop</code>, <code>restart</code>, <code>pause</code>, <code>zap</code>, <code>status</code>, <code>ineed</code>, <code>iuse</code>, <code>needsme</code>, <code>usesme</code>, <code>broken</code>과 함께 실행할 수 있습니다.
+</p><p>서비스(와 관련 서비스들)를 시작, 중지, 다시 시작하려면 <code>start</code>, <code>stop</code>, <code>restart</code>를 사용해야 합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix start</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />주어진 서비스에서 필요한 요건은 중지된 상태나 재시작한 상태입니다. 다른 관련 서비스 (서비스를 사용하지만 필요하지 않은) 는 건드리지 않은 상태로 남아있습니다.</div>
+<p>서비스를 중단하고 싶지만 다른 관련 서비스는 그대로 둔다면 <code>--nodeps</code> 매개 변수를 <code>stop</code> 명령과 함께 사용할 수 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix --nodeps stop</code></div></div>
+<p>서비스의 상태(시작함, 중단함, 멈춤, 등)가 어떤지 보려면 <code>status</code> 인자를 사용하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix status</code></div></div>
+<p>상태 정보에서 서비스가 동작중이라고 알리고 있지만, 실제로 동작중이 아님을 알고 있을 경우 <code>zap</code> 인자를 사용하여 상태 정보를 "중지됨"으로 되돌릴 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix zap</code></div></div>
+<p>또한 관련 서비스가 무엇인지 알아보려면 <code>iuse</code>나 <code>ineed</code>를 사용할 수 있습니다. <code>ineed</code>를 사용하면 서비스가 올바른 기능을 다하는데 실제로 필요한 서비스를 볼 수 있습니다. 반면에 <code>iuse</code>를 사용하면 서비스에서 사용할 수 있지만 올바른 동작을 하는데 필요하지는 않은 서비스를 보여줍니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix ineed</code></div></div>
+<p>이와 비슷하게 어떤 서비스를 필요로 하는지(<code>needsme</code>) 어떤 서비스를 사용할 수 있는지(<code>usesme</code>) 확인할 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix needsme</code></div></div>
+<p>마지막으로 서비스에서 필요로 하는 것중에 빠진 의존성이 무엇인지 확인할 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/postfix broken</code></div></div>
+<h2><span class="mw-headline" id=".EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">실행 레벨 업데이트</span></h2>
+<h3><span class="mw-headline" id="rc-update">rc-update</span></h3>
+<p>젠투의 init 시스템은 의존 트리를 사용하여 어떤 서비스를 먼저 시작해야 할지 결정 합니다. 사용자 여러분들이 이 지루한 작업을 하지 않도록 실행 레벨과 초기화 스크립트 관리를 쉽게 하는 도구를 만들었습니다.
+</p><p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span>를 사용하면 초기화 스크립트를 실행 레벨에 추가하고 제거할 수 있습니다. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> 도구는 그 다음 의존 트리를 다시 만들기 위해 <span style="font-family: monospace; font-size: 95%">depscan.sh</span>를 자동으로 요청합니다.
+</p>
+<h3><span class="mw-headline" id=".EC.84.9C.EB.B9.84.EC.8A.A4_.EC.B6.94.EA.B0.80.2F.EC.82.AD.EC.A0.9C">서비스 추가/삭제</span></h3>
+<p>이전 설치과정에서 "default" 실행 레벨에 초기화 스크립트를 추가했습니다. 그 때 여러분은 "default"가 왜 있는지 눈치채지 못하셨겠지만 이제는 알아차리셨을겁니다. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> 스크립트는 <code>add</code>, <code>del</code>, <code>show</code> 동작 중 하나를 두번째 매개 변수로 필요로 합니다.
+</p><p>초기화 스크립트를 추가하거나 제거하려면 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span> 스크립트에 <code>add</code>나 <code>del</code> 매개 변수를 추가하고, 초기화 스크립트 이름과 실행 레벨을 제시하시면 됩니다. 예를 들자면 다음과 같습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update del postfix default</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update -v show</span> 명령은 사용할 수 있는 실행할 초기화 스크립트와 실행 레벨의 목록을 보여줍니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update -v show</code></div></div>
+<p>(<code>-v</code>를 뺀) <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update show</span>를 실행하여 활성화 한 초기화 스크립트와 실행 레벨만을 보실 수 있습니다.
+</p>
+<h2><span class="mw-headline" id=".EC.84.9C.EB.B9.84.EC.8A.A4_.EC.84.A4.EC.A0.95">서비스 설정</span></h2>
+<h3><span class="mw-headline" id=".EC.99.9C_.EC.B6.94.EA.B0.80_.EC.84.A4.EC.A0.95.EC.9D.B4_.ED.95.84.EC.9A.94.ED.95.9C.EA.B0.80">왜 추가 설정이 필요한가</span></h3>
+<p>초기화 스크립트는 조금 복잡할 수 있습니다. 때문에 오류에 취약하게 만들 수가 있어 사용자가 초기화 스크립트를 올바르게 수정하는게 만족스럽진 않습니다. 그러나 서비스를 설정할 수 있는 방법에 있어서는 중요합니다. 예를 들어 여러분이 서비스 자체에 더 많은 옵션을 주고 싶어할 수도 있습니다.
+</p><p>두번째 이유로는 초기화 스크립트의 외부 설정을 보유하려면, 바꾼 설정을 되돌릴 수 없다는 두려움을 없애고 초기화 스크립트를 업데이트할 수 있어야 하기 때문입니다.
+</p>
+<h3><span class="mw-headline" id="conf.d_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC">conf.d 디렉터리</span></h3>
+<p>젠투에서는 서비스를 설정하는 쉬운 방법을 제공합니다: 모든 초기화 스크립트는 <span style="font-family: monospace; font-size: 95%">/etc/conf.d</span>의 파일로 설정할 수 있습니다. 예를 들어 <span style="font-family: monospace; font-size: 95%">apache2</span> 초기화 스크립트(<span style="font-family: monospace; font-size: 95%">/etc/init.d/apache2</span>)는 Apache 2 서버를 시작할 때 주고 싶은 옵션을 넣을 수 있는 <span style="font-family: monospace; font-size: 95%">/etc/conf.d/apache2</span> 설정 파일을 지니고 있습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/apache2</code></strong><strong>apache2 초기화 스크립트 예제 옵션</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">APACHE2_OPTS</span><span class="o">=</span><span class="s2">&quot;-D PHP5&quot;</span>
+</pre></div></pre>
+<p>이런 설정 파일에는 서비스 설정을 쉽게 하는 (<span style="font-family: monospace; font-size: 95%">/etc/portage.make.conf</span> 같은)변수<i>만</i> 들어있습니다. 변수에 대한 더 자세한 정보도(주석을 통해) 제공해줄 수 있습니다.
+</p>
+<h2><span class="mw-headline" id="initscript_.EC.9E.91.EC.84.B1">initscript 작성</span></h2>
+<h3><span class="mw-headline" id=".ED.95.84.EC.9A.94.ED.95.9C.EA.B0.80.EC.9A.94">필요한가요</span></h3>
+<p>아닙니다. 초기화 스크립트 작성은 보통 젠투가 모든 제공하는 서비스에 대해 준비된 초기화 스크립트를 제공하는 만큼 필요하지 않습니다. 그러나 포티지를 사용하지 않는 서비스를 설치할 때가 있는데, 초기화 스크립트의 거의 대부분을 만들 필요가 있습니다.
+</p><p>젠투용으로 확실하게 작성한 것이 아니라면 서비스에서 제공하는 init 스크립트를 사용하지 마십시오. 젠투의 초기화 스크립트는 다른 배포판에서 사용하는 초기화 스크립트와 호환되지 않습니다!
+</p>
+<h3><span class="mw-headline" id=".EB.B0.B0.EC.B9.98">배치</span></h3>
+<p>초기화 스크립트의 기본 배치는 아래와 같습니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>initscript 구성 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c">#!/sbin/runscript</span>
+  
+depend<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Dependency information<span class="o">)</span>
+<span class="o">}</span>
+  
+start<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Commands necessary to start the service<span class="o">)</span>
+<span class="o">}</span>
+  
+stop<span class="o">()</span> <span class="o">{</span>
+  <span class="o">(</span>Commands necessary to stop the service<span class="o">)</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>어떤 초기화 스크립트든지 start() 함수의 정의가 필요합니다. 다른 모든 부분은 부가적인 요소입니다.
+</p>
+<h3><span class="mw-headline" id=".EC.9D.98.EC.A1.B4.EC.84.B1">의존성</span></h3>
+<p>초기화 스크립트의 준비와 순차진행에 영향을 주는 요소가 무엇인지 지정할 수 있는 의존성 유사 방식에는 <i>use</i>와 <i>need</i>가 있습니다. 순서에 관계된 메서드에는 <i>before</i>과 <i>after</i>가 있습니다. 후자의 두가지 키워드는 그 자체로 의존성을 지니지 않습니다 어떤 스크립트가 시작하도록 계획하지 않았을 때(또는 시작에 실패했을 때) 원 초기화 스크립트의 동작이 실패하지 않도록 합니다.
+</p>
+<ul><li> <i>use</i> 설정은 선택한 스크립트의 기능을 이 스크립트가 사용하지만 직접적인 의존성을 지니지 않도록 init 시스템에 알려줍니다. 좋은 본보기로 <i>use logger</i>나 <i>use dns</i>를 들 수 있습니다. 이 서비스가 존재한다면 사용하기 좋은 상태로 두겠지만 로거나 DNS 서버가 없다 하더라도 서비스는 여전히 동작할 것입니다. 서비스가 존재한다면 use에 있는 스크립트보다 먼저 서비스를 시작합니다.</li>
+<li> <i>need</i> 설정은 강한 의존성입니다. 이는 need(필요)한 스크립트일 경우 명시한 스크립트를 성공적으로 실행하기 전에 시작하지 않음을 의미합니다. 또한 언급한 다른 스크립트를 다시 시작하면 마찬가지로 해당 스크립트도 다시 시작합니다.</li>
+<li> <i>before</i>를 사용하면, 선택한 요소가 init 레벨의 일부일 경우 선택한 요소를 실행하기 전에 주어진 스크립트를 실행합니다. 그래서 <i>before alsasound</i>를 정의한 xdm 초기화 스크립트는 alsasound 스크립트를 실행하기 전에 시작하겠지만, alsasound가 동일한 init 레벨에서 실행하도록 계획했을 경우에만 해당합니다. alsasound를 시작하도록 계획하지 않았다면, 일부 설정은 효력이 없으며, 스크립트 자신이 가장 적당하다고 여기는 시점에 xdm을 실행합니다.</li>
+<li> 이와 마찬가지로 <i>after</i>를 사용하면, 선택한 요소가 init 레벨의 일부일 경우 선택한 요소를 실행한 다음에 주어진 스크립트를 실행합니다. 아니면 설정이 효력이 없으며, 적당하다고 여기는 시점에 init 시스템이 스크립트를 실행합니다.</li></ul>
+<p><i>need</i>가 스크립트를 시작하든 아니든 영향을 주는 <i>진성</i> 의존성 설정이라는 점을 분명히 이해해야합니다. 다른 모든 요소는 명령 스크립트를 실행(할 수 있거나 해야)할 수 있을때 init 시스템에 대해 분명히 가리킬 뿐입니다.
+</p><p>이제 젠투에서 사용하는 초기화 스크립트를 살펴보고, 초기화 스크립트가 아닌 의존성 요소를 살펴보십시오. 이"것"을 가상요소라고 부릅니다.
+</p><p>"가상 의존성"은 서비스에서 제공하는 의존성이지만 서비스에서 단독으로 제공하지 않는 의존성입니다. 초기화 스크립트는 시스템 로거에 의존할 수 있습니다만 시스템 로거는 여러가지가 있습니다(metalogd, syslog-ng, sysklogd, ...). 스크립트에서 이들 각자의 단일 모듈(모든 시스템 로거를 설치하고 실행중인지 시스템에서 신경쓰지 않음)을 필요로하지 않기 때문에, 이런 모든 서비스에서 가상 의존성을 제공함을 확인합니다.
+</p><p>Postfix 서비스의 의존성 정보를 살펴보겠습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/init.d/postfix</code></strong><strong>postfix 서비스 의존성 정보</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need net
+  use logger dns
+  provide mta
+<span class="o">}</span>
+</pre></div></pre>
+<p>보시는 바와 같이 Postfix서비스에는 다음과 같은 내용이 있습니다:
+</p>
+<ul><li> (가상)net 의존 요소가 필요합니다 (<span style="font-family: monospace; font-size: 95%">/etc/init.d/net.eth0</span> 같은 요소로 제공)</li>
+<li> (가상)logger 의존 요소를 사용합니다 (<span style="font-family: monospace; font-size: 95%">/etc/init.d/syslog-ng</span> 같은 요소로 제공)</li>
+<li> (가상)dns 의존 요소를 사용합니다 (<span style="font-family: monospace; font-size: 95%">/etc/init.d/named</span> 같은 요소로 제공)</li>
+<li> (가상)mta 의존 요소를 제공합니다 (모든 메일 서버의 공통요소)</li></ul>
+<h3><span class="mw-headline" id=".EC.88.9C.EC.84.9C_.EC.B2.98.EB.A6.AC">순서 처리</span></h3>
+<p>이전 장에서 설명한 바와 같이 스크립트를 시작(하고 중지)하는 순서를 어떻게 할지 init 시스템에 알려줄 수 있습니다. 이 순서는 use와 need 의존 설정을 통해 다룰 뿐만 아니라 before와 after로도 순서 설정을 다루기도 합니다. 역시 앞의 설명과 마찬가지로 초기화 스크립트 중 하나의 예제로서 portmap 서비스를 살펴보겠습니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/init.d/portmap</code></strong><strong>portmap 서비스 의존성 정보</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need net
+  before inetd
+  before xinetd
+<span class="o">}</span>
+</pre></div></pre>
+<p>비록 별로 도움이 되는 이야기는 아니지만, 동일한 실행 레벨의 모든 서비스를 포함하려면 "*" 글롭을 사용할 수 있습니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>* 글롭 사용</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  before *
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>서비스가 반드시 로컬 디스크에 기록을 해야 한다면 localmount가 필요합니다. pidfile 같은 것을 <span style="font-family: monospace; font-size: 95%">/var/run</span>에 두었다면 bootmisc 다음에 실행해야합니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>localmount가 필요하며 bootmisc 다음에 실행 하도록 의존성 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>depend<span class="o">()</span> <span class="o">{</span>
+  need localmount
+  after bootmisc
+<span class="o">}</span>
+</pre></div></pre></div>
+<h3><span class="mw-headline" id=".ED.91.9C.EC.A4.80_.ED.95.A8.EC.88.98">표준 함수</span></h3>
+<p><code>depend()</code> 함수 다음, <code>start()</code> 함수 정의가 필요합니다. 이 함수에는 서비스를 시작하는데 필요한 모든 명령어를 담고 있습니다. 사용자에게 무슨 일이 일어나고 있는지를 알리려면 <i>ebegin</i>과 <i>eend</i>함수를 사용하는 것이 좋습니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>start() 함수 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>start<span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">RC_CMD</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;restart&quot;</span> <span class="o">]</span><span class="p">;</span>
+  <span class="k">then</span>
+    <span class="c"># Do something in case a restart requires more than stop, start</span>
+  <span class="k">fi</span>
+  
+  ebegin <span class="s2">&quot;Starting my_service&quot;</span>
+  start-stop-daemon --start --exec /path/to/my_service <span class="se">\</span>
+    --pidfile /path/to/my_pidfile
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p><code>--exec</code> 와 <code>--pidfile&lt;code&gt;는 start와 stop 함수에서 사용합니다. 서비스에서 pidfile을 만들지 못할 경우, 제대로 동작하는지 테스트 하는 겸에 되도록이면 &lt;code&gt;--make-pidfile</code>를 사용합니다. 그렇지 않으면 pidfile를 사용하지 않습니다. 또한 start-stop-daemon의 옵션으로 <code>--quiet</code>를 추가할 수 있지만 서비스에서 너무 많은 메시지를 뿌려대지 않은 이상 추천하는 방법은 아닙니다. <code>--quiet</code>를 사용하면 서비스 시작에 실패했을 때 디버깅 내용을 못볼 수도 있습니다.
+</p><p>위의 예제에서 눈에 띄는 설정은 <var>RC_CMD</var> 변수 내용의 확인입니다. 이전 초기화 스크립트 시스템과는 다르게 새로운 openrc 시스템에서는 스크립트별 다시 시작 기능을 사용하지 못합니다. 대신 함수(<code>start()</code>나 <code>stop()</code>)를 다시 시작 과정의 일부로 호출했든지 아니든지간에 <var>RC_CMD</var> 변수의 내용을 스크립트에서 확인해야합니다.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br /><code>--exec</code>가 실제로 서비스를 실행하는 쉘 스크립트를 실행하고 나가는 것이 아니라 서비스를 호출하는지 확인하십시오. -- 어떤 초기화 스크립트를 실행할지 고려합니다.</div>
+<p><code>start()</code>함수에 대한 더 많은 예제를 보시려면 <span style="font-family: monospace; font-size: 95%">/etc/init.d</span> 디렉터리에 있는 초기화 스크립트의 소스 코드를 살펴보십시오.
+</p><p>정의할 수 있(지만 반드시 정의할 필요는 없)는 또 다른 함수로는 <code>stop()</code>이 있습니다. init 시스템은 여러분이 start-stop-daemon을 사용한다면 자체적으로 내용을 채울 정도로 충분히 똑똑합니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>stop() 함수 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>stop<span class="o">()</span> <span class="o">{</span>
+  ebegin <span class="s2">&quot;Stopping my_service&quot;</span>
+  start-stop-daemon --stop --exec /path/to/my_service <span class="se">\</span>
+    --pidfile /path/to/my_pidfile
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>서비스에서 (bash, python, perl과 같은) 다른 스크립트를 실행하고 나중에 이 스크립트의 이름을 (<span style="font-family: monospace; font-size: 95%">foo.py</span>를 foo로) 바꾼다면 start-stop-daemon에 <code>--name</code>을 추가해야합니다. 여러분의 스크립트를 지정할 때 바꿀 이름으로 반드시 지정해야 합니다. 이 경우 서비스에서는 foo로 이름을 바꾸는 <span style="font-family: monospace; font-size: 95%">foo.py</span>를 시작합니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>foo 스크립트 시작 서비스 정의 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>start<span class="o">()</span> <span class="o">{</span>
+  ebegin <span class="s2">&quot;Starting my_script&quot;</span>
+  start-stop-daemon --start --exec /path/to/my_script <span class="se">\</span>
+    --pidfile /path/to/my_pidfile --name foo
+  eend <span class="nv">$?</span>
+<span class="o">}</span>
+</pre></div></pre></div>
+<p>참고할 내용이 더 많이 필요할 경우를 대비하여 start-stop-daemon은 최고의 맨 페이지를 보유하고 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man start-stop-daemon</code></div></div>
+<p>젠투의 초기화 스크립트 문법은 POSIX 쉘을 기반으로 하기 때문에 자유롭게 초기화 스크립트에 sh-호환 문법 스크립트를 사용할 수 있습니다. init 시스템에서 젠투가 처리할 변경 사항과는 상관 없이 스크립트의 기능이 남아있는지 확인하는, init 스크립트 외적인 배시 맞춤형 구성체처럼 다른 요소도 유지합니다.
+</p>
+<h3><span class="mw-headline" id=".EA.B0.9C.EB.B3.84_.EC.98.B5.EC.85.98_.EC.B6.94.EA.B0.80">개별 옵션 추가</span></h3>
+<p>앞서 우리가 언급했던 옵션보다 더 많은 옵션을 초기화 스크립트에서 지원하도록 하려면 extra_commands 변수에 옵션을 추가하고, 옵션 이름과 동일한 함수를 만들어야 합니다. 실례로 restartdelay라고 하는 옵션을 지원하게 해보겠습니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>restartdelay 메서드 정의 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">extra_commands</span><span class="o">=</span><span class="s2">&quot;restartdelay&quot;</span>
+  
+restartdelay<span class="o">()</span> <span class="o">{</span>
+  stop
+  sleep <span class="m">3</span>    <span class="c"># Wait 3 seconds before starting again</span>
+  start
+<span class="o">}</span>
+</pre></div></pre></div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />restart() 함수는 openrc에서 중복 적용할 수 없습니다!</div>
+<h3><span class="mw-headline" id=".EC.84.9C.EB.B9.84.EC.8A.A4_.EC.84.A4.EC.A0.95_.EB.B3.80.EC.88.98">서비스 설정 변수</span></h3>
+<p><span style="font-family: monospace; font-size: 95%">/etc/conf.d</span>의 설정 파일을 지원하려 어떤 내용도 구현할 필요가 없습니다. 초기화 스크립트를 실행하면 다음 파일을 자동으로 참조합니다(예: 사용할 수 있는 변수):
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">/etc/conf.d/YOUR_INIT_SCRIPT</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/conf.d/basic</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span></li></ul>
+<p>또한 초기화 스크립트에 (net과 같은)가상 의존성을 제공하면, (<span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>과 같은) 의존성의 관련 파일도 참조합니다.
+</p>
+<h2><span class="mw-headline" id=".EC.8B.A4.ED.96.89_.EB.A0.88.EB.B2.A8_.EB.8F.99.EC.9E.91_.EB.B0.94.EA.BE.B8.EA.B8.B0">실행 레벨 동작 바꾸기</span></h2>
+<h3><span class="mw-headline" id=".EB.88.84.EA.B0.80_.EC.9D.B4.EB.93.9D.EC.9D.84_.EB.B3.BC.EA.B9.8C.EC.9A.94">누가 이득을 볼까요</span></h3>
+<p>많은 랩톱 사용자들은 이런 상황을 알고 있습니다. 밖에서 (사용할 수 있는 네트워크가 없을 때) net.eth0를 시작하고 싶지 않은데 집에서는 net.eth0를 시작해야 할 때가 있습니다. 젠투에서는 여러분이 실행할 실행 레벨 동작을 바꿀 수 있습니다.
+</p><p>다른 초기화 스크립트를 할당하여 부팅할 수 있는 두번째 "default" 실행 레벨을 만들 수 있습니다. 사용자는 부팅 시간에 활용할 기본 실행 레벨이 어떤 레벨인지 선택할 수 있습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.86.8C.ED.94.84.ED.8A.B8_.EB.A0.88.EB.B2.A8_.EC.82.AC.EC.9A.A9">소프트 레벨 사용</span></h3>
+<p>제일 먼저, 두번째 "default" 실행 레벨에 대한 실행 레벨 디렉터리를 만드십시오. 다음 예제에서 "offline" 실행 레벨을 만들겠습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir /etc/runlevels/offline</code></div></div>
+<p>새로이 만든 실행 레벨에 필요한 초기화 스크립트를 추가하십시오. 현재 기본 실행 레벨에 net.eth0를 제외한 정확한 복사본을 보유하려면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /etc/runlevels/default
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>for service in *; do rc-update add $service offline; done
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update del net.eth0 offline
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update show offline</code></div><pre>
+(Partial sample Output)
+               acpid | offline
+          domainname | offline
+               local | offline
+            net.eth0 |
+</pre></div>
+<p>net.eth0을 offline 런레벨에서 제거했지만서도, udev가 감지한 장치를 시작하고 핫 플러그라는 기능의 적당한 서비스를 실행하려 들지도 모릅니다. 기본적으로 젠투는 핫 플러그를 활성화하지않습니다:
+</p><p>핫 플러그 기능을 활성화하지만 선택한 스크립트 모음에 한정하려면, <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span>의 <var>rc_hotplug</var> 변수를 사용하십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/rc.conf</code></strong><strong>WLAN 인터페이스 핫 플러그 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">rc_hotplug</span><span class="o">=</span><span class="s2">&quot;net.wlan !net.*&quot;</span>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />장치 초기화 서비스에 대한 더 많은 내용은 <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span>의 주석을 살펴보십시오.</div>
+<p>부트로더 설정을 편집하여 오프라인 실행 레벨에 대한 새 항목을 추가하십시오. 해당 항목에서 부팅 매개변수로 <code>softlevel=offline</code>를 추가하십시오.
+</p>
+<h3><span class="mw-headline" id=".EB.B6.80.ED.8A.B8_.EB.A0.88.EB.B2.A8_.EC.82.AC.EC.9A.A9">부트 레벨 사용</span></h3>
+<p>bootlevel을 사용하는 것은 softlevel과 완전히 유사합니다. 두번째 "default" 런레벨 대신에 두번째 "boot" 런레벨을 정의하는 점만 다릅니다.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/Features/ko.html" title="이전 내용" class="btn btn-default">&#8592; Portage features</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../../Working/EnvVar/ko.html" title="다음 내용" class="btn btn-default">환경 변수 &#8594;</a></div>
+<p><br />
+</p><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Komplett/Arbeiten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Working.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Todo/Trabajando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/フル/ワーキング (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Completo/Trabalhando (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Full/Working (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/全部/使用Gentoo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id=".ED.99.98.EA.B2.BD_.EB.B3.80.EC.88.98">환경 변수</span></h2>
+<h3><span class="mw-headline" id=".EB.8F.84.EC.9E.85.EB.B6.80">도입부</span></h3>
+<p>환경 변수는 하나 이상의 프로그램에서 사용하는 정보가 들어있는 이름을 붙인 객체입니다. 수많은 사람은(그리고 리눅스를 처음 접하는) 약간 이상하거나 관리하기가 힘들다는 점을 발견할 것입니다. 그러나, 이렇게 생각하는 것 자체가 실수입니다. 하나 이상의 프로그램의 환경 설정을 바꿀 때 환경 변수를 사용하면 쉽게 처리할 수 있습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.A4.91.EC.9A.94_.EC.98.88.EC.A0.9C">중요 예제</span></h3>
+<p>다음 표에서는 리눅스 시스템에서 사용하는 많은 변수들을 나열하였고 용도를 설명합니다. 예제 값은 표 다음에 보여드립니다.
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> 변수
+</th>
+<th> 설명
+</th></tr>
+<tr>
+<td> PATH
+</td>
+<td> 이 변수는 여러분의 시스템이 실행파일을 찾기 위한 콜론으로 구분한 디렉터리 목록을 가집니다. (ls, rc-update, emerge와 같은) 실행 파일의 이름을 입력하였음에도 불구하고 나열한 디렉터리에 이 실행 파일이 없다면 시스템은 (/bin/ls 와 같이 완전한 경로를 지닌 명령을 입력하지 않는 이상) 이 실행 파일을 실행하지 않습니다.
+</td></tr>
+<tr>
+<td> ROOTPATH
+</td>
+<td> 이 변수는 PATH와 동일한 기능을 하지만, 루트 사용자가 명령을 입력할때 확인할 디렉터리의 목록만을 가집니다.
+</td></tr>
+<tr>
+<td> LDPATH
+</td>
+<td> 이 변수는 동적 링커가 라이브러리를 찾을 콜론으로 구분한 디렉터리 목록을 가집니다.
+</td></tr>
+<tr>
+<td> MANPATH
+</td>
+<td> 이 변수는 man 명령어가 man 페이지를 검색할 콜론으로 구분한 디렉터리 목록을 가집니다.
+</td></tr>
+<tr>
+<td> INFODIR
+</td>
+<td> 이 변수는 info 명령어가 info 페이지를 검색할 콜론으로 구분한 디렉터리 목록을 가집니다.
+</td></tr>
+<tr>
+<td> PAGER
+</td>
+<td> 이 변수는 파일의 내용을 조회할 (less나 more와 같은) 프로그램의 경로를 포함합니다.
+</td></tr>
+<tr>
+<td> EDITOR
+</td>
+<td> 이 변수는 파일의 내용을 바꿀 (nano나 vi와 같은) 프로그램의 경로를 포함합니다.
+</td></tr>
+<tr>
+<td> KDEDIRS
+</td>
+<td> 이 변수는 KDE 관련 내용을 포함하는 콜론으로 구분한 디렉터리 목록을 가집니다.
+</td></tr>
+<tr>
+<td> CONFIG_PROTECT
+</td>
+<td> 이 변수는 포티지를 업데이트 하는 동안 보호해야 할 <i>공백문자</i>로 구분한 디렉터리 목록을 가집니다.
+</td></tr>
+<tr>
+<td> CONFIG_PROTECT_MASK
+</td>
+<td> 이 변수는 포티지를 업데이트 하는 동안 보호하지 않을 <i>공백문자</i>로 구분한 디렉터리 목록을 가집니다.
+</td></tr></table>
+<p>아래에서는 이들 변수에 대한 정의의 예를 보실 수 있습니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>언급한 변수의 설정 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin&quot;</span>
+<span class="nv">ROOTPATH</span><span class="o">=</span><span class="s2">&quot;/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin&quot;</span>
+<span class="nv">LDPATH</span><span class="o">=</span><span class="s2">&quot;/lib:/usr/lib:/usr/local/lib:/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3&quot;</span>
+<span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/man:/usr/local/share/man&quot;</span>
+<span class="nv">INFODIR</span><span class="o">=</span><span class="s2">&quot;/usr/share/info:/usr/local/share/info&quot;</span>
+<span class="nv">PAGER</span><span class="o">=</span><span class="s2">&quot;/usr/bin/less&quot;</span>
+<span class="nv">EDITOR</span><span class="o">=</span><span class="s2">&quot;/usr/bin/vim&quot;</span>
+<span class="nv">KDEDIRS</span><span class="o">=</span><span class="s2">&quot;/usr&quot;</span>
+<span class="nv">CONFIG_PROTECT</span><span class="o">=</span><span class="s2">&quot;/usr/X11R6/lib/X11/xkb /opt/tomcat/conf \</span>
+<span class="s2">                /usr/kde/3.1/share/config /usr/share/texmf/tex/generic/config/ \</span>
+<span class="s2">                /usr/share/texmf/tex/platex/config/ /usr/share/config&quot;</span>
+<span class="nv">CONFIG_PROTECT_MASK</span><span class="o">=</span><span class="s2">&quot;/etc/gconf&quot;</span>
+</pre></div></pre></div>
+<h2><span class="mw-headline" id=".EC.A0.84.EC.97.AD_.EB.B3.80.EC.88.98_.EC.A0.95.EC.9D.98">전역 변수 정의</span></h2>
+<h3><span class="mw-headline" id="env.d_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC">env.d 디렉터리</span></h3>
+<p>젠투에선 변수의 정의를 한곳에 모으려 <span style="font-family: monospace; font-size: 95%">/etc/env.d</span> 디렉터리를 도입했습니다. 이 디렉터리 안에서 여러분은 00basic, 05gcc 등과 같은 수많은 파일을 찾으실 수 있습니다. 각각의 파일에 들어있는 프로그램에서 필요로 하는 변수들은 프로그램 이름 안에 언급되어 있습니다.
+</p><p>예를 들어 gcc를 설치할 때, 다음 변수의 정의를 가진 05gcc라고 하는 파일을 ebuild가 만들어줍니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/05gcc</code></strong><strong>기본 gcc 활성 환경 변수</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/i686-pc-linux-gnu/gcc-bin/3.2&quot;</span>
+<span class="nv">ROOTPATH</span><span class="o">=</span><span class="s2">&quot;/usr/i686-pc-linux-gnu/gcc-bin/3.2&quot;</span>
+<span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man&quot;</span>
+<span class="nv">INFOPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info&quot;</span>
+<span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;gcc&quot;</span>
+<span class="nv">CXX</span><span class="o">=</span><span class="s2">&quot;g++&quot;</span>
+<span class="nv">LDPATH</span><span class="o">=</span><span class="s2">&quot;/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3&quot;</span>
+</pre></div></pre>
+<p>다른 배포판에서는 바뀐 내용을 알려주거나 각각의 환경 변수 정의를 추가할 때 <span style="font-family: monospace; font-size: 95%">/etc/profile</span> 등의 위치에 넣습니다. 그러나 젠투에서는 환경 변수를 포함할 수 있는 수많은 파일에 일일히 신경쓰지 않게 여러분과 포티지를 위해 환경변수를 좀 더 쉽게 관리할 수 있게 해줍니다.
+</p><p>예를 들어 gcc를 업데이트하면 사용자 확인 절차 요구 없이 <span style="font-family: monospace; font-size: 95%">/etc/env.d/05gcc</span> 파일을 업데이트합니다.
+</p><p>이는 포티지 뿐만 아니라 사용자 입장에서의 여러분께도 이득입니다. 때로는 시스템 전체와 관련된 일부 환경 변수를 설정하라고 요청을 받을 수도 있습니다. 아래 예를 통해 http_proxy 변수를 보도록 하겠습니다. <span style="font-family: monospace; font-size: 95%">/etc/profile</span>을 점점 크게 하는 대신에 (<span style="font-family: monospace; font-size: 95%">/etc/env.d/99local</span>)파일을 만들고 이 정의 내용을 이 파일에 입력하시기만 하면 됩니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/99local</code></strong><strong>전역 변수 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">http_proxy</span><span class="o">=</span><span class="s2">&quot;proxy.server.com:8080&quot;</span>
+</pre></div></pre>
+<p>자체 관리 변수에 동일한 파일을 사용하면, 사용자가 스스로 정의한 변수를 빨리 찾아볼 수 있습니다.
+</p>
+<h3><span class="mw-headline" id="env-update">env-update</span></h3>
+<p><span style="font-family: monospace; font-size: 95%">/etc/env.d/</span>에 있는 수많은 파일에는 PATH 변수를 정의합니다. 이것은 실수가 아닙니다. <code>env-update</code>를 실행하면 환경 변수를 업데이트하기 전에 각 꾸러미에 대한 수많은 정의 내용을 덧붙여서 기존의 값과 혼동하지 않고 제각각이 지닌 환경 변수 값을 쉽게 붙일 수 있도록 합니다.
+</p><p>env-update 스크립트는 <span style="font-family: monospace; font-size: 95%">/etc/env.d</span> 파일들에 있는 값을 철자 순으로 붙입니다. 파일 이름은 반드시 두자리 숫자로 시작해야 합니다.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>env-update의 업데이트 순서</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>00basic        99kde-env       99local
+     +-------------+----------------+-------------+
+PATH=&quot;/bin:/usr/bin:/usr/kde/3.2/bin:/usr/local/bin&quot;
+</pre></div></pre></div>
+<p>변수의 결합이 항상 일어나는 일은 아니고 ADA_INCLUDE_PATH, ADA_OBJECTS_PATH, CLASSPATH, KDEDIRS, PATH, LDPATH, MANPATH, INFODIR, INFOPATH, ROOTPATH, CONFIG_PROTECT, CONFIG_PROTECT_MASK, PRELINK_PATH, PRELINK_PATH_MASK, PKG_CONFIG_PATH, PYTHONPATH 변수들에게만 해당합니다. (<span style="font-family: monospace; font-size: 95%">/etc/env.d</span>의 철자순 파일에 있는) 다른 변수들에게도 최근 정의한 값을 사용합니다.
+</p><p>COLON_SEPARATED 또는 SPACE_SEPARATED 값 (또한 <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span> 파일에 있는 내용도)으로 변수 값을 추가하여 변수 결합 목록에 더 많은 값을 추가할 수 있습니다.
+</p><p><code>env-update</code>를 실행하면, 스크립트는 <span style="font-family: monospace; font-size: 95%">/etc/profile.env</span>에 모든 환경 변수를 만들고 이곳에 값을 놓습니다 (이 값은 <span style="font-family: monospace; font-size: 95%">/etc/profile</span>이 사용합니다). 또한 LDPATH 변수에서 정보를 꺼내와서 <span style="font-family: monospace; font-size: 95%">/etc/ld.so.conf</span>를 만드는데 사용합니다. 그 다음 <code>ldconfig</code>를 실행하여 동적 링커에서 사용할 <span style="font-family: monospace; font-size: 95%">/etc/ld.so.cache</span> 파일을 다시 만듭니다.
+</p><p>env-update의 실행 결과를 바로 알고 싶다면 다음 명령을 실행하고 환경을 업데이트 합니다. 자신들만의 젠투 환경을 가진 사용자들은 설치 과정에 있는 다음 명령을 기억할 것입니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>env-update &amp;&amp; source /etc/profile</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />위 명령은 현재 터미널의 새로운 콘솔과 하위 요소에서 사용할 변수만을 업데이트 합니다. 따라서 X11에서 작업중이라면 여러분이 열어놓은 모든 터미널에서 <code>source /etc/profile</code>명령을 실행하거나 X 를 다시 시작해서 새로운 터미널이 새 변수를 사용할 수 있게해야합니다. 로그인 관리자를 사용하고 있다면 루트 사용자로 로그인해서 <span style="font-family: monospace; font-size: 95%">/etc/init.d/xdm</span> 를 다시 시작하십시오.</div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />다른 변수를 정의할 때 쉘 변수를 사용할 수 없습니다. 이는 FOO="$BAR"($BAR는 또 다른 변수)와 같은 구문의 사용을 금지한다는 의미입니다.</div>
+<h2><span class="mw-headline" id=".EC.A7.80.EC.97.AD_.EB.B3.80.EC.88.98_.EC.84.A4.EC.A0.95">지역 변수 설정</span></h2>
+<h3><span class="mw-headline" id=".EC.82.AC.EC.9A.A9.EC.9E.90.EB.B3.84_.EB.B3.80.EC.88.98">사용자별 변수</span></h3>
+<p>여러분은 항상 환경 변수를 전체적으로 설정하길 바랄 것은 아닙니다. 이를테면 <span style="font-family: monospace; font-size: 95%">/home/my_user/bin</span> 을 추가하고 (여러분이 있는) 현재 작업 디렉터리를 PATH변수에 추가하고 싶지만 시스템에 있는 모든 사용자들에게 같은 PATH값을 주고 싶지 않을 때가 있을 것입니다. 이 환경 변수를 지역적으로 설정하고 싶다면 <span style="font-family: monospace; font-size: 95%">~/.bashrc</span>나 <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span>을 사용해야 합니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">~/.bashrc</code></strong><strong>로컬용 PATH 확장</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># A colon followed by no directory is treated as the current working directory</span>
+<span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">:/home/my_user/bin:&quot;</span>
+</pre></div></pre>
+<p>로그아웃/로그인한 수 PATH변수는 업데이트됩니다.
+</p>
+<h3><span class="mw-headline" id=".EC.84.B8.EC.85.98.EB.B3.84_.EB.B3.80.EC.88.98">세션별 변수</span></h3>
+<p>때로는 더 엄격한 정의가 필요합니다. 바이너리 자신의 경로를 사용하지 않고 임시로 만든 디렉터리에서 바이너리를 사용할 수 있게 하거나 필요에 따라 잠깐 <span style="font-family: monospace; font-size: 95%">~/.bashrc</span>를 편집할 수도 있습니다.
+</p><p>이 경우 현재 세션의 PATH 변수는 <code>export</code> 명령으로 설정하십시오. 사용자가 로그아웃하기 전까지는 PATH 변수는 임시 설정으로 사용합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export PATH="${PATH}:/home/my_user/tmp/usr/bin"</code></div></div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/Initscripts/ko.html" title="이전 내용" class="btn btn-default">&#8592; 초기화 스크립트 시스템</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../../Portage/Files/ko.html" title="다음 내용" class="btn btn-default">파일 및 디렉터리 &#8594;</a></div>
+<p><br />
+</p><p><br />
+<span class="error"><strong>Warning:</strong> Display title "젠투 리눅스 x86 핸드북: 젠투 다루기" overrides earlier display title "Handbook:X86/Full/Working/ko".</span>
+</p><p><br />
+</var>
+</var>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112144116
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 1.960 seconds
+Real time usage: 2.098 seconds
+Preprocessor visited node count: 10172/1000000
+Preprocessor generated node count: 7554/1000000
+Post‐expand include size: 566792/2097152 bytes
+Template argument size: 48903/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1460.764      1 - -total
+100.00% 1460.764      1 - Handbook:Parts/Full/Working/ko
+ 35.88%  524.144      1 - Handbook:X86/Working/Portage/ko
+ 35.66%  520.945      1 - Handbook:Parts/Working/Portage/ko
+ 27.71%  404.828     51 - Template:RootCmd
+ 26.30%  384.241     61 - Template:GenericCmd
+ 25.87%  377.972      5 - Handbook:Parts/TOC/ko
+ 21.98%  321.026      1 - Handbook:X86/Working/Features/ko
+ 21.77%  317.958      1 - Handbook:Parts/Working/Features/ko
+ 19.91%  290.771      1 - Handbook:X86/Working/Initscripts/ko
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:79598-0!*!0!!en!*!* and timestamp 20160112144114 and revision id 194394
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;oldid=194394">http://wiki.gentoo.org/index.php?title=Handbook:X86/Full/Working/ko&amp;oldid=194394</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 10:08.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Full/Working/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":2320});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Full/Working/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:41 GMT -->
+</html>

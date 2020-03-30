@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Base/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Installation/Base/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Base/ko","wgTitle":"X86/Installation/Base/ko","wgCurRevisionId":194410,"wgRevisionId":194410,"wgArticleId":79610,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Installation/Base/ko","wgRelevantArticleId":79610,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[
+],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Base/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Base/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Base_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Base/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Base/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;oldid=194410" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FBase-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBase%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBase%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Base/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:X86/Installation/Base/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FBase&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Base.html" title="Handbook:X86/Installation/Base">Handbook:X86/Installation/Base</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/Basis (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Base.html" title="Handbook:X86/Installation/Base (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/ベース (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/安装基本系统 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">베이스 시스템 설치</strong>
+</td></tr>
+<tr>
+<td> <a href="../Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/ko.html" title="Handbook:X86/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.EB.A3.A8.ED.8A.B8_.EB.B3.80.EA.B2.BD"><span class="tocnumber">1</span> <span class="toctext">루트 변경</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.84.A0.ED.83.9D:_.EB.AF.B8.EB.9F.AC_.EC.84.A0.ED.83.9D"><span class="tocnumber">1.1</span> <span class="toctext">선택: 미러 선택</span></a></li>
+<li class="toclevel-2"><a href="#DNS_.EC.A0.95.EB.B3.B4_.EB.B3.B5.EC.82.AC"><span class="tocnumber">1.2</span> <span class="toctext">DNS 정보 복사</span></a></li>
+<li class="toclevel-2"><a href="#.ED.95.84.EC.9A.94.ED.95.9C_.ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.A7.88.EC.9A.B4.ED.8A.B8"><span class="tocnumber">1.3</span> <span class="toctext">필요한 파일 시스템 마운트</span></a></li>
+<li class="toclevel-2"><a href="#.EC.83.88_.ED.99.98.EA.B2.BD.EC.9C.BC.EB.A1.9C_.EC.A7.84.EC.9E.85"><span class="tocnumber">1.4</span> <span class="toctext">새 환경으로 진입</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.84.A4.EC.A0.95"><span class="tocnumber">2</span> <span class="toctext">포티지 설정</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.8A.A4.EB.83.85.EC.83.B7_.EC.84.A4.EC.B9.98"><span class="tocnumber">2.1</span> <span class="toctext">포티지 스냅샷 설치</span></a></li>
+<li class="toclevel-2"><a href="#.EC.84.A0.ED.83.9D:_.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8"><span class="tocnumber">2.2</span> <span class="toctext">선택: 포티지 트리 업데이트</span></a></li>
+<li class="toclevel-2"><a href="#.EB.89.B4.EC.8A.A4_.ED.95.AD.EB.AA.A9_.EB.B3.B4.EA.B8.B0"><span class="tocnumber">2.3</span> <span class="toctext">뉴스 항목 보기</span></a></li>
+<li class="toclevel-2"><a href="#.EC.A0.81.EC.A0.88.ED.95.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EC.84.A0.ED.83.9D"><span class="tocnumber">2.4</span> <span class="toctext">적절한 프로파일 선택</span></a></li>
+<li class="toclevel-2"><a href="#USE_.EB.B3.80.EC.88.98_.EC.84.A4.EC.A0.95"><span class="tocnumber">2.5</span> <span class="toctext">USE 변수 설정</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EC.84.A0.ED.83.9D:_systemd_.EC.82.AC.EC.9A.A9"><span class="tocnumber">3</span> <span class="toctext">선택: systemd 사용</span></a></li>
+<li class="toclevel-1"><a href="#.EC.8B.9C.EA.B0.84.EB.8C.80"><span class="tocnumber">4</span> <span class="toctext">시간대</span></a></li>
+<li class="toclevel-1"><a href="#.EB.A1.9C.EC.BA.98_.EC.84.A4.EC.A0.95"><span class="tocnumber">5</span> <span class="toctext">로캘 설정</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".EB.A3.A8.ED.8A.B8_.EB.B3.80.EA.B2.BD">루트 변경</span></h2>
+<h3><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_.EB.AF.B8.EB.9F.AC_.EC.84.A0.ED.83.9D">선택: 미러 선택</span></h3>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 중요</strong><br /><a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/mirrorselect">app-portage/mirrorselect</a> 프로그램은 아직 타겟에서<span style="font-family: monospace; font-size: 95%">repos.conf/gentoo.conf</span> 파일에 대해 루트 변경을 처리하도록 업데이트하지 않았으며, <span style="font-family: monospace; font-size: 95%">make.conf</span>의 <var>SYNC</var> 변수는 오래되어 포티지에서 더 이상 사용하지 않습니다. 이 섹션의 내용이 바뀌어야 하니 당분간은 건너뛰십시오...</div>
+<p>소스코드를 빨리 다운로드 하려면 빠른 미러를 선택하시는 것이 좋습니다. 포티지는 <span style="font-family: monospace; font-size: 95%">make.conf</span> 파일의 <var>GENTOO_MIRRORS</var> 변수에서 미러를 찾아보며 해당 변수에 들어간 미러를 활용합니다 젠투 미러 목록 및 시스템에서 물리적으로 가까운(대부분 이런 미러가 빠름) 미러(또는 복수개의 미러) 를 검색할 수 있습니다. 그러나 우리에겐 필요한 미러를 선택하는 멋진 인터페이스를 사용자에게 제공해 줄 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span> 도구가 있습니다. 선택할 미러를 찾아보고 하나 이상의 미러를 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Spacebar</kbd> 키로 선택하면 됩니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p>두번째로 중요한 설정은 <span style="font-family: monospace; font-size: 95%">make.conf</span>의 <var>SYNC</var>입니다. 이 변수에는 포티지 트리(프로그램을 다운로드하고 설치하는데 필요한 모든 포티지 정보가 담긴 ebuild 및 관련 파일의 모음)를 업데이트할 때 사용할 rsync 서버 주소를 담고 있습니다. 다시 말해, <var>SYNC</var> 서버를 직접 입력할 수도 있지만 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span>에서 대부분의 과정을 쉽게 처리할 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span>를 실행한 후 <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/etc/portage/make.conf</span> 설정을 다시 확인해보시는게 좋겠습니다!
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br /> <span style="font-family: monospace; font-size: 95%">make.conf</span>의 <var>SYNC</var> 서버를 직접 선택한다면 여러분에게 가장 가까운 커뮤니티 미러 목록을 확인하십시오. 단일 미러를 선택하기보단 rsync.us.gentoo.org 같은 순환 링크를 선택하시는 것이 좋습니다. 이 주소는 부하를 분산하고 특정 미러가 꺼져있을 경우, 요청 실패 상황을 회피할 수 있습니다.</div>
+<h3><span class="mw-headline" id="DNS_.EC.A0.95.EB.B3.B4_.EB.B3.B5.EC.82.AC">DNS 정보 복사</span></h3>
+<p>새 환경에 들어가기 전에 아직 남은게 하나 있는데 <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span>의 DNS 정보를 복사하는 일입니다. 새 환경에 들어가고 나서 네트워크가 그대로 동작할 수 있게 하려면 꼭 필요합니다. <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> 파일에는 네트워크를 사용할 때 활용하는 네임 서버 주소가 들어있습니다.
+</p><p>이 정보를 복사하려면 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">cp</span> 명령에 <code>-L</code> 옵션을 추가하는게 좋습니다. <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> 파일이 심볼릭 링크라면 심볼릭 링크가 아니라 링크의 대상 파일 그 자체를 찾아서 복사합니다. 그렇지 않으면 새 환경에서 심볼릭 링크로 남아있으며 실제 존재하지 않는 파일(링크의 대항은 새 환경에서는 존재하지 않을것입니다)을 참조합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cp -L /etc/resolv.conf /mnt/gentoo/etc/</code></div></div>
+<h3><span class="mw-headline" id=".ED.95.84.EC.9A.94.ED.95.9C_.ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.A7.88.EC.9A.B4.ED.8A.B8">필요한 파일 시스템 마운트</span></h3>
+<p>잠시 동안, 리눅스 루트는 새 위치로 바뀝니다. 새 환경이 제대로 동작하는지 보려면 각각의 파일 시스템을 활성화해야 합니다.
+</p><p>활성화 해야 할 파일 시스템은 다음과 같습니다:
+</p>
+<ul><li> 리눅스 커널에서 환경에 공개하려는 정보가 만든 의사 파일 시스템(일반 파일 같지만, 실제로 동작중 생성하는 파일 시스템) <span style="font-family: monospace; font-size: 95%">/proc/</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/proc/</span>보다 구조가 잘 갖춰져있어 대체 용도로 쓸 수 있는 의사 파일 시스템 <span style="font-family: monospace; font-size: 95%">/sys/</span> </li>
+<li> 리눅스 장치 관리자(보통 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">udev</span>)가 일부 관리하는 일반 파일 시스템이며, 모든 장치 파일이 들어있는 <span style="font-family: monospace; font-size: 95%">/dev/</span></li></ul>
+<p>다른 두개의 파일 시스템은 바인드 마운트를 하는데 반해 <span style="font-family: monospace; font-size: 95%">/proc/</span> 위치는 <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/proc/</span>에 마운트합니다. 후자의 경우, <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/proc/</span>는 (말 그대로) 파일 시스템에 대한 새 마운트지만, <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/sys/</span>는 실제로 <span style="font-family: monospace; font-size: 95%">/sys/</span>(동일한 파일 시스템에 대한 두번째 마운트 지점)이 된다는 의미입니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount -t proc proc /mnt/gentoo/proc
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --rbind /sys /mnt/gentoo/sys
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --make-rslave /mnt/gentoo/sys
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --rbind /dev /mnt/gentoo/dev
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --make-rslave /mnt/gentoo/dev</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br /><code>--make-rslave</code> 동작은 나중 설치 과정에서 systemd 지원에 필요합니다.</div>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 중요</strong><br />비 젠투 설치 매체를 사용할 경우 이 과정이 충분하지 않을 수도 있습니다. 일부 배포판은 <span style="font-family: monospace; font-size: 95%">/dev/shm</span> 심볼릭 링크를 <span style="font-family: monospace; font-size: 95%">/run/shm/</span>으로 만들지만 루트를 바꾸고 난 후에는 무효처리됩니다. <span style="font-family: monospace; font-size: 95%">/dev/shm/</span>을 적당한 tmpfs로 마운트 하려면 다음 명령으로 문제를 처리할 수 있습니다:
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rm /dev/shm &amp;&amp; mkdir /dev/shm
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount -t tmpfs -o nosuid,nodev,noexec shm /dev/shm</code></div></div>
+<p>또한 확실하게 1777 모드를 설정하십시오
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code> chmod 1777 /dev/shm</code></div></div>
+ </div>
+<h3><span class="mw-headline" id=".EC.83.88_.ED.99.98.EA.B2.BD.EC.9C.BC.EB.A1.9C_.EC.A7.84.EC.9E.85">새 환경으로 진입</span></h3>
+<p>모든 파티션을 초기화 하고 기반 환경을 설치했으니, 새 설치 환경에 chroot로 들어갈 차례입니다. 현재 설치 환경의 세션의 루트(접근할 수 있는 최상위 환경)를 설치 시스템의 루트(초기화한 파티션)로 바꾼다는 의미입니다. 그래서 이름이 <i>change root</i> 또는 <i>chroot</i>라고 합니다.
+</p><p>루트 변경은 세 단계로 처리합니다:
+</p>
+<ol><li> chroot를 사용하여 루트 위치를 (설치 매체의)<span style="font-family: monospace; font-size: 95%">/</span>에서 (파티션의) <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/</span>로 바꿉니다</li>
+<li> 몇가지 설정(<span style="font-family: monospace; font-size: 95%">/etc/profile</span>에 있음)을 <code>source</code> 명령으로 메모리에 다시 불러옵니다</li>
+<li> chroot로 바꾼 환경임을 인지하기 위해 초기 프롬프트를 바꿉니다.</li></ol>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>chroot /mnt/gentoo /bin/bash
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>source /etc/profile
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export PS1="(chroot) $PS1"</code></div></div>
+<p>이 시점에서, 모든 동작을 새 젠투 리눅스 환경에서 바로 처리할 수 있습니다. 물론 끝나려면 한참 멀었지만, 설치 절이 여전히 아직도 남아있는 이유입니다
+</p>
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.84.A4.EC.A0.95">포티지 설정</span></h2>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.8A.A4.EB.83.85.EC.83.B7_.EC.84.A4.EC.B9.98">포티지 스냅샷 설치</span></h3>
+<p>다음 과정은 설치할 수 있는 프로그램이 무엇인지, 어떤 프로파일을 관리자가 선택할 수 있는지 등을 포티지에게 알려주는 파일의 모음, 포티지 스냅샷을 설치할 차례입니다.
+</p><p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> 사용을 권장합니다. 젠투 미러중 한군데에서 최신 포티지 스냅샷(매일 나오는 젠투 릴리즈)을 받고 시스템에 설치합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />설치 과정중 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span>에서 <span style="font-family: monospace; font-size: 95%">/usr/portage/</span> 위치가 없는 문제를 보고할 것입니다. 당연한 결과이며 걱정할 필요가 없습니다. 도구에서 해당 위치를 만듭니다.</div>
+<p>이 시점부터는 포티지에서 추천하는 각각의 업데이트를 실행하라고 알려줍니다. 스테이지 3 파일을 통해 설치한 각 시스템 꾸러미는 새버전이 존재하며, 포티지 스냅샷을 새로 설치하여 포티지가 이를 인식하기 때문입니다. 지금은 안전하게 무시할 수 있습니다. 젠투 설치가 끝나고 나면 업데이트를 실행할 수 있습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC_.EC.97.85.EB.8D.B0.EC.9D.B4.ED.8A.B8">선택: 포티지 트리 업데이트</span></h3>
+<p>포티지 트리를 최신 버전으로 업데이트할 수 있습니다. 이전에 <span style="font-family: monospace; font-size: 95%; font-weight: bold;"> emerge-webrsync</span> 명령은 상당히 최근의 포티지 스냅샷(보통 24시간 까지의 최근)을 설치하기 때문에 분명히 말하자면 선택적인 동작입니다.
+</p><p>최근 꾸러미 업데이트(최대 한시간 동안)가 필요하다면, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> 명령을 사용하십시오. 이 명령은 포티지 트리(이전에 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> 명령으로 가져옴)를 최신 상태로 업데이트하는데 rsync 프로토콜을 사용합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<p>몇가지 프레임 버퍼와 시리얼 콘솔 같은 느린 터미널에서는, 처리 과정의 속도를 높이기 위해 <code>--quiet</code> 옵션을 사용하시는 것이 좋습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync --quiet</code></div></div>
+<h3><span class="mw-headline" id=".EB.89.B4.EC.8A.A4_.ED.95.AD.EB.AA.A9_.EB.B3.B4.EA.B8.B0">뉴스 항목 보기</span></h3>
+<p>포티지 트리를 시스템과 동기화 했다면, 포티지는 다음과 같은 메시지로 사용자에게 경고합니다:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>뉴스 항목을 사용자에게 알리는 포티지</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre> * IMPORTANT: 2 news items need reading for repository 'gentoo'.
+ * Use eselect news to read news items.
+</pre></div></pre></div>
+<p>포티지 뉴스 항목은 rsync 트리를 통해 사용자에게 중요한 메시지를 강제로 전달하려는 통신 매체를 제공하려 만들었습니다. 이를 관리하려면 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect news</span>를 사용하십시오. <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span> 프로그램은 시스템에서 바뀐  사항이나 시스템 전반적인 설정을 처리하는 일반 관리 인터페이스입니다. 이 경우 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span>는 <code>news</code> 모듈 사용을 요청합니다.
+</p><p><code>news</code> 모듈에서 다음 동작을 주로 사용합니다:
+</p>
+<ul><li> <code>list</code> 명령으로 표시할 뉴스 목록의 개요를 표시합니다</li>
+<li> <code>read</code> 명령으로 읽을 수 있는 뉴스 항목을 표시합니다</li>
+<li> <code>purge</code> 명령으로 이미 읽었고 더이상 읽을 일이 없는 뉴스 항목을 제거할 수 있습니다</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect news list
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect news read</code></div></div>
+<p>뉴스 리더에서 사용할 수 있는 기능이 무엇인지 더 살펴보려면 설명서 페이지를 참고하십시오: 
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>man news.eselect</code></div></div>
+<h3><span class="mw-headline" id=".EC.A0.81.EC.A0.88.ED.95.9C_.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC_.EC.84.A0.ED.83.9D">적절한 프로파일 선택</span></h3>
+<p><i>프로파일</i>이란 젠투 시스템의 구성요소입니다. <var>USE</var>, <var>CFLAGS</var> 등 중요한 변수 값의 기본값만을 지정하는 것이 아니라 꾸러미 버전 범위를 시스템에 고정합니다. 이들 데이터는 젠투 개발자가 관리합니다.
+</p><p>현재 시스템에서 활용하는 프로파일을 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span>로 볼 수 있으며, 이제 <code>profile</code> 모듈을 사용해보면:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect profile list</code></div><pre>
+Available profile symlink targets:
+  [1]   default/linux/x86/13.0 *
+  [2]   default/linux/x86/13.0/desktop
+  [3]   default/linux/x86/13.0/desktop/gnome
+  [4]   default/linux/x86/13.0/desktop/kde
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />명령 출력 결과는 예제일 뿐이며, 매번 바뀝니다.</div>
+<p>보신 바와 같이, 몇가지 데스크톱에 대한 데스크톱 하위 프로파일이 있습니다.
+</p><p>x86 아키텍처에서 존재하는 프로파일을 확인한 후 사용자는 사용할 다른 프로파일을 선택할 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect profile set 2</code></div></div>
+<p>
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />개발자 하위 프로파일은 젠투 리눅스 개발 용도로 사용하며, 일반 사용자가 사용한다는 의미가 아닙니다.</div>
+<h3><span class="mw-headline" id="USE_.EB.B3.80.EC.88.98_.EC.84.A4.EC.A0.95">USE 변수 설정</span></h3>
+<p><var>USE</var>는 젠투가 사용자에게 제공하는 가장 강력한 변수중 하나입니다. 여러 프로그램 각 항목을 추가로 지원하든 안하든 컴파일할 수 있습니다. 예를 들어 어떤 프로그램은 gtk 지원 또는 qt 지원을 넣고 컴파일할 수 있습니다. 다른 프로그램은 SSL 지원을 빼고 컴파일할 수 있습니다. 어떤 프로그램은 X11 지원(X-서버) 대신 프레임버퍼 지원(svgalib)을 빼고도 컴파일할 수 있습니다.
+</p><p>대부분의 배포판에서는 가능한한 최대한의 지원을 포함하여 꾸러미를 컴파일합니다. 상당한 양의 의존성에 상관 없이 프로그램의 크기와 시작 시간이 늘어납니다. 젠투 사용자는 컴파일할 때 어떤 옵션을 넣을지 지정할 수 있습니다. 이것이 바로 <var>USE</var> 변수가 동작하는 위치입니다.
+</p><p><var>USE</var> 변수에는 컴파일 옵션에 매핑할 키워드가 들어있습니다. 예를 들어 <code>ssl</code>은 ssl 지원을 프로그램에 넣어 프로그램에서 ssl 기능이 동작하도록 컴파일합니다. <code>-X</code>는 X 서버 지원을 제거합닏(앞에 음수부호가 들어감에 주목). <code>gnome gtk -kde -qt4</code>는 시스템을 GNOME(아키텍처에서 지원한다면)에 완전히 맞추려 그놈(및 gtk) 지원을 넣고 KDE(및 Qt) 지원을 뺍니다.
+</p><p>기본 USE 설정은 시스템에서 사용하는 젠투 프로파일의 <span style="font-family: monospace; font-size: 95%">make.defaults</span> 파일에 있습니다. 젠투에서는 프로파일의 (복잡한) 계층 시스템을 사용하는데, 이 단계로는 깊이 들어가지 않겠습니다. 현재 활성화한 <var>USE</var> 설정을 확인하는 가장 쉬운 방법은 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --info</span>를 실행하고 "USE"로 시작하는 줄을 선택해서 확인하는 방법입니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^USE</code></div><pre>
+USE=&quot;X acl alsa amd64 berkdb bindist bzip2 cli cracklib crypt cxx dri ...&quot;
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> 참고</strong><br />위 예제는 잘렸으며, 실제 <var>USE</var> 값 설정 목록은 엄청 큽니다.</div>
+<p>시스템에서 사용할 수 있는 USE 플래그의 전체 설명은 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.desc</span>에 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>less /usr/portage/profiles/use.desc</code></div></div>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">less</span> 명령에서는 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">↑</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">↓</kbd>키로 스크롤할 수 있고, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">q</kbd>를 눌러 빠져나갈 수 있습니다.
+</p><p>예제를 통해 DVD, ALSA, CD 기록 지원을 포함하느 KDE 기반 시스템의 USE 플래그 설정을 보여드리겠습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/portage/make.conf</code></div></div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>KDE 기반 시스템에서 DVD, ALSA, CD 기록 기능을 포함하는 USE 플래그 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-gtk -gnome qt4 kde dvd alsa cdr&quot;</span>
+</pre></div></pre>
+<p><span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 <var>USE</var>를 정의할 때, 기본 목록에서 <i>추가</i> (또는 USE 플래그가 <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">-</kbd> 부호로 시작하는경우 <i>삭제</i>)됩니다. 기본 USE 설정을 무시하고 자체적으로 관리하려는 사용자는 <span style="font-family: monospace; font-size: 95%">make.conf</span>의 <var>USE</var> 정의 앞부분에 <code>-*</code>를 넣으십시오:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>기본 USE 플래그 무시</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-* X acl alsa ...&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_systemd_.EC.82.AC.EC.9A.A9">선택: systemd 사용</span></h2>
+<p>젠투 핸드북의 나머지 부분은 기본 초기화 지원 시스템인 OpenRC에 집중합니다. 대신 systemd를 원하거나 Gnome 3.8 이상(systemd가 필요함)의 버전을 사용하려 한다면, 다른 환경 설정 및 처리 방식에 대해 공들여 작성한 <a href="../../../Systemd.html" title="Systemd">systemd</a><sup style="color:#ff0077">en</sup> 페이지의 도움을 받으십시오.
+</p><p>젠투 핸드북의 내용이 해당 페이지의 내용으로 계속 진행할 수 있을것 같습니다.
+</p>
+<h2><span class="mw-headline" id=".EC.8B.9C.EA.B0.84.EB.8C.80">시간대</span></h2>
+<p>시스템 시간대를 선택하십시오. 존재하는 시간대를 <span style="font-family: monospace; font-size: 95%">/usr/share/zoneinfo/</span>에서 찾아보시고 <span style="font-family: monospace; font-size: 95%">/etc/timezone</span> 파일에 작성하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /usr/share/zoneinfo</code></div></div>
+<p>시간대를 <i>Europe/Brussels</i>로 잡아보겠습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>echo "Europe/Brussels" &gt; /etc/timezone</code></div></div>
+<p>기대한 대로의 시간대 영역을 나타내지 않는 <span style="font-family: monospace; font-size: 95%">/usr/share/zoneinfo/Etc/GMT*</span> 시간대 이름 사용을 피하십시오. <span style="font-family: monospace; font-size: 95%">GMT-8</span>의 경우 실제로 <span style="font-family: monospace; font-size: 95%">GMT+8</span>입니다.
+</p><p>그 다음 <span style="font-family: monospace; font-size: 95%">/etc/timezone</span> 항목을 기반으로 <span style="font-family: monospace; font-size: 95%">/etc/localtime</span> 파일을 업데이트하는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-libs/timezone-data">sys-libs/timezone-data</a> 꾸러미를 다시 설정하겠습니다. <span style="font-family: monospace; font-size: 95%">/etc/localtime</span> 파일은 시스템이 어떤 시간대 영역에 있는지 알고자 시스템 C 라이브러리에서 사용합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --config sys-libs/timezone-data</code></div></div>
+<h2><span class="mw-headline" id=".EB.A1.9C.EC.BA.98_.EC.84.A4.EC.A0.95">로캘 설정</span></h2>
+<p>대부분의 사용자는 시스템에 하나 내지는 두개의 로캘을 사용하려고 합니다.
+</p><p>로캘은 시스템과 대화하려 시스템에서 사용할 언어에 한정하지 않으며 정렬 문자열의 규칙, 날짜 및 시간의 표시 등의 항목도 포함합니다. 
+</p><p>시스템에서 지원할 로캘은 <span style="font-family: monospace; font-size: 95%">/etc/locale.gen</span>에 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/locale.gen</code></div></div>
+<p>다음 로캘은 (UTF-8과 같은)문자 형식에 따라 영문(미국)과 독일어(독일)를 설정하는 예제입니다.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/locale.gen</code></strong><strong>적절한 문자 형식으로 US 및 DE 로캘 활성화</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>en_US ISO-8859-1
+en_US.UTF-8 UTF-8
+de_DE ISO-8859-1
+de_DE@euro ISO-8859-15
+</pre></div></pre>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 중요</strong><br />일부 프로그램에서 UTF-8을 필요로 하므로 최소한 UTF-8로의 설정을 강력히 권장합니다.</div>
+<p>다음 단계는 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">locale-gen</span>을 실행할 차례입니다. <span style="font-family: monospace; font-size: 95%">/etc/locale.gen</span>파일에 정의한 모든 로캘을 생성합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>locale-gen</code></div></div>
+<p>선택한 로캘을 사용할 수 있는지 확인하려면<span style="font-family: monospace; font-size: 95%; font-weight: bold;">locale -a</span>을 실행하십시오.
+</p><p>이 과정이 끝나면, 이제 시스템 범위 로캘 설정을 할 차례입니다. 다시 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span>를 사용하겠으며, 이제는 <code>locale</code> 모듈을 사용합니다.
+</p><p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect locale list</span> 명령으로 존재하는 대상을 표시합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect locale list</code></div><pre>
+Available targets for the LANG variable:
+  [1] C
+  [2] POSIX
+  [3] en_US
+  [4] en_US.iso88591
+  [5] en_US.utf8
+  [6] de_DE
+  [7] de_DE.iso88591
+  [8] de_DE.iso885915
+  [9] de_DE.utf8
+  [ ] (free form)
+</pre></div>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect locale set VALUE</span> 명령으로 올바른 로캘을 설정할 수 있습니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect locale set 9</code></div></div>
+<p>직접 설정한다면 <span style="font-family: monospace; font-size: 95%">/etc/env.d/02locale</span> 파일에서도 처리할 수 있습니다:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">파일</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/02locale</code></strong><strong>시스템 로캘 정의 직접 설정</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">LANG</span><span class="o">=</span><span class="s2">&quot;de_DE.UTF-8&quot;</span>
+<span class="nv">LC_COLLATE</span><span class="o">=</span><span class="s2">&quot;C&quot;</span>
+</pre></div></pre>
+<p>로캘을 설정했는지 확인하십시오. 그렇지 않으면 커널을 빌드하는 동안, 그리고 설치 과정에서 나중에 다른 프로그램을 배포할 때 시스템에서 경고와 오류를 출력합니다.
+</p><p>이제 환경을 다시 불러오십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>env-update &amp;&amp; source /etc/profile</code></div></div>
+<p>이 과정을 안내하여 사용자를 도울 완전한 <a href="../../../Localization/Guide/ko.html" title="Localization/Guide/ko">지역화 안내서</a>를 만들었습니다. 시스템에서 UTF-8 문자 코드를 활성화 할 주제로만 작성한 <a href="../../../UTF-8/ko.html" title="UTF-8/ko">UTF-8</a> 안내서도 흥미로운 읽을거리입니다.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Stage/ko.html" title="이전 내용" class="btn btn-default">&#8592; 젠투 설치 파일 설치</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../Kernel/ko.html" title="다음 내용" class="btn btn-default">리눅스 커널 설정 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153752
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.680 seconds
+Real time usage: 0.734 seconds
+Preprocessor visited node count: 3513/1000000
+Preprocessor generated node count: 3844/1000000
+Post‐expand include size: 97308/2097152 bytes
+Template argument size: 14652/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  585.334      1 - -total
+100.00%  585.334      1 - Handbook:Parts/Installation/Base/ko
+ 40.00%  234.126     25 - Template:RootCmd
+ 34.23%  200.382     25 - Template:GenericCmd
+ 27.92%  163.414      1 - Handbook:Parts/TOC/ko
+  7.55%   44.219      3 - Template:Warning
+  6.79%   39.759      3 - Template:Warning/core
+  6.66%   38.975     33 - Template:GenericCmd/Line
+  3.35%   19.611      5 - Template:PreBox
+  3.14%   18.390      4 - Template:FileBox
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:79610-0!*!0!!en!*!* and timestamp 20160112153751 and revision id 194410
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;oldid=194410">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/ko&amp;oldid=194410</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 10:08.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Base/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":928});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Base/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:07 GMT -->
+</html>

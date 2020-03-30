@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Networking/Wireless/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:29:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:AMD64/Networking/Wireless - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Networking/Wireless/es","wgTitle":"AMD64/Networking/Wireless/es","wgCurRevisionId":270836,"wgRevisionId":270836,"wgArticleId":111448,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Handbook:AMD64/Networking/Wireless/es","wgRelevantArticleId":111448,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Networking/Wireless/es" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Networking/Wireless/es&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Networking_Wireless_es skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Networking/Wireless/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Networking/Wireless/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;oldid=270836" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FNetworking-2FWireless-2Fes.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FNetworking%2FWireless%2Fes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FNetworking%2FWireless%2Fes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="es.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Networking/Wireless/es&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="es">
+							<span dir="auto">Handbook:AMD64/Networking/Wireless</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FNetworking%2FWireless&amp;action=page&amp;filter=&amp;language=es">translated version</a></span> of the page <a href="../Wireless.html" title="Handbook:AMD64/Networking/Wireless">Handbook:AMD64/Networking/Wireless</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Netzwerk/Drahtlos (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Wireless.html" title="Handbook:AMD64/Networking/Wireless (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">español</span> • ‎<a href="ja.html" title="ハンドブック:AMD64/ネットワーク/無線 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Networking/Wireless/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Networking/Wireless (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/网络/无线 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Instalación
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/es.html" title="Handbook:AMD64/Installation/About/es">Acerca de la instalación</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/es.html" title="Handbook:AMD64/Installation/Media/es">Elegir los medios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/es.html" title="Handbook:AMD64/Installation/Networking/es">Configurar la red</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/es.html" title="Handbook:AMD64/Installation/Disks/es">Preparar los discos</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/es.html" title="Handbook:AMD64/Installation/Stage/es">Instalar el stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/es.html" title="Handbook:AMD64/Installation/Base/es">Instalar el sistema base</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/es.html" title="Handbook:AMD64/Installation/Kernel/es">Configurar el núcleo</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/es.html" title="Handbook:AMD64/Installation/System/es">Configurar el sistema</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/es.html" title="Handbook:AMD64/Installation/Tools/es">Instalar herramientas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/es.html" title="Handbook:AMD64/Installation/Bootloader/es">Configurar el cargador de arranque</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/es.html" title="Handbook:AMD64/Installation/Finalizing/es">Terminar</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/es.html" title="Handbook:AMD64/Working/Portage/es">Introducción a Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/es.html" title="Handbook:AMD64/Working/USE/es">Ajustes USE</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/es.html" title="Handbook:AMD64/Working/Features/es">Características de Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/es.html" title="Handbook:AMD64/Working/Initscripts/es">Guiones de inicio</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/es.html" title="Handbook:AMD64/Working/EnvVar/es">Variables de entorno</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/es.html" title="Handbook:AMD64/Portage/Files/es">Archivos y directorios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/es.html" title="Handbook:AMD64/Portage/Variables/es">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/es.html" title="Handbook:AMD64/Portage/Branches/es">Mezclar ramas de software</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/es.html" title="Handbook:AMD64/Portage/Tools/es">Herramientas adicionales</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/es.html" title="Handbook:AMD64/Portage/CustomTree/es">Árbol de Portage personalizado</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/es.html" title="Handbook:AMD64/Portage/Advanced/es">Características avanzadas</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Configuración de la red
+</th></tr>
+<tr>
+<td> <a href="../Introduction/es.html" title="Handbook:AMD64/Networking/Introduction/es">Comenzando</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/es.html" title="Handbook:AMD64/Networking/Advanced/es">Configuración avanzada</a>
+</td></tr>
+<tr>
+<td> <a href="../Modular/es.html" title="Handbook:AMD64/Networking/Modular/es">Configuración de red modular</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Redes inalámbricas</strong>
+</td></tr>
+<tr>
+<td> <a href="../Extending/es.html" title="Handbook:AMD64/Networking/Extending/es">Añadir funcionalidad</a>
+</td></tr>
+<tr>
+<td> <a href="../Dynamic/es.html" title="Handbook:AMD64/Networking/Dynamic/es">Gestión dinámica</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a></li>
+<li class="toclevel-1"><a href="#WPA_supplicant"><span class="tocnumber">2</span> <span class="toctext">WPA supplicant</span></a></li>
+<li class="toclevel-1"><a href="#Wireless_tools"><span class="tocnumber">3</span> <span class="toctext">Wireless tools</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Configuraci.C3.B3n_inicial_y_modo_gestionado"><span class="tocnumber">3.1</span> <span class="toctext">Configuración inicial y modo gestionado</span></a></li>
+<li class="toclevel-2"><a href="#Afinamiento_en_la_selecci.C3.B3n_de_APs"><span class="tocnumber">3.2</span> <span class="toctext">Afinamiento en la selección de APs</span></a></li>
+<li class="toclevel-2"><a href="#Modos_Ad-Hoc_y_Master"><span class="tocnumber">3.3</span> <span class="toctext">Modos Ad-Hoc y Master</span></a></li>
+<li class="toclevel-2"><a href="#Solucionar_problemas_con_wireless_tools"><span class="tocnumber">3.4</span> <span class="toctext">Solucionar problemas con wireless tools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Definir_la_configuraci.C3.B3n_de_la_red_por_ESSID"><span class="tocnumber">4</span> <span class="toctext">Definir la configuración de la red por ESSID</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h2>
+<p>Las redes inalámbricas en Linux, normalmente se configuran de forma fácil. Hay dos formas de realizar esta configuración: clientes gráficos y la línea de comandos.
+</p><p>La forma más fácil es usar el cliente gráfico, una vez haya instalado un entorno de escritorio. La mayoría de clientes gráficos, como wicd y NetworkManager, son bastante autoexplicativos. Ofrecen una interfaz del tipo apuntar y hacer clic que le conectan a una red en cuestión de segundos.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />wicd ofrece una utilidad de línea de comandos además de la interfaz gráfica principal. Instale el paquete <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/wicd">net-misc/wicd</a> con el ajuste USE ncurses. Esta utilidad <span style="font-family: monospace; font-size: 95%; font-weight: bold;">wicd-curses</span> es particularmente útil para aquéllos que no usan un entrono de escritorio basado en gtk, pero quieren una herramienta de línea de comandos fácil que no requiere configuración a mano de los ficheros.</div>
+<p>Sin embargo, si no quiere usar un cliente gráfico, puede configurar la red inalámbrica con la línea de comandos, editando unos pocos ficheros de configuración. Esto toma un poco más de tiempo, pero también requiere de menos paquetes que descargar e instalar. Ya que los clientes gráficos son en su mayoría autoexplicativos (con capturas de pantalla útiles en sus páginas oficiales), nos centraremos en las alternativas de línea de comandos.
+</p><p>Puede configurar una red inalámbrica usando la línea de comandos, instalando <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-wireless/wireless-tools">net-wireless/wireless-tools</a> o <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-wireless/wpa_supplicant">net-wireless/wpa_supplicant</a>. Lo importante a recordar es que puede configurar las redes locales de forma global, no dependiendo de la interfaz.
+</p><p>Los <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-wireless/wireless-tools">net-wireless/wireless-tools</a> soportan casi todas las tarjetas y controladores, pero no puede conectarse a puntos de acceso (APs) con WPA solamente. Si sus redes ofrecen únicamente cifrado WEP o están completamente abiertas, puede que prefiera la simpleza de <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-wireless/wireless-tools">net-wireless/wireless-tools</a>.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Advertencia</strong><br />Actualmente el controlador linux-wlan-ng no está soportado por baselayout. Esto es debido a que linux-wlan-ng tiene su propia configuración que es completamente diferente a las demás. Se rumorea que los desarrolladores de linux-wlan-ng están pensando en cambiar su configuración a wireless-tools. Cuando esto suceda, podremos utilizar linux-wlan-ng con baselayout.</div>
+<p>Algunas tarjetas inalámbricas están desactivadas por defecto. Para activarlas, por favor, consulte la documentación de su hardware. Algunas de estas tarjetas se pueden desbloquear mediante la aplicación <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rfkill</span>. Si es éste el caso, utilice <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rfkill list</span> para ver las tarjetas disponibles y <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rfkill unblock INDICE</span> para activar la funcionalidad inalámbrica. En otro caso, puede que tenga que desbloquear la tarjeta inalámbrica mediante un botón, conmutador o combinación especial de teclas en su ordenador portátil.
+</p>
+<h2><span class="mw-headline" id="WPA_supplicant">WPA supplicant</span></h2>
+<p>El <a rel="nofollow" class="external text" href="http://hostap.epitest.fi/wpa_supplicant">proyecto WPA supplicant</a> proporciona una paquete que permite a los usuarios conectarse a puntos de acceso habilitados con WPA.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask net-wireless/wpa_supplicant</code></div></div> 
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />Debe activar <var>CONFIG_PACKET</var> en su kernel para que funcione wpa_supplicant. Para ver si está habilitado en su kernel actual, pruebe:
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>zgrep CONFIG_PACKET /proc/config.gz
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>grep CONFIG_PACKET /usr/src/linux/.config
+</code></div></div>
+</div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Dependiendo de sus ajustes USE, wpa_supplicant puede instalar una interfaz gráfica escrita en Qt4, que se integrará de forma adecuada con KDE. Pare tenerla, habilite USE=qt4 para el paquete <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-wireless/wpa_supplicant">net-wireless/wpa_supplicant</a>.</div>
+<p>Ahora debemos configurar <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span> para elegir wpa_supplicant sobre wireless-tools (si ambos están instalados, wireless-tools será usado por defecto).
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Forzar el uso de wpa_supplicant</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Preferir wpa_supplicant sobre wireless-tools</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;wpa_supplicant&quot;</span>
+  
+<span class="c"># Es importante decir a wpa_supplicant que driver debe</span>
+<span class="c"># usar ya que aún no es muy bueno adivinando</span>
+<span class="nv">wpa_supplicant_eth0</span><span class="o">=</span><span class="s2">&quot;-Dnl80211&quot;</span>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Si está usando el controlador host-ap, hará falta colocar el interfaz en <i>modo gestionado (Managed mode)</i> antes de poder usarlo correctamente con wpa_supplicant. Para esto puede usar iwconfig_eth0="mode managed" en <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>.</div>
+<p>A continuación configure el propio wpa_supplicant (que es algo más difícil dependiendo de cuán seguros sean los puntos de acceso inalámbricos). A continuación mostramos un ejemplo simplificado extraido de <span style="font-family: monospace; font-size: 95%">/usr/share/doc/wpa_supplicant-&lt;versión&gt;/wpa_supplicant.conf.gz</span>, parte del paquete wpa_supplicant.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/wpa_supplicant/wpa_supplicant.conf</code></strong><strong>Ejemplo simplificado</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># No cambie la siguiente línea, a riesgo que no funcione</span>
+<span class="nv">ctrl_interface</span><span class="o">=</span>/var/run/wpa_supplicant
+  
+<span class="c"># Asegúrese que sólo root puede leer la configuración de WPA</span>
+<span class="nv">ctrl_interface_group</span><span class="o">=</span>0
+  
+<span class="c"># Permítale a wpa_supplicant encargarse del barrido y selección de los PA</span>
+<span class="nv">ap_scan</span><span class="o">=</span>1
+  
+<span class="c"># Caso sencillo: WPA-PSK, frase ASCII como contraseña PSK, permitir todas las encriptaciones válidas</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;simple&quot;</span>
+  <span class="nv">psk</span><span class="o">=</span><span class="s2">&quot;contraseña muy secreta&quot;</span>
+  <span class="c"># A mayor prioridad, más rápido nos conectaremos</span>
+  <span class="nv">priority</span><span class="o">=</span>5
+<span class="o">}</span>
+  
+<span class="c"># Igual que el ejemplo anterior, pero barriendo para un SSID específico (para los PAs que rechazan</span>
+<span class="c">#  transmitir el SSID)</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;segundo ssid&quot;</span>
+  <span class="nv">scan_ssid</span><span class="o">=</span>1
+  <span class="nv">psk</span><span class="o">=</span><span class="s2">&quot;contraseña muy secreta&quot;</span>
+  <span class="nv">priority</span><span class="o">=</span>2
+<span class="o">}</span>
+  
+<span class="c"># Solamente estamos usando WPA-PSK. Se acepta cualquier encriptación válida</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;ejemplo&quot;</span>
+  <span class="nv">proto</span><span class="o">=</span>WPA
+  <span class="nv">key_mgmt</span><span class="o">=</span>WPA-PSK
+  <span class="nv">pairwise</span><span class="o">=</span>CCMP TKIP
+  <span class="nv">group</span><span class="o">=</span>CCMP TKIP WEP104 WEP40
+  <span class="nv">psk</span><span class="o">=</span>06b4be19da289f475aa46a33cb793029d4ab3db7a23ee92382eb0106c72ac7bb
+  <span class="nv">priority</span><span class="o">=</span>2
+<span class="o">}</span>
+  
+<span class="c"># Conexión sin encriptar (sin WPA, o IEEE 802.1X)</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;prueba-solotexto&quot;</span>
+  <span class="nv">key_mgmt</span><span class="o">=</span>NONE
+<span class="o">}</span>
+  
+<span class="c"># Conexión con clave WEP compartida (sin WPA, o IEEE 802.1X)</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;prueba-wep-estatica&quot;</span>
+  <span class="nv">key_mgmt</span><span class="o">=</span>NONE
+  <span class="c"># Claves entre comillas son claves ASCII</span>
+  <span class="nv">wep_key0</span><span class="o">=</span><span class="s2">&quot;abcde&quot;</span>
+  <span class="c"># Claves sin comillas son claves hexadecimales</span>
+  <span class="nv">wep_key1</span><span class="o">=</span>0102030405
+  <span class="nv">wep_key2</span><span class="o">=</span><span class="s2">&quot;1234567890123&quot;</span>
+  <span class="nv">wep_tx_keyidx</span><span class="o">=</span>0
+  <span class="nv">priority</span><span class="o">=</span>5
+<span class="o">}</span>
+  
+<span class="c"># Conexión con clave WEP compartida (sin WPA, o IEEE 802.1X) usando </span>
+<span class="c"># autentificación con clave compartida IEEE 802.11</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;prueba2-wep-estática&quot;</span>
+  <span class="nv">key_mgmt</span><span class="o">=</span>NONE
+  <span class="nv">wep_key0</span><span class="o">=</span><span class="s2">&quot;abcde&quot;</span>
+  <span class="nv">wep_key1</span><span class="o">=</span>0102030405
+  <span class="nv">wep_key2</span><span class="o">=</span><span class="s2">&quot;1234567890123&quot;</span>
+  <span class="nv">wep_tx_keyidx</span><span class="o">=</span>0
+  <span class="nv">priority</span><span class="o">=</span>5
+  <span class="nv">auth_alg</span><span class="o">=</span>SHARED
+<span class="o">}</span>
+  
+<span class="c"># Red IBSS/ad-hoc con WPA-None/TKIP</span>
+<span class="nv">network</span><span class="o">={</span>
+  <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;prueba adhoc&quot;</span>
+  <span class="nv">mode</span><span class="o">=</span>1
+  <span class="nv">proto</span><span class="o">=</span>WPA
+  <span class="nv">key_mgmt</span><span class="o">=</span>WPA-NONE
+  <span class="nv">pairwise</span><span class="o">=</span>NONE
+  <span class="nv">group</span><span class="o">=</span>TKIP
+  <span class="nv">psk</span><span class="o">=</span><span class="s2">&quot;contraseña secreta&quot;</span>
+<span class="o">}</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id="Wireless_tools">Wireless tools</span></h2>
+<h3><span class="mw-headline" id="Configuraci.C3.B3n_inicial_y_modo_gestionado">Configuración inicial y modo gestionado</span></h3>
+<p>El <a rel="nofollow" class="external text" href="http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html">proyecto wireless tools</a> provee una manera genérica para configurar los interfaces inalámbricos básicos hasta el nivel de seguridad WEP. Aunque WEP es un sistema de seguridad débil, también es el más prevalente.
+</p><p>La configuración de Wireless Tools está controlada por algunas variables principales. El archivo ejemplo de configuración a continuación deberá describir todo lo requerido. Algo para mantener presente es que si no hay ninguna configuración quiere decir "conectarse al punto de acceso sin encriptación que tenga la señal más fuerte" - de manera que siempre tratará de conectarse con lo que sea.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask net-wireless/wireless-tools</code></div></div> 
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Aunque pueda almacenar su configuración inalámbrica en <span style="font-family: monospace; font-size: 95%">/etc/conf.d/wireless</span>, esta guía le recomienda hacerlo en <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>.</div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />Hará falta consultar la documentación acerca de nombres de variables.</div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Ejemplo usando iwconfig</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Preferir iwconfig sobre wpa_supplicant</span>
+<span class="nv">modules</span><span class="o">=</span><span class="s2">&quot;iwconfig&quot;</span>
+  
+<span class="c"># Configure las claves WEP para los APs ESSID1 y ESSID2</span>
+<span class="c"># Pueden configurarse hasta 4 claves WEP, pero solo una puede</span>
+<span class="c"># estar activa a la vez, así que tenemos un índice por defecto</span>
+<span class="c"># de [1] para la clave [1] y luego otra vez para cambiar la clave activa a [1]</span>
+<span class="c"># Hacemos esto en caso que defina otros ESSIDs para usar claves WEP que no sean 1</span>
+<span class="c">#</span>
+<span class="c">#</span>
+<span class="c"># El prefijar la clave con s: significa que es una clave ASCII porque sino es una clave hexadecimal</span>
+<span class="c">#</span>
+<span class="c"># enc open especifica seguridad abierta (máxima seguridad)</span>
+<span class="c"># enc restricted especifica seguridad restringida (menos segura)</span>
+<span class="nv">key_ESSID1</span><span class="o">=</span><span class="s2">&quot;[1] s:aquisuclave key [1] enc open&quot;</span>
+<span class="nv">key_ESSID2</span><span class="o">=</span><span class="s2">&quot;[1] aaaa-bbbb-cccc-dd key [1] enc restricted&quot;</span>
+  
+<span class="c"># Los ejemplos a continuación solo funcionan una vez que se haya barrido para los APs disponibles</span>
+  
+<span class="c"># A veces se registra más de un AP, así que hará falta definir</span>
+<span class="c"># un orden de preferencia para conectarse</span>
+<span class="nv">preferred_aps</span><span class="o">=</span><span class="s2">&quot;&#39;ESSID1&#39; &#39;ESSID2&#39;&quot;</span>
+</pre></div></pre>
+<h3><span class="mw-headline" id="Afinamiento_en_la_selecci.C3.B3n_de_APs">Afinamiento en la selección de APs</span></h3>
+<p>Puede agregar opciones adicionales para afinar la selección de APs, pero normalmente esto no hace falta.
+</p><p>Puede decidirse por conectarse solamente a APs preferidos o no. Por defecto, si falla todo lo configurado y nos podemos conectar a un AP no encriptado, entonces se hará. Esto puede ser controlado con la variable associate_order (orden para asociación). Sigue una tabla de valores y como estos ejercen este control.
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th scope="col" width="15%"> Valor
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> any
+</td>
+<td> (cualquiera) Comportamiento por defecto
+</td></tr>
+<tr>
+<td> preferredonly
+</td>
+<td> (solo preferidos) Solamente nos conectaremos a PAs visibles en la lista de preferidos
+</td></tr>
+<tr>
+<td> forcepreferred
+</td>
+<td> (obligado a preferidos) Nos conectaremos obligatoriamente a los PAs en el orden preferido aunque no se encuentren en un barrido
+</td></tr>
+<tr>
+<td> forcepreferredonly
+</td>
+<td> (solamente preferidos obligados) No barrer buscando PAs - solo tratar de conectar a cada uno en orden
+</td></tr>
+<tr>
+<td> forceany
+</td>
+<td> (obligar a cualquiera) Igual que forcepreferred y además se conecta a cualquier otro disponible
+</td></tr></table>
+<p>Finalmente podemos hacer una lista negra de PAs (blacklist_aps) y seleccionar un único PA (unique_ap). blacklist_aps funciona de manera similar a preferred_aps. unique_ap es un valor si o no (yes o no) que determina si un segundo interfaz inalámbrico se puede conectar al mismo punto de acceso que el primer interfaz.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Ejemplo de blacklist_aps y de unique_ap</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># A veces nunca queremos conectarnos a algunos PAs</span>
+<span class="nv">blacklist_aps</span><span class="o">=</span><span class="s2">&quot;&#39;ESSID3&#39; &#39;ESSID4&#39;&quot;</span>
+  
+<span class="c"># Si tiene más de una tarjeta inalámbrica, puede determinar</span>
+<span class="c"># que cada interfaz se asocie al mismo PA o no</span>
+<span class="c"># Los valores son &quot;yes&quot; y &quot;no&quot;</span>
+<span class="c"># El valor por defecto es &quot;yes&quot;</span>
+<span class="nv">unique_ap</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
+</pre></div></pre>
+<h3><span class="mw-headline" id="Modos_Ad-Hoc_y_Master">Modos Ad-Hoc y Master</span></h3>
+<p>Si desea establecerse como un nodo Ad-Hoc al no lograr conectarse a algún PA en modo gestionado, puede hacerlo también.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Usar modo ad-hoc en caso de no conectar en modo gestionad</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">adhoc_essid_eth0</span><span class="o">=</span><span class="s2">&quot;Nodo Adhoc&quot;</span>
+</pre></div></pre>
+<p>También es posible conectarse a redes ad-hoc o funcionar en modo <i>master</i> para convertirse en PA.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Ejemplo de configuración ad-hoc/master</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Establezca el modo - que puede ser managed (por defecto), ad-hoc o master</span>
+<span class="c"># No todos los drivers soportan todos los modos</span>
+<span class="nv">mode_eth0</span><span class="o">=</span><span class="s2">&quot;ad-hoc&quot;</span>
+
+<span class="c"># Establezca el ESSID del interfaz</span>
+<span class="c"># En modo gestionado, esto obliga a la interfaz a intentar conectarse al</span>
+<span class="c"># ESSID especificado solamente</span>
+<span class="nv">essid_eth0</span><span class="o">=</span><span class="s2">&quot;Nodo Adhoc&quot;</span>
+  
+<span class="c"># Se usaría el canal 3 si no se estableciera otro como a continuación</span>
+<span class="nv">channel_eth0</span><span class="o">=</span><span class="s2">&quot;9&quot;</span>
+</pre></div></pre>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />A continuación citamos la <a rel="nofollow" class="external text" href="http://www.netbsd.org/Documentation/network/wavelan.html">BSD documentación de wavelan</a> encontrada en la documentación de NetBSD. Existen 14 canales posibles; Se nos informa que los canales 1-11 son legales para Norteamérica , los canales 1-13 para la mayor parte de Europa, los canales 10-13 para Francia y sólo el canal 14 para Japón. En caso de duda, por favor eche un vistazo a la documentación que acompaña la tarjeta o punto de acceso. Asegúrese que el canal que selecciona es el mismo qu el del PA (o de la otra tarjeta en caso de ser red ad-hoc). Para las tarjetas vendidas en Norteamérica y la mayor parte de Europa, es el canal 3 por defecto; en Francia el 11 y en el Japón es el 14.</div>
+<h3><span class="mw-headline" id="Solucionar_problemas_con_wireless_tools">Solucionar problemas con wireless tools</span></h3>
+<p>Existen más variables que sirven para ayudar a configurar y operar una red inalámbrica por problemas ambientales o del driver. Aquí presentamos una tabla de otras cosas para intentar.
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th scope="col" width="15%"> Nombre de la variable
+</th>
+<th scope="col" width="15%"> Valor por defecto
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> <var>iwconfig_eth0</var>
+</td>
+<td>
+</td>
+<td> Vea la página man de iwconfig para detalles acerca de qué enviar a iwconfig
+</td></tr>
+<tr>
+<td> <var>iwpriv_eth0</var>
+</td>
+<td>
+</td>
+<td> Vea la página man de iwpriv para detalles acerca de qué enviar a iwpriv
+</td></tr>
+<tr>
+<td> <var>sleep_scan_eth0</var>
+</td>
+<td> 0
+</td>
+<td> La cantidad en segundos a dormir antes de intentar un barrido. Esto hace falta cuando el driver/firmware requiere de más tiempo para activarse antes de poder usarlos.
+</td></tr>
+<tr>
+<td> <var>sleep_associate_eth0</var>
+</td>
+<td> 5
+</td>
+<td> La cantidad en segundos a esperar para que el interfaz se asocie con el PA antes de continuar al siguiente.
+</td></tr>
+<tr>
+<td> <var>associate_test_eth0</var>
+</td>
+<td> MAC
+</td>
+<td> Algunos drivers no resetean la dirección MAC asociada a una inválida cuando pierden la señal o intentan asociarse. Algunos drivers no resetean el nivel de calidad cuando pierden la señal o intentan asociarse. La configuraciones válidas son MAC, quality y all.
+</td></tr>
+<tr>
+<td> <var>scan_mode_eth0</var>
+</td>
+<td>
+</td>
+<td> Algunos drivers tienen que hacer el barrido en modo ad-hoc, así que, si falla el barrido, intente configurar aquí como ad-hoc.
+</td></tr>
+<tr>
+<td> <var>iwpriv_scan_pre_eth0</var>
+</td>
+<td>
+</td>
+<td> Envía algunas órdenes iwpriv al interfaz antes del barrido. Consulte la página man de iwpriv para más detalles.
+</td></tr>
+<tr>
+<td> <var>iwpriv_scan_post_eth0</var>
+</td>
+<td>
+</td>
+<td>  Envía algunas órdenes iwpriv al interfaz después del barrido. Vea la página man de iwpriv para más detalles.
+</td></tr></table>
+<h2><span class="mw-headline" id="Definir_la_configuraci.C3.B3n_de_la_red_por_ESSID">Definir la configuración de la red por ESSID</span></h2>
+<p>A veces, se necesita una dirección IP estática cuando se conecta a un <i>ESSID1</i> y cuando lo hace a <i>ESSID2</i>, se utiliza DHCP.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Esto funciona sin importar si usa WPA Supplicant o Wireless Tools</div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />Necesitará consultar la documentación variable name.</div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Reemplazar configuración de red por ESSID</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">config_ESSID1</span><span class="o">=</span><span class="s2">&quot;192.168.0.3/24 brd 192.168.0.255&quot;</span>
+<span class="nv">routes_ESSID1</span><span class="o">=</span><span class="s2">&quot;default via 192.168.0.1&quot;</span>
+  
+<span class="nv">config_ESSID2</span><span class="o">=</span><span class="s2">&quot;dhcp&quot;</span>
+<span class="nv">fallback_ESSID2</span><span class="o">=</span><span class="s2">&quot;192.168.3.4/24&quot;</span>
+<span class="nv">fallback_route_ESSID2</span><span class="o">=</span><span class="s2">&quot;default via 192.168.3.1&quot;</span>
+  
+<span class="c"># Podemos definir servidores DNS y otras cosas también</span>
+<span class="c"># NOTA: DHCP reemplazará esta configuración a menos que se le indique que no debe hacerlo</span>
+<span class="nv">dns_servers_ESSID1</span><span class="o">=</span><span class="s2">&quot;192.168.0.1 192.168.0.2&quot;</span>
+<span class="nv">dns_domain_ESSID1</span><span class="o">=</span><span class="s2">&quot;algun.dominio&quot;</span>
+<span class="nv">dns_search_domains_ESSID1</span><span class="o">=</span><span class="s2">&quot;buscador.este.dominio buscador.aquel.dominio&quot;</span>
+  
+<span class="c"># Reemplace usando la dirección MAC del PA</span>
+<span class="c"># Esto es muy útil si usa distintas ubicaciones con el mismo ESSID</span>
+<span class="nv">config_001122334455</span><span class="o">=</span><span class="s2">&quot;dhcp&quot;</span>
+<span class="nv">dhcpcd_001122334455</span><span class="o">=</span><span class="s2">&quot;-t 10&quot;</span>
+<span class="nv">dns_servers_001122334455</span><span class="o">=</span><span class="s2">&quot;192.168.0.1 192.168.0.2&quot;</span>
+</pre></div></pre>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Modular/es.html" title="Previous part" class="btn btn-default">&#8592; Red modular</a> <a href="../../es.html" title="Handbook:AMD64/es" class="btn btn-default">Home</a> <a href="../Extending/es.html" title="Next part" class="btn btn-default">Añadir funcionalidad &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112152555
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.408 seconds
+Real time usage: 0.455 seconds
+Preprocessor visited node count: 1176/1000000
+Preprocessor generated node count: 2849/1000000
+Post‐expand include size: 48610/2097152 bytes
+Template argument size: 19595/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  349.188      1 - Handbook:Parts/Networking/Wireless/es
+100.00%  349.188      1 - -total
+ 44.47%  155.293      1 - Handbook:Parts/TOC/es
+ 10.42%   36.384      5 - Template:Note
+  9.94%   34.713      3 - Template:RootCmd
+  9.24%   32.249      7 - Template:FileBox
+  8.87%   30.971      2 - Template:Emerge
+  8.81%   30.779      5 - Template:Note/core
+  7.03%   24.542      3 - Template:GenericCmd
+  7.02%   24.509      7 - Template:PreBox
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:111448-0!*!0!!en!*!* and timestamp 20160112152555 and revision id 270836
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;oldid=270836">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Wireless/es&amp;oldid=270836</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 1 March 2015, at 20:50.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Networking/Wireless/es"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":712});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Networking/Wireless/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:29:22 GMT -->
+</html>

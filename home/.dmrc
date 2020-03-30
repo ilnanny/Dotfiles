@@ -1,3 +1,4 @@
 [Desktop]
-Session=xfce
+Session=openbox
 LANG="it_IT.utf8"
+XKBMAP=it

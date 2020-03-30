@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Working/Features/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>ハンドブック:AMD64/ワーキング/特徴 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Working/Features/ja","wgTitle":"AMD64/Working/Features/ja","wgCurRevisionId":374576,"wgRevisionId":374576,"wgArticleId":75882,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ja","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ja","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:AMD64/Working/Features/ja","wgRelevantArticleId":75882,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Working/Features/ja" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Working/Features/ja&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Working_Features_ja skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Working/Features/ja.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Working/Features/ja.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;oldid=374576" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FWorking-2FFeatures-2Fja.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FWorking%2FFeatures%2Fja&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FWorking%2FFeatures%2Fja" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ja.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Working/Features/ja&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ja">
+							<span dir="auto">ハンドブック:AMD64/ワーキング/特徴</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FWorking%2FFeatures&amp;action=page&amp;filter=&amp;language=ja">translated version</a></span> of the page <a href="../Features.html" title="Handbook:AMD64/Working/Features">Handbook:AMD64/Working/Features</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Arbeiten/Features (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Features.html" title="Handbook:AMD64/Working/Features (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Working/Features/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">日本語</span> • ‎<a href="ko.html" title="Handbook:AMD64/Working/Features/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Working/Features (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/使用Gentoo/Portage功能特性 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> インストール
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ja.html" title="Handbook:AMD64/Installation/About/ja">インストールについて</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ja.html" title="Handbook:AMD64/Installation/Media/ja">メディアの選択</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ja.html" title="Handbook:AMD64/Installation/Networking/ja">ネットワーク設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ja.html" title="Handbook:AMD64/Installation/Disks/ja">ディスクの準備</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ja.html" title="Handbook:AMD64/Installation/Stage/ja">stage3のインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ja.html" title="Handbook:AMD64/Installation/Base/ja">基本システムのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ja.html" title="Handbook:AMD64/Installation/Kernel/ja">カーネルの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ja.html" title="Handbook:AMD64/Installation/System/ja">システムの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ja.html" title="Handbook:AMD64/Installation/Tools/ja">ツールのインストール</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ja.html" title="Handbook:AMD64/Installation/Bootloader/ja">ブートローダの設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ja.html" title="Handbook:AMD64/Installation/Finalizing/ja">締めくくり</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Gentooの操作
+</th></tr>
+<tr>
+<td> <a href="../Portage/ja.html" title="Handbook:AMD64/Working/Portage/ja">Portageについて</a>
+</td></tr>
+<tr>
+<td> <a href="../USE/ja.html" title="Handbook:AMD64/Working/USE/ja">USEフラグ</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Portageの機能</strong>
+</td></tr>
+<tr>
+<td> <a href="../Initscripts/ja.html" title="Handbook:AMD64/Working/Initscripts/ja">Initスクリプトシステム</a>
+</td></tr>
+<tr>
+<td> <a href="../EnvVar/ja.html" title="Handbook:AMD64/Working/EnvVar/ja">環境変数</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Portageの操作
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ja.html" title="Handbook:AMD64/Portage/Files/ja">ファイルとディレクトリ</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ja.html" title="Handbook:AMD64/Portage/Variables/ja">変数</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ja.html" title="Handbook:AMD64/Portage/Branches/ja">ソフトウェアブランチの併用</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ja.html" title="Handbook:AMD64/Portage/Tools/ja">追加ツール</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ja.html" title="Handbook:AMD64/Portage/CustomTree/ja">カスタムPortageツリー</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ja.html" title="Handbook:AMD64/Portage/Advanced/ja">高度な機能</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> ネットワーク設定
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ja.html" title="Handbook:AMD64/Networking/Introduction/ja">はじめに</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ja.html" title="Handbook:AMD64/Networking/Advanced/ja">高度な設定</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ja.html" title="Handbook:AMD64/Networking/Modular/ja">モジュール式ネットワーク</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ja.html" title="Handbook:AMD64/Networking/Wireless/ja">無線</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ja.html" title="Handbook:AMD64/Networking/Extending/ja">機能の追加</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ja.html" title="Handbook:AMD64/Networking/Dynamic/ja">動的な管理</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Portage_features"><span class="tocnumber">1</span> <span class="toctext">Portage features</span></a></li>
+<li class="toclevel-1"><a href="#Distributed_compiling"><span class="tocnumber">2</span> <span class="toctext">Distributed compiling</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Using_distcc"><span class="tocnumber">2.1</span> <span class="toctext">Using distcc</span></a></li>
+<li class="toclevel-2"><a href="#Installing_distcc"><span class="tocnumber">2.2</span> <span class="toctext">Installing distcc</span></a></li>
+<li class="toclevel-2"><a href="#Activating_Portage_distcc_support"><span class="tocnumber">2.3</span> <span class="toctext">Activating Portage distcc support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Caching_compilation_objects"><span class="tocnumber">3</span> <span class="toctext">Caching compilation objects</span></a>
+<ul>
+<li class="toclevel-2"><a href="#About_ccache"><span class="tocnumber">3.1</span> <span class="toctext">About ccache</span></a></li>
+<li class="toclevel-2"><a href="#Installing_ccache"><span class="tocnumber">3.2</span> <span class="toctext">Installing ccache</span></a></li>
+<li class="toclevel-2"><a href="#Activating_Portage_ccache_support"><span class="tocnumber">3.3</span> <span class="toctext">Activating Portage ccache support</span></a></li>
+<li class="toclevel-2"><a href="#Using_ccache_outside_Portage"><span class="tocnumber">3.4</span> <span class="toctext">Using ccache outside Portage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Binary_package_support"><span class="tocnumber">4</span> <span class="toctext">Binary package support</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Creating_prebuilt_packages"><span class="tocnumber">4.1</span> <span class="toctext">Creating prebuilt packages</span></a></li>
+<li class="toclevel-2"><a href="#Installing_prebuilt_packages"><span class="tocnumber">4.2</span> <span class="toctext">Installing prebuilt packages</span></a></li>
+<li class="toclevel-2"><a href="#Distributing_prebuilt_packages_to_others"><span class="tocnumber">4.3</span> <span class="toctext">Distributing prebuilt packages to others</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Fetching_files"><span class="tocnumber">5</span> <span class="toctext">Fetching files</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Userfetch"><span class="tocnumber">5.1</span> <span class="toctext">Userfetch</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Pulling_validated_Gentoo_ebuild_tree_snapshots"><span class="tocnumber">6</span> <span class="toctext">Pulling validated Gentoo ebuild tree snapshots</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Portage_features">Portage features</span></h2>
+<p>Portage has several additional features that makes the Gentoo experience even better. Many of these features rely on certain software tools that improve performance, reliability, security, ...
+</p><p>To enable or disable certain Portage features, edit <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> and update or set the <var>FEATURES</var> variable which contains the various feature keywords, separated by white space. In several cases it will also be necessary to install the additional tool on which the feature relies.
+</p><p>Not all features that Portage supports are listed here. For a full overview, please consult the <span style="font-family: monospace; font-size: 95%">make.conf</span> man page:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf</code></div></div>
+<p>To find out what <var>FEATURES</var> are set by default, run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --info</span> and search for the <var>FEATURES</var> variable or <span style="font-family: monospace; font-size: 95%; font-weight: bold;">grep</span> it out:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^FEATURES=</code></div></div>
+<h2><span class="mw-headline" id="Distributed_compiling">Distributed compiling</span></h2>
+<h3><span class="mw-headline" id="Using_distcc">Using distcc</span></h3>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">distcc</span> is a program to distribute compilations across several, not necessarily identical, machines on a network. The distcc client sends all necessary information to the available distcc servers (running distccd) so they can compile pieces of source code for the client. The net result is a faster compilation time.
+</p><p>More information about distcc (and how to have it work with Gentoo) can be found in the <a href="../../../Distcc.html" title="Distcc">Distcc</a> article.
+</p>
+<h3><span class="mw-headline" id="Installing_distcc">Installing distcc</span></h3>
+<p>Distcc ships with a graphical monitor to monitor tasks that the computer is sending away for compilation. This tool is automatically installed if <code>USE=gnome</code> or <code>USE=gtk</code> is set.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-devel/distcc</code></div></div> 
+<h3><span class="mw-headline" id="Activating_Portage_distcc_support">Activating Portage distcc support</span></h3>
+<p>Add distcc to the <var>FEATURES</var> variable inside <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>. Next, edit the <var>MAKEOPTS</var> variable and increase the number of parallel build jobs that the system allows. A known guideline is to fill in "-jX" with X the number of CPUs that run distccd (including the current host) plus one, but that is just a guideline.
+</p><p>Now run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">distcc-config</span> and enter the list of available distcc servers. For a simple example assume that the available DistCC servers are 192.168.1.102 (the current host), 192.168.1.103 and 192.168.1.104 (two "remote" hosts):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>distcc-config --set-hosts "192.168.1.102 192.168.1.103 192.168.1.104"</code></div></div>
+<p>Don't forget to run the distccd daemon as well:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add distccd default
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>/etc/init.d/distccd start</code></div></div>
+<h2><span class="mw-headline" id="Caching_compilation_objects">Caching compilation objects</span></h2>
+<h3><span class="mw-headline" id="About_ccache">About ccache</span></h3>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">ccache</span> is a fast compiler cache. Whenever an application is compiled, it will cache intermediate results so that, whenever the same program is recompiled, the compilation time is greatly reduced. The first time ccache is run, it will be much slower than a normal compilation. Subsequent recompiles however should be faster. ccache is only helpful if the same application will be recompiled many times (or upgrades of the same application are happening frequently); thus it's mostly only useful for software developers.
+</p><p>For more information about ccache, please visit its <a rel="nofollow" class="external text" href="http://ccache.samba.org/">homepage</a>.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warning</strong><br />ccache is known to cause numerous compilation failures. Sometimes ccache will retain stale code objects or corrupted files, which can lead to packages that cannot be emerged. If this happens (errors like "File not recognized: File truncated" come up in build logs), try recompiling the application with ccache disabled (<code>FEATURES="-ccache"</code> in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>) before reporting a bug.</div>
+<h3><span class="mw-headline" id="Installing_ccache">Installing ccache</span></h3>
+<p>To install ccache run the following command:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask dev-util/ccache</code></div></div> 
+<h3><span class="mw-headline" id="Activating_Portage_ccache_support">Activating Portage ccache support</span></h3>
+<p>Open <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> and add <code>ccache</code> to the <var>FEATURES</var> variable. Next, add a new variable called <var>CCACHE_SIZE</var> and set it to <code>2G</code>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Enabling Portage ccache support</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;... ccache ...&quot;</span>
+<span class="nv">CCACHE_SIZE</span><span class="o">=</span><span class="s2">&quot;2G&quot;</span>
+</pre></div></pre>
+<p>To check if ccache functions, ask ccache to provide its statistics. Because Portage uses a different ccache home directory, it is necessary to temporarily set the <var>CCACHE_DIR</var> variable:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>CCACHE_DIR="/var/tmp/ccache" ccache -s</code></div></div>
+<p>The <span style="font-family: monospace; font-size: 95%">/var/tmp/ccache/</span> location is Portage' default ccache home directory; it can be changed by setting the <var>CCACHE_DIR</var> variable in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>.
+</p><p>When running <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ccache</span> standalone, it would use the default location of <span style="font-family: monospace; font-size: 95%">${HOME}/.ccache/</span>, which is why the <var>CCACHE_DIR</var> variable needs to be set when asking for the (Portage) ccache statistics.
+</p>
+<h3><span class="mw-headline" id="Using_ccache_outside_Portage">Using ccache outside Portage</span></h3>
+<p>To use ccache for non-Portage compilations, add <span style="font-family: monospace; font-size: 95%">/usr/lib/ccache/bin/</span> to the beginning of the <var>PATH</var> variable (before <span style="font-family: monospace; font-size: 95%">/usr/bin</span>). This can be accomplished by editing <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span> in the user's home directory. Using <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span> is one way to define <var>PATH</var> variables.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">~/.bash_profile</code></strong><strong>Setting the ccache location before any other PATH</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/lib/ccache/bin:/opt/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id="Binary_package_support">Binary package support</span></h2>
+<h3><span class="mw-headline" id="Creating_prebuilt_packages">Creating prebuilt packages</span></h3>
+<p>Portage supports the installation of prebuilt packages. Even though Gentoo does not provide prebuilt packages by itself Portage can be made fully aware of prebuilt packages.
+</p><p>To create a prebuilt package use <code>quickpkg</code> if the package is already installed on the system, or emerge with the <code>--buildpkg</code> or <code>--buildpkgonly</code> options.
+</p><p>To have Portage create prebuilt packages of every single package that gets installed, add <code>buildpkg</code> to the <var>FEATURES</var> variable.
+</p><p>More extended support for creating prebuilt package sets can be obtained with catalyst. For more information on catalyst please read the <a href="../../../Project_Catalyst/FAQ.html" title="Project:Catalyst/FAQ">Catalyst FAQ</a>.
+</p>
+<h3><span class="mw-headline" id="Installing_prebuilt_packages">Installing prebuilt packages</span></h3>
+<p>Although Gentoo doesn't provide one, it is possible to create a central repository where prebuilt packages are stored. In order to use this repository, it is necessary to make Portage aware of it by having the <var>PORTAGE_BINHOST</var> variable point to it. For instance, if the prebuilt packages are on <a rel="nofollow" class="external free" href="ftp://buildhost/gentoo">ftp://buildhost/gentoo</a>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Add PORTAGE_BINHOST location</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_BINHOST</span><span class="o">=</span><span class="s2">&quot;ftp://buildhost/gentoo&quot;</span>
+</pre></div></pre>
+<p>To install a prebuilt package, add the <code>--getbinpkg</code> option to the emerge command alongside of the <code>--usepkg</code> option. The former tells emerge to download the prebuilt package from the previously defined server while the latter asks emerge to try to install the prebuilt package first before fetching the sources and compiling it.
+</p><p>For instance, to install gnumeric with prebuilt packages:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --usepkg --getbinpkg gnumeric</code></div></div>
+<p>More information about emerge's prebuilt package options can be found in the emerge man page:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man emerge</code></div></div>
+<h3><span class="mw-headline" id="Distributing_prebuilt_packages_to_others">Distributing prebuilt packages to others</span></h3>
+<p>If prebuilt packages are to be distributed to others, then make sure that this is permitted. Check the distribution terms of the upstream package for this. For example, for a package released under the GNU GPL, sources must be made available along with the binaries.
+</p><p>Ebuilds may define a <code>bindist</code> restriction in their <var>RESTRICT</var> variable if built binaries are not distributable. Sometimes this restriction is conditional on one or more USE flags.
+</p><p>By default, Portage will not mask any packages because of restrictions. This can be changed globally by setting the <var>ACCEPT_RESTRICT</var> variable in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>. For example, to mask packages that have a <code>bindist</code> restriction, add the following line to <span style="font-family: monospace; font-size: 95%">make.conf</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Only accept binary distributable packages</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">ACCEPT_RESTRICT</span><span class="o">=</span><span class="s2">&quot;* -bindist&quot;</span>
+</pre></div></pre>
+<p>It is also possible to override the <var>ACCEPT_RESTRICT</var> variable by passing the <code>--accept-restrict</code> option to the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge</span> command. For example, <code>--accept-restrict=-bindist</code> will temporarily mask packages with a <code>bindist</code> restriction.
+</p><p>Also consider setting the <var>ACCEPT_LICENSE</var> variable when distributing packages. See the <a href="../Portage.html#Licenses" title="Handbook:AMD64/Working/Portage">Licenses section</a> for this.
+</p>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Important</strong><br />It is entirely the responsibility of the user to comply with packages' license terms and with his country's laws. Metadata variables defined by ebuilds like <var>RESTRICT</var> or <var>LICENSE</var> can only give some guidance when distribution of binaries would not be allowed. They are <i>not</i> a legal statement, so don't rely on them.</div>
+<h2><span class="mw-headline" id="Fetching_files">Fetching files</span></h2>
+<h3><span class="mw-headline" id="Userfetch">Userfetch</span></h3>
+<p>When Portage is run as root, <code>FEATURES="userfetch"</code> will allow Portage to drop root privileges while fetching package sources. This is a small security improvement.
+</p>
+<h2><span class="mw-headline" id="Pulling_validated_Gentoo_ebuild_tree_snapshots">Pulling validated Gentoo ebuild tree snapshots</span></h2>
+<p>Administrators can opt to update the local Gentoo ebuild tree with a cryptographically validated tree snapshot as released by the Gentoo infrastructure. This ensures that no rogue rsync mirror is adding unwanted code or packages to the tree the system is downloading.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The following is an updated method for setting up and using the emerge-webrsync sync method.</div>
+<p>The Gentoo release media OpenPGP keys are now available as a binary keyring, installed via the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gentoo-keys">app-crypt/gentoo-keys</a> package.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gentoo-keys</code></div></div> 
+<p>This will install the keyring to the <span style="font-family: monospace; font-size: 95%">/var/lib/gentoo/gkeys/keyrings/gentoo/release</span> location.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Enabling GPG support in Portage</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;webrsync-gpg&quot;</span>
+<span class="nv">PORTAGE_GPG_DIR</span><span class="o">=</span><span class="s2">&quot;/var/lib/gentoo/gkeys/keyrings/gentoo/release&quot;</span>
+</pre></div></pre>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/repos.conf/gentoo.conf</code></strong><strong>Clear the sync-uri variable</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">[DEFAULT]</span>
+<span class="na">main-repo</span> <span class="o">=</span> <span class="s">gentoo</span>
+ 
+<span class="k">[gentoo]</span>
+<span class="c1"># Disable synchronization by clearing the values or setting auto-sync = no</span>
+<span class="c1"># Do not set value of the variables in this configuration file using quotes (&#39;&#39; or &quot;&quot;)!</span>
+<span class="c1"># For portage-2.2.18 use &#39;websync&#39;</span>
+<span class="c1"># For portage-2.2.19 and greater use &#39;webrsync&#39; (websync was renamed to webrsync)</span>
+<span class="na">sync-type</span> <span class="o">=</span> <span class="s">websync</span>
+<span class="na">sync-uri</span> <span class="o">=</span> 
+<span class="na">auto-sync</span> <span class="o">=</span> <span class="s">yes</span>
+</pre></div></pre>
+<p>Make sure that <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gnupg">app-crypt/gnupg</a> package is installed:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gnupg</code></div></div> 
+<p>Use <span style="font-family: monospace; font-size: 95%; font-weight: bold;">gpg</span> to verify that the keys in the keyring are the correct keys:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --with-fingerprint --list-keys</code></div></div>
+<p>Verify the fingerprints of the key(s) against those listed here: <a href="../../../Project_RelEng.html#Release_security_and_signing" title="Project:RelEng">Project:RelEng#Release_security_and_signing</a><br />
+Repeat the following command for each key you wish to trust. (Substitute the keyid '0x...' for the desired key you wish to trust.)
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /var/lib/gentoo/gkeys/keyrings/gentoo/release --edit-key 0xDB6B8C1F96D8BF6D trust</code></div></div>
+<p>The system is now set-up to sync using only OpenPGP/gpg verified snapshots.<br />
+Several command options are available to perform the sync.
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />Only one of the following commands is needed to sync. See the <a href="../../../Project_Portage/Sync.html" title="Project:Portage/Sync">Portage's sync wiki article</a> for more details.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emaint sync -a</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emaint sync --repo gentoo</code></div></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<p><b>Original install and configuration instructions</b>
+</p><p>To configure Portage to validate the snapshots, first create a truststore in which the keys of the Gentoo Infrastructure responsible for signing the Portage tree snapshots are stored. Of course, this OpenPGP key can be validated as per the <a href="../../../GnuPG.html#Importing_keys" title="GnuPG">proper guidelines</a> (like checking the key fingerprint). The list of OpenPGP keys used by the release engineering team is available on their <a href="../../../Project_RelEng.html" title="Project:RelEng">project page</a>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir -p /etc/portage/gpg
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>chmod 0700 /etc/portage/gpg</code></div></div>
+<p>Make sure that <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-crypt/gnupg">app-crypt/gnupg</a> is installed:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-crypt/gnupg</code></div></div> 
+<p>In the next set of commands, substitute the keys with those mentioned on the release engineering site:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /etc/portage/gpg --keyserver subkeys.pgp.net --recv-keys 0xDB6B8C1F96D8BF6D
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>gpg --homedir /etc/portage/gpg --edit-key 0xDB6B8C1F96D8BF6D trust</code></div></div>
+<p>Next, edit <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> and enable support for validating the signed Portage tree snapshots (using <code>FEATURES="webrsync-gpg"</code>) and disabling updating the Portage tree using the regular <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> method.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Enabling GPG support in Portage</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">FEATURES</span><span class="o">=</span><span class="s2">&quot;webrsync-gpg&quot;</span>
+<span class="nv">PORTAGE_GPG_DIR</span><span class="o">=</span><span class="s2">&quot;/etc/portage/gpg&quot;</span>
+</pre></div></pre>
+<p>In the <span style="font-family: monospace; font-size: 95%">/etc/portage/repos.conf/gentoo.conf</span> file, clear the <var>sync-type</var> and <var>sync-uri</var> variables so that <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span> no longer works (and thus no longer pulls in ebuilds that come from a potentially non-validated source):
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/repos.conf/gentoo.conf</code></strong><strong>Clear the sync-type and sync-uri variables</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">[DEFAULT]</span>
+<span class="na">main-repo</span> <span class="o">=</span> <span class="s">gentoo</span>
+ 
+<span class="k">[gentoo]</span>
+<span class="c1"># Disable synchronization by clearing the values</span>
+<span class="c1"># Do not set value of the variables in this configuration file using quotes (&#39;&#39; or &quot;&quot;)!</span>
+<span class="na">sync-type</span> <span class="o">=</span> 
+<span class="na">sync-uri</span> <span class="o">=</span>
+</pre></div></pre>
+<p>That is it. Next time <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> is ran, only the snapshots with a valid signature will be expanded on the filesystem.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../USE.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../Initscripts.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112111016
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.592 seconds
+Real time usage: 0.635 seconds
+Preprocessor visited node count: 2897/1000000
+Preprocessor generated node count: 3548/1000000
+Post‐expand include size: 71763/2097152 bytes
+Template argument size: 11973/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  501.324      1 - -total
+100.00%  501.324      1 - Handbook:Parts/Working/Features/ja
+ 32.90%  164.930      1 - Handbook:Parts/TOC/ja
+ 28.41%  142.432     17 - Template:RootCmd
+ 26.13%  130.990     20 - Template:GenericCmd
+ 11.51%   57.716      5 - Template:Emerge
+  7.92%   39.711      8 - Template:FileBox
+  6.78%   33.967      3 - Template:Cmd
+  6.16%   30.873      8 - Template:PreBox
+  5.71%   28.603     23 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:75882-0!*!0!!en!*!* and timestamp 20160112111016 and revision id 374576
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;oldid=374576">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Working/Features/ja&amp;oldid=374576</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 25 September 2015, at 10:40.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Working/Features/ja"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":184});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Working/Features/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:24:15 GMT -->
+</html>

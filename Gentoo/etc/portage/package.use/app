@@ -2,6 +2,7 @@ app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lu
 app-admin/system-config-printer gnome-keyring policykit
 app-cdr/xfburn gstreamer
 app-crypt/pinentry gnome-keyring
+app-editors/vim  X acl gpm nls debug lua perl python terminal vim-pager
 app-emulation/virtualbox alsa headless lvm opengl opus pam pax_kernel python qt5 sdk udev java vboxwebsrv vnc
 app-emulation/virtualbox-bin additions rdesktop-vrdp
 app-office/libreoffice-bin java

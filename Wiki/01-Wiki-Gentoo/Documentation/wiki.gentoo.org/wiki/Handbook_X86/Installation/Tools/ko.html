@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Tools/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Installation/Tools/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Tools/ko","wgTitle":"X86/Installation/Tools/ko","wgCurRevisionId":194482,"wgRevisionId":194482,"wgArticleId":79664,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:X86/Installation/Tools/ko","wgRelevantArticleId":79664,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],
+"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Tools/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Tools/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Tools_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Tools/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Tools/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;oldid=194482" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FTools-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FTools%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FTools%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Tools/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:X86/Installation/Tools/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FTools&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Tools.html" title="Handbook:X86/Installation/Tools">Handbook:X86/Installation/Tools</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/Tools (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Tools.html" title="Handbook:X86/Installation/Tools (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Herramientas (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/ツールのインストール (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Ferramentas (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Tools (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/安装系统工具 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../About/ko.html" title="Handbook:X86/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/ko.html" title="Handbook:X86/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/ko.html" title="Handbook:X86/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/ko.html" title="Handbook:X86/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/ko.html" title="Handbook:X86/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../Base/ko.html" title="Handbook:X86/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel/ko.html" title="Handbook:X86/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../System/ko.html" title="Handbook:X86/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">도구 설치</strong>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/ko.html" title="Handbook:X86/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:X86/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:X86/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:X86/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:X86/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:X86/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/ko.html" title="Handbook:X86/Portage/Files/ko">파일 및 디렉터리</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/ko.html" title="Handbook:X86/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/ko.html" title="Handbook:X86/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/ko.html" title="Handbook:X86/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/ko.html" title="Handbook:X86/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/ko.html" title="Handbook:X86/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:X86/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:X86/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:X86/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:X86/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:X86/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:X86/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.A1.9C.EA.B1.B0"><span class="tocnumber">1</span> <span class="toctext">시스템 로거</span></a></li>
+<li class="toclevel-1"><a href="#.EC.84.A0.ED.83.9D:_.ED.81.AC.EB.A1.A0_.EB.8D.B0.EB.AA.AC"><span class="tocnumber">2</span> <span class="toctext">선택: 크론 데몬</span></a></li>
+<li class="toclevel-1"><a href="#.EC.84.A0.ED.83.9D:_.ED.8C.8C.EC.9D.BC_.EC.9D.B8.EB.8D.B1.EC.8B.B1"><span class="tocnumber">3</span> <span class="toctext">선택: 파일 인덱싱</span></a></li>
+<li class="toclevel-1"><a href="#.EC.84.A0.ED.83.9D:_.EC.9B.90.EA.B2.A9_.EC.A0.91.EA.B7.BC"><span class="tocnumber">4</span> <span class="toctext">선택: 원격 접근</span></a></li>
+<li class="toclevel-1"><a href="#.ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.8F.84.EA.B5.AC"><span class="tocnumber">5</span> <span class="toctext">파일 시스템 도구</span></a></li>
+<li class="toclevel-1"><a href="#.EB.84.A4.ED.8A.B8.EC.9B.8C.ED.81.AC_.EB.8F.84.EA.B5.AC"><span class="tocnumber">6</span> <span class="toctext">네트워크 도구</span></a></li>
+<li class="toclevel-1"><a href="#DHCP_.ED.81.B4.EB.9D.BC.EC.9D.B4.EC.96.B8.ED.8A.B8_.EC.84.A4.EC.B9.98"><span class="tocnumber">7</span> <span class="toctext">DHCP 클라이언트 설치</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.84.A0.ED.83.9D:_PPPoE_.ED.81.B4.EB.9D.BC.EC.9D.B4.EC.96.B8.ED.8A.B8_.EC.84.A4.EC.B9.98"><span class="tocnumber">7.1</span> <span class="toctext">선택: PPPoE 클라이언트 설치</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.A1.9C.EA.B1.B0">시스템 로거</span></h2>
+<p>스테이지 3 아카이브에서 몇가지 도구가 빠졌는데 대부분 꾸러미가 동일한 기능을 지니고 있기 때문입니다. 이제 설치할 도구를 선택하는건 사용자의 몫입니다.
+</p><p>첫번째로 결정해야 할 도구는 시스템 로깅 수단을 제공합니다. 유닉스 및 리눅스는 로깅 능력에 있어 멋진 역사를 지니고 있습니다 - 필요하다면, 로그 파일에 시스템에 일어나는 모든 일을 기록할 수 있습니다. 이 일은 시스템 로거가 처리합니다.
+</p><p>젠투는 선택할 다양한 시스템 로거를 제공합니다. 그 중 몇가지가 있다면:
+</p>
+<ul><li> 시스템 로깅 데몬의 기존 모음인 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/sysklogd">app-admin/sysklogd</a></li>
+<li> 최근의 시스템 로거 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/syslog-ng">app-admin/syslog-ng</a></li>
+<li> 매우 설정하기 용이한 시스템 로거 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/metalog">app-admin/metalog</a></li></ul>
+<p>마찬가지로 포티지에 다른 다양한 로거가 존재합니다. 수많은 꾸러미는 매일 늘어납니다.
+</p><p>sysklogd 또는 syslog-ng를 사용하려 한다면, 시스템 로거가 로그 파일에 대한 순환 매커니즘을 제공하지 않으므로, 이들 꾸러미를 설치한 후 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/logrotate">app-admin/logrotate</a>를 설치하는 것이 좋습니다.
+</p><p>선택한 시스템 로거를 설치하려면, emerge후, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span>를 사용하여 기본 런레벨에 추가해야합니다. 다음 예제에서는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/syslog-ng">app-admin/syslog-ng</a>를 설치합니다.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask app-admin/syslog-ng</code></div></div> 
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add syslog-ng default</code></div></div>
+<h2><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_.ED.81.AC.EB.A1.A0_.EB.8D.B0.EB.AA.AC">선택: 크론 데몬</span></h2>
+<p>다음은 크론 데몬입니다. 설치를 해도 안해도 그만이며, 모든 시스템에서 설치할 필요는 없지만, 설치하는게 현명합니다.
+</p><p>크론 데몬은 일정별로 계획한 명령을 실행합니다. 규칙적으로(예를 들어 매일, 주별, 월별) 실행할 필요가 있는 명령에 대해 매우 간편합니다.
+</p><p>젠투는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-process/bcron">sys-process/bcron</a>, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-process/dcron">sys-process/dcron</a>, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-process/fcron">sys-process/fcron</a>, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-process/cronie">sys-process/cronie</a> 등의 다양한 크론 데몬을 제공합니다. 이들 중 하나를 설치하는 건 시스템 로거를 설치할 때와 마찬가지입니다. 다음 예제에서는 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-process/cronie">sys-process/cronie</a>를 설치합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-process/cronie</code></div></div> 
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add cronie default</code></div></div>
+<p>dcron또는 fcron을 사용한다면, 추가 초기화 명령을 실행해야합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>crontab /etc/crontab</code></div></div>
+<h2><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_.ED.8C.8C.EC.9D.BC_.EC.9D.B8.EB.8D.B1.EC.8B.B1">선택: 파일 인덱싱</span></h2>
+<p>파일 탐색 기능을 더 빠르게 제공하려 파일 시스템 인덱싱을 수행하려면 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-apps/mlocate">sys-apps/mlocate</a>를 설치하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-apps/mlocate</code></div></div> 
+<h2><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_.EC.9B.90.EA.B2.A9_.EC.A0.91.EA.B7.BC">선택: 원격 접근</span></h2>
+<p>설치 후 시스템을 원격으로 접근하려면, 기본 런레벨에 <span style="font-family: monospace; font-size: 95%">sshd</span> 초기화 스크립트를 추가하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rc-update add sshd default</code></div></div>
+<p>시리얼 콘솔 접근이 필요하다면 (원격 서버의 경우 가능) <span style="font-family: monospace; font-size: 95%">/etc/inittab</span>에서 시리얼 콘솔 섹션의 주석 표시를 빼십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/inittab</code></div><pre>
+# SERIAL CONSOLES
+s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100
+s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100
+</pre></div>
+<h2><span class="mw-headline" id=".ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.8F.84.EA.B5.AC">파일 시스템 도구</span></h2>
+<p>사용하는 파일 시스템에 따라 필요한 파일 시스템 유틸리티를 설치해야 합니다(파일 시스템 무결성 검사, 추가 파일 시스템 만들기 등). ext2, ext3, ext4 파일 시스템(e2fsprogs)을 관리하는 도구는 이미 시스템의 일부로 설치했음을 참고하십시오.
+</p><p>다음 테이블 목록에서는 각각의 파일 시스템을 사용할 경우 설치할 도구를 보여줍니다:
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th scope="col" width="20%"> 파일 시스템
+</th>
+<th> 꾸러미
+</th></tr>
+<tr>
+<td> XFS
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-fs/xfsprogs">sys-fs/xfsprogs</a>
+</td></tr>
+<tr>
+<td> ReiserFS
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-fs/reiserfsprogs">sys-fs/reiserfsprogs</a>
+</td></tr>
+<tr>
+<td> JFS
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-fs/jfsutils">sys-fs/jfsutils</a>
+</td></tr>
+<tr>
+<td> VFAT (FAT32, ...)
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-fs/dosfstools">sys-fs/dosfstools</a>
+</td></tr>
+<tr>
+<td> Btrfs
+</td>
+<td> <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-fs/btrfs-progs">sys-fs/btrfs-progs</a>
+</td></tr></table>
+<h2><span class="mw-headline" id=".EB.84.A4.ED.8A.B8.EC.9B.8C.ED.81.AC_.EB.8F.84.EA.B5.AC">네트워크 도구</span></h2>
+<p>추가 네트워크 도구가 필요하지 않으면 <a href="../Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>으로 바로 계속 진행하십시오.
+</p>
+<h2><span class="mw-headline" id="DHCP_.ED.81.B4.EB.9D.BC.EC.9D.B4.EC.96.B8.ED.8A.B8_.EC.84.A4.EC.B9.98">DHCP 클라이언트 설치</span></h2>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />여러분의 선택에 달려있긴 하지만, 네트워크에 접속하는 대부분의 사용자는 DHCP 서버에 연결하는 DHCP 클라이언트가 필요합니다. DHCP 클라이언트를 설치하십시오. 이 단계를 잊고 넘어간다면, 시스템이 네트워크에 참여할 수 없어, 나중에 DHCP 클라이언트를 다운로드하고 설치할 수 없습니다.</div>
+<p>netifrc 스크립트로 시스템에 있는 하나 이상의 네트워크 인터페이스에서 IP 주소를 자동으로 가져오도록 하려면 DHCP 클라이언트를 설치해야합니다. 포티지 트리상에 다른 DHCP 클라이언트도 있지만, <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-misc/dhcpcd">net-misc/dhcpcd</a> 클라이언트를 추천합니다:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask net-misc/dhcpcd</code></div></div> 
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">dhcpcd</span>에 대한 더 많은 내용은 <a href="https://wiki.gentoo.org/index.php?title=Dhcpcd/ko&amp;action=edit&amp;redlink=1" class="new" title="Dhcpcd/ko (page does not exist)">dhcpcd 게시글</a>에서 알아보십시오.
+</p>
+<h3><span class="mw-headline" id=".EC.84.A0.ED.83.9D:_PPPoE_.ED.81.B4.EB.9D.BC.EC.9D.B4.EC.96.B8.ED.8A.B8_.EC.84.A4.EC.B9.98">선택: PPPoE 클라이언트 설치</span></h3>
+<p>인터넷에 연결할 때 PPP를 사용한다면 <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/net-dialup/ppp">net-dialup/ppp</a> 꾸러미를 설치하십시오:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask net-dialup/ppp</code></div></div> 
+<p>이제 <a href="../Bootloader/ko.html" title="Handbook:X86/Installation/Bootloader/ko">부트로더 설정</a>으로 계속 진행하십시오.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../System/ko.html" title="이전 내용" class="btn btn-default">&#8592; Configuring the system</a> <a href="../../ko.html" title="Handbook:X86/ko" class="btn btn-default">처음</a> <a href="../Bootloader/ko.html" title="다음 내용" class="btn btn-default">부트로더 설정 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153754
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.440 seconds
+Real time usage: 0.480 seconds
+Preprocessor visited node count: 1773/1000000
+Preprocessor generated node count: 2309/1000000
+Post‐expand include size: 35398/2097152 bytes
+Template argument size: 5156/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  380.010      1 - Handbook:Parts/Installation/Tools/ko
+100.00%  380.010      1 - -total
+ 43.51%  165.357      1 - Handbook:Parts/TOC/ko
+ 23.09%   87.761     10 - Template:RootCmd
+ 16.95%   64.412     10 - Template:GenericCmd
+ 16.01%   60.848     18 - Template:Package
+ 15.60%   59.287      5 - Template:Emerge
+  9.66%   36.712     41 - Template:Trim
+  5.48%   20.838      1 - Handbook:Parts/Navigator/ko
+  3.67%   13.962     10 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:79664-0!*!0!!en!*!* and timestamp 20160112153754 and revision id 194482
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;oldid=194482">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/ko&amp;oldid=194482</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 10:11.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Tools/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":675});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Tools/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:41:10 GMT -->
+</html>

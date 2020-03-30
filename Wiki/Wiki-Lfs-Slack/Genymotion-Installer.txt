@@ -3,14 +3,7 @@ Genymotion operation relies on the use of Oracle VM VirtualBox in the background
 
 If you already have Oracle VM VirtualBox, make sure you have the version recommended for your operating system, as detailed in section Software.
 
-To install Genymotion, follow the steps corresponding to your operating system.
-
-ClosedWindows
-ClosedmacOS
-OpenLinux
-Almost every GNU/Linux system comes with an installer package for Oracle VM VirtualBox.
-
-Browse for the Oracle VM VirtualBox installer in your directories. 
+Browse for the Oracle VM VirtualBox installer in your directories.
 If you do not have the installer or if you need to install a specific version, download and install VirtualBox for Linux hosts from the Download VirtualBox page.
 When installing VirtualBox, in the Custom setup window, make sure VirtualBox Networking is enabled.
 

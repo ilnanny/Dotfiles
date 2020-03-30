@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Networking/tr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:51:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Installation/Networking/tr - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Networking/tr","wgTitle":"X86/Installation/Networking/tr","wgCurRevisionId":338956,"wgRevisionId":338956,"wgArticleId":130260,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"tr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],"wgMonthNamesShort":["","Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"],"wgRelevantPageName":"Handbook:X86/Installation/Networking/tr","wgRelevantArticleId":130260,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Networking/tr" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Networking/tr&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Networking_tr skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Networking/tr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Networking/tr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;oldid=338956" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FNetworking-2Ftr.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FNetworking%2Ftr&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FNetworking%2Ftr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="tr.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Networking/tr&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="tr">
+							<span dir="auto">Handbook:X86/Installation/Networking/tr</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="tr" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FNetworking&amp;action=page&amp;filter=&amp;language=tr">translated version</a></span> of the page <a href="../Networking.html" title="Handbook:X86/Installation/Networking">Handbook:X86/Installation/Networking</a> and the translation is 50% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Installation/Netzwerk (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Networking.html" title="Handbook:X86/Installation/Networking (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Redes (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/ネットワーク (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:X86/Installation/Networking/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Rede (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Networking (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--med">Türkçe</span> • ‎<a href="zh-cn.html" title="手册：X86/安装/配置网络 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Kurulum
+</th></tr>
+<tr>
+<td> <a href="../About/tr.html" title="Handbook:X86/Installation/About/tr">Kurulum hakkında</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/tr.html" title="Handbook:X86/Installation/Media/tr">Ortamı seçme</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Ağı yapılandırma</strong>
+</td></tr>
+<tr>
+<td> <a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">Diskleri hazırlama</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/tr.html" title="Handbook:X86/Installation/Stage/tr">stage3 kurulumu</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/Base/tr (page does not exist)">Temel sistem kurulumu</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/Kernel/tr (page does not exist)">Çekirdeği yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/System/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/System/tr (page does not exist)">Sistemi yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Tools/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/Tools/tr (page does not exist)">Araçları kurma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Bootloader/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/Bootloader/tr (page does not exist)">Açılış yükleyici</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Finalizing/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Installation/Finalizing/tr (page does not exist)">Sonlandırma</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Gentoo ile çalışma
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Portage/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Working/Portage/tr (page does not exist)">Portage'a giriş</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/USE/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Working/USE/tr (page does not exist)">USE bayrakları</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Features/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Working/Features/tr (page does not exist)">Portage özellikleri</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/Initscripts/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Working/Initscripts/tr (page does not exist)">Init sistemi</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Working/EnvVar/tr (page does not exist)">Ortam değişkenleri</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Portage ile çalışma
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/Files/tr (page does not exist)">Dosya ve dizinler</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Variables/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/Variables/tr (page does not exist)">Değişkenler</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Branches/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/Branches/tr (page does not exist)">Yazılım dalları</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Tools/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/Tools/tr (page does not exist)">Ek araçlar</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/CustomTree/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/CustomTree/tr (page does not exist)">Özel portage ağacı</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Advanced/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Portage/Advanced/tr (page does not exist)">Gelişmiş özellikler</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Ağ yapılandırması
+</th></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Introduction/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Introduction/tr (page does not exist)">Başlangıç</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Advanced/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Advanced/tr (page does not exist)">Gelişmiş yapılandırma</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Modular/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Modular/tr (page does not exist)">Modüler ağ</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Wireless/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Wireless/tr (page does not exist)">Kablosuz ağlar</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Extending/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Extending/tr (page does not exist)">Özellik ekleme</a>
+</td></tr>
+<tr>
+<td> <a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Networking/Dynamic/tr&amp;action=edit&amp;redlink=1" class="new" title="Handbook:X86/Networking/Dynamic/tr (page does not exist)">Dinamik ağ yönetimi</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Otomatik_a.C4.9F_tan.C4.B1ma"><span class="tocnumber">1</span> <span class="toctext">Otomatik ağ tanıma</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Se.C3.A7ime_ba.C4.9Fl.C4.B1:_Proxy_.28a.C4.9F_ge.C3.A7idi.29_ayarlama"><span class="tocnumber">1.1</span> <span class="toctext">Seçime bağlı: Proxy (ağ geçidi) ayarlama</span></a></li>
+<li class="toclevel-2"><a href="#Ba.C4.9Flant.C4.B1y.C4.B1_test_etmek"><span class="tocnumber">1.2</span> <span class="toctext">Bağlantıyı test etmek</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Otomatik_a.C4.9F_yap.C4.B1land.C4.B1rmas.C4.B1"><span class="tocnumber">2</span> <span class="toctext">Otomatik ağ yapılandırması</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.C3.96ntan.C4.B1ml.C4.B1_se.C3.A7enek:_net-setup_kullanmak"><span class="tocnumber">2.1</span> <span class="toctext">Öntanımlı seçenek: net-setup kullanmak</span></a></li>
+<li class="toclevel-2"><a href="#Alternatif:_PPP_kullanmak"><span class="tocnumber">2.2</span> <span class="toctext">Alternatif: PPP kullanmak</span></a></li>
+<li class="toclevel-2"><a href="#Alternatif:_PPTP_kullanmak"><span class="tocnumber">2.3</span> <span class="toctext">Alternatif: PPTP kullanmak</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Elle_a.C4.9F_yap.C4.B1land.C4.B1rma"><span class="tocnumber">3</span> <span class="toctext">Elle ağ yapılandırma</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Gerekli_a.C4.9F_mod.C3.BCllerinin_y.C3.BCklenmesi"><span class="tocnumber">3.1</span> <span class="toctext">Gerekli ağ modüllerinin yüklenmesi</span></a></li>
+<li class="toclevel-2"><a href="#DHCP_kullanmak"><span class="tocnumber">3.2</span> <span class="toctext">DHCP kullanmak</span></a></li>
+<li class="toclevel-2"><a href="#Kablosuz_ba.C4.9Flant.C4.B1_i.C3.A7in_haz.C4.B1rl.C4.B1k"><span class="tocnumber">3.3</span> <span class="toctext">Kablosuz bağlantı için hazırlık</span></a></li>
+<li class="toclevel-2"><a href="#A.C4.9F_terminolojisini_anlamak"><span class="tocnumber">3.4</span> <span class="toctext">Ağ terminolojisini anlamak</span></a></li>
+<li class="toclevel-2"><a href="#ifconfig_ve_route_kullan.C4.B1m.C4.B1"><span class="tocnumber">3.5</span> <span class="toctext">ifconfig ve route kullanımı</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Otomatik_a.C4.9F_tan.C4.B1ma">Otomatik ağ tanıma</span></h2>
+<p>Belki kendiliğinden çalışır?
+</p><p>Sisteminiz eğer DHCP sunucu olan bir ethernet ağına bağlı ise, herhangi bir ayar yapmanıza gerek olmayabilir. Eğer bağlanırsanız kurulum CD'sinde internetten kurulum yapmanızı sağlayacak <code>ssh</code>, <code>scp</code>, <code>ping</code>, <code>irssi</code>, <code>wget</code> ve <code>links</code> gibi komutlar anında işe yarar hale gelecektir.
+</p><p>Eğer ağa bağlandıysanız <code>ifconfig</code> komutu <code>lo</code> haricinde <code>eth0</code> gibi farklı ağlar da listeleyecektir:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig</code></div><pre>
+(...)
+eth0      Link encap:Ethernet  HWaddr 00:50:BA:8F:61:7A
+          inet addr:192.168.0.2  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::50:ba8f:617a/10 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1498792 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1284980 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:1984 txqueuelen:100
+          RX bytes:485691215 (463.1 Mb)  TX bytes:123951388 (118.2 Mb)
+          Interrupt:11 Base address:0xe800 
+</pre></div>
+<p>Arayüz ismi <code>eth0</code>'dan farklı olabilir. Güncel kurulum ortamlarında donanıma bağlı olarak bu isim <code>eno0</code>, <code>ens1</code> veya <code>enp5s0</code> şeklinde de görülebilmekte. Sadece <code>ifconfig</code> çıktısında yerel ağınızla ilişkili bir IP alan ağ bağlantısını arayın.
+</p><p>Biz dökümanımızda örnek bağlantı ismi olarak <code>eth0</code> kullanacağız.
+</p>
+<h3><span class="mw-headline" id="Se.C3.A7ime_ba.C4.9Fl.C4.B1:_Proxy_.28a.C4.9F_ge.C3.A7idi.29_ayarlama">Seçime bağlı: Proxy (ağ geçidi) ayarlama</span></h3>
+<p>Eğer internete ağ geçidi kullanarak bağlanıyorsanız, doğru olarak yapılandırmanız gerekmektedir. Bu yapılandırma kolaydır, sadece bir değişken tanımlamanız gerektiği anlamına gelir.
+</p><p>Çoğu durumda sunucunuzun adını veya IP adresini kullanarak bir değişken tanımı yetmektedir. Örnek olarak ağ geçidimizin proxy.gentoo.org ve kullandığı portun 8080 olduğunu varsayalım.
+</p><p>Şimdi (HTTP ve HTTPS trafik için) bir HTTP ağ geçidi yapılandırması yapalım:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export http_proxy="<a rel="nofollow" class="external free" href="http://proxy.gentoo.org:8080/">http://proxy.gentoo.org:8080</a>"</code></div></div>
+<p>FTP ağ geçidi tanımı yapmak için de:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export ftp_proxy="<a rel="nofollow" class="external free" href="ftp://proxy.gentoo.org:8080/">ftp://proxy.gentoo.org:8080</a>"</code></div></div>
+<p>RSYNC ağ geçidi yapılandırması:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export RSYNC_PROXY="proxy.gentoo.org:8080"</code></div></div>
+<p>Eğer bu geçitler bir kullanıcı adı ve parola istiyor ise, değişkenleri aşağıdaki şekilde tanımlayabilirsiniz:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Ağ geçidi ayarlarında kullanıcı adı ve parola</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>http://kullanıcıadı:parola@proxy.gentoo.org:8080
+</pre></div></pre></div>
+<h3><span class="mw-headline" id="Ba.C4.9Flant.C4.B1y.C4.B1_test_etmek">Bağlantıyı test etmek</span></h3>
+<p>Öncelikle DNS sunucunuzu (<span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> dosyasında genelde tanımlı olur) ve seçtiğiniz bir siteyi pinglemeyi deneyin. Bu sayede ağ bağlantısının düzgün çalıştığından, paketlerin internete ulaştığından ve DNS çözümlemesinin gerçekleştiğinden emin olabilirsiniz.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ping -c 3 www.gentoo.org</code></div></div>
+<p>Eğer bağlanabildiyseniz, bu makaleyi geçip sonraki adım olan <a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">diskleri hazırlama</a>'ya geçebilirsiniz.
+</p>
+<h2><span class="mw-headline" id="Otomatik_a.C4.9F_yap.C4.B1land.C4.B1rmas.C4.B1">Otomatik ağ yapılandırması</span></h2>
+<p>Eğer ağ çalışmazsa, bazı kurulum ortamlarının sunduğu ayarları kullanabilirsiniz. Bunlar arasında <code>net-setup</code> (normal kablolu/kablosuz ağlar için), <code>pppoe-setup</code> (ADSL direkt bağlantıları için) ve <code>pptp</code> (PPTP bağlantıları için) sayılabilir.
+</p><p>Eğer kurulum ortamınızda bu araçlar bulunmuyorsa, <a href="#Elle_a.C4.9F_yap.C4.B1land.C4.B1rma">Elle ağ yapılandırma</a> bölümünden devam edin.
+</p>
+<ul><li> Normal ethernet kullanıcıları öntanımlı seçenek olan <a href="#.C3.96ntan.C4.B1ml.C4.B1_se.C3.A7enek:_net-setup_kullanmak">net-setup</a> kullanmalı</li>
+<li> ADSL kullanıcıları <a href="#Alternatif:_PPP_kullanmak">PPP</a> ile devam etmeli</li>
+<li> PPTP kullanıcıları da <a href="#Alternatif:_PPTP_kullanmak">PPTP</a> kullanmalıdır</li></ul>
+<h3><span class="mw-headline" id=".C3.96ntan.C4.B1ml.C4.B1_se.C3.A7enek:_net-setup_kullanmak">Öntanımlı seçenek: net-setup kullanmak</span></h3>
+<p>Otomatik olarka bağlanmadıysanız ağa bağlanmanın en kolay yolu <code>net-setup</code> kullanmaktır:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>net-setup eth0</code></div></div>
+<p><code>net-setup</code> komutu bağlantı ortamıyla ilgili bazı sorular soracaktır. Tmamlandığında ağ bağlantısının başlaması beklenir. Önceki adımlarda anlatıldığı gibi, bağlantınızı test edin. Eğer bağlandıysanız, tebrikler! Sayfanın devamını es geçip, <a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">diskleri hazırlama</a> adımına gidebilirsiniz.
+</p><p>Eğer bağlantı halen çalışmıyorsa, <a href="#Elle_a.C4.9F_yap.C4.B1land.C4.B1rma">Elle ağ yapılandırma</a> bölümünden devam edin.
+</p>
+<h3><span class="mw-headline" id="Alternatif:_PPP_kullanmak">Alternatif: PPP kullanmak</span></h3>
+<p>İnternete bağlanmak için PPPoE bağlantısı ihtiyacı duyuyorsanız, kurulum CD'sindeki ppp aracı ile bu işlemi gerçekleştirebilirsiniz. Yardımcı <code>pppoe-setup</code> betiğini kullanarak bağlantınızı sağlayın. Kurulum sırasında bağlantı yaptığınız ethernet aygıtı, kullanıcı adınız, parolanız, DNS sunucularınız ve güvenlik duvarı isteyip istemediğiniz sorulacaktır.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pppoe-setup
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pppoe-start</code></div></div>
+<p>Eğer bir hata oluşursa, kullanıcı adı ve parolanızın <span style="font-family: monospace; font-size: 95%">etc/ppp/pap-secrets</span> veya <span style="font-family: monospace; font-size: 95%">/etc/ppp/chap-secrets</span> dosyasında doğru girildiğine ve doğru ethernet aygıtı ismi bulunduğuna emin olun. Eğer ethernet donanımı görülmüyorsa, gereken modüller yüklenmemiş olabilir. Bu konuyla ilgili detaylı bilgiyi <a href="#Elle_a.C4.9F_yap.C4.B1land.C4.B1rma">elle ağ yapılandırma</a> bölümünden alabilirsiniz.
+</p><p>Bağlantı sağladıysanız, <a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">diskleri hazırlama</a> adımına gidebilirsiniz.
+</p>
+<h3><span class="mw-headline" id="Alternatif:_PPTP_kullanmak">Alternatif: PPTP kullanmak</span></h3>
+<p>PPTP desteği gerekliyse, kurulum CD'sinde sağlanan <code>pptpclient</code> komutunu kullanın. Ancak öncelikle yapılandırmanın doğru olduğuna emin olun. Bunun için <span style="font-family: monospace; font-size: 95%">/etc/ppp/pap-secrets</span> veya <span style="font-family: monospace; font-size: 95%">/etc/ppp/chap-secrets</span> dosyalarını kontrol edip doğru kullanıcı adı/parola girili olduğuna emin olun:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/ppp/chap-secrets</code></div></div>
+<p>Ardından gerekli ise <span style="font-family: monospace; font-size: 95%">/etc/ppp/options.pptp</span> dosyasını düzenleyin:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/ppp/options.pptp</code></div></div>
+<p>Tamamladıysanız sunucuya bağlanmak için <code>pptp</code> komutunu çalıştırın:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>pptp &lt;sunucu ip'si&gt;</code></div></div>
+<p><a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">Diskleri hazırlama</a> bölümünden devam edebilirsiniz.
+</p>
+<h2><span class="mw-headline" id="Elle_a.C4.9F_yap.C4.B1land.C4.B1rma">Elle ağ yapılandırma</span></h2>
+<h3><span class="mw-headline" id="Gerekli_a.C4.9F_mod.C3.BCllerinin_y.C3.BCklenmesi">Gerekli ağ modüllerinin yüklenmesi</span></h3>
+<p>Kurulum CD'si başladığında, tüm donanımı tarayıp gerekli modülleri (sürücüleri) yüklemeye çalışır. Bu durum çoğu sistem için yeterlidir. Ancak bazı durumlarda otomatik olarak yüklenmeyen bazı sürücüler gerekebilir.
+</p><p>Eğer <code>net-setup</code> veya <code>pppoe-setup</code> hata verip sonlandıysa, bunun sebebi ağ donanımının bulunamaması olabilir. Bu durum, kullanıcının modülü elle yüklemesi gerektiği anlamına gelmektedir.
+</p><p>Ağ için hangi modüllerin bulunduğunu görmek için <code>ls</code> kullanabiliriz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /lib/modules/`uname -r`/kernel/drivers/net</code></div></div>
+<p>Eğer donanımınız için gerekli modülü bulursanız, <code>modprobe</code> komutuyla yükleyin. Örneğin <span style="font-family: monospace; font-size: 95%">pcnet32</span> modülü için:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>modprobe pcnet32</code></div></div>
+<p>Modülü yüklemenin ardından donanımın tanınıp tanınmadığını <code>ifconfig</code> komutuyla görebilirsiniz. Tanınan bir ağ donanımı aşağıdaki gibi görünecektir (örnek olarak <span style="font-family: monospace; font-size: 95%">eth0</span> diyelim):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0</code></div><pre>
+eth0      Link encap:Ethernet  HWaddr FE:FD:00:00:00:00  
+          BROADCAST NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+</pre></div>
+<p>Eğer aşağıdaki gibi bir hata oluştuysa, aygıt bulunamamıştır:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0</code></div><pre>
+eth0: error fetching interface information: Device not found
+</pre></div>
+<p>Sistemde kullanılabilecek arayüz isimleri <span style="font-family: monospace; font-size: 95%">/sys</span> içerisinde görülebilir:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /sys/class/net</code></div><pre>
+dummy0  eth0  lo  sit0  tap0  wlan0
+</pre></div>
+<p>Yukarıdaki örnekte 6 arayüz bulundu. Büyük ihtimalle <span style="font-family: monospace; font-size: 95%">eth0</span> kablolu (ethernet) donanımının, <span style="font-family: monospace; font-size: 95%">wlan0</span> ise kablosuz ağ arayüzünün ismidir.
+</p><p>Ağ arayüzünüzün tanındığını varsayarsak, <code>net-setup</code> veya <code>pppoe-setup</code> komutlarını tekrar deneyebilirsiniz. Halen olmadıysa, ileriki adımlarda elle ayarlamayı detaylı anlatacağız.
+</p><p>Ağ ortamınıza göre size uygun başlığı seçin:
+</p>
+<ul><li> Otomatik IP alıyorsanız <a href="#DHCP_kullanmak">DHCP kullanmak</a></li>
+<li> Kablosuz ağınız var ise <a href="#Kablosuz_ba.C4.9Flant.C4.B1_i.C3.A7in_haz.C4.B1rl.C4.B1k">kablosuz bağlantı için hazırlık</a></li>
+<li> Temel ağ bilgileri için <a href="#A.C4.9F_terminolojisini_anlamak">ağ terminolojisini anlamak</a></li>
+<li> Elle yapılandırmayı uygulamak için <a href="#ifconfig_ve_route_kullan.C4.B1m.C4.B1">ifconfig ve route kullanımı</a></li></ul>
+<ul><li> <a href="#Using_DHCP">Using DHCP</a> for automatic IP retrieval</li>
+<li> <a href="#Preparing_for_wireless_access">Preparing for wireless access</a> if a wireless network is used</li>
+<li> <a href="#Understanding_network_terminology">Understanding network terminology</a> explains the basics about networking</li>
+<li> <a href="#Using_ifconfig_and_route">Using ifconfig and route</a> explains how to set up networking manually</li></ul>
+<h3><span class="mw-headline" id="DHCP_kullanmak">DHCP kullanmak</span></h3>
+<p>DHCP (Dynamic Host Configuration Protocol), ağ yapılandırmasına ait bilgileri (IP adresi, ağ maskesi, yayın/broadcast adresi, isim sunucuları vb.) otomatik olarak dağıtmayı sağlayan bir protokoldür. Bu, bağlı olduğunuz ağda DHCP sunucu bulunuyorsa mümkündür. Ağınızdan bunu talep etmek için <code>dhcpcd</code> kullanabilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>dhcpcd eth0</code></div></div>
+<p>Bazı ağ yöneticileri sistemlerde DHCP sunucudan verilen makine isimlerinin kullanılmasını isteyebilir, bu durumda:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>dhcpcd -HD eth0</code></div></div>
+<p>Eğer işe yararsa (yaradığını anlamak için internetteki bir adresi pingleyin, Google gibi) devam etmeye hazırsınız demektir. <a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">Diskleri hazırlama</a> adımına geçebilirsiniz.
+</p>
+<h3><span class="mw-headline" id="Kablosuz_ba.C4.9Flant.C4.B1_i.C3.A7in_haz.C4.B1rl.C4.B1k">Kablosuz bağlantı için hazırlık</span></h3>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br /><code>iwconfig</code> komutuna verilen destek mimariye göre değişebilir. Eğer kullandığınız mimaride bu komutu bulamazsanız, <a rel="nofollow" class="external text" href="ftp://ftp.linux-wlan.org/pub/linux-wlan-ng/README">linux-wlan-ng projesindeki</a> yönergeleri uygulayın.</div>
+<p>Kablosuz (802.11) bir ağ kartı kullanıyorsanız, ilerlemeden önce kablosuz yapılandırmasını düzenlemeniz gerekmekte. Mevcut durumu görmek için <code>iwconfig</code> kullanabilirsiniz. Çıktı şuna benzeyecektir:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0</code></div><pre>
+eth0      IEEE 802.11-DS  ESSID:&quot;GentooNode&quot;                                   
+          Mode:Managed  Frequency:2.442GHz  Access Point: 00:09:5B:11:CC:F2    
+          Bit Rate:11Mb/s   Tx-Power=20 dBm   Sensitivity=0/65535               
+          Retry limit:16   RTS thr:off   Fragment thr:off                       
+          Power Management:off                                                  
+          Link Quality:25/10  Signal level:-51 dBm  Noise level:-102 dBm        
+          Rx invalid nwid:5901 Rx invalid crypt:0 Rx invalid frag:0 Tx          
+          excessive retries:237 Invalid misc:350282 Missed beacon:84            
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Not</strong><br />Bazı kablosuz ağ donanımları <span style="font-family: monospace; font-size: 95%">eth0</span> yerine <span style="font-family: monospace; font-size: 95%">wlan0</span> veya <span style="font-family: monospace; font-size: 95%">ra0</span> olarak görülebilir. Tüm tanınan donanımları görmek için parametre vermeden sadece <code>iwconfig</code> çalıştırın.</div>
+<p>Çoğu kullanıcı için, değiştirilecek iki ayar yeterli olacaktır. ESSID (kablosuz ağ adı) ve WEP anahtarı. Eğer şifresiz bağlantı kullanıyorsanız ve erişim noktası adı komut çıktısında varsa, zaten bağlısınız demektir.
+</p><p>ESSID değiştirmek veya WEP anahtarı eklemek için aşağıdaki komutları kullanabilirsiniz.
+</p>
+<ul><li> Bağlanacağınız ağın ismi <i>EvAgi</i>ise:</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 essid EvAgi</code></div></div>
+<ul><li> Hex WEP anahtarı atamak için:</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key 1234123412341234abcd</code></div></div>
+<p>WEP anahtarını ASCII vermek için kodun önüne <code>s:</code> ekleyebilirsiniz:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key s:some-password</code></div></div>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 essid GentooNode</code></div></div></dd></dl>
+<ul><li> To set a hex WEP key:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key 1234123412341234abcd</code></div></div></dd></dl>
+<ul><li> To set an ASCII WEP key, prefix the key with <code>s:</code>:</li></ul>
+<dl><dd> <div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>iwconfig eth0 key s:some-password</code></div></div></dd></dl>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Not</strong><br />Eğer kablosuz ağda WPA veya WPA2 şifreleme varsa <code>wpa_supplicant</code> kullanılmalıdır. Gentoo Linux üzerinde kablosuz ağ yapılandırması hakkında daha detaylı bilgi için lütfen rehberdeki <a href="../../Networking/Wireless.html" title="Handbook:X86/Networking/Wireless">kablosuz ağ bölümünü</a> okuyun.</div>
+<p><code>iwconfig</code> komutunu tekrar çalıştırarak değişiklikleri kontrol edin. Yapılandırma doğruysa, IP katmanındaki ağ ayarlarını yapılandırmak için (<a href="#A.C4.9F_terminolojisini_anlamak">ağ terminolojisini anlamak</a>) bölümünü okuyun veya önceden anlattığımız <code>net-setup</code> aracını kullanın.
+</p>
+<h3><span class="mw-headline" id="A.C4.9F_terminolojisini_anlamak">Ağ terminolojisini anlamak</span></h3>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Not</strong><br />Eğer IP adresiniz, yayın (broadcast) adresiniz, netmask ve nameserver (isim sunucu) bilgilerinizi biliyorsanız, <a href="#ifconfig_ve_route_kullan.C4.B1m.C4.B1">ifconfig ve route kullanımı</a> kısmından devam edin.</div>
+<p>Eğer yukardakilerin hiçbiri işe yaramazsa, elle yapılandırmanız gerekecektir. Çok zor olmasa da, bazı ağ terimlerinin bilinmesini gerektirir. Bu bölümü okuduktan sonra, kullanıcı ağ geçidinin (gateway) ne olduğunu, ağ maskesinin (netmask) ne işe yaradığını ve broadcast (yayın) adresinin nasıl oluştuğunu anlayıp, isim sunucusuna (nameserver) neden ihtiyaç duyulduğunu bilir duruma gelecektir.
+</p><p>Bir ağda, istemciler IP (Internet Protocol) adresleri ile tanımlanır. Şu anda yaygın olarak kullanılan IPv4 (IP sürüm 4) sistemlerde bir IP adresi 0'dan 255'e dört tane sayının kombinasyonundan oluşur. Gerçekte bir IP adresi sıfırlar ve birlerden oluşan 32 bit temsil eder. Bir örneğe bakalım:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Bir IPv4 adres örneği</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>IP Adresi (sayılar):   192.168.0.2
+IP Adresi (bitler):    11000000 10101000 00000000 00000010
+                        -------- -------- -------- --------
+                           192      168       0        2
+</pre></div></pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Not</strong><br />IPv4'ün ardından kullanılacak olan IPv6, 128 bit kullanmaktadır. Biz bu makalede IPv4 üzerine odaklanacağız.</div>
+<p>Bir IP adresi, erişilebilen ağlar içerisinde tektir. Yani ağdaki her istemcinin/bilgisayarın adresi kendine ait olmalıdır. Ağa dahil olmayan bilgisayarların tespit edilip onlara erişim yapılabilmesi için de, bu adres ikiye bölünür: ağ bölümü ve istemci bölümü.
+</p><p>Bu ayrımı yapan da ağ maskesi (netmask) değeridir. Netmask değerinin bit'leri birkaç tane 1 ve toplam bit sayısını 32'ye tamamlayacak kadar 0'dan oluşur. Burdaki 1'ler ağ bölümünü, 0'lar da istemci bölümünü temsil eder. Tabi ki netmask de IP adresi gibi yazılabilir.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Örnek ağ/istemci ayrımı</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>IP adresi:    192      168      0         2
+            11000000 10101000 00000000 00000010
+Netmask:    11111111 11111111 11111111 00000000
+               255      255     255        0
+           +--------------------------+--------+
+                    Ağ                 İstemci
+</pre></div></pre></div>
+<p>Diğer bir deyişle 192.168.0.14 adresi verdiğimiz örnek ağın bir üyesidir, ancak 192.168.1.2 değildir.
+</p><p>Broadcast (yayın) adresinin ise ağ kısmında adresi aynı, istemci kısmında tüm bit değerleri 1'dir. Ağdaki tüm istemciler bu IP adresini dinler, çünkü bu adresin amacı herkese ulaşacak yayınların iletilmesidir.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Broadcast adresi</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>IP adresi:     192      168      0         2
+            11000000 10101000 00000000 00000010
+Broadcast:  11000000 10101000 00000000 11111111
+               192      168      0        255
+           +--------------------------+--------+
+                     Ağ                 İstemci
+</pre></div></pre></div>
+<p>Ağın dışına (yani internete) çıkabilmek için ise her bilgisayarın, ağdaki hangi istemcinin bağlantıyı dağıttığını bilmesi gerekmektedir. Bu istemci de ağ geçicidir (gateway). Normal bir istemci olduğu için, ağda normal bir adrese sahiptir (Örn. 192.168.0.1).
+</p><p>Her istemcinin kendine has bir IP adresi olduğundan bahsetmiştik. İstemcilere IP adresi yerine isimleri ile ulaşabilmek için, isimleri IP adresine çeviren bir servis gerekmekte. Örneğin dev.gentoo.org adresinin IP adresinin 64.5.62.82 olduğunu bilen bir servise. Bu servisin adı da "isim sunucusu"dur (DNS veya NS). Sistemin kullanacağı isim sunucularının IP adresleri <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> dosyasında tanımlanmalıdır.
+</p><p>Genelde isim sunucusu görevini de ağ geçidi yapar. Ancak farklı bir adres ise bu dosyaya girilmelidir.
+</p><p>Toparlayacak olursak, devam etmeden önce bilmemiz gerekenler:
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Ağ öğesi
+</th>
+<th> Örnek
+</th></tr>
+<tr>
+<td> Sistemin IP adresi
+</td>
+<td> 192.168.0.2
+</td></tr>
+<tr>
+<td> Ağ maskesi (netmask)
+</td>
+<td> 255.255.255.0
+</td></tr>
+<tr>
+<td> Yayın adresi (broadcast)
+</td>
+<td> 192.168.0.255
+</td></tr>
+<tr>
+<td> Ağ geçidi (gateway)
+</td>
+<td> 192.168.0.1
+</td></tr>
+<tr>
+<td> İsim sunucu(lar)
+</td>
+<td> 195.130.130.5, 195.130.130.133
+</td></tr></table>
+<h3><span class="mw-headline" id="ifconfig_ve_route_kullan.C4.B1m.C4.B1">ifconfig ve route kullanımı</span></h3>
+<p>Ağı yapılandırmak 3 adımdan oluşur.
+</p>
+<ol><li> <code>ifconfig</code> kullanarak bir IP atanması</li>
+<li> <code>route</code> kullanılarak ağ geçidine trafiğin yönlendirilmesi</li>
+<li> <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> dosyasına isim sunucularının adreslerinin girilmesi</li></ol>
+<ol><li> Assign an IP address using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ifconfig</span></li>
+<li> Set up routing to the gateway using <span style="font-family: monospace; font-size: 95%; font-weight: bold;">route</span></li>
+<li> Finish up by placing the nameserver IPs in <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span></li></ol>
+<p>IP adresi atayabilmek için atanacak IP adresi, yayın (broadcast) adresi ve ağ maskesi (netmask) değerleri bilinmelidir. <code>${IP_ADRESI}</code> yerine doğru IP adresi, <code>${BROADCAST}</code> yerine doğru yayın adresi ve <code>${NETMASK}</code> yerine doğru ağ maskesini yazarak aşağıdaki komutu çalıştırın:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ifconfig eth0 ${IP_ADRESI} broadcast ${BROADCAST} netmask ${NETMASK} up</code></div></div>
+<p><code>route</code> komutuyla doğru ağ geçidini tanıtmamız da gerekmekte. <code>${GATEWAY}</code> yerine ağ geçidinin adresini yazarak şu komutu çalıştırın:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>route add default gw ${GATEWAY}</code></div></div>
+<p>Ardından <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> dosyasını açın:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/resolv.conf</code></div></div>
+<p>İsim sunucularını aşağıdaki şablona göre ekleyin. <code>${NAMESERVER1}</code> ve <code>${NAMESERVER2}</code> yerine doğru isim sunucusu adreslerinizi yazdığınıza emin olun:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>/etc/resolv.conf içerisindeki şablon</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>nameserver ${NAMESERVER1}
+nameserver ${NAMESERVER2}
+</pre></div></pre></div>
+<p>Tamamdır. Şimdi internetteki bir sunucuyu (google vb.) pingleyerek bağlantınızı test edin. Çalışıyor ise tebrikler. 
+<a href="../Disks/tr.html" title="Handbook:X86/Installation/Disks/tr">Diskleri hazırlama</a> bölümünden devam edebilirsiniz.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Media/tr.html" title="Previous part" class="btn btn-default">&#8592; Ortamı seçme</a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../Disks/tr.html" title="Next part" class="btn btn-default">Diskleri hazırlama &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112155100
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.680 seconds
+Real time usage: 0.810 seconds
+Preprocessor visited node count: 3195/1000000
+Preprocessor generated node count: 2874/1000000
+Post‐expand include size: 73532/2097152 bytes
+Template argument size: 10211/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  530.939      1 - -total
+100.00%  530.939      1 - Handbook:Parts/Installation/Networking/tr
+ 40.54%  215.264     27 - Template:RootCmd
+ 37.57%  199.485      1 - Handbook:Parts/TOC/tr
+ 32.84%  174.337     27 - Template:GenericCmd
+  7.01%   37.222     28 - Template:GenericCmd/Line
+  4.94%   26.244      5 - Template:CodeBox
+  4.25%   22.562      1 - Handbook:Parts/Navigator
+  3.76%   19.946      5 - Template:PreBox
+  1.66%    8.791      4 - Template:Note/tr
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:130260-0!*!0!!en!*!* and timestamp 20160112155059 and revision id 338956
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;oldid=338956">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Networking/tr&amp;oldid=338956</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 10 July 2015, at 07:18.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Networking/tr"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":994});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Networking/tr by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:51:26 GMT -->
+</html>

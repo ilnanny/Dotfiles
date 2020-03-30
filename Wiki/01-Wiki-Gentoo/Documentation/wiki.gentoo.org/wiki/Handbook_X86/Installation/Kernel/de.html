@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Kernel/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:27:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbuch:X86/Installation/Kernel - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Kernel/de","wgTitle":"X86/Installation/Kernel/de","wgCurRevisionId":216878,"wgRevisionId":216878,"wgArticleId":88286,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Handbook:X86/Installation/Kernel/de","wgRelevantArticleId":88286,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Kernel/de" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Kernel/de&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Kernel_de skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Installation/Kernel/de.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Installation/Kernel/de.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;oldid=216878" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FInstallation-2FKernel-2Fde.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FKernel%2Fde&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FKernel%2Fde" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="de.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Installation/Kernel/de&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="de">
+							<span dir="auto">Handbuch:X86/Installation/Kernel</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FInstallation%2FKernel&amp;action=page&amp;filter=&amp;language=de">translated version</a></span> of the page <a href="../Kernel.html" title="Handbook:X86/Installation/Kernel">Handbook:X86/Installation/Kernel</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Kernel.html" title="Handbook:X86/Installation/Kernel (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Instalación/Núcleo (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:X86/インストール/カーネルの設定 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:X86/Installation/Kernel/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Manual:X86/Instalação/Kernel (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:X86/Installation/Kernel (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/安装/配置Linux内核 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../About/de.html" title="Handbook:X86/Installation/About/de">Über die Installation</a>
+</td></tr>
+<tr>
+<td> <a href="../Media/de.html" title="Handbook:X86/Installation/Media/de">Auswählen des Mediums</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/de.html" title="Handbook:X86/Installation/Networking/de">Konfiguration des Netzwerks</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/de.html" title="Handbook:X86/Installation/Disks/de">Vorbereiten der Festplatte(n)</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/de.html" title="Handbook:X86/Installation/Stage/de">Installation der stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base/de.html" title="Handbook:X86/Installation/Base/de">Installation des Basissystems</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Konfiguration des Kernels</strong>
+</td></tr>
+<tr>
+<td> <a href="../System/de.html" title="Handbook:X86/Installation/System/de">Konfiguration des Systems</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/de.html" title="Handbook:X86/Installation/Tools/de">Installation der Tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader/de.html" title="Handbook:X86/Installation/Bootloader/de">Konfiguration des Bootloaders</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/de.html" title="Handbook:X86/Installation/Finalizing/de">Abschluss</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Arbeiten mit Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/de.html" title="Handbook:X86/Working/Portage/de">Portage-Einführung</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/de.html" title="Handbook:X86/Working/USE/de">USE-Flags</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/de.html" title="Handbook:X86/Working/Features/de">Portage-Features</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/de.html" title="Handbook:X86/Working/Initscripts/de">Initskript-System</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/de.html" title="Handbook:X86/Working/EnvVar/de">Umgebungsvariablen</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Arbeiten mit Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/de.html" title="Handbook:X86/Portage/Files/de">Dateien und Verzeichnisse</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/de.html" title="Handbook:X86/Portage/Variables/de">Variablen</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/de.html" title="Handbook:X86/Portage/Branches/de">Mischen von Softwarezweigen</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/de.html" title="Handbook:X86/Portage/Tools/de">Zusätzliche Tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/de.html" title="Handbook:X86/Portage/CustomTree/de">Eigener Portage-Tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/de.html" title="Handbook:X86/Portage/Advanced/de">Erweiterte Portage-Features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Netzwerkkonfiguration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/de.html" title="Handbook:X86/Networking/Introduction/de">Zu Beginn</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/de.html" title="Handbook:X86/Networking/Advanced/de">Fortgeschrittene Konfiguration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/de.html" title="Handbook:X86/Networking/Modular/de">Modulare Vernetzung</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/de.html" title="Handbook:X86/Networking/Wireless/de">Drahtlose Netzwerke</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/de.html" title="Handbook:X86/Networking/Extending/de">Funktionalität hinzufügen</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/de.html" title="Handbook:X86/Networking/Dynamic/de">Dynamisches Netzwerkmanagement</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Installation_der_Quellen"><span class="tocnumber">1</span> <span class="toctext">Installation der Quellen</span></a></li>
+<li class="toclevel-1"><a href="#Standard:_Manuelle_Konfiguration"><span class="tocnumber">2</span> <span class="toctext">Standard: Manuelle Konfiguration</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Einleitung"><span class="tocnumber">2.1</span> <span class="toctext">Einleitung</span></a></li>
+<li class="toclevel-2"><a href="#Aktivieren_der_ben.C3.B6tigten_Optionen"><span class="tocnumber">2.2</span> <span class="toctext">Aktivieren der benötigten Optionen</span></a></li>
+<li class="toclevel-2"><a href="#Architekturspezifische_Kernel-Konfiguration"><span class="tocnumber">2.3</span> <span class="toctext">Architekturspezifische Kernel-Konfiguration</span></a></li>
+<li class="toclevel-2"><a href="#Kompilieren_und_installieren"><span class="tocnumber">2.4</span> <span class="toctext">Kompilieren und installieren</span></a></li>
+<li class="toclevel-2"><a href="#Optional:_initramfs_bauen"><span class="tocnumber">2.5</span> <span class="toctext">Optional: initramfs bauen</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Alternative:_genkernel_verwenden"><span class="tocnumber">3</span> <span class="toctext">Alternative: genkernel verwenden</span></a></li>
+<li class="toclevel-1"><a href="#Kernel-Module"><span class="tocnumber">4</span> <span class="toctext">Kernel-Module</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Konfiguration_der_Module"><span class="tocnumber">4.1</span> <span class="toctext">Konfiguration der Module</span></a></li>
+<li class="toclevel-2"><a href="#Optional:_Firmware_installieren"><span class="tocnumber">4.2</span> <span class="toctext">Optional: Firmware installieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Installation_der_Quellen">Installation der Quellen</span></h2>
+<p>Der Kern um den herum alle Distributionen gebaut sind ist der Linux Kernel. Er ist die Schicht zwischen den Benutzerprogrammen und der Systemhardware. Gentoo bietet seinen Benutzern verschiedene mögliche Kernel-Quellen. Eine komplette Liste mit Beschreibung finden Sie auf der <a href="../../../Kernel/Overview/de.html" title="Kernel/Overview/de">Kernel Übersichtsseite</a>.
+</p><p>Bei x86-basierten Systemen empfiehlt Gentoo das <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-kernel/gentoo-sources"> sys-kernel/gentoo-sources</a> Paket.
+</p><p>Wählen Sie eine passende Kernel-Quelle und installieren Sie diese mit <code>emerge</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-kernel/gentoo-sources</code></div></div> 
+<p>Dies installiert die Quellen des Linux Kernel im Verzeichnis <span style="font-family: monospace; font-size: 95%">/usr/src/</span>, in welchem der symbolischer Link namens <span style="font-family: monospace; font-size: 95%">linux</span> auf die installierten Kernel-Quellen zeigt:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls -l /usr/src/linux</code></div><pre>
+lrwxrwxrwx    1 root   root    12 Oct 13 11:04 /usr/src/linux -&gt; linux-3.16.5-gentoo
+</pre></div>
+<p>Jetzt ist es Zeit die Kernel-Quellen zu konfigurieren und zu kompilieren. Dafür gibt es zwei Ansätze:
+</p>
+<ol><li> Der Kernel wird manuell konfiguriert und gebaut.</li>
+<li> Sie verwenden das Werkzeug <code>genkernel</code> um den Linux Kernel automatisch zu bauen und zu installieren.</li></ol>
+<ol><li> The kernel is manually configured and built.</li>
+<li> A tool called <span style="font-family: monospace; font-size: 95%; font-weight: bold;">genkernel</span> is used to automatically build and install the Linux kernel.</li></ol>
+<p>Wir erklären hier die manuelle Konfiguration als Standardwahl, weil dies der beste Weg ist die Umgebung zu optimieren.
+</p>
+<h2><span class="mw-headline" id="Standard:_Manuelle_Konfiguration">Standard: Manuelle Konfiguration</span></h2>
+<h3><span class="mw-headline" id="Einleitung">Einleitung</span></h3>
+<p>Einen Kernel manuell zu konfigurieren wird oft als die schwierigste Aufgabe gesehen, die ein Linux Benutzer jemals durchzuführen hat. Nichts ist weiter von der Wahrheit entfernt. Nach der Konfiguration einiger Kernel werden Sie sich nicht mehr daran erinnern, dass es jemals schwer war.&#160;;&#41;
+</p><p>However, one thing is true: it is vital to know the system when a kernel is configured manually. Most information can be gathered by emerging <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-apps/pciutils">sys-apps/pciutils</a> which contains the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">lspci</span> command:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-apps/pciutils</code></div></div> 
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />Innerhalb der chroot-Umgebung ist es sicher jegliche pcilib-Warnung (wie <i>pcilib: cannot open /sys/bus/pci/devices</i>) zu ignorieren, die <code>lspci</code> auswerfen könnte.</div>
+<p>Eine weitere Quelle von Systeminformationen ist <code>lsmod</code> auszuführen, um zu sehen welche Kernel-Module die Installations-CD verwendet. Dies könnte gute Hinweise darauf liefert was zu aktivieren ist.
+</p><p>Gehen Sie in das Kernel Quellverzeichnis und führen Sie <code>make menuconfig</code> aus. Dies wird eine menübasierte Konfigurationsmaske starten.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cd /usr/src/linux
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>make menuconfig</code></div></div>
+<p>Die Linux Kernel-Konfiguration hat viele, viele Abschnitte. Wir listen zunächst einige Optionen auf, die aktiviert werden müssen (ansonsten wird Gentoo nicht funktionieren, oder ohne zusätzliche Veränderungen nicht richtig funktionieren). Wir haben im Gentoo Wiki auch einen <a href="../../../Kernel/Gentoo_Kernel_Configuration_Guide/de.html" title="Kernel/Gentoo Kernel Configuration Guide/de">Gentoo Kernel-Konfigurationsleitfaden</a>, der weiterhelfen könnte.
+</p>
+<h3><span class="mw-headline" id="Aktivieren_der_ben.C3.B6tigten_Optionen">Aktivieren der benötigten Optionen</span></h3>
+<p>Stellen Sie sicher, dass jeder Treiber der zum Booten des Systems notwendig ist (wie z.B. SCSI-Controller, ...) direkt in den Kernel kompiliert ist (nicht als Modul). Andernfalls wird das System nicht in der Lage sein komplett zu booten.
+</p><p>Als Nächstes wählen Sie den genauen Prozessortyp. Es wird auch empfohlen die MCE-Funktion zu aktivieren (wenn verfügbar), so dass Benutzer bei Hardwareproblemen benachrichtigt werden können. Auf einigen Architekturen (wie z.B. X86_64) werden diese Fehler nicht über <code>dmesg</code>, sondern auf <span style="font-family: monospace; font-size: 95%">/dev/mcelog</span> ausgegeben. Dies erfordert das Paket <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-admin/mcelog">app-admin/mcelog</a>. 
+</p><p>Wählen Sie auch <i>Maintain a devtmpfs file system to mount at /dev</i>, so dass kritische Gerätedateien bereits früh im Boot-Prozess verfügbar sind.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>devtmpfs-Unterstützung aktivieren</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Device Drivers ---&gt;
+  Generic Driver Options ---&gt;
+    [*] Maintain a devtmpfs filesystem to mount at /dev
+    [ ]   Automount devtmpfs at /dev, after the kernel mounted the rootfs
+</pre>
+</pre></div></pre>
+<p>Gehen Sie nun zu den Dateisystemen (File Systems) und aktivieren Sie die Dateisysteme die Sie verwenden. Kompilieren Sie das Dateisystem das als Root-Dateisystem verwendet wird nicht als Modul. Andernfalls wird das Gentoo-System nicht in der Lage sein die Partition einzuhängen. Wählen Sie ebenfalls <i>Virtual memory</i> und <i>/proc file system</i>.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>Auswahl notwendiger Dateisysteme</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+File systems ---&gt;
+(Wählen Sie eines oder mehrere der folgenden Optionen, je nachdem wie Sie es für Ihr System benötigen.)
+  &lt;*&gt; Second extended fs support
+  &lt;*&gt; Ext3 journalling file system support
+  &lt;*&gt; The Extended 4 (ext4) filesystem
+  &lt;*&gt; Reiserfs support
+  &lt;*&gt; JFS filesystem support
+  &lt;*&gt; XFS filesystem support
+  ...
+  Pseudo Filesystems ---&gt;
+    [*] /proc file system support
+    [*] Virtual memory file system support (former shm fs)
+</pre>
+</pre></div></pre>
+<p>Wenn PPPoE für die Internetverbindung, oder ein Einwahl-Modem verwendet wird, aktivieren Sie die folgenden Optionen:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>Auswahl der Treiber für PPPoE</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Device Drivers ---&gt;
+  Network device support ---&gt;
+    &lt;*&gt; PPP (point-to-point protocol) support
+    &lt;*&gt;   PPP support for async serial ports
+    &lt;*&gt;   PPP support for sync tty ports
+</pre>
+</pre></div></pre>
+<p>Die beiden Komprimierungsoptionen schaden nicht, aber werden definitiv nicht benötigt. Ebenso wie die <i>PPP over Ethernet</i> Option, die vielleicht nur PPP verwendet, wenn Kernel-Mode PPPoE verwendet wird.
+</p><p>Vergessen Sie nicht die Unterstützung von Netzwerkkarten (Ethernet oder Wireless-LAN) im Kernel.
+</p><p>Die meisten Systeme haben auch mehrere Prozessorkerne zur Verfügung. Daher ist es wichtig <i>Symmetric multi-processing support</i> zu aktivieren:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>SMP-Unterstützung aktivieren</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Processor type and features  ---&gt;
+  [*] Symmetric multi-processing support
+</pre>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />In Mehrkernsystemen zählt jeder Kern als ein Prozessor.</div>
+<p>Wenn Sie USB-Eingabegeräte (wie Tastatur oder Maus) verwenden, vergessen Sie nicht diese ebenfalls zu aktivieren:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>USB-Unterstützung für Eingabegeräte aktivieren</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Device Drivers ---&gt;
+  [*] HID Devices  ---&gt;
+    &lt;*&gt;   USB Human Interface Device (full HID) support
+</pre>
+</pre></div></pre>
+<p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Architekturspezifische_Kernel-Konfiguration">Architekturspezifische Kernel-Konfiguration</span></h3>
+<p>Stellen Sie sicher, dass Sie IA32 Emulation auswählen, wenn 32-Bit Programme unterstützt werden sollen (multilib). Gentoo installiert standardmäßig ein Multilib System (gemischte 32-Bit/64-Bit Berechnung). Deshalb wird diese Option benötigt, zumindest so lange kein <span style="font-family: monospace; font-size: 95%">no-multilib</span> Profil verwendet wird.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>Prozessortyp- und Funktionsauswahl</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Processor type and features  ---&gt;
+   [ ] Machine Check / overheating reporting 
+   [ ]   Intel MCE Features
+   [ ]   AMD MCE Features
+  Processor family (AMD-Opteron/Athlon64)  ---&gt;
+    ( ) Opteron/Athlon64/Hammer/K8
+    ( ) Intel P4 / older Netburst based Xeon
+    ( ) Core 2/newer Xeon
+    ( ) Intel Atom
+    ( ) Generic-x86-64
+Executable file formats / Emulations  ---&gt;
+   [*] IA32 Emulation
+</pre>
+</pre></div></pre>
+<p>Aktivieren Sie den GPT Partitions-Label Support, falls das zuvor beim Partitionieren der Festplatte verwendet wurde:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>GPT Unterstützung aktivieren</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+-*- Enable the block layer ---&gt;
+    ...
+    Partition Types ---&gt;
+    [*] Advanced partition selection
+      ...
+      [*] EFI GUID Partition support
+</pre>
+</pre></div></pre>
+<p>Aktivieren Sie die EFI Stub Unterstützung und EFI Variablen im Linux Kernel, wenn Sie UEFI zum Booten des Systems verwenden.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #4E9A06">KERNEL</span> <strong>UEFI Unterstützung aktivieren</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+Processor type and features  ---&gt;
+    [*] EFI runtime service support 
+    [*]   EFI stub support
+  
+Firmware Drivers  ---&gt;
+    &lt;*&gt; EFI Variable Support via sysfs
+</pre>
+</pre></div></pre>
+<h3><span class="mw-headline" id="Kompilieren_und_installieren">Kompilieren und installieren</span></h3>
+<p>Mit beendeter Konfiguration ist es nun an der Zeit den Kernel zu kompilieren und zu installieren. Schließen Sie die Konfiguration und starten Sie den Kompiliervorgang:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>make &amp;&amp; make modules_install</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />Es ist möglich parallele Builds durch <code>make -jX</code> zu aktivieren. Wobei X die Anzahl der Tasks ist, die der Build-Prozess parallel starten darf. Dies ist ähnlich wie die Anleitung zu <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>, mit der <code>MAKEOPTS</code> Variable.</div>
+<p>Wenn der Kernel fertig kompiliert ist, kopieren Sie das Kernel-Abbild nach <span style="font-family: monospace; font-size: 95%">/boot/</span>. Dies erfolgt durch den Befehl <code>make install</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>make install</code></div></div>
+<p>Dies kopiert das Kernel-Abbild zusammen mit der Datei <span style="font-family: monospace; font-size: 95%">System.map</span> und der Kernel-Konfigurationsdatei nach <span style="font-family: monospace; font-size: 95%">/boot/</span>.
+</p><p>Bei UEFI Systemen erstellen Sie das Verzeichnis <span style="font-family: monospace; font-size: 95%">/boot/efi/boot/</span>, kopieren Sie den Kernel dorthin und benennen Sie diesen <span style="font-family: monospace; font-size: 95%">bootx64.efi</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkdir -p /boot/efi/boot
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cp /boot/vmlinuz /boot/efi/boot/bootx64.efi</code></div></div>
+<p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Optional:_initramfs_bauen">Optional: initramfs bauen</span></h3>
+<p>In bestimmten Fällen ist es notwendig ein initramfs (Ausgangsdateisystem im Arbeitsspeicher) zu bauen. Der häufigste Grund dafür ist wenn wichtige Dateisystemorte (wie <span style="font-family: monospace; font-size: 95%">/usr/</span> oder <span style="font-family: monospace; font-size: 95%">/var/</span>) auf separaten Partitionen liegen. Mit einem initramfs können diese Partition, mit Hilfe der Werkzeuge die im initramfs Verfügbar sind, eingehängt werden.
+</p><p>Ohne initramfs besteht ein großes Risiko, dass das System nicht richtig bootet, da die Werkzeuge die für das Einhängen der Dateisysteme verantwortlich sind Informationen benötigen, die sich auf diesen Dateisystemen befinden. Ein initramfs zieht die notwendigen Dateien in ein Archiv, welches direkt nachdem der Kernel bootet genutzt wird, aber noch bevor die Kontrolle an das init Tool übergeben wird. Skripte auf dem initramfs stellen dann sicher, dass die Partitionen richtig eingehängt sind, bevor das System mit dem Booten fortfährt.
+</p><p>Zur Installation eines initramfs installieren Sie zunächst das Paket <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-kernel/genkernel">sys-kernel/genkernel</a>. Im Anschluss daran lassen Sie dem Tool ein initramfs erzeugen:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge genkernel</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>genkernel --install initramfs</code></div></div>
+<p>Um im initrafs bestimmte Unterstützung zu aktivieren, wie LVM oder RAID, fügen Sie <code>genkernel</code> die entsprechenden Optionen hinzu. Siehe <code>genkernel --help</code> für mehr Informationen. Im nächsten Beispiel aktivieren wir die Unterstützung für LVM und Software-RAID (mdadm):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>genkernel --lvm --mdadm --install initramfs</code></div></div>
+<p>Das initramfs wird in <span style="font-family: monospace; font-size: 95%">/boot/</span> gespeichert. Die resultierende Datei kann einfach durch Auflisten der mit <i>initramfs</i> beginnenden Dateien gefunden werden:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /boot/initramfs*</code></div></div>
+<p>Fahren Sie nun beim Abschnitt <a href="#Kernel-Module">Kernel-Module</a> fort.
+</p>
+<h2><span class="mw-headline" id="Alternative:_genkernel_verwenden">Alternative: genkernel verwenden</span></h2>
+<p>Wenn eine manuelle Konfiguration für Sie zu abschreckend aussieht, empfehlen wir die Nutzung von <code>genkernel</code>. Dies wird den Kernel automatisch konfigurieren und bauen.
+</p><p><code>genkernel</code> konfiguriert den Kernel fast identisch zu der Art, wie ein Installations-CD Kernel konfiguriert wird. Dies bedeutet wenn <code>genkernel</code> verwendet wird, dass das System generell die gesamte Hardware zur Bootzeit erkennt, genau so wie die Installations-CD das macht. Weil <code>genkernel</code> keine manuelle Kernel-Konfiguration benötigt, ist es eine ideale Lösung für jene Benutzer denen unwohl beim Kompilieren ihres eigenen Kernels ist.
+</p><p>Schauen wir uns nun an, wie man genkernel verwendet. Installieren Sie als erstes das Pakel <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-kernel/genkernel">sys-kernel/genkernel</a>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-kernel/genkernel</code></div></div> 
+<p>Bearbeiten Sie dann die Datei <span style="font-family: monospace; font-size: 95%">/etc/fstab</span>, so dass die Zeile die als zweites Feld <span style="font-family: monospace; font-size: 95%">/boot/</span> beinhaltet im ersten Feld auf das richtige Gerät zeigt. Wenn Sie dem Partitionierungs-Beispiel aus diesem Handbuch folgen, ist dieses Gerät wahrscheinlich /dev/sda2 mit dem ext2 Dateisystem. Dies würde den Eintrag in der Datei in etwa wie folgt aussehen lassen:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/fstab</code></div></div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">DATEI</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/fstab</code></strong><strong>Konfiguration des /boot Einhängepunktes</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><pre>
+/dev/sda2	/boot	ext2	defaults	0 2
+</pre>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />Bei der Gentoo Installation wird die Datei <span style="font-family: monospace; font-size: 95%">/etc/fstab</span> später nochmals konfiguriert. Die <span style="font-family: monospace; font-size: 95%">/boot</span> Einstellung wird aber bereits jetzt benötigt, da die Anwendung <code>genkernel</code> aus dieser Konfiguration liest.</div>
+<p>Kompilieren Sie jetzt die Kernel-Quellen indem Sie <code>genkernel all</code> ausführen. Seien Sie sich aber bewusst, dass der Vorgang einige Zeit in Anspruch nehmen wird, da <code>genkernel</code> einen Kernel kompiliert, der fast alle Hardware unterstützt!
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Notiz</strong><br />Wenn die Boot-Partition nicht ext2 oder ext3 als Dateisystem verwendet, <i>könnte</i> es notwendig sein den Kernel manuell mit <code>genkernel --menuconfig all</code> zu konfigurieren. Hierbei müssen Sie dem Kernel (also nicht als Modul) Unterstützung für dieses bestimmte Dateisystem hinzuzufügen. Benutzer von LVM2 werden vermutlich ebenfalls <code>--lvm</code> als Argument hinzufügen wollen.</div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>genkernel all</code></div></div>
+<p>Sobald genkernel beendet ist, wird ein Kernel, ein voller Satz Module und ein <i>initial ram filesystem</i> (initramfs) erstellt werden. Wir verwenden den Kernel und die initrd bei der Konfiguration des Boot-Loader später in dieser Anleitung. Schreiben Sie sich die Namen des Kernels und der initrd auf, da Sie diese Information benötigen, wenn die Boot-Loader Konfigurationsdatei bearbeitet wird. Die initrd wird sofort nach dem Booten gestartet um die automatische Hardware-Erkennung durchzuführen (wie bei der Installations-CD) bevor das "richtige" System startet.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /boot/kernel* /boot/initramfs*</code></div></div>
+<h2><span class="mw-headline" id="Kernel-Module">Kernel-Module</span></h2>
+<h3><span class="mw-headline" id="Konfiguration_der_Module">Konfiguration der Module</span></h3>
+<p>Listen Sie die Module, die automatisch geladen werden sollen, in der Datei <span style="font-family: monospace; font-size: 95%">/etc/conf.d/modules</span> auf. Zusätzliche Optionen können Sie den Modulen ebenfalls hinzufügen, wenn nötig.
+</p><p>Um alle verfügbaren Module anzuzeigen, führen Sie den folgende <code>find</code> Befehl aus. Vergessen Sie nicht "&lt;Kernelversion&gt;" mit der Version des Kernels zu ersetzen, den Sie gerade kompiliert haben:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>find /lib/modules/&lt;Kernelversion&gt;/ -type f -iname '*.o' -or -iname '*.ko' | less</code></div></div>
+<p>Um beispielsweise automatisch das Modul <span style="font-family: monospace; font-size: 95%">3c59x.ko</span> zu laden (das der Treiber für eine bestimmte 3Com Netzwerkkartenfamilie ist), bearbeiten Sie die Datei <span style="font-family: monospace; font-size: 95%">/etc/conf.d/modules</span> und geben den Modulnamen ein.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/conf.d/modules</code></div><pre>
+modules=&quot;3c59x&quot;
+</pre></div>
+<p>Setzten Sie die Installation mit der <a href="../System/de.html" title="Handbook:X86/Installation/System/de">Konfiguration des Systems</a> fort.
+</p>
+<h3><span class="mw-headline" id="Optional:_Firmware_installieren">Optional: Firmware installieren</span></h3>
+<p>Einige Treiber benötigen die Installation von zusätzlicher Firmware auf dem System, bevor sie funktionieren. Dies ist häufig bei Netzwerkkarten, im Besonderen bei WLAN Netzwerkkarten der Fall. Die meiste Firmware befindet sich im Paket <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-kernel/linux-firmware">sys-kernel/linux-firmware</a>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --ask sys-kernel/linux-firmware</code></div></div> 
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Base/de.html" title="Previous part" class="btn btn-default">&#8592; Installation des Basissystems</a> <a href="../../de.html" title="Handbook:X86/de" class="btn btn-default">Anfang</a> <a href="../System/de.html" title="Next part" class="btn btn-default">Configuring the system &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112152247
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.584 seconds
+Real time usage: 0.642 seconds
+Preprocessor visited node count: 2714/1000000
+Preprocessor generated node count: 3342/1000000
+Post‐expand include size: 74549/2097152 bytes
+Template argument size: 9718/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  520.363      1 - Handbook:Parts/Installation/Kernel/de
+100.00%  520.363      1 - -total
+ 32.32%  168.184      1 - Handbook:Parts/TOC/de
+ 29.45%  153.256     17 - Template:RootCmd
+ 22.51%  117.136     17 - Template:GenericCmd
+ 10.95%   56.986      4 - Template:Emerge
+  9.22%   47.984      1 - Handbook:X86/Blocks/Kernel/de
+  8.68%   45.188      1 - Handbook:AMD64/Blocks/Kernel/de
+  7.20%   37.449      9 - Template:PreBox
+  7.02%   36.537      8 - Template:KernelBox
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:88286-0!*!0!!en!*!* and timestamp 20160112152247 and revision id 216878
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;oldid=216878">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Kernel/de&amp;oldid=216878</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 2 January 2015, at 12:42.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Kernel/de"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":831});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Kernel/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:27:30 GMT -->
+</html>

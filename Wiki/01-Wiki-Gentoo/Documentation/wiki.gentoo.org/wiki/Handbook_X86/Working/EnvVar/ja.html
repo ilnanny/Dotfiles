@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/EnvVar/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:36:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>ハンドブック:X86/ワーキング/環境変数 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Working/EnvVar/ja","wgTitle":"X86/Working/EnvVar/ja","wgCurRevisionId":223968,"wgRevisionId":223968,"wgArticleId":91608,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ja","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ja","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:X86/Working/EnvVar/ja","wgRelevantArticleId":91608,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Working/EnvVar/ja" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Working/EnvVar/ja&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Working_EnvVar_ja skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Working/EnvVar/ja.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Working/EnvVar/ja.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;oldid=223968" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FWorking-2FEnvVar-2Fja.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FEnvVar%2Fja&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FWorking%2FEnvVar%2Fja" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ja.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Working/EnvVar/ja&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ja">
+							<span dir="auto">ハンドブック:X86/ワーキング/環境変数</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FWorking%2FEnvVar&amp;action=page&amp;filter=&amp;language=ja">translated version</a></span> of the page <a href="../EnvVar.html" title="Handbook:X86/Working/EnvVar">Handbook:X86/Working/EnvVar</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Arbeiten/Umgebungsvariablen (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../EnvVar.html" title="Handbook:X86/Working/EnvVar (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Manual de Gentoo: X86/Trabajando/EnvVar (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">日本語</span> • ‎<a href="ko.html" title="Handbook:X86/Working/EnvVar/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:X86/Working/EnvVar (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/使用/环境变量 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About.html" title="Handbook:X86/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media.html" title="Handbook:X86/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking.html" title="Handbook:X86/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks.html" title="Handbook:X86/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage.html" title="Handbook:X86/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base.html" title="Handbook:X86/Installation/Base">Installing base system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel.html" title="Handbook:X86/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System.html" title="Handbook:X86/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools.html" title="Handbook:X86/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader.html" title="Handbook:X86/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing.html" title="Handbook:X86/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../Portage.html" title="Handbook:X86/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../USE.html" title="Handbook:X86/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../Features.html" title="Handbook:X86/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../Initscripts.html" title="Handbook:X86/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../EnvVar.html" title="Handbook:X86/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files.html" title="Handbook:X86/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables.html" title="Handbook:X86/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches.html" title="Handbook:X86/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools.html" title="Handbook:X86/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree.html" title="Handbook:X86/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced.html" title="Handbook:X86/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction.html" title="Handbook:X86/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced.html" title="Handbook:X86/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular.html" title="Handbook:X86/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless.html" title="Handbook:X86/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending.html" title="Handbook:X86/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic.html" title="Handbook:X86/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Environment_variables"><span class="tocnumber">1</span> <span class="toctext">Environment variables</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2"><a href="#Important_examples"><span class="tocnumber">1.2</span> <span class="toctext">Important examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Defining_variables_globally"><span class="tocnumber">2</span> <span class="toctext">Defining variables globally</span></a>
+<ul>
+<li class="toclevel-2"><a href="#The_env.d_directory"><span class="tocnumber">2.1</span> <span class="toctext">The env.d directory</span></a></li>
+<li class="toclevel-2"><a href="#env-update"><span class="tocnumber">2.2</span> <span class="toctext">env-update</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Defining_variables_locally"><span class="tocnumber">3</span> <span class="toctext">Defining variables locally</span></a>
+<ul>
+<li class="toclevel-2"><a href="#User_specific"><span class="tocnumber">3.1</span> <span class="toctext">User specific</span></a></li>
+<li class="toclevel-2"><a href="#Session_specific"><span class="tocnumber">3.2</span> <span class="toctext">Session specific</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Environment_variables">Environment variables</span></h2>
+<h3><span class="mw-headline" id="Introduction">Introduction</span></h3>
+<p>An environment variable is a named object that contains information used by one or more applications. Many users (and especially those new to Linux) find this a bit weird or unmanageable. However, this is a mistake: by using environment variables one can easily change a configuration setting for one or more applications.
+</p>
+<h3><span class="mw-headline" id="Important_examples">Important examples</span></h3>
+<p>The following table lists a number of variables used by a Linux system and describes their use. Example values are presented after the table.
+</p>
+<table class="table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th scope="col width=15%"> Variable
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> <var>PATH</var>
+</td>
+<td> This variable contains a colon-separated list of directories in which the system looks for executable files. If a name is entered of an executable (such as <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ls</span>, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rc-update</span>, or <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge</span>) but this executable is not located in a listed directory, then the system will not execute it (unless the full path is entered as the command, such as <span style="font-family: monospace; font-size: 95%">/bin/ls</span>).
+</td></tr>
+<tr>
+<td> <var>ROOTPATH</var>
+</td>
+<td> This variable has the same function as <var>PATH</var>, but this one only lists the directories that should be checked when the root-user enters a command.
+</td></tr>
+<tr>
+<td> <var>LDPATH</var>
+</td>
+<td> This variable contains a colon-separated list of directories in which the dynamical linker searches through to find a library.
+</td></tr>
+<tr>
+<td> <var>MANPATH</var>
+</td>
+<td> This variable contains a colon-separated list of directories in which the man command searches for the man pages.
+</td></tr>
+<tr>
+<td> <var>INFODIR</var>
+</td>
+<td> This variable contains a colon-separated list of directories in which the info command searches for the info pages.
+</td></tr>
+<tr>
+<td> <var>PAGER</var>
+</td>
+<td> This variable contains the path to the program used to list the contents of files through (such as <span style="font-family: monospace; font-size: 95%; font-weight: bold;">less</span> or <span style="font-family: monospace; font-size: 95%; font-weight: bold;">more</span>).
+</td></tr>
+<tr>
+<td> <var>EDITOR</var>
+</td>
+<td> This variable contains the path to the program used to change the contents of files with (such as <span style="font-family: monospace; font-size: 95%; font-weight: bold;">nano</span> or <span style="font-family: monospace; font-size: 95%; font-weight: bold;">vi</span>).
+</td></tr>
+<tr>
+<td> <var>KDEDIRS</var>
+</td>
+<td> This variable contains a colon-separated list of directories which contain KDE-specific material.
+</td></tr>
+<tr>
+<td> <var>CONFIG_PROTECT</var>
+</td>
+<td> This variable contains a space-delimited list of directories which should be protected by Portage during updates.
+</td></tr>
+<tr>
+<td> <var>CONFIG_PROTECT_MASK</var>
+</td>
+<td> This variable contains a space-delimited list of directories which should not be protected by Portage during updates.
+</td></tr></table>
+<p>Below is an example definition of all these variables:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Example settings for the mentioned variables</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/bin:/usr/bin:/usr/local/bin:/opt/bin:/usr/games/bin&quot;</span>
+<span class="nv">ROOTPATH</span><span class="o">=</span><span class="s2">&quot;/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin&quot;</span>
+<span class="nv">LDPATH</span><span class="o">=</span><span class="s2">&quot;/lib:/usr/lib:/usr/local/lib:/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3&quot;</span>
+<span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/man:/usr/local/share/man&quot;</span>
+<span class="nv">INFODIR</span><span class="o">=</span><span class="s2">&quot;/usr/share/info:/usr/local/share/info&quot;</span>
+<span class="nv">PAGER</span><span class="o">=</span><span class="s2">&quot;/usr/bin/less&quot;</span>
+<span class="nv">EDITOR</span><span class="o">=</span><span class="s2">&quot;/usr/bin/vim&quot;</span>
+<span class="nv">KDEDIRS</span><span class="o">=</span><span class="s2">&quot;/usr&quot;</span>
+<span class="nv">CONFIG_PROTECT</span><span class="o">=</span><span class="s2">&quot;/usr/X11R6/lib/X11/xkb /opt/tomcat/conf \</span>
+<span class="s2">                /usr/kde/3.1/share/config /usr/share/texmf/tex/generic/config/ \</span>
+<span class="s2">                /usr/share/texmf/tex/platex/config/ /usr/share/config&quot;</span>
+<span class="nv">CONFIG_PROTECT_MASK</span><span class="o">=</span><span class="s2">&quot;/etc/gconf&quot;</span>
+</pre></div></pre></div>
+<h2><span class="mw-headline" id="Defining_variables_globally">Defining variables globally</span></h2>
+<h3><span class="mw-headline" id="The_env.d_directory">The env.d directory</span></h3>
+<p>To centralize the definitions of these variables, Gentoo introduced the <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span> directory. Inside this directory a number of files are available, such as <span style="font-family: monospace; font-size: 95%">00basic</span>, <span style="font-family: monospace; font-size: 95%">05gcc</span>, etc. which contain the variables needed by the application mentioned in their name.
+</p><p>For instance, when <span style="font-family: monospace; font-size: 95%; font-weight: bold;">gcc</span> is installed, a file called <span style="font-family: monospace; font-size: 95%">05gcc</span> was created by the ebuild which contains the definitions of the following variables:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/05gcc</code></strong><strong>Default gcc enabled environment variables</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/i686-pc-linux-gnu/gcc-bin/3.2&quot;</span>
+<span class="nv">ROOTPATH</span><span class="o">=</span><span class="s2">&quot;/usr/i686-pc-linux-gnu/gcc-bin/3.2&quot;</span>
+<span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/gcc-data/i686-pc-linux-gnu/3.2/man&quot;</span>
+<span class="nv">INFOPATH</span><span class="o">=</span><span class="s2">&quot;/usr/share/gcc-data/i686-pc-linux-gnu/3.2/info&quot;</span>
+<span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;gcc&quot;</span>
+<span class="nv">CXX</span><span class="o">=</span><span class="s2">&quot;g++&quot;</span>
+<span class="nv">LDPATH</span><span class="o">=</span><span class="s2">&quot;/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3&quot;</span>
+</pre></div></pre>
+<p>Other distributions might tell their users to change or add such environment variable definitions in <span style="font-family: monospace; font-size: 95%">/etc/profile</span> or other locations. Gentoo on the other hand makes it easy for the user (and for Portage) to maintain and manage the environment variables without having to pay attention to the numerous files that can contain environment variables.
+</p><p>For instance, when <span style="font-family: monospace; font-size: 95%; font-weight: bold;">gcc</span> is updated, the <span style="font-family: monospace; font-size: 95%">/etc/env.d/05gcc</span> file is updated too without requesting any user-interaction.
+</p><p>This not only benefits Portage, but also the user. Occasionally users might be asked to set a certain environment variable system-wide. As an example we take the <var>http_proxy</var> variable. Instead of messing about with <span style="font-family: monospace; font-size: 95%">/etc/profile</span>, users can now just create a file (say <span style="font-family: monospace; font-size: 95%">/etc/env.d/99local</span>) and enter the definition(s) in it:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/99local</code></strong><strong>Setting a global variable</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">http_proxy</span><span class="o">=</span><span class="s2">&quot;proxy.server.com:8080&quot;</span>
+</pre></div></pre>
+<p>By using the same file for all self-managed variables, users have a quick overview on the variables they have defined themselves.
+</p>
+<h3><span class="mw-headline" id="env-update">env-update</span></h3>
+<p>Several files in <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span> define the PATH variable. This is not a mistake: when <span style="font-family: monospace; font-size: 95%; font-weight: bold;">env-update</span> is executed, it will append the several definitions before it updates the environment variables, thereby making it easy for packages (or users) to add their own environment variable settings without interfering with the already existing values.
+</p><p>The <span style="font-family: monospace; font-size: 95%; font-weight: bold;">env-update</span> script will append the values in the alphabetical order of the <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span> files. The file names must begin with two decimal digits.
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Update order used by env-update</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>00basic        99kde-env       99local
+     +-------------+----------------+-------------+
+PATH=&quot;/bin:/usr/bin:/usr/kde/3.2/bin:/usr/local/bin&quot;
+</pre></div></pre></div>
+<p>The concatenation of variables does not always happen, only with the following variables: <var>ADA_INCLUDE_PATH</var>, <var>ADA_OBJECTS_PATH</var>, <var>CLASSPATH</var>, <var>KDEDIRS</var>, <var>PATH</var>, <var>LDPATH</var>, <var>MANPATH</var>, <var>INFODIR</var>, <var>INFOPATH</var>, <var>ROOTPATH</var>, <var>CONFIG_PROTECT</var>, <var>CONFIG_PROTECT_MASK</var>, <var>PRELINK_PATH</var>, <var>PRELINK_PATH_MASK</var>, <var>PKG_CONFIG_PATH</var>, and <var>PYTHONPATH</var>. For all other variables the latest defined value (in alphabetical order of the files in <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span>) is used.
+</p><p>It is possible to add more variables into this list of concatenate-variables by adding the variable name to either <var>COLON_SEPARATED</var> or <var>SPACE_SEPARATED</var> variables (also inside an <span style="font-family: monospace; font-size: 95%">/etc/env.d/</span> file).
+</p><p>When executing <span style="font-family: monospace; font-size: 95%; font-weight: bold;">env-update</span>, the script will create all environment variables and place them in <span style="font-family: monospace; font-size: 95%">/etc/profile.env</span> (which is used by <span style="font-family: monospace; font-size: 95%">/etc/profile</span>). It will also extract the information from the <var>LDPATH</var> variable and use that to create <span style="font-family: monospace; font-size: 95%">/etc/ld.so.conf</span>. After this, it will run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">ldconfig</span> to recreate the <span style="font-family: monospace; font-size: 95%">/etc/ld.so.cache</span> file used by the dynamical linker.
+</p><p>To notice the effect of <span style="font-family: monospace; font-size: 95%; font-weight: bold;">env-update</span> immediately after running it, execute the following command to update the environment. Users who have installed Gentoo themselves will probably remember this from the installation instructions:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>env-update &amp;&amp; source /etc/profile</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The above command only updates the variables in the current terminal, new consoles, and their children. Thus, if the user is working in X11, he needs to either type <span style="font-family: monospace; font-size: 95%; font-weight: bold;">source /etc/profile</span> in every new terminal opened or restart X so that all new terminals source the new variables. If a login manager is used, it is necessary to become root and restart the <span style="font-family: monospace; font-size: 95%">/etc/init.d/xdm</span> service. </div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Important</strong><br />It is not possible to use shell variables when defining other variables. This means things like <code>FOO="$BAR"</code> (where <var>$BAR</var> is another variable) are forbidden.</div>
+<h2><span class="mw-headline" id="Defining_variables_locally">Defining variables locally</span></h2>
+<h3><span class="mw-headline" id="User_specific">User specific</span></h3>
+<p>It might not be necessary to define an environment variable globally. For instance, one might want to add <span style="font-family: monospace; font-size: 95%">/home/my_user/bin</span> and the current working directory (the directory the user is in) to the <var>PATH</var> variable but do not want all other users on the system to have that in their <var>PATH</var> too. To define an environment variable locally, use <span style="font-family: monospace; font-size: 95%">~/.bashrc</span> or <span style="font-family: monospace; font-size: 95%">~/.bash_profile</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">~/.bashrc</code></strong><strong>Extending PATH for local usage</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># A colon followed by no directory is treated as the current working directory</span>
+<span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">:/home/my_user/bin:&quot;</span>
+</pre></div></pre>
+<p>After logout/login, the <var>PATH</var> variable will be updated.
+</p>
+<h3><span class="mw-headline" id="Session_specific">Session specific</span></h3>
+<p>Sometimes even stricter definitions are requested. For instance, a user might want to be able to use binaries from a temporary directory created without using the path to the binaries themselves or editing <span style="font-family: monospace; font-size: 95%">~/.bashrc</span> for the short time necessary.
+</p><p>In this case, just define the <var>PATH</var> variable in the current session by using the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">export</span> command. As long as the user does not log out, the <var>PATH</var> variable will be using the temporary settings.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export PATH="${PATH}:/home/my_user/tmp/usr/bin"</code></div></div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Initscripts.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="../../Portage/Files.html" title="Next part" class="btn btn-default"> &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153317
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.360 seconds
+Real time usage: 0.401 seconds
+Preprocessor visited node count: 771/1000000
+Preprocessor generated node count: 2730/1000000
+Post‐expand include size: 31733/2097152 bytes
+Template argument size: 5635/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  306.535      1 - Handbook:Parts/Working/EnvVar
+100.00%  306.535      1 - -total
+ 53.17%  162.985      1 - Handbook:Parts/TOC
+  8.00%   24.530      2 - Template:RootCmd
+  7.76%   23.778      1 - Handbook:Parts/Navigator
+  6.67%   20.437      5 - Template:PreBox
+  5.84%   17.888      2 - Template:GenericCmd
+  4.93%   15.122      3 - Template:FileBox
+  4.67%   14.317      2 - Template:CodeBox
+  3.32%   10.168      1 - Template:Important
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:91608-0!*!0!!en!*!* and timestamp 20160112153316 and revision id 223968
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;oldid=223968">http://wiki.gentoo.org/index.php?title=Handbook:X86/Working/EnvVar/ja&amp;oldid=223968</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 3 January 2015, at 14:45.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Working/EnvVar/ja"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":604});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Working/EnvVar/ja by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:37:00 GMT -->
+</html>

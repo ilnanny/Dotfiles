@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Portage/Files/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:32:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Manual de Gentoo: X86/Portage/Archivos - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Portage/Files/es","wgTitle":"X86/Portage/Files/es","wgCurRevisionId":234602,"wgRevisionId":234602,"wgArticleId":74268,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Handbook:X86/Portage/Files/es","wgRelevantArticleId":74268,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":
+!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Portage/Files/es" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Portage/Files/es&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Portage_Files_es skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Portage/Files/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Portage/Files/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;oldid=234602" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FPortage-2FFiles-2Fes.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FPortage%2FFiles%2Fes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FPortage%2FFiles%2Fes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="es.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Portage/Files/es&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="es">
+							<span dir="auto">Manual de Gentoo: X86/Portage/Archivos</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FPortage%2FFiles&amp;action=page&amp;filter=&amp;language=es">translated version</a></span> of the page <a href="../Files.html" title="Handbook:X86/Portage/Files">Handbook:X86/Portage/Files</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:X86/Portage/Dateien (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Files.html" title="Handbook:X86/Portage/Files (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">español</span> • ‎<a href="ja.html" title="ハンドブック:X86/Portage/ファイル (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:X86/Portage/Files/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:X86/Portage/Files (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：X86/使用Portage/文件和目录 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Instalación
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/es.html" title="Handbook:X86/Installation/About/es">Acerca de la instalación</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/es.html" title="Handbook:X86/Installation/Media/es">Elegir los medios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/es.html" title="Handbook:X86/Installation/Networking/es">Configurar la red</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/es.html" title="Handbook:X86/Installation/Disks/es">Preparar los discos</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/es.html" title="Handbook:X86/Installation/Stage/es">Instalar el stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/es.html" title="Handbook:X86/Installation/Base/es">Instalar el sistema base</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/es.html" title="Handbook:X86/Installation/Kernel/es">Configurar el núcleo</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/es.html" title="Handbook:X86/Installation/System/es">Configurar el sistema</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/es.html" title="Handbook:X86/Installation/Tools/es">Instalar herramientas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/es.html" title="Handbook:X86/Installation/Bootloader/es">Configurar el cargador de arranque</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/es.html" title="Handbook:X86/Installation/Finalizing/es">Terminar</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/es.html" title="Handbook:X86/Working/Portage/es">Introducción a Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/es.html" title="Handbook:X86/Working/USE/es">Ajustes USE</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/es.html" title="Handbook:X86/Working/Features/es">Características de Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/es.html" title="Handbook:X86/Working/Initscripts/es">Guiones de inicio</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/es.html" title="Handbook:X86/Working/EnvVar/es">Variables de entorno</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Portage
+</th></tr>
+<tr>
+<td> <strong class="selflink">Archivos y directorios</strong>
+</td></tr>
+<tr>
+<td> <a href="../Variables/es.html" title="Handbook:X86/Portage/Variables/es">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../Branches/es.html" title="Handbook:X86/Portage/Branches/es">Mezclar ramas de software</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/es.html" title="Handbook:X86/Portage/Tools/es">Herramientas adicionales</a>
+</td></tr>
+<tr>
+<td> <a href="../CustomTree/es.html" title="Handbook:X86/Portage/CustomTree/es">Árbol de Portage personalizado</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/es.html" title="Handbook:X86/Portage/Advanced/es">Características avanzadas</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Configuración de la red
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/es.html" title="Handbook:X86/Networking/Introduction/es">Comenzando</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/es.html" title="Handbook:X86/Networking/Advanced/es">Configuración avanzada</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/es.html" title="Handbook:X86/Networking/Modular/es">Configuración de red modular</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/es.html" title="Handbook:X86/Networking/Wireless/es">Redes inalámbricas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/es.html" title="Handbook:X86/Networking/Extending/es">Añadir funcionalidad</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/es.html" title="Handbook:X86/Networking/Dynamic/es">Gestión dinámica</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Archivos_de_Portage"><span class="tocnumber">1</span> <span class="toctext">Archivos de Portage</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Directivas_de_configuraci.C3.B3n"><span class="tocnumber">1.1</span> <span class="toctext">Directivas de configuración</span></a></li>
+<li class="toclevel-2"><a href="#Informaci.C3.B3n_espec.C3.ADfica_del_perfil"><span class="tocnumber">1.2</span> <span class="toctext">Información específica del perfil</span></a></li>
+<li class="toclevel-2"><a href="#Configuraci.C3.B3n_espec.C3.ADfica_de_usuario"><span class="tocnumber">1.3</span> <span class="toctext">Configuración específica de usuario</span></a></li>
+<li class="toclevel-2"><a href="#Cambiar_la_ubicaci.C3.B3n_de_archivos_y_directorios_de_Portage"><span class="tocnumber">1.4</span> <span class="toctext">Cambiar la ubicación de archivos y directorios de Portage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#El_almac.C3.A9n_de_archivos"><span class="tocnumber">2</span> <span class="toctext">El almacén de archivos</span></a>
+<ul>
+<li class="toclevel-2"><a href="#El_.C3.A1rbol_Portage"><span class="tocnumber">2.1</span> <span class="toctext">El árbol Portage</span></a></li>
+<li class="toclevel-2"><a href="#Binarios_pre-compilados"><span class="tocnumber">2.2</span> <span class="toctext">Binarios pre-compilados</span></a></li>
+<li class="toclevel-2"><a href="#C.C3.B3digo_Fuente"><span class="tocnumber">2.3</span> <span class="toctext">Código Fuente</span></a></li>
+<li class="toclevel-2"><a href="#Base_de_datos_de_Portage"><span class="tocnumber">2.4</span> <span class="toctext">Base de datos de Portage</span></a></li>
+<li class="toclevel-2"><a href="#Cach.C3.A9_de_Portage"><span class="tocnumber">2.5</span> <span class="toctext">Caché de Portage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Construcci.C3.B3n_de_aplicaciones"><span class="tocnumber">3</span> <span class="toctext">Construcción de aplicaciones</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Archivos_temporales_de_Portage"><span class="tocnumber">3.1</span> <span class="toctext">Archivos temporales de Portage</span></a></li>
+<li class="toclevel-2"><a href="#Directorio_de_construcci.C3.B3n"><span class="tocnumber">3.2</span> <span class="toctext">Directorio de construcción</span></a></li>
+<li class="toclevel-2"><a href="#Instalaci.C3.B3n_en_el_sistema_de_archivos"><span class="tocnumber">3.3</span> <span class="toctext">Instalación en el sistema de archivos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Caracter.C3.ADsticas_de_registro_de_acciones_.28log.29"><span class="tocnumber">4</span> <span class="toctext">Características de registro de acciones (log)</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Registro_de_acciones_de_los_ebuilds"><span class="tocnumber">4.1</span> <span class="toctext">Registro de acciones de los ebuilds</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Archivos_de_Portage">Archivos de Portage</span></h2>
+<h3><span class="mw-headline" id="Directivas_de_configuraci.C3.B3n">Directivas de configuración</span></h3>
+<p>Portage viene con una configuración predefinida guardada en <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span>. Toda la configuración de Portage se realiza a través de variables. A qué variables atiende Portage y que significan se describe un poco después.
+</p><p>Como muchas directivas de configuración varían de unas arquitecturas a otras, Portage también posee algunos archivos de configuración que son parte de perfil. Su perfil está apuntado por el enlace simbólico <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span>; las configuraciones de Portage se realizan en los archivos <span style="font-family: monospace; font-size: 95%">make.defaults</span> de su perfil y de todos los perfiles padres. Explicaremos algo más sobre perfiles y el directorio <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> más adelante.
+</p><p>Si está pensando en cambiar una variable de configuración, no modifique <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span> o <span style="font-family: monospace; font-size: 95%">make.defaults</span>. En lugar de eso utilice <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> el cual tiene preferencia sobre los archivos anteriores. También encontrará <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.conf.example</span>. Como su propio nombre indica, este archivo es meramente un ejemplo y Portage no lo utilizará con ningún propósito.
+</p><p>También puede definir una variable de configuración para Portage como una variable de entorno, pero no es recomendable.
+</p>
+<h3><span class="mw-headline" id="Informaci.C3.B3n_espec.C3.ADfica_del_perfil">Información específica del perfil</span></h3>
+<p>Ya hemos hablado del directorio <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span>. Bien, no es exactamente un directorio sino un enlace simbólico a un perfil, por defecto uno perteneciente a <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/</span> aunque también puede crear un perfil en cualquier otro lado y apuntarlo. El perfil al cual apunta el enlace simbólico será el que tenga en cuenta su sistema.
+</p><p>Un perfil contiene información específica para Portage sobre cada arquitectura, tal como una lista de paquetes que pertenecen al sistema correspondiente con ese perfil, una lista de paquetes que no funcionan (o están enmascarados) para ese perfil, etc.
+</p>
+<h3><span class="mw-headline" id="Configuraci.C3.B3n_espec.C3.ADfica_de_usuario">Configuración específica de usuario</span></h3>
+<p>Cuando necesite sobreescribir una característica de Portage relativa a la instalación de software, necesitará editar los archivos contenidos en <span style="font-family: monospace; font-size: 95%">/etc/portage/</span>. ¡Se recomienda encarecidamente que utilice los archivos pertenecientes a <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> y está desaconsejada la sobreescritura de estas características con variables de entorno!
+</p><p>Dentro de <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> puede crear los siguientes archivos:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">package.mask</span> el cual especifica los paquetes que no quiere que Portage instale en su sistema nunca</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.unmask</span> especifica los paquetes que quiere que Portage instale a pesar de haber sido desaconsejados por los desarrolladores de Gentoo</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.accept_keywords</span> especifica los paquetes que quiere que Portage instale a pesar de no haber sido considerados adecuados para su sistema o arquitectura (todavía)</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.use</span> especifica la lista de ajustes USE que quiere utilizar para unos determinados paquetes sin tener que utilizarlos para todo el sistema</li></ul>
+<p>Pero no tienen porque ser archivos; también pueden ser directorios que contengan un archivo por paquete. Podemos obtener más información acerca del directorio <span style="font-family: monospace; font-size: 95%">/etc/portage/</span> y una lista completa de archivos que pueden crearse allí en la página man de Portage:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage</code></div></div>
+<h3><span class="mw-headline" id="Cambiar_la_ubicaci.C3.B3n_de_archivos_y_directorios_de_Portage">Cambiar la ubicación de archivos y directorios de Portage</span></h3>
+<p>Los archivos de configuración mencionados anteriormente no pueden ser guardados en ningún otro sitio, Portage siempre los buscará exactamente en esos lugares. Sin embargo, Portage utiliza otras muchos lugares para varios propósitos: el directorio de compilación, el lugar donde guardar el código fuente, la localización del árbol de Portage, ...
+</p><p>Todos estos propósitos tienen unas direcciones predeterminadas muy claras pero puede cambiarlas por las que más le gusten indicándolo en <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>. El resto de este capítulo explica los lugares destinados a un propósito especial que utiliza Portage y como puede ser modificada su ubicación en el sistema de archivos.
+</p><p>Este documento no pretende ser utilizado como referencia. Si necesita un conocimiento completo, por favor consulte las páginas man relativas a Portage y make.conf:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf</code></div></div>
+<h2><span class="mw-headline" id="El_almac.C3.A9n_de_archivos">El almacén de archivos</span></h2>
+<h3><span class="mw-headline" id="El_.C3.A1rbol_Portage">El árbol Portage</span></h3>
+<p>La ubicación predeterminada del árbol de Portage es <span style="font-family: monospace; font-size: 95%">/usr/portage</span>. Esta definida por la variable <var>PORTDIR</var>. Cuando guarde el árbol de Portage en cualquier otro lugar (modificando esta variable), no olvide cambiar el enlace simbólico <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> de acuerdo con su cambio.
+</p><p>Si modifica la variable  <var>PORTDIR</var>, seguramente quiera cambiar las siguientes variables ya que no tienen constancia del cambio de  <var>PORTDIR</var>. Esto es debido a cómo Portage maneja las variables: <var>PKGDIR</var>,  <var>DISTDIR</var>,  <var>RPMDIR</var>.
+</p>
+<h3><span class="mw-headline" id="Binarios_pre-compilados">Binarios pre-compilados</span></h3>
+<p>Aunque Portage no utilice binarios pre-compilados por defecto, tiene un buen soporte para ellos. Cuando a Portage se le indica que trabaje con paquetes pre-compilados, los buscará en <span style="font-family: monospace; font-size: 95%">/usr/portage/packages</span>. Esta ubicación está definida por la variable <var>PKGDIR</var>.
+</p>
+<h3><span class="mw-headline" id="C.C3.B3digo_Fuente">Código Fuente</span></h3>
+<p>El código fuente de las aplicaciones se guarda por defecto en <span style="font-family: monospace; font-size: 95%">/usr/portage/distfiles</span>. Esta ubicación viene definida por la variable <var>DISTDIR</var>.
+</p>
+<h3><span class="mw-headline" id="Base_de_datos_de_Portage">Base de datos de Portage</span></h3>
+<p>Portage guarda el estado del sistema (que paquetes están instalados, qué archivos pertenecen a cada paquete, ...) en <span style="font-family: monospace; font-size: 95%">/var/db/pkg</span>.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Advertencia</strong><br />¡No se deben modificar estos archivos manualmente! Podría romper el conocimiento que tiene Portage sobre el sistema.</div>
+<h3><span class="mw-headline" id="Cach.C3.A9_de_Portage">Caché de Portage</span></h3>
+<p>La caché de Portage (con fechas de modificacion, paquetes virtuales, información del árbol de dependencias, ...) se guarda en <span style="font-family: monospace; font-size: 95%">/var/cache/edb</span>. Esta ubicación es una caché real: se puede borrar si no se está ejecutando ninguna aplicación que tenga relación con Portage en este momento.
+</p>
+<h2><span class="mw-headline" id="Construcci.C3.B3n_de_aplicaciones">Construcción de aplicaciones</span></h2>
+<h3><span class="mw-headline" id="Archivos_temporales_de_Portage">Archivos temporales de Portage</span></h3>
+<p>Los archivos temporales de portage se guardan por defecto en <span style="font-family: monospace; font-size: 95%">/var/tmp/</span>. Esta ubicación se define en la variable <var>PORTAGE_TMPDIR</var>.
+</p><p>Si modifica la variable <var>PORTAGE_TMPDIR</var>, necesitará cambiar las siguientes variables ya que no tendrán constancia del cambio. Esto es debido a cómo Portage maneja la variable: <var>BUILD_PREFIX</var>.
+</p>
+<h3><span class="mw-headline" id="Directorio_de_construcci.C3.B3n">Directorio de construcción</span></h3>
+<p>Portage crea directorios de compilación específicos dentro de <span style="font-family: monospace; font-size: 95%">/var/tmp/portage/</span> para cada paquete que emerge . Esta ubicación viene definida por la variable <var>BUILD_PREFIX</var>.
+</p>
+<h3><span class="mw-headline" id="Instalaci.C3.B3n_en_el_sistema_de_archivos">Instalación en el sistema de archivos</span></h3>
+<p>Por defecto, Portage instala todas los archivos en el sistema de ficheros activo (<span style="font-family: monospace; font-size: 95%">/</span>), pero puede cambiarse esta configuración a través de la variable de entorno <var>ROOT</var>. Esto es útil cuando quiera crear nuevas imágenes compiladas.
+</p>
+<h2><span class="mw-headline" id="Caracter.C3.ADsticas_de_registro_de_acciones_.28log.29">Características de registro de acciones (log)</span></h2>
+<h3><span class="mw-headline" id="Registro_de_acciones_de_los_ebuilds">Registro de acciones de los ebuilds</span></h3>
+<p>Portage puede crear un registro por ebuild, pero solamente cuando la variable  <var>PORT_LOGDIR</var> esté configurada y apuntando a una dirección con permisos de escritura para Portage (usuario Portage). De manera predeterminada está variable está desactivada. Si no configura <var>PORT_LOGDIR</var> no recibirá los registros con el sistema de registro actual, aunque tal vez reciba algún registro del nuevo sistema <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span>.
+</p><p>Si no tiene definido <var>PORT_LOGDIR</var> y usa <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span>, recibirá los registros de construcción de paquetes y cualquier otro registro guardado por elog, como se explica a continuación.
+</p><p>Portage ofrece un control muy ajustable sobre el registro de sistema mediante el uso de elog:
+</p>
+<ul><li> <var>PORTAGE_ELOG_CLASSES</var>: Es donde se define cqué tipo de mensajes serán registrados. Puede utilizarse cualquier cualquier combinación separada por espacios en blanco de info, warn, error, log y qa.
+<ul><li> info: Registra los mensajes "einfo" generados por un ebuild</li>
+<li> warn: Registra los mensajes "ewarn" generados por un ebuild</li>
+<li> error: Registra los mensajes "eerror" generados por un ebuild</li>
+<li> log: Registra los mensajes "elog" que se pueden encontrar en algunos ebuilds</li>
+<li> qa:: Registra los mensajes del tipo "QA Notice" generados por un ebuild</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_SYSTEM</var>: Selecciona el módulo o módulos para procesar los mensajes de registro. Si se deja sin definir, se desactiva la función de registro. Puede usar cualquier combinación separada por espacios en blanco de save, custom, syslog, mail, save_summary y mail_summary. Debe seleccionar al menos un módulo para poder usar elog.
+<ul><li> save: Almacena un registro por paquete en <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog</span>, o <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog</span> si $PORT_LOGDIR no está definida.</li>
+<li> custom: Pasa todos los mensajes a una orden definida por el usuario en $PORTAGE_ELOG_COMMAND; se detalla más adelante.</li>
+<li> syslog: Envía todos los mensajes al gestor de registro de sistema instalado.</li>
+<li> mail: Pasa todos los mensaje a un servidor de correo definido por el usuario en $PORTAGE_ELOG_MAILURI; se detalla más adelante. Las características de correo de elog requieren un portage &gt;=portage-2.1.1.</li>
+<li> save_summary: parecido a save, pero fusionando todos los mensajes en <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog/summary.log</span>, o <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog/summary.log</span> si $PORT_LOGDIR fue definida.</li>
+<li> mail_summary: parecido a mail, pero envía todos los mensajes en un solo mensaje de correo cuando emerge finaliza.</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_COMMAND</var>: Esto solamente se usa al activarse el módulo custom. Aquí podemos especificar una orden con la cual se procesarán los mensajes de registro. Observe que puede hacer uso de dos variables de entorno: ${PACKAGE} es el nombre del paquete y la versión, mientras que ${LOGFILE} es la ruta absoluta del archivo de registro. A continuación se muestra un posible uso:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CÓDIGO</span> <strong>Ejemplo de definición de PORTAGE_ELOG_COMMAND</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_COMMAND</span><span class="o">=</span><span class="s2">&quot;/ruta/al/ejecutable/registrador -p &#39;\${PACKAGE}&#39; -f &#39;\${LOGFILE}&#39;&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILURI</var>: Contiene la configuración del módulo mail, tal como dirección, usuario, contraseña, servidor de correo y número de puerto. Por defecto está configurado a "root@localhost localhost". Aquí presentamos un ejemplo para un servidor SMTP que requiere autenticación con nombre de usuario y contraseña en un puerto en particular (el puerto por defecto es el 25):</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CÓDIGO</span> <strong>Ejemplo de definición de PORTAGE_ELOG_MAILURI</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILURI</span><span class="o">=</span><span class="s2">&quot;usuario@algun.dominio</span>
+<span class="s2">usuario:password@smtp.algun.dominio:995&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILFROM</var>: Permite configurar la dirección "from" de los correos de registro; su valor por defecto es "Portage".</li></ul>
+<ul><li> <var>PORTAGE_ELOG_MAILSUBJECT</var>: Permite la creación de una línea de asunto para los correos de registro. Note que puede hacer uso de dos variables de entorno: ${PACKAGE} mostrará el nombre y la versión del paquete, mientras que ${HOST} es el nombre del dominio completo del anfitrión donde está corriendo Portage. Aquí está un posible uso:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CÓDIGO</span> <strong>Ejemplo de definición de PORTAGE_ELOG_MAILSUBJECT</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILSUBJECT</span><span class="o">=</span><span class="s2">&quot;El paquete \${PACKAGE} fue instalado en \${HOST} con algunos mensajes&quot;</span>
+</pre></div></pre></div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />Si ha usado enotice con Portage-2.0.*, elimine enotice, ya que es incompatible con elog.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/EnvVar/es.html" title="Previous part" class="btn btn-default">&#8592; Variables de entorno</a> <a href="../../es.html" title="Handbook:X86/es" class="btn btn-default">Home</a> <a href="../Variables/es.html" title="Next part" class="btn btn-default">Variables &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112152833
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.328 seconds
+Real time usage: 0.366 seconds
+Preprocessor visited node count: 697/1000000
+Preprocessor generated node count: 2491/1000000
+Post‐expand include size: 32429/2097152 bytes
+Template argument size: 2455/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  275.996      1 - -total
+100.00%  275.996      1 - Handbook:Parts/Portage/Files/es
+ 55.65%  153.605      1 - Handbook:Parts/TOC/es
+  8.52%   23.513      2 - Template:Cmd
+  8.06%   22.246      1 - Handbook:Parts/Navigator
+  6.42%   17.720      2 - Template:GenericCmd
+  6.37%   17.574      3 - Template:CodeBox
+  4.53%   12.499      3 - Template:PreBox
+  3.85%   10.626     32 - Template:Path
+  2.91%    8.018      1 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:74268-0!*!0!!en!*!* and timestamp 20160112152833 and revision id 234602
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;oldid=234602">http://wiki.gentoo.org/index.php?title=Handbook:X86/Portage/Files/es&amp;oldid=234602</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 5 January 2015, at 03:16.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Portage/Files/es"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":553});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Portage/Files/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:32:31 GMT -->
+</html>

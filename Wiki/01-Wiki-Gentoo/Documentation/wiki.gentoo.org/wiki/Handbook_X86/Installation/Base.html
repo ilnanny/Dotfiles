@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Base by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Installation/Base - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Installation/Base","wgTitle":"X86/Installation/Base","wgCurRevisionId":182074,"wgRevisionId":182074,"wgArticleId":67464,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Handbook:X86/Installation/Base","wgRelevantArticleId":67464,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["it-it","it","en-us","en"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"source"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.smw.style","ext.translate","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Installation/Base" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Installation/Base&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Installation_Base skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../Special_WhatLinksHere/Handbook_X86/Installation/Base.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../Special_RecentChangesLinked/Handbook_X86/Installation/Base.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;oldid=182074" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../Special_Browse/Handbook_X86-2FInstallation-2FBase.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBase&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FInstallation%2FBase" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="Base.html">Handbook</a></li><li id="ca-talk"><a href="../../Handbook_Talk_X86/Installation/Base.html" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="en">
+							<span dir="auto">Handbook:X86/Installation/Base</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="Base/de.html" title="Handbuch:X86/Installation/Basis (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<span class="mw-pt-languages-ui mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">English</span> • ‎<a href="Base/es.html" title="Manual de Gentoo: X86/Instalación/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="Base/ja.html" title="ハンドブック:X86/インストール/ベース (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="Base/ko.html" title="Handbook:X86/Installation/Base/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="Base/pt-br.html" title="Manual:X86/Instalação/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="Base/ru.html" title="Handbook:X86/Installation/Base (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="Base/zh-cn.html" title="手册：X86/安装/安装基本系统 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="About.html" title="Handbook:X86/Installation/About">About the installation</a>
+</td></tr>
+<tr>
+<td> <a href="Media.html" title="Handbook:X86/Installation/Media">Choosing the media</a>
+</td></tr>
+<tr>
+<td> <a href="Networking.html" title="Handbook:X86/Installation/Networking">Configuring the network</a>
+</td></tr>
+<tr>
+<td> <a href="Disks.html" title="Handbook:X86/Installation/Disks">Preparing the disks</a>
+</td></tr>
+<tr>
+<td> <a href="Stage.html" title="Handbook:X86/Installation/Stage">Installing stage3</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Installing base system</strong>
+</td></tr>
+<tr>
+<td> <a href="Kernel.html" title="Handbook:X86/Installation/Kernel">Configuring the kernel</a>
+</td></tr>
+<tr>
+<td> <a href="System.html" title="Handbook:X86/Installation/System">Configuring the system</a>
+</td></tr>
+<tr>
+<td> <a href="Tools.html" title="Handbook:X86/Installation/Tools">Installing tools</a>
+</td></tr>
+<tr>
+<td> <a href="Bootloader.html" title="Handbook:X86/Installation/Bootloader">Configuring the bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="Finalizing.html" title="Handbook:X86/Installation/Finalizing">Finalizing</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Gentoo
+</th></tr>
+<tr>
+<td> <a href="../Working/Portage.html" title="Handbook:X86/Working/Portage">Portage introduction</a>
+</td></tr>
+<tr>
+<td> <a href="../Working/USE.html" title="Handbook:X86/Working/USE">USE flags</a>
+</td></tr>
+<tr>
+<td> <a href="../Working/Features.html" title="Handbook:X86/Working/Features">Portage features</a>
+</td></tr>
+<tr>
+<td> <a href="../Working/Initscripts.html" title="Handbook:X86/Working/Initscripts">Initscript system</a>
+</td></tr>
+<tr>
+<td> <a href="../Working/EnvVar.html" title="Handbook:X86/Working/EnvVar">Environment variables</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Working with Portage
+</th></tr>
+<tr>
+<td> <a href="../Portage/Files.html" title="Handbook:X86/Portage/Files">Files and directories</a>
+</td></tr>
+<tr>
+<td> <a href="../Portage/Variables.html" title="Handbook:X86/Portage/Variables">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../Portage/Branches.html" title="Handbook:X86/Portage/Branches">Mixing software branches</a>
+</td></tr>
+<tr>
+<td> <a href="../Portage/Tools.html" title="Handbook:X86/Portage/Tools">Additional tools</a>
+</td></tr>
+<tr>
+<td> <a href="../Portage/CustomTree.html" title="Handbook:X86/Portage/CustomTree">Custom Portage tree</a>
+</td></tr>
+<tr>
+<td> <a href="../Portage/Advanced.html" title="Handbook:X86/Portage/Advanced">Advanced features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> Network configuration
+</th></tr>
+<tr>
+<td> <a href="../Networking/Introduction.html" title="Handbook:X86/Networking/Introduction">Getting started</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/Advanced.html" title="Handbook:X86/Networking/Advanced">Advanced configuration</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/Modular.html" title="Handbook:X86/Networking/Modular">Modular networking</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/Wireless.html" title="Handbook:X86/Networking/Wireless">Wireless</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/Extending.html" title="Handbook:X86/Networking/Extending">Adding functionality</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/Dynamic.html" title="Handbook:X86/Networking/Dynamic">Dynamic management</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Chrooting"><span class="tocnumber">1</span> <span class="toctext">Chrooting</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Optional:_Selecting_mirrors"><span class="tocnumber">1.1</span> <span class="toctext">Optional: Selecting mirrors</span></a></li>
+<li class="toclevel-2"><a href="#Copy_DNS_info"><span class="tocnumber">1.2</span> <span class="toctext">Copy DNS info</span></a></li>
+<li class="toclevel-2"><a href="#Mounting_the_necessary_filesystems"><span class="tocnumber">1.3</span> <span class="toctext">Mounting the necessary filesystems</span></a></li>
+<li class="toclevel-2"><a href="#Entering_the_new_environment"><span class="tocnumber">1.4</span> <span class="toctext">Entering the new environment</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Configuring_Portage"><span class="tocnumber">2</span> <span class="toctext">Configuring Portage</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Installing_a_Portage_snapshot"><span class="tocnumber">2.1</span> <span class="toctext">Installing a Portage snapshot</span></a></li>
+<li class="toclevel-2"><a href="#Optional:_Updating_the_Portage_tree"><span class="tocnumber">2.2</span> <span class="toctext">Optional: Updating the Portage tree</span></a></li>
+<li class="toclevel-2"><a href="#Reading_news_items"><span class="tocnumber">2.3</span> <span class="toctext">Reading news items</span></a></li>
+<li class="toclevel-2"><a href="#Choosing_the_right_profile"><span class="tocnumber">2.4</span> <span class="toctext">Choosing the right profile</span></a></li>
+<li class="toclevel-2"><a href="#Configuring_the_USE_variable"><span class="tocnumber">2.5</span> <span class="toctext">Configuring the USE variable</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Optional:_Using_systemd"><span class="tocnumber">3</span> <span class="toctext">Optional: Using systemd</span></a></li>
+<li class="toclevel-1"><a href="#Timezone"><span class="tocnumber">4</span> <span class="toctext">Timezone</span></a></li>
+<li class="toclevel-1"><a href="#Configure_locales"><span class="tocnumber">5</span> <span class="toctext">Configure locales</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Chrooting">Chrooting</span></h2>
+<h3><span class="mw-headline" id="Optional:_Selecting_mirrors">Optional: Selecting mirrors</span></h3>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warning</strong><br />The <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/app-portage/mirrorselect">app-portage/mirrorselect</a> program has not been updated to handle modifying the target chroots <span style="font-family: monospace; font-size: 95%">repos.conf/gentoo.conf</span> file yet. Also, the <var>SYNC</var> variable in <span style="font-family: monospace; font-size: 95%">make.conf</span> is deprecated and no longer used by Portage. This section needs to be updated, please skip for the time being...</div>
+<p>In order to download source code quickly it is recommended to select a fast mirror. Portage will look in the <span style="font-family: monospace; font-size: 95%">make.conf</span> file for the <var>GENTOO_MIRRORS</var> variable and use the mirrors listed therein. It is possible to surf to the Gentoo mirror list and search for a mirror (or mirrors) that is close to the system's physical location (as those are most frequently the fastest ones). However, we provide a nice tool called <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span> which provides users with a nice interface to select the mirrors needed. Just navigate to the mirrors of choice and press <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Spacebar</kbd> to select one or more mirrors.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p>A second important setting is the <var>SYNC</var> setting in <span style="font-family: monospace; font-size: 95%">make.conf</span>. This variable contains the rsync server to use when updating the Portage tree (the collection of ebuilds and related files containing all the information Portage needs to download and install software). Again, it is possible to manually enter a <var>SYNC</var> server, but <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span> can ease that operation considerably:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</code></div></div>
+<p>After running <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mirrorselect</span> it is advisable to double-check the settings in <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/etc/portage/make.conf</span>&#160;!
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />When manually selecting a <var>SYNC</var> server in <span style="font-family: monospace; font-size: 95%">make.conf</span>, check out the community mirrors list for the mirrors closest to you. It is recommended to choose a rotation link, such as rsync.us.gentoo.org, rather than choosing a single mirror. This helps spread out the load and provides a fail safe in case a specific mirror is offline.</div>
+<h3><span class="mw-headline" id="Copy_DNS_info">Copy DNS info</span></h3>
+<p>One thing still remains to be done before entering the new environment and that is copying over the DNS information in <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span>. This needs to be done to ensure that networking still works even after entering the new environment. <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> contains the name servers for the network.
+</p><p>To copy this information, it is recommended to use the <code>-L</code> option to the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">cp</span> command. This ensures that, if <span style="font-family: monospace; font-size: 95%">/etc/resolv.conf</span> is a symbolic link, that the link's target file is copied instead of the symbolic link itself. Otherwise in the new environment the symbolic link would point to a non-existing file (as the link's target is most likely not available inside the new environment).
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>cp -L /etc/resolv.conf /mnt/gentoo/etc/</code></div></div>
+<h3><span class="mw-headline" id="Mounting_the_necessary_filesystems">Mounting the necessary filesystems</span></h3>
+<p>In a few moments, the Linux root will be changed towards the new location. To make sure that the new environment works properly, certain filesystems need to be made available there as well.
+</p><p>The filesystems that need to be made available are:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">/proc/</span> which is a pseudo-filesystem (it looks like regular files, but is actually generated on-the-fly) from which the Linux kernel exposes information to the environment</li>
+<li> <span style="font-family: monospace; font-size: 95%">/sys/</span> which is a pseudo-filesystem, like <span style="font-family: monospace; font-size: 95%">/proc/</span> which it was once meant to replace, and is more structured than <span style="font-family: monospace; font-size: 95%">/proc/</span></li>
+<li> <span style="font-family: monospace; font-size: 95%">/dev/</span> is a regular file system, partially managed by the Linux device manager (usually <span style="font-family: monospace; font-size: 95%; font-weight: bold;">udev</span>), which contains all device files</li></ul>
+<p>The <span style="font-family: monospace; font-size: 95%">/proc/</span> location will be mounted on <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/proc/</span> whereas the other two are bind-mounted. The latter means that, for instance, <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/sys/</span> will actually <i>be</i> <span style="font-family: monospace; font-size: 95%">/sys/</span> (it is just a second entry point to the same filesystem) whereas <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/proc/</span> is a new mount (instance so to speak) of the filesystem.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount -t proc proc /mnt/gentoo/proc
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --rbind /sys /mnt/gentoo/sys
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --make-rslave /mnt/gentoo/sys
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --rbind /dev /mnt/gentoo/dev
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount --make-rslave /mnt/gentoo/dev</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The <code>--make-rslave</code> operations are needed for systemd support later in the installation.</div>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warning</strong><br />When using non-Gentoo installation media, this might not be sufficient. Some distributions make <span style="font-family: monospace; font-size: 95%">/dev/shm</span> a symbolic link to <span style="font-family: monospace; font-size: 95%">/run/shm/</span> which, after the chroot, becomes invalid. Making <span style="font-family: monospace; font-size: 95%">/dev/shm/</span> a proper tmpfs mount up front can fix this:
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>rm /dev/shm &amp;&amp; mkdir /dev/shm
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mount -t tmpfs -o nosuid,nodev,noexec shm /dev/shm</code></div></div>
+<p>Also ensure that mode 1777 is set
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code> chmod 1777 /dev/shm</code></div></div>
+</div>
+<h3><span class="mw-headline" id="Entering_the_new_environment">Entering the new environment</span></h3>
+<p>Now that all partitions are initialized and the base environment installed, it is time to enter the new installation environment by chrooting into it. This means that the session will change its root (most top-level location that can be accessed) from the current installation environment (installation CD or other installation medium) to the installation system (namely the initialized partitions). Hence the name, <i>change root</i> or <i>chroot</i>.
+</p><p>This chrooting is done in three steps:
+</p>
+<ol><li> The root location is changed from <span style="font-family: monospace; font-size: 95%">/</span> (on the installation medium) to <span style="font-family: monospace; font-size: 95%">/mnt/gentoo/</span> (on the partitions) using chroot</li>
+<li> Some settings (those in <span style="font-family: monospace; font-size: 95%">/etc/profile</span>) are reloaded in memory using the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">source</span> command</li>
+<li> The primary prompt is changed to help us remember that this session is inside a chroot environment.</li></ol>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>chroot /mnt/gentoo /bin/bash
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>source /etc/profile
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>export PS1="(chroot) $PS1"</code></div></div>
+<p>From this point, all actions performed are immediately on the new Gentoo Linux environment. Of course it is far from finished, which is why the installation still has some sections left&#160;:-)
+</p>
+<h2><span class="mw-headline" id="Configuring_Portage">Configuring Portage</span></h2>
+<h3><span class="mw-headline" id="Installing_a_Portage_snapshot">Installing a Portage snapshot</span></h3>
+<p>Next step is to install a Portage snapshot, a collection of files that inform Portage what software titles are available to install, which profiles the administrator can select, etc.
+</p><p>The use of <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> is recommended. This will fetch the latest Portage snapshot (which Gentoo releases on a daily basis) from one of Gentoo's mirrors and install it onto the system.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge-webrsync</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />During this operation, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> might complain about a missing <span style="font-family: monospace; font-size: 95%">/usr/portage/</span> location. This is to be expected and nothing to worry about - the tool will create the location.</div>
+<p>From this point onward, Portage might mention that certain updates are recommended to be executed. This is because certain system packages installed through the stage3 file might have newer versions available, and Portage is now aware of this because a new Portage snapshot is installed. This can be safely ignored for now; the updates can be triggered after the Gentoo installation has finished.
+</p>
+<h3><span class="mw-headline" id="Optional:_Updating_the_Portage_tree">Optional: Updating the Portage tree</span></h3>
+<p>It is possible to update the Portage tree to the latest version. The previous <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span> command will have installed a very recent Portage snapshot (usually recent up to 24h) so this step is definitely optional.
+</p><p>Suppose there is a need for the last package updates (up to 1 hour), then use <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --sync</span>. This command will use the rsync protocol to update the Portage tree (which was fetched earlier on through <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge-webrsync</span>) to the latest state.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync</code></div></div>
+<p>On slow terminals, like some framebuffers or serial consoles, it is recommended to use the <code>--quiet</code> option to speed up the process:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --sync --quiet</code></div></div>
+<h3><span class="mw-headline" id="Reading_news_items">Reading news items</span></h3>
+<p>When a Portage tree is synchronized to the system, it might warn the user with a message similar to the following:
+</p>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">CODE</span> <strong>Portage informing the user about news items</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre> * IMPORTANT: 2 news items need reading for repository 'gentoo'.
+ * Use eselect news to read news items.
+</pre></div></pre></div>
+<p>Portage news items were created to provide a communication medium to push critical messages to users via the rsync tree. To manage them, use <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect news</span>. The <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span> application is a Gentoo application that allows for a common management interface towards system changes and operations. In this case, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span> is asked to use its <code>news</code> module.
+</p><p>For the <code>news</code> module, three operations are most used:
+</p>
+<ul><li> With <code>list</code> an overview of the available news items is displayed.</li>
+<li> With <code>read</code> the news items can be read.</li>
+<li> With <code>purge</code> news items can be removed once they have been read and will not be reread anymore.</li></ul>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect news list
+</code></div><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect news read</code></div></div>
+<p>More information about the newsreader is available through its manual page: 
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>man news.eselect</code></div></div>
+<h3><span class="mw-headline" id="Choosing_the_right_profile">Choosing the right profile</span></h3>
+<p>A <i>profile</i> is a building block for any Gentoo system. Not only does it specify default values for <var>USE</var>, <var>CFLAGS</var>, and other important variables, it also locks the system to a certain range of package versions. This is all maintained by the Gentoo developers.
+</p><p>You can see what profile the system is currently using with <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span>, now using the <code>profile</code> module:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect profile list</code></div><pre>
+Available profile symlink targets:
+  [1]   default/linux/x86/13.0 *
+  [2]   default/linux/x86/13.0/desktop
+  [3]   default/linux/x86/13.0/desktop/gnome
+  [4]   default/linux/x86/13.0/desktop/kde
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The output of the command is just an example and evolves over time.</div>
+<p>As can be seen, there are also desktop subprofiles available for some architectures.
+</p><p>After viewing the available profiles for the x86 architecture, users can select a different profile to use:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect profile set 2</code></div></div>
+<p>
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The developer subprofile is specifically for Gentoo Linux development and is not meant to be used by regular users.</div>
+<h3><span class="mw-headline" id="Configuring_the_USE_variable">Configuring the USE variable</span></h3>
+<p><var>USE</var> is one of the most powerful variables Gentoo provides to its users. Several programs can be compiled with or without optional support for certain items. For instance, some programs can be compiled with gtk-support, or with qt-support. Others can be compiled with or without SSL support. Some programs can even be compiled with framebuffer support (svgalib) instead of X11 support (X-server).
+</p><p>Most distributions compile their packages with support for as much as possible, increasing the size of the programs and startup time, not to mention an enormous amount of dependencies. With Gentoo users can define what options a package should be compiled with. This is where <var>USE</var> comes into play.
+</p><p>In the <var>USE</var> variable users define keywords which are mapped onto compile-options. For instance, <code>ssl</code> will compile ssl-support in the programs that support it. <code>-X</code> will remove X-server support (note the minus sign in front). <code>gnome gtk -kde -qt4</code> will compile programs with GNOME (and GTK) support, and not with KDE (and Qt) support, making the system fully tweaked for GNOME (if the architecture supports it).
+</p><p>The default USE settings are placed in the <span style="font-family: monospace; font-size: 95%">make.defaults</span> files of the Gentoo profile used by the system. Gentoo uses a (complex) inheritance system for its profiles, which we will not dive into at this stage. The easiest way to check the currently active <var>USE</var> settings is to run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">emerge --info</span> and select the line that starts with USE:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --info | grep ^USE</code></div><pre>
+USE=&quot;X acl alsa amd64 berkdb bindist bzip2 cli cracklib crypt cxx dri ...&quot;
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />The above example is truncated, the actual list of <var>USE</var> values is much, much larger.</div>
+<p>A full description on the available USE flags can be found on the system in <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles/use.desc</span>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>less /usr/portage/profiles/use.desc</code></div></div>
+<p>Inside the <span style="font-family: monospace; font-size: 95%; font-weight: bold;">less</span> command, scrolling can be done using the <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">↑</kbd> and <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">↓</kbd> keys, and exited by pressing <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">q</kbd>.
+</p><p>As an example we show a USE setting for a KDE-based system with DVD, ALSA and CD Recording support:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/portage/make.conf</code></div></div>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Enabling USE for a KDE-based system with DVD, ALSA and CD recording support</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-gtk -gnome qt4 kde dvd alsa cdr&quot;</span>
+</pre></div></pre>
+<p>When <var>USE</var> is defined in <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span> it is <i>added</i> (or <i>removed</i> if the USE flag starts with the <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">-</kbd> sign) from that default list. Users who want to ignore any default USE settings and manage it completely themselves should start the <var>USE</var> definition in <span style="font-family: monospace; font-size: 95%">make.conf</span> with <code>-*</code>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/portage/make.conf</code></strong><strong>Ignoring default USE flags</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">USE</span><span class="o">=</span><span class="s2">&quot;-* X acl alsa ...&quot;</span>
+</pre></div></pre>
+<h2><span class="mw-headline" id="Optional:_Using_systemd">Optional: Using systemd</span></h2>
+<p>The remainder of the Gentoo Handbook focuses on OpenRC as the default init support system. If systemd is wanted instead, or you are planning to use Gnome 3.8 and later (which requires systemd), please consult the <a href="../../Systemd.html" title="Systemd">systemd</a> page as it elaborates on the different configuration settings and methods.
+</p><p>The Gentoo handbook can then be followed with that page in mind.
+</p>
+<h2><span class="mw-headline" id="Timezone">Timezone</span></h2>
+<p>Select the timezone for the system. Look for the available timezones in <span style="font-family: monospace; font-size: 95%">/usr/share/zoneinfo/</span>, then write it in the <span style="font-family: monospace; font-size: 95%">/etc/timezone</span> file.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>ls /usr/share/zoneinfo</code></div></div>
+<p>Suppose the timezone of choice is <i>Europe/Brussels</i>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>echo "Europe/Brussels" &gt; /etc/timezone</code></div></div>
+<p>Please avoid the <span style="font-family: monospace; font-size: 95%">/usr/share/zoneinfo/Etc/GMT*</span> timezones as their names do not indicate the expected zones. For instance, <span style="font-family: monospace; font-size: 95%">GMT-8</span> is in fact <span style="font-family: monospace; font-size: 95%">GMT+8</span>.
+</p><p>Next, reconfigure the <a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-libs/timezone-data">sys-libs/timezone-data</a> package, which will update the <span style="font-family: monospace; font-size: 95%">/etc/localtime</span> file for us, based on the <span style="font-family: monospace; font-size: 95%">/etc/timezone</span> entry. The <span style="font-family: monospace; font-size: 95%">/etc/localtime</span> file is used by the system C library to know the timezone the system is in.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>emerge --config sys-libs/timezone-data</code></div></div>
+<h2><span class="mw-headline" id="Configure_locales">Configure locales</span></h2>
+<p>Most users will want to use only one or two locales on their system.
+</p><p>Locales specify not only the language that the system should use to interact with the system, but also what the rules are for sorting strings, displaying dates and times, etc. 
+</p><p>The locales that a system should support should be mentioned in <span style="font-family: monospace; font-size: 95%">/etc/locale.gen</span>.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>nano -w /etc/locale.gen</code></div></div>
+<p>The following locales are an example to get both English (United States) and German (Germany) with the accompanying character formats (like UTF-8).
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/locale.gen</code></strong><strong>Enabling US and DE locales with the appropriate character formats</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>en_US ISO-8859-1
+en_US.UTF-8 UTF-8
+de_DE ISO-8859-1
+de_DE@euro ISO-8859-15
+</pre></div></pre>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Warning</strong><br />We strongly suggest to use at least one UTF-8 locale because some applications may require it.</div>
+<p>The next step is to run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">locale-gen</span>. It will generate all the locales specified in the <span style="font-family: monospace; font-size: 95%">/etc/locale.gen</span> file.
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>locale-gen</code></div></div>
+<p>To verify that the selected locales are now available, run <span style="font-family: monospace; font-size: 95%; font-weight: bold;">locale -a</span>.
+</p><p>Once done, it is now time to set the system-wide locale settings. Again we use <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect</span> for this, now with the <code>locale</code> module.
+</p><p>With <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect locale list</span>, the available targets are displayed:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect locale list</code></div><pre>
+Available targets for the LANG variable:
+  [1] C
+  [2] POSIX
+  [3] en_US
+  [4] en_US.iso88591
+  [5] en_US.utf8
+  [6] de_DE
+  [7] de_DE.iso88591
+  [8] de_DE.iso885915
+  [9] de_DE.utf8
+  [ ] (free form)
+</pre></div>
+<p>With <span style="font-family: monospace; font-size: 95%; font-weight: bold;">eselect locale set VALUE</span> the correct locale can be set:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>eselect locale set 9</code></div></div>
+<p>Manually, this can still be accomplished through the <span style="font-family: monospace; font-size: 95%">/etc/env.d/02locale</span> file:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">FILE</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/env.d/02locale</code></strong><strong>Manually setting system locale definitions</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">LANG</span><span class="o">=</span><span class="s2">&quot;de_DE.UTF-8&quot;</span>
+<span class="nv">LC_COLLATE</span><span class="o">=</span><span class="s2">&quot;C&quot;</span>
+</pre></div></pre>
+<p>Make sure a locale is set, as the system would otherwise display warnings and errors during kernel builds and other software deployments later in the installation.
+</p><p>Now reload the environment:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>env-update &amp;&amp; source /etc/profile</code></div></div>
+<p>We made a full <a href="../../Localization/Guide.html" title="Localization/Guide">Localization guide</a> to help the user guide through this process. Another interesting article is the <a href="../../UTF-8.html" title="UTF-8">UTF-8</a> guide for very specific information to enable UTF-8 on the system.
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="Stage.html" title="Previous part" class="btn btn-default">&#8592; Installing Stage3</a> <a href="../../Handbook_X86.html" title="Handbook:X86" class="btn btn-default">Home</a> <a href="Kernel.html" title="Next part" class="btn btn-default">Configuring the kernel &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160111224524
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.676 seconds
+Real time usage: 0.749 seconds
+Preprocessor visited node count: 3542/1000000
+Preprocessor generated node count: 4130/1000000
+Post‐expand include size: 94631/2097152 bytes
+Template argument size: 13989/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  598.743      1 - -total
+100.00%  598.743      1 - Handbook:Parts/Installation/Base
+ 36.64%  219.379     25 - Template:RootCmd
+ 34.14%  204.438      1 - Handbook:Parts/TOC
+ 32.09%  192.146     25 - Template:GenericCmd
+  6.43%   38.494      3 - Template:Warning
+  6.25%   37.425     33 - Template:GenericCmd/Line
+  5.76%   34.504      3 - Template:Warning/core
+  3.30%   19.777      6 - Template:Note
+  3.14%   18.820      1 - Handbook:Parts/Navigator
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:67464-0!*!0!!en!*!* and timestamp 20160111224523 and revision id 182074
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;oldid=182074">http://wiki.gentoo.org/index.php?title=Handbook:X86/Installation/Base&amp;oldid=182074</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 13 December 2014, at 19:40.</li>
+																															<li id="privacy"><a href="../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Installation/Base"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":870});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Installation/Base by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:51 GMT -->
+</html>

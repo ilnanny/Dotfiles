@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/About/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:43:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>关于Gentoo Linux的安装 - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Installation/About/zh-cn","wgTitle":"AMD64/Installation/About/zh-cn","wgCurRevisionId":315602,"wgRevisionId":315602,"wgArticleId":76274,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRelevantPageName":"Handbook:AMD64/Installation/About/zh-cn","wgRelevantArticleId":76274,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Installation/About/zh-cn" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Installation/About/zh-cn&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Installation_About_zh-cn skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Installation/About/zh-cn.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Installation/About/zh-cn.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;oldid=315602" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FInstallation-2FAbout-2Fzh-2Dcn.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FAbout%2Fzh-cn&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FInstallation%2FAbout%2Fzh-cn" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="zh-cn.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Installation/About/zh-cn&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="zh-CN">
+							<span dir="auto">关于Gentoo Linux的安装</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a> | <a href="../../../Special_MyLanguage/Handbook_AMD64/Installation.html" title="Special:MyLanguage/Handbook:AMD64/Installation">Installation</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="zh-CN" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FInstallation%2FAbout&amp;action=page&amp;filter=&amp;language=zh-cn">translated version</a></span> of the page <a href="../About.html" title="Handbook:AMD64/Installation/About">Handbook:AMD64/Installation/About</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="cs.html" title="Handbook:AMD64/Installation/About/cs (100% translated)" class="mw-pt-progress mw-pt-progress--complete">čeština</a> • ‎<a href="de.html" title="Handbook:AMD64/Installation/About/de (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../About.html" title="Handbook:AMD64/Installation/About (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Installation/About/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="fr.html" title="Handbook:AMD64/Installation/About/fr (100% translated)" class="mw-pt-progress mw-pt-progress--complete">français</a> • ‎<a href="ja.html" title="Handbook:AMD64/Installation/About/ja (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Installation/About/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="pt-br.html" title="Handbook:AMD64/Installation/About/pt-br (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:AMD64/Installation/About/ru (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Handbook:AMD64/Installation/About/tr (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Türkçe</a> • ‎<a href="uk.html" title="Handbook:AMD64/Installation/About/uk (100% translated)" class="mw-pt-progress mw-pt-progress--complete">українська</a> • ‎<a href="zh.html" title="Handbook:AMD64/Installation/About/zh (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</span></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #463c65; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:center;">
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 安装
+</th></tr>
+<tr>
+<td> <strong class="selflink">关于安装</strong>
+</td></tr>
+<tr>
+<td> <a href="../Media/zh-cn.html" title="Handbook:AMD64/Installation/Media/zh-cn">选择安装媒介</a>
+</td></tr>
+<tr>
+<td> <a href="../Networking/zh-cn.html" title="Handbook:AMD64/Installation/Networking/zh-cn">配置网络</a>
+</td></tr>
+<tr>
+<td> <a href="../Disks/zh-cn.html" title="Handbook:AMD64/Installation/Disks/zh-cn">准备磁盘</a>
+</td></tr>
+<tr>
+<td> <a href="../Stage/zh-cn.html" title="Handbook:AMD64/Installation/Stage/zh-cn">安装stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../Base/zh-cn.html" title="Handbook:AMD64/Installation/Base/zh-cn">安装基本系统</a>
+</td></tr>
+<tr>
+<td> <a href="../Kernel/zh-cn.html" title="Handbook:AMD64/Installation/Kernel/zh-cn">配置Linux内核</a>
+</td></tr>
+<tr>
+<td> <a href="../System/zh-cn.html" title="Handbook:AMD64/Installation/System/zh-cn">配置系统</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/zh-cn.html" title="Handbook:AMD64/Installation/Tools/zh-cn">安装系统工具</a>
+</td></tr>
+<tr>
+<td> <a href="../Bootloader/zh-cn.html" title="Handbook:AMD64/Installation/Bootloader/zh-cn">配置系统引导程序Bootloader</a>
+</td></tr>
+<tr>
+<td> <a href="../Finalizing/zh-cn.html" title="Handbook:AMD64/Installation/Finalizing/zh-cn">收尾安装工作</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/zh-cn.html" title="Handbook:AMD64/Working/Portage/zh-cn">Portage介绍</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/zh-cn.html" title="Handbook:AMD64/Working/USE/zh-cn">USE标记</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/zh-cn.html" title="Handbook:AMD64/Working/Features/zh-cn">Portage功能特性</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/zh-cn.html" title="Handbook:AMD64/Working/Initscripts/zh-cn">初始化脚本（Initscript）系统</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/zh-cn.html" title="Handbook:AMD64/Working/EnvVar/zh-cn">环境变量</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 使用Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/zh-cn.html" title="Handbook:AMD64/Portage/Files/zh-cn">文件和目录</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/zh-cn.html" title="Handbook:AMD64/Portage/Variables/zh-cn">变量</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/zh-cn.html" title="Handbook:AMD64/Portage/Branches/zh-cn">混合使用不同的软件分支</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/zh-cn.html" title="Handbook:AMD64/Portage/Tools/zh-cn">额外的工具</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/zh-cn.html" title="Handbook:AMD64/Portage/CustomTree/zh-cn">定制Portage树</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/zh-cn.html" title="Handbook:AMD64/Portage/Advanced/zh-cn">高级特性</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#54487a; color: white;"> 网络配置
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/zh-cn.html" title="Handbook:AMD64/Networking/Introduction/zh-cn">入门</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/zh-cn.html" title="Handbook:AMD64/Networking/Advanced/zh-cn">高级配置</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/zh-cn.html" title="Handbook:AMD64/Networking/Modular/zh-cn">模块化网络</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/zh-cn.html" title="Handbook:AMD64/Networking/Wireless/zh-cn">无线</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/zh-cn.html" title="Handbook:AMD64/Networking/Extending/zh-cn">添加功能</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/zh-cn.html" title="Handbook:AMD64/Networking/Dynamic/zh-cn">动态管理</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">1</span> <span class="toctext">介绍</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.E6.AC.A2.E8.BF.8E"><span class="tocnumber">1.1</span> <span class="toctext">欢迎</span></a></li>
+<li class="toclevel-2"><a href="#.E5.AE.89.E8.A3.85.E6.AD.A5.E9.AA.A4"><span class="tocnumber">1.2</span> <span class="toctext">安装步骤</span></a></li>
+<li class="toclevel-2"><a href="#.E6.88.91.E6.9C.89.E5.93.AA.E4.BA.9B.E9.80.89.E6.8B.A9"><span class="tocnumber">1.3</span> <span class="toctext">我有哪些选择</span></a></li>
+<li class="toclevel-2"><a href="#.E9.81.87.E5.88.B0.E9.BA.BB.E7.83.A6"><span class="tocnumber">1.4</span> <span class="toctext">遇到麻烦</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h2>
+<h3><span class="mw-headline" id=".E6.AC.A2.E8.BF.8E">欢迎</span></h3>
+<p>首先，欢迎使用Gentoo，您将会进入一个选择自由和性能至上的世界。Gentoo的一切都是为了自由选择。在安装Gentoo时就数次明确表明了这一特点——用户可以自己选择想要编译的一切内容、选择安装Gentoo的方式、选择想用的系统日志程序等等。
+</p><p>Gentoo 是一个快速、现代化的元发行版，它的设计简洁、灵活。Gentoo 围绕自由软件建立，它不会对它的用户隐瞒“引擎盖下的细节”。Gentoo 所使用的软件包维护系统 Portage 是用 Python 编写的，这意味着用户可以轻松地查看和修改它的源代码。 Gentoo 的软件包管理系统使用源代码包（虽然也支持预编译软件包），并通过标准的文本文件配置Gentoo。换句话说，开放无处不在。
+</p><p>“自由选择”是 Gentoo 运行的关键，这点很重要，大家要理解。我们尽量不强迫用户去做任何他们不喜欢的事情。如果有人有不同看法，请上报<a rel="nofollow" class="external text" href="https://bugs.gentoo.org/">bug report</a> 。
+</p>
+<h3><span class="mw-headline" id=".E5.AE.89.E8.A3.85.E6.AD.A5.E9.AA.A4">安装步骤</span></h3>
+<p>Gentoo的安装可以被分成10个步骤，分别对应后续的章节。执行完每个步骤，都会让系统进入某种确定的状态：
+</p>
+<table class="table-condensed table-striped">
+
+<tr>
+<th scope="col" width="15%"> 步骤 </th>
+<th> 结果
+</th></tr>
+<tr>
+<td> 1 </td>
+<td> 用户处于一个准备好安装Gentoo的工作环境中。
+</td></tr>
+<tr>
+<td> 2 </td>
+<td> 用于安装Gentoo的互联网连接已经准备完毕。
+</td></tr>
+<tr>
+<td> 3 </td>
+<td> 硬盘已经为Gentoo的安装初始化完毕。
+</td></tr>
+<tr>
+<td> 4 </td>
+<td> 安装环境已经准备好，用户准备chroot到新环境中去。
+</td></tr>
+<tr>
+<td> 5 </td>
+<td> 那些在所有Gentoo安装中都相同的核心软件包已经安装完毕。
+</td></tr>
+<tr>
+<td> 6 </td>
+<td> Linux内核已经安装完毕。
+</td></tr>
+<tr>
+<td> 7 </td>
+<td> 用户已经配置好大部分的Gentoo系统配置文件。
+</td></tr>
+<tr>
+<td> 8 </td>
+<td> 必要的系统工具已经安装完毕。
+</td></tr>
+<tr>
+<td> 9 </td>
+<td> 合适的启动引导程序 (Bootloader) 已经安装配置完毕。
+</td></tr>
+<tr>
+<td> 10 </td>
+<td> 登录系统，你就可以在已经全新安装完毕的Gentoo Linux系统中尽情探索了！
+</td></tr></table>
+<p>当面临选择的时候，手册上会尽量说明每个选择的利弊。虽然手册会以默认选择（标题中有 “默认Default：” 标记）继续描述下去，但其他可能的选择同样也会在文档中说明（标题中有 “可选Alternative：” 标记）。请不要认为默认选择是Gentoo的推荐，这只不过是Gentoo认为大多数用户会使用的选择。
+</p><p>有时候你也可以进行一些可选的步骤。这样的步骤会被标注为“可选Optional：”，当然这些步骤对于安装Gentoo来说就不是必须的。然而，有些可选的步骤依赖于你先前所做出的决定。我们将会在你需要做这样决定以及可选步骤出现的时候提醒你。
+</p>
+<h3><span class="mw-headline" id=".E6.88.91.E6.9C.89.E5.93.AA.E4.BA.9B.E9.80.89.E6.8B.A9">我有哪些选择</span></h3>
+<p>Gentoo有很多种不同的安装方式。下载和安装Gentoo可以通过以下方式：各种Gentoo安装光盘的其中之一、已经安装好的某个发行版、非Gentoo的Linux可引导光盘（比如Knoppix）、网络启动环境、恢复软盘等等。
+</p><p>本文讲解了如何使用Gentoo安装光盘或者在某些情况下使用网络启动来安装Gentoo。
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Note</strong><br />需要其他安装方式的帮助（包括使用非Gentoo的Linux引导光盘）请阅读我们的 <a href="../../../Installation_alternatives.html" title="Installation alternatives">Alternative Installation guide</a>.</div>
+<p>我们也提供一个 <a href="../../../Gentoo_installation_tips_and_tricks.html" title="Gentoo installation tips and tricks">Gentoo Installation Tips and Tricks</a> 它可能值得一看。
+</p>
+<h3><span class="mw-headline" id=".E9.81.87.E5.88.B0.E9.BA.BB.E7.83.A6">遇到麻烦</span></h3>
+<p>如果在安装（或安装文档中）发现问题,请访问我们的<a rel="nofollow" class="external text" href="https://bugs.gentoo.org/">bug跟踪系统</a> 并确认这个Bug是否已经被提交。如果没有提交，请为它创建一个错误报告以方便我们的后续处理。不要害怕和被分配解决这个问题的开发人员交流——他们(通常)不吃人。
+</p><p>需要注意的是，虽然你当前阅读的文档是针对某一特定的硬件架构，但是它还是会包含对其他平台架构的引用。这是因为Gentoo手册中的绝大部分的源代码是对所有硬件架构都适用的（目的是减少重复劳动和节省有限的开发资源）。我们会努力把这种负面影响减少到最小以避免造成混淆。
+</p><p>如果你不能确定你的问题是否是使用者的操作问题（尽管你已经仔细地阅读了文档但仍然出了错）还是一个软件问题（尽管我们已经仔细地测试了安装步骤/文档但仍然出了错）。请联系我们： irc.freenode.net 上的 <span style="font-family: monospace; font-size: 95%;"><a rel="nofollow" class="external text" href="irc://irc.gentoo.org/gentoo">#gentoo</a></span>。当然，如果你有其他方面的关于Gentoo的问题，我们也欢迎你来这里讨论 。
+</p><p>说到这里,如果还有任何额外的Gentoo问题,看看我们 <a href="../../../Main_Page.html" title="Main Page">Wiki</a> 上的 <a href="../../../FAQ.html" title="FAQ">Frequently Asked Questions</a> ，或者<a rel="nofollow" class="external text" href="https://forums.gentoo.org/">Gentoo论坛</a> 上的 <a rel="nofollow" class="external text" href="https://forums.gentoo.org/viewforum.php?f=40">FAQs</a> 。
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../zh-cn.html" title="Previous part" class="btn btn-default">&#8592; </a> <a href="../../../Handbook_AMD64.html" title="Handbook:AMD64" class="btn btn-default">Home</a> <a href="../Media/zh-cn.html" title="Next part" class="btn btn-default">选择媒介 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112154021
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.332 seconds
+Real time usage: 0.358 seconds
+Preprocessor visited node count: 174/1000000
+Preprocessor generated node count: 807/1000000
+Post‐expand include size: 14676/2097152 bytes
+Template argument size: 493/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  286.276      1 - -total
+ 94.57%  270.737      1 - Handbook:Parts/Installation/About/zh-cn
+ 80.21%  229.626      1 - Handbook:Parts/TOC/zh-cn
+  6.96%   19.919      1 - Handbook:Parts/Navigator
+  5.23%   14.973      1 - Handbook:Templates/SetTitle
+  3.06%    8.762      1 - Template:Note
+  1.85%    5.289      1 - Template:Note/core
+  1.21%    3.466      1 - Template:IRC
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:76274-0!*!0!!en!*!* and timestamp 20160112154021 and revision id 315602
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;oldid=315602">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Installation/About/zh-cn&amp;oldid=315602</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 23 May 2015, at 13:32.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Installation/About/zh-cn"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":547});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Installation/About/zh-cn by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:43:34 GMT -->
+</html>

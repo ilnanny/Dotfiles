@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Blocks/Disks/ru by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:59:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:X86/Blocks/Disks - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Blocks/Disks/ru","wgTitle":"X86/Blocks/Disks/ru","wgCurRevisionId":199124,"wgRevisionId":199124,"wgArticleId":82400,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgMonthNamesShort":["","янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"],"wgRelevantPageName":"Handbook:X86/Blocks/Disks/ru","wgRelevantArticleId":82400,"wgIsProbablyEditable":!1,
+"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Blocks/Disks/ru" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Blocks/Disks/ru&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Blocks_Disks_ru skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Blocks/Disks/ru.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Blocks/Disks/ru.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;oldid=199124" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FBlocks-2FDisks-2Fru.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FBlocks%2FDisks%2Fru&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FBlocks%2FDisks%2Fru" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ru.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Blocks/Disks/ru&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ru">
+							<span dir="auto">Handbook:X86/Blocks/Disks</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ru" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FBlocks%2FDisks&amp;action=page&amp;filter=&amp;language=ru">translated version</a></span> of the page <a href="../Disks.html" title="Handbook:X86/Blocks/Disks">Handbook:X86/Blocks/Disks</a> and the translation is 100% complete.</div>
+<hr /><p><br />
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.D0.A0.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B"><span class="tocnumber">1</span> <span class="toctext">Разделы</span></a></li>
+<li class="toclevel-1"><a href="#MBR"><span class="tocnumber">2</span> <span class="toctext">MBR</span></a></li>
+<li class="toclevel-1"><a href="#GPT"><span class="tocnumber">3</span> <span class="toctext">GPT</span></a></li>
+<li class="toclevel-1"><a href="#GPT_.D0.B8.D0.BB.D0.B8_MBR"><span class="tocnumber">4</span> <span class="toctext">GPT или MBR</span></a></li>
+<li class="toclevel-1"><a href="#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_UEFI"><span class="tocnumber">5</span> <span class="toctext">Использование UEFI</span></a></li>
+<li class="toclevel-1"><a href="#.D0.9F.D1.80.D0.BE.D0.B4.D0.B2.D0.B8.D0.BD.D1.83.D1.82.D0.BE.D0.B5_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B5"><span class="tocnumber">6</span> <span class="toctext">Продвинутое хранилище</span></a></li>
+<li class="toclevel-1"><a href="#.D0.94.D0.B5.D1.84.D0.BE.D0.BB.D1.82.D0.BD.D0.B0.D1.8F_.D1.81.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"><span class="tocnumber">7</span> <span class="toctext">Дефолтная схема разделов</span></a></li>
+<li class="toclevel-1"><a href="#.D0.A0.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D0.B5.D0.BC_.D1.81.D1.85.D0.B5.D0.BC.D1.83_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"><span class="tocnumber">8</span> <span class="toctext">Разрабатываем схему разделов</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B8_.D0.BA.D0.B0.D0.BA.D0.B8.D1.85_.D0.B8.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.3F"><span class="tocnumber">8.1</span> <span class="toctext">Сколько и каких именно?</span></a></li>
+<li class="toclevel-2"><a href="#.D0.9E_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8.3F"><span class="tocnumber">8.2</span> <span class="toctext">О пространстве подкачки?</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A7.D1.82.D0.BE_.D1.82.D0.B0.D0.BA.D0.BE.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_BIOS.3F"><span class="tocnumber">8.3</span> <span class="toctext">Что такое загрузочный раздел BIOS?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.D0.9F.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_parted_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0"><span class="tocnumber">9</span> <span class="toctext">По умолчанию: Использование parted для создания разделов диска</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_parted"><span class="tocnumber">9.1</span> <span class="toctext">Просмотр текущей разметки разделов с помощью parted</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_GPT"><span class="tocnumber">9.2</span> <span class="toctext">Установка метки GPT</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_parted"><span class="tocnumber">9.3</span> <span class="toctext">Удаление всех разделов с помощью parted</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"><span class="tocnumber">9.4</span> <span class="toctext">Создание разделов</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.B0:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_fdisk_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0"><span class="tocnumber">10</span> <span class="toctext">Альтернатива: Использование fdisk для создания разделов диска</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"><span class="tocnumber">10.1</span> <span class="toctext">Просмотр текущей разметки разделов</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_fdisk"><span class="tocnumber">10.2</span> <span class="toctext">Удаление всех разделов с помощью fdisk</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_BIOS"><span class="tocnumber">10.3</span> <span class="toctext">Создание загрузочного раздела BIOS</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"><span class="tocnumber">10.4</span> <span class="toctext">Создание загрузочного раздела</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8"><span class="tocnumber">10.5</span> <span class="toctext">Создание раздела подкачки</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D1.80.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0"><span class="tocnumber">10.6</span> <span class="toctext">Создание коревого раздела</span></a></li>
+<li class="toclevel-2"><a href="#.D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2"><span class="tocnumber">10.7</span> <span class="toctext">Сохранение разметки разделов</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h4><span class="mw-headline" id=".D0.A0.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B">Разделы</span></h4>
+<p>Не смотря на то, что теоретически возможно использовать весь диск для размещения вашей Linux системы, этого почти никогда не случается на практике. Вместо этого все большое блочное устройство (диск) разбивается на меньшие, более удобные для обращения, блочные устройства.  В системах x86 , они называются разделами.  Есть в настоящее время есть две стандартных технологии: MBR и GPT.
+</p>
+<h4><span class="mw-headline" id="MBR">MBR</span></h4>
+<p><i>MBR (Master Boot Record, главная загрузочная запись)</i> использует 32-битные идентификаторы для начала сектора и длинны раздела, и поддерживает три типа разделов:  основные, расширеные и логические.Информация о расположении основных разделов хранится в самой главной загрузочной записи - очень небольшом (обычно 512 байт) месте в самом начале диска. В связи с этим небольшим размером поддерживаются только четыре основных раздела (например, от <span style="font-family: monospace; font-size: 95%">/dev/sda1</span> до <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>).
+</p><p>Для поддержки большего количества разделов один из основных может быть помечен как расширенный раздел. Этот раздел может содержать логические разделы (разделы внутри раздела).
+</p><p>Каждый раздел имеет ограничение размера в 2 ТБ (в связи с 32-битными идентификаторами). Кроме того, MBR не обеспечивает резервного копирования главной загрузочной записи, так что если пользователь или приложение перезапишет MBR, то вся информация о разделах теряется.
+</p>
+<h4><span class="mw-headline" id="GPT">GPT</span></h4>
+<p><i>GPT (GUID Partition table, таблица разделов GUID)</i> использует 64-битные идентификаторы разделов. Место, в котором храниться информация о разделах также гораздо больше, чем 512 байт в MBR, и нет никаких ограничений на количество разделов. Также предельный размер раздела гораздо больше (почти 8 ЗБ - да, зеттабайт).
+</p><p>Когда программным интерфейсом системы между операционной системой и прошивкой является UEFI (вместо BIOS), GPT является почти обязательным, так как с MBR будут возникать проблемы совместимости.
+</p><p>Так же преимуществом GPT является наличие резервной GPT в конце диска, которая может быть использована для восстановления поврежденной основной GPT. GPT также содержит контрольные суммы CRC32 для обнаружения ошибок в заголовке и таблице разделов.
+</p>
+<h3><span class="mw-headline" id="GPT_.D0.B8.D0.BB.D0.B8_MBR">GPT или MBR</span></h3>
+<p>Из приведенного выше описания, можно подумать, что использование GPT должно быть априори рекомендуемым. Но существует несколько оговорок.
+</p><p>GPT можно использовать на компьютерах с BIOS, но тогда может не работать двойная загрузка с операционными системами Microsoft Windows. Причина в том, что Microsoft Windows системы будут загружаться в режиме EFI, если обнаружат метку GPT раздела.
+</p><p>С некоторыми ранними версиями BIOS и EFI, настраиваемых на загрузку в режимах BIOS/CSM/legacy, также могут возникать проблемы с загрузкой с дисков помеченных GPT. Если это так, то можено обойти проблему путем добавления флага загрузки/активности на защищенном разделе MBR, который должен быть сделан через <code>fdisk</code> с параметром <code>-t dos</code>, чтобы заставить их прочитать таблицу разделов, используя формат MBR.
+</p><p>В этом случае, запустите <code>fdisk</code> и переключите флаг, используя <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">a</kbd>, на первом разделе (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">1</kbd>). Затем запишите изменения на диск (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">w</kbd>) и выйдите из приложения <code>fdisk</code>:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>fdisk -t dos /dev/sda</code></div><pre>
+Welcome to fdisk (util-linux 2.24.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+  
+Command (m for help): a
+Partition number (1-4): 1
+  
+Command (m for help): w
+</pre></div>
+<h3><span class="mw-headline" id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_UEFI">Использование UEFI</span></h3>
+<p>При установке Gentoo на систему использующую UEFI для загрузки операционной системы (вместо BIOS) важно, что бы был создан системный раздел EFI. Расположенные ниже инструкции для <code>parted</code> содержат эту информацию.
+</p><p>Системный раздел EFI также должен быть разделом FAT32 (или <i>vfat</i>, по скольку это Linux система). Инструкции в конце этой главы используют <i>ext2</i> в качестве примера для файловой системы <span style="font-family: monospace; font-size: 95%">/boot/</span> раздела. Удостоверьтесь, что использовали <i>vfat</i>, примерно так:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkfs.vfat /dev/sda2</code></div></div>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Предупреждение</strong><br />Если загрузочный раздел не будет содержать файловую систему FAT32 (vfat), то системная прошивка UEFI будет не в состоянии найти ядро Linux и загрузить систему!</div>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D0.B4.D0.B2.D0.B8.D0.BD.D1.83.D1.82.D0.BE.D0.B5_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B5">Продвинутое хранилище</span></h3>
+<p>Установочный CD x86 предоставляет поддержку LVM2. LVM2 увеличивает гибкость в создании разделов. Во время инструкций по установке мы будем фокусироваться на "регулярных" разделах, но все же хорошо знать, что LVM2 также поддерживается.
+</p>
+<h3><span class="mw-headline" id=".D0.94.D0.B5.D1.84.D0.BE.D0.BB.D1.82.D0.BD.D0.B0.D1.8F_.D1.81.D1.85.D0.B5.D0.BC.D0.B0_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2">Дефолтная схема разделов</span></h3>
+<p>Везде по ходу руководства используется следующая схема разделов. Если это достаточно, то читатель может сразу перейти к <a href="#.D0.9F.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_parted_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0"> По умолчанию: Использование parted для создания разделов диска</a> или <a href="#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.B0:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_fdisk_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0">Альтернатива: Использование fdisk для создания разделов диска</a>. Это инструменты для создания разделов, <code>fdisk</code> широко известен, стабилен и рекомендован для создания разделов MBR, а <code>parted</code> более нов и рекомендован для создания разделов GPT.
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Раздел
+</th>
+<th> Файловая система
+</th>
+<th> Размер
+</th>
+<th> Описание
+</th></tr>
+<tr>
+<td> /dev/sda1
+</td>
+<td> (bootloader)
+</td>
+<td> 2M
+</td>
+<td> BIOS boot partition
+</td></tr>
+<tr>
+<td> /dev/sda2
+</td>
+<td> ext2 (or vfat)
+</td>
+<td> 128M
+</td>
+<td> Boot partition
+</td></tr>
+<tr>
+<td> /dev/sda3
+</td>
+<td> (swap)
+</td>
+<td> 512M or higher
+</td>
+<td> Swap partition
+</td></tr>
+<tr>
+<td> /dev/sda4
+</td>
+<td> ext4
+</td>
+<td> Rest of the disk
+</td>
+<td> Root partition
+</td></tr></table>
+<p>Прежде чем переходит к инструкциям по созданию разделов опишем более подробно какие могут быть схемы разделов и каковы распространенные ошибки при их создании.
+</p>
+<h2><span class="mw-headline" id=".D0.A0.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D0.B5.D0.BC_.D1.81.D1.85.D0.B5.D0.BC.D1.83_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2">Разрабатываем схему разделов</span></h2>
+<h3><span class="mw-headline" id=".D0.A1.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B8_.D0.BA.D0.B0.D0.BA.D0.B8.D1.85_.D0.B8.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.3F">Сколько и каких именно?</span></h3>
+<p>Количество разделов очень сильно зависит от назначения системы. Например, если у вас много пользователей, вам, скорее всего, захочется отделить <span style="font-family: monospace; font-size: 95%">/home/</span> для повышения безопасности и упрощения резервного копирования. Если вы устанавливаете Gentoo в роли почтового сервера, следует отделить <span style="font-family: monospace; font-size: 95%">/var/</span>, т.к. вся почта хранится в <span style="font-family: monospace; font-size: 95%">/var/</span>. Затем, правильно выбрав файловую систему, вы добьетесь максимальной производительности. Для игровых серверов потребуется отдельный раздел <span style="font-family: monospace; font-size: 95%">/opt/</span>, так как большинство программ для их работы устанавливается туда. Причины	выделения те же, что и для <span style="font-family: monospace; font-size: 95%">/home/</span>: безопасность и резервное копирование. Определенно не помешает побольше места для <span style="font-family: monospace; font-size: 95%">/usr/</span>: не только потому, что там хранится большинство приложений, а еще из-за того, что лишь дерево Portage, не считая размещенных в нем архивов с исходными кодами, занимает около 500 Мб.
+</p><p>Как видите, все зависит от того, чего хочет достигнуть администратор. Наличие отдельных разделов или томов имеет следующие плюсы:
+</p>
+<ul><li> Можно выбрать наиболее подходящую файловую систему для каждого раздела или тома.</li>
+<li> Свободное место во всей системе не кончится "вдруг" из-за того, что одна-единственная сбойная программа постоянно записывает файлы в раздел или том.</li>
+<li> Необходимая проверка файловых систем будет занимать меньше времени, т.к. проверка разных разделов может выполняться параллельно (еще больший выигрыш времени дает использование нескольких физических дисков).</li>
+<li> Можно повысить безопасность системы, монтируя часть разделов в режиме read-only (только для чтения), <code>nosuid</code> (игнорируется бит setuid), <code>noexec</code> (игнорируется бит исполнения) и т.д.</li></ul>
+<p>Однако у множества разделов также есть недостатки. Если они не настроены правильно, у вас будет система с огромным количеством свободного места на одном разделе и отсутствием его на другой. Другой проблемой является то, что отдельные разделы, особенно для важных точек монтирования, например <span style="font-family: monospace; font-size: 95%">/usr/</span> или <span style="font-family: monospace; font-size: 95%">/var/</span>, часто требуют загрузки некоторого кода в ОЗУ, чтобы смонтировать разделы прежде чем запустятся другие загрузочные скрипты. Это не всегда является проблемой, так что результаты могут быть разные.
+</p><p>Также существует лимит в 15 разделов для SCSI и SATA, если только вы не используете метки GPT.
+</p>
+<h3><span class="mw-headline" id=".D0.9E_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8.3F">О пространстве подкачки?</span></h3>
+<p>Не существует идеального значения для раздела подкачки. Целью пространства подкачки является предоставление дискового пространства ядру, когда оперативная память (ОЗУ) сильно используется. Пространство подкачки позволяет ядру переносить страницы памяти, которые, скорее всего, не будут использоваться в ближайшее время, на диск (что называется своп, или page-out), освобождая память. Конечно, если эта память, вдруг, неожиданно понадобится, эти страницы должны быть помещены обратно в память (page-in), что займет некоторое время (так как диски - это очень медленные устройства, если сравнивать их с оперативной памятью).
+</p><p>Если вы не собираетесь запускать приложения, требовательные к памяти, либо у вас очень много памяти, то, скорее всего, вам не нужно много пространства подкачки. Однако раздел подкачки также используется для сохранения всей памяти в случае гибернации. Если вы планируете использовать гибернацию, вам будет нужно большее пространство подкачки, хотя бы равное количеству оперативной памяти, которое у вас есть в системе.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id=".D0.A7.D1.82.D0.BE_.D1.82.D0.B0.D0.BA.D0.BE.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D1.8B.D0.B9_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_BIOS.3F">Что такое загрузочный раздел BIOS?</span></h3>
+<p>Загрузочный раздел BIOS очень маленький (1-2 Мб), в него загрузчики, такие как GRUB2, могут поместить дополнительные данные, которые не помещаются в выделенное хранилище (несколько сотен байтов в случае MBR) и не могут быть помещены в другое место.
+</p><p>Такие разделы не всегда необходимы, но, учитывая небольшой размер занимаемого пространства и трудностей с документированием большого количества разделов, рекомендуется создать его в любом случае.
+</p><p>Для полноты картины загрузочный раздел BIOS необходим, когда GPT разметка разделов используется совместно с GRUB2, или когда MBR разметка разделов используется совместно с GRUB2 когда начало первого раздела находится ранее 1Мб на диске.
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_parted_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0">По умолчанию: Использование parted для создания разделов диска</span></h2>
+<p>В этой главе, пример разметки разделов, упомянутый ранее в инструкции, будет использоваться такой:
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Раздел
+</th>
+<th> Описание
+</th></tr>
+<tr>
+<td> /dev/sda1
+</td>
+<td> BIOS boot partition
+</td></tr>
+<tr>
+<td> /dev/sda2
+</td>
+<td> Boot partition
+</td></tr>
+<tr>
+<td> /dev/sda3
+</td>
+<td> Swap partition
+</td></tr>
+<tr>
+<td> /dev/sda4
+</td>
+<td> Root partition
+</td></tr></table>
+<p>Измените структуру разделов в соответствии с личными предпочтениями. 
+</p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_parted">Просмотр текущей разметки разделов с помощью parted</span></h3>
+<p>Приложение <code>parted</code> предлагает простой интерфейс для разбиения диской и поддерживает очень большие разделы (более 2 ТБ). Указывайте для <code>parted</code> диск (например используйте <span style="font-family: monospace; font-size: 95%">/dev/sda</span>). Рекомендуется также для <code>parted</code> указывать оптимальное выравнивание разделов:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>parted -a optimal /dev/sda</code></div><pre>
+GNU Parted 2.3
+Using /dev/sda
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+</pre></div>
+<p>Выравнивание разделов означает, что разделы будут начинаться с известных границ, в пределах диска, гарантируя, что операции на диске от уровня операционной системы (извлечения страниц с диска) будут использовать наименьшее количество внутренних операций диска. Невыровненные разделы могут потребовать извлечения двух страниц, даже если операционная система запросила только одну.
+</p><p>Чтобы узнать обо всех опциях, поддерживаемых <code>parted</code> введите <code>help</code>.
+</p>
+<h3><span class="mw-headline" id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_GPT">Установка метки GPT</span></h3>
+<p>Большинство дисков на системах x86/amd64 подготовлено для использования метки <i>msdos</i>. Используя <code>parted</code> для размещения метки <i>GPT</i> на диске используйте команду <code>mklabel gpt</code>:
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Предупреждение</strong><br />Изменение типа разделов удалит все разделы на диске. Вся информация на диске будет потеряна.</div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mklabel gpt</code></div></div>
+<p>Чтобы сделать структуру разделов <i>MBR</i> используйте команду <code>mklabel msdos</code>.
+</p>
+<h3><span class="mw-headline" id=".D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_parted">Удаление всех разделов с помощью parted</span></h3>
+<p>Если это не было сделано ранее (например через операцию <code>mklabel</code>, или если диск был недавно отформатирован), сначала удалите все существующие разделы на диске. Введите <code>print</code>, чтобы посмотреть текущие разделы и <code>rm NUMBER</code>, где <i>NUMBER</i> - номер раздела для удаления.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>rm 2</code></div></div>
+<p>Сделайте то же для всех других разделов, в которых не необходимости. Однако, убедитесь, чтобы не сделали ошибок - <i>parted</i> применяет изменения немедленно (в отличии от <code>fdisk</code>, где пользователю дается возможность отменить изменения перед сохранением или выходом).
+</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2">Создание разделов</span></h3>
+<p>Теперь создаем разделы. Создать разделы с помощью <code>parted</code> не сложно - все, что мы должны сделать, это передать <code>parted</code> следующие параметры:
+</p>
+<ul><li> Используемый тип раздела. Обычно это <i>основной</i> раздел. Если используется для разделов метка msdos, то учтите, что основныр разделов может быть только 4. Если необходимо больше чем 4 раздела, то необходимо сначала создать <i>расширенный</i> раздел, а затем создать внутри него <i>логические</i>.</li>
+<li> Начальная позиция раздела (которая может быть выражена в MB, GB, ...)</li>
+<li> Конечная позиция раздела (которая может быть выражена в MB, GB, ...)</li></ul>
+<p>Во-первых, необходимо сказать <i>parted</i>, что единицы, с которыми мы работаем мегабайты (на самом деле мебибайты, сокращенно MiB, являющиеся "стандартом" обозначения, но мы будем использовать MB в тексте, поскольку это намного более распространено):
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>unit mib</code></div></div>
+<p>Теперь создайте 2МБ раздел, который будет использоваться для загрущика <i>GRUB2</i>. Используйте команду <code>mkpart</code> и передайте <code>parted</code> о начале в 1 МБ и конце в 3 МБ (для создания раздела размером 2 МБ).
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 1 3
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 1 grub
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>set 1 bios_grub on
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>print</code></div><pre>
+Model: Virtio Block Device (virtblk)
+Disk /dev/sda: 20480MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+  
+Number   Start      End      Size     File system  Name   Flags
+ 1       1.00MiB    3.00MiB  2.00MiB               grub   bios_grub
+</pre></div>
+<p>Сделайте тоже самое для загрузочного раздела (128 Мб), раздела подкачки (в примере 512 МБ) и корневого раздела, который занимает все оставшееся пространство (для него конец помечается как -1, что означает конец диска минус один МБ, это подходит для последнего раздела).
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 3 131
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 2 boot
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 131 643
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 3 swap
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 643 -1
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 4 rootfs</code></div></div>
+<p>При использовании интерфейса UEFI для загрузки системы (вместо BIOS), помете загрузочный раздел как системный раздел EFI. <code>Parted</code> делает это автоматически, когда устанавливается опция <i>boot</i> у раздела:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>set 2 boot on</code></div></div>
+<p>Конечный результат выглядит так:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>print</code></div><pre>
+Model: Virtio Block Device (virtblk)
+Disk /dev/sda: 20480MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+  
+Number   Start      End      Size     File system  Name   Flags
+ 1       1.00MiB    3.00MiB  2.00MiB               grub   bios_grub
+ 2       3.00MiB    131MiB   128MiB                boot   boot
+ 3       131MiB     643MiB   512MiB                swap
+ 4       643MiB     20479MiB 19836MiB              rootfs
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Заметка</strong><br />При установке UEFI, флаг загрузки будет отображаться на загрузочном разделе.</div>
+<p>Используйте команду <code>quit</code> для выхода из parted.
+</p>
+<h2><span class="mw-headline" id=".D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.B0:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_fdisk_.D0.B4.D0.BB.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0">Альтернатива: Использование fdisk для создания разделов диска</span></h2>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Заметка</strong><br />Хотя последние версии <tt>fdisk</tt> должны поддерживать GPT, до сих пор есть некоторые проблемы. Инструкции приведеные ниже, предполагают, что для разметки разделов используется MBR.</div>
+<p>Следующие части объяснят, как создать структуру разделов из примера с использованием <code>fdisk</code>. Пример структуры разделов ранее упоминался:
+</p>
+<table class="wikitable" style="text-align: left;">
+
+<tr>
+<th> Раздел
+</th>
+<th> Описание
+</th></tr>
+<tr>
+<td> /dev/sda1
+</td>
+<td> BIOS boot partition
+</td></tr>
+<tr>
+<td> /dev/sda2
+</td>
+<td> Boot partition
+</td></tr>
+<tr>
+<td> /dev/sda3
+</td>
+<td> Swap partition
+</td></tr>
+<tr>
+<td> /dev/sda4
+</td>
+<td> Root partition
+</td></tr></table>
+<p>Измените структуру разделов в соответствии с личными предпочтениями. 
+</p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B9_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2">Просмотр текущей разметки разделов</span></h3>
+<p><code>fdisk</code> является популярным и мощным инструментом для создания разделов на диске. Запустите  <code>fdisk</code>, передав в качестве параметра диск (в нашем примере мы используем <span style="font-family: monospace; font-size: 95%">/dev/sda</span>):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>fdisk /dev/sda</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Заметка</strong><br />Чтобы использовать поддержку GPT , добавте <code>-t gpt</code>. Рекомендуется внимательно исследовать вывод <tt>fdisk</tt> в случае, если более свежие разработки в <tt>fdisk</tt> изменят его поведение по умолчанию дефолтной установки MBR. Дальнейшие инструкции предполагают схему MBR.</div>
+<p>Введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> для отображения текущей конфигурации разделов:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 240 heads, 63 sectors, 2184 cylinders
+Units = cylinders of 15120 * 512 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1   *         1        14    105808+  83  Linux
+/dev/sda2            15        49    264600   82  Linux swap
+/dev/sda3            50        70    158760   83  Linux
+/dev/sda4            71      2184  15981840    5  Extended
+/dev/sda5            71       209   1050808+  83  Linux
+/dev/sda6           210       348   1050808+  83  Linux
+/dev/sda7           349       626   2101648+  83  Linux
+/dev/sda8           627       904   2101648+  83  Linux
+/dev/sda9           905      2184   9676768+  83  Linux
+</pre></div>
+<p>Данный диск разбит на семь файловых систем Linux (каждый раздел соответственно подписан как "Linux"), а так же раздел подкачки (названный как "Linux swap").
+</p>
+<h3><span class="mw-headline" id=".D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_fdisk">Удаление всех разделов с помощью fdisk</span></h3>
+<p>Сначала удалите все существующие разделы на диске. Введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">d</kbd> для удаления раздела. Например, чтобы удалить существующий <span style="font-family: monospace; font-size: 95%">/dev/sda1</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>d</code></div><pre>
+Partition number (1-4): 1
+</pre></div>
+<p>Раздел был помечен для удаления. Он больше не будет отображаться при печати списка разделов при вводе <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, но не будет удален, пока не будут сохранены изменения. Это дает возможность пользователю прервать операцию, если была допущена ошибка - в этом случае ввод <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">q</kbd> позволяет немедленно выйти и раздел не будет удален.
+</p><p>Повторяйте ввод <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> чтобы вывести список разделов, вводите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">d</kbd> и номер раздела для его удаления. В конечном счете, таблица разделов будет пуста:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+Device Boot    Start       End    Blocks   Id  System
+</pre></div>
+<p>Теперь запомненная в памяти таблица разделов пуста, мы готовы создавать разделы.
+</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_BIOS">Создание загрузочного раздела BIOS</span></h3>
+<p>Сначала создаем маленький загрузочный раздел BIOS. Введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd>, чтобы создать новый раздел, затем <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, чтобы выбрать <i>основной</i> раздел, следом <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">1</kbd> для выбора первого <i>основного</i> раздела. При запросе первого сектора, убедитесь, что он начинается с 2048 (который необходим для загрузчика) и нажмите enter. При запросе последнего сектора введите +2M для создания раздела размером 2Mbyte:
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Заметка</strong><br />Начало с сектора 2048 - отказоустойчивое решение для обнаружения загрузчиком этого раздела, как доступного для использования.</div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>n</code></div><pre>
+Command action
+  e   extended
+  p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First sector (64-10486533532, default 64): 2048
+Last sector, +sectors +size{M,K,G} (4096-10486533532, default 10486533532): +2M
+</pre></div>
+<p>Помете раздел, в случае использования EFI:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>t</code></div><pre>
+Selected partition 1
+Hex code (type L to list codes): 4
+Changed system type of partition 1 to 4 (BIOS boot)
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Заметка</strong><br />Использование EFI со структурой разделов MBR не рекомендуется. Если система использует EFI, пожалуйста, используйте  структуру GPT.</div>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0">Создание загрузочного раздела</span></h3>
+<p>Сначала создаем маленький загрузочный раздел. Введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd>, чтобы создать новый раздел, затем <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, чтобы выбрать <i>основной</i> раздел, следом <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">2</kbd> для выбора второго <i>основного</i> раздела. При запросе первого сектора, примите предложенное  по умолчанию значение, нажав <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>. При запросе последнего сектора введите +128M для создания раздела размером 128Mbyte:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>n</code></div><pre>
+Command action
+  e   extended
+  p   primary partition (1-4)
+p
+Partition number (1-4): 2
+First sector (5198-10486533532, default 5198): (Hit enter)
+Last sector, +sectors +size{M,K,G} (4096-10486533532, default 10486533532): +128M
+</pre></div>
+<p>Теперь, при нажатии <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, отображаются следующие разделы:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1             1         3      5198+  ef  EFI (FAT-12/16/32)
+/dev/sda2             3        14    105808+  83  Linux
+</pre></div>
+<p>Введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">a</kbd> для переключения флага загрузки и выберите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">2</kbd>. После нажатия <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> повторно, заметите, что * находится в столбце "Boot".
+</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8">Создание раздела подкачки</span></h3>
+<p>Для создания раздела подкачки введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd>, чтобы создать новый раздел, затем <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, чтобы сказать <code>fdisk</code>, что раздел должен быть <i>основной</i>. Затем введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">3</kbd> для создания третьего <i>основного</i> раздела, <span style="font-family: monospace; font-size: 95%">/dev/sda3</span>. При появлении запроса последнего сектора, наберите +512M (или любой другой размер, необходимый для подкачки) для создания раздела размером 512M.
+</p><p>После того как это будет сделано введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">t</kbd> для выбора типа раздела, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">3</kbd> для выбора только что созданного раздела и введите <i>82</i>, чтобы установить тип раздела на "Linux Swap".
+</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D1.80.D0.B5.D0.B2.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0">Создание коревого раздела</span></h3>
+<p>Наконец, чтобы создать корневой раздел введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd>, чтобы создать новый раздел, затем <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, чтобы сказать <code>fdisk</code>, что создаваемый раздел должен быть <i>основным</i>. Затем введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">4</kbd>, чтобы создать четвертый <i>основной</i> раздел, <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>. При запросе первого сектора нажмите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>. При запросе последнего нажмите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>, чтобы создать раздел  занимающий все оставшуюся рабочего пространства диска. После завершения этих шагов введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> для вывода на экран таблицы разделов, которая выглядит например так:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1             1         3      5198+  ef  EFI (FAT-12/16/32)
+/dev/sda2   *         3        14    105808+  83  Linux
+/dev/sda3            15        81    506520   82  Linux swap
+/dev/sda4            82      3876  28690200   83  Linux
+</pre></div>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2">Сохранение разметки разделов</span></h3>
+<p>Для сохранения разметки разделов и выхода из <code>fdisk</code> введите <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">w</kbd>.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>w</code></div></div>
+<p>Разделы созданы, теперь настало время создать на них файловые системы.
+</p><p><br />
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112155800
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.388 seconds
+Real time usage: 0.415 seconds
+Preprocessor visited node count: 2696/1000000
+Preprocessor generated node count: 2906/1000000
+Post‐expand include size: 99679/2097152 bytes
+Template argument size: 7983/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  298.486      1 - -total
+100.00%  298.486      1 - Handbook:AMD64/Blocks/Disks/ru
+ 45.94%  137.139     17 - Template:Cmd
+ 44.04%  131.441     20 - Template:GenericCmd
+ 10.49%   31.317     28 - Template:GenericCmd/Line
+ 10.35%   30.896      3 - Template:RootCmd
+  6.29%   18.776     32 - Template:Key
+  6.21%   18.547      5 - Template:Note
+  4.25%   12.694      5 - Template:Note/core
+  3.43%   10.250      2 - Template:Warning
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:82400-0!*!*!!en!*!* and timestamp 20160112155759 and revision id 199124
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;oldid=199124">http://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/ru&amp;oldid=199124</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 29 December 2014, at 05:13.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Blocks/Disks/ru"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":610});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Blocks/Disks/ru by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:59:21 GMT -->
+</html>

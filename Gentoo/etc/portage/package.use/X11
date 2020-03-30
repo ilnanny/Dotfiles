@@ -1,5 +1,6 @@
-x11-libs/gtk+ X cups introspection cloudprint vim-syntax xinerama colord
+x11-libs/gtk+ X introspection vim-syntax xinerama colord
 x11-misc/compton dbus drm opengl xinerama pcre
 x11-misc/dunst dunstify
 x11-misc/redshift ayatana gtk gtk-doc nls geoclue
 x11-misc/tint2 tint2conf startup-notification svg
+x11-themes/gtk-engines-murrin -themes animation-rtl

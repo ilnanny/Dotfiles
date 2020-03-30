@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Gentoo Linux AMD64 Handbuch - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/de","wgTitle":"AMD64/de","wgCurRevisionId":217678,"wgRevisionId":217678,"wgArticleId":85912,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Handbook:AMD64/de","wgRelevantArticleId":85912,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],
+"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["de","en-us","en"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/de" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/de&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_de skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Handbook_AMD64/de.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Handbook_AMD64/de.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;oldid=217678" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../Special_Browse/Handbook_AMD64-2Fde.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2Fde&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2Fde" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="de.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/de&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="de">
+							<span dir="auto">Gentoo Linux AMD64 Handbuch</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+															</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64&amp;action=page&amp;filter=&amp;language=de">translated version</a></span> of the page <a href="../Handbook_AMD64.html" title="Handbook:AMD64">Handbook:AMD64</a> and the translation is 100% complete.</div>
+<hr /><p><br />
+</p>
+<div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="cs.html" title="Příručka:AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">čeština</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">Deutsch</span> • ‎<a href="../Handbook_AMD64.html" title="Handbook:AMD64 (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/es (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="fr.html" title="Le manuel de Gentoo pour l'architecture AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">français</a> • ‎<a href="it.html" title="Manuale: AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">italiano</a> • ‎<a href="ja.html" title="ハンドブック:AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="nl.html" title="Handboek:AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Nederlands</a> • ‎<a href="pt-br.html" title="Manual:AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">português do Brasil</a> • ‎<a href="ru.html" title="Handbook:AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="tr.html" title="Gentoo Linux AMD64 Rehberi (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Türkçe</a> • ‎<a href="zh-cn.html" title="手册：AMD64 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Installation
+</th></tr>
+<tr>
+<td> <a href="Installation/About/de.html" title="Handbook:AMD64/Installation/About/de">Über die Installation</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Media/de.html" title="Handbook:AMD64/Installation/Media/de">Auswählen des Mediums</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Networking/de.html" title="Handbook:AMD64/Installation/Networking/de">Konfiguration des Netzwerks</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Disks/de.html" title="Handbook:AMD64/Installation/Disks/de">Vorbereiten der Festplatte(n)</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Stage/de.html" title="Handbook:AMD64/Installation/Stage/de">Installation der stage3</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Base/de.html" title="Handbook:AMD64/Installation/Base/de">Installation des Basissystems</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Kernel/de.html" title="Handbook:AMD64/Installation/Kernel/de">Konfiguration des Kernels</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/System/de.html" title="Handbook:AMD64/Installation/System/de">Konfiguration des Systems</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Tools/de.html" title="Handbook:AMD64/Installation/Tools/de">Installation der Tools</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Bootloader/de.html" title="Handbook:AMD64/Installation/Bootloader/de">Konfiguration des Bootloaders</a>
+</td></tr>
+<tr>
+<td> <a href="Installation/Finalizing/de.html" title="Handbook:AMD64/Installation/Finalizing/de">Abschluss</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Arbeiten mit Gentoo
+</th></tr>
+<tr>
+<td> <a href="Working/Portage/de.html" title="Handbook:AMD64/Working/Portage/de">Portage-Einführung</a>
+</td></tr>
+<tr>
+<td> <a href="Working/USE/de.html" title="Handbook:AMD64/Working/USE/de">USE-Flags</a>
+</td></tr>
+<tr>
+<td> <a href="Working/Features/de.html" title="Handbook:AMD64/Working/Features/de">Portage-Features</a>
+</td></tr>
+<tr>
+<td> <a href="Working/Initscripts/de.html" title="Handbook:AMD64/Working/Initscripts/de">Initskript-System</a>
+</td></tr>
+<tr>
+<td> <a href="Working/EnvVar/de.html" title="Handbook:AMD64/Working/EnvVar/de">Umgebungsvariablen</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Arbeiten mit Portage
+</th></tr>
+<tr>
+<td> <a href="Portage/Files/de.html" title="Handbook:AMD64/Portage/Files/de">Dateien und Verzeichnisse</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Variables/de.html" title="Handbook:AMD64/Portage/Variables/de">Variablen</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Branches/de.html" title="Handbook:AMD64/Portage/Branches/de">Mischen von Softwarezweigen</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Tools/de.html" title="Handbook:AMD64/Portage/Tools/de">Zusätzliche Tools</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/CustomTree/de.html" title="Handbook:AMD64/Portage/CustomTree/de">Eigener Portage-Tree</a>
+</td></tr>
+<tr>
+<td> <a href="Portage/Advanced/de.html" title="Handbook:AMD64/Portage/Advanced/de">Erweiterte Portage-Features</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Netzwerkkonfiguration
+</th></tr>
+<tr>
+<td> <a href="Networking/Introduction/de.html" title="Handbook:AMD64/Networking/Introduction/de">Zu Beginn</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Advanced/de.html" title="Handbook:AMD64/Networking/Advanced/de">Fortgeschrittene Konfiguration</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Modular/de.html" title="Handbook:AMD64/Networking/Modular/de">Modulare Vernetzung</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Wireless/de.html" title="Handbook:AMD64/Networking/Wireless/de">Drahtlose Netzwerke</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Extending/de.html" title="Handbook:AMD64/Networking/Extending/de">Funktionalität hinzufügen</a>
+</td></tr>
+<tr>
+<td> <a href="Networking/Dynamic/de.html" title="Handbook:AMD64/Networking/Dynamic/de">Dynamisches Netzwerkmanagement</a>
+</td></tr></table>
+<p>Das Gentoo-Handbuch versucht die Dokumentation zentral in einem zusammenhängenden Handbuch zu vereinigen. Dieses Handbuch enthält Installationsanweisungen für Internetbasierte Installationen sowie Kapitel zum Arbeiten mit Gentoo und Portage.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Gentoo_installieren"><span class="tocnumber">1</span> <span class="toctext">Gentoo installieren</span></a></li>
+<li class="toclevel-1"><a href="#Arbeiten_mit_Gentoo"><span class="tocnumber">2</span> <span class="toctext">Arbeiten mit Gentoo</span></a></li>
+<li class="toclevel-1"><a href="#Arbeiten_mit_Portage"><span class="tocnumber">3</span> <span class="toctext">Arbeiten mit Portage</span></a></li>
+<li class="toclevel-1"><a href="#Gentoo-Netzwerkkonfiguration"><span class="tocnumber">4</span> <span class="toctext">Gentoo-Netzwerkkonfiguration</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Gentoo_installieren">Gentoo installieren</span></h2>
+<p>In diesem Abschnitt lernen Sie, wie Sie Gentoo auf Ihrem System installieren können.
+</p>
+<dl><dt> <a href="Installation/About/de.html" title="Handbook:AMD64/Installation/About/de">Über die Gentoo Linux Installation</a></dt>
+<dd> Dieses Kapitel ist eine Einleitung in die Installation, welche in diesem Handbuch beschrieben wird.</dd>
+<dt> <a href="Installation/Media/de.html" title="Handbook:AMD64/Installation/Media/de">Auswählen des richtigen Installationsmediums</a></dt>
+<dd> Sie können Gentoo auf viele Arten installieren. Dieses Kapitel erläutert wie Sie Gentoo mit der minimalen Installations-CD installieren.</dd>
+<dt> <a href="Installation/Networking/de.html" title="Handbook:AMD64/Installation/Networking/de">Konfiguration des Netzwerks</a></dt>
+<dd> Um in der Lage zu sein, den aktuellsten Quellcode herunterladen zu können, müssen Sie vorher das Netzwerk einrichten.</dd>
+<dt> <a href="Installation/Disks/de.html" title="Handbook:AMD64/Installation/Disks/de">Vorbereiten der Festplatte(n)</a></dt>
+<dd> Um in der Lage zu sein Gentoo installieren zu können, müssen Sie die notwendigen Partitionen erstellen. Dieses Kapitel beschreibt, wie man eine Festplatte für den Gebrauch partitioniert.</dd>
+<dt> <a href="Installation/Stage/de.html" title="Handbook:AMD64/Installation/Stage/de">Installation der Gentoo-Installationsdateien</a></dt>
+<dd> Installationen von Gentoo funktionieren mit einem stage3-Archiv. In diesem Kapitel wird beschrieben, wie Sie ein stage3-Archiv entpacken und Portage konfigurieren.</dd>
+<dt> <a href="Installation/Base/de.html" title="Handbook:AMD64/Installation/Base/de">Installation des Gentoo-Basissystems</a></dt>
+<dd> Nach der Installation und Konfiguration der stage3 steht Ihnen ein Gentoo Basissystem zur Verfügung. Dieses Kapitel beschreibt wie Sie zu diesem Punkt kommen.</dd>
+<dt> <a href="Installation/Kernel/de.html" title="Handbook:AMD64/Installation/Kernel/de">Konfiguration des Linux-Kernels</a></dt>
+<dd> Der Linux-Kernel ist der Kern einer jeden Distribution. Dieses Kapitel erläutert, wie man den Kernel konfiguriert.</dd>
+<dt> <a href="Installation/System/de.html" title="Handbook:AMD64/Installation/System/de">Konfiguration des Systems</a></dt>
+<dd> Sie werden einige wichtige Konfigurationsdateien editieren müssen. In diesem Kapitel erhalten Sie eine Übersicht über diese Dateien und eine Anleitung wie man fortfahren sollte.</dd>
+<dt> <a href="Installation/Tools/de.html" title="Handbook:AMD64/Installation/Tools/de">Installation der System-Tools</a></dt>
+<dd> In diesem Kapitel helfen wir Ihnen bei der Auswahl und Installation einiger wichtiger Tools.</dd>
+<dt> <a href="Installation/Bootloader/de.html" title="Handbook:AMD64/Installation/Bootloader/de">Konfiguration des Bootloaders</a></dt>
+<dd> In diesem Kapitel wird der passende Bootloader installiert und konfiguriert.</dd>
+<dt> <a href="Installation/Finalizing/de.html" title="Handbook:AMD64/Installation/Finalizing/de">Abschluss der Installation</a></dt>
+<dd> Die Installation ist nun fast fertig. Die letzten abrundenden Schritte werden in diesem Kapitel beschrieben.</dd></dl>
+<h2><span class="mw-headline" id="Arbeiten_mit_Gentoo">Arbeiten mit Gentoo</span></h2>
+<dl><dt> <a href="Working/Portage/de.html" title="Handbook:AMD64/Working/Portage/de">Eine Portage-Einführung</a></dt>
+<dd> Dieses Kapitel erklärt die "einfachen" Schritte, die ein Benutzer definitiv kennen muss, um Software auf seinem System zu betreuen.</dd>
+<dt> <a href="Working/USE/de.html" title="Handbook:AMD64/Working/USE/de">USE-Flags</a></dt>
+<dd> USE-Flags sind ein sehr wichtiger Aspekt von Gentoo. In diesem Kapitel erfahren Sie wie man mit USE-Flags arbeitet und wie USE-Flags mit Ihrem System interagieren.</dd>
+<dt> <a href="Working/Features/de.html" title="Handbook:AMD64/Working/Features/de">Portage-Features</a></dt>
+<dd> Entdecken Sie die Funktionen von Portage, wie Unterstützung für verteilte Kompilierung, ccache und mehr.</dd>
+<dt> <a href="Working/Initscripts/de.html" title="Handbook:AMD64/Working/Initscripts/de">Initskript-System</a></dt>
+<dd> Gentoo benutzt ein spezielles Initskriptformat, welches, neben weiteren Funktionen, abhängigkeitsbezogene Entscheidungen und virtuelle Initskripte ermöglicht. Dieses Kapitel erklärt diese Aspekte und erklärt, wie Sie mit diesen Skripten umgehen.</dd>
+<dt> <a href="Working/EnvVar/de.html" title="Handbook:AMD64/Working/EnvVar/de">Umgebungsvariablen</a></dt>
+<dd> Mit Gentoo können Sie die Umgebungsvariablen Ihres Systems ganz einfach bearbeiten. Dieses Kapitel erklärt häufig gebrauchte Umgebungsvariablen und wie Sie mit diesen umgehen.</dd></dl>
+<h2><span class="mw-headline" id="Arbeiten_mit_Portage">Arbeiten mit Portage</span></h2>
+<dl><dt> <a href="Portage/Files/de.html" title="Handbook:AMD64/Portage/Files/de">Dateien und Verzeichnisse</a></dt>
+<dd> Wenn Sie Portage ein wenig näher kennenlernen wollen, sollten Sie wissen, wo welche Daten und Dateien abgelegt werden.</dd>
+<dt> <a href="Portage/Variables/de.html" title="Handbook:AMD64/Portage/Variables/de">Variablen</a></dt>
+<dd> Portage ist vollständig durch verschiedene Variablen konfigurierbar, die Sie in der Konfigurationsdatei oder als Umgebungsvariablen setzen können.</dd>
+<dt> <a href="Portage/Branches/de.html" title="Handbook:AMD64/Portage/Branches/de">Mischen von Softwarezweigen</a></dt>
+<dd> Gentoo bietet Software eingeteilt in verschiedenen Zweigen an, abhängig von der Architektur und Stabilität. "Mischen von Softwarezweigen" informiert Sie darüber wie man diese Zweige verwendet und wie man individuell diese Aufteilung außer Kraft setzt.</dd>
+<dt> <a href="Portage/Tools/de.html" title="Handbook:AMD64/Portage/Tools/de">Zusätzliche Tools</a></dt>
+<dd> Portage bringt zusätzliche Tools mit, die Ihnen das Gentoo Erlebnis etwas vereinfachen sollen. Lesen Sie weiter um herauszufinden wie man <code>dispatch-conf</code> und andere Tools benutzt.</dd>
+<dt> <a href="Portage/CustomTree/de.html" title="Handbook:AMD64/Portage/CustomTree/de">Eigener Portage-Tree</a></dt>
+<dd> "Abweichen vom Offiziellen Tree" gibt Ihnen einige Tipps und Tricks, wie Sie Ihren eigenen Portage Tree nutzen können, wie Sie nur Kategorien aktualisieren, die Sie möchten, das "Injecten" von Paketen und mehr.</dd>
+<dt> <a href="Portage/Advanced/de.html" title="Handbook:AMD64/Portage/Advanced/de">Erweiterte Portage-Features</a></dt>
+<dd> Mit der Zeit entwickelt sich Portage immer weiter. Neue Features werden kontinuierlich eingebaut - viele davon sind nur für fortgeschritteneren Anwender hilfreich. Dieses Kapitel betrachtet diese speziellen Features genauer.</dd></dl>
+<h2><span class="mw-headline" id="Gentoo-Netzwerkkonfiguration">Gentoo-Netzwerkkonfiguration</span></h2>
+<dl><dt> <a href="Networking/Introduction/de.html" title="Handbook:AMD64/Networking/Introduction/de">Zu Beginn</a></dt>
+<dd> Ein Leitfaden um Ihre Netzwerkschnittstellen zügig für die häufigsten Umgebungen einzurichten.</dd>
+<dt> <a href="Networking/Advanced/de.html" title="Handbook:AMD64/Networking/Advanced/de">Fortgeschrittene Konfiguration</a></dt>
+<dd> Hier lernt man wie die Konfiguration funktioniert. Sie werden dies brauchen, bevor Sie sich mit der modularen Netzwerkkonfiguration vertraut machen.</dd>
+<dt> <a href="Networking/Modular/de.html" title="Handbook:AMD64/Networking/Modular/de">Modulare Vernetzung</a></dt>
+<dd> Gentoo ermöglicht flexible Netzwerkkonfiguration. Hier wird erläutert wie Sie einen DHCP-Client auswählen, Bonding, VLANS und mehr einrichten.</dd>
+<dt> <a href="Networking/Wireless/de.html" title="Handbook:AMD64/Networking/Wireless/de">Drahtlose Netzwerke</a></dt>
+<dd> Konfiguration von Gentoo für drahtlose Netzwerke</dd>
+<dt> <a href="Networking/Extending/de.html" title="Handbook:AMD64/Networking/Extending/de">Funktionalität hinzufügen</a></dt>
+<dd> Wenn Sie etwas Zeit mitbringen können Sie Ihre eigenen Funktionen zum Netzwerk hinzufügen.</dd>
+<dt> <a href="Networking/Dynamic/de.html" title="Handbook:AMD64/Networking/Dynamic/de">Dynamisches Netzwerkmanagement</a></dt>
+<dd> Für Laptop-Benutzer oder Menschen, die Ihre Computer zwischen verschiedenen Netzwerken hin- und herbewegen.</dd></dl>
+ <hr /><small>This article is based on a document formerly found on our main website <a rel="nofollow" class="external text" href="http://www.gentoo.org/">gentoo.org</a>. <br />The following people have contributed to the original document: <b>Sven Vermeulen, Grant Goodyear, Roy Marples, Daniel Robbins, Chris Houser, Jerry Alexandratos, Seemant Kulleen, Tavis Ormandy, Jason Huebel, Guy Martin, Pieter Van den Abeele, Joe Kallar, John P. Davis, Pierre-Henri Jondot, Eric Stockbridge, Rajiv Mangliani, Jungmin Seo, Stoyan Zhekov, Jared Hudson, Colin Morey, Jorge Paolo, Carl Anderson, Jon Portnoy, Zack Gilburd, Jack Morgan, Benny Chuang, Erwin, Joshua Kinard, Tobias Scherbaum, Xavier Neys, Joshua Saddler, Gerald J. Normandin Jr., Donnie Berkholz, Ken Nowack, Lars Weiler</b><br /><span style="color: #555;">They are listed here as the Wiki history does not provide for any attribution. If you edit the Wiki article, please do <b>not</b> add yourself here; your contributions are recorded on the history page.</span></small>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112063729
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.336 seconds
+Real time usage: 0.409 seconds
+Preprocessor visited node count: 156/1000000
+Preprocessor generated node count: 690/1000000
+Post‐expand include size: 17317/2097152 bytes
+Template argument size: 1060/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  306.963      1 - -total
+100.00%  306.963      1 - Handbook:Parts/de
+ 94.16%  289.029      1 - Handbook:Parts/TOC/de
+  1.18%    3.614      1 - Template:Migrated
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:85912-0!*!0!!en!*!* and timestamp 20160112063729 and revision id 217678
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;oldid=217678">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/de&amp;oldid=217678</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 2 January 2015, at 13:47.</li>
+																															<li id="privacy"><a href="../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/de"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":620});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/de by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:23:16 GMT -->
+</html>

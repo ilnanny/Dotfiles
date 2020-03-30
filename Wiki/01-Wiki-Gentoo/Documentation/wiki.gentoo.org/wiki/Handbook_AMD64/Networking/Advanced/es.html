@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Networking/Advanced/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:29:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Manual de Gentoo: AMD64/Redes/Avanzado - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Networking/Advanced/es","wgTitle":"AMD64/Networking/Advanced/es","wgCurRevisionId":270014,"wgRevisionId":270014,"wgArticleId":111116,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Handbook:AMD64/Networking/Advanced/es","wgRelevantArticleId":111116,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],
+"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Networking/Advanced/es" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Networking/Advanced/es&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Networking_Advanced_es skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Networking/Advanced/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Networking/Advanced/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;oldid=270014" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FNetworking-2FAdvanced-2Fes.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FNetworking%2FAdvanced%2Fes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FNetworking%2FAdvanced%2Fes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="es.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Networking/Advanced/es&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="es">
+							<span dir="auto">Manual de Gentoo: AMD64/Redes/Avanzado</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FNetworking%2FAdvanced&amp;action=page&amp;filter=&amp;language=es">translated version</a></span> of the page <a href="../Advanced.html" title="Handbook:AMD64/Networking/Advanced">Handbook:AMD64/Networking/Advanced</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Netzwerk/Fortgeschritten (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Advanced.html" title="Handbook:AMD64/Networking/Advanced (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">español</span> • ‎<a href="ja.html" title="ハンドブック:AMD64/ネットワーク/高度 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<a href="ko.html" title="Handbook:AMD64/Networking/Advanced/ko (100% translated)" class="mw-pt-progress mw-pt-progress--complete">한국어</a> • ‎<a href="ru.html" title="Handbook:AMD64/Networking/Advanced (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/网络/高级配置 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Instalación
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/es.html" title="Handbook:AMD64/Installation/About/es">Acerca de la instalación</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/es.html" title="Handbook:AMD64/Installation/Media/es">Elegir los medios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/es.html" title="Handbook:AMD64/Installation/Networking/es">Configurar la red</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/es.html" title="Handbook:AMD64/Installation/Disks/es">Preparar los discos</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/es.html" title="Handbook:AMD64/Installation/Stage/es">Instalar el stage3</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/es.html" title="Handbook:AMD64/Installation/Base/es">Instalar el sistema base</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/es.html" title="Handbook:AMD64/Installation/Kernel/es">Configurar el núcleo</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/es.html" title="Handbook:AMD64/Installation/System/es">Configurar el sistema</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/es.html" title="Handbook:AMD64/Installation/Tools/es">Instalar herramientas</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/es.html" title="Handbook:AMD64/Installation/Bootloader/es">Configurar el cargador de arranque</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/es.html" title="Handbook:AMD64/Installation/Finalizing/es">Terminar</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Gentoo
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/es.html" title="Handbook:AMD64/Working/Portage/es">Introducción a Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/es.html" title="Handbook:AMD64/Working/USE/es">Ajustes USE</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/es.html" title="Handbook:AMD64/Working/Features/es">Características de Portage</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/es.html" title="Handbook:AMD64/Working/Initscripts/es">Guiones de inicio</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/es.html" title="Handbook:AMD64/Working/EnvVar/es">Variables de entorno</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Trabajar con Portage
+</th></tr>
+<tr>
+<td> <a href="../../Portage/Files/es.html" title="Handbook:AMD64/Portage/Files/es">Archivos y directorios</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Variables/es.html" title="Handbook:AMD64/Portage/Variables/es">Variables</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Branches/es.html" title="Handbook:AMD64/Portage/Branches/es">Mezclar ramas de software</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Tools/es.html" title="Handbook:AMD64/Portage/Tools/es">Herramientas adicionales</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/CustomTree/es.html" title="Handbook:AMD64/Portage/CustomTree/es">Árbol de Portage personalizado</a>
+</td></tr>
+<tr>
+<td> <a href="../../Portage/Advanced/es.html" title="Handbook:AMD64/Portage/Advanced/es">Características avanzadas</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> Configuración de la red
+</th></tr>
+<tr>
+<td> <a href="../Introduction/es.html" title="Handbook:AMD64/Networking/Introduction/es">Comenzando</a>
+</td></tr>
+<tr>
+<td> <strong class="selflink">Configuración avanzada</strong>
+</td></tr>
+<tr>
+<td> <a href="../Modular/es.html" title="Handbook:AMD64/Networking/Modular/es">Configuración de red modular</a>
+</td></tr>
+<tr>
+<td> <a href="../Wireless/es.html" title="Handbook:AMD64/Networking/Wireless/es">Redes inalámbricas</a>
+</td></tr>
+<tr>
+<td> <a href="../Extending/es.html" title="Handbook:AMD64/Networking/Extending/es">Añadir funcionalidad</a>
+</td></tr>
+<tr>
+<td> <a href="../Dynamic/es.html" title="Handbook:AMD64/Networking/Dynamic/es">Gestión dinámica</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Configuraci.C3.B3n_Avanzada"><span class="tocnumber">1</span> <span class="toctext">Configuración Avanzada</span></a></li>
+<li class="toclevel-1"><a href="#Dependencias_de_red"><span class="tocnumber">2</span> <span class="toctext">Dependencias de red</span></a></li>
+<li class="toclevel-1"><a href="#Nombre_de_variables_y_valores"><span class="tocnumber">3</span> <span class="toctext">Nombre de variables y valores</span></a></li>
+<li class="toclevel-1"><a href="#Nombrado_de_las_interfaces_de_red"><span class="tocnumber">4</span> <span class="toctext">Nombrado de las interfaces de red</span></a>
+<ul>
+<li class="toclevel-2"><a href="#C.C3.B3mo_funciona"><span class="tocnumber">4.1</span> <span class="toctext">Cómo funciona</span></a></li>
+<li class="toclevel-2"><a href="#Utilizar_el_nombrado_al_viejo_estilo_del_n.C3.BAcleo"><span class="tocnumber">4.2</span> <span class="toctext">Utilizar el nombrado al viejo estilo del núcleo</span></a></li>
+<li class="toclevel-2"><a href="#Usar_sus_propios_nombres"><span class="tocnumber">4.3</span> <span class="toctext">Usar sus propios nombres</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Configuraci.C3.B3n_Avanzada">Configuración Avanzada</span></h2>
+<p>La variable <var>config_eth0</var> es el corazón de la configuración de una interfaz. Es una lista de instrucciones de alto nivel para configurar la interfaz (eth0 en este caso). Cada orden en la lista de instrucciones se ejecuta de manera secuencial. La interfaz será evaluada como OK si, al menos, un orden funciona.
+</p><p>Aquí tiene una lista de instrucciones integradas:
+</p>
+<table class="table table-condensed table-striped" style="text-align: left; width: auto">
+
+<tr>
+<th scope="col" width="15%">  Valor
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> <code>null</code>
+</td>
+<td> No hacer nada
+</td></tr>
+<tr>
+<td> <code>noop</code>
+</td>
+<td> Si la interfaz está funcionando y existe una dirección entonces aborta la configuración con éxito
+</td></tr>
+<tr>
+<td> Una dirección IPv4 o IPv6
+</td>
+<td> Añade la dirección a la interfaz
+</td></tr>
+<tr>
+<td> <code>dhcp</code>, <code>adsl</code> o <code>apipa</code> (o un valor propio perteneciente a un módulo de terceras partes)
+</td>
+<td> Ejecuta el módulo que proporciona la ofrece DHCP que se puede mediante <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dhcpcd</span>, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">dhclient</span> o <span style="font-family: monospace; font-size: 95%; font-weight: bold;">pump</span>.
+</td></tr></table>
+<p>Si una orden falla, puede especificar un valor de retorno (fallback). El retorno tiene que coincidir exactamente con la estructura de la configuración.
+</p><p>Puede encadenar estos valores. A continuación se muestran algunos ejemplos reales.
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Ejemplos de configuración</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Añadir tres direcciones IPv4</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2/24</span>
+<span class="s2">192.168.0.3/24</span>
+<span class="s2">192.168.0.4/24&quot;</span>
+  
+<span class="c"># Añadir una dirección IPv4 y dos IPv6</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;192.168.0.2/24</span>
+<span class="s2">4321:0:1:2:3:4:567:89ab</span>
+<span class="s2">4321:0:1:2:3:4:567:89ac&quot;</span>
+  
+<span class="c"># Mantener la dirección asignada por el núcleo, a menos que la</span>
+<span class="c"># interfaz se caiga, entonces asignar otra vía DHCP. Si DHCP falla entonces</span>
+<span class="c"># añadir una dirección estática determinada mediante APIPA</span>
+<span class="nv">config_eth0</span><span class="o">=</span><span class="s2">&quot;noop</span>
+<span class="s2">dhcp&quot;</span>
+<span class="nv">fallback_eth0</span><span class="o">=</span><span class="s2">&quot;null</span>
+<span class="s2">apipa&quot;</span>
+</pre></div></pre>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Cuando se utiliza el módulo <code>ifconfig</code> y se añade más de una dirección, se crean alias de interfaz para cada dirección extra. De esta manera los dos ejemplos anteriores tendrán interfaces eth0, eth0:1 y eth0:2. No se puede hacer nada especial con estas interfaces ya que el núcleo y otros programas simplemente tratan eth0:1 y eth0:2 como eth0.</div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> Importante</strong><br />¡La orden de retorno es importante! Si no especificamos la opción null, la orden <code>apipa</code> se ejecutaría solo si la orden <code>noop</code> falla.</div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br /> APIPA y DHCP serán tratados más adelante.</div>
+<h2><span class="mw-headline" id="Dependencias_de_red">Dependencias de red</span></h2>
+<p>Los guiones en <span style="font-family: monospace; font-size: 95%">/etc/init.d/</span> pueden depender de una interfaz de red específica o, simplemente, de "net" (red). Todos los interfaces de red en el sistema de inicio de Gentoo proporcionan algo llamado "net".
+</p><p>Si se define la variable <var>rc_depend_strict</var> a <code>YES</code> en <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span>, entonces todos los interfaces de red que proporcio<code>nen "net" deben estar activos antes que pueda considerarse cumplida la dependencia en "net". En otras palabras, si tienen los interfaces net.eth0 y net.eth1 y un guión de inicio depende de "net", ambos deben estar activados.
+</p><p>Por otro lado, si está configurado &lt;code&gt;rc_depend_strict="NO"</code>, entonces la dependencia de "net" se considera cumplida al momento de estar activo al menos uno de los interfaces de red.
+</p><p>Pero, ¿y qué pasa si net.br0 depende de net.eth0 y net.eth1? net.eth1 podría ser un dispositivo inalámbrico o ppp que necesita configurarse antes de añadirse al puente. Esto no puede hacerse en <span style="font-family: monospace; font-size: 95%">/etc/init.d/net.br0</span> ya que es un enlaces simbólico a net.lo.
+</p><p>La respuesta es definir un ajuste <var>rc_need_</var> en <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Añadir una dependencia de net.br0</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">rc_need_br0</span><span class="o">=</span><span class="s2">&quot;net.eth0 net.eth1&quot;</span>
+</pre></div></pre>
+<p>Lo anterior no es suficiente. Los guiones de inicio de Gentoo utilizan una dependencia virtual llamada "net" para informar al sistema cuando está disponible la conexión a red. Claramente, en el caso de arriba la conexión a red debería marcarse como disponible cuando net.br0 está funcionando, no cuando lo están las otras. Por lo que tenemos que indicar también esto en <span style="font-family: monospace; font-size: 95%">/etc/conf.d/net</span>:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Actualizar las dependencias y provisiones para los servicios de red</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">rc_net_lo_provide</span><span class="o">=</span><span class="s2">&quot;!net&quot;</span>
+<span class="nv">rc_net_eth0_provide</span><span class="o">=</span><span class="s2">&quot;!net&quot;</span>
+<span class="nv">rc_net_eth1_provide</span><span class="o">=</span><span class="s2">&quot;!net&quot;</span>
+</pre></div></pre>
+<p>Para una lectura más detallada sobre dependencias, consulte la sección Guiones de Inicio en el manual de Gentoo. Se puede encontrar más información acerca de <span style="font-family: monospace; font-size: 95%">/etc/rc.conf</span> en los comentarios dentro del propio archivo.
+</p>
+<h2><span class="mw-headline" id="Nombre_de_variables_y_valores">Nombre de variables y valores</span></h2>
+<p>Los nombre de variables son dinámicos. Normalmente sigue la estructura <code>variable_${interface|mac|essid|apmac}</code>. Por ejemplo, la variable <var>dhcpcd_eth0</var> guarda los valores para las opciones de dhcpcd para eth0 y <var>dhcpcd_essid</var> los valores para dhcpcd cuando cualquier interfaz se conecta al ESSID "essid".
+</p><p>Sin embargo, no hay ninguna regla que indique que los nombre de las interfaces sean ethx. De hecho, muchas interfaces inalambricas tienen nombres como wlanx, rax o ethx. También, algunas interfaces definidas por el usuario como pueden ser puentes puede tener cualquier nombre. Para hacer la vida un poco más interesante, los puntos de acceso inalámbricos pueden tener nombres con caracteres no alfanuméricos - esto es importante porque se pueden configurar los parámetros de red por ESSID.
+</p><p>La desventaja de todo esto es que Gentoo usa variables bash para la red - y bash no puede utilizar nada fuera de caracteres alfanuméricos ingleses. Para solucionar esta limitación cambiamos cada carácter que no sea alfanumérico inglés por un carácter _.
+</p><p>Otra desventaja de bash es el contenido de las variables - algunos caracteres necesitan especificarse de manera especial. Esto se hace utilizando \ (la barra invertida) delante del carácter. A continuación tenemos una lista de caracteres especiales que necesitamos indicar de esta manera: <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">"</kbd>, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">'</kbd> y <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">\</kbd>.
+</p><p>En este ejemplo utilizamos un ESSID inalámbrico ya que puede contener un amplio abanico de caracteres. Deberemos utilizar ESSID My "\ NET:
+</p>
+<div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #54487A">ARCHIVO</span> <strong><code style="border: none; background: none; color: #54487A; margin-right: .5em;">/etc/conf.d/net</code></strong><strong>Nombre de variable</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="c"># Esto funciona, pero el dominio no es válido</span>
+<span class="nv">dns_domain_My____NET</span><span class="o">=</span><span class="s2">&quot;My \&quot;\\ NET&quot;</span>
+</pre></div></pre>
+<p>Lo que hay arriba configura el dominio dns a <i>My "\ NET</i> cuando una 
+tarjeta inalámbrica se conecta a un AP cuyo ESSID es <i>My "\ NET</i>.
+</p>
+<h2><span class="mw-headline" id="Nombrado_de_las_interfaces_de_red">Nombrado de las interfaces de red</span></h2>
+<h3><span class="mw-headline" id="C.C3.B3mo_funciona">Cómo funciona</span></h3>
+<p>Los nombres de la interfaces de red no se obtienen de forma arbitraria: el núcleo Linux y el gestor de dispositivos (la mayoría de sistemas utilizan udev como gestor de dispositivos, aunque existen otros) obtiene el nombre de la interfaz mediante una serie de reglas prefijadas.
+</p><p>Cuando se detecta una interfaz en un sistema, el núcleo Linux recolecta los datos disponibles para esa tarjeta de red. Estos datos incluyen:
+</p>
+<ul><li> El nombre registrado de tarjeta de red (en la propia interfaz) y que más tarde se podrá obtener a través del valor de <var>ID_NET_NAME_ONBOARD</var>.</li>
+<li> La ranura en la cual se ha insertado la tarjeta de red y que más tarde se podrá obtener a través del valor de <var>ID_NET_NAME_SLOT</var>.</li>
+<li> La ruta a través de la cual se accede a la tarjeta de red y que más tarde se podrá obtener a través del valor de <var>ID_NET_NAME_PATH</var>.</li>
+<li> La dirección MAC de la tarjeta (que ofrece el fabricante) que más tarde se podrá obtener mediante el valor de <var>ID_NET_NAME_MAC<var>.</li></ul>
+<p>Basándose en esta información, el gestor de dispositivos decide como nombrar a las interfaces presentes en el sistema. Por defecto, utiliza el primero de las tres primeras variables que se muestran arriba (<var>ID_NET_NAME_ONBOARD</var>, <var>_SLOT</var> o <var>_PATH</var>). Por ejemplo, si se encuentra un valor para <var>ID_NET_NAME_ONBOARD</var> y éste es <code>eno1</code>, entonces la interfaz de red se llamará eno1.
+</p><p>Si sabe el nombre de su interfaz, puede ver los valores de las variables mediante la orden <span style="font-family: monospace; font-size: 95%; font-weight: bold;">udevadm</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>udevadm test-builtin net_id /sys/class/net/enp3s0 2&gt;/dev/null</code></div><pre>
+ID_NET_NAME_MAC=enxc80aa9429d76
+ID_OUI_FROM_DATABASE=Quanta Computer Inc.
+ID_NET_NAME_PATH=enp3s0
+</pre></div>
+<p>Como la primera (y realmente la única) de las tres variables es <var>ID_NET_NAME_PATH</var>, su valor se utiliza para nombrar al interfaz de red. Si ninguna de las variables tienen valor, entonces el sistema utiliza los nombres que ofrece el núcleo (eth0, eth1, etc.)
+</p>
+<h3><span class="mw-headline" id="Utilizar_el_nombrado_al_viejo_estilo_del_n.C3.BAcleo">Utilizar el nombrado al viejo estilo del núcleo</span></h3>
+<p>Antes de este cambio, era el núcleo el que ponía los nombres a las tarjetas de red, dependiendo del orden en el que se cargaran sus controladores (entre otras, probablemente oscuras razones). Este comportamiento se puede aún activar definiendo el parámetro <code>net.ifnames=0</code> en el gestor de arranque.
+</p>
+<h3><span class="mw-headline" id="Usar_sus_propios_nombres">Usar sus propios nombres</span></h3>
+<p>La idea detrás de este cambio en el nombrado es la de no confundir a la gente y hacer los cambios de nombre de forma fácil. Suponga que tiene dos interfaces que se llamarían eth0 y eth1. Una se utiliza para acceder a la red a través de cable y la otra es inalámbrica. Con el soporte para el nombrado de interfaces, puede llamarlas lan0 (cableada) y wifi0 (inalámbrica, es mejor evitar usar los nombres anteriores bien conocidos como eth* y wlan* ya que todavía pueden parecerse a los nombres que hemos sugerido).
+</p><p>Todo lo que necesita ahora es encontrar los parámetros para las tarjetas y utilizar esta información para definir su propia regla de nombrado:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>udevadm test-builtin net_id /sys/class/net/eth0 2&gt;/dev/null</code></div><pre>
+ID_NET_NAME_MAC=enxc80aa9429d76
+ID_OUI_FROM_DATABASE=Quanta Computer Inc.
+</pre></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>vim /etc/udev/rules.d/70-net-name-use-custom.rules</code></div><pre>
+# El primero utiliza la información MAC y el número 70- para que se lance antes que otras reglas de red
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ATTR{address}==&quot;c8:0a:a9:42:9d:76&quot;, NAME=&quot;lan0&quot;
+</pre></div>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>vim /etc/udev/rules.d/76-net-name-use-custom.rules</code></div><pre>
+# El segundo utiliza la información de ID_NET_NAME_PATH y el número 76- para estar entre los dos
+# 75-net-*.rules y 80-net-*.rules
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ENV{ID_NET_NAME_PATH}==&quot;enp3s0&quot;, NAME=&quot;wifi0&quot;
+</pre></div>
+<p>Debido a que las reglas se disparan antes de la regla por defecto (las reglas se disparan en orden alfanumérico, por lo que la 70 se lee antes que la 80), los nombres ofrecidos en el fichero de reglas se utilizarán en lugar de los que se usan por defecto. El número asignado al fichero debería estar entre 76 y 79 (las variables de entorno se definen mediante una regla que comienza por 75 y el nombrado por defecto lo realiza una regla con el número 80).
+</p><p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../Introduction/es.html" title="Previous part" class="btn btn-default">&#8592; Comenzando</a> <a href="../../es.html" title="Handbook:AMD64/es" class="btn btn-default">Home</a> <a href="../Modular/es.html" title="Next part" class="btn btn-default">Red modular &#8594;</a></div>
+<p><br />
+</var>
+</var>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112152553
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.340 seconds
+Real time usage: 0.532 seconds
+Preprocessor visited node count: 850/1000000
+Preprocessor generated node count: 2436/1000000
+Post‐expand include size: 35041/2097152 bytes
+Template argument size: 5292/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  448.405      1 - -total
+100.00%  448.405      1 - Handbook:Parts/Networking/Advanced/es
+ 40.10%  179.809      4 - Template:FileBox
+ 38.81%  174.016      4 - Template:PreBox
+ 34.21%  153.416      1 - Handbook:Parts/TOC/es
+  9.10%   40.811      4 - Template:RootCmd
+  7.05%   31.608      4 - Template:GenericCmd
+  4.91%   22.007      1 - Handbook:Parts/Navigator
+  2.03%    9.091      2 - Template:Note
+  1.62%    7.256      4 - Template:GenericCmd/Line
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:111116-0!*!0!!en!*!* and timestamp 20160112152553 and revision id 270014
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;oldid=270014">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Networking/Advanced/es&amp;oldid=270014</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 1 March 2015, at 01:40.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Networking/Advanced/es"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":724});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Networking/Advanced/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:29:20 GMT -->
+</html>

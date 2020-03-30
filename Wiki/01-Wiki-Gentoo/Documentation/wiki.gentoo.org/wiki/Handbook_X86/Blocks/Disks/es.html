@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Blocks/Disks/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:59:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Manual de Gentoo: X86/Bloques/Discos - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:X86/Blocks/Disks/es","wgTitle":"X86/Blocks/Disks/es","wgCurRevisionId":187922,"wgRevisionId":187922,"wgArticleId":75678,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgMonthNamesShort":["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"wgRelevantPageName":"Handbook:X86/Blocks/Disks/es","wgRelevantArticleId":75678,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,
+"sfgFieldProperties":[],"sfgCargoFields":[],"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:X86/Blocks/Disks/es" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:X86/Blocks/Disks/es&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_X86_Blocks_Disks_es skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_X86/Blocks/Disks/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_X86/Blocks/Disks/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;oldid=187922" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_X86-2FBlocks-2FDisks-2Fes.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FBlocks%2FDisks%2Fes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AX86%2FBlocks%2FDisks%2Fes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="es.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:X86/Blocks/Disks/es&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="es">
+							<span dir="auto">Manual de Gentoo: X86/Bloques/Discos</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_X86.html" title="Special:MyLanguage/Handbook:X86">Handbook:X86</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="es" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AX86%2FBlocks%2FDisks&amp;action=page&amp;filter=&amp;language=es">translated version</a></span> of the page <a href="../Disks.html" title="Handbook:X86/Blocks/Disks">Handbook:X86/Blocks/Disks</a> and the translation is 100% complete.</div>
+<hr /><p><br />
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Particiones"><span class="tocnumber">1</span> <span class="toctext">Particiones</span></a>
+<ul>
+<li class="toclevel-2"><a href="#MBR"><span class="tocnumber">1.1</span> <span class="toctext">MBR</span></a></li>
+<li class="toclevel-2"><a href="#GPT"><span class="tocnumber">1.2</span> <span class="toctext">GPT</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#GPT_o_MBR"><span class="tocnumber">2</span> <span class="toctext">GPT o MBR</span></a></li>
+<li class="toclevel-1"><a href="#Usar_UEFI"><span class="tocnumber">3</span> <span class="toctext">Usar UEFI</span></a></li>
+<li class="toclevel-1"><a href="#Almacenamiento_avanzado"><span class="tocnumber">4</span> <span class="toctext">Almacenamiento avanzado</span></a></li>
+<li class="toclevel-1"><a href="#Esquema_de_particionamiento_por_defecto"><span class="tocnumber">5</span> <span class="toctext">Esquema de particionamiento por defecto</span></a></li>
+<li class="toclevel-1"><a href="#Dise.C3.B1ar_un_esquema_de_particionamiento"><span class="tocnumber">6</span> <span class="toctext">Diseñar un esquema de particionamiento</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.C2.BFCu.C3.A1ntas_y_de_qu.C3.A9_tama.C3.B1o.3F"><span class="tocnumber">6.1</span> <span class="toctext">¿Cuántas y de qué tamaño?</span></a></li>
+<li class="toclevel-2"><a href="#.C2.BFQu.C3.A9_decir_sobre_el_espacio_de_intercambio.3F"><span class="tocnumber">6.2</span> <span class="toctext">¿Qué decir sobre el espacio de intercambio?</span></a></li>
+<li class="toclevel-2"><a href="#.C2.BFQu.C3.A9_es_la_partici.C3.B3n_de_arranque_BIOS.3F"><span class="tocnumber">6.3</span> <span class="toctext">¿Qué es la partición de arranque BIOS?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Por_defecto:_Utilizar_parted_para_crear_las_particiones_del_disco"><span class="tocnumber">7</span> <span class="toctext">Por defecto: Utilizar parted para crear las particiones del disco</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Mostrar_la_disposici.C3.B3n_actual_de_las_particiones_con_parted"><span class="tocnumber">7.1</span> <span class="toctext">Mostrar la disposición actual de las particiones con parted</span></a></li>
+<li class="toclevel-2"><a href="#Definir_la_etiqueta_GPT"><span class="tocnumber">7.2</span> <span class="toctext">Definir la etiqueta GPT</span></a></li>
+<li class="toclevel-2"><a href="#Eliminar_todas_las_particiones_con_parted"><span class="tocnumber">7.3</span> <span class="toctext">Eliminar todas las particiones con parted</span></a></li>
+<li class="toclevel-2"><a href="#Crear_las_particiones"><span class="tocnumber">7.4</span> <span class="toctext">Crear las particiones</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Alternativa:_Utilizar_fdisk_para_crear_las_particiones_del_disco"><span class="tocnumber">8</span> <span class="toctext">Alternativa: Utilizar fdisk para crear las particiones del disco</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Examinar_el_esquema_de_particionamiento_actual"><span class="tocnumber">8.1</span> <span class="toctext">Examinar el esquema de particionamiento actual</span></a></li>
+<li class="toclevel-2"><a href="#Eliminar_todas_las_particiones_con_fdisk"><span class="tocnumber">8.2</span> <span class="toctext">Eliminar todas las particiones con fdisk</span></a></li>
+<li class="toclevel-2"><a href="#Crear_una_partici.C3.B3n_de_arranque_BIOS"><span class="tocnumber">8.3</span> <span class="toctext">Crear una partición de arranque BIOS</span></a></li>
+<li class="toclevel-2"><a href="#Crear_la_partici.C3.B3n_de_arranque"><span class="tocnumber">8.4</span> <span class="toctext">Crear la partición de arranque</span></a></li>
+<li class="toclevel-2"><a href="#Crear_la_partici.C3.B3n_de_intercambio"><span class="tocnumber">8.5</span> <span class="toctext">Crear la partición de intercambio</span></a></li>
+<li class="toclevel-2"><a href="#Crear_la_partici.C3.B3n_ra.C3.ADz"><span class="tocnumber">8.6</span> <span class="toctext">Crear la partición raíz</span></a></li>
+<li class="toclevel-2"><a href="#Almacenar_la_tabla_de_particiones"><span class="tocnumber">8.7</span> <span class="toctext">Almacenar la tabla de particiones</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Particiones">Particiones</span></h3>
+<p>Aunque teóricamente es posible utilizar el disco duro completo para albergar la instalación Linux, esto casi nunca se hace. En su lugar, los dispositivos de bloque enteros se dividen en partes más manejables y pequeñas. En los sistemas x86 éstas se llaman particiones. Actualmente hay dos tecnologías estándar de particionamiento en uso: MBR y GPT.
+</p>
+<h4><span class="mw-headline" id="MBR">MBR</span></h4>
+<p>La configuración MBR (Registro de Arranque Maestro -Master Boot Record-) utiliza identificadores de 32 bits para el sector de comienzo y longitud de las particiones y ofrece soporte para tres tipos de particiones: primaria, extendida y lógica. Las particiones primarias almacenan su información en el propio registro maestro de arranque, un lugar muy pequeño (normalmente 512 bytes) al comienzo del disco. Debido a esta limitación en el tamaño, solo se permiten cuatro particiones primarias (por ejemplo desde <span style="font-family: monospace; font-size: 95%">/dev/sda1</span> hasta <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>).
+</p><p>Para poder ofrecer más particiones, una de las particiones primarias se puede marcar como partición extendida. Esta partición puede contener particiones lógicas (particiones dentro de otra partición).
+</p><p>Cada partición está limitada a un tamaño de 2 TB (debido a los identificadores de 32 bits). Además, la configuración MBR no ofrece una copia de respaldo del MBR, por lo que si una aplicación escribe información en el MBR, toda la información sobre particiones se pierde.
+</p>
+<h4><span class="mw-headline" id="GPT">GPT</span></h4>
+<p>La configuración GPT (Tabla de Particiones GUID -GUID Partition table-) utiliza identificadores de 64 bits para las particiones. El lugar donde se almacena la información sobre particiones es mayor que los 512 utilizados en la configuración MBR, y además no hay limitación en el número de particiones. Por otro lado el tamaño de cada partición es bastante mayor (al menos 8 ZB, sí, zetabytes).
+</p><p>Cuando se utiliza UEFI (en lugar de BIOS) como interfaz de software de sistema entre el sistema operativo y el firmware, se requiere el uso de GPT ya que se podrían producir problemas de compatibilidad si se utiliza MBR.
+</p><p>GPT también tiene la ventaja de ofrecer una copia de respaldo GPT al final del disco, que puede utilizarse para recuperarla en caso de que se produzcan daño en la GPT primaria que se almacena al comienzo del disco. GPT también mantiene sumas de comprobación CRC32 para detectar errores en las tablas de particiones y en la cabecera.
+</p>
+<h3><span class="mw-headline" id="GPT_o_MBR">GPT o MBR</span></h3>
+<p>De la descripción anterior, se puede pensar que GPT es siempre la opción recomendada. Sin embargo hay algunas excepciones a esto.
+</p><p>El uso de GPT en una computadora basada en BIOS funciona, pero no se puede realizar un arranque dual con un sistema operativo Microsoft Windows. La razón es que Microsoft Windows arrancará en modo EFI si detecta una etiqueta de particiones GPT.
+</p><p>Algunas BIOS o EFIs con errores que se configuren para arrancar en modo BIOS/CSM/legacy pueden presentar problemas cuando se inicie desde discos etiquetados con GPT. En este caso debería poder solucionar el problema activando la opción de arranque en la partición MBR protegida que se debe realizar mediante <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> con la opción <code>-t dos</code> para forzarlas a leer la tabla de particiones usando el formato MBR.
+</p><p>En este caso, ejecute <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> y cambie el indicador pulsando la tecla <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">a</kbd>. Pulse (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">1</kbd>) para seleccionar la primera partición y después pulse la tecla (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">w</kbd>) para guardar los cambios en el disco y salir del programa <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">usuario $</code><span class="tripleclick-separator"></span><code>fdisk -t dos /dev/sda</code></div><pre>
+Welcome to fdisk (util-linux 2.24.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+  
+Command (m for help): a
+Partition number (1-4): 1
+  
+Command (m for help): w
+</pre></div>
+<h3><span class="mw-headline" id="Usar_UEFI">Usar UEFI</span></h3>
+<p>Cuando se instala Gentoo en un sistema que usa UEFI (en lugar de BIOS) para arrancar el sistema operativo, es importante crear una partición del sistema EFI. Las instrucciones relativas a <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> a continuación contienen las indicaciones necesarias para conseguirlo.
+</p><p>La fartición del sistema EFI necesita ser una partición FAT32 (o "vfat" somo se muestra en sistemas Linux). Las instrucciones al final de este capítulo usan "ext2" como ejemplo de sistema de archivos para la partición <span style="font-family: monospace; font-size: 95%">/boot/</span>. Asegúrese de usar "vfat" de esta menera:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>mkfs.vfat /dev/sda2</code></div></div>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Advertencia</strong><br />¡Si la partición de arranque no usa el sistema de archivos FAT32 (vfat), los sistemas con firmware UEFI no podrán encontrar el núcleo Linux y arrancar el sistema!</div>
+<h3><span class="mw-headline" id="Almacenamiento_avanzado">Almacenamiento avanzado</span></h3>
+<p>Los CDs de instalación para x86 proporcionan soporte para LVM2. LVM2 incrementa incrementa la flexibilidad ofrecida por el esquema de particionamiento. Cuando recorramos las instrucciones de instalación, nos centraremos en particiones "normales", sin embargo, es importante saber que las particiones de tipo LVM2 también están soportadas.
+</p>
+<h3><span class="mw-headline" id="Esquema_de_particionamiento_por_defecto">Esquema de particionamiento por defecto</span></h3>
+<p>En lo que resta de manual, se usará es siguiente esquema de particionamiento. Si esto le sirve, el lector puede saltar inmediatamente a <a href="#Por_defecto:_Utilizar_parted_para_crear_las_particiones_del_disco">Por defecto: Utilizar parted para crear las particiones del disco</a> o <a href="#Alternativa:_Utilizar_fdisk_para_crear_las_particiones_del_disco">Alternativa: Utilizar fdisk para crear las particiones del disco</a>. Ambas son herramientas de particionamiento, <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> es bien conocida y estable y recomendada para el esquema de particionamiento MBR, mientras que <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> es mas reciente y recomendada para esquemas GPT.
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th> Partición
+</th>
+<th> Sistema de archivos
+</th>
+<th> Tamaño
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda1</span>
+</td>
+<td> (cargador de arranque)
+</td>
+<td> 2M
+</td>
+<td> Partición de arranque BIOS
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda2</span>
+</td>
+<td> ext2 (o vfat)
+</td>
+<td> 128M
+</td>
+<td> Partición de arranque
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda3</span>
+</td>
+<td> (intercambio -swap-)
+</td>
+<td> 512M o más
+</td>
+<td> Partición de intercambio
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>
+</td>
+<td> ext4
+</td>
+<td> Resto del disco
+</td>
+<td> Partición raíz
+</td></tr></table>
+<p>Antes de pasar a las instrucciones de creación, el primer conjunto de secciones describirán con mas detalle cómo pueden crearse esquemas de particionamiento y cuáles son los problemas mas comunes.
+</p>
+<h2><span class="mw-headline" id="Dise.C3.B1ar_un_esquema_de_particionamiento">Diseñar un esquema de particionamiento</span></h2>
+<h3><span class="mw-headline" id=".C2.BFCu.C3.A1ntas_y_de_qu.C3.A9_tama.C3.B1o.3F">¿Cuántas y de qué tamaño?</span></h3>
+<p>El número de particiones es altamente dependiente del entorno particular. Por ejemplo, si la máquina tiene muchos usuarios, es aconsejable tener <span style="font-family: monospace; font-size: 95%">/home/</span> en una partición separada para aumentar la seguridad y facilitar las copias de seguridad. Si está instalando Gentoo para un servidor de correo, debe tener <span style="font-family: monospace; font-size: 95%">/var/</span> en una partición separada ya que es allí dónde se almacena todo el correo. Asimismo, una buena elección de sistema de archivos optimizará el rendimiento del equipo. Los servidores de juegos deben disponer de una partición <span style="font-family: monospace; font-size: 95%">/opt/</span> separada, ya que la mayoría de juegos se instalan allí. Las razones para estas recomendaciones son similares para el caso de <span style="font-family: monospace; font-size: 95%">/home/</span>: seguridad y salvaguarda de datos. En la mayoría de los casos <span style="font-family: monospace; font-size: 95%">/usr/</span> debe ser grande: no solamente contendrá la mayoría de las aplicaciones, sino que el propio árbol de Portage ocupa más de 500 MBs, sin contar las fuentes que también se guardan en él.
+</p><p>Como se puede ver, todo depende de lo que el administrador quiera conseguir. Tener particiones o volúmenes separados tiene las siguientes ventajas:
+</p>
+<ul><li> Puede elegir el mejor sistema de archivos para cada partición o volumen.</li>
+<li> El sistema entero no puede quedarse sin espacio si una herramienta fallara y escribiera datos continuamente en una partición o volumen.</li>
+<li> Si es el caso, el tiempo dedicado a las comprobaciones de integridad de los sistemas de archivos se reduce ya que las éstas pueden ser hechas en paralelo (esta ventaja es mayor con múltiples discos que con múltiples particiones).</li>
+<li> Se puede mejorar la seguridad montando algunas particiones o volúmenes en modo solo lectura, <code>nosuid</code> (los bits setuid son ignorados), <code>noexec</code> (los bits de ejecución son ignorados) etc.</li></ul>
+<p>Sin embargo, tener múltiples particiones tiene también desventajas. Si no se configuran adecuadamente, un sistema puede tener mucho espacio vacío en una partición y ninguno en otra. Otra contrariedad es que las particiones separadas - especialmente las que se utilizan para puntos de montaje importantes como <span style="font-family: monospace; font-size: 95%">/usr/</span> o <span style="font-family: monospace; font-size: 95%">/var/</span> - a menudo requieren del administrador el que arranque con un sistema de archivos de inicio en RAM (initramfs) para montar la partición antes de que otros guiones de inicio se ejecuten. Este no es siempre el caso, por lo que los resultados pueden ser diferentes.
+</p><p>También, existe un límite de 15 particiones para SCSI y SATA a no ser que el disco use la estructura GPT.
+</p>
+<h3><span class="mw-headline" id=".C2.BFQu.C3.A9_decir_sobre_el_espacio_de_intercambio.3F">¿Qué decir sobre el espacio de intercambio?</span></h3>
+<p>No existe un valor perfecto para la partición de intercambio. El propósito de esta partición es ofrecer espacio de almacenamiento al núcleo cuando la memoria interna (RAM) está bajo presión. Un espacio de intercambio permite al núcleo mover al disco páginas de memoria que probablemente no se van a acceder en un corto espacio de tiempo (intercambio o page-out), liberando memoria. Desde luego, si esa memoria se necesita, estas páginas deben ser devueltas a la memoria (page-in) lo cual llevará un tiempo (debido a que los discos son lentos comparados con la memoria interna).
+</p><p>Cuando el sistema no esta ejecutanto aplicaciones que consuman mucha memoria o dispone de mucha memoria disponible, entonces seguramente no necesitará mucho espacio de intercambio. Sin embargo, el espacio de intercambio se utiliza también para almacenar el contenido de toda la memoria en caso de hibernación. Si se trata de un sistema que va  a necesitar hibernación, necesitará un mayor espacio de intercambio. En la mayoría de los casos deberá tener al menos la misma cantidad de memoria que tiene su sistema.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id=".C2.BFQu.C3.A9_es_la_partici.C3.B3n_de_arranque_BIOS.3F">¿Qué es la partición de arranque BIOS?</span></h3>
+<p>Una partición de arranque BIOS es una partición muy pequeña (de 1 a 2 MB) en la que cargadores de arranque como GRUB2 pueden poner datos adicionales que no caben el espacio reservado para ellos (algunos cientos de bytes en el caso del MBR) y no se pueden colocar en otro lugar.
+</p><p>Estas particiones no son siempre necesarias, pero considerando el poco espacio que consumen y las dificultades que tendríamos para documentar la enorme cantidad de diferencias entre particiones, merece la pena crearla en cualquier caso.
+</p><p>Para completar, podemos decir que la partición de arranque BIOS se necesita cuando se utiliza la disposición GPT con GRUB2 o cuando usando el esquema de particiones MBR con GRUB2, la primera partición comienza antes de la localización de 1 MB en el disco.
+</p>
+<h2><span class="mw-headline" id="Por_defecto:_Utilizar_parted_para_crear_las_particiones_del_disco">Por defecto: Utilizar parted para crear las particiones del disco</span></h2>
+<p>En este capítulo usaremos el esquema de particiones de ejemplo mencionado anteriormente:
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th> Partición
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda1</span>
+</td>
+<td> Partición de arranque BIOS
+</td></tr>
+<tr>
+<td>  <span style="font-family: monospace; font-size: 95%">/dev/sda2</span>
+</td>
+<td> Partición de arranque
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda3</span>
+</td>
+<td> Partición de intercambio
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>
+</td>
+<td> Partición raíz
+</td></tr></table>
+<p>Cambie el equema de particiones según sus preferencias particulares. 
+</p>
+<h3><span class="mw-headline" id="Mostrar_la_disposici.C3.B3n_actual_de_las_particiones_con_parted">Mostrar la disposición actual de las particiones con parted</span></h3>
+<p>El programa <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> ofrece una interfaz simple para particionar sus discos y ofrece soporte para particiones grandes (más de 2 TB). Lance <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> sobre su disco (en nuestro ejemplo utilizamos <span style="font-family: monospace; font-size: 95%">/dev/sda</span>). Es recomendable indicar a <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> que realice un alineamiento óptimo:
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>parted -a optimal /dev/sda</code></div><pre>
+GNU Parted 2.3
+Using /dev/sda
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+</pre></div>
+<p>El alineamiento indica que las particiones comenzarán en límites bien conocidos dentro del disco, asegurando que las operaciones de disco al nivel del sistema operativo (recuperar páginas de disco) usan el menor número posible de operaciones internas de disco. Las particiones que están desalineadas pueden requerir el tener que obtener del disco dos páginas en lugar de una aunque, el sistema operativo solicitara una única página.
+</p><p>Para mostrar todas las opciones que soporta parted, teclee <span style="font-family: monospace; font-size: 95%; font-weight: bold;">help</span> y pulse la tecla Intro.
+</p>
+<h3><span class="mw-headline" id="Definir_la_etiqueta_GPT">Definir la etiqueta GPT</span></h3>
+<p>La mayoría de los discos en los sistemas de arquitecturas <b><span style="font-family: monospace; font-size: 95%; color: #54487a">x86</span></b> o <b><span style="font-family: monospace; font-size: 95%; color: #54487a">amd64</span></b> han sido preparados usando un etiquetado "msdos". Usando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span>, la orden para crear un etiquetado GPT en el disco es <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mklabel gpt</span>:
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> Advertencia</strong><br />Al cambiar el tipo de particionado, se eliminarán todas las particiones del disco. Se perderán todos los datos del disco.</div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mklabel gpt</code></div></div>
+<p>Si quiere que el disco tenga un esquema MBR, utilice <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mklabel msdos</span>.
+</p>
+<h3><span class="mw-headline" id="Eliminar_todas_las_particiones_con_parted">Eliminar todas las particiones con parted</span></h3>
+<p>Si no ha hecho esto aún, (por ejemplo a través de la operación <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mklabel</span> anterior, o porque el disco se ha formateado recientemente), elimine en primer lugar todas las particiones presentes en el disco. Teclee <span style="font-family: monospace; font-size: 95%; font-weight: bold;">print</span> para ver las particiones que están definidas actualmente y <span style="font-family: monospace; font-size: 95%; font-weight: bold;">rm NÚMERO</span> donde NÚMERO es la partición que desea eliminar.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>rm 2</code></div></div>
+<p>Haga lo mismo con el resto de particiones que no vaya a necesitar. Asegúrese, sin embargo, de que no comete errores en este punto -parted realiza los cambios inmediatamente (a diferencia de <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> que los deja pendientes, permitiendo al usuario "deshacer" sus cambios antes de salvarlos o salir de fdisk).
+</p>
+<h3><span class="mw-headline" id="Crear_las_particiones">Crear las particiones</span></h3>
+<p>Ahora, cree las particiones. Crear particiones con <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> no es muy difícil - todo lo que necesitamos es informar a parted sobre los siguientes ajustes:
+</p>
+<ul><li> El tipo de partición a usar. Normalmente será "primary" (primaria). Si se usa la etiqueta de partición msdos, tenga en cuenta que no puede tener más de cuatro particiones primarias. Si necesita más de cuatro particiones cree una de las cuatro partición como extendida (extended) y dentro de ella cree particiones logicas (logical).</li>
+<li> La localización en la que comienza la partición (se puede expresar en MB, GB, ...)</li>
+<li> La localización en la que termina la partición (se puede expresar en MB, GB, ...)</li></ul>
+<p>En primer lugar, le indicamos a parted que la unidad de medida con la que trabajaremos es megabytes (realmente mebibytes abreviado por MiB que es la notación "estándar", sin embargo, utilizaremos MB en lo que sigue ya que es más común):
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>unit mib</code></div></div>
+<p>Ahora creamos una partición de 2 MB que se utilizará más tarde para el cargador de arranque GRUB2. Para ello utilizamos la orden <span style="font-family: monospace; font-size: 95%; font-weight: bold;">mkpart</span> e informamos a <span style="font-family: monospace; font-size: 95%; font-weight: bold;">parted</span> que comience en 1 MB y termine en 3 MB (creando así una partición de 2 MB).
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 1 3
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 1 grub
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>set 1 bios_grub on
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>print</code></div><pre>
+Model: Virtio Block Device (virtblk)
+Disk /dev/sda: 20480MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+  
+Number   Start      End      Size     File system  Name   Flags
+ 1       1.00MiB    3.00MiB  2.00MiB               grub   bios_grub
+</pre></div>
+<p>Haga lo mismo para la partición de arranque (128 MB), partición de intercambio (en el ejemplo 512 MB) y la partición raíz que ocupa el resto del disco (para ello, la localización final se marca con -1, indicando el final del disco menos 1 MB que es lo más lejos que puede llegar una partición).
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 3 131
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 2 boot
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 131 643
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 3 swap
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>mkpart primary 643 -1
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>name 4 rootfs</code></div></div>
+<p>Cuando se usa el interfaz UEFI (en lugar de BIOS) para arrancar el sistema, hay que marcar la partición de arranque como partición de sistema EFI. Parted hace esto automáticamente cuando la opción "boot" es activada en una partición:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>set 2 boot on</code></div></div>
+<p>El resultado final tiene este aspecto:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">(parted)</code><span class="tripleclick-separator"></span><code>print</code></div><pre>
+Model: Virtio Block Device (virtblk)
+Disk /dev/sda: 20480MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+  
+Number   Start      End      Size     File system  Name   Flags
+ 1       1.00MiB    3.00MiB  2.00MiB               grub   bios_grub
+ 2       3.00MiB    131MiB   128MiB                boot   boot
+ 3       131MiB     643MiB   512MiB                swap
+ 4       643MiB     20479MiB 19836MiB              rootfs
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />En una instalación UEFI la marca boot se mostrará en la partición de arranque.</div>
+<p>Use la orden <span style="font-family: monospace; font-size: 95%; font-weight: bold;">quit</span> para salir de parted.
+</p>
+<h2><span class="mw-headline" id="Alternativa:_Utilizar_fdisk_para_crear_las_particiones_del_disco">Alternativa: Utilizar fdisk para crear las particiones del disco</span></h2>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Aunque los mas recientes <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> deben soportar el GPT, aún muestra tener algunos problemas con él. Las instrucciones que siguen a continuación asumen que se está usando un esquema MBR.</div>
+<p>Los siguientes párrafos explican como crear el esquema de particionado de ejemplo usando <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span>. El esquema de particionado de ejemplo ha sido mencionado anteriormente:
+</p>
+<table class="table table-condensed table-striped" style="text-align: left;">
+
+<tr>
+<th> Partition
+</th>
+<th> Descripción
+</th></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda1</span>
+</td>
+<td> Partición de arranque BIOS
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda2</span>
+</td>
+<td> Partición de arranque
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda3</span>
+</td>
+<td> Partición de intercambio
+</td></tr>
+<tr>
+<td> <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>
+</td>
+<td> Partición raíz
+</td></tr></table>
+<p>Cambie el esquema de particionamiento según sus propias preferencias. 
+</p>
+<h3><span class="mw-headline" id="Examinar_el_esquema_de_particionamiento_actual">Examinar el esquema de particionamiento actual</span></h3>
+<p><span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> es una popular y potente herramienta que permite dividir el disco en particiones. Arranca <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> sobre tu unidad de disco (en nuestro ejemplo usamos el dispositivo de disco <span style="font-family: monospace; font-size: 95%">/dev/sda</span>):
+</p>
+<div class="cmd-box"><div><code style="color: #ef2929; font-weight: bold;">root #</code><span class="tripleclick-separator"></span><code>fdisk /dev/sda</code></div></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Para tener soporte GPT añada <code>-t gpt</code>. Se recomienda comprobar con detalle la salida de <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> en el caso de las versiones mas recientes de <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> en las que cambia la opción MBR que tenía por defecto. Las restantes instrucciones asumen un esquema MBR.</div>
+<p>Use la tecla <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> para mostrar el esquema de particionamiento actual del disco:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 240 heads, 63 sectors, 2184 cylinders
+Units = cylinders of 15120 * 512 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1   *         1        14    105808+  83  Linux
+/dev/sda2            15        49    264600   82  Linux swap
+/dev/sda3            50        70    158760   83  Linux
+/dev/sda4            71      2184  15981840    5  Extended
+/dev/sda5            71       209   1050808+  83  Linux
+/dev/sda6           210       348   1050808+  83  Linux
+/dev/sda7           349       626   2101648+  83  Linux
+/dev/sda8           627       904   2101648+  83  Linux
+/dev/sda9           905      2184   9676768+  83  Linux
+</pre></div>
+<p>Este disco en particular está configurado para albergar siete sistemas de archivos Linux (cada uno con su correspondiente partición listada como "Linux") así como una partición de intercambio (listada como "Linux swap").
+</p>
+<h3><span class="mw-headline" id="Eliminar_todas_las_particiones_con_fdisk">Eliminar todas las particiones con fdisk</span></h3>
+<p>Primero elimine todas las particiones existentes en el disco. Teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">d</kbd> para eliminar una partición. Por ejemplo, para borrar una partición existente <span style="font-family: monospace; font-size: 95%">/dev/sda1</span>:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>d</code></div><pre>
+Partition number (1-4): 1
+</pre></div>
+<p>La partición ha sido marcada para su borrado. Ya no aparecerá al mostrar la lista de particiones (<kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>), pero no será eliminada hasta que guarde los cambios realizados. Esto permite anular la operación si se ha cometido una equivocación - en ese caso teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">q</kbd> inmediatamente y pulse intro y las particiones no serán eliminadas.
+</p><p>Teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> de forma repetida para ver el listado de particiones y pulse <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">d</kbd> junto con el número de la partición para borrarla. Acabará con la tabla de partticiones vacia:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+Device Boot    Start       End    Blocks   Id  System
+</pre></div>
+<p>Ahora que la tabla de particiones que está en memoria está vacía, estamos preparados para crear las particiones.
+</p>
+<h3><span class="mw-headline" id="Crear_una_partici.C3.B3n_de_arranque_BIOS">Crear una partición de arranque BIOS</span></h3>
+<p>En primer lugar creamos una partición de arranque BIOS pequeña. Teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd> para crear una nueva partición y a continuación <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> para seleccionar una partición primaria, seguido de <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">1</kbd> para seleccionar la primera partición primaria. Cuando se solicite el primer sector asegúrese de que comienza en 2048 (es necesario por el cargador de arranque) y pulse Intro. Cuando se solicite el último sector teclee +2M para crear un partición de 2 MB:
+</p>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />El comienzo en el sector 2048 es una medida de seguridad en caso de que el cargador de arranque no detecte esta partición como disponible para su utilización.</div>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>n</code></div><pre>
+Command action
+  e   extended
+  p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First sector (64-10486533532, default 64): 2048
+Last sector, +sectors +size{M,K,G} (4096-10486533532, default 10486533532): +2M
+</pre></div>
+<p>Marque la partición para trabajar con EFI:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>t</code></div><pre>
+Selected partition 1
+Hex code (type L to list codes): 4
+Changed system type of partition 1 to 4 (BIOS boot)
+</pre></div>
+<div class="alert alert-info gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-sticky-note-o fa-rotate-180"></i> Nota</strong><br />Usar EFI con un esquema de particiones MBR está desaconsejado. Si usa un sistema con capacidad EFI, por favor use el esquema GPT.</div>
+<h3><span class="mw-headline" id="Crear_la_partici.C3.B3n_de_arranque">Crear la partición de arranque</span></h3>
+<p>Ahora cree una partición de arranque pequeña. Teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd> para crear una nueva partición, a continuación <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> para seleccionar una partición primaria seguido de <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">2</kbd> para seleccionar la segunda partición primaria. Cunado le solicite el primer sector acepte el valor por defecto pulsando <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>. Cuando le solicite el último sector, teclee +128M para crear una partición de 128 MB:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>n</code></div><pre>
+Command action
+  e   extended
+  p   primary partition (1-4)
+p
+Partition number (1-4): 2
+First sector (5198-10486533532, default 5198): (Pulse Intro)
+Last sector, +sectors +size{M,K,G} (4096-10486533532, default 10486533532): +128M
+</pre></div>
+<p>Ahora, si teclea <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd>, verá la siguiente presentación de particiones:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1             1         3      5198+  ef  EFI (FAT-12/16/32)
+/dev/sda2             3        14    105808+  83  Linux
+</pre></div>
+<p>Teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">a</kbd> para cambiar la marca de arrancable de una partición y luego seleccione <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">2</kbd>. Si introduce <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> de nuevo, observará que ha aparecido un * en la columna "Boot".
+</p>
+<h3><span class="mw-headline" id="Crear_la_partici.C3.B3n_de_intercambio">Crear la partición de intercambio</span></h3>
+<p>Para crear la partición de intercambio, teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd> para crear una nueva partición, y luego <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> para decir a fdisk que debe ser una partición primaria. Entonces teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">3</kbd> para crear la tercera partición primaria, <span style="font-family: monospace; font-size: 95%">/dev/sda3</span>. Cuando le solicite el primer sector, pulse <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>. Cuando le solicite el último sector, teclee +512M (u otro tamaño que necesite para su partición de intercambio) para crear una partición de 512MB.
+</p><p>Una vez que haya hecho esto, teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">t</kbd> para definir el tipo de partición, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">3</kbd> para seleccionar la partición que acaba de crear y entonces "82" para fijar el tipo "Linux Swap".
+</p>
+<h3><span class="mw-headline" id="Crear_la_partici.C3.B3n_ra.C3.ADz">Crear la partición raíz</span></h3>
+<p>En el último lugar, creamos la partición de raíz. Introduzca <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">n</kbd> para crear la nueva partición, <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> para decir a <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> que cree una partición primaria. A continuación teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">4</kbd> para crear la cuarta partición primaria, <span style="font-family: monospace; font-size: 95%">/dev/sda4</span>. Cuando le solicite el primer sector, pulse <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd>. Cuando le solicite el último sector, pulse <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">Enter</kbd> para crear una partición que ocupará todo el espacio restante en el disco. Tras completar todos estos pasos, introduciendo <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">p</kbd> se debe mostrar una tabla de particiones que debe parecerse mucho a la siguiente:
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>p</code></div><pre>
+Disk /dev/sda: 30.0 GB, 30005821440 bytes
+240 heads, 63 sectors/track, 3876 cylinders
+Units = cylinders of 15120 * 512 = 7741440 bytes
+  
+   Device Boot    Start       End    Blocks   Id  System
+/dev/sda1             1         3      5198+  ef  EFI (FAT-12/16/32)
+/dev/sda2   *         3        14    105808+  83  Linux
+/dev/sda3            15        81    506520   82  Linux swap
+/dev/sda4            82      3876  28690200   83  Linux
+</pre></div>
+<h3><span class="mw-headline" id="Almacenar_la_tabla_de_particiones">Almacenar la tabla de particiones</span></h3>
+<p>Para guardar el esquema de particionamiento y salir de <span style="font-family: monospace; font-size: 95%; font-weight: bold;">fdisk</span> teclee <kbd style="color: black; font-size: small; border: 0.2em solid; border-color: #DDD #BBB #BBB #DDD; padding: 0 0.4em; background: #EEE; white-space: nowrap;">w</kbd>.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">Command (m for help):</code><span class="tripleclick-separator"></span><code>w</code></div></div>
+<p>Con las particiones creadas, es momento de construir los sistemas de archivos en ellas.
+</p><p><br />
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112155757
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.428 seconds
+Real time usage: 0.452 seconds
+Preprocessor visited node count: 2916/1000000
+Preprocessor generated node count: 3409/1000000
+Post‐expand include size: 92278/2097152 bytes
+Template argument size: 7251/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  324.626      1 - -total
+100.00%  324.626      1 - Handbook:AMD64/Blocks/Disks/es
+ 42.42%  137.711     17 - Template:Cmd
+ 40.71%  132.150     20 - Template:GenericCmd
+  9.69%   31.451     28 - Template:GenericCmd/Line
+  9.51%   30.878      3 - Template:RootCmd
+  7.66%   24.861     27 - Template:Path
+  5.95%   19.320     33 - Template:Key
+  5.17%   16.775      5 - Template:Note
+  3.56%   11.559      5 - Template:Note/core
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:75678-0!*!*!!en!*!* and timestamp 20160112155757 and revision id 187922
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;oldid=187922">http://wiki.gentoo.org/index.php?title=Handbook:X86/Blocks/Disks/es&amp;oldid=187922</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 26 December 2014, at 00:35.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:X86/Blocks/Disks/es"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":642});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:X86/Blocks/Disks/es by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:59:18 GMT -->
+</html>

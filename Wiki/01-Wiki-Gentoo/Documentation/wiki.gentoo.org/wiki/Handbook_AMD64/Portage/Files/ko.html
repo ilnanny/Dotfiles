@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Files/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:37:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handbook:AMD64/Portage/Files/ko - Gentoo Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"Handbook","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":560,"wgPageName":"Handbook:AMD64/Portage/Files/ko","wgTitle":"AMD64/Portage/Files/ko","wgCurRevisionId":193282,"wgRevisionId":193282,"wgArticleId":78822,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"Handbook:AMD64/Portage/Files/ko","wgRelevantArticleId":78822,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"sfgAutocompleteValues":[],"sfgAutocompleteOnAllChars":!1,"sfgFieldProperties":[],"sfgCargoFields":[],
+"sfgDependentFields":[],"sfgShowOnSelect":[],"sfgScriptPath":"/extensions/SemanticForms","edgValues":null,"sfgEDSettings":null,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!0,"publish":!1},"wgULSAcceptLanguageList":["en","*"],"wgULSCurrentAutonym":"English","wgTranslatePageTranslation":"translation"});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["ext.translate","ext.smw.style","mediawiki.page.startup","mediawiki.legacy.wikibits","ext.uls.init"]);
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cext.uls.nojs%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.tyrian.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=ext.smw.style%7Cext.smw.tooltip.styles&amp;only=styles&amp;skin=tyrian" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.css" />
+<link rel="stylesheet" href="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/tyrian.min.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=tyrian" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=tyrian"></script>
+<meta name="generator" content="MediaWiki 1.26.2-gentoo" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#54487a" />
+<link rel="ExportRDF" type="application/rdf+xml" title="Handbook:AMD64/Portage/Files/ko" href="https://wiki.gentoo.org/index.php?title=Special:ExportRDF/Handbook:AMD64/Portage/Files/ko&amp;xmlmime=rdf" />
+<link rel="shortcut icon" href="https://wiki.gentoo.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.gentoo.org/opensearch_desc.php" title="Gentoo Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.gentoo.org/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Gentoo Wiki Atom feed" href="https://wiki.gentoo.org/index.php?title=Special:RecentChanges&amp;feed=atom" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-560 ns-subject page-Handbook_AMD64_Portage_Files_ko skin-tyrian action-view">
+	<div class="mw-jump sr-only">
+		Jump to:		<a href="#top">content</a>
+	</div>
+	<header>
+		<div class="site-title">
+			<div class="container">
+				<div class="row">
+					<div class="site-title-buttons">
+						<div class="btn-group btn-group-sm">
+							<a href="https://get.gentoo.org/" role="button" class="btn get-gentoo"><span class="fa fa-fw fa-download"></span> <strong>Get Gentoo!</strong></a>
+							<div class="btn-group btn-group-sm">
+								<a class="btn gentoo-org-sites dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+									<span class="fa fa-fw fa-map-o"></span> <span class="hidden-xs">gentoo.org sites</span> <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="https://www.gentoo.org/" title="Main Gentoo website"><span class="fa fa-home fa-fw"></span> gentoo.org</a></li>
+									<li><a href="https://wiki.gentoo.org/" title="Find and contribute documentation"><span class="fa fa-file-text-o fa-fw"></span> Wiki</a></li>
+									<li><a href="https://bugs.gentoo.org/" title="Report issues and find common issues"><span class="fa fa-bug fa-fw"></span> Bugs</a></li>
+									<li><a href="https://forums.gentoo.org/" title="Discuss with the community"><span class="fa fa-comments-o fa-fw"></span> Forums</a></li>
+									<li><a href="https://packages.gentoo.org/" title="Find software for your Gentoo"><span class="fa fa-hdd-o fa-fw"></span> Packages</a></li>
+									<li class="divider"></li>
+									<li><a href="https://planet.gentoo.org/" title="Find out what's going on in the developer community"><span class="fa fa-rss fa-fw"></span> Planet</a></li>
+									<li><a href="https://archives.gentoo.org/" title="Read up on past discussions"><span class="fa fa-archive fa-fw"></span> Archives</a></li>
+									<li><a href="https://sources.gentoo.org/" title="Browse our source code"><span class="fa fa-code fa-fw"></span> Sources</a></li>
+									<li class="divider"></li>
+									<li><a href="https://infra-status.gentoo.org/" title="Get updates on the services provided by Gentoo"><span class="fa fa-server fa-fw"></span> Infra Status</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="https://wiki.gentoo.org/" title="Back to the homepage" class="site-logo"><object data="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.svg" type="image/svg+xml">
+							<img src="https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/site-logo.png" alt="Gentoo Linux Logo">
+						</object></a>
+						<span class="site-label">Wiki</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="tyrian-navbar" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li id="n-mainpage-description"><a href="../../../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="../../../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="../../../Special_MyLanguage/Help_Contents.html" title="The place to find out">Help</a></li>			<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Gentoo.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gentoo <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Projects"><a href="../../../Project_Gentoo.html">Gentoo Projects</a></li>				</ul>
+			</li>
+					<li class="dropdown">
+				<a href="../../../Gentoo_Wiki_Menu-Documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+		<li id="n-Gentoo-Handbook"><a href="../../../Handbook_Main_Page.html">Gentoo Handbook</a></li><li id="n-Gentoo-FAQ"><a href="../../../FAQ.html">Gentoo FAQ</a></li><li id="n-Featured-Documents"><a href="../../../Project_Documentation/Overview.html">Featured Documents</a></li><li role="presentation" class="divider"></li><li role="presentation" class="dropdown-header">Topics</li><li id="n-Core-system"><a href="../../../Category_Core_system.html">Core system</a></li><li id="n-Hardware"><a href="../../../Category_Hardware.html">Hardware</a></li><li id="n-Software"><a href="../../../Category_Software.html">Software</a></li><li id="n-Desktop"><a href="../../../Category_Desktop.html">Desktop</a></li><li id="n-Server-.26-Security"><a href="../../../Category_Server_and_Security.html">Server &amp; Security</a></li><li id="n-Project-.26-Community"><a href="../../../Category_Project_and_Community.html">Project &amp; Community</a></li>				</ul>
+			</li>
+								</ul>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+									<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> Tools <span class="caret"></span></a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="t-whatlinkshere"><a href="../../../Special_WhatLinksHere/Handbook_AMD64/Portage/Files/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="../../../Special_RecentChangesLinked/Handbook_AMD64/Portage/Files/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../../../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;oldid=193282" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;action=info" title="More information about this page">Page information</a></li><li id="t-smwbrowselink"><a href="../../../Special_Browse/Handbook_AMD64-2FPortage-2FFiles-2Fko.html" rel="smw-browse">Browse properties</a></li>			</ul>
+		</li>
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-user" aria-label="Personal tools"></span>
+				User				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li id="pt-createaccount"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FFiles%2Fko&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://wiki.gentoo.org/index.php?title=Special:UserLogin&amp;returnto=Handbook%3AAMD64%2FPortage%2FFiles%2Fko" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>			</ul>
+		</li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-grey navbar-stick" id="wiki-actions" role="navigation">
+			<div class="container"><div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gw-toolbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="gw-toolbar">
+					<ul class="nav navbar-nav">
+					<li id="ca-nstab-handbook" class="selected active"><a href="ko.html">Handbook</a></li><li id="ca-talk" class="new"><a href="https://wiki.gentoo.org/index.php?title=Handbook_Talk:AMD64/Portage/Files/ko&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>					</ul>
+							<form action="https://wiki.gentoo.org/index.php" id="searchform" class="navbar-form navbar-right" role="search">
+			<input type='hidden' name="title" value="Special:Search"/>
+
+				<div class="input-group">
+					<input type="search" name="search" placeholder="Search" title="Search Gentoo Wiki [f]" accesskey="f" id="searchInput" class="form-control" />					<div class="input-group-btn"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton btn btn-default" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton btn btn-default" /></div>
+				</div>
+		</form>
+						<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li id="ca-viewsource"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">more <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+					<li id="ca-history"><a href="https://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>							</ul>
+						</li>
+					</ul>
+				</div>
+			</div></div>
+		</nav>
+		</header>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="content" class="mw-body" role="main">
+						<a id="top"></a>
+						
+						<h1 id="firstHeading" class="first-header" lang="ko">
+							<span dir="auto">Handbook:AMD64/Portage/Files/ko</span>
+						</h1>
+
+						<div id="bodyContent" class="mw-body-content">
+							<div id="siteSub">From Gentoo Wiki</div>
+							<div id="contentSub">
+								<span class="subpages"><a href="../../../Special_MyLanguage/Handbook_AMD64.html" title="Special:MyLanguage/Handbook:AMD64">Handbook:AMD64</a></span>							</div>
+																					<div id="jump-to-nav" class="mw-jump">
+								Jump to:								<a href="#column-one">navigation</a>, 								<a href="#searchInput">search</a>
+							</div>
+
+							<!-- start content -->
+							<div id="mw-content-text" lang="ko" dir="ltr" class="mw-content-ltr"><div class="mw-translate-page-info" lang="en" dir="ltr">This page is a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://wiki.gentoo.org/index.php?title=Special:Translate&amp;group=page-Handbook%3AAMD64%2FPortage%2FFiles&amp;action=page&amp;filter=&amp;language=ko">translated version</a></span> of the page <a href="../Files.html" title="Handbook:AMD64/Portage/Files">Handbook:AMD64/Portage/Files</a> and the translation is 100% complete.</div>
+<hr /><div class="mw-pt-languages noprint" lang="en" dir="ltr"><div class="mw-pt-languages-label">Other languages:</div><div class="mw-pt-languages-list autonym"><a href="de.html" title="Handbuch:AMD64/Portage/Dateien (100% translated)" class="mw-pt-progress mw-pt-progress--complete">Deutsch</a> • ‎<a href="../Files.html" title="Handbook:AMD64/Portage/Files (100% translated)" class="mw-pt-languages-ui mw-pt-progress mw-pt-progress--complete">English</a> • ‎<a href="es.html" title="Handbook:AMD64/Portage/Files (100% translated)" class="mw-pt-progress mw-pt-progress--complete">español</a> • ‎<a href="ja.html" title="ハンドブック:AMD64/Portage/ファイル (100% translated)" class="mw-pt-progress mw-pt-progress--complete">日本語</a> • ‎<span class="mw-pt-languages-selected mw-pt-progress mw-pt-progress--complete">한국어</span> • ‎<a href="ru.html" title="Handbook:AMD64/Portage/Files (100% translated)" class="mw-pt-progress mw-pt-progress--complete">русский</a> • ‎<a href="zh-cn.html" title="手册：AMD64/使用Portage/文件和目录 (100% translated)" class="mw-pt-progress mw-pt-progress--complete">中文（中国大陆）‎</a></div></div>
+<table style="width: 15em; font-size: 90%; border: 1px solid #aaaaaa; background-color: #f9f9f9; color: black; margin-bottom: 0.5em; margin-left: 1em; padding: 0.2em; float: right; clear: right; text-align:left;">
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 설치
+</th></tr>
+<tr>
+<td> <a href="../../Installation/About/ko.html" title="Handbook:AMD64/Installation/About/ko">설치 정보</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Media/ko.html" title="Handbook:AMD64/Installation/Media/ko">매체 선택</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Networking/ko.html" title="Handbook:AMD64/Installation/Networking/ko">네트워크 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Disks/ko.html" title="Handbook:AMD64/Installation/Disks/ko">디스크 준비</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Stage/ko.html" title="Handbook:AMD64/Installation/Stage/ko">스테이지 3 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Base/ko.html" title="Handbook:AMD64/Installation/Base/ko">베이스 시스템 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Kernel/ko.html" title="Handbook:AMD64/Installation/Kernel/ko">커널 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/System/ko.html" title="Handbook:AMD64/Installation/System/ko">시스템 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Tools/ko.html" title="Handbook:AMD64/Installation/Tools/ko">도구 설치</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Bootloader/ko.html" title="Handbook:AMD64/Installation/Bootloader/ko">부트로더 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Installation/Finalizing/ko.html" title="Handbook:AMD64/Installation/Finalizing/ko">마무리</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 젠투 다루기
+</th></tr>
+<tr>
+<td> <a href="../../Working/Portage/ko.html" title="Handbook:AMD64/Working/Portage/ko">포티지 소개</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/USE/ko.html" title="Handbook:AMD64/Working/USE/ko">USE 플래그</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Features/ko.html" title="Handbook:AMD64/Working/Features/ko">포티지 기능</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/Initscripts/ko.html" title="Handbook:AMD64/Working/Initscripts/ko">Initscript 시스템</a>
+</td></tr>
+<tr>
+<td> <a href="../../Working/EnvVar/ko.html" title="Handbook:AMD64/Working/EnvVar/ko">환경 변수</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 포티지 다루기
+</th></tr>
+<tr>
+<td> <strong class="selflink">파일 및 디렉터리</strong>
+</td></tr>
+<tr>
+<td> <a href="../Variables/ko.html" title="Handbook:AMD64/Portage/Variables/ko">변수</a>
+</td></tr>
+<tr>
+<td> <a href="../Branches/ko.html" title="Handbook:AMD64/Portage/Branches/ko">소프트웨어 브랜치 함께 사용하기</a>
+</td></tr>
+<tr>
+<td> <a href="../Tools/ko.html" title="Handbook:AMD64/Portage/Tools/ko">추가 도구</a>
+</td></tr>
+<tr>
+<td> <a href="../CustomTree/ko.html" title="Handbook:AMD64/Portage/CustomTree/ko">포티지 트리 개별 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../Advanced/ko.html" title="Handbook:AMD64/Portage/Advanced/ko">고급 기능</a>
+</td></tr>
+<tr>
+<th style="text-align: center; background-color:#6E56AF; color: white;"> 네트워크 설정
+</th></tr>
+<tr>
+<td> <a href="../../Networking/Introduction/ko.html" title="Handbook:AMD64/Networking/Introduction/ko">시작하기</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Advanced/ko.html" title="Handbook:AMD64/Networking/Advanced/ko">고급 설정</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Modular/ko.html" title="Handbook:AMD64/Networking/Modular/ko">모듈러 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Wireless/ko.html" title="Handbook:AMD64/Networking/Wireless/ko">무선 네트워크</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Extending/ko.html" title="Handbook:AMD64/Networking/Extending/ko">기능 추가</a>
+</td></tr>
+<tr>
+<td> <a href="../../Networking/Dynamic/ko.html" title="Handbook:AMD64/Networking/Dynamic/ko">동적 관리</a>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC"><span class="tocnumber">1</span> <span class="toctext">포티지 파일</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.84.A4.EC.A0.95_.EC.A7.80.EC.8B.9C.EB.AC.B8"><span class="tocnumber">1.1</span> <span class="toctext">설정 지시문</span></a></li>
+<li class="toclevel-2"><a href="#.ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC.EB.B3.84_.EC.A0.95.EB.B3.B4"><span class="tocnumber">1.2</span> <span class="toctext">프로파일별 정보</span></a></li>
+<li class="toclevel-2"><a href="#.EC.82.AC.EC.9A.A9.EC.9E.90.EB.B3.84_.EC.84.A4.EC.A0.95"><span class="tocnumber">1.3</span> <span class="toctext">사용자별 설정</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC_.EB.B0.8F_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC_.EC.9C.84.EC.B9.98_.EB.B0.94.EA.BE.B8.EA.B8.B0"><span class="tocnumber">1.4</span> <span class="toctext">포티지 파일 및 디렉터리 위치 바꾸기</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.8C.8C.EC.9D.BC_.EC.A0.80.EC.9E.A5"><span class="tocnumber">2</span> <span class="toctext">파일 저장</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC"><span class="tocnumber">2.1</span> <span class="toctext">포티지 트리</span></a></li>
+<li class="toclevel-2"><a href="#.EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EB.B0.94.EC.9D.B4.EB.84.88.EB.A6.AC"><span class="tocnumber">2.2</span> <span class="toctext">미리 빌드한 바이너리</span></a></li>
+<li class="toclevel-2"><a href="#.EC.86.8C.EC.8A.A4_.EC.BD.94.EB.93.9C"><span class="tocnumber">2.3</span> <span class="toctext">소스 코드</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EB.8D.B0.EC.9D.B4.ED.84.B0.EB.B2.A0.EC.9D.B4.EC.8A.A4"><span class="tocnumber">2.4</span> <span class="toctext">포티지 데이터베이스</span></a></li>
+<li class="toclevel-2"><a href="#.ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.BA.90.EC.8B.9C"><span class="tocnumber">2.5</span> <span class="toctext">포티지 캐시</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EB.B9.8C.EB.93.9C"><span class="tocnumber">3</span> <span class="toctext">프로그램 빌드</span></a>
+<ul>
+<li class="toclevel-2"><a href="#.EC.9E.84.EC.8B.9C_.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC"><span class="tocnumber">3.1</span> <span class="toctext">임시 포티지 파일</span></a></li>
+<li class="toclevel-2"><a href="#.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC_.EA.B5.AC.EC.84.B1"><span class="tocnumber">3.2</span> <span class="toctext">디렉터리 구성</span></a></li>
+<li class="toclevel-2"><a href="#.EB.9D.BC.EC.9D.B4.EB.B8.8C_.ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.9C.84.EC.B9.98"><span class="tocnumber">3.3</span> <span class="toctext">라이브 파일 시스템 위치</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#.EB.A1.9C.EA.B9.85_.EA.B8.B0.EB.8A.A5"><span class="tocnumber">4</span> <span class="toctext">로깅 기능</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Ebuild_.EB.A1.9C.EA.B9.85"><span class="tocnumber">4.1</span> <span class="toctext">Ebuild 로깅</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC">포티지 파일</span></h2>
+<h3><span class="mw-headline" id=".EC.84.A4.EC.A0.95_.EC.A7.80.EC.8B.9C.EB.AC.B8">설정 지시문</span></h3>
+<p>포티지 기본 설정은 <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span>에 저장합니다. 모든 포티지 설정은 변수에 저장합니다. 어떤 변수들을 포티지에서 살펴보는지 이들이 나중에 어떤 의미를 지니고 있는지는 나중에 설명하겠습니다.
+</p><p>수많은 설정 지시문이 아키텍처에 따라 다르듯이, 포티지에서는 여러분의 프로파일의 일부로서 기본 설정 파일을 지니고 있습니다. 이 프로파일은 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> 심볼릭 링크를 가리키며, 포티지 설정내용은 여러분의 프로파일의 <span style="font-family: monospace; font-size: 95%">make.defaults</span>와 모든 상위 프로파일에 있습니다. 앞으로 프로파일과 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> 디렉터리를 설명하겠습니다.
+</p><p>설정 변수를 바꾸려면 <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.globals</span> 또는 <span style="font-family: monospace; font-size: 95%">make.defaults</span>를 바꾸지 마십시오. 앞의 두 파일에 우선하는 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>를 대신 활용하십시오. <span style="font-family: monospace; font-size: 95%">/usr/share/portage/config/make.conf.example</span>에서도 내용을 찾아볼 수 있습니다. 이름으로 의미를 함축한 바와 같이, 이런 경우는 거의 예제 파일일 뿐입니다. 포티지에서는 이 파일을 읽지 않습니다.
+</p><p>포티지 설정 변수를 환경 변수처럼 설정할 수 있지만, 추천하지 않습니다.
+</p>
+<h3><span class="mw-headline" id=".ED.94.84.EB.A1.9C.ED.8C.8C.EC.9D.BC.EB.B3.84_.EC.A0.95.EB.B3.B4">프로파일별 정보</span></h3>
+<p>이미 앞에서 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.profile</span> 디렉터리를 언급했습니다. 음, 정확히는 디렉터리는 아니고, 다른 어딘가에 여러분 자신의 프로파일을 만들 수 있다 하더라도 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage/profiles</span>에 있는 프로파일의 심볼릭 링크이며, 기본 프로파일을 가리킵니다. 이 프로파일 심볼릭 링크는 시스템이 속한 프로파일을 가리킵니다.
+</p><p>프로파일에는 해당 프로파일에 속한 시스템의 꾸러미 목록, 프로파일 상에서 동작하지 않는 (또는 가려놓은) 꾸러미 등과 같은 아키텍처별 포티지 정보를 포함합니다.
+</p>
+<h3><span class="mw-headline" id=".EC.82.AC.EC.9A.A9.EC.9E.90.EB.B3.84_.EC.84.A4.EC.A0.95">사용자별 설정</span></h3>
+<p>소프트웨어 설치와 관련한 포티지 동작의 우선 설정이 필요할 때, <span style="font-family: monospace; font-size: 95%">/etc/portage</span>에 있는 파일을 편집해서 끝낼 수 있습니다. <span style="font-family: monospace; font-size: 95%">/etc/portage</span> 에 있는 파일 사용을 강력히 권장하며, 웬만하면 환경 변수로 우선 설정하지 마십시오!
+</p><p>/etc/portage에서 다음과 같은 파일을 만들 수 있습니다:
+</p>
+<ul><li> <span style="font-family: monospace; font-size: 95%">package.mask</span>&#160;: 포티지로 설치하지 말아야 하는 꾸러미 목록 파일</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.unmask</span>&#160;: 젠투 개발자들이 이머징하는 것을 강력히 만류하지만 그래도 설치할 수 있게 하는 꾸러미 목록 파일</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.accept_keywords</span>&#160;: 시스템 또는 아키텍처에서 (아직) 꾸러미를 설치하는데 적당함을 발견하지 못했지만, 그래도 설치할 수 있도록 한 꾸러미 목록</li>
+<li> <span style="font-family: monospace; font-size: 95%">package.use</span>&#160;: 전체 시스템에서 USE 플래그를 사용하도록 제각각의 꾸러미 사용하려는 USE 플래그 목록</li></ul>
+<p>이들 요소가 꼭 파일일 필요는 없습니다. 꾸러미 각각에 포함한 단 하나의 파일이어도 됩니다. <span style="font-family: monospace; font-size: 95%">/etc/portage</span> 디렉터리와 이곳에 만들 수 있는 모든 파일 목록에 대한 더 많은 내용은 포티지 맨페이지에 있습니다.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage</code></div></div>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC_.EB.B0.8F_.EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC_.EC.9C.84.EC.B9.98_.EB.B0.94.EA.BE.B8.EA.B8.B0">포티지 파일 및 디렉터리 위치 바꾸기</span></h3>
+<p>이전에 언급한 설정 파일은 아무데나 저장할 수 없습니다 - 포티지에서는 항상 정확한 위치에서 설정 파일을 찾습니다. 그러나 포티지에서는 다른 위치를 디렉터리를 구성하고, 소스코드를 저장하며, 포티지 트리 위치로 활용하는 등 다양한 목적으로 활용합니다.
+</p><p>이들 목적은 잘 알려진 기본 위치를 보유하지만 <span style="font-family: monospace; font-size: 95%">/etc/portage/make.conf</span>에서 개인 취향에 따라 바꿀 수 있습니다. 이 절의 나머지 부분에서는 어떤 특수 목적의 위치를 포티지에서 사용하는지 파일 시스템의 해당 위치를 어떻게 바꾸는지 설명합니다.
+</p><p>이 문서는 단순히 참고서로서의 의미가 아닙니다. 100% 활용하려면 포티지 및  make.conf의 맨 페이지를 참고하십시오.
+</p>
+<div class="cmd-box"><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man portage
+</code></div><div><code style="color: #4E9A06; font-weight: bold;">user $</code><span class="tripleclick-separator"></span><code>man make.conf</code></div></div>
+<h2><span class="mw-headline" id=".ED.8C.8C.EC.9D.BC_.EC.A0.80.EC.9E.A5">파일 저장</span></h2>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8A.B8.EB.A6.AC">포티지 트리</span></h3>
+<p>포티지 트리의 기본 위치는 <span style="font-family: monospace; font-size: 95%">/usr/portage</span> 입니다. 이 값은 <var>PORTDIR</var> 변수에 지정합니다. (변수 값을 바꿔서) 다른 곳에 포티지 트리를 저장하려면, 바뀐 위치에 따라 /etc/portage/make.profile 심볼릭 링크를 바꿔주는걸 잊지 마십시오.
+</p><p><var>PORTDIR</var> 변수를 바꿨다면, <var>PORTDIR</var>을 바꾼 것을 알아채지 못하는 <var>PKGDIR</var>, <var>DISTDIR</var>, <var>RPMDIR</var> 변수들 역시 바꿔야 합니다. 포티지가 이 변수들을 다루기 때문입니다.
+</p>
+<h3><span class="mw-headline" id=".EB.AF.B8.EB.A6.AC_.EB.B9.8C.EB.93.9C.ED.95.9C_.EB.B0.94.EC.9D.B4.EB.84.88.EB.A6.AC">미리 빌드한 바이너리</span></h3>
+<p>기본적으로 포티지에서 미리 빌드한 바이너리를 사용하지 않지만, 이를 위해 더 광범위한 지원을 제공합니다. 포티지에 미리 빌드한 꾸러미로 작업하라고 요청하면, <span style="font-family: monospace; font-size: 95%">/usr/portage/packages</span>에서 꾸러미를 찾습니다. 이 위치는 <var>PKGDIR</var> 변수에 정의되어 있습니다.
+</p>
+<h3><span class="mw-headline" id=".EC.86.8C.EC.8A.A4_.EC.BD.94.EB.93.9C">소스 코드</span></h3>
+<p>프로그램 소스코드는 기본적으로 <span style="font-family: monospace; font-size: 95%">/usr/portage/distfiles</span>에 저장합니다. 이 위치는 <var>DISTDIR</var> 변수에 정의합니다.
+</p>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EB.8D.B0.EC.9D.B4.ED.84.B0.EB.B2.A0.EC.9D.B4.EC.8A.A4">포티지 데이터베이스</span></h3>
+<p>포티지는 (어떤 꾸러미를 설치했는지, 꾸러미에 어떤 파일이 속해있는지 등) 시스템의 상태를 <span style="font-family: monospace; font-size: 95%">/var/db/pkg</span>에 저장합니다.
+</p>
+<div class="alert alert-danger gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-triangle"></i> 경고</strong><br />이 파일을 직접 수정하지 마십시오! 여러분의 시스템에 대한 포티지의 내부 정보가 깨집니다.</div>
+<h3><span class="mw-headline" id=".ED.8F.AC.ED.8B.B0.EC.A7.80_.EC.BA.90.EC.8B.9C">포티지 캐시</span></h3>
+<p>포티지 캐시(수정 일시, 가상 꾸러미, 의존성 트리 정보 등)는 <span style="font-family: monospace; font-size: 95%">/var/cache/edb</span>에 저장합니다. 이 위치는 말 그대로 캐시 입니다. 포티지 관련 프로그램이 돌아가고 있는 잠깐 동안의 상태가 아니라면 이 디렉터리를 비울 수 있습니다.
+</p>
+<h2><span class="mw-headline" id=".ED.94.84.EB.A1.9C.EA.B7.B8.EB.9E.A8_.EB.B9.8C.EB.93.9C">프로그램 빌드</span></h2>
+<h3><span class="mw-headline" id=".EC.9E.84.EC.8B.9C_.ED.8F.AC.ED.8B.B0.EC.A7.80_.ED.8C.8C.EC.9D.BC">임시 포티지 파일</span></h3>
+<p>포티지 임시 파일은 기본적으로 <span style="font-family: monospace; font-size: 95%">/var/tmp</span>에 저장합니다. 이는 <var>PORTAGE_TMPDIR</var> 변수에 정의되어 있습니다.
+</p><p><var>PORTAGE_TMPDIR</var> 변수를 바꿨다면, <var>PORTAGE_TMPDIR</var>이 바뀜을 알아채지 못한 <var>BUILD_PREFIX</var> 변수의 값도 바꿔주어야 합니다. 포티지가 이 변수를 다루기 때문입니다.
+</p>
+<h3><span class="mw-headline" id=".EB.94.94.EB.A0.89.ED.84.B0.EB.A6.AC_.EA.B5.AC.EC.84.B1">디렉터리 구성</span></h3>
+<p>포티지는 이머지할 각각의 꾸러미에 대해 <span style="font-family: monospace; font-size: 95%">/var/tmp/portage</span> 안에 각각의 빌드 디렉터리를 만듭니다. 이 위치는 <var>BUILD_PREFIX</var> 변수에 지정합니다.
+</p>
+<h3><span class="mw-headline" id=".EB.9D.BC.EC.9D.B4.EB.B8.8C_.ED.8C.8C.EC.9D.BC_.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.9C.84.EC.B9.98">라이브 파일 시스템 위치</span></h3>
+<p>기본적으로 포티지는 현재 파일시스템(<span style="font-family: monospace; font-size: 95%">/</span>)에 모든 파일을 설치하지만, 여러분은 <var>ROOT</var> 환경 변수를 설정하여 위치를 바꿀 수 있습니다. 이는 여러분이 새로운 빌드 이미지를 만들 때 유용합니다.
+</p>
+<h2><span class="mw-headline" id=".EB.A1.9C.EA.B9.85_.EA.B8.B0.EB.8A.A5">로깅 기능</span></h2>
+<h3><span class="mw-headline" id="Ebuild_.EB.A1.9C.EA.B9.85">Ebuild 로깅</span></h3>
+<p>포티지는 각각의 ebuild 에 대해 로그 파일을 만들 수 있지만, <var>PORT_LOGDIR</var> 변수에 설정한 위치가 포티지에서(portage 사용자가) 기록할 수 있을 때 가능합니다. 이 변수는 기본적으로 설정이 되어 있지 않습니다. <var>PORT_LOGDIR</var>을 설정하지 않으면, 새로운 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span>로부터 어떤 로그를 받았다 할 지라도 현재 로깅 시스템에서 빌드 로그에 대한 어떤 내용도 받을 수 없습니다.
+</p><p><var>PORT_LOGDIR</var> 변수를 지정하지 않고 <span style="font-family: monospace; font-size: 95%; font-weight: bold;">elog</span>를 사용한다면, 아래에서 설명한 바와 같이 빌드 로그와 elog가 저장한 로그를 보실 수 있습니다.
+</p><p>포티지는 elog를 사용하여 세밀한 단위의 기록 기능을 제공합니다:
+</p>
+<ul><li> <var>PORTAGE_ELOG_CLASSES</var>: 사용자가 어떤 메시지를 기록할 지 설정할 수 있는 변수입니다. 공백으로 구분할 수 있으며, info, warn, error, log, qa가 있습니다.
+<ul><li> info: ebuild가 출력하는 "einfo" 메시지를 기록합니다</li>
+<li> warn: ebuild가 출력하는 "ewarn" 메시지를 기록합니다</li>
+<li> error: ebuild가 출력하는 "eerror" 메시지를 기록합니다</li>
+<li> log: 일부 빌드에서 나타나는 "elog" 메시지를 기록합니다</li>
+<li> qa: ebuild가 출력하는 "QA Notice" 메시지를 기록합니다</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_SYSTEM</var>: 로그 메시지를 처리할 모듈을 선택합니다. 비워둔 채로 내버려두면, 로깅을 사용하지 않습니다. 공백으로 구분하여 다음 단어들을 함께 쓸 수 있습니다: save, custom, syslog, mail, save_summary, mail_summary. elog를 사용하려면 최소한 한개 이상의 모듈을 선택해야 합니다.
+<ul><li> save: $PORT_LOGDIR이 정의되지 않았을 경우 <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog</span> 또는 <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog</span>에 각각의 꾸러미에 대한 로그를 저장합니다.</li>
+<li> custom: $PORTAGE_ELOG_COMMAND에 있는 모든 사용자 정의 명령에 메시지를 전달합니다. 다음에 언급될 것입니다.</li>
+<li> syslog: 설치한 시스템 로거로 모든 메시지를 보냅니다.</li>
+<li> mail: $PORTAGE_ELOG_MAILURI에 있는 사용자 정의 메일 서버에 모든 메시지를 전달합니다. 다음에 언급될 것입니다. elog의 메일 기능을 사용하시려면 portage-2.1.1 이상이 필요합니다.</li>
+<li> save_summary: save와 유사하나, $PORT_LOGDIR이 정의되지 않았을 경우 <span style="font-family: monospace; font-size: 95%">$PORT_LOGDIR/elog/summary.log</span> 또는 <span style="font-family: monospace; font-size: 95%">/var/log/portage/elog/summary.log</span>에 모든 메시지를 합칩니다.</li>
+<li> mail_summary: mail과 유사하나, emerge를 빠져나갈 때 모든 메시지를 하나의 메일에 작성해서 보냅니다.</li></ul></li></ul>
+<ul><li> <var>PORTAGE_ELOG_COMMAND</var>: custom 모듈을 활성화했을때만 사용합니다. 로그 메시지를 처리할 명령을 지정하는 곳입니다. 참고로 두가지 변수를 사용하도록 할 수 있습니다. ${PACKAGE}는 꾸러미의 이름과 버전이고, ${LOGFILE}은 로그 파일의 절대 경로입니다. 사용 예는 다음과 같습니다:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>PORTAGE_ELOG_COMMAND 정의 예제</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_COMMAND</span><span class="o">=</span><span class="s2">&quot;/path/to/logger -p &#39;\${PACKAGE}&#39; -f &#39;\${LOGFILE}&#39;&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILURI</var>: 이 변수에는 주소, 사용자, 암호, 메일서버, 포트 번호와 같은 설정 내용을 포함합니다. 기본 설정은 "root@localhost localhost" 입니다. 다음은, 사용자 이름 및 암호 기반의 인증을 개별적인 포트(기본 포트는 25번입니다)에서 필요로 하는 smtp 서버에 대한 사용 예시 입니다.</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>예제 PORTAGE_ELOG_MAILURI 정의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILURI</span><span class="o">=</span><span class="s2">&quot;user@some.domain username:password@smtp.some.domain:995&quot;</span>
+</pre></div></pre></div>
+<ul><li> <var>PORTAGE_ELOG_MAILFROM</var>: 로그 메일의 "발신" 주소를 설정하는 변수입니다. 이 변수를 설정하지 않았을 경우 기본값은 "portage"입니다.</li></ul>
+<ul><li> <var>PORTAGE_ELOG_MAILSUBJECT</var>: 로그 메일의 제목 줄을 만들 수 있게 하는 변수입니다. 참고로, 두가지 변수를 사용할 수 있습니다. ${PACKAGE} 에서 꾸러미 이름과 버전을 표시하며, ${HOST}는 포티지가 실행중인 호스트의 완전한 자격을 갖춘 도메인 이름을 표시합니다. 사용 예는 다음과 같습니다:</li></ul>
+<div class="gw-box"><div class="box-caption"><span class="label" style="margin-right: .5em; background-color: #204A87">코드</span> <strong>예제 PORTAGE_ELOG_MAILSUBJECT 정의</strong></div><pre class="captioned"><div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="nv">PORTAGE_ELOG_MAILSUBJECT</span><span class="o">=</span><span class="s2">&quot;package \${PACKAGE} was merged on \${HOST} with some messages&quot;</span>
+</pre></div></pre></div>
+<div class="alert alert-warning gw-box" style="padding-top: 8px; padding-bottom: 8px;"><strong><i class="fa fa-exclamation-circle"></i> 중요</strong><br />Portage-2.0.* 의 enotice 사용자는 elog와 호환되지 않는 enotice를 완전히 제거해야합니다.</div>
+<p><br />
+</p>
+<div class="btn-group btn-group-justified"><a href="../../Working/EnvVar/ko.html" title="이전 내용" class="btn btn-default">&#8592; 환경 변수</a> <a href="../../ko.html" title="Handbook:AMD64/ko" class="btn btn-default">처음</a> <a href="../Variables/ko.html" title="다음 내용" class="btn btn-default">변수 설정 &#8594;</a></div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160112153446
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.312 seconds
+Real time usage: 0.356 seconds
+Preprocessor visited node count: 675/1000000
+Preprocessor generated node count: 2395/1000000
+Post‐expand include size: 32181/2097152 bytes
+Template argument size: 2326/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  268.010      1 - -total
+100.00%  268.010      1 - Handbook:Parts/Portage/Files/ko
+ 55.83%  149.624      1 - Handbook:Parts/TOC/ko
+  9.15%   24.528      2 - Template:Cmd
+  8.05%   21.586      1 - Handbook:Parts/Navigator/ko
+  6.91%   18.507      2 - Template:GenericCmd
+  6.56%   17.588      3 - Template:CodeBox
+  4.70%   12.592      3 - Template:PreBox
+  3.94%   10.565     30 - Template:Path
+  2.31%    6.194      1 - Template:Warning/ko
+-->
+
+<!-- Saved in parser cache with key gentoo-wiki:pcache:idhash:78822-0!*!0!!en!*!* and timestamp 20160112153445 and revision id 193282
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;oldid=193282">http://wiki.gentoo.org/index.php?title=Handbook:AMD64/Portage/Files/ko&amp;oldid=193282</a>"</div>
+															<div id='catlinks' class='catlinks catlinks-allhidden'></div>														<!-- end content -->
+
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-offset-2 col-md-7">
+											<div class="spacer"></div>
+						<ul id="f-list">
+																							<li id="lastmod"> This page was last modified on 28 December 2014, at 08:40.</li>
+																															<li id="privacy"><a href="../../../Gentoo_Wiki_Privacy_policy.html" title="Gentoo Wiki:Privacy policy">Privacy policy</a></li>
+																							<li id="about"><a href="../../../Gentoo_Wiki_About.html" title="Gentoo Wiki:About">About Gentoo Wiki</a></li>
+																							<li id="disclaimer"><a href="../../../Gentoo_Wiki_General_disclaimer.html" title="Gentoo Wiki:General disclaimer">Disclaimers</a></li>
+													</ul>
+									</div>
+				<div class="col-xs-12 col-md-3">
+					<!-- No questions or comments, the Wiki has enough information on how to contact us. -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 col-md-2">
+					<ul class="footerlinks three-icons">
+						<li><a href="https://twitter.com/gentoo" title="@Gentoo on Twitter"><span class="fa fa-twitter fa-fw"></span></a></li>
+						<li><a href="https://plus.google.com/+Gentoo" title="+Gentoo on Google+"><span class="fa fa-google-plus fa-fw"></span></a></li>
+						<li><a href="https://www.facebook.com/gentoo.org" title="Gentoo on Facebook"><span class="fa fa-facebook fa-fw"></span></a></li>
+					</ul>
+				</div>
+				<div class="col-xs-9 col-md-9">
+					<strong>&copy; 2001&ndash;2016 Gentoo Foundation, Inc.</strong><br />
+					<small>
+						Gentoo is a trademark of the Gentoo Foundation, Inc.
+						The contents of this document, unless otherwise expressly stated, are licensed under the
+						<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC-BY-SA-3.0</a> license.
+						The <a href="https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html">Gentoo Name and Logo Usage Guidelines</a> apply.
+					</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		<script>
+			window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+				$.getScript("https://1b9a50f4f9de4348cd9f-e703bc50ba0aa66772a874f8c7698be7.ssl.cf5.rackcdn.com/bootstrap.min.js");
+			} );
+		</script>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="https://wiki.gentoo.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.skinning.content.externallinks&amp;only=styles&amp;skin=tyrian" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.smw.tooltips","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt"]);
+} );</script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['setDocumentTitle', "Handbook:AMD64/Portage/Files/ko"]);
+  _paq.push(['setIgnoreClasses', 'image']);
+  _paq.push(['trackPageView']);
+  _paq.push(['disableCookies']);
+  _paq.push(['enableLinkTracking']);
+  
+  (function() {
+    var u="http://piwik.gentoo.org//";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://piwik.gentoo.org//piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":554});
+} );</script></body>
+<!-- Mirrored from wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Files/ko by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jan 2016 17:37:54 GMT -->
+</html>
