@@ -1,0 +1,25 @@
+#  Privilegi utenti X gruppo.
+# ____________________________
+
+## Amministratore di sistema.
+root ALL=(ALL) ALL
+
+## Utenti del gruppo wheel.
+# %wheel ALL=(ALL) ALL
+
+## Gruppo wheel senza password.
+%wheel ALL=(ALL) NOPASSWD: ALL
+
+## Users no password [Slackware]
+# %users ALL=(ALL) NOPASSWD: ALL
+
+
+## User no password [Debian]
+%ilnanny ALL=(ALL) NOPASSWD: ALL
+
+# Path predefinite [Debian]
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Fine  /etc/sudoers

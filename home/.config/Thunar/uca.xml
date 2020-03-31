@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml encoding="UTF-8" version="1.0"?>
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Apri un Terminale qui </name>
-	<unique-id>1519087650955555-2</unique-id>
+	<name>Apri un terminale qui</name>
+	<unique-id>1585600662646499-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description></description>
+	<description>Esempio di azione personalizzata</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>

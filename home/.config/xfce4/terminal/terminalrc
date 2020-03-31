@@ -35,10 +35,11 @@ DropdownAlwaysShowTabs=FALSE
 DropdownHeight=45
 ScrollingOnOutput=FALSE
 BackgroundDarkness=0,950000
-FontName=Nimbus Mono L 11
-ColorBackground=#263238
+FontName=Monospace 11
+ColorBackground=#3651375e41b4
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-ColorCursor=#708284
-ColorPalette=#1B2930;#C83C43;#88973D;#a57706;#2176c7;#c61c6f;#259286;#eae3cb;#475b62;#bd3613;#475b62;#536870;#708284;#5956ba;#819090;#fcf4dc
-ColorForeground=#A2BBBE
+ColorCursor=#dcdcdc
+ColorPalette=#3f3f3f;#705050;#60b48a;#dfaf8f;#9ab8d7;#dc8cc3;#8cd0d3;#dcdcdc;#709080;#dca3a3;#72d5a3;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
+ColorForeground=#bb84bc37bfff
+TextBlinkMode=TERMINAL_TEXT_BLINK_MODE_FOCUSED
 

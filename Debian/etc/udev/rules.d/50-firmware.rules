@@ -1,0 +1,2 @@
+
+SUBSYSTEM=="firmware", ACTION=="add", ATTR{loading}="-1"

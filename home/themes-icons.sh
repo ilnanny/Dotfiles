@@ -30,9 +30,19 @@ cp -a -r /media/Dati/Git/XThemes/GTK-themes/Teiera /usr/share/themes/
 echo " Installo i themi di icone nella cartella /usr/share/icons"
 sleep 2
 
-cp -a -r /media/Dati/Git/Blender-icon-theme/ /usr/share/icons/Blender/
-rm -r  /usr/share/icons/Blender/.git
+cp -a -r /media/Dati/Git/Blender-icon-theme/Blender /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-blue/ /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-cyan/ /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-dark/ /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-dkblue/ /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-kaki/ /usr/share/icons/
+cp -a -r /media/Dati/Git/Blender-icon-theme/blender-red/ /usr/share/icons/
+#
+cp -a -r /media/Dati/Git/Blender-icon-theme/Lila_HD-cursor/ /usr/share/icons/
+#
 sh /usr/share/icons/Blender/icon-cache-maker.sh
-
-echo " Temi Gtk e Icone installati,puoi chiudere il terminale "
+#
+echo " Temi Gtk Icone e Cursori sono stati installati,
+                Puoi chiudere il terminale "
+sleep 2
 exit 0

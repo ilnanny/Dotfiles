@@ -10,7 +10,7 @@ media-libs/libvpx postproc
 media-libs/openal pulseaudio
 media-libs/mesa bindist
 media-plugins/alsa-plugins pulseaudio
-media-plugins/gst-plugins-meta  X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264
+media-plugins/gst-plugins-meta a52 aac alsa cdda dts dvb dvd ffmpeg flac http jack lame libass libvisual modplug mp3 mpeg ogg opus pulseaudio theora vcd vorbis wavpack X x264
 media-sound/audacity flac id3tag lame libav midi twolame vorbis
 media-sound/pulseaudio gnome
 media-sound/xmms curl

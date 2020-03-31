@@ -1,23 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 echo "app-emulation/virtualbox-bin PUEL" >> /etc/portage/package.license/virtualbox-bin
-
 echo "app-emulation/virtualbox-bin additions chm headless python  rdesktop-vrdp" >/etc/portage/package.use/virtualbox-bin
-
 emerge --ask app-emulation/virtualbox-bin
-
 emerge --ask app-emulation/virtualbox-guest-additions
-
 rc-update add virtualbox-guest-additions default
-
 rc-update add dbus default
-
 gpasswd -a ilnanny vboxguest
-
 gpasswd -a ilnanny vboxsf
+gpasswd -a ilnanny vboxusers
+modprobe vboxdrv
+
 
 emerge --ask sys-apps/usermode-utilities
-
 emerge --ask net-misc/bridge-utils
-
 modprobe vboxdrv
 
 su ilnanny

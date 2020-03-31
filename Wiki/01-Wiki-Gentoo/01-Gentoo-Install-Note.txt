@@ -12,7 +12,7 @@ Wiki-Format: zim 0.4
 #= Aggiornato Febbraio 2020
 #=======================================================
 
-# == • Crea le Cartelle e monta le partizioni:
+#== • Crea le Cartelle e monta le partizioni:
 
  mkdir /mnt/gentoo
  mount /dev/sdc2 /mnt/gentoo
@@ -20,7 +20,7 @@ Wiki-Format: zim 0.4
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 #=====================================================================
-# == • Scarica lo stage3 e scompattalo
+#== • Scarica lo stage3 e scompattalo
 
  wget http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20200325T214502Z.tar.xz
  tar xpf  stage3-amd64-20200325T214502Z.tar.xz
@@ -29,13 +29,13 @@ Wiki-Format: zim 0.4
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 #=====================================================================
-# == • Scarica portage e scompattalo
+#== • Scarica portage e scompattalo
 
  cd /mnt/gentoo/usr/
  wget https://gentoo.osuosl.org/snapshots/portage-latest.tar.bz2
  tar xvjpf portage-latest.tar.bz2 --xattrs --numeric-owner
 #=====================================================================
-# == • Monta i filesystem ed entra in chroot:
+#== • Monta i filesystem ed entra in chroot:
 
  mount --bind /dev /mnt/gentoo/dev
  mount --make-rslave /mnt/gentoo/dev
@@ -46,11 +46,11 @@ Wiki-Format: zim 0.4
  chroot /mnt/gentoo /bin/bash
  export PS1="\033[1;33m([chroot])\033[0m $PS1"
 #=====================================================================
-# == • Controllo rete carica i repo
+#== • Controllo rete carica i repo
 
  ping -c 5 www.google.com
 #=====================================================================
-# == • Crea il file per il sinc di portage
+#== • Crea il file per il sinc di portage
 
  mkdir /etc/portage/repos.conf
  nano -w /etc/portage/repos.conf/gentoo.conf
@@ -61,81 +61,81 @@ sync-type = rsync
 sync-uri = rsync://rsync.gentoo.org/gentoo-portage
 auto-sync = yes
 
-# == • Sincronizza portage
+#== • Sincronizza portage
  emerge --sync
  eselect news read
 
 #=====================================================================
-# == • Scegli un profilo
+#== • Scegli un profilo
 
  eselect profile list
  eselect profile set 20
  env-update && source /etc/profile
 #=====================================================================
-# == • Modifica i Files:
+#== • Modifica i Files:
 
- = 01] /etc/fstab
- = 03] /etc/localtime
- = 04] /usr/share/zoneinfo
- = 05] /etc/portage/make.conf
- = 06] /etc/conf.d/hostname
- = 07] /etc/conf.d/keymaps
- = 08] /etc/conf.d/hwclock
- = 09] /etc/conf.d/modules
+# = 01] /etc/fstab
+# = 03] /etc/localtime
+# = 04] /usr/share/zoneinfo
+# = 05] /etc/portage/make.conf
+# = 06] /etc/conf.d/hostname
+# = 07] /etc/conf.d/keymaps
+# = 08] /etc/conf.d/hwclock
+# = 09] /etc/conf.d/modules
 #=====================================================================
-# == • Controlla le partizioni e scrivi l'fstab
+#== • Controlla le partizioni e scrivi l'fstab
 
  blkid -c /dev/null -o list
  nano -w /etc/fstab
 #=====================================================================
-# == • Fuso Orario
+#== • Fuso Orario
 
  emerge --config sys-libs/timezone-data
  ln -sf /usr/share/zoneinfo/Europe/Rome  /etc/localtime
 #=====================================================================
-# == • Data e Ora
+#== • Data e Ora
 
  date
 
-# == • =se la data non corrisponde :
+#== • =se la data non corrisponde :
  date 012807462016       [corrisponde a ore 7:46 ,28 gennaio 2016]
 
-# == • Microsoft Windows Dual Boot settare in 'local':
+#== • Microsoft Windows Dual Boot settare in 'local':
  nano -w /etc/conf.d/hwclock
  clock="local"
 #=====================================================================
-# == • Localizzazione IT
+#== • Localizzazione IT
 
  nano -w /etc/locale.gen
- it_IT.UTF-8 UTF-8
- it_IT ISO-8859-1
+it_IT.UTF-8 UTF-8
+it_IT ISO-8859-1
 
-# == • Crea il file 02locale
+#== • Crea il file 02locale
  nano -w /etc/env.d/02locale
- LANG="it_IT.UTF-8"
-# == • Genera locale
+LANG="it_IT.UTF-8"
+#== • Genera locale
 
  locale-gen
  locale -a
 #=====================================================================
-# == • Tastiera
+#== • Tastiera
 
  nano -w /etc/conf.d/keymaps
- keymap="it"
- windowkeys="YES"
- fix_euro="YES"
+keymap="it"
+windowkeys="YES"
+fix_euro="YES"
 #=====================================================================
-# == • Make conf
+#== • Make conf
 
  nano -w /etc/portage/make.conf
 #=====================================================================
-# == • Sync aggiornamento
+#== • Sync aggiornamento
 
  emerge --sync
  env-update && source /etc/profile
  emerge -auDN @world
 #=====================================================================
-# == • Kernel e Sys Apps
+#== • Kernel e Sys Apps
 
  emerge --ask gentoo-kernel-bin \
  intel-microcode grub
@@ -149,7 +149,7 @@ auto-sync = yes
 #= carica il demone all'avvio:
  rc-update add elogind default
 
-# == • Copia conf in /root [genkernel]
+#== • Copia conf in /root [genkernel]
 
  genkernel --makeopts=-j9 --kernel-config=/root/config all
  emerge -1 @module-rebuild
@@ -158,7 +158,7 @@ auto-sync = yes
  grub-mkconfig -o /boot/grub/grub.cfg
 
 #=====================================================================
-# == • Rete:
+#== • Rete:
 
  USE="-bindist" emerge --ask networkmanager net-misc/dhcpcd
 #= carica il demone all'avvio:
@@ -167,22 +167,22 @@ auto-sync = yes
 #= avvia la consolle grafica:
  nmtui
 #=====================================================================
-# == • Imposta un Hostname:
+#== • Imposta un Hostname:
 
  nano -w /etc/conf.d/hostname
- hostname"T3500GEN"
-# == • imposta localhost
+hostname"T3500GEN"
+#== • imposta localhost
 
  nano -w /etc/hosts
- 127.0.0.1	localhost
- ::1		localhost
- 127.0.1.1	T3500GEN
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	T3500GEN
 #=====================================================================
-# == • Password di root:
+#== • Password di root:
 
  passwd
 #=====================================================================
-# == • Uscire da chroot :
+#== • Uscire da chroot :
 
  exit
  cd ~
@@ -194,30 +194,30 @@ auto-sync = yes
  fuser -k /mnt
  reboot
 
-# == • Rimuovi gli archivi
+#== • Rimuovi gli archivi
 
  rm /usr/portage-latest.tar.bz2
  rm /stage3-.tar.xz
 #=====================================================================
-=# == • Boot in gentoo
+=#== • Boot in gentoo
 #====
 
-# === •Nuovo Utente:
+# =#== •Nuovo Utente:
 
  useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
  passwd ilnanny
 #=====================================================================
-# == • Profili:
+#== • Profili:
 
  eselect profile list
  eselect profile set 20
  env-update && source /etc/profile
 
-# == • Xorg:=
+#== • Xorg:=
 
  emerge --ask xorg-x11 xorg-server xorg-drivers xterm xinit xrandr sudo
 
-# == • Cron
+#== • Cron
  emerge --ask anacron
  /etc/init.d/anacron start
  rc-update add anacron default
@@ -230,83 +230,83 @@ auto-sync = yes
 # 59      root  /etc/cron.hourly/0anacron
 
 #=====================================================================
-# == • Openbox=
+#== • Openbox=
  emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 dunst
  emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance scrot
  emerge --ask  keybinder xdg-utils xdg-user-dirs-gtk xdg-user-dirs
 
-# == • Thunar=
+#== • Thunar=
  emerge --ask thunar thunar-volman thunar-archive-plugin
 #=carica il demone all'avvio:
  rc-update add dbus default
 
-# == • SLim login-manager
+#== • SLim login-manager
  emerge --ask x11-misc/slim
 #= Sostituisci xdm con slim in :
  nano -w /etc/conf.d/xdm
 #= Carica il demone all'avvio:
  rc-update add xdm default
 
-# == •  Build/Sys
+#== •  Build/Sys
  emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
  emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop
  emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd
  USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
 
-# == •  Media
+#== •  Media
  USE="gstreamer" emerge --ask sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol pamix volumeicon
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
-# == •  Gfx
+#== •  Gfx
  emerge --ask gimp inkscape gcolors2 nomacs qt5ct
 
-# == •  Office
+#== •  Office
  USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
  emerge --ask media-fonts/dejavu evince vim parcellite
 
-# == •  Www
+#== •  Www
  emerge --ask android-tools android-file-transfer-linux bleachbit deluge
  emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl
 
 
-# == • Conky
+#== • Conky
  USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
 
 
 
-# == • GTK3+
+#== • GTK3+
  USE="hscolour profile" emerge --ask dev-haskell/gtk3
 
-# == • Xfce4
+#== • Xfce4
 
  emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin \
 xfce-extra/xfce4-screenshooter xfce4-panel xfce-extra/tumbler
 
-# == • Drivers NVIDIA
+#== • Drivers NVIDIA
 
  nano -w /etc/modprobe.d/nouveau-blacklist.conf
  blacklist nouveau
  options nouveau modeset=0
  alias nouveau off
 
-== •
+#== •
  nano -w /etc/portage/make.conf
- VIDEO_CARDS="nvidia"
- USE="gtk3" emerge --ask nvidia-drivers
+VIDEO_CARDS="nvidia"
+USE="gtk3" emerge --ask nvidia-drivers
 
-== •
+#== •
  nano -w /etc/portage/package.mask/nvidia
 >=x11-drivers/nvidia-drivers-341.0.0
 >=x11-drivers/nvidia-kernel-modules-341.0.0
 
-== •
+#== •
  nano -w /etc/conf.d/modules
 modules="nvidia"
 
-== •
+#== •
  nano -w /etc/X11/xorg.conf
 Section "Device"
     Identifier     "nvidia"
@@ -316,7 +316,7 @@ Section "Device"
 	Option    "RegistryDwords" "EnableBrightnessControl=1"
 EndSection
 
-== •
+#== •
  eselect opengl set nvidia
  eselect opencl set nvidia
 
@@ -342,12 +342,12 @@ UUID=76CDC3FF57CBA78E  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF
 ##======================================================================================
 
 
-## == •                                    Note:
+##== •                                    Note:
   grub-mkconfig –o /boot/grub/grub.cfg
   grub-mkconfig -o /boot/grub/grub.cfg
 
-## == •             Se usi debian per il chroot:
+##== •             Se usi debian per il chroot:
   export PATH="$PATH:/usr/sbin:/sbin:/bin"
 
 
-## == •                                   Fine
+##== •                                   Fine
