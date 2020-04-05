@@ -55,8 +55,8 @@ echo "deb http://ftp.it.debian.org/debian/ stretch main contrib non-free" | sudo
 echo "deb-src http://ftp.it.debian.org/debian/ stretch main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
 
-echo "deb http://security.debian.org/debian-security/ stretch/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
-echo "deb-src http://security.debian.org/debian-security/ stretch/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb http://security.debian.org/debian-security/ stable/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "deb-src http://security.debian.org/debian-security/ stable/updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
 
 echo "# stretch-updates, previously known as 'volatile'" | sudo tee -a /etc/apt/sources.list >/dev/null
@@ -64,17 +64,17 @@ echo "deb http://ftp.it.debian.org/debian/ stretch-updates main contrib non-free
 echo "deb-src http://ftp.it.debian.org/debian/ stretch-updates main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
 
-echo "# Repository Deb Multimedia in Debian 9.x Stretch" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "# Repository Deb Multimedia in Debian Stable" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo "deb http://www.deb-multimedia.org stretch main non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
 
-echo "# Backports for Debian 9.x Stretch" | sudo tee -a /etc/apt/sources.list >/dev/null
+echo "# Backports for Debian Stable" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo "deb http://ftp.debian.org/debian stretch-backports main contrib non-free" | sudo tee -a /etc/apt/sources.list >/dev/null
 echo -en "\n" | sudo tee -a /etc/apt/sources.list >/dev/null
 
 # Aggiornare il sistema
 #
-# Installiamo le key d’autenticazione per il repo Deb Multimedia
+# Installo le key d’autenticazione per il repo Deb Multimedia
 #
 sudo apt-get update
 wget https://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb -O /tmp/deb-multimedia-keyring.deb

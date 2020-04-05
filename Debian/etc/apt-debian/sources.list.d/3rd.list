@@ -1,14 +1,3 @@
-
-#!/bin/bash
-echo "Installo https-transfert:"
-
-apt install curl wget apt-transport-https dirmngr
-#==================================================================================================
-
-echo "Creo il nuovo file Sources List:"
-sleep 3
-touch /etc/apt/sources.list.d/3rd.list
-cat <<'EOF' > /etc/apt/sources.list.d/3rd.list
 # _____________________________________________________________________________
 #
 #                   Repository Ufficiali Debian Stable
@@ -74,53 +63,3 @@ deb [arch=i386] https://dl.winehq.org/wine-builds/debian/ buster main
 deb https://dl.yarnpkg.com/debian/ stable main
 
 # _____________________________________________________________________________
-EOF
-
-#==================================================================================================
-echo " Aggiungo le Chiavi GPG :"
-sleep 3
-
-wget http://www.deb-multimedia.org/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb && dpkg -i deb-multimedia-keyring_2016.8.1_all.deb
-
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-
-apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D530E028F59EAE4D
-
-wget -O - https://www.liveconfig.com/liveconfig.key | apt-key add -
-
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
-
-curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-
-wget -O - https://deb.opera.com/archive.key | apt-key add -
-
-apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 1F3045A5DF7587C3
-
-apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 4773BD5E130D1D45
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F24AEA9FB05498B7
-
-wget -O - https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc | apt-key add -
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 72B97FD1D9672C93
-
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-
-wget -nc https://dl.winehq.org/wine-builds/winehq.key && apt-key add winehq.key && rm winehq.key
-
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo " Aggiorno le Liste "
-sleep 3
-apt update
-apt dist-upgrade
-echo " I Repository di Terze Parti sono stati aggiunti
-       e configurati correttamente !"
-sleep 3
-
-
-exit
-

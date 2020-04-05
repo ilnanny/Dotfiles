@@ -261,7 +261,7 @@ hostname"T3500GEN"
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
 #== •  Gfx
- emerge --ask gimp inkscape gcolors2 nomacs qt5ct
+ emerge --ask gimp inkscape gcolors2 nomacs qt5ct media-gfx/pinta rawtherapee
 
 #== •  Office
  USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice

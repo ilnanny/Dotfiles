@@ -9,11 +9,11 @@ emerge --ask system-config-printer
 
 ================================
 installazione manuale:
-Suppongo che tu abbia già un'installazione di CUPS funzionante e che il supporto di usblp sia incorporato nel tuo kernel o caricato come un modulo.
+Installa CUPS con  il supporto di usblp .
 
-1. emerge rpm2targz
-2. Scarica i file brhl2030lpr-2.0.1-1.i386.rpm e cupswrapperHL2030-2.0.1-1.i386.rpm dal sito Web Brother.
-3. Converti i file RPM in tarballs con rpm2targz, ed estraili:
+ emerge --ask rpm2targz
+Scarica i file brhl2030lpr-2.0.1-1.i386.rpm e cupswrapperHL2030-2.0.1-1.i386.rpm dal sito Web Brother.
+Converti i file RPM in tarballs con rpm2targz, ed estraili:
 
 
  rpm2targz brhl2030lpr-2.0.1-1.i386.rpm

@@ -1,12 +1,25 @@
-
 #!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#  Source list 3rd e gpg-key debian buster                                 =
+#================================================
+#Imposta l'utente Root
+set -o errexit
+[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+#
+#
 echo "Installo https-transfert:"
-
+sleep 2
 apt install curl wget apt-transport-https dirmngr
 #==================================================================================================
 
 echo "Creo il nuovo file Sources List:"
-sleep 3
+sleep 2
 touch /etc/apt/sources.list.d/3rd.list
 cat <<'EOF' > /etc/apt/sources.list.d/3rd.list
 # _____________________________________________________________________________

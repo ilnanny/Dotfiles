@@ -1,0 +1,3 @@
+echo "export QT_QPA_PLATFORMTHEME=gtk2" >> /etc/profile.d/qt5ct.sh
+echo "export QT_AUTO_SCREEN_SCALE_FACTOR=0" >> /etc/profile.d/qt5ct.sh
+reboot

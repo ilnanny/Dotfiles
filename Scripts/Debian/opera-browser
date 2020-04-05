@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /temp
+wget https://download.opera.com/download/get/?partner=www&opsys=Linux
+dpkg -i opera-stable_*.deb
+exit

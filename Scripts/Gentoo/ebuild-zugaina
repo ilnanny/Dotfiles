@@ -1,0 +1,47 @@
+#!/bin/bash
+clear
+
+# Controllo dei permessi di chi esegue lo script
+if [ "$EUID" -ne 0 ] ;  then
+  echo "Eseguire lo script con i permessi di amministratore (su o sudo)"
+  exit
+fi
+
+# Impostare i percorsi delle directory dove sono contenuti gli ebuild e l'overlay locale
+download="/home/trigg/Scaricati"
+lcldir="/usr/local/portage"
+
+# Elenco delle categorie prese dal portage tree
+categ=($(ls /usr/portage | grep "-"))
+
+# La prompt per il menu
+PS3="Seleziona la categoria : "
+
+# Menu di scelta della categoria
+# se la categoria non esiste nell' overlay viene creata
+select ctg in ${categ[@]} ; do
+    if [[ ! -d $lcldir/$ctg ]] ; then
+        mkdir -p $lcldir/$ctg
+    fi
+    break
+done
+
+# Nome del programma (il quale viene convertito con le minuscole secondo lo standard di portage) e creato se non esiste nell'overlay
+echo -n "Nome programma : " ; read prg
+prg="$(echo $prg | tr '[:upper:]' '[:lower:]')"
+echo  "Programma : $prg nella categoria $ctg"
+echo
+if [[ ! -d $lcldir/$ctg/$prg ]] ; then
+    mkdir -p $lcldir/$ctg/$prg
+fi
+
+# Menu di scelta dell'ebuild della directory degli scaricamenti filtrato e copiato  per il nome del programma
+PS3="Seleziona l' ebuild : "
+select ebld in $(ls $download | grep ^$prg ) ; do
+    cp $download/$ebld /$lcldir/$ctg/$prg/
+    break
+done
+
+# Crea il manifest
+cd /$lcldir/$ctg/$prg
+repoman manifest

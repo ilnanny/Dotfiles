@@ -1,0 +1,7 @@
+COntrolla i pacchetti che vuole togliere con :
+
+emerge --depclean -p
+
+e aggiungi ci che vuoi tenere in world con __:
+
+emerge -n nome_pacchetto

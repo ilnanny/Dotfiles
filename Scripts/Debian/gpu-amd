@@ -32,7 +32,7 @@ clear
 printf "\n"
 printf "${Cyan}#############################################################\n"
 printf "${Cyan}#                                                           #\n"
-printf "${Cyan}#${Yellow} Drivers Grafici AMD/ATI                   ${Cyan}#\n"
+printf "${Cyan}#${Yellow} Drivers Grafici ed Extra Firmwares        ${Cyan}#\n"
 printf "${Cyan}#                                                           #\n"
 printf "${Cyan}#############################################################${Nc}\n"
 printf "\n"
@@ -40,7 +40,7 @@ printf "\n"
 while true; do
   read -p "Installo i drivers per schede grafiche AMD/ATI? (S)i, (N)o : " INPUT
   case $INPUT in
-    [Ss]* ) sudo apt-get -y install firmware-linux llvm-3.9 clang-3.9;
+    [Ss]* ) sudo apt-get -y install firmware-linux llvm clang;
             printf "\n"
             printf "Riavvia il sistema affinchè le modifiche abbiano effetto...\n"
             printf "\n"
