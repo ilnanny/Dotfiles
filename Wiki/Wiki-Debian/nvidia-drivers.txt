@@ -1,0 +1,44 @@
+apt -y install nvidia-detect
+
+nvidia-detect
+
+ Detected NVIDIA GPUs:
+ 02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GF100GL [Quadro 4000] [10de:06dd] (rev a3)
+
+ Checking card:  NVIDIA Corporation GF100GL [Quadro 4000] (rev a3)
+ Your card is only supported up to the 390 legacy drivers series.
+ It is recommended to install the
+     nvidia-legacy-390xx-driver
+ package.
+
+apt install nvidia-legacy-390xx-driver
+
+
+systemctl reboot
+
+
+============================================================================
+**
+apt -y install linux-headers-$(uname -r) build-essential
+
+echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

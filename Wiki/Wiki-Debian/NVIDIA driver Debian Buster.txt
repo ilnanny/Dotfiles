@@ -1,0 +1,92 @@
+How to install NVIDIA driver using Debian repository step by step instructions
+Enable the non-free repository.
+
+As an administrative user open the /etc/apt/sources.list and add the non-free repository. For example change the repository definition:
+FROM:
+deb http://ftp.au.debian.org/debian/ buster main
+TO:
+deb-src http://ftp.au.debian.org/debian/ buster main non-free
+Once ready update the repository index files using the below command:
+# apt update
+Install nvidia-detect utility by execution of the below command:
+# apt -y install nvidia-detect
+Detect your Nvidia card model and suggested Nvidia driver. To do so execute the above installed nvidia-detect command. For example:
+# nvidia-detect
+Detected NVIDIA GPUs:
+01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GP106 [GeForce GTX 1060 6GB] [10de:1c03] (rev a1)
+
+Checking card:  NVIDIA Corporation GP106 [GeForce GTX 1060 6GB] (rev a1)
+Your card is supported by the default drivers and legacy driver series 390.
+It is recommended to install the
+    nvidia-driver
+package.
+As suggested install the recommended driver by the previous step:
+# apt install nvidia-driver
+All done. Reboot your Debian 10 Buster Linux box:
+# systemctl reboot
+How to install NVIDIA driver by using the official nvidia.com package step by step instructions
+Enable the non-free repository.
+
+As an administrative user open the /etc/apt/sources.list and add the non-free repository. For example change the repository definition:
+FROM:
+deb http://ftp.au.debian.org/debian/ buster main
+TO:
+deb-src http://ftp.au.debian.org/debian/ buster main non-free
+Once ready update the repository index files using the below command:
+# apt update
+Install nvidia-detect utility by execution of the below command:
+# apt -y install nvidia-detect
+Detect your Nvidia card model and suggested Nvidia driver. To do so execute the above installed nvidia-detect command. For example:
+# nvidia-detect
+Detected NVIDIA GPUs:
+01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GP106 [GeForce GTX 1060 6GB] [10de:1c03] (rev a1)
+
+Checking card:  NVIDIA Corporation GP106 [GeForce GTX 1060 6GB] (rev a1)
+Your card is supported by the default drivers and legacy driver series 390.
+It is recommended to install the
+    nvidia-driver
+package.
+take a note of the suggester driver number. In this case the suggested Nvidia driver number is 390.
+Download the recommended Nvidia source package from the official Nvidia.com website. Search for a package name to match the driver number as recommended by the previous step. Save the downloaded file into your home directory:
+$ ls NVIDIA-Linux-x86_64-390.116.run
+NVIDIA-Linux-x86_64-390.116.run
+Install Nvidia driver compilation prerequisites:
+# apt -y install linux-headers-$(uname -r) build-essential
+Next, disable the default nouveau driver:
+# echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+Reboot to multi-user runlevel. This will disable the GUI user after reboot:
+# systemctl set-default multi-user.target
+# systemctl reboot
+Login as root user via terminal or TTY and install the Nvidia driver by executing the bellow command:
+NOTE
+Depending on the driver version you have downloaded the bellow command may be different. Amend the below command to fit the driver file name downloade previously.
+# bash NVIDIA-Linux-x86_64-390.116.run
+During the installation you may be asked the following set of questions:
+The CC version check failed:
+
+The kernel was built with gcc version 8.2.0 (Debian 8.2.0-14), but the current compiler version is cc (Debian 8.3.0-2) 8.3.0.
+
+This may lead to subtle problems; if you are not certain whether the mismatched compiler will be compatible with your kernel, you may wish to abort installation, set the CC environment variable to the name of the compiler used to compile your kernel, and restart installation.
+
+                                                     Ignore CC version check                                         Abort installation
+
+
+Install NVIDIA's 32-bit compatibility libraries?
+
+                                                               Yes                                                           No
+
+
+
+An incomplete installation of libglvnd was found. Do you want to install a full copy of libglvnd? This will overwrite any existing libglvnd libraries.
+
+                                  Don't install libglvnd files         Install and overwrite existing filesort installation.  Abort installation.
+
+
+ Would you like to run the nvidia-xconfig utility to automatically update your X configuration file so that the NVIDIA X driver will be used when you restart X?  Any pre-existing X configuration file will be backed up.
+
+                                                               Yes                                                            No
+Enable the system to boot into GUI:
+# systemctl set-default graphical.target
+All done. Reboot your Debian 10 Buster Linux box:
+# systemctl reboot
+

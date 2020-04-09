@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/sh
 #================================================
 #================================================
 #   O.S.      : Gnu Linux                       =
@@ -6,15 +6,9 @@
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-#  emerge --ask dcfldd
 #================================================
-##Backup
-dd if=/dev/sdc2 conv=sync,noerror bs=64K status=progress | gzip -c  > /media/Dati/backupdd_gentoo.img.gz
+git clone https://aur.archlinux.org/yay.git
 
-##Restore
-# gunzip -c /media/Dati/backupdd_gentoo.img.gz | dd of=/dev/sdc2  status=progress
+cd yay
 
-
-#======================================================
-#======================================================
-exit 0
+makepkg -si

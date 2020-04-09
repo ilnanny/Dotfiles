@@ -3,5 +3,5 @@ Version=1.0
 Type=Link
 Name=Cups
 Comment=Accedi alle Stampanti
-Icon=stock-print
+Icon=preferences-devices-printer
 URL=http://localhost:631/admin

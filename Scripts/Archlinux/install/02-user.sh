@@ -59,7 +59,7 @@ yay -S --noconfirm perl-linux-desktopfiles
 yay -S --noconfirm comptray
 
 # Enable Display Manager - comment out if keeping current DM
-sudo systemctl enable sddm.service
+sudo systemctl enable lxdm.service
 
 # Sound
 sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol --noconfirm --needed
@@ -72,53 +72,14 @@ sudo pacman -S --noconfirm --needed qt5-styleplugins qt5ct adobe-source-code-pro
 
 # Apps from standard repos
 sudo pacman -S chromium geany geany-plugins --noconfirm --needed
-sudo pacman -S conky conky-manager file-roller evince --noconfirm --needed
+sudo pacman -S conky file-roller evince --noconfirm --needed
 sudo pacman -S uget deluge gnome-disk-utility gparted --noconfirm --needed
-sudo pacman -S tilix screenfetch --noconfirm --needed
+sudo pacman -S neofetch --noconfirm --needed
 
 # Apps from AUR
 yay -S --noconfirm chromium-widevine
 yay -S --noconfirm mugshot
 
-# Copy over some of my favorite fonts, themes and icons
-sudo [ -d /usr/share/fonts/OTF ] || sudo mkdir /usr/share/fonts/OTF
-sudo [ -d /usr/share/fonts/TTF ] || sudo mkdir /usr/share/fonts/TTF
-sudo tar xzf tarballs/fonts-otf.tar.gz -C /usr/share/fonts/OTF/ --overwrite
-sudo tar xzf tarballs/fonts-ttf.tar.gz -C /usr/share/fonts/TTF/ --overwrite
-# Make new Icon package.
-sudo tar xzf tarballs/oblogout.tar.gz -C /usr/share/themes/ --overwrite
-
-# Write out new configuration files
-tar xzf tarballs/config.tar.gz -C ~/ --overwrite
-tar xzf tarballs/local.tar.gz -C ~/ --overwrite
-
-# Change oblogout theme
-sudo tar xzf tarballs/oblogout-conf.tar.gz -C /etc --overwrite
-
-# Copy over Menulibre items (Xfce Menu)
-tar xzf tarballs/applications.tar.gz -C ~/.local/share/ --overwrite
-tar xzf tarballs/xfce-applications-menu.tar.gz -C ~/.config/menus/ --overwrite
-
-# Install wallpapers
-[ -d /usr/share/Backgrounds ] || mkdir -p /usr/share/Backgrounds
-tar xzf tarballs/wallpapers1.tar.gz -C ~/Wallpapers/
-
-# Install Conky
-[ -d ~/.conky ] || mkdir ~/.conky
-tar xzf tarballs/conky.tar.gz -C ~/.conky/
-
-# Copy over GRUB theme
-# Note to self - Make  GRUB Theme Modify root script to replace grub.cfg
-sudo tar xzf tarballs/archlinux-grub-theme.tar.gz -C /boot/grub/themes/ --overwrite
-
-#Copy over SDDM theme
-sudo tar xzf tarballs/archlinux-sddm-theme.tar.gz -C /usr/share/sddm/themes/ --overwrite
-
-# Copy SDDM config
-sudo tar xzf tarballs/sddm-conf.tar.gz -C /etc/ --overwrite
-
-# Add screenfetch and tilix to .bashrc
-tar xzf tarballs/bashrc.tar.gz -C ~/
 
 echo " "
 echo "All done! Press enter to reboot!"

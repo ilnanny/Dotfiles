@@ -10,5 +10,5 @@
 set -e
 
 #Install Libre Office
-sudo pacman -S libreoffice-fresh --noconfirm --needed
+sudo pacman -S libreoffice-fresh libreoffice-fresh-it --noconfirm --needed
 
