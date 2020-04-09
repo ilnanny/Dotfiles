@@ -42,7 +42,7 @@ set list listchars=tab:>>,trail:~
 syntax on
 
 " == Colors
-color jinx
+color noktomix
 
 if $TERM !=? 'linux'
     set termguicolors

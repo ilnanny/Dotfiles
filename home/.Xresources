@@ -65,7 +65,7 @@ XTerm*VT100.geometry: 80x24
 !  fc-match mono
 !  Grandezza del font che di default è 6x13 punti
 !
-XTerm.vt100.faceName: Liberation Mono:size=12:antialias=false
+XTerm.vt100.faceName: "DejaVu Sans Mono" "Book":size=11:antialias=true
 !
 !  Grandezza Medium di default ;anche per aterm,uxterm.
 !
