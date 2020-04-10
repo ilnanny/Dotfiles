@@ -44,30 +44,15 @@ let s:noktomix.purple = ['#9E89B3', 140,  5]
 let s:noktomix.cyan   = ['#5ED1D6',  81,  6]
 let s:noktomix.orange = ['#E08D5E', 172,  9]
 
-if exists('g:noktomix_theme') && g:noktomix_theme =~? 'day'
-    set background=light
-    let s:noktomix.fgr    = ['#BAC9CF', 251, 15]
-    let s:noktomix.bgr    = ['#111111', 234,  0]
-    let s:noktomix.line   = ['#212B30', 237,  8]
-    let s:noktomix.select = ['#2A2E2F', 237,  1]
-    let s:noktomix.folded = ['#2A2E2F', 237,  8]
-    let s:noktomix.commnt = ['#707577', 243,  7]
-elseif exists('g:noktomix_theme') && g:noktomix_theme =~? 'midnight'
+
     set background=dark
     let s:noktomix.fgr    = ['#BAC9CF', 251, 15]
-    let s:noktomix.bgr    = ['#111111', 234,  0]
-    let s:noktomix.line   = ['#212B30', 237,  8]
-    let s:noktomix.select = ['#2A2E2F', 237,  1]
-    let s:noktomix.folded = ['#2A2E2F', 237,  8]
-    let s:noktomix.commnt = ['#707577', 243,  7]
-else " night
-    let s:noktomix.fgr    = ['#BAC9CF', 251, 15]
-    let s:noktomix.bgr    = ['#111111', 234,  0]
-    let s:noktomix.line   = ['#212B30', 237,  8]
-    let s:noktomix.select = ['#2A2E2F', 237,  1]
-    let s:noktomix.folded = ['#2A2E2F', 237,  8]
-    let s:noktomix.commnt = ['#707577', 243,  7]
-endif
+    let s:noktomix.bgr    = ['#263238', 234,  0]
+    let s:noktomix.line   = ['#2F3E45', 237,  8]
+    let s:noktomix.select = ['#2E3C40', 237,  1]
+    let s:noktomix.folded = ['#2E3C40', 237,  8]
+    let s:noktomix.commnt = ['#4F656E', 243,  7]
+
 
 function! <SID>HighLight(GRP, FG, BG, ATT) abort  " {{{1
     if a:FG !=# ''

@@ -26,7 +26,7 @@
     <font place="ActiveWindow">
       <name>Segoe UI</name>
       <size>11</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
@@ -44,13 +44,13 @@
     <font place="MenuItem">
       <name>Segoe UI</name>
       <size>10</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>Segoe UI</name>
       <size>10</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
@@ -355,7 +355,7 @@
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
-        <command>vlc</command>
+        <command>deadbeef</command>
       </action>
     </keybind>
     <keybind key="W-v">

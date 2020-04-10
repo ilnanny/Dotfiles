@@ -4,30 +4,30 @@
 ! =  D.A.Page  : http://ilnanny.deviantart.com   =
 ! =  Github    : https://github.com/ilnanny      =
 ! ------------------------------------------------
-!   Tema dei colori XTerm : Nokto
+!   Colorscheme XTerm : Nokto
 ! ------------------------------------------------
-! Eng       Ita
+! Setup
 *.foreground: #CDD4C7
 *.background: #263238
 *.cursorColor: #BBBBBB
 !
-! Black     Nero
+! Black
 *.color0:      #073642
 *.color8:      #002B36
 !
-! Red       Rosso
+! Red
 *.color1:      #D1615F
 *.color9:      #CB4B16
 !
-! Green   Verde
+! Green
 *.color2:      #859900
 *.color10:     #75A297
 !
-! Yellow  Giallo
+! Yellow
 *.color3:      #B58900
 *.color11:     #D7D48E
 !
-! Blue    Blu
+! Blue
 *.color4:      #7EB1D5
 *.color12:     #96B7C8
 !
@@ -35,39 +35,36 @@
 *.color5:      #D33682
 *.color13:     #C46CA1
 !
-! Cyan   Ciano
+! Cyan
 *.color6:      #7ECDCD
 *.color14:     #A5D5D5
 !
-! White  Bianco
+! White
 *.color7:      #F3F0E7
 *.color15:     #F3F3F3
 !
 ! Bold, Italic, Underline
-! Grassetto Corsivo Sottolineato
 *.colorBD:     #DF5C6B
 !*.colorIT:
 !*.colorUL:
 !
-!  Ricarica la configurazione con :
+!  Type in Terminal emulator :
 !  xrdb $HOME/.Xresources
-!  Copia in X la configurazione
-!  xrdb -merge .x_settings
 
 ! --------------------------------------
-!   XTerm Geometria  e Aspetto
+!   XTerm Geometry & Font
 ! --------------------------------------
 XTerm*termName: xterm-256color
 XTerm*cursorColor: white
 XTerm*VT100.geometry: 80x24
 !
-!  Cerca font mono con:
+!  Search font mono Type:
 !  fc-match mono
-!  Grandezza del font che di default è 6x13 punti
+!  Default size font 6x13 points
 !
 XTerm.vt100.faceName: "DejaVu Sans Mono" "Book":size=11:antialias=true
 !
-!  Grandezza Medium di default ;anche per aterm,uxterm.
+!  Medium size  default ;xterm,aterm,uxterm.
 !
 xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
 XTerm*dynamicColors: true
@@ -82,32 +79,32 @@ XTerm*jumpScroll: true
 XTerm*multiScroll: true
 XTerm*toolBar: false
 !
-!  Ricarica la configurazione con :
+!  Update configuration :
 !  xrdb $HOME/.Xresources
 !
 ! -------------------------------------------------------------
-!   Rofi
+!   Rofi Setup
 ! -------------------------------------------------------------
-rofi.font: Monospace 12
+rofi.font: Liberation Mono 11
 rofi.color-enabled: true
-rofi.color-window: #535353, #535353, #535353
-rofi.color-normal: #535353, #C5CAD6, #535353, #8892C2, #535353
+rofi.color-window: #263238, #263238, #263238
+rofi.color-normal: #263238, #C5CAD6, #263238, #88ADC2, #263238
 rofi.separator-style: solid
 !
 !
 ! -------------------------------------------------------------
-!  Cursor
+!  Cursor Theme
 ! -------------------------------------------------------------
 Xcursor.theme: Lila_HD-cursor
 
-! ------------------------------------------------------------------
-!  URxvt
-! ------------------------------------------------------------------
+! -------------------------------------------------------------
+!  URxvt Setup
+! -------------------------------------------------------------
 URxvt*saveline: 15000
 URxvt*termName: rxvt-256color
 URxvt*iso14755: false
 URxvt*depth: 32
-URxvt*background: [90]#444F54
+URxvt*background: [90]#263238
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*internalBorder: 0
@@ -128,4 +125,6 @@ URxvt.tabbed.tabbar-bg: 16
 URxvt.tabbed.tab-fg: 15
 URxvt.tabbed.tab-bg: 4
 URxvt*buffered: false
+! ------------------------------------------------------------------
+!  End File ~/Xresources
 ! ------------------------------------------------------------------
