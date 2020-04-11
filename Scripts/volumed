@@ -6,7 +6,8 @@
 #   D.A.Page  : http://ilnanny.deviantart.com   =
 #   Github    : https://github.com/ilnanny      =
 #================================================
-# change   volume                               =
+# Impostazioni volume di alsa 
+#richiede dunst ,alsa,amixer                  =
 #================================================
 #Imposta l'utente Root
 #set -o errexit
@@ -21,8 +22,8 @@
  volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
  mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
  if [[ $volume == 0 || "$mute" == "off" ]]; then
-     # Show the sound muted notification
-     dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted"
+     # Visualizza la notifica del volume muto
+     dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muto"
  else
      # Mostra la notifica del volume
      dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \

@@ -2,62 +2,65 @@ Gentoo: server FTP
 Installazione di Pure-FTPd
 Il miglior server FTP per Linux è Pure-FTPd. Per installarlo:
 
-emerge pure-ftpd
-Modificare il file di configurazione /etc/conf.d/pure-ftpd.
+emerge --ask pure-ftpd
+Modificare il file di configurazione
+nano /etc/conf.d/pure-ftpd
 
+#=======================================================================================
+# Config file for /etc/init.d/pure-ftpd
+
+## Consente l'avvio del server
 IS_CONFIGURED="yes"
-Come login ci sono varie possibilità. Le due più semplici sono:
 
-AUTH="-l unix"
-ci si logga con username e password del proprio account linux sul server. Oppure
-
-AUTH="-l puredb:/etc/pureftpd.pdb"
-ci si logga con una username e password specifici degli utenti "ftp".
-
-Questa seconda soluzione è da preferirsi nei casi in cui gli utenti siano molti oppure quando in generale si vuol fare una distinzione netta tra utenti FTP e utenti del computer. Notare inoltre che agire sugli utenti virtuali offre più sicurezza e molte più possibilità rispetto all'uso degli account di sistema.
-
-Fondamentali le opzioni MISC_OTHER, scegliete quelle che fanno al caso vostro e guardate la documentazione sul sito di Pure-FTPd per un elenco completo:
-
--A: chroot
--E: proibisce il login anonimo
--j: autocrea la home di un utente se non esiste
--R: disabilita il comando chmod
--x e -X: non permette la scrittura (e lettura)
-         di file con il punto iniziale
--Z: abilita dei controlli automatici sull'uso di chmod
-    in modo che gli utenti non impostino permessi assurdi
--p: specifica il range di porte da usare per il passive-mode
--r: non sovrascrive mai i file, ma li rinomina
--T e -t: abilitano la limitazione di banda
-Se volete accedere al vostro server dall'esterno della vostra rete LAN dovete ovviamente forwardare la porta usata dal server (solitamente 21) nella maniera corretta tramite le opzioni del router. Dopodiché se il vostro server è accessibile dall'esterno avete finito. Altrimenti significa che avete un router che fa schifo e dovete abilitare l'opzione USE_NAT="-N".
-
-Ecco il mio file pure-ftpd.conf (ho messo dei punti interrogativi al posto del numero delle porte usate per il passive-mode):
-
-IS_CONFIGURED="yes"
+## FTP Server,Port
 SERVER="-S 21"
+
+## Numero di connessioni totali e per ip
 MAX_CONN="-c 30"
 MAX_CONN_IP="-C 10"
-DAEMON="-B"
-DISK_FULL="-k 90%"
-AUTH="-l puredb:/etc/pureftpd.pdb"
-MISC_OTHER="-A -j -E -Z -p ?????:?????"
 
-La gestione degli utenti virtuali ftp
-Creare un gruppo e un utente di sistema a cui faranno riferimento gli utenti virtuali FTP. Portage crea automaticamente il gruppo ftp e l'utente ftp e la sua relativa home. Basta aggiungere l'utente ftp al gruppo ftp.
+## Ǹon consente i caricamenti se è piena
+DISK_FULL="-k 90%"
+
+## Autenticazione
+AUTH="-l unix"
+
+## Misc. Others
+MISC_OTHER="-A -j -E -Z -p"
+
+## Legenda MISC_OTHER :
+# -A: chroot
+# -E: proibisce il login anonimo
+# -j: autocrea la home di un utente se non esiste
+# -R: disabilita il comando chmod
+# -x e -X: non permette la scrittura (e lettura)
+#         di file con il punto iniziale
+# -Z: abilita dei controlli automatici sull'uso di chmod
+#    in modo che gli utenti non impostino permessi assurdi
+# -p: specifica il range di porte da usare per il passive-mode
+# -r: non sovrascrive mai i file, ma li rinomina
+# -T e -t: abilitano la limitazione di banda
+#
+
+
+
+#=======================================================================================
+Portage crea automaticamente il gruppo ftp e l'utente ftp e la sua relativa home.
+Basta aggiungere l'utente ftp al gruppo ftp.
 
 gpasswd -a ftp ftp
 Ora creaiamo i nostri utenti ftp. Lo strumento basilare è pure-pw:
 
-pure-pw useradd joe -u ftpuser -d /home/ftpusers/pippo [-m]
+pure-pw useradd ilnanny -u ftpuser -d /home/ftpusers/ilnanny [-m]
 Per cancellare
 
 pure-pw userdel joe [-m]
 Cambiare password
 
-pure-pw passwd <login> [-m]
+pure-pw passwd <ilnanny> [-m]
 Informazioni
 
-pure-pw show    <login>
+pure-pw show    <ilnanny>
 Accettare le modifiche (se si è usato -m sono state già scritte)
 
 pure-pw mkdb
@@ -65,10 +68,10 @@ Modifiche: pure-pw usermod ...
 
 Quota in MB. Dimensione in MB.
 
-pure-pw usermod utente -N 100 
+pure-pw usermod ilnanny -N 100
 Numero massimo di file
 
-pure-pw usermod utente -n 1000 
+pure-pw usermod utente -n 1000
 Avvio del server ed esecuzione all'avvio
 /etc/init.d/pure-ftpd start
 rc-update add pure-ftpd default

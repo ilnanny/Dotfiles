@@ -7,9 +7,10 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
-#Project: Traduzione dei testi
+# Traduzione testi offline 
+# required : xsel,zenity,
 #================================================
-text="$(xsel -o)"
+text="$(in-o)"
 translate="$(wget -U "Mozilla/5.0" -qO - "http://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=$(echo $text | sed "s/[\"'<>]//g")" | sed "s/,,,0]],,.*//g" | awk -F'"' '{print $2, $6}')"
 echo -e "Testo :  " "$text"'\n' > /tmp/notitrans
 echo "Tradotto :  " "$translate" >> /tmp/notitrans

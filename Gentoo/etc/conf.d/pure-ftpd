@@ -1,5 +1,4 @@
-
-SDConfig file for /etc/init.d/pure-ftpd
+# Config file for /etc/init.d/pure-ftpd
 
 ## Consente l'avvio del server
 IS_CONFIGURED="yes"

@@ -73,7 +73,7 @@ def bootstrap(tmpdir=None):
     class CertInstallCommand(InstallCommand):
         def parse_args(self, args):
              # Se il certificato non è specificato nella configurazione o nell'ambiente, forniamo il nostro
-             # certificato proprio tramite valori predefiniti.
+             # certificato tramite valori predefiniti.
              # Ciò consente all'utente di specificare il certificato personalizzato ovunque ci si desideri:
              # config, variabile d'ambiente o argv.
             if not self.parser.get_default_values().cert:

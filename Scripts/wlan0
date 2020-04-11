@@ -8,15 +8,21 @@
 #================================================
 # ==  FASTWEB-E06CD5
 #================================================
-echo "sudo lshw -C network"
-#Imposta l'utente Root
+echo "Lancia sudo lshw -C network
+e aggiungi la password "
+#
+# __ Imposta l'utente Root
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
-echo "Connetti alla rete
+echo "Connetti alla rete :
+
 sudo nmcli device wifi rescan
+
 sudo nmcli device wifi list
+
 sudo nmcli device wifi connect FASTWEB-E06CD5 password my_password
+
 sudo nmcli device wifi connect 'FASTWEB DA 5 GHz' password my_password
 "
 read

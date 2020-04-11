@@ -62,6 +62,7 @@ alias rm="rm -v"
 alias spegni="su -c 'shutdown -r now'"
 alias svg2png="for i in *; do inkscape $i --export-png=`echo $i | sed -e 's/svg$/png/'`; done"
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias upx="xrdb $HOME/.Xresources"
 alias utenti="cut -d: -f1 /etc/passwd"
 alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Pubblici"
 alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0'

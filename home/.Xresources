@@ -4,44 +4,44 @@
 ! =  D.A.Page  : http://ilnanny.deviantart.com   =
 ! =  Github    : https://github.com/ilnanny      =
 ! ------------------------------------------------
-!   Colorscheme XTerm : Nokto
+!   Colorscheme : Noktomix
 ! ------------------------------------------------
 ! Setup
-*.foreground: #CDD4C7
+*.foreground: #BCC7CC
 *.background: #263238
 *.cursorColor: #BBBBBB
 !
 ! Black
-*.color0:      #073642
-*.color8:      #002B36
+*.color0:      #263238
+*.color8:      #263238
 !
 ! Red
-*.color1:      #D1615F
-*.color9:      #CB4B16
+*.color1:      #B75757
+*.color9:      #B14C51
 !
 ! Green
-*.color2:      #859900
-*.color10:     #75A297
+*.color2:      #949E4E
+*.color10:     #829E4E
 !
 ! Yellow
-*.color3:      #B58900
-*.color11:     #D7D48E
+*.color3:      #B69C4B
+*.color11:     #CFC360
 !
 ! Blue
-*.color4:      #7EB1D5
-*.color12:     #96B7C8
+*.color4:      #6A97B7
+*.color12:     #7895C0
 !
 ! Magenta
-*.color5:      #D33682
-*.color13:     #C46CA1
+*.color5:      #AF4F7E
+*.color13:     #BA5F8C
 !
 ! Cyan
-*.color6:      #7ECDCD
-*.color14:     #A5D5D5
+*.color6:      #5DA49F
+*.color14:     #70B0AF
 !
 ! White
-*.color7:      #F3F0E7
-*.color15:     #F3F3F3
+*.color7:      #CDDCE1
+*.color15:     #C8DADB
 !
 ! Bold, Italic, Underline
 *.colorBD:     #DF5C6B
@@ -62,9 +62,9 @@ XTerm*VT100.geometry: 80x24
 !  fc-match mono
 !  Default size font 6x13 points
 !
-XTerm.vt100.faceName: "DejaVu Sans Mono" "Book":size=11:antialias=true
+XTerm.vt100.faceName: "Liberation Mono" "Regular":size=10:antialias=true
 !
-!  Medium size  default ;xterm,aterm,uxterm.
+!  Medium size set default ;xterm,aterm,uxterm.
 !
 xterm*font: -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-*
 XTerm*dynamicColors: true
@@ -116,6 +116,7 @@ URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 URxvt.keysym.m-c: perl:clipboard:copy
 URxvt.keysym.m-v: perl:clipboard:paste
+! SEt xdg-open or exo-open
 URxvt.urlLauncher: exo-open
 URxvt.underlineURLs: true
 URxvt.urlButton: 1

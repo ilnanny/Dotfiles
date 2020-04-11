@@ -170,3 +170,9 @@ for device in /sys/bus/usb/devices/usb*
 do
 	print_device $device 0 0 0
 done
+
+echo "___________________________"
+echo ""
+echo "  Premi CTRL+C per uscire"
+echo "___________________________"
+read
