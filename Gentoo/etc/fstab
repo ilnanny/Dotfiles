@@ -19,7 +19,7 @@
 # ______   FileSystem  Ntfs
 
 # Dati
-/dev/sdb1  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF-8 0  0
+/dev/sdb1  /media/Dati ntfs-3g defaults,rw,errors=remount,uid=1000  0  0
 
 #___________________________________________________________________________
 

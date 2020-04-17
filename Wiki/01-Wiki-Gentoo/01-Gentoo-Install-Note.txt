@@ -1,5 +1,6 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
+
 #=======================================================
 #= Dell Workstation T3500 - T5500
 #= Intel Xeon X5650 - X5675  =Westmere
@@ -230,26 +231,24 @@ hostname"T3500GEN"
 # 59      root  /etc/cron.hourly/0anacron
 
 #=====================================================================
+#== • LXde
+ emerge --ask lxde-meta lxappearance lxappearance-obconf
+
 #== • Openbox=
  emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 dunst
  emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance scrot
- emerge --ask  keybinder xdg-utils xdg-user-dirs-gtk xdg-user-dirs
+ emerge --ask  keybinder xdg-utils xdg-user-dirs-gtk 
 
-#== • Thunar=
- emerge --ask thunar thunar-volman thunar-archive-plugin
-#=carica il demone all'avvio:
- rc-update add dbus default
-
-#== • SLim login-manager
- emerge --ask x11-misc/slim
-#= Sostituisci xdm con slim in :
+#== • lxdm login-manager
+ emerge --ask x11-misc/lxdm 
+#= Sostituisci xdm con lxdm in :
  nano -w /etc/conf.d/xdm
 #= Carica il demone all'avvio:
  rc-update add xdm default
 
 #== •  Build/Sys
  emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
- emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop
+ emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop atool
  emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd
  USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
 
@@ -261,20 +260,20 @@ hostname"T3500GEN"
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
 #== •  Gfx
- emerge --ask gimp inkscape gcolors2 nomacs qt5ct
+ emerge --ask gimp inkscape gcolors2 nomacs qt5ct rawterapee scrot
 
 #== •  Office
- USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
- emerge --ask media-fonts/dejavu evince vim parcellite hplip xsel dialog
+ emerge --ask app-office/libreoffice-bin
+ emerge --ask  evince vim parcellite hplip xsel dialog
 
 #== •  Www
- emerge --ask android-tools android-file-transfer-linux bleachbit deluge
- emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl
+ emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl deluge
 
+#== •  Misc
+ emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit xfce4-exo gucharmap
 
 #== • Conky
  USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
-
 
 
 #== • GTK3+
@@ -284,6 +283,12 @@ hostname"T3500GEN"
 
  emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin \
 xfce-extra/xfce4-screenshooter xfce4-panel xfce-extra/tumbler
+
+
+#== • Thunar=
+ emerge --ask thunar thunar-volman thunar-archive-plugin
+#=carica il demone all'avvio:
+ rc-update add dbus default
 
 #__________________________________________________________________
 #== • Drivers NVIDIA
@@ -310,10 +315,10 @@ modules="nvidia"
 #== •
  nano -w /etc/X11/xorg.conf
 Section "Device"
-    Identifier     "nvidia"
-    Driver         "nvidia"
-    VendorName     "NVIDIA Corporation"
-    BoardName      "Quadro 4000"
+	Identifier     "nvidia"
+	Driver         "nvidia"
+	VendorName     "NVIDIA Corporation"
+	BoardName      "Quadro 4000"
 	Option    "RegistryDwords" "EnableBrightnessControl=1"
 EndSection
 

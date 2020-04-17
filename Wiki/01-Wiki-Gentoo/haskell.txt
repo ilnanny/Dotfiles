@@ -1,0 +1,4 @@
+emerge app-eselect/eselect-repository
+eselect repository list
+eselect repository enable haskell
+emerge --sync haskell
