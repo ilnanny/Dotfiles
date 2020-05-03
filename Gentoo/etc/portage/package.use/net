@@ -4,5 +4,7 @@ net-libs/webkit-gtk gnome-keyring
 net-misc/openssh -bindist
 net-misc/networkmanager -bindist
 net-p2p/amule upnp
+net-print/hplip snmp usb libusb0 hpijs scanner fax
 net-wireless/wpa_supplicant dbus
 net-wireless/bluez -systemd
+net-wireless/blueman appindicator network pulseaudio

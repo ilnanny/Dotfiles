@@ -1,5 +1,6 @@
 media-gfx/brother-scan4-bin usb
 media-gfx/darktable colord cups flickr geolocation gnome-keyring gphoto2 graphicsmagick
+media-gfx/pinta minimal
 media-gfx/sane-backends usb
 media-gfx/xsane tiff gimp lcms ocr
 media-libs/libcanberra gstreamer

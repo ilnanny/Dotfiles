@@ -33,6 +33,7 @@ alias locate='sudo locate'
 alias log='sudo thunar /var/log/'
 alias lop='sudo genlop -c'
 alias mconf='sudo geany /etc/portage/make.conf'
+alias module-update="sudo emerge -1 @module-rebuild"
 alias nodeps='sudo emerge --nodeps'
 alias noreplace='sudo emerge --noreplace'
 alias oneshot='sudo emerge --oneshot'

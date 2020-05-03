@@ -8,5 +8,6 @@ app-emulation/virtualbox                  ~amd64
 app-emulation/virtualbox-bin              ~amd64
 app-emulation/virtualbox-guest-additions  ~amd64
 app-emulation/virtualbox-modules          ~amd64
+app-office/libreoffice-bin                ~amd64
 app-portage/layman                        ~amd64
-app-portage/kuroo                         ~amd64
+
