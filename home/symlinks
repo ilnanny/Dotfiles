@@ -1,15 +1,15 @@
 $$ User
 
 ln -s /media/Dati/Musica/ $HOME/Musica
-ln -s /media/Dati/Git/ $HOME/Git
-ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
-ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
+ln -s /media/Dati/ $HOME/Git
+ln -s /media/Dati/Dotfiles/Wiki/ $HOME/Documenti
+ln -s /media/Dati/Dotfiles/Scripts/ $HOME/bin
 mkdir $HOME/Notebooks
-ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
+ln -s /media/Dati/Dotfiles/Wiki $HOME/Notebooks/Wiki
 ln -s /media/Dati/Dati/Scaricati/ $HOME/Scaricati
 
 ## Root
 
 rm -r /usr/share/backgrounds
-ln -s /media/Dati/Git/backgrounds/backgrounds /usr/share/backgrounds
+ln -s /media/Dati/backgrounds/backgrounds /usr/share/backgrounds
 

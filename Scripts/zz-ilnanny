@@ -29,7 +29,7 @@ clear
 #set -o errexit
 #[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 #____________________________________________________=
-
+#read
 
 
 

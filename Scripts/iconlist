@@ -7,7 +7,7 @@
 #   Github    : https://github.com/ilnanny      =
 #================================================
 #================================================
- 
+
 cd "/usr/share/applications/"
 pwd
 echo Target : $1
@@ -26,3 +26,4 @@ do
         echo $icon
 done
 sed -i "s/'deviantart.com   =/'deviantart.com   =/g" *.sh
+read
