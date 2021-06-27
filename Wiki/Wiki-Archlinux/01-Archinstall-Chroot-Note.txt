@@ -1,3 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
 =====================================================
 Crea le Cartelle e monta le partizioni:
 ==========================================
@@ -8,7 +11,8 @@ Crea le Cartelle e monta le partizioni:
  cd /mnt/archlinux/
 
 ==========================================
-== Scarica l''immagine  e scompattala
+
+== Scarica l''immagine  e scompattala ==
 ==========================================
 wget http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/iso/latest/archlinux-bootstrap-2021.06.01-x86_64.tar.gz
 tar xzf archlinux-bootstrap-2021.06.01-x86_64.tar.gz
@@ -20,7 +24,7 @@ taglia tutte i file dalla cartella root.x86_64 e incolla in /mnt/archlinux
 
  Attiva i mirror ita
 
-=== Entra in chroot:
+=== Entra in chroot: ===
 mount /dev/sda4 /mnt/archlinux
 mount -o remount,rw /dev/sda4 /mnt/archlinux
 
@@ -34,19 +38,20 @@ mount --rbind /tmp /mnt/archlinux/tmp
 chroot /mnt/archlinux /bin/bash
 export PS1="\033[1;33m([chroot])\033[0m $PS1"
 
-=== Installa il sistema
+=== Installa il sistema ===
  pacman-key --init
  pacman-key --populate archlinux
  pacman -Syyu
  pacman -S base base-devel linux linux-firmware vim nano
-== Imposta Fstab
+
+== Imposta Fstab ==
 
  blkid -c /dev/null -o list
 
 /dev/sda4  ext4             /              d7bd8b3f-7810-4577-bbd4-6f2cbf0337f9
 /dev/sda3  swap             (not mounted)  89a45de5-4ca7-43ca-accb-0621ed90d6bf
 
------------------------------------------------------------------------------
+--------------------
  echo "UUID=d7bd8b3f-7810-4577-bbd4-6f2cbf0337f9    /    ext4   rw,errors=remount-ro  0   1"  > /etc/fstab
  nano  /etc/fstab
 _______________________________________________________ data e ora
@@ -112,52 +117,56 @@ pacman -Syu
 _______________________________________________________yay
 git clone https://aur.archlinux.org/yay.git &&  cd yay
 
-    makepkg -si
-    cd  /
-    rm  -r yay
-_______________________________________________________software addizzionale
+	makepkg -si
+	cd  /
+	rm  -r yay
+_______________________________________________________software addizionale
 pacman -Syu
 pacman -S  android-file-transfer \
-           android-tools \
-           android-udev \
-           arc-gtk-theme \
-           btrfs-progs \
-           bzr \
-           conky \
-           deluge \
-           dkms \
-           dosfstools \
-           exfat-utils \
-           f2fs-tools \
-           geany \
-           gimp
+		   android-tools \
+		   android-udev \
+		   arc-gtk-theme \
+		   btrfs-progs \
+		   bzr \
+		   conky \
+		   deluge \
+		   dkms \
+		   dosfstools \
+		   exfat-utils \
+		   f2fs-tools \
+		   geany \
+		   gimp
 
 
 pacman -S  gparted \
-           gtk-engine-murrine \
-           gvfs \
-           htop \
-           inkscape \
-           libreoffice-still\
-           libreoffice-still-it \
-           linux-headers \
-           lsb-release \
-           lua \
-           neofetch \
-           nomacs \
-           telegram-desktop \
-           ttf-opensans
+		   gtk-engine-murrine \
+		   gvfs \
+		   htop \
+		   inkscape \
+		   libreoffice-still\
+		   libreoffice-still-it \
+		   linux-headers \
+		   lsb-release \
+		   lua \
+		   neofetch \
+		   nomacs \
+		   telegram-desktop \
+		   ttf-opensans
 
 pacman -S  unzip \
-           virtualbox \
-           virtualbox-host-dkms \
-           virtualbox-ext-vnc \
-           virtualbox-guest-dkms \
-           virtualbox-guest-iso \
-           virtualbox-guest-utils \
-           vlc \
-           thunderbird \
-           thunderbird-i18n-it
+		   virtualbox \
+		   virtualbox-host-dkms \
+		   virtualbox-ext-vnc \
+		   virtualbox-guest-dkms \
+		   virtualbox-guest-iso \
+		   virtualbox-guest-utils \
+		   vlc \
+		   thunderbird \
+		   thunderbird-i18n-it\
+			 network-manager-applet\
+			 picom \
+			 speedtest-cli
+
 _______________________________________________________wiki
 
 https://wiki.archlinux.org/index.php/Installation_guide
@@ -186,10 +195,16 @@ lxappearance \
 thunar \
 thunar-volman \
 thunar-archive-plugin \
-tint2
+tint2 \
+jsoncpp \
+rhash \
+cmake \
+qt5-tools
 _______________________________________________________obmenu-gen
 pacman -S gtk2-perl perl-file-desktopentry
 yay -S obmenu-generator
+yay -S lxqt-build-tools-git
+yay -S compton-conf-git
 _______________________________________________________note
 
 errore aggiornamento server:

@@ -19,6 +19,9 @@ Copy the `youtube-dl-mp3` script to somewhere in your `$PATH` (try /usr/local/bi
   * wget
   * ffmpeg
   * lame
+  * rtmpdump
+  * atomicparsley
+  * python-pycryptodome
 
 ## Usage
 
@@ -27,5 +30,5 @@ Copy the `youtube-dl-mp3` script to somewhere in your `$PATH` (try /usr/local/bi
 
 ## from a playlist at once:
 
-    youtube-dl-mp3 "http://www.youtube.com/playlist?list=PL35104532FCBAE989"
+    youtube-dl-mp3 "http://www.youtube.com/playlist?list=PLC17TRHjjf7n797cx1_5Ka5NvHcVEa3Pk"
 
