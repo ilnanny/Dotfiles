@@ -122,7 +122,7 @@ git clone https://aur.archlinux.org/yay.git &&  cd yay
 	rm  -r yay
 _______________________________________________________software addizionale
 pacman -Syu
-pacman -S  android-file-transfer \
+pacman -S android-file-transfer \
 		   android-tools \
 		   android-udev \
 		   arc-gtk-theme \
@@ -137,8 +137,7 @@ pacman -S  android-file-transfer \
 		   geany \
 		   gimp
 
-
-pacman -S  gparted \
+ pacman -S  gparted \
 		   gtk-engine-murrine \
 		   gvfs \
 		   htop \
@@ -149,23 +148,24 @@ pacman -S  gparted \
 		   lsb-release \
 		   lua \
 		   neofetch \
+		   network-manager-applet\
 		   nomacs \
+		   picom \
+		   speedtest-cli
 		   telegram-desktop \
 		   ttf-opensans
+		   thunderbird \
+		   thunderbird-i18n-it\
 
 pacman -S  unzip \
+       usbutils \
 		   virtualbox \
 		   virtualbox-host-dkms \
 		   virtualbox-ext-vnc \
 		   virtualbox-guest-dkms \
 		   virtualbox-guest-iso \
 		   virtualbox-guest-utils \
-		   vlc \
-		   thunderbird \
-		   thunderbird-i18n-it\
-			 network-manager-applet\
-			 picom \
-			 speedtest-cli
+		   vlc
 
 _______________________________________________________wiki
 
@@ -200,11 +200,12 @@ jsoncpp \
 rhash \
 cmake \
 qt5-tools
-_______________________________________________________obmenu-gen
+_______________________________________________________Yay Packages
 pacman -S gtk2-perl perl-file-desktopentry
 yay -S obmenu-generator
 yay -S lxqt-build-tools-git
 yay -S compton-conf-git
+yay -S rtl8812au-dkms-git
 _______________________________________________________note
 
 errore aggiornamento server:
@@ -223,11 +224,20 @@ loadkeys it
 wifi-menu
 ping archlinux.org
 timedatectl set ntp true
-_______________________________________________________Fine
+_______________________________________________________Driver asus wifi
+
+sudo pacman -Syu --needed base-devel git dkms linux-headers
+
+_____________LTS kernel
+sudo pacman -Syu --needed base-devel git dkms linux-lts-headers
+
+_____________Riavvia il pc ed installa i drivers
+git clone https://aur.archlinux.org/rtl88xxau-aircrack-dkms-git.git
+cd rtl88xxau-aircrack-dkms-git
+makepkg -si
 
 
-
-
+__________________________      F i n e     __________________________
 
 
 

@@ -1,0 +1,150 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-06-28T18:44:05+02:00
+
+====== Asus rtl8802ac ======
+Creato lunedì 28 giugno 2021
+
+
+Realtek 802.11ac USB Wi-Fi Linux Driver Installation
+Posted on March 1, 2020 by Kuan-Yi Li
+If you’re using your USB device in a virtual machine, see also Pitfalls Using USB Devices in Virtual Machines.
+Target Devices
+
+Adapters with chipset: RTL8811AU, RTL8812AU (RTL8814AU have a separate driver now.)
+
+Chipset 	Vendor 	Model
+RTL8811AU 	ALFA Network 	AWUS036ACS
+RTL8812AU 	ALFA Network 	AWUS036AC
+ALFA Network 	AWUS036ACH
+ALFA Network 	AWUS036EAC
+Driver Information
+
+	aircrack-ng/rtl8812au – GitHub
+
+Developed internally by Realtek, and then patched by open community members.
+
+This drivers is not mainlined (might never will be, from the look of it), so you’ll be loading a self-compiled out-of-tree kernel module. If you are running on a system using UEFI Secure Boot, you may need to either disable Secure Boot or sign the kernel module before you can load it. (We won’t cover that here.)
+
+To check the status of Secure Boot, run
+1
+	
+mokutil --sb-state
+
+Output will be one of the following:
+
+	SecureBoot enabled — using UEFI, Secure Boot enabled
+	SecureBoot disabled — using UEFI, Secure Boot disabled
+	EFI variables are not supported on this system — not using UEFI, Secure Boot disabled
+
+Driver Installation
+Kali Linux
+
+For those who are running Kali Linux ARM Image on Raspberry Pi, the driver should be installed already.
+
+For x86 users, install package realtek-rtl88xxau-dkms.
+1
+2
+	
+sudo apt update
+sudo apt install realtek-rtl88xxau-dkms
+Parrot OS
+
+Security edition has package realtek-rtl88xxau-dkms installed by default. If this is not the case, follow the same instructions above for Kali Linux.
+Debian and Its Derivatives (on x86, x86_64 Platforms)
+
+Debian, Ubuntu, Linux Mint, Pop!_OS, elementary OS, etc.
+
+APT is able to install local deb file since version 1.1 — we can use that to install realtek-rtl88xxau-dkms from Kali.
+
+Find the latest deb packages from Kali’s repository. realtek-rtl88xxau-dkms depends on realtek-rtl8814au-dkms since 25th of May 2021, so we’ll get deb files of these two.
+
+At the time of writing/updating, the latest ones are:
+
+	realtek-rtl88xxau-dkms_5.6.4.2~git20210327.c0ce817-0kali2_all.deb
+	realtek-rtl8814au-dkms_5.8.5.1~git20210331.bdf80b5-0kali1_all.deb
+
+1
+2
+3
+	
+wget https://http.kali.org/kali/pool/contrib/r/realtek-rtl88xxau-dkms/realtek-rtl88xxau-dkms_5.6.4.2~git20210327.c0ce817-0kali2_all.deb https://http.kali.org/kali/pool/contrib/r/realtek-rtl8814au-dkms/realtek-rtl8814au-dkms_5.8.5.1~git20210331.bdf80b5-0kali1_all.deb
+sudo apt update
+sudo apt install ./realtek-rtl88xxau-dkms_5.6.4.2~git20210327.c0ce817-0kali2_all.deb ./realtek-rtl8814au-dkms_5.8.5.1~git20210331.bdf80b5-0kali1_all.deb
+
+Although not tested, some distros should be able to perform the whole process in GUI — download deb files through browser and double-click to install. (Install realtek-rtl8814au-dkms first, then realtek-rtl88xxau-dkms.)
+Fedora
+1
+	
+sudo dnf install dkms kernel-devel make
+
+Note that because the kernel module is built with DKMS you should ensure you have installed and rebooted to latest kernel update before installing.
+1
+2
+3
+	
+git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install
+CentOS
+1
+2
+	
+sudo yum install epel-release
+sudo yum install git dkms kernel-devel make
+
+Note that because the kernel module is built with DKMS you should ensure you have installed and rebooted to latest kernel update before installing.
+1
+2
+3
+	
+git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install
+Arch Linux
+
+These instructions are expansions of
+
+	rtl88xxau – Wireless – Network configuration – ArchWiki
+	Arch User Repository – ArchWiki
+
+1
+	
+sudo pacman -Syu --needed base-devel git dkms linux-headers
+
+If you’re not using the default kernel, package linux-headers should be changed respectively. Say you’re using LTS kernel, the command would then be
+1
+	
+sudo pacman -Syu --needed base-devel git dkms linux-lts-headers
+
+Note that because the kernel module is built with DKMS you should ensure you have installed and rebooted to latest kernel update before installing.
+1
+2
+3
+	
+git clone https://aur.archlinux.org/rtl88xxau-aircrack-dkms-git.git
+cd rtl88xxau-aircrack-dkms-git
+makepkg -si
+Appendices
+Getting package URI
+
+In case that repository URL changes in the future, spin up a Kali VM or even a Docker container, and run
+1
+2
+	
+sudo apt update
+apt download --print-uris realtek-rtl88xxau-dkms realtek-rtl8814au-dkms
+Monitor, Injection Support
+
+Your miles may vary on distros other than Kali, which is specifically tweaked for pentesting.
+VID/PID
+
+	USB VID and PID of supported device
+
+References
+
+	Kernel module signing facility – The Linux Kernel documentation
+	How to sign things for Secure Boot – Ubuntu Blog
+	Signing kernel modules for secure boot – Managing, monitoring and updating the kernel
+	Signing kernel modules for secure boot – Kernel Administration Guide
+

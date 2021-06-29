@@ -25,10 +25,12 @@ Copy the `youtube-dl-mp3` script to somewhere in your `$PATH` (try /usr/local/bi
 
 ## Usage
 
-    youtube-dl-mp3 "video-url"
+    youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" '<YouTube playlist URL>'
 
 
 ## from a playlist at once:
 
-    youtube-dl-mp3 "http://www.youtube.com/playlist?list=PLC17TRHjjf7n797cx1_5Ka5NvHcVEa3Pk"
+    youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist '<YouTube playlist URL>'
 
+
+    youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist 'https://www.youtube.com/watch?v=UbYQErtM9Zk&list=PLC17TRHjjf7n797cx1_5Ka5NvHcVEa3Pk'
