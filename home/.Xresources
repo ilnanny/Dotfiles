@@ -62,7 +62,7 @@ XTerm*VT100.geometry: 80x24
 !  fc-match mono
 !  Default size font 6x13 points
 !
-XTerm.vt100.faceName: "Liberation Mono" "Regular":size=10:antialias=true
+XTerm.vt100.faceName: "Liberation Mono" "Regular":size=12:antialias=true
 !
 !  Medium size set default ;xterm,aterm,uxterm.
 !
