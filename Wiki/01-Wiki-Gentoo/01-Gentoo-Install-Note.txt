@@ -264,7 +264,8 @@ hostname"HPZ600"
  rc-update add dbus default
 
 #== • XFCE4
-emerge --ask xfce-base/xfce4-meta xfce-extra/xfce4-notifyd xfce-extra/xfce4-whiskermenu-plugin xfce-extra/xfce4-volumed-pulse x11-themes/greybird gnome-extra/nm-applet
+emerge --ask xfce-base/xfce4-meta xfce-extra/xfce4-notifyd xfce-extra/xfce4-whiskermenu-plugin xfce-extra/xfce4-volumed-pulse x11-themes/greybird gnome-extra/nm-applet  xfce-extra/xfce4-pulseaudio-plugin
+
 emerge --ask --deselect=y xfce-extra/xfce4-notifyd
 
 #== • lightdm login-manager
@@ -298,7 +299,7 @@ nano -w /etc/conf.d/display-manager
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
 #== •  Gfx
- emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee scrot
+ emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee x11-misc/zim
 
 #== •  Office
  emerge --ask app-office/libreoffice-bin
@@ -311,7 +312,7 @@ nano -w /etc/conf.d/display-manager
  emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit gucharmap
 
 #== • Conky
- USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
+ USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky
 
 
 #== • GTK3+
