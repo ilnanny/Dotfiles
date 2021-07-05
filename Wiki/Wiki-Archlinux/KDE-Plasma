@@ -1,0 +1,50 @@
+Installazione
+Plasma Desktop
+Note:
+
+    Plasma 5 non è installabile con Plasma 4.
+    Il desktop Plasma 4 è fuori manutenzione dall' Agosto 2015.[1] Non è più nei repository ufficiali dal Dicembre 2015.[2]
+    KDM non è più disponibile per Plasma 5. KDE raccomanda[link interrotto 2020-08-02] di usare il display manager SDDM poichè supporta l'integrazione con il tema di Plasma 5.
+
+Prima di installare Plasma, assicurati di avere un' installazione funzionante di Xorg nel tuo sistema.
+
+Installa il meta-pacchetto plasma-meta o il gruppo plasma. per le differenze tra plasma-meta e plasma consulta Meta package and package group. Altrimenti, per una installazione più minimale di Plasma,installa il pacchetto plasma-desktop .
+Aggiornare Plasma 4 a 5
+
+    Isola multi-user.target
+
+    # systemctl isolate multi-user.target
+
+    Se usi KDM come display manager, disabilitalo
+
+    # systemctl disable kdm
+
+    Disinstalla il pacchetto kde-workspace
+
+    # pacman -Rc kdebase-workspace
+
+    Installa il pacchetto plasma-meta o il gruppo plasma.
+    Abilita SDDM
+
+    # systemctl enable sddm
+
+    o installa e abilita qualcun altro display manager.
+    Riavvia o semplicemente scrivi
+
+    # systemctl start sddm
+
+    nel terminale.
+
+Note: La configurazione Plasma 4 non è migrata automaticamente al Plasma 5, in modo da configurare il desktop da zero.
+Applicazioni KDE e pacchetti lingua
+
+Per installare tutte le applicazioni di KDE, installa il gruppo kde-applications o il meta-pacchetto kde-applications-meta per installare moduli specifici. Nota che questo installerà solo le applicazioni, non installerà alcuna versione del Desktop Plasma.
+
+Se hai bisogno di un pacchetto lingua, installa  kde-l10n-it
+Avviare Plasma
+Suggerimento: Per integrare meglio SDDM con Plasma, è raccomandato di modificare /etc/sddm.conf per usare il tema breeze. Consulta SDDM#Theme settings per istruzioni.
+Nota: La configurazione Plasma 4 non è automaticamente migrata a Plasma 5, quindi dovrai configurare il tuo desktop da zero.
+
+Per lanciare una sessione PLasma 5, scegli Plasma nel menu del tuo display manager .
+
+Altrimenti, per avviare Plasma con startx, aggiungi exec startplasma-x11 al tuo file .xinitrc. Se vuoi avviare Xorg al login, guarda Start X at login.

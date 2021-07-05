@@ -1,4 +1,4 @@
-app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver python_targets_python3_6
+app-admin/conky X curl iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver python
 app-backup/fsarchiver lzma lzo zstd
 app-admin/system-config-printer gnome-keyring policykit
 app-cdr/xfburn gstreamer
@@ -7,7 +7,7 @@ app-editors/gvim gtk2 lua perl python
 app-editors/vim  X acl gpm nls debug lua perl python terminal vim-pager
 app-emulation/virtualbox alsa headless lvm opengl opus pam pax_kernel python qt5 sdk udev java vboxwebsrv vnc
 app-emulation/virtualbox-bin additions rdesktop-vrdp firmware python vboxwebsrv
-app-office/libreoffice-bin java python_targets_python3_6 python_single_target_python3_6
+app-office/libreoffice-bin java python
 app-misc/geoclue gtk modemmanager
 app-text/ghostscript-gpl cups
 app-text/poppler cairo

@@ -7,13 +7,13 @@
 !   Colorscheme : Noktomix
 ! ------------------------------------------------
 ! Setup
-*.foreground: #BCC7CC
-*.background: #263238
+*.foreground: #C8C8C8
+*.background: #404040
 *.cursorColor: #BBBBBB
 !
 ! Black
-*.color0:      #263238
-*.color8:      #263238
+*.color0:      #404040
+*.color8:      #404040
 !
 ! Red
 *.color1:      #B75757
@@ -87,8 +87,8 @@ XTerm*toolBar: false
 ! -------------------------------------------------------------
 rofi.font: Liberation Mono 11
 rofi.color-enabled: true
-rofi.color-window: #263238, #263238, #263238
-rofi.color-normal: #263238, #C5CAD6, #263238, #88ADC2, #263238
+rofi.color-window: #404040, #404040, #404040
+rofi.color-normal: #404040, #C5CAD6, #404040, #88ADC2, #404040
 rofi.separator-style: solid
 !
 !
@@ -104,7 +104,7 @@ URxvt*saveline: 15000
 URxvt*termName: rxvt-256color
 URxvt*iso14755: false
 URxvt*depth: 32
-URxvt*background: [90]#263238
+URxvt*background: [90]#404040
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*internalBorder: 0

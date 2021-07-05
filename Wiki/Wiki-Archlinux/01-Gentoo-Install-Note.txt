@@ -1,23 +1,11 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
-#=======================================================
-#= Dell Workstation T3500 - T5500
-#= Intel Xeon X5650 - X5675  =Westmere
-#= Nvidia Quadro 4000 - 2000 =Fermi
-#= Grub Bios PC '2010 - 2012'
-#= Gentoo Linux amd64 openrc
-#= Ssd : dev/sdc "/" "swap"
-#= Host : Linux amd64 openrc
-#= Appunti di Gennaio 2016
-#= Aggiornato Febbraio 2020
-#=======================================================
-
 #== • Crea le Cartelle e monta le partizioni:
 
  mkdir /mnt/gentoo
- mount /dev/sda4 /mnt/gentoo
- mount -o remount,rw /dev/sda4 /mnt/gentoo
+ mount /dev/adb2 /mnt/gentoo
+ mount -o remount,rw /dev/adb2 /mnt/gentoo
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
  cd /mnt/gentoo
 #=====================================================================
@@ -338,7 +326,7 @@ EndSection
 
 #                                                                     FileSystem  Linux
 #= Root
-/dev/sda4     /     ext4   rw,errors=remount-ro   0  1
+/dev/adb2     /     ext4   rw,errors=remount-ro   0  1
 #= Swap
 /dev/sda3     none  swap   sw                     0  0
 ##======================================================================================

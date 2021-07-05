@@ -1,7 +1,7 @@
 #  IPv4 e IPv6 localhost alias
 # ____________________________ 
 
-127.0.0.1        T3500GEN               localhost
+127.0.0.1        HPZ600GEN               localhost
 ::1              ip6-localhost ip6-loopback
 fe00::0          ip6-localnet
 fe00::0          ip6-mcastprefix

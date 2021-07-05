@@ -10,10 +10,10 @@
 # ______   FileSystem  Linux
 
 # Root
-/dev/sdc2      /       ext4    rw,errors=remount-ro    0  1
+/dev/sdb2      /       ext4    rw,errors=remount-ro    0  1
 
 # Swap
-/dev/sdc1     none     swap     sw      0  0
+/dev/sda3     none     swap     sw      0  0
 
 #___________________________________________________________________________
 # ______   FileSystem  Ntfs

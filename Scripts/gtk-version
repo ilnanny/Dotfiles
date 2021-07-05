@@ -15,4 +15,4 @@ echo "GTK3 VERSION :"
 pkg-config --modversion gtk+-3.0
 echo "#==============================="
 echo "Close your Terminal to exit "
-exit 0
+read

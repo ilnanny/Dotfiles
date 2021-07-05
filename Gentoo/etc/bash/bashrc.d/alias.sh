@@ -94,6 +94,7 @@ alias mioscript='geany /media/Dati/Git/Dotfile/Scripts/zz-ilnanny'
 alias memousb='sh /home/ilnanny/bin/usblist'
 alias myip=' sudo wget -qO- http://ipecho.net/plain'
 alias showalias='cat /etc/bash/bashrc.d/alias.sh'
+alias gentooalias='cat /etc/bash/bashrc.d/alias_gentoo'
 alias usblist='su -c "sh /home/ilnanny/bin/usblist"'
 alias wiki='cd /media/Dati/Git/Dotfiles/Wiki/Gentoo-wiki/ && whereis'
 

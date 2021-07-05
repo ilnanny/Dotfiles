@@ -1,30 +1,17 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
-#=======================================================
-#= Dell Workstation T3500 - T5500
-#= Intel Xeon X5650 - X5675  =Westmere
-#= Nvidia Quadro 4000 - 2000 =Fermi
-#= Grub Bios PC '2010 - 2012'
-#= Gentoo Linux amd64 openrc
-#= Ssd : dev/sdc "/" "swap"
-#= Host : Linux amd64 openrc
-#= Appunti di Gennaio 2016
-#= Aggiornato Febbraio 2020
-#=======================================================
-
 #== • Crea le Cartelle e monta le partizioni:
 
  mkdir /mnt/gentoo
- mount /dev/sda4 /mnt/gentoo
- mount -o remount,rw /dev/sda4 /mnt/gentoo
- cp -L /etc/resolv.conf /mnt/gentoo/etc/
+ mount /dev/sdb2 /mnt/gentoo
+ mount -o remount,rw /dev/sdb2 /mnt/gentoo
  cd /mnt/gentoo
 #=====================================================================
 #== • Scarica lo stage3 e scompattalo
 
- wget http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20210616T214502Z.tar.xz
- tar xpf  stage3-amd64-20210616T214502Z.tar.xz
+ wget http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20210630T214504Z.tar.xz
+ tar xpf  stage3-amd64-20210630T214504Z.tar.xz
 #=====================================================================
  cd  --
  cp -L /etc/resolv.conf /mnt/gentoo/etc/
@@ -38,14 +25,21 @@ Wiki-Format: zim 0.4
 #=====================================================================
 #== • Monta i filesystem ed entra in chroot:
 
- mount --bind /dev /mnt/gentoo/dev
- mount --make-rslave /mnt/gentoo/dev
- mount --bind /proc /mnt/gentoo/proc
- mount --bind /sys /mnt/gentoo/sys
- mount --make-rslave /mnt/gentoo/sys
+
+ mount --types proc /proc /mnt/gentoo/proc/
+ mount --rbind /sys /mnt/gentoo/sys/
+ mount --make-rslave /mnt/gentoo/sys/
+ mount --rbind /dev /mnt/gentoo/dev/
+ mount --make-rslave /mnt/gentoo/dev/
  mount --rbind /tmp /mnt/gentoo/tmp
- chroot /mnt/gentoo /bin/bash
+
+ chroot /mnt/gentoo /bin/bash --login
+
  export PS1="\033[1;33m([chroot])\033[0m $PS1"
+
+ mount -t tmpfs -o rw,nosuid,nodev,noexec,inode64 tmpfs /dev/shm
+ chmod 1777 /dev/shm
+
 #=====================================================================
 #== • Controllo rete carica i repo
 
@@ -129,35 +123,54 @@ fix_euro="YES"
 #== • Make conf
 
  nano -w /etc/portage/make.conf
+-- aggiugi italiano
+
+L10N="it"
+LANG="it_IT.utf8"
+LINGUAS="it"
+MAKEOPTS="-j5 -s"
 #=====================================================================
 #== • Sync aggiornamento
 
  emerge --sync
  env-update && source /etc/profile
  emerge -auDN @world
+
+--per le licenze e le useflags copia le cartelle di backup da dotfiles
+
+--[ in caso di problemi usare ]
+MAKEOPTS="-j1" emerge --resume
+--per errori su grossi pacchetti
+MAKEOPTS="-j1" emerge -av nome/pacchetto
 #=====================================================================
 #== • Kernel e Sys Apps
 
  emerge --ask gentoo-kernel-bin \
- intel-microcode grub
+linux-firmware intel-microcode grub
 
  USE="samba" emerge --ask net-libs/libsoup
  USE="zerozonf" emerge --ask gnome-base/gvfs
 
  emerge --ask mdadm gentoolkit \
- linux-firmware os-prober ntfs3g usbutils \
+ os-prober ntfs3g usbutils \
  pciutils elogind e2fsprogs dev-vcs/git net-misc/ntp
 #= carica il demone all'avvio:
  rc-update add elogind default
 
 #== • Copia conf in /root [genkernel]
 
- genkernel --makeopts=-j9 --kernel-config=/root/config all
+ genkernel --makeopts=-j5 --kernel-config=/root/config all
  emerge -1 @module-rebuild
  grub-install /dev/sda
  grub-mkconfig –o /boot/grub/grub.cfg
  grub-mkconfig -o /boot/grub/grub.cfg
+--se ci sono problemi con os-prober decomenta o aggiungi in
+nano /etc/default/grub
 
+GRUB_DISABLE_OS_PROBER=false
+
+--ricarica grub
+grub-mkconfig -o /boot/grub/grub.cfg
 #=====================================================================
 #== • Rete:
 
@@ -186,13 +199,16 @@ hostname"HPZ600"
 #== • Uscire da chroot :
 
  exit
+
  cd ~
  umount -f /mnt/gentoo/dev
  umount -f /mnt/gentoo/proc
  umount -f /mnt/gentoo/sys
  umount -f /mnt/gentoo/tmp
+ umount -f /gentoo/proc/
  umount -f /mnt/gentoo/
  fuser -k /mnt
+
  reboot
 
 #== • Rimuovi gli archivi
@@ -211,12 +227,12 @@ hostname"HPZ600"
 #== • Profili:
 
  eselect profile list
- eselect profile set 20
+ eselect profile set 5
  env-update && source /etc/profile
 
 #== • Xorg:=
 
- emerge --ask xorg-x11 xorg-server xorg-drivers xterm xinit xrandr sudo
+ emerge --ask xorg-x11 xorh-server xrandr sudo xinitrc
 
 #== • Cron
  emerge --ask anacron
@@ -231,24 +247,46 @@ hostname"HPZ600"
 # 59      root  /etc/cron.hourly/0anacron
 
 #=====================================================================
+--Aggiungi le variabili nel make.conf per il DE
+
 #== • LXde
- emerge --ask lxde-meta lxappearance lxappearance-obconf
+ emerge --ask lxde-meta lxappearance lxappearance-obconf gnome-extra/nm-applet
 
 #== • Openbox=
- emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 dunst
- emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance scrot
- emerge --ask  keybinder xdg-utils xdg-user-dirs-gtk 
+ emerge --ask obmenu-generator obtheme obconf nitrogen ranger rofi tint2 dunst
+ emerge --ask volumeicon pico lxappearance scrot
+ emerge --ask keybinder xdg-utils xdg-user-dirs-gtk
+
+
+#== • Thunar=
+ emerge --ask thunar thunar-volman thunar-archive-plugin
+#=carica il demone all'avvio:
+ rc-update add dbus default
+
+#== • XFCE4
+emerge --ask xfce-base/xfce4-meta xfce-extra/xfce4-notifyd xfce-extra/xfce4-whiskermenu-plugin xfce-extra/xfce4-volumed-pulse x11-themes/greybird gnome-extra/nm-applet
+emerge --ask --deselect=y xfce-extra/xfce4-notifyd
+
+#== • lightdm login-manager
+emerge --ask x11-misc/lightdm
+#= Sostituisci xdm con lightdm in :
+nano -w /etc/conf.d/display-manager
+#= Carica il demone all'avvio:
+ rc-update add display-manager default
+ rc-update add dbus default
 
 #== • lxdm login-manager
- emerge --ask x11-misc/lxdm 
+ emerge --ask x11-misc/lxdm
 #= Sostituisci xdm con lxdm in :
- nano -w /etc/conf.d/xdm
+ nano -w /etc/conf.d/display-manager
 #= Carica il demone all'avvio:
- rc-update add xdm default
+ rc-update add display-manager default
+ rc-update add dbus default
+
 
 #== •  Build/Sys
  emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
- emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop atool
+ emerge --ask htop eix mlocate geany zenity layman genlop atool neofetch
  emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd
  USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
 
@@ -260,7 +298,7 @@ hostname"HPZ600"
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
 #== •  Gfx
- emerge --ask gimp inkscape gcolors2 nomacs qt5ct rawterapee scrot
+ emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee scrot
 
 #== •  Office
  emerge --ask app-office/libreoffice-bin
@@ -270,7 +308,7 @@ hostname"HPZ600"
  emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl deluge
 
 #== •  Misc
- emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit xfce4-exo gucharmap
+ emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit gucharmap
 
 #== • Conky
  USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
@@ -279,16 +317,9 @@ hostname"HPZ600"
 #== • GTK3+
  USE="hscolour profile" emerge --ask dev-haskell/gtk3
 
-#== • Xfce4
-
- emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin \
-xfce-extra/xfce4-screenshooter xfce4-panel xfce-extra/tumbler
 
 
-#== • Thunar=
- emerge --ask thunar thunar-volman thunar-archive-plugin
-#=carica il demone all'avvio:
- rc-update add dbus default
+
 
 #__________________________________________________________________
 #== • Drivers NVIDIA
@@ -338,7 +369,7 @@ EndSection
 
 #                                                                     FileSystem  Linux
 #= Root
-/dev/sda4     /     ext4   rw,errors=remount-ro   0  1
+/dev/sdb2     /     ext4   rw,errors=remount-ro   0  1
 #= Swap
 /dev/sda3     none  swap   sw                     0  0
 ##======================================================================================
@@ -357,3 +388,13 @@ UUID=D63EABB03EAB8857  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF
 
 
 ##== •                                   Fine
+
+
+
+
+
+
+
+
+
+

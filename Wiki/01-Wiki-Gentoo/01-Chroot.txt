@@ -1,10 +1,10 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
- Montare la partizione sulla quale risiede il sistema 
+ Montare la partizione sulla quale risiede il sistema
 _____________________________________________________
- mount /dev/sdc2 /mnt
- mount -o remount,rw /dev/sdc2 /mnt
+ mount /dev/sdb2 /mnt
+ mount -o remount,rw /dev/sdb2 /mnt
  mount --bind /dev /mnt/dev
  mount --make-rslave /mnt/dev
  mount --bind /proc /mnt/proc
@@ -44,7 +44,7 @@ _____________________________________________________
  grub-install --recheck /dev/sda
 
 
-_____________________________________________________             
+_____________________________________________________
 == ==   Immagini ISO    == ==
 
 __ creare il punto di mount in /media
