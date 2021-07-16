@@ -8,5 +8,9 @@
         <value type="string" value="screensavers-xfce-popsquares"/>
       </property>
     </property>
+    <property name="idle-activation" type="empty">
+      <property name="enabled" type="bool" value="false"/>
+    </property>
+    <property name="enabled" type="bool" value="false"/>
   </property>
 </channel>

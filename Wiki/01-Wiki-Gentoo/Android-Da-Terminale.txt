@@ -1,15 +1,15 @@
 Spostatevi nella cartella contenete i file scaricati :
-es: 
+es:
 cd /home/utente/cartella-con-i-file
 " su o sudo "
 
 adb kill-server
-adb start-server 
+adb start-server
 adb devices
-adb reboot bootloader                                                       (riavvia in fastboot)
+adb reboot bootloader                            (riavvia in fastboot)
 
 fastboot devices
-fastboot flash recovery trwp.img                                        (cambiare il nome della recovery se necessario)
+fastboot flash recovery trwp.img                 (cambiare il nome della recovery se necessario)
 
 == riavvia in recovery ==
 

@@ -1,0 +1,27 @@
+[Added Associations]
+application/x-shellscript=leafpad.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;firefox-bin.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;firefox-bin.desktop;
+x-scheme-handler/chrome=firefox-bin.desktop;
+text/html=firefox-bin.desktop;
+application/x-extension-htm=firefox-bin.desktop;
+application/x-extension-html=firefox-bin.desktop;
+application/x-extension-shtml=firefox-bin.desktop;
+application/xhtml+xml=firefox-bin.desktop;
+application/x-extension-xhtml=firefox-bin.desktop;
+application/x-extension-xht=firefox-bin.desktop;
+application/x-theme=geany.desktop;
+application/x-desktop=geany.desktop;firefox-bin.desktop;
+
+[Default Applications]
+x-scheme-handler/http=firefox-bin.desktop
+x-scheme-handler/https=firefox-bin.desktop
+x-scheme-handler/chrome=firefox-bin.desktop
+text/html=firefox-bin.desktop
+application/x-extension-htm=firefox-bin.desktop
+application/x-extension-html=firefox-bin.desktop
+application/x-extension-shtml=firefox-bin.desktop
+application/xhtml+xml=firefox-bin.desktop
+application/x-extension-xhtml=firefox-bin.desktop
+application/x-extension-xht=firefox-bin.desktop
+application/x-theme=geany.desktop

@@ -18,7 +18,7 @@
 #e0a55a   standard-color
 #  ===  ===  ===  ===  ===
 #359bfa   blue
-# sed -i "s/#e0a55a/#359bfa/g" *.svg
+# sed -i "s/#263238/#222222/g" *.svg
 # 2e8d13   green
  #  sed -i "s/#e0a55a/#2e8d13/g" *.svg
 # dec993   kaki
@@ -36,6 +36,3 @@
 # sed -i "s/#da8c1f/#1f92da/g" *.svg
 # sed -i "s/#8c3d00/#00568c/g" *.svg
 # sed -i "s/#b54f00/#5b5b5b/g" *.svg
-
-exit 0
-

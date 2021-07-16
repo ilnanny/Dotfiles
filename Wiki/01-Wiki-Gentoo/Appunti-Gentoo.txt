@@ -17,8 +17,8 @@ Decidiamo quindi lo schema delle partizioni che andremo ad utilizzare. Io tendo 
 /dev/sda2   swap       512.0 MB
 /dev/sda3   /           16.0 GB
 /dev/sda4   (extended partition, contenitore di partizioni logiche)
-  /dev/sda5 /home       12.0 GB
-  /dev/sda6 /mnt/data   resto
+/dev/sda5 /home       12.0 GB
+/dev/sda6 /mnt/data   resto
 
 Stampate questa pagina e le successive in modo da poterle consultare anche a PC spento o sotto installazione. È sufficiente stampare fino al punto in cui si spiega come configurare la rete perché dopo sarà possibile navigare di nuovo su internet e raggiungere quindi questo sito.
 Una lettura da affrontare parallelamente è il classico Gentoo Handbook.
@@ -84,8 +84,8 @@ tar xvjpf stage3-*.tar.bz2
 Ora si passa all'installazione di portage, il sistema di gestione dei pacchetti di Gentoo. Per installarlo bisogna procedere come per lo stage3. Bisogna scaricare un archivio dai mirror di Gentoo (anche in questo caso meglio wget se avete problemi di connessione). Rimanere sempre nella directory /mnt/gentoo!
 
 links http://www.gentoo.org/main/en/mirrors.xml
-andate su snapshots 
-scaricate portage-latest.tar.bz2 (circa 40 MB) 
+andate su snapshots
+scaricate portage-latest.tar.bz2 (circa 40 MB)
 
 scompattatelo usando esattamente il comando
 tar xvjf /mnt/gentoo/portage-latest.tar.bz2 -C /mnt/gentoo/usr

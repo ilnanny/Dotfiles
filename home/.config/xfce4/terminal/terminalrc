@@ -35,11 +35,10 @@ DropdownAlwaysShowTabs=FALSE
 DropdownHeight=45
 ScrollingOnOutput=FALSE
 BackgroundDarkness=0,950000
-FontName=Monospace 11
-ColorBackground=#3651375e41b4
+ColorBackground=#3f3f3f3f3f3f
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ColorCursor=#dcdcdc
-ColorPalette=#3f3f3f;#705050;#60b48a;#dfaf8f;#9ab8d7;#dc8cc3;#8cd0d3;#dcdcdc;#709080;#dca3a3;#72d5a3;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
+ColorPalette=rgb(54,54,54);rgb(179,96,96);rgb(96,180,138);rgb(223,175,143);rgb(154,184,215);rgb(220,140,195);rgb(140,208,211);rgb(220,220,220);rgb(112,144,128);rgb(220,163,163);rgb(114,213,163);rgb(240,223,175);rgb(148,191,243);rgb(236,147,211);rgb(147,224,227);rgb(255,255,255)
 ColorForeground=#bb84bc37bfff
 TextBlinkMode=TERMINAL_TEXT_BLINK_MODE_FOCUSED
 

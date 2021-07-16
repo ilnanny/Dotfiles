@@ -285,6 +285,12 @@ nano -w /etc/conf.d/display-manager
  rc-update add dbus default
 
 
+#== •  Alsa
+euse -E alsa
+emerge --ask --changed-use --deep @world
+emerge --ask media-sound/alsa-utils
+USE="ffmpeg" emerge -q media-plugins/alsa-plugins
+gpasswd -a ilnanny audio
 #== •  Build/Sys
  emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
  emerge --ask htop eix mlocate geany zenity layman genlop atool neofetch
@@ -292,7 +298,7 @@ nano -w /etc/conf.d/display-manager
  USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
 
 #== •  Media
- USE="gstreamer" emerge --ask sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol pamix volumeicon
+ USE="gstreamer" emerge --ask sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol pamix youtube-dl
 
  USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
 
@@ -304,22 +310,17 @@ nano -w /etc/conf.d/display-manager
 #== •  Office
  emerge --ask app-office/libreoffice-bin
  emerge --ask  evince vim parcellite hplip xsel dialog
+#== •  Stampante
+ emerge --ask gutenprint foomatic-db foomatic-db-engine splix cups-pdf
 
 #== •  Www
- emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl deluge
+ emerge --ask speedtest-cli firefox-bin uget telegram-desktop-bin
 
 #== •  Misc
  emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit gucharmap
 
 #== • Conky
  USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky
-
-
-#== • GTK3+
- USE="hscolour profile" emerge --ask dev-haskell/gtk3
-
-
-
 
 
 #__________________________________________________________________

@@ -5,3 +5,4 @@ Name=Cups
 Comment=Accedi alle Stampanti
 Icon=preferences-devices-printer
 URL=http://localhost:631/admin
+GenericName=Server stampanti

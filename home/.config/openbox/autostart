@@ -25,7 +25,7 @@ sleep 2; conky --daemonize
 nm-applet --sm-disable &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Volume.
-sleep 1; volumeicon &
+#sleep 1; volumeicon &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Icona Wifi.
 #sudo nmcli device wifi connect FASTWEB-E06CD5 password
@@ -33,12 +33,13 @@ sleep 1; volumeicon &
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni X.
 xrdb -merge .Xresources
 
-#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni XFCE.
-xfsettingsd &
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni Gnome GTK.
+#gnome-settings-daemon &
 
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni XFCE GTK.
+#xfce-mcs-manager &
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
 numlockx &
-
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Notifiche
 dunst &
@@ -68,6 +69,8 @@ compton &
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Terminale DropDown.
 #sleep 1; xfce4-terminal --drop-down
 
+#  --  --  --  --  --  --  --  --  --  --  --  --  -- > Thunar File.Man
+thunar -daemon &
 ________________________________________________________________________
 #                                 Fine
 #_______________________________________________________________________

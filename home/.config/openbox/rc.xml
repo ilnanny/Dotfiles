@@ -15,11 +15,11 @@
   <placement>
     <policy>UnderMouse</policy>
     <center>yes</center>
-    <monitor>Primary</monitor>
+    <monitor>Mouse</monitor>
     <primaryMonitor>1</primaryMonitor>
   </placement>
   <theme>
-    <name>Noktomix</name>
+    <name>Larry-Dark</name>
     <titleLayout>LIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>

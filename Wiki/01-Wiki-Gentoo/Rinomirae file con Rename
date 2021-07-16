@@ -1,0 +1,92 @@
+Installare Rename
+
+Esistono due versioni del comando rename con sintassi e funzionalità diverse. Useremo la versione Perl del comando rename.
+
+Se questa versione non è installata sul tuo sistema, usa il gestore pacchetti della tua distribuzione Linux per installarla:
+
+Ubuntu e Debian
+
+sudo apt update
+
+sudo apt install rename
+
+CentOS e Fedora
+
+sudo yum install prename
+
+Arch Linux
+
+yay perl-rename
+
+Utilizzare Rename
+
+Di seguito è la sintassi generale del comando rename:
+
+rename [OPTIONS] perlexpr files
+
+Il comando rename è sostanzialmente uno script Perl. Rinominerà il file dato in base all'espressione regolare perlexpr  specificata.
+
+Ad esempio, il comando seguente modificherà l'estensione di tutti i file .css in .scss:
+
+rename 's/.css/.scss/' *.css
+
+Spieghiamo il comando in modo più dettagliato:
+
+    s/search_pattern/replacement/ - L'operatore di sostituzione.
+    .css- Il modello di ricerca. È il primo argomento nell'operatore di sostituzione. Il comando rename cercherà questo modello nel nome file specificato e, se trovato, lo sostituirà con l'argomento di sostituzione.
+    .scss- Il rimpiazzo. Il secondo argomento nell'operatore di sostituzione.
+    *.css- Tutti i file con estensione ".css". Il carattere jolly  * è un simbolo utilizzato per rappresentare zero, uno o più caratteri.
+
+Prima di eseguire il comando effettivo e rinominare i file e le directory è sempre una buona idea utilizzare l'opzione -n che eseguirà un "ciclo di prova" e mostrerà quali file verranno rinominati:
+
+rename -n 's/.css/.scss/' *.css
+
+L'output sarà simile al seguente:
+
+rename(file-0.css, file-0.scss)
+rename(file-1.css, file-1.scss)
+rename(file-2.css, file-2.scss)
+rename(file-3.css, file-3.scss)
+rename(file-4.css, file-4.scss)
+
+Per impostazione predefinita, il comando rename non sovrascrive i file esistenti. Usa l'opzione -f che permette all'utility rename di sovrascrivere i file esistenti:
+
+rename -f 's/.css/.scss/' *.css
+
+Se si desidera stampare rename i nomi dei file che sono stati rinominati correttamente, utilizzare l'opzione -v  (verbose - dettagliata):
+
+rename -v 's/.css/.scss/' *.css
+
+file-0.css renamed as file-0.scss
+file-1.css renamed as file-1.scss
+file-2.css renamed as file-2.scss
+file-3.css renamed as file-3.scss
+file-4.css renamed as file-4.scss
+
+Esempi
+
+Di seguito sono riportati alcuni esempi comuni su come utilizzare il comando rename:
+
+Sostituisci gli spazi nei nomi dei file con caratteri di sottolineatura:
+
+rename 'y/ /_/' *
+
+Converti i nomi di file in minuscolo
+
+rename 'y/A-Z/a-z/' *
+
+Converti i nomi dei file in maiuscolo
+
+rename 'y/a-z/A-Z/' *
+
+Rimuovi .bk dai nomi dei file
+
+rename 's/\.bk$//' *.bk
+
+Rinomina i file .jpeg e .JPG in .jpg
+
+rename 's/\.jpe?g$/.jpg/i' *
+
+Conclusione
+
+Il comando rename consente di rinominare più file contemporaneamente, usando le espressioni regolari Perl.
