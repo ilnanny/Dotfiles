@@ -305,7 +305,7 @@ gpasswd -a ilnanny audio
  USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
 
 #== •  Gfx
- emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee x11-misc/zim
+ emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee x11-misc/zim app-admin/hardinfo
 
 #== •  Office
  emerge --ask app-office/libreoffice-bin
@@ -322,6 +322,8 @@ gpasswd -a ilnanny audio
 #== • Conky
  USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky
 
+#== • Android
+ emerge --ask dev-util/android-tools
 
 #__________________________________________________________________
 #== • Drivers NVIDIA

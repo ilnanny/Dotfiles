@@ -1,0 +1,35 @@
+We can build and install cpufetch from source on Linux or macOS using the following commands.
+
+git clone https://github.com/Dr-Noob/cpufetch
+Now build it:
+cd cpufetch && make
+Install it
+make install
+
+
+Installing cpufetch on Arch Linux using AUR
+
+
+# AUR not ready? Set up AUR and we need
+# packages:
+# sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/cpufetch-git.git
+cd cpufetch-git/
+less PKGBUILD
+makepkg -si
+
+Android
+
+First install termux application
+Open termux and then run the following commands:
+pkg install -y git make clang
+Build from source normally on your Android device:
+git clone https://github.com/Dr-Noob/cpufetch
+cd cpufetch
+make
+make install
+How to use cpufetch
+
+The syntax is:
+cpufetch
+cpufetch [option]
