@@ -1,0 +1,8 @@
+Aggiungere la seguente riga a :
+ nano /etc/default/grub
+
+
+GRUB_DISABLE_OS_PROBER=false
+
+e riaconfigurare grub:
+sudo grub-mkconfig -o /boot/grub/grub.cfg

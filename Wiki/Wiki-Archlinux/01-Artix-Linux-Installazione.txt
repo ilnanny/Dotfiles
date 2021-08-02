@@ -77,7 +77,11 @@ pacman -S xorg-server xorg-xinit xorg-xrandr xf86-video-ati
 pacman -S git freetype2 fuse2 dosfstools mtools
 pacman -S iw wpa_supplicant curl wget wgetpaste  lxdm
 
-pacman -S  gnome-keyring \
+pacman -S
+           blueman \
+           bluez \
+           bluez-tools \
+           gnome-keyring \
            exfat-utils \
            file-roller \
            firefox \
@@ -89,6 +93,8 @@ pacman -S  gnome-keyring \
            gvfs \
            htop
 
+
+systemctl enable bluetooth.service
  __________________________________________
 
 mkdir /media
