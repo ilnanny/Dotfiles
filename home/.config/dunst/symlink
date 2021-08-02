@@ -1,0 +1,17 @@
+sudo mv /etc/dunst/dunstrc  /etc/dunst/dunstrc.bk
+sudo ln -s /home/ilnanny/.config/dunst/dunstrc /etc/dunst/dunstrc
+
+----------------------------------------------------------------------
+chiudi tutte le notifiche
+dunstctl close-all
+
+Visualizza lo storico:
+
+dunstctl history-pop
+
+disabilita
+killall -SIGUSR1 dunst
+
+abilita
+killall -SIGUSR2 dunst
+----------------------------------------------------------------------
