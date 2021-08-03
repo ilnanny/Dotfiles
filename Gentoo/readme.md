@@ -1,6 +1,6 @@
-<b><P> WorkStation. :Dell T3500 - T5500</b></P>
-<b><P> GPU. :Nvidia Quadro 4000 - 2000 'fermi'</b></P>
-<b><P> CPU. :Xeon 5660 - 5675 'westmere'</b></P>
+<b><P> WorkStation. :HP Z600 - T5500</b></P>
+<b><P> GPU. :Nvidia GTX970 </b></P>
+<b><P> CPU. :Xeon 5670 X 2 'westmere'</b></P>
 
 <b><P> Gnu/Linux distro:</b></P>
 <b><P> Gentoo 'openrc'</b></P>

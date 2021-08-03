@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+readonly KBSCRIPT="kb"
+readonly CFG_DIR="$HOME/.config/openbox"
+readonly RCPATH="$CFG_DIR/rc.xml"
+readonly KBTEXT="$CFG_DIR/kbinds.txt"
+readonly HELP='\tkb-pipemenu an Openbox Pipe Menu for displaying keybinds
+\tIt should normally be called from an openbox menu.
+\nOptions (usually passed from the menu):
+\t-h --help   show this message
+\t--keybinds  display keybindings defined in rc.xml as a menu
+\t(The keybinds in the menu are clickable, except for the Openbox
+\tcommands, which just exit the menu.)
+\t--rcedit    backup and edit rc.xml
+\nIf keyboard-pipemenu is called with no options (the usual method),
+it will output an xml openbox pipemenu for displaying keybindings.
+\tNOTE: Some of the functionality of this pipemenu depends on the script
+/usr/bin/kb which is provided by the package "scripts"'
+
+case "$@" in
+    -h|--help) echo -e "$HELP" ; exit 0
+esac
+
+if ! . "/usr/lib/common/include.cfg" 2> /dev/null; then
+    echo $"Errore: non trovo /usr/lib/common/include.cfg" >&2
+    exit 1
+fi
+
+if ! type "$KBSCRIPT" &>/dev/null; then
+    menuStart
+    menuSeparator "$KBSCRIPT non esiste. Installa lo  scripts."
+    menuEnd
+    exit 1
+fi
+
+if [[ $1 = '--rcedit' ]]; then
+    NOW=$(date +"%Y%m%d-%H%M")
+    RCBKP="$RCPATH.$NOW"
+    cp "$RCPATH" "$RCBKP"
+    if hash exo-open &>/dev/null; then
+        exo-open "$RCPATH"
+    elif hash xdg-open &>/dev/null; then
+        xdg-open "$RCPATH"
+    else
+        termite -e "$EDITOR $RCPATH"
+    fi
+    exit 0
+fi
+
+if [[ $1 = '--keybinds' ]]; then
+    "$KBSCRIPT" > /dev/null
+    menuStart
+    menuSeparator "Finestra di comando Openbox"
+    while read -r a b c; do
+        if [[ "$a" = "o" ]]; then
+            curItem=$(printf "%-20s %s" "$b" "$c")
+            menuItem "$curItem" "echo >/dev/null 2>&1"
+        fi
+    done < "$KBTEXT"
+
+    menuSeparator
+    menuSeparator "Esegui"
+    while read -r a b c; do
+        if [[ "$a" = "x" ]]; then
+            curItem=$(printf "%-20s %s" "$b" "$c")
+            menuItem "$curItem" "$c"
+        fi
+    done < "$KBTEXT"
+    menuEnd
+    exit 0
+fi
+
+menuStart
+    menuItem "Crea un backup ed Edita rc.xml" "kb-pipemenu --rcedit"
+    menuSeparator
+    menuItem "Visualizza le keybind in una finestra" "kb --gui"
+    echo '        <menu execute="kb-pipemenu --keybinds" id="Visualizza le keybind " label="Visualizza le keybind nel menu"/>'
+menuEnd
+
+exit 0

@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+#  __________________________________________________________
+#   informazioni online dell 'O.S.' e di alcuni Apllicativi.
+#  __________________________________________________________
+for i in "$@"; do
+    case "$i" in
+        -h|--help) echo "$HELP" ; exit 0
+    esac
+done
+
+if ! . "/usr/lib/common/include.cfg" 2>/dev/null; then
+    echo $"Error: Failed to source /usr/lib/common/include.cfg" >&2 ; exit 1
+fi
+
+#Gentoo
+menuStart
+menuSeparator 'Gentoo Linux Online'
+menuItem 'Gentoo Forum Eng' 'xdg-open "https://forums.gentoo.org/index.php"'
+menuItem 'Gentoo Forum Ita' 'xdg-open "https://forums.gentoo.org/viewforum-f-41.html"'
+menuItem 'Gentoo Wiki' 'xdg-open "https://wiki.gentoo.org/wiki/Main_Page"'
+
+
+menuSubmenu 'Openbox' 'Openbox'
+menuItem 'Openbox Homepage' 'xdg-open "http://openbox.org/"'
+menuItem 'Openbox Getting Started' 'xdg-open "http://openbox.org/wiki/Help:Getting_started"'
+menuItem 'Openbox Documentation' 'xdg-open "http://openbox.org/wiki/Help:Contents"'
+menuItem 'Openbox FAQs' 'xdg-open "http://openbox.org/wiki/Help:FAQ"'
+menuItem 'Openbox Guide Arch Wiki' 'xdg-open "http://wiki.archlinux.org/index.php/Openbox"'
+menuItem 'Openbox Guide Debian Wiki' 'xdg-open "https://wiki.debian.org/Openbox"'
+menuItem 'Urukramas Openbox Guide' 'xdg-open "https://urukrama.wordpress.com/openbox-faq/"'
+menuItem 'Openbox Reddit' 'xdg-open "https://www.reddit.com/r/openbox/"'
+menuSubmenuEnd
+
+menuSubmenu 'Tint2' 'Tint2'
+menuItem 'Tint2 Wiki: FAQ' 'xdg-open "https://gitlab.com/o9000/tint2/wikis/FAQ"'
+menuItem 'Tint2 Wiki: Configuration' 'xdg-open "https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md"'
+menuItem 'Tint2 Forum Thread' 'xdg-open "https://forums.bunsenlabs.org/viewtopic.php?id=254"'
+menuSubmenuEnd
+
+menuSubmenu 'Polybar' 'Polybar'
+menuItem 'Polybar GitHub' 'xdg-open "https://github.com/jaagr/polybar"'
+menuItem 'Polybar Wiki' 'xdg-open "https://github.com/jaagr/polybar/wiki"'
+menuItem 'Polybar Inspiration' 'xdg-open "https://www.reddit.com/r/unixporn/search?q=polybar&restrict_sr=on&sort=new&t=all"'
+menuSubmenuEnd
+
+menuSubmenu 'Rofit' 'Rofi'
+menuItem 'Rofi GitHub' 'xdg-open "https://github.com/DaveDavenport/rofi"'
+menuItem 'Rofi Wiki' 'xdg-open "https://github.com/DaveDavenport/rofi/wiki"'
+menuItem 'Rofi Inspiration' 'xdg-open "https://www.reddit.com/r/unixporn/search?q=rofi&restrict_sr=on&sort=new&t=all"'
+menuSubmenuEnd
+
+menuSubmenu 'Conky' 'Conky'
+menuItem 'Conky Wiki' 'xdg-open "https://github.com/brndnmtthws/conky/wiki"'
+menuItem 'Conky Inspiration' 'xdg-open "https://www.reddit.com/r/unixporn/search?q=conky&restrict_sr=on&sort=new&t=all"'
+menuItem 'Conky Archive' 'xdg-open "http://crunchbang.org/forums/viewtopic.php?pid=371424"'
+menuItem 'Conky Reddit' 'xdg-open "https://www.reddit.com/r/conky/"'
+menuSubmenuEnd
+
+menuSubmenu 'Neofetch' 'Neofetch'
+menuItem 'Neofetch GitHub' 'xdg-open "https://github.com/dylanaraps/neofetch"'
+menuItem 'Neofetch Wiki' 'xdg-open "https://github.com/dylanaraps/neofetch/wiki"'
+menuSubmenuEnd
+
+menuEnd
