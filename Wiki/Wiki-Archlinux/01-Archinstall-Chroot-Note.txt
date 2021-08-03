@@ -136,6 +136,7 @@ pacman -S android-file-transfer \
 		   btrfs-progs \
 		   bzr \
 		   conky \
+		   cups \
 		   deluge \
 		   dkms \
 		   dosfstools \
@@ -148,6 +149,7 @@ pacman -S android-file-transfer \
 		   gtk-engine-murrine \
 		   gvfs \
 		   htop \
+		   hplip \
 		   inkscape \
 		   libreoffice-still\
 		   libreoffice-still-it \
@@ -159,6 +161,7 @@ pacman -S android-file-transfer \
 		   nomacs \
 		   pavucontrol \
 		   picom \
+		   samba \
 		   speedtest-cli
 		   telegram-desktop \
 		   ttf-opensans
