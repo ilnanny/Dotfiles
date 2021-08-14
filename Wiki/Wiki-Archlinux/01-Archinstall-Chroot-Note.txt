@@ -247,6 +247,17 @@ git clone https://aur.archlinux.org/rtl88xxau-aircrack-dkms-git.git
 cd rtl88xxau-aircrack-dkms-git
 makepkg -si
 
+_______________________________________________________ KDE Plasma
+
+
+pacman -S plasma plasma-wayland-session kde-applications
+
+Abilitare i servizi Display Manager e Network Manager:
+
+systemctl enable sddm.service 
+systemctl enable NetworkManager.service
+
+
 
 __________________________      F i n e     __________________________
 

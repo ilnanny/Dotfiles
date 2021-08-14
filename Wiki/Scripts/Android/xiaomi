@@ -1,0 +1,30 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+
+case $1 in
+  mount|m)
+    sudo simple-mtpfs /home/ilnanny/Android
+  ;;
+  umount|u)
+    sudo fusermount -u /home/ilnanny/Android
+  ;;
+  sync|s)
+    sudo rsync -ah --progress /home/ilnanny/Music /home/ilnanny/Android/Music/Gentoo
+  ;;
+  *)
+    echo "My simple android cli"
+    echo "USAGE: xiaomi [options]"
+    echo ""
+    echo "Options:"
+    echo "  mount,m                     Mount android device to ~/Android"
+    echo "  umount,u                    Unmount android device"
+    echo "  sync,s                      Sync music"
+  ;;
+esac

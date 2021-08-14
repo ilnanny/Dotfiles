@@ -59,6 +59,7 @@ gpasswd -a ilnanny ntp
 gpasswd -a ilnanny plugdev
 gpasswd -a ilnanny polkitd
 gpasswd -a ilnanny scanner
+gpasswd -a ilnanny sddm
 gpasswd -a ilnanny shadow
 gpasswd -a ilnanny ssh
 gpasswd -a ilnanny sudo

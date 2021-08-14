@@ -1,5 +1,6 @@
 $$ User
 
+ln -s /media/Dati/Git/Dotfiles/home/.config $HOME/
 ln -s /media/Dati/Musica/ $HOME/Musica
 ln -s /media/Dati/ $HOME/Git
 ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
@@ -7,9 +8,17 @@ ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
 mkdir $HOME/Notebooks
 ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
 ln -s /media/Dati/Dati/Scaricati/ $HOME/Scaricati
+mkdir $HOME/ Pubblici
+mkdir $HOME/ Immagini
+mkdir $HOME/ Video
+mkdir $HOME/ Scrivania
+xdg-user-dirs-update
+xdg-user-dirs-gtk-update
+su -c 'chown -R ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
 
 ## Root
-
+sudo su
 rm -r /usr/share/backgrounds
-ln -s /media/Dati/backgrounds/backgrounds /usr/share/backgrounds
-
+ln -s /media/Dati/Git/backgrounds/backgrounds/ /usr/share/backgrounds
+ln -s /media/Dati/Git/Dotfiles/home/.config  /root
+chown -R root /root && chmod -R 775 /root

@@ -1,0 +1,16 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com    =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#================================================
+# install jmtpfs thunar-volman udisks2
+
+
+ #mkdir ~/Android
+ #jmtpfs ~/Android
+fusermount -u ~/Android
+

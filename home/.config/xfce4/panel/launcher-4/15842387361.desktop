@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Gcolor2
-Type=Application
-Comment=A GTK+ color selector
-Exec=gcolor2
-TryExec=gcolor2
-Icon=gcolor2
-Categories=Graphics;
-X-XFCE-Source=file:///usr/share/applications/gcolor2-gcolor2.desktop

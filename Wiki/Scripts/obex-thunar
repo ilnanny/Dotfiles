@@ -1,0 +1,18 @@
+#!/bin/bash
+#================================================
+#================================================
+#   O.S.      : Gnu Linux                       =
+#   Author    : Cristian Pozzessere   = ilnanny =
+#   D.A.Page  : http://ilnanny.deviantart.com   =
+#   Github    : https://github.com/ilnanny      =
+#================================================
+#   Progect   :                                 =
+#================================================
+#Imposta l'utente Root
+#set -o errexit
+#[[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
+
+ fusermount -u ~/bluetooth
+ obexfs -b $1 ~/bluetooth
+ thunar ~/bluetooth
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Facebook: accedi o iscriviti
+Exec=/usr/bin/chromium-browser --profile-directory=Default --app-id=celnaknmndcdcjcagffhbhciignkeokb
+Icon=facebook
+StartupWMClass=crx_celnaknmndcdcjcagffhbhciignkeokb
+Name[it_IT.UTF-8]=Facebook

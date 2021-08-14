@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Print Settings
+Name[it]=Impostazioni di stampa
+GenericName=Print Settings
+GenericName[it]=Impostazioni di stampa
+X-GNOME-FullName=Print Settings
+X-GNOME-FullName[it]=Impostazioni di stampa
+Comment=Configure printers
+Comment[it]=Configura le stampanti
+Exec=system-config-printer
+Terminal=false
+Type=Application
+Icon=printer
+StartupNotify=true
+X-Desktop-File-Install-Version=0.24
+Categories=System;Settings;HardwareSettings;Printing;GTK;
+Name[it_IT.UTF-8]=Impostazioni stampa

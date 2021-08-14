@@ -1,6 +1,14 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/ilnanny/Modelli]
+row=7
+col=0
+
+[BE027C2C027BE7B3]
+row=2
+col=0
+
 [D63EABB03EAB8857]
 row=1
 col=0
@@ -13,11 +21,7 @@ col=0
 row=3
 col=0
 
-[BE027C2C027BE7B3]
-row=2
-col=0
-
-[Trash]
+[Cestino]
 row=4
 col=0
 

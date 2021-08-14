@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Thunar File Manager
+Name[it]=Il gestore dei file Thunar
+Comment=Browse the filesystem with the file manager
+Comment[it]=Esplora il file system con il gestore dei file
+GenericName=File Manager
+GenericName[it]=Gestore dei file
+Exec=thunar %F
+Icon=Thunar
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;Core;GTK;FileTools;FileManager;
+MimeType=inode/directory;
+
+# vi:set encoding=UTF-8:
+Name[it_IT.UTF-8]=Thunar

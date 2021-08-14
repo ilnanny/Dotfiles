@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Display
+Name[it]=Schermo
+Comment=Configure screen settings and layout
+Comment[it]=Configurazione delle impostazioni e della disposizione dello schermo
+Exec=xfce4-display-settings
+Icon=video-display
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpPage=display

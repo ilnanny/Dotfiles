@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=
-Comment=
-Exec=/media/Dati/Softwares/AppImage/ %F
-Type=Application
-Icon=
-Categories=Network;
-StartupNotify=true
-

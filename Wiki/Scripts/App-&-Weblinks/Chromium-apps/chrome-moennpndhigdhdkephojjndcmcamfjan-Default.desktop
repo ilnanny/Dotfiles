@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Yandex.Translate – dictionary and onl...
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=moennpndhigdhdkephojjndcmcamfjan
+Icon=chrome-moennpndhigdhdkephojjndcmcamfjan-Default
+StartupWMClass=crx_moennpndhigdhdkephojjndcmcamfjan
+Name[it_IT.UTF-8]=Yandex.Translate

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Avahi SSH Server Browser
+Name[it]=Esploratore Avahi per server SSH
+Comment=Browse for Zeroconf-enabled SSH Servers
+Comment[it]=Esplora i server SSH con Zeroconf abilitato
+Exec=/usr/bin/bssh
+Terminal=false
+Type=Application
+Icon=network-wired
+Categories=GNOME;Network;
+StartupNotify=false
+GenericName=
+Name[it_IT.UTF-8]=Avahi SSH

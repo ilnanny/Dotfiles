@@ -1,9 +1,19 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Wiki Gentoo
+Comment[it_IT]=
+Comment=
 Exec=xdg-open https://wiki.gentoo.org/wiki/Handbook:Main_Page/it
-Icon=start-here-gentoo
-
+GenericName[it_IT]=
+Icon=distributor-logo-gentoo
+MimeType=
+Name[it_IT]=Wiki Gentoo
+Name=Wiki Gentoo
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

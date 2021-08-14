@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Prime Video
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=icinbigbhdmbimkohlheipdkbkaiomjj
+Icon=chrome-icinbigbhdmbimkohlheipdkbkaiomjj-Default
+StartupWMClass=crx_icinbigbhdmbimkohlheipdkbkaiomjj

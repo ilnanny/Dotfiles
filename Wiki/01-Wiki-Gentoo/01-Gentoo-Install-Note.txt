@@ -4,8 +4,8 @@ Wiki-Format: zim 0.4
 #== • Crea le Cartelle e monta le partizioni:
 
  mkdir /mnt/gentoo
- mount /dev/sdb2 /mnt/gentoo
- mount -o remount,rw /dev/sdb2 /mnt/gentoo
+ mount /dev/sdb3 /mnt/gentoo
+ mount -o remount,rw /dev/sdb3 /mnt/gentoo
  cd /mnt/gentoo
 #=====================================================================
 #== • Scarica lo stage3 e scompattalo
@@ -43,7 +43,7 @@ Wiki-Format: zim 0.4
 #=====================================================================
 #== • Controllo rete carica i repo
 
- ping -c 5 www.google.com
+ ping -c 3 www.gentoo.org
 #=====================================================================
 #== • Crea il file per il sinc di portage
 
@@ -128,7 +128,7 @@ fix_euro="YES"
 L10N="it"
 LANG="it_IT.utf8"
 LINGUAS="it"
-MAKEOPTS="-j5 -s"
+MAKEOPTS="-j9 -s"
 #=====================================================================
 #== • Sync aggiornamento
 
@@ -159,12 +159,14 @@ linux-firmware intel-microcode grub
 
 #== • Copia conf in /root [genkernel]
 
- genkernel --makeopts=-j5 --kernel-config=/root/config all
- emerge -1 @module-rebuild
+#= genkernel --makeopts=-j5 --kernel-config=/root/config all
+#= emerge -1 @module-rebuild
+
  grub-install /dev/sda
  grub-mkconfig –o /boot/grub/grub.cfg
  grub-mkconfig -o /boot/grub/grub.cfg
---se ci sono problemi con os-prober decomenta o aggiungi in
+
+--se ci sono problemi con os-prober decommenta o aggiungi in
 nano /etc/default/grub
 
 GRUB_DISABLE_OS_PROBER=false
@@ -188,9 +190,9 @@ hostname"HPZ600"
 #== • imposta localhost
 
  nano -w /etc/hosts
-127.0.0.1	localhost
-::1		localhost
-127.0.1.1	HPZ600
+127.0.0.1 localhost
+::1   localhost
+127.0.1.1 HPZ600
 #=====================================================================
 #== • Password di root:
 
@@ -207,6 +209,9 @@ hostname"HPZ600"
  umount -f /mnt/gentoo/tmp
  umount -f /gentoo/proc/
  umount -f /mnt/gentoo/
+
+#= in caso di problemi:
+ umount -R /mnt/gentoo
  fuser -k /mnt
 
  reboot
@@ -253,13 +258,11 @@ hostname"HPZ600"
  emerge --ask lxde-meta lxappearance lxappearance-obconf gnome-extra/nm-applet
 
 #== • Openbox=
- emerge --ask obmenu-generator obtheme obconf nitrogen ranger rofi tint2 dunst
- emerge --ask volumeicon pico lxappearance scrot
- emerge --ask keybinder xdg-utils xdg-user-dirs-gtk
+ emerge --ask obmenu-generator obconf nitrogen ranger rofi tint2 dunst \
+volumeicon compton lxappearance scrot \
+keybinder xdg-utils xdg-user-dirs-gtk \
+thunar thunar-volman thunar-archive-plugin
 
-
-#== • Thunar=
- emerge --ask thunar thunar-volman thunar-archive-plugin
 #=carica il demone all'avvio:
  rc-update add dbus default
 
@@ -268,22 +271,15 @@ emerge --ask xfce-base/xfce4-meta xfce-extra/xfce4-notifyd xfce-extra/xfce4-whis
 
 emerge --ask --deselect=y xfce-extra/xfce4-notifyd
 
-#== • lightdm login-manager
-emerge --ask x11-misc/lightdm
-#= Sostituisci xdm con lightdm in :
-nano -w /etc/conf.d/display-manager
-#= Carica il demone all'avvio:
- rc-update add display-manager default
- rc-update add dbus default
 
-#== • lxdm login-manager
+#== • sddm login-manager
  emerge --ask x11-misc/lxdm
-#= Sostituisci xdm con lxdm in :
+#= Sostituisci xdm con sddm in :
  nano -w /etc/conf.d/display-manager
 #= Carica il demone all'avvio:
  rc-update add display-manager default
  rc-update add dbus default
-
+ usermod -a -G video sddm
 
 #== •  Alsa
 euse -E alsa
@@ -308,7 +304,7 @@ gpasswd -a ilnanny audio
  emerge --ask gimp inkscape x11-misc/gcolor2 nomacs qt5ct media-gfx/rawtherapee x11-misc/zim app-admin/hardinfo
 
 #== •  Office
- emerge --ask app-office/libreoffice-bin
+ emerge --ask app-office/libreoffice-bin thunderbird-bin
  emerge --ask  evince vim parcellite hplip xsel dialog
 #== •  Stampante
  emerge --ask gutenprint foomatic-db foomatic-db-engine splix cups-pdf
@@ -321,9 +317,6 @@ gpasswd -a ilnanny audio
 
 #== • Conky
  USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky
-
-#== • Android
- emerge --ask dev-util/android-tools
 
 #__________________________________________________________________
 #== • Drivers NVIDIA
@@ -361,6 +354,77 @@ EndSection
  eselect opengl set nvidia
  eselect opencl set nvidia
 
+#== • Utenrti
+
+$$ User
+
+ln -s /media/Dati/Git/Dotfiles/home/.config $HOME/
+ln -s /media/Dati/Musica/ $HOME/Musica
+ln -s /media/Dati/ $HOME/Git
+ln -s /media/Dati/Git/Dotfiles/Wiki/ $HOME/Documenti
+ln -s /media/Dati/Git/Dotfiles/Scripts/ $HOME/bin
+mkdir $HOME/Notebooks
+ln -s /media/Dati/Git/Dotfiles/Wiki $HOME/Notebooks/Wiki
+ln -s /media/Dati/Dati/Scaricati/ $HOME/Scaricati
+mkdir $HOME/ Pubblici
+mkdir $HOME/ Immagini
+mkdir $HOME/ Video
+mkdir $HOME/ Scrivania
+xdg-user-dirs-update
+xdg-user-dirs-gtk-update
+su -c 'chown -R ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
+
+## Root
+sudo su
+rm -r /usr/share/backgrounds
+ln -s /media/Dati/Git/backgrounds/backgrounds/ /usr/share/backgrounds
+ln -s /media/Dati/Git/Dotfiles/home/.config  /root
+chown -R root /root && chmod -R 775 /root
+
+
+
+gpasswd -a ilnanny adbusers
+gpasswd -a ilnanny adm
+gpasswd -a ilnanny audio
+gpasswd -a ilnanny avahi
+gpasswd -a ilnanny bluetooth
+gpasswd -a ilnanny cdemu
+gpasswd -a ilnanny cdrom
+gpasswd -a ilnanny cdrw
+gpasswd -a ilnanny disk
+gpasswd -a ilnanny floppy
+gpasswd -a ilnanny games
+gpasswd -a ilnanny gdm
+gpasswd -a ilnanny ilnanny
+gpasswd -a ilnanny lightdm
+gpasswd -a ilnanny locate.mpd
+gpasswd -a ilnanny lpadmin
+gpasswd -a ilnanny lxdm
+gpasswd -a ilnanny mlocate
+gpasswd -a ilnanny netdev
+gpasswd -a ilnanny networkmanager
+gpasswd -a ilnanny ntp
+gpasswd -a ilnanny plugdev
+gpasswd -a ilnanny polkitd
+gpasswd -a ilnanny scanner
+gpasswd -a ilnanny sddm
+gpasswd -a ilnanny shadow
+gpasswd -a ilnanny ssh
+gpasswd -a ilnanny sudo
+gpasswd -a ilnanny sudoers
+gpasswd -a ilnanny sys
+gpasswd -a ilnanny tape
+gpasswd -a ilnanny tty
+gpasswd -a ilnanny usb
+gpasswd -a ilnanny vboxusers
+gpasswd -a ilnanny video
+gpasswd -a ilnanny wheel
+gpasswd -a root    gdm
+gpasswd -a root    lightdm
+gpasswd -a root    lxdm
+gpasswd -a root    slim
+gpasswd -a root    sddm
+
 #=====================================================
 
 
@@ -373,7 +437,7 @@ EndSection
 
 #                                                                     FileSystem  Linux
 #= Root
-/dev/sdb2     /     ext4   rw,errors=remount-ro   0  1
+/dev/sdb3     /     ext4   rw,errors=remount-ro   0  1
 #= Swap
 /dev/sda3     none  swap   sw                     0  0
 ##======================================================================================

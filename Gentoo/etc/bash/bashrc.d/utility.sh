@@ -10,46 +10,8 @@
 
 #  ________________________________    Utilità TTY    ________________________________
 #
-## ___  Extract Files
-extract()
-{
-    arg="$1"; shift
-    case $arg in
-        -e|--extract)
-            if [[ $1 && -e $1 ]]; then
-                case $1 in
-                    *.tbz2|*.tar.bz2) tar xvjf "$1" ;;
-                    *.tgz|*.tar.gz) tar xvzf "$1" ;;
-                    *.tar.xz) tar xpvf "$1" ;;
-                    *.tar) tar xvf "$1" ;;
-                    *.gz) gunzip "$1" ;;
-                    *.zip) unzip "$1" ;;
-                    *.bz2) bunzip2 "$1" ;;
-                    *.7zip) 7za e "$1" ;;
-                    *.rar) unrar x "$1" ;;
-                    *) printf "'%s' non può essere estratto" "$1"
-                esac
-            else
-                printf "'%s' non è un file valido" "$1"
-            fi ;;
-        -n|--new)
-            case $1 in
-                *.tar.*)
-                    name="${1%.*}"
-                    ext="${1#*.tar}"; shift
-                    tar cvf "$name" "$@"
-                    case $ext in
-                        .gz) gzip -9r "$name" ;;
-                        .bz2) bzip2 -9zv "$name"
-                    esac ;;
-                *.gz) shift; gzip -9rk "$@" ;;
-                *.zip) zip -9r "$@" ;;
-                *.7z) 7z a -mx9 "$@" ;;
-                *) printf "estensione non valida/non supportata"
-            esac ;;
-        *) printf "argomento non valido '%s'" "$arg"
-    esac
-}
+# Dolphin Root
+alias dolphinroot='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin'
 
 #
 ## ___   Kill Pid

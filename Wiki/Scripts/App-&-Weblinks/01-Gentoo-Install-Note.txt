@@ -1,0 +1,354 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+#=======================================================
+#= Dell Workstation T3500 - T5500
+#= Intel Xeon X5650 - X5675  =Westmere
+#= Nvidia Quadro 4000 - 2000 =Fermi
+#= Grub Bios PC '2010 - 2012'
+#= Gentoo Linux amd64 openrc
+#= Ssd : dev/sdc "/" "swap"
+#= Host : Linux amd64 openrc
+#= Appunti di Gennaio 2016
+#= Aggiornato Febbraio 2020
+#=======================================================
+
+#== • Crea le Cartelle e monta le partizioni:
+
+ mkdir /mnt/gentoo
+ mount /dev/sdc2 /mnt/gentoo
+ mount -o remount,rw /dev/sdc2 /mnt/gentoo
+ cp -L /etc/resolv.conf /mnt/gentoo/etc/
+ cd /mnt/gentoo
+#=====================================================================
+#== • Scarica lo stage3 e scompattalo
+
+ wget http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/stage3-amd64-20200325T214502Z.tar.xz
+ tar xpf  stage3-amd64-20200325T214502Z.tar.xz
+#=====================================================================
+ cd  --
+ cp -L /etc/resolv.conf /mnt/gentoo/etc/
+ cd /mnt/gentoo
+#=====================================================================
+#== • Scarica portage e scompattalo
+
+ cd /mnt/gentoo/usr/
+ wget https://gentoo.osuosl.org/snapshots/portage-latest.tar.bz2
+ tar xvjpf portage-latest.tar.bz2 --xattrs --numeric-owner
+#=====================================================================
+#== • Monta i filesystem ed entra in chroot:
+
+ mount --bind /dev /mnt/gentoo/dev
+ mount --make-rslave /mnt/gentoo/dev
+ mount --bind /proc /mnt/gentoo/proc
+ mount --bind /sys /mnt/gentoo/sys
+ mount --make-rslave /mnt/gentoo/sys
+ mount --rbind /tmp /mnt/gentoo/tmp
+ chroot /mnt/gentoo /bin/bash
+ export PS1="\033[1;33m([chroot])\033[0m $PS1"
+#=====================================================================
+#== • Controllo rete carica i repo
+
+ ping -c 5 www.google.com
+#=====================================================================
+#== • Crea il file per il sinc di portage
+
+ mkdir /etc/portage/repos.conf
+ nano -w /etc/portage/repos.conf/gentoo.conf
+
+[gentoo]
+location = /usr/portage
+sync-type = rsync
+sync-uri = rsync://rsync.gentoo.org/gentoo-portage
+auto-sync = yes
+
+#== • Sincronizza portage
+ emerge --sync
+ eselect news read
+
+#=====================================================================
+#== • Scegli un profilo
+
+ eselect profile list
+ eselect profile set 20
+ env-update && source /etc/profile
+#=====================================================================
+#== • Modifica i Files:
+
+# = 01] /etc/fstab
+# = 03] /etc/localtime
+# = 04] /usr/share/zoneinfo
+# = 05] /etc/portage/make.conf
+# = 06] /etc/conf.d/hostname
+# = 07] /etc/conf.d/keymaps
+# = 08] /etc/conf.d/hwclock
+# = 09] /etc/conf.d/modules
+#=====================================================================
+#== • Controlla le partizioni e scrivi l'fstab
+
+ blkid -c /dev/null -o list
+ nano -w /etc/fstab
+#=====================================================================
+#== • Fuso Orario
+
+ emerge --config sys-libs/timezone-data
+ ln -sf /usr/share/zoneinfo/Europe/Rome  /etc/localtime
+#=====================================================================
+#== • Data e Ora
+
+ date
+
+#== • =se la data non corrisponde :
+ date 012807462016       [corrisponde a ore 7:46 ,28 gennaio 2016]
+
+#== • Microsoft Windows Dual Boot settare in 'local':
+ nano -w /etc/conf.d/hwclock
+ clock="local"
+#=====================================================================
+#== • Localizzazione IT
+
+ nano -w /etc/locale.gen
+it_IT.UTF-8 UTF-8
+it_IT ISO-8859-1
+
+#== • Crea il file 02locale
+ nano -w /etc/env.d/02locale
+LANG="it_IT.UTF-8"
+#== • Genera locale
+
+ locale-gen
+ locale -a
+#=====================================================================
+#== • Tastiera
+
+ nano -w /etc/conf.d/keymaps
+keymap="it"
+windowkeys="YES"
+fix_euro="YES"
+#=====================================================================
+#== • Make conf
+
+ nano -w /etc/portage/make.conf
+#=====================================================================
+#== • Sync aggiornamento
+
+ emerge --sync
+ env-update && source /etc/profile
+ emerge -auDN @world
+#=====================================================================
+#== • Kernel e Sys Apps
+
+ emerge --ask gentoo-kernel-bin \
+ intel-microcode grub
+
+ USE="samba" emerge --ask net-libs/libsoup
+ USE="zerozonf" emerge --ask gnome-base/gvfs
+
+ emerge --ask mdadm gentoolkit \
+ linux-firmware os-prober ntfs3g usbutils \
+ pciutils elogind e2fsprogs dev-vcs/git net-misc/ntp
+#= carica il demone all'avvio:
+ rc-update add elogind default
+
+#== • Copia conf in /root [genkernel]
+
+ genkernel --makeopts=-j9 --kernel-config=/root/config all
+ emerge -1 @module-rebuild
+ grub-install /dev/sda
+ grub-mkconfig –o /boot/grub/grub.cfg
+ grub-mkconfig -o /boot/grub/grub.cfg
+
+#=====================================================================
+#== • Rete:
+
+ USE="-bindist" emerge --ask networkmanager net-misc/dhcpcd
+#= carica il demone all'avvio:
+ rc-update add NetworkManager default
+
+#= avvia la consolle grafica:
+ nmtui
+#=====================================================================
+#== • Imposta un Hostname:
+
+ nano -w /etc/conf.d/hostname
+hostname"T3500GEN"
+#== • imposta localhost
+
+ nano -w /etc/hosts
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	T3500GEN
+#=====================================================================
+#== • Password di root:
+
+ passwd
+#=====================================================================
+#== • Uscire da chroot :
+
+ exit
+ cd ~
+ umount -f /mnt/gentoo/dev
+ umount -f /mnt/gentoo/proc
+ umount -f /mnt/gentoo/sys
+ umount -f /mnt/gentoo/tmp
+ umount -f /mnt/gentoo/
+ fuser -k /mnt
+ reboot
+
+#== • Rimuovi gli archivi
+
+ rm /usr/portage-latest.tar.bz2
+ rm /stage3-.tar.xz
+#=====================================================================
+=#== • Boot in gentoo
+#====
+
+# =#== •Nuovo Utente:
+
+ useradd -m -G users,wheel,audio,video,sys,disk,adm,bin,daemon,portage,console,usb,input,lp,uucp,plugdev -s /bin/bash ilnanny
+ passwd ilnanny
+#=====================================================================
+#== • Profili:
+
+ eselect profile list
+ eselect profile set 20
+ env-update && source /etc/profile
+
+#== • Xorg:=
+
+ emerge --ask xorg-x11 xorg-server xorg-drivers xterm xinit xrandr sudo
+
+#== • Cron
+ emerge --ask anacron
+ /etc/init.d/anacron start
+ rc-update add anacron default
+ gpasswd -a ilnanny cron
+
+ nano -w /etc/crontab
+# Avvia anacron ogni 10 minuti
+/10     root  /usr/sbin/anacron
+# Alternativamente avvia anacron ogni ora
+# 59      root  /etc/cron.hourly/0anacron
+
+#=====================================================================
+#== • Openbox=
+ emerge --ask openbox obmenu-generator obtheme obconf xrandr nitrogen ranger rofi tint2 dunst
+ emerge --ask  x11-misc/tintwizard volumeicon x11-misc/compton lxappearance scrot
+ emerge --ask  keybinder xdg-utils xdg-user-dirs-gtk xdg-user-dirs
+
+#== • Thunar=
+ emerge --ask thunar thunar-volman thunar-archive-plugin
+#=carica il demone all'avvio:
+ rc-update add dbus default
+
+#== • SLim login-manager
+ emerge --ask x11-misc/slim
+#= Sostituisci xdm con slim in :
+ nano -w /etc/conf.d/xdm
+#= Carica il demone all'avvio:
+ rc-update add xdm default
+
+#== •  Build/Sys
+ emerge --ask autoconf nodejs meson yarn xsel util-linux ninja automake cmake
+ emerge --ask sudo htop eix mlocate geany unzip zenity layman genlop
+ emerge --ask lshw dev-lang/go xarchiver squashfuse inxi lsb-release dcfldd
+ USE="btrfs cryptsetup dmraid f2fs fat -kde mdadm hfs ntfs reiserfs reiser4 udf" emerge -av gparted
+
+#== •  Media
+ USE="gstreamer" emerge --ask sys-firmware/alsa-firmware media-sound/alsa-utils x11-themes/sound-theme-freedesktop media-sound/pavucontrol pamix volumeicon
+
+ USE="X alsa mp3 a52 aac cdda dvb dvd ffmpeg flac http  lame  modplug mpeg ogg pulseaudio vorbis x264" emerge --ask media-plugins/gst-plugins-meta
+
+ USE="X dbus encode ffmpeg jpeg libnotify ncurses png qt5 ssl svg truetype udev xml a52 alsa dvd flac fontconfig gnome-keyring gstreamer jack lirc live lua matroska mp3 mpeg mtp ogg skins theora twolame vorbis x264 x265" emerge --ask media-video/vlc
+
+#== •  Gfx
+ emerge --ask gimp inkscape gcolors2 nomacs qt5ct
+
+#== •  Office
+ USE="branding cups gtk mariadb bluetooth dbus  googledrive gstreamer gtk2 java pdfimport -postgres -test" LIBREOFFICE_EXTENSIONS="scripting-beanshell scripting-javascript wiki-publisher" emerge --ask app-office/libreoffice
+ emerge --ask media-fonts/dejavu evince vim parcellite hplip xsel dialog
+
+#== •  Www
+ emerge --ask android-tools android-file-transfer-linux bleachbit deluge
+ emerge --ask opera speedtest-cli telegram-desktop uget wgetpaste curl
+
+
+#== • Conky
+ USE="X curl -static-libs iconv ipv6 ncurses portmon truetype wifi hddtemp imlib lua-cairo lua-imlib lua-rsvg math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2" emerge --ask app-admin/conky
+
+
+
+#== • GTK3+
+ USE="hscolour profile" emerge --ask dev-haskell/gtk3
+
+#== • Xfce4
+
+ emerge --ask xfce4-meta xfce4-terminal xfce4-mount-plugin \
+xfce-extra/xfce4-screenshooter xfce4-panel xfce-extra/tumbler
+
+#__________________________________________________________________
+#== • Drivers NVIDIA
+
+ nano -w /etc/modprobe.d/nouveau-blacklist.conf
+ blacklist nouveau
+ options nouveau modeset=0
+ alias nouveau off
+
+#== •
+ nano -w /etc/portage/make.conf
+VIDEO_CARDS="nvidia"
+USE="gtk3" emerge --ask nvidia-drivers
+
+#== •
+ nano -w /etc/portage/package.mask/nvidia
+>=x11-drivers/nvidia-drivers-341.0.0
+>=x11-drivers/nvidia-kernel-modules-341.0.0
+
+#== •
+ nano -w /etc/conf.d/modules
+modules="nvidia"
+
+#== •
+ nano -w /etc/X11/xorg.conf
+Section "Device"
+    Identifier     "nvidia"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "Quadro 4000"
+	Option    "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+
+#== •
+ eselect opengl set nvidia
+ eselect opencl set nvidia
+
+#=====================================================
+
+
+#==                               Fstab   Gentoo
+
+#                                                                   FileSystem Virtuale
+#devpts     /dev/pts    devpts  gid=5,mode=620       0  0
+#proc		/proc		proc	defaults		     0  0
+#shm		/dev/shm	tmpfs	nodev,nosuid,noexec	 0  0
+
+#                                                                     FileSystem  Linux
+#= Root
+/dev/sdc2     /     ext4   rw,errors=remount-ro   0  1
+#= Swap
+/dev/sdc1     none  swap   sw                     0  0
+##======================================================================================
+#                                                                      FileSystem  Ntfs
+#= Dati
+UUID=76CDC3FF57CBA78E  /media/Dati ntfs-3g defaults,rw,uid=1000,locale=it_IT.UTF-8 0  0
+##======================================================================================
+
+
+##== •                                    Note:
+  grub-mkconfig –o /boot/grub/grub.cfg
+  grub-mkconfig -o /boot/grub/grub.cfg
+
+##== •             Se usi debian per il chroot:
+  export PATH="$PATH:/usr/sbin:/sbin:/bin"
+
+
+##== •                                   Fine

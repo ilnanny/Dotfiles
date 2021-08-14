@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=TeamViewer Management Console
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=makaoejbehmgbljeannlijbppcghdmfp
+Icon=teamviewer
+StartupWMClass=crx_makaoejbehmgbljeannlijbppcghdmfp
+Name[it_IT.UTF-8]=TeamViewer 

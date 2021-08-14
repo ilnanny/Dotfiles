@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name[it]=Visualizzatore documenti
+Name=Document Viewer
+Comment[it]=Visualizza documenti multi-pagina
+Comment=View multi-page documents
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords[it]=pdf;ps;postscript;dvi;xps;djvu;tiff;documento;presentazione;visualizzatore;
+Keywords=pdf;ps;postscript;dvi;xps;djvu;tiff;document;presentation;viewer;
+TryExec=evince
+Exec=evince %U
+StartupNotify=true
+Terminal=false
+Type=Application
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon[it]=org.gnome.Evince
+Icon=evince
+Categories=GNOME;GTK;Office;Viewer;Graphics;2DGraphics;VectorGraphics;
+MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/vnd.comicbook+zip;application/vnd.comicbook-rar;
+Name[it_IT.UTF-8]=Evince

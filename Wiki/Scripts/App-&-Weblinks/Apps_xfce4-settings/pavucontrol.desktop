@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=PulseAudio Volume Control
+Name[it]=Regolazione del volume PulseAudio
+GenericName=Volume Control
+GenericName[it]=Regolazione del volume
+Comment=Adjust the volume level
+Comment[it]=Regola il livello del volume
+Exec=pavucontrol
+Icon=multimedia-volume-control
+StartupNotify=true
+Type=Application
+Categories=AudioVideo;Audio;Mixer;GTK;
+Name[it_IT.UTF-8]=PulseAudio

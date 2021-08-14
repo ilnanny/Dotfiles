@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name[it]=Configurazione di rete avanzata
+Name=Advanced Network Configuration
+Comment[it]=Gestisce e cambia le impostazioni della connessione di rete
+Comment=Manage and change your network connection settings
+Icon[it]=preferences-system-network
+Icon=preferences-system-network
+Exec=nm-connection-editor
+Terminal=false
+StartupNotify=true
+Type=Application
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=NetworkManager
+X-GNOME-Bugzilla-Component=nm-connection-editor
+Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;X-GNOME-Utilities;
+NotShowIn=GNOME;
+Name[it_IT.UTF-8]=Configura rete

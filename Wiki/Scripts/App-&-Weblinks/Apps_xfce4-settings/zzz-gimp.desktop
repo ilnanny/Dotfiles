@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=GNU Image Manipulation Program
+Name[it]=GNU Image Manipulation Program
+GenericName=Image Editor
+GenericName[it]=Modifica immagine
+Comment=Create images and edit photographs
+Comment[it]=Crea immagini e modifica fotografie
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=GIMP;graphic;design;illustration;painting;
+Keywords[it]=GIMP;grafica;design;illustrazioni;disegno;fotoritocco;
+Exec=gimp-2.10 %U
+TryExec=gimp-2.10
+Icon=gimp
+Terminal=false
+Categories=Graphics;2DGraphics;RasterGraphics;GTK;
+StartupNotify=true
+MimeType=image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/tiff;image/jpeg;image/x-psp;image/png;image/x-icon;image/svg+xml;application/pdf;image/x-xcursor;
+Name[it_IT.UTF-8]=GIMP

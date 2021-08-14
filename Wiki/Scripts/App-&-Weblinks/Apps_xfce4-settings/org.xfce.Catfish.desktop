@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Catfish File Search
+Name[it]=Catfish ricerca di file
+GenericName=File search
+GenericName[it]=Ricerca file
+Comment=Search the file system
+Comment[it]=Cerca nel file system
+# TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=files;find;locate;lookup;search;
+Keywords[it]=file;trova;individua;ricerca;cerca;
+Categories=GNOME;GTK;Utility;
+Exec=/usr/bin/catfish %f
+Icon=catfish
+Terminal=false
+Type=Application
+MimeType=inode/directory;
+Name[it_IT.UTF-8]=Catfish

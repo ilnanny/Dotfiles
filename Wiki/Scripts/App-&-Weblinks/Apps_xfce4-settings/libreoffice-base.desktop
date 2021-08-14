@@ -1,0 +1,27 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=libreoffice-base
+Type=Application
+Categories=Office;Database;X-Red-Hat-Base;X-MandrivaLinux-MoreApplications-Databases;
+Exec=libreoffice --base %U
+MimeType=application/vnd.oasis.opendocument.database;application/vnd.sun.xml.base;
+Name=LO-Base
+GenericName=Database Development
+GenericName[en]=Database Development
+Comment=Manage databases, create queries and reports to track and manage your information by using Base.
+Comment[en]=Manage databases, create queries and reports to track and manage your information by using Base.
+StartupNotify=true
+X-GIO-NoFuse=true
+Keywords=Data;SQL;
+InitialPreference=5
+StartupWMClass=libreoffice-base
+X-KDE-Protocols=file,http,ftp,webdav,webdavs
+
+Actions=NewDocument;
+Name[it_IT.UTF-8]=LO-Base
+
+[Desktop Action NewDocument]
+Name=New Database
+Name[en]=New Database
+Exec=libreoffice --base

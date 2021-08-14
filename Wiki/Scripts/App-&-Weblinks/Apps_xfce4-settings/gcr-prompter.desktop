@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name[it]=Prompt di accesso
+Name=Access Prompt
+Comment[it]=Sblocca l'accesso alle password e altri segreti
+Comment=Unlock access to passwords and other secrets
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=security-medium
+Exec=/usr/libexec/gcr-prompter
+Terminal=false
+Type=Application
+NoDisplay=true
+Name[it_IT.UTF-8]=Accesso

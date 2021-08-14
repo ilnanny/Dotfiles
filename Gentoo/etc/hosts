@@ -1,11 +1,6 @@
-#  IPv4 e IPv6 localhost alias
-# ____________________________ 
-
-127.0.0.1        HPZ600GEN               localhost
-::1              ip6-localhost ip6-loopback
-fe00::0          ip6-localnet
-fe00::0          ip6-mcastprefix
-fe02::1          ip6-allnodes
-fe02::1          ip6-allrouters
-
-# Fine /etc/localhost
+# Host addresses
+127.0.0.1  localhost
+127.0.1.1  HPZ600-Workstation
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters

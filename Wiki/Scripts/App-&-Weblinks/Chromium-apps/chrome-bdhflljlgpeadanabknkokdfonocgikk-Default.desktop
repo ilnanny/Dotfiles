@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Netflix Italia - Guarda serie TV onli...
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=bdhflljlgpeadanabknkokdfonocgikk
+Icon=chrome-bdhflljlgpeadanabknkokdfonocgikk-Default
+StartupWMClass=crx_bdhflljlgpeadanabknkokdfonocgikk
+Name[it_IT.UTF-8]=Netflix Italia

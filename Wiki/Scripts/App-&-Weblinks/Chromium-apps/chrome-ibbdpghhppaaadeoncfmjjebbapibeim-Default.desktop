@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Yandex.Mail — free, reliable email
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ibbdpghhppaaadeoncfmjjebbapibeim
+Icon=chrome-ibbdpghhppaaadeoncfmjjebbapibeim-Default
+StartupWMClass=crx_ibbdpghhppaaadeoncfmjjebbapibeim
+Name[it_IT.UTF-8]=Yandex.Mail

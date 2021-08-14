@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=aggiorna-cartelle-utenti
+Comment=aggiorna-cartelle-utenti
+Exec=xdg-user-dirs-gtk-update
+StartupNotify=true
+Terminal=true
+Hidden=false
+Icon=folder-temp
+GenericName=aggiorna-cartelle-utenti

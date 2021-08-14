@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Redshift
+Name[it]=Redshift
+GenericName=Color temperature adjustment
+GenericName[it]=Regolazione della temperatura del colore
+Comment=Color temperature adjustment tool
+Comment[it]=Strumento per la regolazione della temperatura del colore
+Exec=redshift-gtk
+Icon=redshift
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true
+Name[it_IT.UTF-8]=Redshift-gtk

@@ -1,3 +1,4 @@
+
 #
 #                           Fstab  Gentoo
 #___________________________________________________________________________
@@ -10,16 +11,16 @@
 # ______   FileSystem  Linux
 
 # Root
-/dev/sdb2      /       ext4    rw,errors=remount-ro    0  1
+/dev/sdb3      /       ext4    rw,errors=remount-ro    0  1
 
 # Swap
-/dev/sda3     none     swap     sw      0  0
+/dev/sdb2     none     swap     sw      0  0
 
 #___________________________________________________________________________
 # ______   FileSystem  Ntfs
 
 # Dati
-/dev/sdb1  /media/Dati ntfs-3g defaults,rw,errors=remount,uid=1000  0  0
+#/dev/sdb1  /media/Dati ntfs-3g defaults,rw,errors=remount,uid=1000  0  0
 
 #___________________________________________________________________________
 
