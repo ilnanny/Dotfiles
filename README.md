@@ -11,9 +11,9 @@ Screenshot 03
 <img src="https://raw.githubusercontent.com/ilnanny/Dotfiles/master/scrot3.png?raw=true"screen3">
 <hr align=”left” size=”1″ width=”300″ color=”red” noshade>
 
- WorkStation. :Dell T3500 - T5500<br>
- GPU. :Nvidia Quadro 4000 - 2000 'fermi'<br>
- CPU. :Xeon 5660 - 5675 'westmere'<br>
+ WorkStation. :HP Z600<br>
+ GPU. :Nvidia GTX 970 <br>
+ CPU. :Xeon 5570 <br>
 
  Gentoo 'openrc'<br>
  Debian 'sysv'<br>
