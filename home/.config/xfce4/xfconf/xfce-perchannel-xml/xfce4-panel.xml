@@ -9,7 +9,7 @@
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=9;x=952;y=18"/>
       <property name="length" type="uint" value="100"/>
-      <property name="position-locked" type="bool" value="false"/>
+      <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="16"/>
       <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
@@ -24,13 +24,20 @@
         <value type="int" value="13"/>
         <value type="int" value="14"/>
       </property>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.040000"/>
+        <value type="double" value="0.039867"/>
+        <value type="double" value="0.039867"/>
+        <value type="double" value="0.174497"/>
+      </property>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="position" type="string" value="p=5;x=18;y=510"/>
+      <property name="position" type="string" value="p=5;x=17;y=431"/>
       <property name="length" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="32"/>
+      <property name="size" type="uint" value="36"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="16"/>
         <value type="int" value="27"/>
@@ -42,14 +49,21 @@
         <value type="int" value="18"/>
         <value type="int" value="10"/>
         <value type="int" value="9"/>
+        <value type="int" value="24"/>
         <value type="int" value="8"/>
         <value type="int" value="20"/>
         <value type="int" value="28"/>
         <value type="int" value="22"/>
         <value type="int" value="30"/>
-        <value type="int" value="24"/>
       </property>
       <property name="mode" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.040000"/>
+        <value type="double" value="0.039867"/>
+        <value type="double" value="0.039867"/>
+        <value type="double" value="0.174497"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">

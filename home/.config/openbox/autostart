@@ -37,7 +37,7 @@ xrdb -merge .Xresources
 #gnome-settings-daemon &
 
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > Impostazioni XFCE GTK.
-#xfce-mcs-manager &
+xfce-mcs-manager &
 #  --  --  --  --  --  --  --  --  --  --  --  --  -- > NumLock ON.
 numlockx &
 

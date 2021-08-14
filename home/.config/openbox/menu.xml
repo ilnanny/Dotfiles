@@ -10,29 +10,42 @@
     <item label="   Geany Ide"><action name="Execute"><command><![CDATA[geany]]></command></action></item>
     <item label="   Esegui"><action name="Execute"><command><![CDATA[menu  -r]]></command></action></item>
   <separator label="Categorie"/>
-  <menu id="0.656967349424125" label="    Accessori  ">
+  <menu id="0.270699440808134" label="    Accessori  ">
+    <item label="Android File Transfer (MTP)"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
     <item label="Emulatore di terminale"><action name="Execute"><command><![CDATA[exo-open --launch TerminalEmulator]]></command></action></item>
     <item label="Esegui programma…"><action name="Execute"><command><![CDATA[xfce4-appfinder --collapsed]]></command></action></item>
     <item label="Gestore dei file"><action name="Execute"><command><![CDATA[exo-open --launch FileManager]]></command></action></item>
     <item label="Il gestore dei file Thunar"><action name="Execute"><command><![CDATA[thunar]]></command></action></item>
     <item label="nitrogen"><action name="Execute"><command><![CDATA[nitrogen]]></command></action></item>
     <item label="Rinomina di massa"><action name="Execute"><command><![CDATA[thunar --bulk-rename]]></command></action></item>
+    <item label="Tabella caratteri"><action name="Execute"><command><![CDATA[gucharmap]]></command></action></item>
     <item label="Trova applicazioni"><action name="Execute"><command><![CDATA[xfce4-appfinder]]></command></action></item>
     <item label="Vim"><action name="Execute"><command><![CDATA[xterm -e 'vim']]></command></action></item>
+    <item label="Xarchiver"><action name="Execute"><command><![CDATA[xarchiver]]></command></action></item>
   </menu>
-  <menu id="0.335478333148302" label="    Sviluppo  ">
+  <menu id="0.36271688677104" label="    Sviluppo  ">
     <item label="Geany"><action name="Execute"><command><![CDATA[geany]]></command></action></item>
   </menu>
-  <menu id="0.569751022654724" label="    Grafica  ">
+  <menu id="0.00513002978744836" label="    Grafica  ">
+    <item label="GNU Image Manipulation Program"><action name="Execute"><command><![CDATA[gimp-2.10]]></command></action></item>
+    <item label="Inkscape"><action name="Execute"><command><![CDATA[inkscape]]></command></action></item>
     <item label="MuPDF"><action name="Execute"><command><![CDATA[mupdf]]></command></action></item>
+    <item label="nomacs"><action name="Execute"><command><![CDATA[nomacs]]></command></action></item>
   </menu>
-  <menu id="0.851366949823337" label="    Network  ">
+  <menu id="0.181858448168846" label="    Multimedia  ">
+    <item label="Lettore multimediale VLC"><action name="Execute"><command><![CDATA[/usr/bin/vlc --started-from-file]]></command></action></item>
+    <item label="Webcamoid"><action name="Execute"><command><![CDATA[webcamoid]]></command></action></item>
+  </menu>
+  <menu id="0.0721792472878242" label="    Network  ">
     <item label="Browser web"><action name="Execute"><command><![CDATA[exo-open --launch WebBrowser]]></command></action></item>
+    <item label="Deluge"><action name="Execute"><command><![CDATA[deluge-gtk]]></command></action></item>
     <item label="Lettore di email"><action name="Execute"><command><![CDATA[exo-open --launch MailReader]]></command></action></item>
     <item label="Mozilla Firefox (bin)"><action name="Execute"><command><![CDATA[firefox-bin]]></command></action></item>
+    <item label="Mozilla Thunderbird (bin)"><action name="Execute"><command><![CDATA[thunderbird-bin]]></command></action></item>
+    <item label="Telegram Desktop"><action name="Execute"><command><![CDATA[telegram-desktop --]]></command></action></item>
     <item label="wpa__gui"><action name="Execute"><command><![CDATA[wpa_gui]]></command></action></item>
   </menu>
-  <menu id="0.904801019828557" label="    Impostazioni  ">
+  <menu id="0.163870320408009" label="    Impostazioni  ">
     <item label="Applicazioni predefinite"><action name="Execute"><command><![CDATA[xfce4-mime-settings]]></command></action></item>
     <item label="Aspetto"><action name="Execute"><command><![CDATA[xfce4-appearance-settings]]></command></action></item>
     <item label="Configurazione di rete avanzata"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
@@ -51,7 +64,10 @@
     <item label="Sessione e avvio"><action name="Execute"><command><![CDATA[xfce4-session-settings]]></command></action></item>
     <item label="Unità rimovibili e supporti"><action name="Execute"><command><![CDATA[thunar-volman-settings]]></command></action></item>
   </menu>
-  <menu id="0.980687385876067" label="    Sistema  ">
+  <menu id="0.93594491029793" label="    Sistema  ">
+    <item label="Android File Transfer (MTP)"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="BleachBit"><action name="Execute"><command><![CDATA[bleachbit]]></command></action></item>
+    <item label="conky"><action name="Execute"><command><![CDATA[conky --daemonize --pause=1]]></command></action></item>
     <item label="Gestione stampa"><action name="Execute"><command><![CDATA[/usr/bin/xdg-open http://localhost:631/]]></command></action></item>
     <item label="Il gestore dei file Thunar"><action name="Execute"><command><![CDATA[thunar]]></command></action></item>
     <item label="NVIDIA X Server Settings"><action name="Execute"><command><![CDATA[nvidia-settings]]></command></action></item>
@@ -60,10 +76,10 @@
     <item label="Terminale di Xfce"><action name="Execute"><command><![CDATA[xfce4-terminal]]></command></action></item>
     <item label="Tint2"><action name="Execute"><command><![CDATA[tint2]]></command></action></item>
   </menu>
-    <menu id="0.478925762601957" label="    File  Recenti " execute="places-pipemenu --recent ~/"/>
+    <menu id="0.767500818282393" label="    File  Recenti " execute="places-pipemenu --recent ~/"/>
   <separator label="Avanzate"/>
-  <menu id="0.384296696906937" label="   Configurazioni">
-  <menu id="0.128876818800936" label=" Openbox">
+  <menu id="0.209417147320355" label="   Configurazioni">
+  <menu id="0.254990701855377" label=" Openbox">
     <item label=" Openbox Conf"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
     <item label=" Edita Schema.pl"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/schema.pl]]></command></action></item>
     <item label=" Edita menu.xml"><action name="Execute"><command><![CDATA[exo-open ~/.config/openbox/menu.xml]]></command></action></item>
@@ -73,9 +89,9 @@
   </menu>
     <item label=" Edita Conky"><action name="Execute"><command><![CDATA[geany ~/.conkyrc]]></command></action></item>
     <item label=" Compositore"><action name="Execute"><command><![CDATA[exo-open ~/.config/compton.conf]]></command></action></item>
-    <menu id="0.194229892513931" label=" Tint2" execute="tint2-pipemenu"/>
-    <menu id="0.548012551867753" label=" Polybar" execute="polybar-pipemenu"/>
-  <menu id="0.655376258296634" label=" Sistema">
+    <menu id="0.0117185248689502" label=" Tint2" execute="tint2-pipemenu"/>
+    <menu id="0.619554246999066" label=" Polybar" execute="polybar-pipemenu"/>
+  <menu id="0.450724268362126" label=" Sistema">
     <item label=" Imposta Audio"><action name="Execute"><command><![CDATA[volumeicon]]></command></action></item>
     <item label=" Software Manager"><action name="Execute"><command><![CDATA[portgui]]></command></action></item>
     <item label=" Gestore Impostazioni"><action name="Execute"><command><![CDATA[xfce4-settings-manager]]></command></action></item>
@@ -84,11 +100,11 @@
     <item label=" Cambia Sfondo"><action name="Execute"><command><![CDATA[nitrogen]]></command></action></item>
     <item label=" Temi Rofi "><action name="Execute"><command><![CDATA[rofi-theme-selector]]></command></action></item>
   </menu>
-    <menu id="0.432607001422173" label="   KeyBInds  " execute="kb-pipemenu"/>
-    <menu id="0.681585992768092" label="   Info    Online " execute="info-pipemenu"/>
+    <menu id="0.811140728497563" label="   KeyBInds  " execute="kb-pipemenu"/>
+    <menu id="0.231427016974063" label="   Info    Online " execute="info-pipemenu"/>
     <item label="   Rigenera  Menu "><action name="Execute"><command><![CDATA[obmenu-generator -s -c]]></command></action></item>
   <separator label="E  s  c  i "/>
-  <menu id="0.820492653249399" label="       ▶     ▶     ▶  ">
+  <menu id="0.798928980104499" label="       ▶     ▶     ▶  ">
     <item label=" Esci da Openbox"><action name="Execute"><command><![CDATA[openbox --exit]]></command></action></item>
     <item label="        ▫      ▫      ▫ "><action name="Execute"><command><![CDATA[]]></command></action></item>
     <item label=" Riavvia il Sistema"><action name="Execute"><command><![CDATA[xterm -e sudo reboot]]></command></action></item>
