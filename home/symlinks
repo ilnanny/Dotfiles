@@ -14,7 +14,8 @@ mkdir $HOME/ Video
 mkdir $HOME/ Scrivania
 xdg-user-dirs-update
 xdg-user-dirs-gtk-update
-su -c 'chown -R ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny'
+chown -R ilnanny /home/ilnanny && chmod -R 775 /home/ilnanny
+chown -R ilnanny /media/Dati/Git/ && chmod -R 775 /media/Dati/Git/
 
 ## Root
 sudo su

@@ -7,13 +7,13 @@
     <value type="int" value="2"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="position" type="string" value="p=9;x=952;y=18"/>
       <property name="length" type="uint" value="100"/>
-      <property name="position-locked" type="bool" value="true"/>
+      <property name="position-locked" type="bool" value="false"/>
       <property name="icon-size" type="uint" value="16"/>
       <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="7"/>
+        <value type="int" value="26"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -27,20 +27,29 @@
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="position" type="string" value="p=5;x=28;y=503"/>
+      <property name="position" type="string" value="p=5;x=18;y=510"/>
       <property name="length" type="uint" value="1"/>
-      <property name="position-locked" type="bool" value="false"/>
-      <property name="size" type="uint" value="48"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="32"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="17"/>
-        <value type="int" value="18"/>
-        <value type="int" value="19"/>
         <value type="int" value="16"/>
-        <value type="int" value="8"/>
+        <value type="int" value="27"/>
         <value type="int" value="21"/>
+        <value type="int" value="29"/>
+        <value type="int" value="15"/>
+        <value type="int" value="17"/>
+        <value type="int" value="23"/>
+        <value type="int" value="18"/>
+        <value type="int" value="10"/>
         <value type="int" value="9"/>
+        <value type="int" value="8"/>
+        <value type="int" value="20"/>
+        <value type="int" value="28"/>
+        <value type="int" value="22"/>
+        <value type="int" value="30"/>
+        <value type="int" value="24"/>
       </property>
-      <property name="mode" type="uint" value="2"/>
+      <property name="mode" type="uint" value="1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -64,7 +73,6 @@
         <value type="string" value="applet networkmanager"/>
       </property>
     </property>
-    <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
@@ -86,15 +94,10 @@
         <value type="string" value="16288895982.desktop"/>
       </property>
     </property>
-    <property name="plugin-19" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16288895983.desktop"/>
-      </property>
-    </property>
     <property name="plugin-21" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
     </property>
-    <property name="plugin-7" type="string" value="whiskermenu"/>
     <property name="plugin-8" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="16288917371.desktop"/>
@@ -103,6 +106,46 @@
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="16288922522.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-15" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-20" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-22" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-23" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-24" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-26" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-27" type="string" value="whiskermenu"/>
+    <property name="plugin-28" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16289558343.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-29" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16289558504.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-30" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="16289558865.desktop"/>
       </property>
     </property>
   </property>

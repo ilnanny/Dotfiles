@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Mozilla Thunderbird (bin)
+GenericName=Email
+Comment=Send and Receive Email
+Comment[it]=Leggere e scrivere email
+Exec=thunderbird-bin %u
+Icon=thunderbird-bin
+Terminal=false
+Type=Application
+MimeType=message/rfc822;text/calendar;x-scheme-handler/mailto;
+StartupNotify=true
+Categories=Network;Email;Calendar;
+Keywords=email;messages;calendar
+Actions=profile-manager-window;
+X-XFCE-Source=file:///usr/share/applications/thunderbird-bin.desktop
+
+[Desktop Action profile-manager-window]
+Name=Open the Profile Manager
+Exec=thunderbird-bin --ProfileManager
