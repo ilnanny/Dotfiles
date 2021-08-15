@@ -1,0 +1,14 @@
+# required by x11-libs/pango-1.48.7::gentoo
+# required by dev-qt/qtwidgets-5.15.2::gentoo[gtk]
+# required by app-crypt/pinentry-1.1.0-r4::gentoo[qt5]
+# required by app-crypt/gnupg-2.2.27::gentoo
+# required by gnome-base/gnome-keyring-40.0::gentoo
+# required by app-crypt/libsecret-0.20.4::gentoo
+>=media-libs/freetype-2.10.4 harfbuzz
+# required by sys-power/apcupsd-3.14.14-r3::gentoo
+# required by app-admin/conky-1.12.2::gentoo[apcupsd]
+# required by conky (argument)
+>=sys-apps/util-linux-2.36.2-r1 tty-helpers
+# required by net-print/hplip-3.20.11-r2::gentoo[-minimal,snmp]
+# required by hplip (argument)
+>=net-dns/avahi-0.8-r4 python

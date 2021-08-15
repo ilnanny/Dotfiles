@@ -316,7 +316,7 @@ gpasswd -a ilnanny audio
  emerge --ask webcamoid android-tools android-file-transfer-linux bleachbit gucharmap
 
 #== • Conky
- USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky
+ USE="X curl -static-libs apcupsd iconv ipv6 ncurses portmon truetype wifi bundled-toluapp hddtemp imlib math mpd nano-syntax rss vim-syntax weather-metar webserver xmms2 ical hddtemp" emerge --ask app-admin/conky lsb-release
 
 #__________________________________________________________________
 #== • Drivers NVIDIA

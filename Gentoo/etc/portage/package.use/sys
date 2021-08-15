@@ -5,3 +5,4 @@ sys-block/gparted btrfs cryptsetup dmraid f2fs fat hfs mdadm ntfs policykit reis
 sys-fs/android-file-transfer-linux fuse qt5
 sys-kernel/debian-sources binary
 sys-libs/zlib minizip
+sys-process/htop hwloc lm-sensors
