@@ -1,0 +1,505 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-08-15T08:56:01+02:00
+
+====== Corso Bash Scripting ======
+Creato domenica 15 agosto 2021
+
+  8 if [ -z "$1" ] 
+  9 then 
+ 10   echo "Utilizzo: 
+`basename $0` nomefile" 
+ 11   exit $E_ERR_ARG  # 
+Nessun argomento? 
+Abbandono. 
+ 12 else 
+ 13   file=$1          # 
+Imposta il nome del file. 
+ 14 fi 
+ 15  
+ 16  
+ 17 [ ! -f "$file" ] && 
+echo "File \"$file\" non 
+trovato. \ 
+ 18 Mi rifiuto, in modo 
+vile, di cancellare un 
+file inesistente." 
+ 19 #  LISTA AND, 
+fornisce il messaggio 
+d'errore se il file non è 
+presente. 
+ 20 #  Notate il 
+messaggio di echo che 
+continua alla riga 
+successiva per mezzo del 
+ 21 #+ carattere di 
+escape. 
+ 22  
+ 23 [ ! -f "$file" ] || 
+(rm -f $file; echo "File 
+\"$file\" cancellato.") 
+ 24 # LISTA OR, per 
+cancellare il file se 
+presente. 
+ 25  
+ 26 # Notate l'inversione 
+logica precedente. 
+ 27 # La LISTA AND viene 
+eseguita se il risultato 
+è true, la LISTA OR se è 
+false. 
+ 28  
+ 29 exit 0 
+  Se il primo comando di 
+una "lista or" restituisce 
+true, esso verrà eseguito 
+comunque . 
+  1 # ==> Questi frammenti di codice, presi 
+dallo script/etc/rc.d/init.d/single 
+  2 #+==> di Miquel van Smoorenburg, 
+illustrano l'impiego delle liste "and" e 
+"or". 
+  3 # ==> I commenti con la "freccia" sono 
+stati aggiunti dall'autore del libro. 
+  4  
+  5 [ -x /usr/bin/clear ] && /usr/bin/clear 
+  6   # ==> Se /usr/bin/clear esiste, allora 
+viene invocato. 
+  7   # ==> Verificare l'esistenza di un 
+ 17 -v      Dettaglio (verbose): informazioni dettagliate, più o meno 
+formattate. 
+ 18 -V      Versione / Licenza / Copy(right|left) / Contributi (anche 
+email). 
+* Vedi anche Appendice F. 
+* Si suddividano gli script complessi in moduli più semplici. Si faccia uso delle funzioni ogni 
+qual volta se ne presenti l'occasione. Vedi Esempio 35-4. 
+* Non si usi un costrutto complesso dove uno più semplice è sufficiente.  
+  1 COMANDO if [ $? -eq 0 ] 
+  2 ... 
+  3 # Ridondante e non intuitivo. 
+  4  
+  5 if COMANDO 
+  6 ... 
+  7 # Più conciso (anche se, forse, non altrettanto leggibile). 
+  
+... reading the UNIX source code to the Bourne 
+shell (/bin/sh). I was shocked at how much simple 
+algorithms could be made cryptic, and therefore 
+useless, by a poor choice of code style. I asked 
+myself, "Could someone be proud of this code?" 
+  Landon Noll
+Note 
+[1] In questo contesto, il termine "magic number" ha un significato completamente diverso dal 
+magic number usato per designare i tipi di file. 
+ 
+Capitolo 34. Miscellanea 
+  
+Nobody really knows what the Bourne shell's 
+grammar is. Even examination of the source code 
+is little help. 
+  Tom Duff
+Sommario  
+34.1. Shell e script interattivi e non  
+34.2. Shell wrapper  
+34.3. Verifiche e confronti: alternative  
+34.4. Ricorsività  
+34.5. "Colorare" con gli script  
+34.6. Ottimizzazioni  
+34.7. Argomenti vari  
+34.8. Sicurezza  
+34.9. Portabilità  
+34.10. Lo scripting di shell sotto Windows 
+34.1. Shell e script interattivi e non 
+Una shell interattiva legge i comandi dall'input dell'utente, immessi da una tty. Una tale shell, in 
+modo predefinito, legge i file di avvio in fase di attivazione, visualizza un prompt e abilita il 
+controllo dei job, tra le altre cose. L'utente può interagire con la shell. 
+Una shell che esegue uno script è sempre una shell non interattiva. Tuttavia, lo script può ancora 
+accedere alla sua tty. È anche possibile simulare, nello script, una shell interattiva.  
+  1 #!/bin/bash 
+  2 MIO_PROMPT='$ ' 
+  3 while : 
+  4 do 
+  5   echo -n "$MIO_PROMPT" 
+  6   read riga 
+  7   eval "$riga" 
+  8   done 
+  9  
+ 10 exit 0 
+ 11  
+ 12 #  Questo script d'esempio e gran parte della spiegazione precedente 
+ 13 #+ sono stati forniti da Stephane Chazelas (grazie ancora). 
+Si considera come interattivo quello script che richiede l'input dall'utente, di solito per mezzo di 
+enunciati read (vedi Esempio 11-2). La "realtà" , a dire il vero, è un po' meno semplice di così. Per 
+il momento si assume che uno script interattivo sia quello connesso ad una tty, uno script che un 
+utente ha invocato da console o da xterm. 
+Gli script init e di avvio sono, per forza di cose, non interattivi, perché devono essere eseguiti senza 
+l'intervento umano. Allo stesso modo, non sono interattivi gli script che svolgono attività 
+d'amministrazione e di manutenzione del sistema. Compiti invariabili e ripetitivi richiedono di 
+essere svolti automaticamente per mezzo di script non interattivi. 
+Gli script non interattivi possono essere eseguiti in background, a differenza di quelli interattivi che 
+si bloccano in attesa di un input che non arriverà mai. Questa difficoltà può essere gestita con uno 
+script expect o con l'inserimento di un here document che sono in grado di fornire l'input allo script 
+interattivo in esecuzione in background. Nel caso più semplice, redirigendo un file per fornire 
+l'input ad un enunciato read (read variabile <file). Questi particolari espedienti permettono che 
+script con funzionalità non specifiche possano essere eseguiti sia in modalità interattiva che non. 
+Se uno script ha bisogno di verificare se è in esecuzione in una shell interattiva, basta 
+semplicemente controllare se la variabile del prompt, $PS1, è impostata. (Se l'utente dev'essere 
+pronto ad inserire un input allora lo script deve visualizzare un prompt.)  
+  1 if [ -z $PS1 ] # nessun prompt? 
+  2 then 
+  3   # non interattiva 
+  4   ... 
+  5 else 
+  6   # interattiva 
+  7   ... 
+  8 fi 
+Alternativamente, lo script può verificare la presenza dell'opzione "i" in $-.  
+  1 case $- in 
+ 14  
+ 15 nomefile=$1 
+ 16 numero_colonna=$2 
+ 17  
+ 18 # Il passaggio di variabili di shell ad awk, che è parte dello script  
+ 19 #+ stesso, è un po' delicato. 
+ 20 # Vedete la documentazione awk per maggiori dettagli. 
+ 21  
+ 22 # Uno script awk che occupa più righe viene invocato con   awk ' ..... ' 
+ 23  
+ 24  
+ 25 # Inizio dello script awk. 
+ 26 # ----------------------------- 
+ 27 awk ' 
+ 28  
+ 29 { totale += $'"${numero_colonna}"' 
+ 30 } 
+ 31 END { 
+ 32       print totale 
+ 33 } 
+ 34  
+ 35 ' "$nomefile" 
+ 36 # ----------------------------- 
+ 37 # Fine dello script awk. 
+ 38  
+ 39  
+ 40 #   Potrebbe non essere sicuro passare variabili di shell a uno script awk 
+ 41 #   incorporato, così Stephane Chazelas propone la seguente alternativa: 
+ 42 #   --------------------------------------- 
+ 43 #   awk -v numero_colonna="$numero_colonna" ' 
+ 44 #   { totale += $numero_colonna 
+ 45 #   } 
+ 46 #   END { 
+ 47 #       print totale 
+ 48 #   }' "$nomefile" 
+ 49 #   --------------------------------------- 
+ 50  
+ 51  
+ 52 exit 0 
+Per quegli script che necessitano di un unico strumento tuttofare, un coltellino svizzero informatico, 
+esiste Perl. Perl combina le capacità di sed e awk, e, per di più, un'ampia parte di quelle del C. È 
+modulare e supporta qualsiasi cosa, dalla programmazione orientata agli oggetti fino alla 
+preparazione del caffè. Brevi script in Perl si prestano bene ad essere inseriti in script di shell e si 
+può anche dichiarare, con qualche ragione, che Perl possa sostituire completamente lo scripting di 
+shell stesso (sebbene l'autore di questo documento rimanga scettico). 
+Esempio 34-4. Perl inserito in uno script Bash 
+  1 #!/bin/bash 
+  2  
+  3 # I comandi shell possono precedere lo script Perl. 
+  4 echo "Questa riga precede lo script Perl inserito in \"$0\"." 
+  5 echo "===============================================================" 
+  6  
+  7 perl -e 'print "Questo è lo script Perl che è stato inserito.\n";' 
+  8 # Come sed, anche Perl usa l'opzione "-e". 
+  9  
+ 10 echo "===============================================================" 
+ 11 echo "Comunque, lo script può contenere anche comandi di shell e di 
+sistema." 
+ 12  
+ 13 exit 0 
+È anche possibile combinare, in un unico file, uno script Bash e uno script Perl. Dipenderà dal 
+modo in cui lo script verrà invocato quale delle due parti sarà eseguita. 
+Esempio 34-5. Script Bash e Perl combinati 
+  1 #!/bin/bash 
+  2 # bashandperl.sh 
+  3  
+  4 echo "Saluti dalla parte Bash dello script." 
+  5 # Qui possono seguire altri comandi Bash. 
+  6  
+  7 exit 0 
+  8 # Fine della parte Bash dello script. 
+  9  
+ 10 # ======================================================= 
+ 11  
+ 12 #!/usr/bin/perl 
+ 13 # Questa parte dello script deve essere invocata con l'opzione -x. 
+ 14  
+ 15 print "Saluti dalla parte Perl dello script.\n"; 
+ 16 # Qui possono seguire altri comandi Perl. 
+ 17  
+ 18 # Fine della parte Perl dello script. 
+bash$ bash bashandperl.sh 
+Saluti dalla parte Bash dello script. 
+ 
+ 
+bash$ perl -x bashandperl.sh 
+Saluti dalla parte Perl dello script. 
+        
+ 
+34.3. Verifiche e confronti: alternative 
+Per le verifiche è più appropriato il costrutto  che non con [ ]. Lo stesso vale per il costrutto (( 
+)) per quanto concerne i confronti aritmetici.  
+  1 a=8 
+  2  
+  3 # Tutti i confronti seguenti si equivalgono. 
+  4 test "$a" -lt 16 && echo "sì, $a < 16"         #  "lista and" 
+  5 /bin/test "$a" -lt 16 && echo "sì, $a < 16" 
+  6 [ "$a" -lt 16 ] && echo "sì, $a < 16" 
+  7 [[ $a -lt 16 ]] && echo "sì, $a < 16"          #  Non è necessario il 
+quoting 
+  8                                                #+ delle variabili presenti 
+in  e (( )). 
+  9 (( a < 16 )) && echo "sì, $a < 16" 
+ 10  
+ 11 città="New York" 
+ 12 # Anche qui, tutti i confronti seguenti si equivalgono. 
+ 13 test "$città" \< Parigi && echo "Sì, Parigi è più grande di $città"   
+ 14 # Più grande in ordine ASCII. 
+ 15 /bin/test "$città" \< Parigi && echo "Sì, Parigi è più grande di $città" 
+ 16 [ "$città" \< Parigi ] && echo "Sì, Parigi è più grande di $città" 
+ 17 [[ $città < Parigi ]] && echo "Sì, Parigi è più grande di $città"     
+ 18 # $città senza quoting. 
+ 19  
+ 20 # Grazie, S.C. 
+ 
+34.4. Ricorsività 
+Può uno script richiamare sé stesso ricorsivamente? Certo. 
+Esempio 34-6. Un (inutile) script che richiama sé stesso ricorsivamente 
+  1 #!/bin/bash 
+  2 # recurse.sh 
+  3  
+  4 #  Può uno script richiamare sé stesso ricorsivamente? 
+  5 #  Sì, ma può essere di qualche uso pratico? 
+  6 #  (Vedi il successivo.) 
+  7  
+  8 INTERVALLO=10 
+  9 VALMAX=9 
+ 10  
+ 11 i=$RANDOM 
+ 12 let "i %= $INTERVALLO"  #  Genera un numero casuale compreso 
+ 13                         #+ tra 0 e $INTERVALLO - 1. 
+ 14  
+ 15 if [ "$i" -lt "$VALMAX" ] 
+ 16 then 
+ 17   echo "i = $i" 
+ 18   ./$0                  #  Lo script genera ricorsivamente una nuova istanza 
+ 19                         #+ di sé stesso. 
+ 20 fi                      #  Ogni script figlio fa esattamente la stessa  
+ 21                         #+ cosa, finché un $i non sia uguale a $VALMAX. 
+ 22  
+ 23 #  L'uso di un ciclo "while", invece della verifica "if/then", provoca 
+problemi. 
+ 24 #  Spiegate perché. 
+ 25  
+ 26 exit 0 
+ 27  
+ 28 # Nota: 
+ 29 # ---- 
+ 30 # Lo script, per funzionare correttamente, deve avere il permesso di 
+esecuzione. 
+ 31 # Questo anche nel caso in cui venga invocato con il comando "sh". 
+ 32 # Spiegate perchè. 
+Esempio 34-7. Un (utile) script che richiama sé stesso ricorsivamente 
+  1 #!/bin/bash 
+  2 # pb.sh: phone book 
+  3  
+  4 # Scritto da Rick Boivie e usato con il consenso dell'autore. 
+  5 # Modifiche effettuate dall'autore del documento. 
+  6  
+  7 MINARG=1      #  Lo script ha bisogno di almeno un argomento. 
+ 48 #+ non è consentito accedere all'array al di fuori della funzione. 
+ 49 echo "Array passato (nella funzione) = ${array_passato[@]}" 
+ 50 # VALORE NULL perché è una variabile locale alla funzione. 
+ 51  
+ 52 echo 
+ 53  
+ 54 exit 0 
+Per un dimostrazione più elaborata di passaggio di array a funzioni, vedi Esempio A-11. 
+* Utilizzando il costrutto doppie parentesi è possibile l'impiego della sintassi in stile C per 
+impostare ed incrementare le variabili, e per i cicli for e while. Vedi Esempio 10-12 e 
+Esempio 10-17. 
+* Impostare path e umask all'inizio di uno script lo rende maggiormente "portabile" -- più 
+probabilità che possa essere eseguito su una macchina "forestiera" il cui utente potrebbe 
+aver combinato dei pasticci con $PATH e umask.  
+  1 #!/bin/bash 
+  2 PATH=/bin:/usr/bin:/usr/local/bin ; export PATH 
+  3 umask 022 
+  4  
+  5 # Grazie a Ian D. Allen per il suggerimento. 
+* Un'utile tecnica di scripting è quella di fornire ripetitivamente l'output di un filtro (con una 
+pipe) allo stesso filtro, ma con una serie diversa di argomenti e/o di opzioni. tr e grep sono 
+particolarmente adatti a questo scopo. 
+  1 Dall'esempio "wstrings.sh". 
+  2  
+  3 wlist=`strings "$1" | tr A-Z a-z | tr '[:space:]' Z | \ 
+  4 tr -cs '[:alpha:]' Z | tr -s '\173-\377' Z | tr Z ' '` 
+* Esempio 34-15. Divertirsi con gli anagrammi 
+  1 #!/bin/bash 
+  2 # agram.sh: Giocare con gli anagrammi. 
+  3  
+  4 # Trova gli anagrammi di... 
+  5 LETTERE=etaoinshrdlu 
+  6  
+  7 anagram "$LETTERE" |   # Trova tutti gli anagrammi delle lettere 
+fornite... 
+  8 grep '.......' |       # Di almeno 7 lettere, 
+  9 grep '^is' |           # che iniziano con 'is' 
+ 10 grep -v 's$' |         # nessun plurale (in inglese, ovviamente 
+[N.d.T.]) 
+ 11 grep -v 'ed$'          # nessun participio passato di verbi (come 
+sopra) 
+ 12 # E' possibile aggiungere molte altre combinazioni di condizioni 
+ 13  
+ 14 #  Usa l'utility "anagram" che fa parte del pacchetto 
+ 15 #+ dizionario "yawl" dell'autore di questo documento. 
+ 16 #  http://ibiblio.org/pub/Linux/libs/yawl-0.3.tar.gz 
+ 17 #  http://personal.riverusers.com/~thegrendel/yawl-0.3.2.tar.gz 
+ 18  
+ 19  
+ 20 exit 0                 # Fine del codice. 
+ 21  
+ 22 bash$ sh agram.sh 
+ 23 islander 
+ 24 isolate 
+ 25 isolead 
+ 26 isotheral 
+* Vedi anche Esempio 28-3, Esempio 12-21 e Esempio A-10. 
+* Si usino gli "here document anonimi" per commentare blocchi di codice ed evitare di dover 
+commentare ogni singola riga con un #. Vedi Esempio 17-11. 
+* Eseguire uno script su una macchina sulla quale non è installato il comando su cui lo script 
+si basa, è pericoloso. Si usi whatis per evitare potenziali problemi. 
+  1 CMD=comando1                    # Scelta primaria. 
+  2 PianoB=comando2                 # Comando di ripiego. 
+  3  
+  4 verifica_comando=$(whatis "$CMD" | grep 'nothing appropriate')* 
+  5 #  Se 'comando1' non viene trovato sul sistema , 'whatis' 
+restituisce 
+  6 #+ "comando1: nothing appropriate." 
+  7 # 
+  8 #  Un'alternativa più sicura sarebbe: 
+  9 #     verifica_comando=$(whereis "$CMD" | grep \/) 
+ 10 #  Ma allora il senso della verifica seguente andrebbe invertito, 
+ 11 #+ dal momento che la variabile $verifica_comando è impostata solo 
+se 
+ 12 #+ $CMD è presente sul sistema. 
+ 13 #     (Grazie, bojster.) 
+ 14  
+ 15  
+ 16 if [[ -z "$verifica_comando" ]] # Verifica se il comando è presente. 
+ 17 then 
+ 18   $CMD opzione1 opzione2        #  Esegue comando1 con le opzioni. 
+ 19 else                            #  Altrimenti, 
+ 20   $PianoB                       #+ esegue comando2. 
+ 21 fi 
+ 22  
+ 23 #* Ma anche "niente di appropriato".  
+ 24 #  Verificatelo per la vostra distribuzione [N.d.T.] 
+* Una verifica if-grep potrebbe non dare i risultati attesi in caso di errore, quando il testo viene 
+visualizzato allo stderr invece che allo stdout.  
+  1 if ls -l file_inesistente | grep -q 'No such file or directory' 
+  2   then echo "Il file \"file_inesistente\" non esiste." 
+  3 fi 
+* Il problema può essere risolto con la redirezione dello stderr allo stdout.  
+  1 if ls -l file_inesistente 2>&1 | grep -q 'No such file or directory' 
+  2 #                         ^^^^ 
+  3   then echo "Il file \"file_inesistente\" non esiste." 
+  4 fi 
+  5  
+  6 # Grazie a Chris Martin per la precisazione. 
+* Il comando run-parts è utile per eseguire una serie di comandi in sequenza, in particolare 
+abbinato a cron o at. 
+* Sarebbe bello poter invocare i widget X-Windows da uno script di shell. Si dà il caso che 
+esistano diversi pacchetti che hanno la pretesa di far questo, in particolare Xscript, Xmenu e 
+widtools. Sembra, però, che i primi due non siano più mantenuti. Fortunatamente è ancora 
+possibile ottenere widtools qui.  
+ Il pacchetto widtools (widget tools) richiede l'installazione della libreria XForms. In 
+aggiunta, il Makefile necessita di alcune sistemazioni prima che il pacchetto possa 
+essere compilato su un tipico sistema Linux. Infine, tre dei sei widget non funzionano 
+(segmentation fault). 
+* La famiglia di strumenti dialog offre un metodo per richiamare i widget di "dialogo" da uno 
+script di shell. L'utility originale dialog funziona in una console di testo, mentre i suoi 
+successori gdialog, Xdialog e kdialog usano serie di widget basate su X-Windows. 
+* Esempio 34-16. Widget invocati da uno script di shell 
+  1 #!/bin/bash 
+  2 # dialog.sh: Uso dei widgets 'gdialog'. 
+  3 # Per l'esecuzione dello script è indispensabile aver installato 
+'gdialog'. 
+  4  
+  5 # Lo script è stato ispirato dal seguente articolo. 
+  6 #     "Scripting for X Productivity," di Marco Fioretti, 
+  7 #      LINUX JOURNAL, Numero 113, Settembre 2003, pp. 86-9. 
+  8 # Grazie a tutti quelli di LJ. 
+  9  
+ 10  
+ 11 # Errore di input nel box di dialogo. 
+ 12 E_INPUT=65 
+ 13 # Dimensioni dei widgets di visualizzazione e di input. 
+ 14 ALTEZZA=50 
+ 15 LARGHEZZA=60 
+ 16  
+ 17 # Nome del file di output (composto con il nome dello script). 
+ 18 OUTFILE=$0.output 
+ 19  
+ 20 # Visualizza questo script in un widget di testo. 
+ 21 gdialog --title "Visualizzazione: $0" --textbox $0 $ALTEZZA 
+$LARGHEZZA 
+ 22  
+ 23  
+ 24 # Ora, proviamo a salvare l'input in un file. 
+ 25 echo -n "VARIABILE=\"" > $OUTFILE  # Usate il quoting nel caso 
+l'input 
+ 26                                    #+ contenga degli spazi. 
+ 27 gdialog --title "Input Utente" --inputbox "Prego, inserisci un 
+dato:" \ 
+ 28 $ALTEZZA $LARGHEZZA 2>> $OUTFILE 
+ 29  
+ 30  
+ 31 if [ "$?" -eq 0 ] 
+ 32 # È buona pratica controllare l'exit status. 
+ 33 then 
+ 34   echo "Eseguito \"box di dialogo\" senza errori." 
+ 35 else 
+ 36   echo "Errore(i) nell'esecuzione di \"box di dialogo\"." 
+ 37         # Oppure avete cliccato su "Cancel" invece che su "OK". 
+Oleg Philon ha fornito suggerimenti riguardanti cut e pidof. 
+Michael Zick ha esteso l'esempio dell'array vuoto per dimostrare alcune sorprendenti proprietà degli 
+array. Ha fornito anche altri esempi riguardanti questo argomento. 
+Marc-Jano Knopp ha segnalato correzioni sui file batch DOS. 
+Hyun Jin Cha ha trovato diversi errori tipografici durante la tarduzione in coreano del documento. 
+Grazie per averli evidenziati. 
+Andreas Abraham ha inviato un lungo elenco di errori tipografici ed altre correzioni. Un grazie 
+particolare! 
+Altri che hanno fornito script, utili suggerimenti e puntualizzato errori sono Gabor Kiss, Leopold 
+Toetsch, Peter Tillier, Marcus Berglof, Tony Richardson, Nick Drage (idee per script!), Rich 
+Bartell, Jess Thrysoee, Adam Lazur, Bram Moolenaar, Baris Cicek, Greg Keraunen, Keith 
+Matthews, Sandro Magi, Albert Reiner, Dim Segebart, Rory Winston, Lee Bigelow, Wayne 
+Pollock, "jipe", "Mark," "bojster", "Ender", Emilio Conti, Ian. D. Allen, Arun Giridhar, Dennis 
+Leeuw, Dan Jacobson, Aurelio Marinho Jargas, Edward Scholtz, Jean Helou, Chris Martin, Lee 
+Maschmeyer, Bruno Haible, Wilbert Berendsen, Sebastien Godard, Bjön Eriksson, "nyal," John 
+MacDonald, Joshua Tschida, Troy Engel, Manfred Schwarb, Amit Singh, Bill Gradwohl, David 
+Lombard, Jason Parker, Steve Parker, Bruce W. Clare, William Park, Vernia Damiano, Mihai 
+Maties, Jeremy Impson, Ken Fuchs, Frank Wang, Sylvain Fourmanoit, Matthew Walker, Kenny 
+Stauffer, Filip Moritz, Andrzej Stefanski, Daniel Albers, Stefano Palmeri, Alfredo Pironti e David 
+Lawyer (egli stesso autore di quattro HOWTO). 
+La mia gratitudine a Chet Ramey e Brian Fox per aver scritto Bash, uno strumento per lo scripting 
+elegante e potente. 
+Un grazie molto particolare per il lavoro accurato e determinato dei volontari del Linux 
+Documentation Project. LDP ospita una vasta collezione di sapere ed erudizione Linux ed ha, in 
+larga misura, reso possibile la pubblicazione di questo libro. 
+Stima e ringraziamenti a IBM, Novell, Red Hat, la Free Software Foundation e a tutte quelle ottime 
+persone che combattono la giusta battaglia per mantenere il software Open Source libero e aperto. 
+Grazie soprattutto a mia moglie, Anita, per il suo incoraggiamento e supporto emozionale 
+ 
+Guida a cura dello (Staff CasertaGLUG) manuale distribuibile secondo la licenza GNU. 
+ 
+ 
+   
+ 

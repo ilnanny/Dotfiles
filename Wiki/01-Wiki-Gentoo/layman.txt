@@ -1,0 +1,53 @@
+Fase 3: Scegliere ed aggiungere un Overlay
+
+    Per visualizzare gli Overlays disponibili e’ sufficente dare un:
+
+    # layman -L
+
+    questo comando ritorna una lista che, tolto qualche nome, puo’ non essere autoesplicativa sul conenuto dell’overlay. A tal riguardo consiglio di spulciare il seguente sito http://overlays.gentoo.org/proj/.
+
+    Una volta scelto l’overlay desiderato sara’ sufficiente dare:
+
+    # layman -a nomeoverlay
+
+    ad esempio
+
+    # layman -a xeffects
+
+    aggiungera’ l’overlay dedicato a programmi come compiz o beryl ( nelle loro ultime versioni non ancora passate MainTree di Portage).
+
+    Bene, la magia e’ compiuta! Ora avete, al fianco del Main Gentoo Portage Package Tree ( per fare i pignoloni XD ), gli ebuilds dall’overlay scelto. Non vi resta che installarli ;).
+
+Fase 4: aggiornare gli overlays
+
+    Come ogni tanto ( vi ricordo che, per evitare di sovraccaricare gli rsync server, e’ buona cosa non fare il sync del MainTree piu’ di una volta al giorno ) diamo
+
+    # emerge –sync
+
+    anche gli ebuilds nell’overlay devono essere aggiornati. Può deluderci il nostro amico layman? Giammai!
+
+    # layman -s nomeOverlay
+
+    # layman -S
+
+    dove, il primo comando fa il sync per un singolo overlay e, il secondo, fa il sync per tutti gli overlays aggiunti alla nostra Gentoo-Box (tramite layman ovviamente).
+
+    Volendo unire con l’emerge –sync:
+
+    # emerge –sync && layman -S
+
+    cosi’ in un colpo avremo aggiornato il MainTree e tutti i nostri overlays.
+
+    Nel caso usaste eix ( programma che consiglio altamente e che sara’ tema di un prossimo articolo ) diamo un bel:
+
+    # layman -S && eix-sync
+
+    in modo che eix possa aggiungere nel suo DB anche gli ebuilds aggiornati dei nostri overlays.
+
+Fase 5: eliminare un overlay
+
+    Nel caso dovesse essere necessario rimuovere un overlay, sara’ sufficiente avvalersi del seguente semplice comando:
+
+    # layman -d nomeOverlay
+
+    e layman provvedera’ a farlo sparire dalla vostra Gentoo-Box :).
