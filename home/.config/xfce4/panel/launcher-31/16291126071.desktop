@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Webcamoid
+GenericName=Webcam Capture Software
+GenericName[it]=Webcam Capture Software
+Comment=Take photos and record videos with your webcam
+Comment[it]=Scatta foto e registrare video con la tua webcam
+Keywords=photo;video;webcam;
+Exec=webcamoid
+Icon=webcamoid
+Terminal=false
+Type=Application
+Categories=AudioVideo;Player;Qt;
+StartupNotify=true
+X-XFCE-Source=file:///usr/share/applications/webcamoid.desktop

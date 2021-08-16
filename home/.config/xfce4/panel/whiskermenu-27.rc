@@ -1,7 +1,7 @@
-favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=deluge.desktop
-button-icon=xfce4-whiskermenu
-button-single-row=false
+favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop,deluge.desktop
+recent=cups.desktop,vlc.desktop,deluge.desktop
+button-icon=/home/ilnanny/.icons/menu/menu-dark.png
+button-single-row=true
 show-button-title=false
 show-button-icon=true
 launcher-show-name=true

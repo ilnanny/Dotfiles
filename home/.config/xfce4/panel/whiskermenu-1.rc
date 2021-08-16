@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=zim.desktop,hp-uiscan.desktop
+recent=xfce4-terminal-emulator.desktop,vlc.desktop,zim.desktop,hp-uiscan.desktop
 button-icon=xfce4-whiskermenu
 button-single-row=false
 show-button-title=false
