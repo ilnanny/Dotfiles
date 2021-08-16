@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gitkraken
+Comment=ui per Git
+Exec=xterm /media/Dati/Git/gitkraken/gitkraken
+Icon=com.axosoft.GitKraken
+Path=
+Terminal=false
+StartupNotify=false
