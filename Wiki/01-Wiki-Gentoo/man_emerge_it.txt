@@ -1,0 +1,1377 @@
+EMERGE(1) Portage EMERGE(1)
+
+NOME
+       emerge - Interfaccia a riga di comando per il sistema Portage
+
+SINOSSI
+       emerge [opzioni] [azione] [ebuild | tbz2file | file | @set | atomo]...
+
+       emerge --sync [repo | alias]...
+
+       emerge --info [atomo]
+
+       emerge --cerca una stringa
+
+       emerge --help | --versione
+
+DESCRIZIONE
+       emerge è l'interfaccia a riga di comando definitiva per il sistema Portage. è
+       utilizzato principalmente per l'installazione di pacchetti ed emerge può gestire automaticamente qualsiasi
+       dipendenze che ha il pacchetto desiderato. emerge può anche aggiornare l'ebuild
+       repository, rendendo disponibili pacchetti nuovi e aggiornati. emergere con grazia han‐
+       dles aggiorna anche i pacchetti installati alle versioni più recenti. Gestisce entrambi
+       sorgente e pacchetti binari, e può essere usato per creare pacchetti binari per
+       distribuzione.
+
+EBUILD, TBZ2S, SET E ATOMI
+       emerge installa principalmente i pacchetti. Puoi specificare i pacchetti da installare in cinque
+       modi possibili: un atom, un set, un file installato, un ebuild o un file tbz2.
+
+       ebuild Un ebuild deve essere, come minimo, un nome di directory del pacchetto Portage valido
+              senza una versione o una categoria, come portage o python. Entrambi cate‐
+              gories e numeri di versione possono essere utilizzati in aggiunta, come
+              sys-apps/portage o =python-2.2.1-r2. emerge ignora una barra finale quindi
+              che il completamento del nome file può essere utilizzato. L'ebuild potrebbe anche essere un effettivo
+              nome file, come /var/db/repos/gentoo/app-ad‐
+              min/python/python-2.2.1-r2.ebuild. ATTENZIONE: L'implementazione di emerge
+              /path/to/ebuild è rotto e quindi questa sintassi non dovrebbe essere usata.
+
+       tbz2file
+              Un file tbz2 deve essere un file .tbz2 valido creato con ebuild <package>-<ver‐
+              sion>.ebuild pacchetto o emerge --buildpkg [categoria/]<pacchetto> o
+              quickpkg [categoria/]<pacchetto>.
+
+       file Un file deve essere un file o una directory che è stata installata da uno o più
+              pacchi. Se non viene utilizzato un percorso assoluto, deve iniziare con uno dei due
+              "./"  o  "../". Per le directory che sono di proprietà di più pacchetti, all
+              verrà selezionato il possessore di pacchetti. Vedi il comando dei proprietari di portageq(1) if
+              si desidera interrogare i proprietari di uno o più file o directory.
+
+       set Un set è una comoda scorciatoia per un grande gruppo di pacchetti. Sei set
+              sono attualmente sempre disponibili: pacchetti-selezionati, set-selezionati, se‐
+              letto, sistema, profilo e mondo. pacchetti-selezionati contiene l'utente-
+              pacchetti "world" selezionati che sono elencati in /var/lib/portage/world,
+              mentre gli insiemi selezionati contengono gli insiemi nidificati che possono essere elencati in
+              /var/lib/portage/world_sets. sistema e profilo si riferiscono entrambi a insiemi di
+              pacchetti ritenuti necessari per il corretto funzionamento del sistema (la differenza
+              le relazioni tra questi due insiemi sono documentate in portage(5)). selezionato
+              comprende sia i pacchetti selezionati che gli insiemi selezionati, mentre world
+              comprende gli insiemi selezionati, di sistema e di profili. (Vedi FILE sotto per
+              ulteriori informazioni.) Possono esistere altri set a seconda della configurazione corrente.
+              razione. La configurazione impostata di default si trova in
+              /usr/share/portage/config/sets directory. I set di utenti possono essere creati da
+              mettendo i file nella directory /etc/portage/sets/ (vedi portage(5)). Nota
+              che un set è generalmente usato insieme a --update. Quando usato come
+              gli argomenti per emerge set devono essere preceduti da @ per essere riconosciuti. Utilizzo
+              l'azione --list-sets per visualizzare un elenco di insiemi di pacchetti disponibili.
+
+       atom Un atomo descrive i limiti su un pacchetto che si desidera installare. Vedere
+              ebuild(5) per i dettagli sulla sintassi dell'atomo. Per esempio,
+              >=dev-lang/python-2.2.1-r2 corrisponde all'ultima versione disponibile di Python
+              maggiore o uguale a 2.2.1-r2. Allo stesso modo, <dev-lang/python-2.0
+              corrisponde all'ultima versione disponibile di Python prima della 2.0. Nota che in
+              molte shell ti serviranno per sfuggire a caratteri come '<' e '='; utilizzo
+              virgolette singole o doppie intorno all'atomo per aggirare i problemi di fuga.
+              Puoi anche vincolare un atomo in modo che corrisponda a uno SLOT specifico aggiungendo a
+              due punti e uno SLOT. Esempio: x11-libs/qt:3.
+
+AZIONI
+       Nessuna azione
+              Se non viene specificata alcuna azione, l'azione consiste nell'unire nel pacchetto specificato.
+              età, soddisfacendo eventuali dipendenze che possono avere. Gli argomenti possono
+              essere atomi, set, file installati, ebuild o tbz2. Nota che hai bisogno
+              per usare l'opzione --usepkg se vuoi installare un tbz2. I pacchetti
+              vengono aggiunti al file del mondo alla fine, in modo che siano considerati per
+              aggiornamento successivo.
+
+       --check-news
+              Scansiona tutti i repository per le notizie rilevanti non lette GLEP 42 e visualizza
+              quanti se ne trovano. Vedere https://www.gentoo.org/glep/glep-0042.html.
+
+       --pulire
+              Pulisce il sistema esaminando i pacchetti installati e rimuovendo
+              pacchetti più vecchi. Ciò si ottiene osservando ogni pacchetto installato.
+              età e separando le versioni installate per slot. Pulito rimuoverà tutto
+              ma la versione installata più di recente in ogni slot. Pulito non dovrebbe
+              rimuovere i pacchetti non alloggiati. Nota: Installato più di recente significa che la maggior parte
+              cent, non la versione più alta.
+
+       --config
+              Esegui azioni specifiche del pacchetto che devono essere eseguite dopo emerge
+              processo è stato completato. Questo di solito comporta l'impostazione del file di configurazione o
+              altre configurazioni simili che l'utente potrebbe voler eseguire.
+
+       --depclean, -c
+              Pulisce il sistema rimuovendo i pacchetti che non sono associati all'ex‐
+              pacchetti uniti in modo esplicito. Depclean funziona creando la dipendenza completa
+              tree dal set @world, quindi confrontandolo con i pacchetti installati. Pacchetto-
+              età installato, ma non parte dell'albero delle dipendenze, verrà disinstallato
+              da depclean. Vedere --with-bdeps per il comportamento rispetto al tempo di compilazione
+              dipendenze non strettamente necessarie. Pacchetti che fanno parte di
+              il set del mondo sarà sempre mantenuto. Possono essere aggiunti manualmente a questo set
+              con emerge --noreplace <atom>. Come misura di sicurezza, depclean non lo farà
+              rimuovere tutti i pacchetti a meno che *tutte* le dipendenze richieste siano state ripristinate
+              risolto. Di conseguenza, è spesso necessario eseguire emerge --update
+              --newuse --deep @world prima di depclean. Si noti inoltre che depclean potrebbe
+              interrompe le dipendenze a livello di collegamento, specialmente quando il --depclean-lib-check
+              l'opzione è disabilitata. Pertanto, si consiglia di utilizzare uno strumento come revdep-
+              ricostruire(1) al fine di rilevare tale rottura.
+
+              ATTENZIONE: si consiglia agli utenti inesperti di utilizzare --pretend o --ask con
+              questa opzione per vedere un'anteprima di quali pacchetti non saranno inclusi
+              in stallo. Studia sempre l'elenco dei pacchetti da pulire per qualsiasi ovvio
+              errori. Nota che i pacchetti elencati in package.provided (vedi portage(5))
+              possono essere rimossi da depclean, anche se fanno parte del set del mondo.
+
+              Depclean funge da versione consapevole delle dipendenze di --unmerge. Quando dato
+              uno o più atomi, separerà i pacchetti abbinati che non hanno il contrario
+              dipendenze. Usa --depclean insieme a --verbose per mostrare il reverse de‐
+              pendenze.
+
+       --deseleziona [ y | n], -W
+              Rimuovi atomi e/o set dal file world. Questa azione è implicata da
+              azioni di disinstallazione, tra cui --depclean, --prune e --unmerge. Usa --de-
+              select=n per impedire alle azioni di disinstallazione di rimuovere gli atomi da
+              l'archivio del mondo.
+
+       --help, -h
+              Visualizza le informazioni di aiuto per emerge. Aggiungendo uno degli argomenti aggiuntivi
+              menti sopra elencati ti daranno informazioni di aiuto più specifiche su questo
+              argomento. La documentazione interna della guida di emerge viene aggiornata più frequentemente
+              quently di questa pagina man; dai un'occhiata se hai problemi con questo
+              questa pagina man non aiuta a risolvere.
+
+       --info Produce un elenco di informazioni da includere nelle segnalazioni di bug che aiuta il
+              sviluppatori durante la risoluzione del problema segnalato. Si prega di includere queste informazioni
+              zione quando si invia una segnalazione di bug. È possibile ottenere un output esteso
+              con l'opzione --verbose.
+
+       --list-set
+              Visualizza un elenco di set di pacchetti disponibili.
+
+       --metadati
+              Trasferisce la cache dei metadati pregenerati da ${repository_location}/meta‐
+              data/md5-cache/ in /var/cache/edb/dep/ come si fa normalmente sulla coda
+              fine di un aggiornamento rsync usando emerge --sync. Questo processo popola il
+              database della cache che Portage utilizza per ricerche pre-analizzate dei dati del pacchetto.
+              Non popola la cache per i repository che non distribuiscono pregenerati
+              cache dei metadati. Per generare la cache per questi repository, usa
+              --rigenera. Nelle versioni di portage >=2.1.5 l'azione --metadata è totalmente
+              non necessario a meno che l'utente non abbia abilitato FEATURES="metadata-transfer" in
+              make.conf(5).
+
+       --prune, -P
+              Rimuove tutto tranne la versione più alta installata di un pacchetto dal tuo sistema
+              tem. Usa --prune insieme a --verbose per mostrare le dipendenze inverse o
+              con --nodeps per ignorare tutte le dipendenze. ATTENZIONE: questa azione può ri‐
+              sposta i pacchetti dal tuo file mondiale! Controlla l'output emerge del prossimo
+              --depclean esegui con attenzione! Usa --depclean per evitare questo problema.
+
+       --regen
+              Fa sì che portage controlli e aggiorni la cache delle dipendenze di tutti gli ebuild in
+              il deposito. La cache serve per velocizzare le ricerche e la costruzione
+              degli alberi delle dipendenze. Questo comando non è raccomandato per gli utenti rsync in quanto
+              rsync aggiorna la cache utilizzando le cache lato server. Se non conosci il
+              differenze tra un 'utente rsync' e qualche altro utente, allora sei un
+              'utente rsync' :). Gli utenti di Rsync dovrebbero semplicemente eseguire emerge --sync to regener‐
+              mangiato la cache. Dopo un aggiornamento di portage, gli utenti di rsync potrebbero trovarlo conve‐
+              impossibile eseguire emerge --metadata per ricostruire la cache come fa portage a
+              la fine di un'operazione di sincronizzazione. Per specificare il comportamento --regen parallelo
+              oppure, usa le opzioni --jobs e --load-average. Se desideri gen‐
+              cancellare e distribuire la cache per l'uso da parte di altri, utilizzare egencache(1).
+
+       --resume, -r
+              Riprende l'elenco di unione più recente che è stato interrotto a causa di un errore.
+              Questo riutilizza gli argomenti e le opzioni fornite con l'originale
+              comando che viene ripreso e l'utente può anche fornire ulteriori
+              opzioni quando si chiama --resume. È un errore fornire atomi o insiemi come
+              argomenti a --resume, poiché gli argomenti del comando ripreso sono
+              usato invece. Si prega di notare che questa operazione restituirà solo un errore
+              in caso di fallimento. Se non c'è niente da fare per portage, allora portage lo farà
+              uscire con un messaggio e una condizione di successo. Un elenco di curriculum persisterà
+              fino a quando non sarà stato completato nella sua interezza o fino a un'altra fusione interrotta
+              elenco lo sostituisce. La cronologia del curriculum è in grado di memorizzare due merge
+              elenchi. Dopo che un elenco di curriculum è stato completato, è possibile invocare --re‐
+              sume ancora una volta per riprendere un elenco più vecchio. Le liste di curriculum sono
+              memorizzato in /var/cache/edb/mtimedb e può essere esplicitamente scartato da run‐
+              ning `emaint --fix cleanresume` (vedi emaint(1)).
+
+       --cerca, -s
+              Cerca le corrispondenze della stringa fornita nel repository ebuild. Di
+              predefinito emerge utilizza una ricerca semplice senza distinzione tra maiuscole e minuscole, ma è possibile abilitarla
+              una ricerca con un'espressione regolare anteponendo alla stringa di ricerca % (il %
+              il prefisso può essere spesso omesso se l'opzione --regex-search-auto è en‐
+              abile). Ad esempio, emerge --search "%^kde" cerca qualsiasi pacchetto
+              il cui nome inizia con "kde"; emerge --search "%gcc$" cerca qualsiasi
+              pacchetto che termina con "gcc"; emerge --search "office" cerca qualsiasi
+              pacchetto che contiene la parola "office". Se vuoi includere il gatto
+              egory nella stringa di ricerca, anteponi @: emerge --search "%@^dev-
+              java.*jdk". Se vuoi cercare anche le descrizioni dei pacchetti, usa
+              l'azione --searchdesc.
+
+       --searchdesc, -S
+              Abbina la stringa di ricerca al campo della descrizione e al
+              nome del pacchetto. Prestare attenzione poiché anche le descrizioni corrispondono come regola‐
+              grandi espressioni.
+
+       --sync Aggiorna i repository, per i quali auto-sync, sync-type e sync-uri at‐
+              i tributi sono impostati in repos.conf. Un elenco di repository o alias può essere speci‐
+              , nel qual caso verranno aggiornati indipendentemente dalla loro sincronizzazione automatica
+              attributo. Vedere portage(5) per maggiori informazioni. Il PORTAGE_SYNC_STALE
+              la variabile configura gli avvisi che vengono mostrati quando emerge --sync non ha
+              stato eseguito di recente.
+
+              ATTENZIONE: L'azione emerge --sync annullerà le modifiche locali (ad es.
+              zioni o aggiunte di file) all'interno di repository sincronizzati utilizzando
+              rsync.
+
+              NOTA: il comando emerge --sync è un comando di compatibilità. Operazione di sincronizzazione
+              le operazioni vengono ora eseguite utilizzando il nuovo modulo di sincronizzazione emaint. Questo nuovo emaint
+              il modulo di sincronizzazione ha una maggiore funzionalità e flessibilità. Per favore riferisci a
+              emaint(1) per ulteriori informazioni sulle operazioni di sincronizzazione.
+
+              NOTA: Il programma emerge-webrsync scaricherà l'intero repository ebuild
+              tory come tarball, che è molto più veloce di emerge --sync per la prima volta
+              sincronizza.
+
+       --unmerge, -C
+              ATTENZIONE: questa azione può rimuovere pacchetti importanti! Rimuove tutte le corrispondenze
+              pacchetti che seguono un contatore governato da CLEAN_DELAY. Questo no
+              controllo delle dipendenze, quindi potrebbe rimuovere i pacchetti necessari per il
+              corretto funzionamento del vostro sistema. I suoi argomenti possono essere atomi o ebuild.
+              Per una versione di --unmerge che riconosce le dipendenze, usa --depclean o --prune.
+              Per una versione con CLEAN_DELAY=0, usa --rage-clean.
+
+       --versione, -V
+              Visualizza il numero di versione di emerge.
+
+OPZIONI
+       --accept-properties=ACCEPT_PROPERTIES
+              Questa opzione sovrascrive temporaneamente la variabile ACCEPT_PROPERTIES. L'AC
+              La variabile CEPT_PROPERTIES è incrementale, il che significa che la variabile specificata
+              l'impostazione viene aggiunta al valore esistente dalla configurazione. Il
+              il token speciale -* può essere utilizzato per scartare il valore di configurazione esistente
+              e ricominciare da capo. Vedi la sezione PACCHETTI MASCHERATI e make.conf(5) per
+              ulteriori informazioni su ACCEPT_PROPERTIES. Un tipico esempio di utilizzo per
+              questa opzione sarebbe quella di usare --accept-properties=-interactive per temporaneamente
+              ily mask pacchetti interattivi. Con la configurazione di default, questo sarebbe ri‐
+              sult in un valore ACCEPT_PROPERTIES effettivo di "* -interactive".
+
+       --accept-restrict=ACCEPT_RESTRICT
+              Questa opzione sovrascrive temporaneamente la variabile ACCEPT_RESTRICT. L'AC
+              La variabile CEPT_RESTRICT è incrementale, il che significa che la variabile specificata
+              l'impostazione viene aggiunta al valore esistente dalla configurazione. Il
+              il token speciale -* può essere utilizzato per scartare il valore di configurazione esistente
+              e ricominciare da capo. Vedi la sezione PACCHETTI MASCHERATI e make.conf(5) per
+              ulteriori informazioni su ACCEPT_RESTRICT. Un tipico esempio di utilizzo per questo
+              l'opzione sarebbe quella di usare --accept-restrict=-bindist per mascherare temporaneamente
+              pacchetti che non sono ridistribuibili in formato binario. Con la configurazione predefinita
+              zione, ciò risulterebbe in un valore ACCEPT_RESTRICT effettivo di "*
+              -bindista".
+
+       --alert [ y | n / A
+              Aggiungi un carattere di campanello terminale ('\a') a tutti i prompt interattivi. Questo è
+              particolarmente utile se la risoluzione delle dipendenze richiede molto tempo e tu
+              desidera emerge per avvisarti quando è finito. Se usi emerge -auAD
+              mondo, emerge gentilmente indicherà quando avrà finito di calcolare
+              il grafo.
+
+              --alert può essere "y" o "n". "vero" e "falso" significano la stessa cosa. Usando
+              --alert senza un'opzione equivale a usarlo con 'y'. Provalo con
+              'emerge -aA sys-apps/portage'.
+
+              Se il tuo emulatore di terminale è configurato per trasformare '\a' in un gestore di finestre
+              suggerimento di urgenza, sposta il cursore in un'altra finestra per ottenere l'effetto.
+
+       --alfabetico
+              Quando si visualizza l'uscita USE e altri flag, combina l'abilitazione e la dis
+              elenchi abilitati in un unico elenco e ordina l'intero elenco in ordine alfabetico.
+
+       --chiedi [ y | n / A
+              Prima di eseguire l'azione, mostra cosa accadrà (informazioni sul server
+              for --sync, --pretend output for merge e così via), quindi chiedi se
+              per procedere con l'azione o interromperla. L'uso di --ask è più efficiente di
+              usando --pretend e poi eseguendo lo stesso comando senza --pretend, as
+              le dipendenze dovranno essere calcolate solo una volta. ATTENZIONE: Se il messaggio "En‐
+              ter" viene premuto al prompt (senza altri input), viene inter‐
+              preteso come accettazione della prima scelta. Nota che il buffer di input è
+              non cancellato prima del prompt, quindi una pressione accidentale di "Invio"
+              chiave in qualsiasi momento prima del prompt verrà interpretato come una scelta! Utilizzo
+              l'opzione --ask-enter-invalid se si desidera premere un solo tasto "Invio" per
+              essere interpretato come input non valido.
+
+       --ask-enter-invalid
+              Se usato insieme all'opzione --ask, interpreta un singolo tasto "Invio"
+              premere come input non valido. Questo aiuta a prevenire l'accettazione accidentale del
+              prima scelta. Questa opzione deve essere impostata in make.conf(5)
+              Variabile EMERGE_DEFAULT_OPTS.
+
+       --autounmask [ y | n ]
+              Smaschera automaticamente i pacchetti e genera le impostazioni package.use secondo necessità
+              sary per soddisfare le dipendenze. Questa opzione è disabilitata per impostazione predefinita, tranne
+              per porzioni di comportamento controllate da --autounmask-use
+              (--autounmask=n disabilita completamente il comportamento di autounmask). Se qualsiasi configurazione
+              sono necessarie modifiche alle modifiche, quindi verranno visualizzate dopo l'unione
+              list ed emerge verranno immediatamente interrotti. Se la configurazione visualizzata
+              le modifiche sono soddisfacenti, è necessario copiarle e incollarle nella specifica
+              file di configurazione o abilitare l'opzione --autounmask-write. Il
+              La variabile EMERGE_DEFAULT_OPTS può essere utilizzata per abilitare o disabilitare completamente
+              questa opzione di default in make.conf(5).
+
+       --autounmask-backtrack < y | n >
+              Consenti il ​​backtracking dopo che l'autounmask ha rilevato tale configurazione
+              sono necessarie modifiche. Questa opzione non è consigliata, poiché può causare
+              una grande quantità di tempo da sprecare facendo calcoli a ritroso, anche
+              sebbene non vi sia alcuna garanzia che produrrà una soluzione. Questa opzione
+              è disabilitato per impostazione predefinita.
+
+       --autounmask-continue [ y | n ]
+              Applica automaticamente le modifiche di smascheramento automatico ai file di configurazione e con‐
+              continuare ad eseguire il comando specificato. Se il calcolo della dipendenza è
+              non del tutto riuscito, emerge semplicemente si interromperà senza modificare
+              eventuali file di configurazione. Questa opzione implica --autounmask-backtrack=y.
+              ATTENZIONE: questa opzione va utilizzata solo con grande cautela,
+              poiché è possibile apportare modifiche alla configurazione senza senso
+              che può portare alla rottura del sistema. Pertanto, si consiglia di utilizzare
+              --ask insieme a questa opzione.
+
+       --autounmask-only [ y | n ]
+              Invece di creare qualsiasi pacchetto, smaschera i pacchetti e genera
+              le impostazioni package.use necessarie per soddisfare le dipendenze. Questa opzione è
+              disabilitato per impostazione predefinita.
+
+       --autounmask-unrestricted-atoms [ y | n ]
+              Se --autounmask è abilitato, la parola chiave e la maschera cambiano usando l'operazione ´=´
+              tor sarà scritto. Con questa opzione, gli operatori ´>=´ verranno utilizzati quando‐
+              mai possibile. USE e modifiche alla licenza utilizzano sempre quest'ultimo comportamento.
+
+       --autounmask-keep-keywords [ y | n ]
+              Se --autounmask è abilitato, nessuna modifica a package.accept_keywords sarà
+              creato. Questo porta a dipendenze insoddisfatte se una parola chiave cambia
+              sono necessarie. Questa opzione non implica --autounmask-keep-mask, quindi
+              --autounmask è ancora autorizzato a creare modifiche a package.unmask a meno che il
+              Viene specificato anche --autounmask-keep-masks.
+
+       --autounmask-keep-mask [ y | n ]
+              Se --autounmask è abilitato, nessuna modifica a package.unmask o ** sarà possibile
+              essere creato. Questo porta a dipendenze insoddisfatte se non c'è altra soluzione
+              esiste.
+
+       --autounmask-license < y | n >
+              Consenti modifiche autounmask a package.license.
+
+       --autounmask-use < y | n >
+              Consenti modifiche autounmask a package.use. Questa opzione è abilitata per impostazione predefinita
+              (qualsiasi tra --autounmask=n, --autounmask-use=n o --binpkg-respect-use=y
+              lo disabilita). La variabile EMERGE_DEFAULT_OPTS può essere utilizzata per disabilitare
+              questa opzione di default in make.conf(5).
+
+       --autounmask-write [ y | n ]
+              Se --autounmask è abilitato, le modifiche vengono scritte nei file di configurazione, rispettando
+              ing CONFIG_PROTECT e --ask. Se il pacchetto corrispondente.* è un file,
+              le modifiche vengono aggiunte, se è una directory, le modifiche vengono scritte
+              all'ultimo file lessicograficamente. In questo modo è sempre assicurato che
+              le nuove modifiche hanno la precedenza sulle modifiche esistenti. Questa opzione è au‐
+              automaticamente abilitato con --ask.
+
+       --backtrack=COUNT
+              Specifica un numero intero di volte per tornare indietro se il calcolo delle dipendenze
+              zione non riesce a causa di un conflitto o di una dipendenza insoddisfatta (predefinito:
+              ´10´).
+
+       --binpkg-changed-deps [ y | n ]
+              Dice a emerge di ignorare i pacchetti binari per i quali l'ebuild corrispondente
+              le dipendenze sono cambiate da quando i pacchetti sono stati compilati. In modo da
+              aiuta a evitare problemi con la risoluzione di dipendenze incoerenti, questa opzione
+              è abilitato automaticamente a meno che non sia abilitata l'opzione --usepkgonly. Essere-
+              comportamento rispetto alle dipendenze del tempo di compilazione modificate è controllato da
+              l'opzione --with-bdeps.
+
+       --binpkg-respect-use [ y | n ]
+              Dice a emerge di ignorare i pacchetti binari se i loro flag USE non corrispondono a
+              configurazione attuale. Al fine di evitare problemi con la risoluzione di
+              impostazioni flag USE coerenti, questa opzione è abilitata automaticamente a meno che
+              l'opzione --usepkgonly è abilitata. Se --binpkg-respect-use è dato ex‐
+              implicitamente, allora implica --autounmask-use=n, perché queste opzioni natu‐
+              rally si oppongono.
+
+       --buildpkg [ y | n], -b
+              Dice a emerge di creare pacchetti binari per tutti gli ebuild elaborati in aggiunta
+              zione per unire effettivamente i pacchetti. Utile per i manutentori o se si
+              amministrare più sistemi Gentoo Linux (build una volta, emerge tbz2s ev‐
+              ovunque) e il ripristino di emergenza. Il pacchetto verrà creato in
+              la directory PKGDIR (vedi make.conf(5)). Un'alternativa per tutti
+              pacchetti già uniti consiste nell'usare quickpkg(1) che crea un tbz2 da
+              filesystem live.
+
+       --buildpkg-exclude ATOMS
+              Un elenco separato da spazi di atomi di pacchetto per i quali nessun pacchetto binario
+              dovrebbe essere costruito. Questa opzione sovrascrive tutti i modi possibili per abilitare la creazione
+              ing di pacchetti binari ad eccezione di downgrade-backup e unmerge-backup
+              Impostazioni FEATURES (vedi make.conf(5) per maggiori informazioni su FEATURES
+              impostazioni).
+
+       --buildpkgonly, -B
+              Crea pacchetti binari per tutti gli ebuild elaborati senza effettivamente unire
+              ing i pacchetti. Questo viene fornito con l'avvertenza che tutti i tempi di costruzione dipendono
+              denze devono già essere emerse sul sistema.
+
+       --changed-deps [ y | n ]
+              Dice a emerge di sostituire i pacchetti installati per i quali il corrispondente
+              le dipendenze dell'ebuild sono cambiate da quando i pacchetti sono stati compilati. Questa op‐
+              implica anche l'opzione --selective. Comportamento nei confronti di
+              le dipendenze in fase di compilazione modificate sono controllate dall'opzione --with-bdeps.
+
+       --changed-deps-report [ y | n ]
+              Dice a emerge di segnalare gli ebuild per i quali hanno le dipendenze dell'ebuild
+              modificato da quando è stata creata l'istanza installata. Comportamento nei confronti di
+              le dipendenze in fase di compilazione modificate sono controllate dall'opzione --with-bdeps.
+
+       --changed-slot [ y | n ]
+              Dice a emerge di sostituire i pacchetti installati per i quali il corrispondente
+              I metadati di ebuild SLOT sono cambiati da quando i pacchetti sono stati creati. Questa op‐
+              implica anche l'opzione --selective. Ciò può anche comportare una nuova
+              build per tutti i pacchetti installati che hanno slot/sub-slot := operator de‐
+              pendenze sensibili ai relativi metadati SLOT.
+
+       --cambiato uso, -U
+              Dice a emerge di includere i pacchetti installati dove i flag USE sono cambiati
+              dall'installazione. Questa opzione implica anche l'opzione --selective. Un‐
+              come --newuse, l'opzione --changed-use non attiva la reinstallazione
+              quando vengono aggiunti o rimossi flag che l'utente non ha abilitato.
+
+              NOTA: questa opzione ignora lo stato del flag USE "test", dal momento che
+              flag ha un legame speciale con FEATURES="test" (vedi make.conf(5) per ulteriori informazioni
+              informazioni sulle impostazioni delle CARATTERISTICHE).
+
+       --color < y | n >
+              Abilita o disabilita l'output a colori. Questa opzione sovrascriverà NOCOLOR (vedi
+              make.conf(5)) e può anche essere usato per forzare l'output del colore quando stdout è
+              not a tty (per impostazione predefinita, il colore è disabilitato a meno che stdout non sia un tty).
+
+       --colonne
+              Usato insieme a --pretend per causare il nome del pacchetto, la nuova versione e la vecchia
+              versione da visualizzare in un formato allineato per un facile taglia e incolla.
+
+       --grafico-completo [ y | n ]
+              Ciò fa sì che emerga la considerazione delle profonde dipendenze di tutti i pacchetti da
+              il mondo impostato. Con questa opzione abilitata, emerge eseguirà il salvataggio se de‐
+              termini che l'operazione data romperà qualsiasi dipendenza del
+              pacchetti che sono stati aggiunti al grafico. Come l'opzione --deep, il
+              L'opzione --complete-graph aumenterà significativamente il tempo impiegato per
+              calcoli di dipendenza Nota che, a differenza dell'opzione --deep, l'opzione --com‐
+              l'opzione plete-graph non causa l'aggiornamento di più pacchetti di
+              sarebbe stato altrimenti aggiornato con l'opzione disabilitata. Usando
+              --with-bdeps=y insieme a --complete-graph rende il grafico completo
+              il più possibile.
+
+       --complete-graph-if-new-use < y | n >
+              Attiva il comportamento --complete-graph se USE o IUSE cambieranno per un
+              pacchetto installato. Questa opzione è abilitata per impostazione predefinita.
+
+       --complete-graph-if-new-ver < y | n >
+              Attiva il comportamento --complete-graph se una versione del pacchetto è installata
+              cambierà (upgrade o downgrade). Questa opzione è abilitata per impostazione predefinita.
+
+       --config-root=DIR
+              Imposta la variabile di ambiente PORTAGE_CONFIGROOT.
+
+       --debug, -d
+              Dice a emerge di eseguire il comando emerge in modalità --debug. In questa modalità il
+              L'ambiente di compilazione bash verrà eseguito con l'opzione -x, causandone l'output
+              informazioni di debug dettagliate su stdout. Ciò consente anche una pletora di
+              altro output (principalmente messaggi di risoluzione delle dipendenze).
+
+       --deep [PROFONDITÀ], -D
+              Questa bandiera impone di considerare l'intero albero delle dipendenze di pack‐
+              età, invece di controllare solo le dipendenze immediate del pacchetto
+              età. Ad esempio, questo cattura gli aggiornamenti nelle librerie che non sono di‐
+              elencato direttamente nelle dipendenze di un pacchetto. Vedi anche --with-bdeps
+              per il comportamento rispetto alle dipendenze temporali di compilazione che non lo sono
+              strettamente richiesto.
+
+       --depclean-lib-check [ y | n ]
+              Account per le dipendenze a livello di collegamento alla libreria durante --depclean e --prune
+              Azioni. Questa opzione è abilitata per impostazione predefinita. If FEATURES="preserve-libs"
+              è abilitato in make.conf(5) e preservare-libs non è limitato per nessuno
+              dei pacchetti selezionati per la rimozione, questa opzione viene ignorata perché
+              tutte le biblioteche che hanno utenti verranno semplicemente preservate.
+
+       --digerire
+              Evita che la corruzione venga notata. Il comando `repoman manifest` è
+              il modo preferito per generare manifest ed è in grado di fare un en‐
+              repository o categoria di pneumatici contemporaneamente (vedi repoman(1)).
+
+       --dynamic-deps < y | n >
+              Nei calcoli delle dipendenze, sostituire le dipendenze di installato
+              pacchetti con le dipendenze dei corrispondenti ebuild non compilati da
+              repository di sorgenti. Ciò causa le effettive dipendenze di install
+              pacchetti per variare dinamicamente quando le dipendenze dell'ebuild dei sorgenti vengono modificate
+              ficato. Questa opzione è abilitata per impostazione predefinita.
+
+              ATTENZIONE: se vuoi disabilitare --dynamic-deps, allora potrebbe essere necessario
+              eseguire prima fixpackages(1) per ottenere i migliori risultati. La correzione
+              Il comando packages(1) esegue due diverse operazioni che possono anche essere
+              eseguita separatamente da `emaint --fix moveinst` e `emaint --fix
+              comandi movebin` (vedi emaint(1)).
+
+       --albero vuoto, -e
+              Reinstalla gli atomi di destinazione e il loro intero albero delle dipendenze profonde, come se
+              nessun pacchetto è attualmente installato. Dovresti eseguirlo con --pretend
+              prima per assicurarti che il risultato sia quello che ti aspetti.
+
+       --exclude ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emerge non sarà in‐
+              stallo qualsiasi pacchetto ebuild o binario che corrisponda a uno qualsiasi dei pacchetti dati
+              atomi.
+
+       --fail-clean [ y | n ]
+              Pulisci i file temporanei dopo un errore di compilazione. Questo è particolarmente utile
+              ful se hai PORTAGE_TMPDIR su tmpfs. Se questa opzione è abilitata, tu
+              probabilmente vorrai anche abilitare PORTAGE_LOGDIR (vedi make.conf(5)) nell'ordine
+              per salvare il registro di compilazione.
+
+       --fetchonly, -f
+              Invece di creare qualsiasi pacchetto, esegui semplicemente il recupero per tutti i pacchetti.
+              età (recupera le cose da SRC_URI in base all'impostazione USE).
+
+       --fetch-all-uri, -F
+              Invece di creare qualsiasi pacchetto, esegui semplicemente il recupero per tutti i pacchetti.
+              età (recupera tutto in SRC_URI indipendentemente dall'impostazione USE).
+
+       --fuzzy-search [ y | n ]
+              Abilita o disabilita la ricerca fuzzy per le azioni di ricerca. Quando la ricerca fuzzy è
+              abilitato, viene restituito un risultato se è sufficientemente simile alla ricerca
+              stringa, senza richiedere una corrispondenza esatta. Questa opzione è abilitata da de‐
+              colpa. La ricerca fuzzy non supporta le espressioni regolari, quindi lo è
+              disabilitato automaticamente per le ricerche di espressioni regolari. La ricerca fuzzy è
+              leggermente più lenta della ricerca non fuzzy.
+
+       --getbinpkg [ y | n], -g
+              Utilizzando il server e la posizione definiti in PORTAGE_BINHOST (vedi
+              make.conf(5)), portage scaricherà le informazioni da ogni binario
+              pacchetto trovato e utilizzerà tali informazioni per aiutare a costruire la dipendenza
+              lista di denità. Questa opzione implica -k. (Usa -gK per l'unione solo binaria.)
+
+       --getbinpkgonly [ y | n], -G
+              Questa opzione è identica a -g, come sopra, eccetto i binari dal telecomando
+              server sono preferiti rispetto ai pacchetti locali se non sono identici.
+
+       --ignore-default-opts
+              Fa sì che EMERGE_DEFAULT_OPTS (vedi make.conf(5)) venga ignorato.
+
+       --ignore-built-slot-operator-deps < y | n >
+              Ignora lo slot/sub-slot := parti dell'operatore delle dipendenze che sono state
+              registrato quando i pacchetti sono stati creati. Questa opzione è intesa solo per
+              scopi di bug e riguarda solo i pacchetti compilati che specificano
+              slot/sub-slot := dipendenze dell'operatore supportate a partire da
+              API 5.
+
+       --ignore-soname-deps < y | n >
+              Ignora le dipendenze soname dei pacchetti binari e installati. Questa op‐
+              zione è abilitata per impostazione predefinita, poiché le dipendenze soname sono relativamente nuove,
+              e non è garantito che i metadati richiesti esistano per binari e in‐
+              pacchetti bloccati compilati con versioni precedenti di portage. Inoltre, soname de
+              le pendenze verranno automaticamente ignorate per i calcoli delle dipendenze che
+              può inserire ebuild non compilati nel grafico delle dipendenze, poiché ebuild non compilati
+              non hanno metadati di dipendenza soname, rendendo impossibile la de‐
+              determinare se una dipendenza soname non risolta può essere soddisfatta. Là-
+              in primo luogo, è necessario utilizzare --usepkgonly (o --getbinpkgonly) per abilitare
+              risoluzione delle dipendenze soname durante l'installazione dei pacchetti.
+
+       --ignore-mondo [ y | n ]
+              Ignora il set di pacchetti @world e le sue dipendenze. Questo può essere utile se
+              c'è il desiderio di compiere un'azione anche se potrebbe rompere il
+              pendenze di alcuni pacchetti installati (potrebbe anche rimuovere installato
+              pacchetti per risolvere i blocchi). Questo altera anche il comportamento di
+              --complete-graph opzioni in modo che solo le dipendenze profonde dei pacchetti fornite
+              poiché gli argomenti sono inclusi nel grafico delle dipendenze. Questa opzione potrebbe essere
+              utile come alternativa a --nodeps nei casi in cui è desiderabile
+              tenere conto delle dipendenze dei pacchetti dati come argomenti.
+
+              ATTENZIONE: questa opzione va utilizzata solo con grande cautela,
+              poiché è possibile che apporti cambiamenti senza senso che possono portare a
+              rottura del sistema. Pertanto, è consigliabile utilizzare --ask insieme a
+              questa opzione.
+
+       --implicit-system-deps < y | n >
+              Supponiamo che i pacchetti possano avere dipendenze implicite dai pacchetti che
+              long al set @system. Questa opzione è abilitata per impostazione predefinita. Uno di
+              gli effetti della disabilitazione di questa opzione sono di consentire la generazione dell'opzione --jobs
+              lavori senza tener conto della possibilità di dipendenze implicite su
+              pacchetti che appartengono al set @system.
+
+       -j [LAVORI], --lavori[=LAVORI]
+              Specifica il numero di pacchetti da compilare contemporaneamente. Se questa opzione
+              viene fornito senza argomenti, emerge non limiterà il numero di lavori
+              che può funzionare contemporaneamente. Vedi anche la relativa opzione --load-average.
+              Analogamente all'opzione --quiet-build, l'opzione --jobs fa sì che tutte le build
+              output da reindirizzare ai log. Nota che i pacchetti interattivi sono attivi
+              Rently forza un'impostazione di --jobs=1. Questo problema può essere temporaneamente evitato
+              specificando --accept-properties=-interactive.
+
+       --continua [ y | n ]
+              Continua il più possibile dopo un errore. Quando si verifica un errore, dipendere
+              le denunce vengono ricalcolate per i pacchi rimanenti e per eventuali insoddisfatti
+              le dipendenze vengono eliminate automaticamente. Vedi anche il relativo --skipfirst
+              opzione.
+
+       -l [CARICA], --load-media[=CARICA]
+              Specifica che non devono essere avviate nuove build se ci sono altre build
+              in esecuzione e il carico medio è almeno LOAD (un numero in virgola mobile).
+              Senza argomenti, rimuove un limite di carico precedente. Questa opzione è consigliata
+              riparato per l'uso in combinazione con --jobs per evitare un carico eccessivo.
+              Vedere make(1) per informazioni su opzioni analoghe che dovrebbero essere con‐
+              calcolato tramite MAKEOPTS in make.conf(5).
+
+       --suggerimenti errati < y | n >
+              Abilita o disabilita i suggerimenti di errore ortografico. Per impostazione predefinita, emerge mostrerà a
+              elenco di pacchetti con nomi simili quando un pacchetto non esiste. Il
+              La variabile EMERGE_DEFAULT_OPTS può essere utilizzata per disabilitare questa opzione de‐
+              colpa.
+
+       --newrepo
+              Dice a emerge di ricompilare un pacchetto se ora viene estratto da un dif‐
+              ferente deposito. Questa opzione implica anche l'opzione --selective.
+
+       --newuse, -N
+              Dice a emerge di includere i pacchetti installati dove i flag USE sono cambiati
+              dalla compilazione. Questa opzione implica anche l'opzione --selective. UTILIZZO
+              le modifiche alla bandiera includono:
+
+              Un flag USE è stato aggiunto a un pacchetto. Un flag USE è stato rimosso da un pacchetto
+              età. È stato attivato un flag USE per un pacchetto. Un flag USE è stato disattivato
+              per un pacco.
+
+              I flag USE possono essere attivati ​​dal tuo profilo così come dal tuo USE e pack‐
+              impostazioni età.usa. Se desideri saltare le ricostruzioni per cui disabilitato
+              i flag sono stati aggiunti o rimossi da IUSE, vedere i relativi
+              opzione --changed-use. Se desideri saltare le ricostruzioni per specifiche
+              pacchetti, vedere l'opzione --exclude.
+
+              NOTA: questa opzione ignora lo stato del flag USE "test", dal momento che
+              flag ha un legame speciale con FEATURES="test" (vedi make.conf(5) per ulteriori informazioni
+              informazioni sulle impostazioni delle CARATTERISTICHE).
+
+       --noconfmem
+              Fa sì che portage ignori i record di unione indicando che un file di configurazione
+              all'interno di una directory CONFIG_PROTECT è già stato unito. Portage
+              normalmente unirà quei file solo una volta per impedire all'utente di trattare
+              ing con la stessa configurazione più volte. Questo flag causerà il file
+              essere sempre uniti.
+
+       --nodeps, -O
+              Unisce i pacchetti specificati senza unire le dipendenze. Nota che
+              la compilazione potrebbe non riuscire se le dipendenze non sono soddisfatte.
+
+       --noreplace, -n
+              Salta i pacchetti specificati sulla riga di comando che sono già stati
+              installato. Senza questa opzione, qualsiasi pacchetto atom o pacchetto ti imposta
+              specificare sulla riga di comando farà sì che Portage risalti il ​​pacchetto,
+              anche se è già installato. Nota che Portage non ricomparirà
+              pendenze per difetto. Questa opzione può essere utilizzata per aggiornare il file del mondo
+              senza ricostruire i pacchetti.
+
+       --nospinner
+              Disabilita lo spinner per la sessione. La trottola è attiva quando il
+              dispositivo terminale è determinato come un TTY. Questo flag lo disabilita per quanto riguarda
+              meno.
+
+       --usepkg-exclude ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emerge ignorerà
+              corrispondenti pacchetti binari.
+
+       --rebuild-exclude ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emergere non lo farà
+              ricostruire i pacchetti corrispondenti a causa di --rebuild.
+
+       --rebuild-ignora ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emergere non lo farà
+              ricostruire i pacchetti che dipendono dai pacchetti corrispondenti a causa di --rebuild.
+
+       --regex-search-auto < y | n >
+              Abilitare o disabilitare il rilevamento automatico delle espressioni regolari per l'ac‐
+              zioni. Se questa opzione è abilitata (impostazione predefinita), allora espressione regolare
+              la ricerca è abilitata automaticamente quando la stringa di ricerca è una regolare valida
+              espressione che contiene una di queste espressioni regolari comunemente usate
+              caratteri o sequenze di caratteri: ^ $ * [ ] { } | ? .+
+
+       --oneshot, -1
+              Emergi normalmente, ma non aggiungere i pacchetti al file world per dopo
+              in aggiornamento.
+
+              ATTENZIONE: questa opzione dovrebbe essere usata solo per i pacchetti che sono raggiungibili
+              dal set di pacchetti @world (quelli che non verrebbero rimossi da --dep‐
+              clean), poiché le dipendenze dei pacchetti irraggiungibili possono essere
+              ken quando si soddisfano le dipendenze di altri pacchetti. Dipendenze interrotte
+              di questo tipo invaliderà le ipotesi che rendono possibile --deep
+              essere disabilitato per impostazione predefinita.
+
+       --onlydeps, -o
+              Unisci solo (o fingi di unire) le dipendenze delle specifiche dei pacchetti
+              ted, non i pacchetti stessi.
+
+       --onlydeps-with-rdeps < y | n >
+              Includere le dipendenze del tempo di esecuzione quando è specificato --onlydeps. Quando questo è
+              disabilitato sono incluse solo le dipendenze del tempo di compilazione. Questa opzione è en‐
+              abilitato per impostazione predefinita.
+
+       --package-moves [ y | n ]
+              Eseguire gli spostamenti del pacchetto quando necessario. Questa opzione è abilitata per impostazione predefinita.
+              Gli spostamenti dei pacchetti vengono in genere applicati immediatamente dopo un'azione --sync.
+              Vengono applicati in modo incrementale, utilizzando solo il sottoinsieme di
+              cronologia degli spostamenti dei pacchetti che sono stati aggiunti o modificati dal precedente
+              l'applicazione dei movimenti di pacchetto.
+
+              ATTENZIONE: questa opzione dovrebbe rimanere abilitata in circostanze normali.
+              Non disabilitarlo a meno che tu non sappia cosa stai facendo.
+
+              NOTA: il comando fixpackages(1) può essere utilizzato per applicare in modo esauriente il
+              l'intera cronologia degli spostamenti dei pacchi, indipendentemente dal fatto che qualcuno dei
+              gli spostamenti dei pacchetti sono stati applicati in precedenza.
+
+       --pkg-formato
+              Specifica quale formato di pacchetto binario verrà creato come destinazione. Possibile
+              le scelte ora sono tar e rpm o le loro combinazioni.
+
+       --prefix=DIR
+              Imposta la variabile d'ambiente EPREFIX.
+
+       --fingi, -p
+              Invece di eseguire effettivamente l'unione, mostra semplicemente cosa *vorrebbe*
+              sono stati installati se --pretend non sono stati utilizzati. L'uso di --pretend is
+              fortemente consigliato prima di installare un pacchetto sconosciuto. Nel
+              stampare:
+
+              N nuovo (non ancora installato)
+              S nuova installazione SLOT (versioni affiancate)
+              U aggiornamento (a un'altra versione)
+              D downgrade (la versione migliore sembra inferiore)
+              r reinstallare (forzato per qualche motivo, probabilmente a causa di slot o sub-slot)
+              Sostituzione della R (ripristino della stessa versione)
+              F fetch limitato (deve essere scaricato manualmente)
+
+              f fetch limitato (già scaricato)
+              I interattivo (richiede l'input dell'utente)
+              B bloccato da un altro pacchetto (conflitto non risolto)
+              b bloccato da un altro pacchetto (conflitto risolto automaticamente)
+
+       --quickpkg-direct < y | n >
+              Abilita l'uso dei pacchetti installati direttamente come pacchetti binari. Questo è
+              simile all'utilizzo di pacchetti binari prodotti da quickpkg(1), ma installati
+              i pacchetti vengono utilizzati direttamente come se fossero pacchetti binari. Se
+              --quickpkg-direct-root=DIR non è impostato anche su qualcosa di diverso da "/",
+              quindi --root=DIR deve essere usato, e viene fornito con l'avvertenza che packages
+              possono essere installati solo nella root specificata da
+              --root=DIR opzione (l'altra root che serve come sorgente di pacchetti è
+              presunto immutabile durante l'intera operazione).
+
+              Il comportamento predefinito per la gestione dei file di configurazione protetti è con‐
+              controllato dalla variabile QUICKPKG_DEFAULT_OPTS. Il relativo quickpkg op‐
+              sono --include-config e --include-unmodified-config (fare riferimento a
+              pagina man di quickpkg(1)). Quando un file di configurazione non è incluso perché
+              è protetto, viene registrato un messaggio ewarn.
+
+       --quickpkg-direct-root=DIR
+              Specificare la radice da utilizzare come sorgente del pacchetto --quickpkg-direct. Questo
+              si presume che root sia immutabile durante l'intera operazione di emerge. Il
+              l'impostazione predefinita è "/".
+
+       --quiet [ y | n], -q
+              I risultati possono variare, ma il risultato generale è un risultato ridotto o condensato.
+              messo dai display di portage.
+
+       --quiet-build [ y | n ]
+              Reindirizza tutto l'output della build ai soli log e non visualizzarlo su stdout.
+              Se si verifica un errore di compilazione per un singolo pacchetto, il registro di compilazione sarà au‐
+              visualizzato automaticamente su stdout (a meno che non sia abilitata l'opzione --quiet-fail
+              abile). Se ci sono più errori di compilazione (a causa di opzioni come
+              --keep-going o --jobs), il contenuto dei file di registro non sarà
+              visualizzato, e invece verranno visualizzati i percorsi dei file di log per
+              insieme ai messaggi di stampo corrispondenti. Nota che il pacchetto interattivo
+              età attualmente forza la visualizzazione di tutto l'output della build su stdout. Questo è-
+              sue può essere temporaneamente evitato specificando --accept-properties=-inter‐
+              attivo. Inoltre, nota che disabilitare --quiet-build non ha effetto se
+              --jobs è impostato su un valore maggiore di 1.
+
+       --quiet-fail [ y | n ]
+              Sopprime la visualizzazione del log di build su stdout quando l'output di build è nascosto
+              a causa di opzioni come --jobs, --quiet o --quiet-build. Solo il morire
+              messaggio e il percorso del registro di build verrà visualizzato su stdout.
+
+       --quiet-repo-display
+              Nella visualizzazione dell'elenco di unione dei pacchetti, sopprimere l'output ::repository e in‐
+              utilizzare invece i numeri per indicare da quale pacchetto di repository provengono.
+
+       --quiet-unmerge-warn
+              Disabilita il messaggio di avviso che viene mostrato prima delle azioni --unmerge. Questo
+              l'opzione deve essere impostata in make.conf(5) EMERGE_DEFAULT_OPTS
+              variabile.
+
+       --rage-clean
+              ATTENZIONE: questa azione può rimuovere pacchetti importanti! --rage-clean fa
+              --unmerge con CLEAN_DELAY=0.
+
+       --read-news [ y | n ]
+              Offri di leggere le notizie tramite eselect se ci sono notizie non lette. Questa opzione ha
+              nessun effetto a meno che --ask non sia abilitato.
+
+       --rebuild-if-new-slot [ y | n ]
+              Ricompila o reinstalla automaticamente i pacchetti quando slot/sub-slot := opera‐
+              le dipendenze di tor possono essere soddisfatte da uno slot più recente, in modo che i pacchetti più vecchi
+              gli slot diventeranno idonei per la rimozione dall'azione --depclean non appena
+              il più possibile. Questa opzione ha effetto solo sui pacchetti che specificano slot/sub-slot
+              := dipendenze che sono supportate a partire da EAPI 5. Da questo
+              l'opzione richiede il controllo delle dipendenze inverse, abilita --com‐
+              modalità plete-graph ogni volta che viene installato un nuovo slot. Questa opzione è abilitata
+              per impostazione predefinita.
+
+              NOTA: se si desidera saltare tutte le ricostruzioni che coinvolgono la dipendenza dell'operatore dallo slot
+              cies (compresi quelli che coinvolgono solo cambiamenti di sub-slot), quindi --ig‐
+              nore-built-slot-operator-deps=y è l'opzione che stai cercando,
+              poiché --rebuild-if-new-slot non influisce sulle ricostruzioni avviate da
+              modifiche sub-slot da sole.
+
+       --rebuild-if-new-rev [ y | n ]
+              Ricostruisci i pacchetti quando le dipendenze in fase di compilazione vengono compilate dal sorgente, se
+              la dipendenza non è già installata con la stessa versione e revisione
+              sione.
+
+       --rebuild-if-new-ver [ y | n ]
+              Ricostruisci i pacchetti quando le dipendenze in fase di compilazione vengono compilate dal sorgente, se
+              la dipendenza non è già installata con la stessa versione. Revisione
+              i numeri vengono ignorati.
+
+       --rebuild-if-unbuilt [ y | n ]
+              Ricostruisci i pacchetti quando le dipendenze in fase di compilazione vengono compilate dal sorgente.
+
+       --rebuilt-binaries [ y | n ]
+              Sostituisci i pacchetti installati con pacchetti binari che sono stati ricostruiti.
+              Le ricostruzioni vengono rilevate confrontando i metadati del pacchetto BUILD_TIME. Questo
+              l'opzioneèabilitata automaticamente quando si usano pacchetti binari (--usepkgonly
+              o --getbinpkgonly) insieme a --update e --deep.
+
+       --rebuilt-binaries-timestamp=TIMESTAMP
+              Questa opzione modifica il comportamento di emerge solo se --rebuilt-binaries è
+              dato. Solo i binari che hanno un BUILD_TIME maggiore del dato
+              TIMESTAMP e che è maggiore di quello del pacchetto installato sarà
+              considerata dalla logica dei binari ricostruiti.
+
+       --reinstalla uso modificato
+              Questo è un alias per --changed-use.
+
+       --reinstall-atoms ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emergere tratterà
+              corrispondenti pacchetti come se non fossero installati e reinstallarli se
+              necessario.
+
+       --root=DIR
+              Imposta la variabile di ambiente ROOT.
+
+       --sysroot=DIR
+              Imposta la variabile di ambiente SYSROOT.
+
+       --root-deps[=rdeps]
+              Se non viene fornito alcun argomento, le dipendenze in fase di compilazione dei pacchetti per ROOT
+              sono installati su ROOT invece di /. Se viene fornito l'argomento rdeps allora
+              scartare tutte le dipendenze in fase di compilazione dei pacchetti per ROOT. Questa opzione è
+              significativo solo se usato insieme a ROOT e non dovrebbe essere abilitato
+              in circostanze normali!
+
+              Non influisce sulle EAPI che supportano BDEPEND. EAPI 7 introduce BDEPEND come
+              un mezzo per regolare l'installazione in / e ROOT. Utilizzare l'ambiente SYSROOT
+              ment per controllare dove è installato DEPEND in EAPI 7.
+
+              Quando ebuild con diverse funzionalità EAPI nella stessa esecuzione emerge, l'app
+              comportamento appropriato per ciascuna EAPI viene applicato indipendentemente a ciascuna
+              costruire.
+
+       --search-index < y | n >
+              Abilita o disabilita la ricerca indicizzata per le azioni di ricerca. Questa opzione è en‐
+              abilitato per impostazione predefinita. L'indice di ricerca deve essere rigenerato da egen
+              cache(1) dopo che sono state apportate modifiche a un repository (vedi --up‐
+              date-pkg-desc-index azione). Questa impostazione può essere aggiunta a EMERGE_DE‐
+              FAULT_OPTS (vedi make.conf(5)) e successivamente sovrascritto tramite la riga di comando.
+
+       --PERCENTUALE di similarità di ricerca
+              Imposta la percentuale minima di somiglianza (un numero in virgola mobile compreso tra 0
+              e 100). I risultati della ricerca con percentuali di somiglianza inferiori a questa sono
+              scartato (predefinito: ´80´). Questa opzione non ha effetto a meno che il
+              L'opzione --fuzzy-search è abilitata.
+
+       --select [ y | n], -w
+              Aggiungi i pacchetti specificati al world set (inverso di --oneshot). Questo è
+              utile se vuoi usare EMERGE_DEFAULT_OPTS per creare un comportamento --oneshot
+              predefinito.
+
+       --selettivo [ y | n ]
+              Questo è identico all'opzione --noreplace. Alcune opzioni, come --up‐
+              data, implica --selective. Usa --selective=n se vuoi forzatamente
+              disabilita --selective, indipendentemente da opzioni come --changed-use, --newuse,
+              --noreplace o --update.
+
+       --skipfirst
+              Questa opzione è valida solo se utilizzata con --resume. Rimuove il primo
+              pacchetto nell'elenco dei curriculum. Le dipendenze vengono ricalcolate per il rimanente
+              pacchetti e quelli che hanno dipendenze insoddisfatte o sono mascherati saranno
+              automaticamente caduto. Vedi anche la relativa opzione --keep-going.
+
+       --sync-submodule <glsa|notizie|profili>
+              Limita la sincronizzazione ai sottomoduli specificati. Questa opzione può essere specificata
+              più volte, per sincronizzare più sottomoduli. Attualmente, questo
+              L'opzione non ha effetto per i protocolli di sincronizzazione diversi da rsync. (--sync azione
+              solo)
+
+       --albero, -t
+              Mostra l'albero delle dipendenze per la destinazione specificata mediante il rientro delle dipendenze.
+              Questo è veramente utile solo in combinazione con --emptytree o --update
+              e --profondo.
+
+       --display-non ordinato
+              Per impostazione predefinita, l'elenco di unione visualizzato è ordinato utilizzando l'ordine in cui
+              i pacchetti verranno uniti. Quando --tree è usato insieme a questa op‐
+              zione, questo vincolo viene rimosso, si spera che porti a una più leggibile
+              albero delle dipendenze.
+
+       --update, -u
+              Aggiorna i pacchetti alla migliore versione disponibile, che potrebbe non essere sempre presente
+              il numero di versione più alto a causa del mascheramento per test e sviluppo.
+              Gli atomi del pacchetto specificati nella riga di comando sono greedy, il che significa che un
+              atomi specifici possono corrispondere a più versioni di pacchetti con slot. Questa op‐
+              implica anche l'opzione --selective.
+
+       --use-ebuild-visibility [ y | n ]
+              Usa metadati ebuild non compilati per i controlli di visibilità sui pacchetti compilati.
+
+       --useoldpkg-atoms ATOMS
+              Un elenco separato da spazi di nomi di pacchetti o atomi di slot. Emerge preferirà
+              corrispondenza di pacchetti binari su pacchetti non compilati più recenti.
+
+       --usepkg [ y | n], -k
+              Dice a emerge di usare i pacchetti binari (da $PKGDIR) se sono disponibili,
+              quindi possibilmente evitando alcune compilazioni che richiedono tempo. Questa opzione viene utilizzata
+              ful per le installazioni da CD; puoi esportare PKGDIR=/mnt/cdrom/packages e poi
+              usa questa opzione per far sì che i pacchetti binari di emerge "pull" dal CD in o‐
+              der per soddisfare le dipendenze.
+
+       --usepkgonly [ y | n], -K
+              Dice a emerge di usare solo pacchetti binari (da $PKGDIR). Tutto il binario
+              i pacchetti devono essere disponibili al momento del calcolo della dipendenza o
+              emerge semplicemente si interromperà. Portage non usa i repository ebuild quando
+              calcolare le informazioni sulla dipendenza in modo che tutte le informazioni di mascheramento vengano ignorate.
+
+       --verbose [ y | n], -v
+              Dire a emerge di essere eseguito in modalità dettagliata. Attualmente questa bandiera fa emergere a
+              stampa gli errori di informazioni GNU, se presenti, e per mostrare i flag USE che saranno
+              utilizzato per ogni pacchetto quando si fa finta. Sono apposti i seguenti simboli
+              UTILIZZARE i flag per indicare il loro stato:
+
+              Simbolo Posizione Significato
+
+              ? ?
+
+              - prefisso non abilitato (disabilitato o rimosso)
+              * transizione suffisso da o verso lo stato abilitato
+              % suffisso appena aggiunto o rimosso
+              () circonfisso forzato, mascherato o rimosso
+              {} lo stato del circonfisso è legato alle impostazioni delle FUNZIONI
+
+       --conflitti-verbosi
+              Rendi i conflitti di slot più dettagliati. Nota che questo può in alcuni casi produrre
+              centinaia di pacchetti per conflitti di slot.
+
+       --verbose-slot-rebuilds [ y | n ]
+              Attiva/disattiva l'output extra di emerge per elencare quali pacchetti stanno causando
+              ricostruisce. L'impostazione predefinita è "y" (attiva).
+
+       --con-bdeps < y | n >
+              Nei calcoli delle dipendenze, inserisci le dipendenze del tempo di compilazione che non lo sono
+              strettamente richiesto. Questa opzione è abilitata automaticamente per l'installazione
+              azioni, il che significa che verranno installate e il valore predefinito è "y" per il
+              --depclean azione, il che significa che non verranno rimossi. Al fine di prevenire
+              l'opzione --with-bdeps venga abilitata automaticamente per l'installazione
+              azioni, specificare --with-bdeps-auto=n nella riga di comando o
+              EMERGE_DEFAULT_OPTS.
+
+              Poiché molti utenti di pacchetti binari non desiderano tempi di compilazione non necessari
+              dipendenze installate, questa opzione non è abilitata automaticamente per in‐
+              azioni di stallo quando l'opzione --usepkg è abilitata. Per tirare
+              nelle dipendenze del tempo di compilazione per i pacchetti binari con --usepkg,
+              --with-bdeps=y deve essere specificato esplicitamente. Questo vale anche per l'op‐
+              zioni che abilitano implicitamente l'opzione --usepkg, come --getbinpkg.
+
+              Questa impostazione può essere aggiunta a EMERGE_DEFAULT_OPTS (vedi make.conf(5)) e
+              in seguito sovrascritto tramite la riga di comando.
+
+       --with-bdeps-auto < y | n >
+              Questa opzione viene utilizzata per abilitare o disabilitare la logica del programma che causa
+              --with-bdeps deve essere abilitato automaticamente per le azioni di installazione.
+              Questa opzione è abilitata per impostazione predefinita. Usa --with-bdeps-auto=n per prevenire
+              --with-bdeps dall'abilitazione automatica per le azioni di installazione.
+              Questa impostazione può essere aggiunta a EMERGE_DEFAULT_OPTS (vedi make.conf(5)) e
+              in seguito sovrascritto tramite la riga di comando.
+
+              NOTA: La logica del programma che fa sì che --with-bdeps venga automaticamente
+              abilitato per le azioni di installazione non influisce sulle azioni di rimozione come
+              l'azione --depclean. Pertanto, quando viene specificato --with-bdeps-auto=n
+              in EMERGE_DEFAULT_OPTS, non influisce sul valore predefinito --with-bdeps=y
+              impostazione che si applica all'azione --depclean. Il valore predefinito --with-bdeps=y
+              l'impostazione che si applica all'azione --depclean può essere sovrascritta solo da
+              specificando --with-bdeps=n.
+
+       --with-test-deps [ y | n ]
+              Per i pacchetti abbinati per argomenti, questa opzione estrarrà le dipendenze
+              che sono condizionati al flag USE "test", anche se "test" non è en‐
+              abilitato in FUNZIONI per i pacchetti abbinati. (vedi make.conf(5) per ulteriori informazioni
+              informazioni sulle impostazioni delle CARATTERISTICHE).
+
+OPZIONI PER L'AMBIENTE
+       EPREFIX = [percorso]
+              Usa EPREFIX per specificare il prefisso di destinazione da usare per unire i pacchetti
+              o ebuild. Questa variabile può essere impostata tramite l'opzione --prefix o in
+              make.conf(5) (la riga di comando sovrascrive le altre impostazioni).
+              Il valore predefinito è il prefisso in cui è attualmente installato portage.
+
+       RADICE = [percorso]
+              Usa ROOT per specificare il filesystem root di destinazione da usare per unire il
+              pacchetti o ebuild richiesti e le loro dipendenze di runtime. Questa vari‐
+              able può essere impostato tramite l'opzione --root o in make.conf(5) (il comando
+              la riga sovrascrive le altre impostazioni).
+              Il valore predefinito è /.
+
+       SYSROOT = [percorso]
+              Usa SYSROOT per specificare il filesystem root di destinazione da usare per l'unione
+              le dipendenze di compilazione soddisfatte da DEPEND. Questa variabile può essere impostata tramite
+              l'opzione --sysroot o in make.conf(5) (la riga di comando sovrascrive altre
+              impostazioni). Il valore deve essere / o uguale a ROOT. Quando cross-com‐
+              palificazione, solo quest'ultima è valida.
+              Il valore predefinito è /.
+
+       PORTAGE_CONFIGROOT = [percorso]
+              Usa PORTAGE_CONFIGROOT per specificare la posizione per i vari portage con‐
+              file di configurazione (vedi FILE per un elenco dettagliato dei file di configurazione).
+              Questa variabile può essere impostata tramite l'opzione --config-root. Tuttavia, è
+              ora sostituito dalla variabile SYSROOT e può essere fornito solo se il suo valore
+              corrisponde a SYSROOT o se ROOT=/.
+              Il valore predefinito è /.
+
+PRODUZIONE
+       Quando si utilizza emerge con i flag --pretend e --verbose, l'output potrebbe essere
+       un po' difficile da capire all'inizio. Questa sezione spiega le abbreviazioni.
+
+       [blocchi B ] app-text/dos2unix ("app-text/dos2unix" sta bloccando
+       app-text/hd2u-0.8.0)
+              Dos2unix sta bloccando l'emergere di hd2u. I blocchi sono definiti quando
+              due pacchetti si intaseranno a vicenda i file o causeranno in altro modo qualche forma
+              di rottura nel vostro sistema. Tuttavia, i bloccanti di solito non hanno bisogno di essere
+              emerse contemporaneamente perché di solito forniscono le stesse funzioni
+              ità.
+
+       [ebuild N ] app-games/qstat-25c
+              Qstat è nuovo per il tuo sistema e verrà visualizzato per la prima volta.
+
+       [ebuild NS ] dev-libs/glib-2.4.7
+              Hai già una versione di glib installata, ma una "nuova" versione in a
+              sono disponibili diversi SLOT.
+
+       [ebuild R ] sys-apps/sed-4.0.5
+              Sed 4.0.5 è già emerso, ma se esegui il comando, allora
+              portage farà riemergere il pacchetto specificato (sed in questo caso).
+
+       [ebuild F ] media-video/realplayer-8-r6
+              Il pacchetto realplayer richiede il recupero manuale dei sorgenti.
+              Quando si tenta di emergere il pacchetto, se i sorgenti non vengono trovati,
+              quindi il portage si fermerà e ti verranno fornite le istruzioni su come
+              per scaricare i file richiesti.
+
+       [ebuild f ] media-video/realplayer-8-r6
+              I file del pacchetto realplayer sono già stati scaricati.
+
+       [ebuild U ] net-fs/samba-2.2.8_pre1 [2.2.7a]
+              Samba 2.2.7a è già emerso e può essere aggiornato alla versione
+              2.2.8_pre1.
+
+       [ebuild UD] media-libs/libgd-1.8.4 [2.0.11]
+              Libgd 2.0.11 è già emerso, ma se esegui il comando, allora portage
+              eseguirà il downgrade alla versione 1.8.4 per te.
+              Ciò può verificarsi se una versione più recente di un pacchetto è stata mascherata perché
+              è rotto o crea un rischio per la sicurezza sul tuo sistema e una correzione no
+              stato ancora rilasciato.
+              Un altro motivo per cui ciò può verificarsi è se stai cercando di far emergere un pacchetto
+              richiede una versione precedente di un pacchetto per emergere con successo.
+              In questo caso, libgd 2.x è incompatibile con libgd 1.x. Ciò significa che
+              i pacchetti che sono stati creati con libgd 1.x non verranno compilati con 2.x e
+              devono prima eseguire il downgrade di libgd prima che possano emergere.
+
+       [ebuild U ] sys-devel/distcc-2.16 [2.13-r1] USE="ipv6* -gtk -qt%"
+              Qui vediamo che la variabile make.conf USE influenza il modo in cui questo pacchetto è
+              costruito. In questo esempio, il supporto opzionale ipv6 è abilitato e sia gtk
+              e il supporto qt sono disabilitati. L'asterisco che segue ipv6 indica che
+              Il supporto ipv6 è stato disabilitato l'ultima volta che questo pacchetto è stato installato. Il
+              il segno di percentuale dopo qt indica che l'opzione qt è stata aggiunta a
+              il pacchetto dall'ultima installazione. Per informazioni su tutti gli UTILIZZI
+              simboli, vedere la documentazione dell'opzione --verbose sopra.
+              *Nota: i flag che non sono cambiati dall'ultima installazione sono solo dis‐
+              riprodotto quando si utilizzano le opzioni --pretend e --verbose. Usando il
+              L'opzione --quiet impedirà la visualizzazione di tutte le informazioni.
+
+       [ebuild r U ] dev-libs/icu-50.1.1:0/50.1.1 [50.1-r2:0/50.1]
+              Icu 50.1-r2 è già emerso e può essere aggiornato alla versione
+              50.1.1. Il simbolo r indica che un cambio di sottoslot (da 50.1 a
+              50.1.1 in questo caso) forzerà i pacchetti con slot-operatore dipendenti
+              cies su di esso da ricostruire (poiché libxml2 verrà ricostruito nel prossimo esame‐
+              ple).
+
+       [ebuild rR ] dev-libs/libxml2-2.9.0-r1:2 USE="icu"
+              Libxml2 2.9.0-r1 è già emerso, ma se esegui il comando,
+              quindi portage lo farà riemergere per soddisfare una dipendenza dall'operatore di slot
+              dency che lo costringe a essere ricostruito quando cambia il sub-slot di icu (in quanto
+              modificato nell'esempio precedente).
+
+       [ebuild U *] sys-apps/portage-2.2.0_alpha6 [2.1.9.25]
+              Portage 2.1.9.25 è installato, ma se esegui il comando, allora portage
+              aggiornerà alla versione 2.2.0_alpha6. In questo caso, il simbolo * è dis‐
+              riprodotto, per indicare che la versione 2.2.0_alpha6 è mascherata da miss‐
+              ing parola chiave. Questo tipo di mascheramento è disabilitato dall'opzione --quiet op‐
+              se l'opzione --verbose non è abilitata contemporaneamente. Il seguente-
+              I simboli ing vengono utilizzati per indicare vari tipi di mascheramento:
+
+              Tipo di maschera simbolo
+              ?
+
+                # pacchetto.maschera
+                * parola chiave mancante
+                ~ parola chiave instabile
+
+              NOTA: il simbolo della parola chiave instabile (~) non verrà mostrato nei casi in cui
+              le corrispondenti parole chiave instabili sono state accettate globalmente tramite AC‐
+              CEPT_KEYWORDS.
+
+       NOTE Dovresti quasi sempre precedere qualsiasi tentativo di installazione o aggiornamento di un pacchetto
+              con un'installazione o un aggiornamento --pretend. Questo ti permette di vedere quanto sarà
+              fatto e ti mostra tutti i pacchetti di blocco che dovrai correggere.
+              Questo vale doppiamente per il sistema e i set di mondi, che possono essere aggiornati a
+              un gran numero di pacchetti se il repository ebuild è stato particolarmente
+              attivo.
+
+       In genere vuoi anche usare --update, che ignora i pacchetti che sono già
+       completamente aggiornato ma aggiorna quelli che non lo sono.
+
+       Quando installi un pacchetto con dipendenze disinstallate e non lo fai esplicitamente
+       indicare tali dipendenze nell'elenco dei parametri, non verranno aggiunti a
+       l'archivio del mondo. Se vuoi che vengano rilevati per gli aggiornamenti mondiali, assicurati di
+       elencarli esplicitamente come parametri per emergere.
+
+       Le variabili USE possono essere specificate sulla riga di comando per sovrascrivere quelle specificate
+       nelle posizioni predefinite, permettendoti di evitare di usare alcune dipendenze che potresti non usare
+       voglio avere. I flag USE specificati nella riga di comando NON vengono ricordati. Per
+       esempio, env USE="-X -gnome" emerge mc emergerà mc con quelle impostazioni USE
+       (su shell compatibili con Bourne puoi omettere la parte env). Se vuoi usarli
+       impostazioni per essere più permanenti, puoi inserirle in /etc/portage/package.use in‐
+       invece.
+
+       Se emerge --update @system o emerge --update @world fallisce con un messaggio di errore
+       saggio, è possibile che un ebuild utilizzi alcune funzionalità più recenti non presenti in questa versione
+       sione di emergere. Puoi usare emerge --update sys-apps/portage per aggiornare al
+       ultima versione, che dovrebbe supportare tutte le nuove funzionalità necessarie.
+
+PACCHETTI MASCHERATI
+       NOTA: prestare attenzione quando si utilizzano i pacchetti di sviluppo. Problemi e bug ri‐
+       l'uso improprio dei pacchetti mascherati riduce il tempo degli sviluppatori Gentoo. Per favore, sii
+       certo di essere in grado di gestire eventuali problemi che potrebbero derivarne.
+
+       Le maschere in portage hanno molti usi: consentono un periodo di prova in cui i pacchi
+       può essere utilizzato in macchine sotto tensione; impediscono l'uso di un pacchetto quando lo farà
+       fallire; e mascherano i pacchetti esistenti che sono rotti o potrebbero costituire una sicurezza
+       rischio. Leggi di seguito per scoprire come smascherare in vari casi. Si noti inoltre che se
+       dai un ebuild a emerge, quindi tutte le forme di mascheramento verranno ignorate ed emerge
+       tenterà di far emergere il pacco.
+
+       tornare indietro
+              Quando i pacchetti sono mascherati per il backtracking, significa che la dipendenza
+              il resolver li ha temporaneamente mascherati per evitare il conflitto di dipendenze
+              conflitti e/o dipendenze insoddisfatte. Questo tipo di maschera è tipicamente
+              accompagnato da un messaggio su un mancato aggiornamento del pacchetto che è stato
+              saltato per evitare conflitti di dipendenza e/o dipendenza insoddisfatta
+              denze.
+
+       pacchetto.maschera
+              Il file package.mask blocca principalmente l'uso di pacchetti che causano
+              problemi o sono noti per avere problemi su sistemi diversi. Risiede in
+              /var/db/repos/gentoo/profiles.
+
+       CHOST Usa la variabile ACCEPT_CHOSTS in make.conf(5) per controllare CHOST accep‐
+              tant.
+
+       EAPI La variabile EAPI in un file ebuild(5) viene utilizzata per mascherare i pacchetti che sono
+              non supportato dalla versione corrente di portage. Pacchetti mascherati da EAPI
+              può essere installato solo dopo che portage è stato aggiornato.
+
+       PAROLE CHIAVE
+              La variabile KEYWORDS in un file ebuild viene utilizzata anche per mascherare un pacchetto.
+              età ancora in fase di sperimentazione. Ci sono parole chiave specifiche per l'architettura per ciascuno
+              pacchetto che consente a portage di sapere quali sistemi sono compatibili con il pacchetto
+              età. Pacchetti che si compilano su un'architettura, ma non sono stati dimostrati
+              per essere "stabili", sono mascherati con una tilde (~) davanti all'architettura
+              nome. emerge esamina la variabile d'ambiente ACCEPT_KEYWORDS per consentire
+              o non consentire l'emergere di un pacchetto mascherato da KEYWORDS. Informare
+              emerge che dovrebbe costruire queste versioni di "test" dei pacchetti, tu
+              dovresti aggiornare il tuo file /etc/portage/package.accept_keywords per elencare le
+              pacchetti di cui si desidera la versione di "test". Vedi portage(5) per maggiori informazioni
+              zione.
+
+       LICENZA
+              La variabile LICENSE in un file ebuild può essere usata per mascherare i pacchetti in base
+              sulle restrizioni di licenza. emerge esamina l'ambiente ACCEPT_LICENSE
+              variabile per consentire o meno l'emergere di un pacchetto mascherato da LI‐
+              censura. Vedere make.conf(5) per informazioni su ACCEPT_LICENSE e vedere
+              portage(5) per informazioni su /etc/portage/package.license.
+
+       PROPRIETÀ
+              La variabile PROPERTIES in un file ebuild può essere usata per mascherare i pacchetti
+              in base a vincoli di proprietà. emerge esamina le ACCEPT_PROPERTIES
+              variabile d'ambiente per consentire o meno l'emergere di un pacchetto
+              mascherato da PROPRIETA'. Vedere make.conf(5) per informazioni su ACCEPT_PROP‐
+              ERTIES, e vedere portage(5) per informazioni su /etc/portage/pack‐
+              età.proprietà. Usa l'opzione --accept-properties per superare temporaneamente
+              cavalca ACCEPT_PROPERTIES.
+
+       LIMITARE
+              La variabile RESTRICT in un file ebuild può essere usata per mascherare i pacchetti
+              basato su token RESTRICT. emerge esamina l'ambiente ACCEPT_RESTRICT
+              variabile per consentire o meno l'emergere di un pacchetto mascherato da RE‐
+              SEVERA. Vedere make.conf(5) per informazioni su ACCEPT_RESTRICT e vedere
+              portage(5) per informazioni su /etc/portage/package.accept_restrict.
+              Utilizzare l'opzione --accept-restrict per sovrascrivere temporaneamente ACCEPT_RESTRICT.
+
+FILE DI CONFIGURAZIONE
+       Portage ha una funzione speciale chiamata "protezione dei file di configurazione". Lo scopo di
+       questa funzione serve a impedire che le installazioni di nuovi pacchetti intacchino la configurazione esistente
+       file di urazione. Per impostazione predefinita, la protezione del file di configurazione è attivata per /etc e per il
+       directory di configurazione di KDE; altri potrebbero essere aggiunti in futuro.
+
+       Quando Portage installa un file in un albero di directory protetto come /etc, qualsiasi
+       I file in corso non verranno sovrascritti. Se esiste già un file con lo stesso nome,
+       Portage cambierà il nome del file da installare da 'foo' a
+       ´._cfg0000_pippo´. Se ´._cfg0000_foo´ esiste già, questo nome diventa
+       ´._cfg0001_foo´, ecc. In questo modo, i file esistenti non vengono sovrascritti, permettendo
+       l'amministratore di unire manualmente i nuovi file di configurazione ed evitare qualsiasi errore
+       cambiamenti previsti.
+
+       Oltre a proteggere i file sovrascritti, Portage non eliminerà alcun file
+       da una directory protetta quando un pacchetto viene separato. Anche se questo potrebbe essere un po'
+       un po' disordinato, impedisce che file di configurazione potenzialmente preziosi siano
+       soppresso, che è di fondamentale importanza.
+
+       Le directory protette vengono impostate utilizzando la variabile CONFIG_PROTECT, normalmente de‐
+       multato in make.globals. Eccezioni di directory alle directory CONFIG_PROTECTed
+       può essere specificato utilizzando la variabile CONFIG_PROTECT_MASK. Per trovare file che
+       devono essere aggiornati in /etc, digitare find /etc -name '._cfg????_*'.
+
+       Puoi disabilitare questa funzione impostando CONFIG_PROTECT="-*" in make.conf(5).
+       Quindi, Portage aggiornerà automaticamente i tuoi file di configurazione senza pietà. In alternativa, tu
+       può lasciare attiva la protezione dei file di configurazione ma dire a Portage che può sovrascrivere i file
+       in determinate sottodirectory /etc specifiche. Ad esempio, se volessi che Portage
+       aggiorna automaticamente i tuoi script rc e la tua configurazione wget, ma non l'ha fatto
+       vuoi altre modifiche apportate senza la tua esplicita approvazione, aggiungeresti questo a
+       make.conf(5):
+
+       CONFIG_PROTECT_MASK="/etc/wget /etc/rc.d"
+
+CONFIGURATION FILES UPDATE TOOLS
+       Tools  such  as  dispatch-conf, cfg-update, and etc-update are also available to
+       aid in the merging of these files. They  provide  interactive  merging  and  can
+       auto-merge trivial changes.
+
+REPORTING BUGS
+       Please report any bugs you encounter through our website:
+
+       https://bugs.gentoo.org/
+
+       Please include the output of emerge --info when you submit your bug report.
+
+AUTHORS
+       Daniel Robbins <drobbins@gentoo.org>
+       Geert Bevin <gbevin@gentoo.org>
+       Achim Gottinger <achim@gentoo.org>
+       Nicholas Jones <carpaski@gentoo.org>
+       Phil Bordelon <phil@thenexusproject.org>
+       Mike Frysinger <vapier@gentoo.org>
+       Marius Mauch <genone@gentoo.org>
+       Jason Stubbs <jstubbs@gentoo.org>
+       Brian Harring <ferringb@gmail.com>
+       Zac Medico <zmedico@gentoo.org>
+       Arfrever Frehtes Taifersar Arahesis <arfrever@apache.org>
+
+FILE
+       Ecco un elenco comune di file che probabilmente ti interesseranno. Per un com‐
+       elenco completo, fare riferimento alla pagina man di portage(5).
+
+       /usr/share/portage/config/sets/
+              Contiene la configurazione impostata di default.
+
+       /var/lib/portage/mondo
+              Contiene un elenco di tutti i pacchetti specificati dall'utente. Puoi tranquillamente modificarlo
+              file, aggiungendo i pacchetti che si desidera vengano considerati negli aggiornamenti del set mondiale
+              e rimuovendo quelli che non vuoi vengano considerati.
+
+       /var/lib/portage/world_sets
+              Questo è come il file world ma invece degli atomi del pacchetto che contiene
+              set di pacchetti che iniziano sempre con il carattere @. Utilizzo
+              /etc/portage/sets/ per definire i set di pacchetti utente.
+
+       /etc/portage/make.conf
+              Contiene le variabili per il processo di compilazione, sovrascrivendo quelle in make.glob‐
+              anche.
+
+       /etc/portage/color.map
+              Contiene variabili che personalizzano i colori.
+
+       /etc/portage/set/
+              Contiene le definizioni dei set di pacchetti utente (vedere portage(5)).
+
+       /etc/dispatch-conf.conf
+              Contiene le impostazioni per gestire gli aggiornamenti/backup automatici della configurazione
+              File.
+
+       /etc/portage/make.profile/make.defaults
+              Contiene variabili specifiche del profilo per il processo di compilazione. Non modificare
+              questa vita.
+
+       /var/db/repos/gentoo/profiles/use.desc
+              Contiene l'elenco principale dei flag USE con le descrizioni delle loro funzioni
+              zioni. Non modificare questo file.
+
+       /etc/portage/make.profile/virtuals
+              Contiene un elenco di pacchetti predefiniti utilizzati per risolvere le dipendenze virtuali.
+              Non modificare questo file.
+
+       /etc/portage/make.profile/packages
+              Contiene un elenco di pacchetti utilizzati per il sistema di base. Il sistema e
+              set mondiali consultare questo file. Non modificare questo file.
+
+       /usr/share/portage/config/make.globals
+              Contiene le variabili predefinite per il processo di compilazione. Non modificarlo
+              file.
+
+       /var/log/emerge.log
+              Contiene un registro di tutti gli output di emerge. Questo file viene sempre aggiunto a, quindi
+              se vuoi pulirlo, devi farlo manualmente.
+
+       /var/log/emerge-fetch.log
+              Contiene un registro di tutti i recuperi nella precedente invocazione di emerge.
+
+       /var/log/portage/elog/summary.log
+              Contiene i riepiloghi di emergenza. Installa /etc/logrotate.d/elog-save-sum‐
+              Maria.
+
+GUARDA ANCHE
+       emerge  --help,  quickpkg(1),  ebuild(1), ebuild(5), make.conf(5), color.map(5),
+       portage(5)
+
+       A number of helper applications reside in /usr/lib/portage/bin.
+
+       The app-portage/gentoolkit package contains useful scripts  such  as  equery  (a
+       package query tool).
+
+Portage 3.0.20                          Mar 2021                              EMERGE(1)
