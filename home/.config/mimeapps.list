@@ -1,19 +1,17 @@
 [Added Associations]
 application/x-desktop=geany.desktop;
-x-scheme-handler/http=xfce4-web-browser.desktop;
-x-scheme-handler/https=xfce4-web-browser.desktop;
-x-scheme-handler/chrome=firefox-bin.desktop;
-text/html=firefox-bin.desktop;
-application/x-extension-htm=firefox-bin.desktop;
-application/x-extension-html=firefox-bin.desktop;
-application/x-extension-shtml=firefox-bin.desktop;
-application/xhtml+xml=firefox-bin.desktop;
-application/x-extension-xhtml=firefox-bin.desktop;
-application/x-extension-xht=firefox-bin.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;firefox-bin.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;firefox-bin.desktop;
+application/octet-stream=geany.desktop;
+application/x-shellscript=geany.desktop;
+text/markdown=vim.desktop;geany.desktop;
+text/plain=geany.desktop;vim.desktop;leafpad.desktop;
+application/x-sharedlib=xfce4-terminal-emulator.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-9XA070.desktop;
 
 [Default Applications]
-x-scheme-handler/http=xfce4-web-browser.desktop
-x-scheme-handler/https=xfce4-web-browser.desktop
+x-scheme-handler/http=firefox-bin.desktop
+x-scheme-handler/https=firefox-bin.desktop
 x-scheme-handler/chrome=firefox-bin.desktop
 text/html=firefox-bin.desktop
 application/x-extension-htm=firefox-bin.desktop
@@ -22,4 +20,7 @@ application/x-extension-shtml=firefox-bin.desktop
 application/xhtml+xml=firefox-bin.desktop
 application/x-extension-xhtml=firefox-bin.desktop
 application/x-extension-xht=firefox-bin.desktop
-
+application/x-shellscript=geany.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-9XA070.desktop
+text/plain=geany.desktop
+text/markdown=geany.desktop

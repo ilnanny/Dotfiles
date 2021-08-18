@@ -240,10 +240,7 @@ hostname"HPZ600"
  emerge --ask xorg-x11 xorh-server xrandr sudo xinitrc
 
 #== • Cron
- emerge --ask anacron
- /etc/init.d/anacron start
- rc-update add anacron default
- gpasswd -a ilnanny cron
+ 
 
  nano -w /etc/crontab
 # Avvia anacron ogni 10 minuti

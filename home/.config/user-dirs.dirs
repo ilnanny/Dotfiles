@@ -4,19 +4,12 @@
 # Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
 # homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
 # absolute path. No other format is supported.
-#
-# Questo file è scritto da xdg-user-dirs-update
-# Se vuoi cambiare o aggiungere directory, modifica semplicemente la riga che stai
-# interessato a. Tutte le modifiche locali verranno mantenute alla prossima esecuzione.
-# Il formato è XDG_xxx_DIR="$HOME/yyy", dove yyy è un escape shell
-# percorso relativo alla homedir, o XDG_xxx_DIR="/yyy", dove /yyy è un
-# percorso assoluto. Nessun altro formato è supportato.
-#
+# 
 XDG_DESKTOP_DIR="$HOME/Scrivania"
-XDG_DOWNLOAD_DIR="$HOME/Scricati"
+XDG_DOWNLOAD_DIR="$HOME/Scaricati"
 XDG_TEMPLATES_DIR="$HOME/Modelli"
-XDG_PUBLICSHARE_DIR="$HOME/Pubblici"
 XDG_DOCUMENTS_DIR="$HOME/Documenti"
 XDG_MUSIC_DIR="$HOME/Musica"
 XDG_PICTURES_DIR="$HOME/Immagini"
 XDG_VIDEOS_DIR="$HOME/Video"
+XDG_PUBLICSHARE_DIR="$HOME/Pubblici"
