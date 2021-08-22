@@ -1,5 +1,6 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
+
 
 #== • Crea le Cartelle e monta le partizioni:
 
@@ -152,7 +153,7 @@ linux-firmware intel-microcode grub
  USE="zerozonf" emerge --ask gnome-base/gvfs
 
  emerge --ask mdadm gentoolkit \
- os-prober ntfs3g usbutils \
+ os-prober ntfs3g usbutils dosfstools \
  pciutils elogind e2fsprogs dev-vcs/git net-misc/ntp
 #= carica il demone all'avvio:
  rc-update add elogind default
@@ -185,14 +186,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #=====================================================================
 #== • Imposta un Hostname:
 
- nano -w /etc/conf.d/hostname
+
 hostname"HPZ600"
 #== • imposta localhost
 
  nano -w /etc/hosts
-127.0.0.1 localhost
-::1   localhost
-127.0.1.1 HPZ600
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   HPZ600
 #=====================================================================
 #== • Password di root:
 
@@ -275,7 +276,9 @@ emerge --ask --deselect=y xfce-extra/xfce4-notifyd
  nano -w /etc/conf.d/display-manager
 #= Carica il demone all'avvio:
  rc-update add display-manager default
+
  rc-update add dbus default
+#= Aggiungi utente al gruppo video 
  usermod -a -G video sddm
 
 #== •  Alsa
@@ -343,8 +346,6 @@ Section "Device"
 	Identifier     "nvidia"
 	Driver         "nvidia"
 	VendorName     "NVIDIA Corporation"
-	BoardName      "Quadro 4000"
-	Option    "RegistryDwords" "EnableBrightnessControl=1"
 EndSection
 
 #== •

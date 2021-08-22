@@ -3,7 +3,7 @@ Find:
 
  find  / -type d -iname "libreoffice" -ls
 
- ==Cerca tutti i file con nome specifico all''interno di una cartella
+ ==Cerca tutti i file con nome specifico all'interno di una cartella
 
  find  /path/in/cui/cercare -name "nome-file-corrispondente" -ls
 

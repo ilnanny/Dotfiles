@@ -1,0 +1,11 @@
+set linenumbers
+set autoindent
+set mouse
+set softwrap
+set tabsize 4
+set tabstospaces
+set titlecolor  blue
+set keycolor  black,green
+set statuscolor blue
+set functioncolor blue
+set numbercolor  blue

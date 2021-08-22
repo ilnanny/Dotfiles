@@ -1,0 +1,131 @@
+Installa Wgetpaste
+
+Se sei interessato a provare questa applicazione, vedrai che qualsiasi utente sarà in grado di farlo scarica questa utility da sito web del progetto Wgetpaste. Quindi devi solo installarlo manualmente come descritto di seguito.
+
+scarica wgetpaste
+
+Per prima cosa apri un terminale (Ctrl + Alt + T) e scarica l'ultimo file tar da Wgetpaste:
+
+1
+
+wget http://wgetpaste.zlin.dk/wgetpaste-2.28.tar.bz2
+
+Estrailo digitando:
+1
+
+tar -xjvf wgetpaste-2.28.tar.bz2
+
+Dopo dirigetevi nella directory:
+1
+
+cd wgetpaste-2.28/
+
+Ora devi solo farlo copia il binario da wgetpaste al tuo $ PATH, per esempio / usr / local / bin /.
+1
+
+sudo cp wgetpaste /usr/local/bin/
+
+Termina eseguendo il file eseguibile:
+
+1
+
+sudo chmod +x /usr/local/bin/wgetpaste
+Carica frammenti di testo con Wgetpaste
+Carica file di testo
+
+Per caricare un file di testo, basta eseguire:
+1
+
+wgetpaste mi-texto.txt
+
+Questo comando caricherà il contenuto del file my-text.txt.
+
+wgetpaste condivide un file.txt
+
+Si può condividere l'URL generato tramite qualsiasi mezzo come posta, messaggio, ecc. Chi riceve questo URL potrà vedere il contenuto del file dal proprio browser web.
+
+file di testo caricato con wgetpaste e visualizzato dal browser web
+
+È anche possibile guarda cosa verrà caricato. Per farlo, usa il file -t opzione come mostrato di seguito:
+
+wgetpaste file di anteprima prima del caricamento
+1
+
+wgetpaste -t mi-texto.txt
+Carica frammenti di testo su diversi servizi
+
+Per impostazione predefinita, Wgetpaste caricherà i frammenti di testo nel file servizio poundpython, ma c'è di più. Da vedere l'elenco dei servizi supportati, correre:
+
+servizi di wgetpaste disponibili per impostazione predefinita
+1
+
+wgetpaste -S
+
+L'asterisco * indica il servizio predefinito.
+
+Come puoi vedere, Wgetpaste attualmente supporta cinque servizi di condivisione del testo. Non li ho provati tutti, ma tutte e tre le opzioni che ho provato hanno funzionato bene.
+
+a caricare contenuti su altri servizi, per esempio dpaste.com, usa semplicemente il file -s opzione nel comando:
+
+servizio di cambio wgetpaste
+1
+
+wgetpaste -s dpaste mi-texto.txt
+Leggi l'input da stdin
+
+Wgetpaste può anche leggere l'input da stdin.
+
+wgetpaste stdin
+1
+
+uname -a | wgetpaste
+
+Questo comando caricherà l'output del comando 'uname -a'.
+Carica l'output COMMAND e COMMAND insieme
+
+A volte può essere necessario incollare un COMANDO e il suo output. Per fare ciò, racchiudi il contenuto del comando tra virgolette:
+
+wgetpaste mostra il comando e il risultato
+1
+
+wgetpaste -c ‘pwd’
+
+Con questa opzione caricherà il comando 'pwd' insieme al suo output. Questo può essere utile quando vogliamo che gli altri sappiano chiaramente qual è il comando esatto che abbiamo appena eseguito e il suo output.
+Imposta la lingua
+
+Per impostazione predefinita, Wgetpaste caricherà frammenti di testo in testo normale. Per elenca le lingue supportate dal servizio predefinito, puoi usare il file Opzione -L.
+1
+
+wgetpaste -L
+
+Questo comando elencherà tutte le lingue supportate dal servizio predefinito, ad es. pitone.
+
+Possiamo cambia questa opzione usando l'opzione -l.
+1
+
+wgetpaste -l Bash mi-texto.txt
+Disabilita la sintassi o l'evidenziazione html nell'output
+
+Come accennato in precedenza, i frammenti di testo verranno visualizzati in un formato di lingua specifico (testo semplice, bash, ecc.). Tuttavia, saremo in grado di modificare questo comportamento in mostra i frammenti di testo normale, con l'opzione -r.
+
+wgetpaste crudo
+1
+
+wgetpaste -r mi-texto.txt
+
+Come puoi vedere dall'output sopra, non c'è evidenziazione della sintassi, nessuna formattazione html. Solo uno output grezzo.
+Modifica le impostazioni predefinite di Wgetpaste
+
+Tutti i valori predefiniti possono essere modificati a livello globale in /etc/wgetpaste.conf o nella cartella dell'utente, nel file ~ / .wgetpaste.conf.
+
+Questi file non sono disponibili per impostazione predefinita sul mio sistema Ubuntu. Immagino che tu debba crearli manualmente. Il contenuto di esempio per entrambi i file è stato reso disponibile a tutti dallo sviluppatore qui y qui.
+
+Se la nuova configurazione non ti convince, sei sempre in tempo per cambiarla tu stesso o per cancellare questi due file che hai appena creato. Wgetpaste tornerà a lavorare con i valori predefiniti.
+Ottenere aiuto
+
+Per mostrare il file sezione di aiuto, correre:
+
+aiutare wgetpaste
+1
+
+wgetpaste -h

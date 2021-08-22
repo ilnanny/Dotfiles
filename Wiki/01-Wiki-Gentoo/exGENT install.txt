@@ -1,0 +1,24 @@
+exGENT live
+
+password : exGENT21$
+utenti : root 
+--------------------------------------------------------------------------
+-- Una volta entrati nella live formatta le partizioni di / e di swap.
+
+SMONTA TUTTE LE PARTIZIONI ,RISCHIO LA PERDITA DATI.!!
+
+-- da terminale :
+cd /root/install
+./install.sh /dev/sdb4 dev/sdb2  
+( dev/sdb4 sta per / e dev/sdb2 sta per swap )
+
+-- Agiiorna Grub
+grub-mkconfig –o /boot/grub/grub.cfg
+
+-------------------------------------------------------------------------
+Al riavvio aggiorna il sistema
+
+emerge --sync 
+eselect news read 
+ emerge -uUD --with-bdeps=y @world --exclude='app-admin/calamares'
+-------------------------------------------------------------------------
